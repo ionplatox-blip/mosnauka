@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>МОСНАУКА — Меры поддержки</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        body {
+            font-family: Inter, system-ui, sans-serif;
+            background: #050505;
+        }
+
+        .mos-bg-red {
+            background-color: #ff003c;
+        }
+
+        .mos-text-red {
+            color: #ff003c;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+    </style>
+</head>
+
+<body class="text-white">
+    <div
+        class="min-h-screen bg-[radial-gradient(circle_at_top_left,rgba(255,0,60,0.16),transparent_20%),radial-gradient(circle_at_top_right,rgba(255,255,255,0.08),transparent_18%),linear-gradient(180deg,#050505,#0b0f16)]">
+
+        <!-- Header -->
+        <header class="sticky top-0 z-20 backdrop-blur border-b border-white/10 bg-black/40">
+            <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+                <a href="index.html"
+                    class="text-3xl font-black italic tracking-tight uppercase hover:opacity-80 transition cursor-pointer">МОС<span
+                        class="text-red-500">НАУКА</span></a>
+                <div class="flex items-center gap-6">
+                    <div class="text-xs uppercase tracking-[0.22em] text-zinc-400 hidden md:block">Меры поддержки</div>
+                    <a href="index.html"
+                        class="px-6 py-2 border border-white/20 rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-white/10 transition">←
+                        На главную</a>
+                </div>
+            </div>
+        </header>
+
+        <main class="max-w-7xl mx-auto px-6 py-10">
+            <!-- Title -->
+            <div class="mb-10 text-center">
+                <div
+                    class="text-[10px] uppercase tracking-[0.26em] text-red-500 font-black mb-2 inline-flex items-center gap-2 justify-center">
+                    <span class="w-2 h-2 rounded-full mos-bg-red animate-pulse"></span> Инструменты софинансирования
+                </div>
+                <h1 class="text-5xl md:text-7xl font-black italic tracking-tighter uppercase leading-none mb-4">Меры
+                    <br> <span>поддержки</span></h1>
+                <p class="text-zinc-400 text-lg max-w-2xl mx-auto font-light">
+                    Полный реестр городских и федеральных мер поддержки технологических проектов и НИОКР.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-16">
+                <!-- Card 1 -->
+                <div
+                    class="glass p-8 rounded-[2.5rem] flex flex-col group hover:border-red-500/50 transition border border-white/10">
+                    <div class="mb-6">
+                        <span
+                            class="px-3 py-1 bg-red-600/10 border border-red-500/20 text-red-400 text-[9px] font-black uppercase tracking-widest rounded">Налоговая
+                            льгота</span>
+                    </div>
+                    <h3 class="text-3xl font-black italic uppercase leading-none mb-4">Коэффициент 1.5 <br>по НИОКР</h3>
+                    <p class="text-gray-400 text-sm flex-1 leading-relaxed">Снижение налогооблагаемой базы по налогу на
+                        прибыль. Расходы на исследования, включенные в специальный перечень, можно учитывать с
+                        коэффициентом 1.5.</p>
+                    <div class="mt-6 pt-6 border-t border-white/10 flex items-center justify-between">
+                        <div>
+                            <div class="text-[9px] font-bold uppercase tracking-widest text-gray-500">Выгода</div>
+                            <div class="text-xl font-black italic text-white">До 20% от затрат</div>
+                        </div>
+                        <a href="dashboard.html"
+                            class="px-5 py-3 border border-red-500 text-red-500 hover:bg-red-500 hover:text-white rounded-xl text-[10px] font-black uppercase tracking-widest transition">В
+                            кабинет</a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div
+                    class="glass p-8 rounded-[2.5rem] flex flex-col group hover:border-red-500/50 transition border border-white/10">
+                    <div class="mb-6">
+                        <span
+                            class="px-3 py-1 bg-white/10 border border-white/20 text-white text-[9px] font-black uppercase tracking-widest rounded">Прямое
+                            финансирование</span>
+                    </div>
+                    <h3 class="text-3xl font-black italic uppercase leading-none mb-4">Грант на<br>Инжиниринг</h3>
+                    <p class="text-gray-400 text-sm flex-1 leading-relaxed">Компенсация части затрат (до 50%) на
+                        проектирование, разработку документации, создание опытных образцов и прототипов в Москве.</p>
+                    <div class="mt-6 pt-6 border-t border-white/10 flex items-center justify-between">
+                        <div>
+                            <div class="text-[9px] font-bold uppercase tracking-widest text-gray-500">Сумма гранта</div>
+                            <div class="text-xl font-black italic text-green-500">До 30 млн ₽</div>
+                        </div>
+                        <a href="dashboard.html"
+                            class="px-5 py-3 border border-red-500 text-red-500 hover:bg-red-500 hover:text-white rounded-xl text-[10px] font-black uppercase tracking-widest transition">В
+                            кабинет</a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div
+                    class="glass p-8 rounded-[2.5rem] flex flex-col group hover:border-red-500/50 transition border border-white/10">
+                    <div class="mb-6">
+                        <span
+                            class="px-3 py-1 bg-white/10 border border-white/20 text-white text-[9px] font-black uppercase tracking-widest rounded">Льготный
+                            займ</span>
+                    </div>
+                    <h3 class="text-3xl font-black italic uppercase leading-none mb-4">Залог
+                        интеллектуальной<br>собственности</h3>
+                    <p class="text-gray-400 text-sm flex-1 leading-relaxed">Кредитование технологичных компаний под
+                        залог прав на РИД по льготной ставке. Город компенсирует процентную ставку и частично
+                        обеспечивает залог.</p>
+                    <div class="mt-6 pt-6 border-t border-white/10 flex items-center justify-between">
+                        <div>
+                            <div class="text-[9px] font-bold uppercase tracking-widest text-gray-500">Сумма займа</div>
+                            <div class="text-xl font-black italic text-green-500">До 50 млн ₽</div>
+                        </div>
+                        <a href="dashboard.html"
+                            class="px-5 py-3 border border-red-500 text-red-500 hover:bg-red-500 hover:text-white rounded-xl text-[10px] font-black uppercase tracking-widest transition">В
+                            кабинет</a>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="mt-16 p-10 mos-bg-red rounded-[3rem] shadow-[0_0_50px_rgba(255,0,60,0.3)] flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
+                <div
+                    class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10 mix-blend-overlay">
+                </div>
+                <div class="relative z-10">
+                    <h3 class="text-3xl font-black italic uppercase text-white mb-2">Не знаете с чего начать?</h3>
+                    <p class="text-white/80 max-w-xl text-sm">Проведите бесплатный аудит проекта вместе с сотрудником
+                        Моснауки. Мы подберем исполнителя и составим маршрутный лист для получения лучшей комбинации мер
+                        поддержки МИК.</p>
+                </div>
+                <button
+                    class="relative z-10 shrink-0 px-8 py-5 bg-white text-black font-black uppercase tracking-widest text-xs rounded-2xl hover:bg-gray-200 transition shadow-xl"
+                    onclick="openModal()">Запросить аудит проекта</button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Модалка внутри support.html сразу же (универсальный попап) -->
+    <div id="universalModal"
+        class="fixed inset-0 z-[100] bg-black/90 backdrop-blur-md hidden items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+        <div class="bg-[#0b0f16] border border-white/20 p-8 md:p-12 rounded-[3rem] max-w-lg w-full relative transform scale-95 transition-transform duration-300"
+            id="modalContent">
+            <button onclick="closeModal()" class="absolute top-6 right-6 text-gray-400 hover:text-white transition">
+                <i class="ph ph-x text-2xl"></i>
+            </button>
+            <h2 class="text-3xl font-black italic uppercase mb-2">Свяжитесь с нами</h2>
+            <p class="text-gray-400 text-sm mb-8">Оставьте контакты и вкратце опишите задачу. Эксперт Моснауки свяжется
+                с вами в течение дня.</p>
+
+            <form class="space-y-4" onsubmit="event.preventDefault(); closeModal(); bgSuccess();">
+                <div>
+                    <label class="block text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-2">Название
+                        компании или ИНН</label>
+                    <input type="text" required
+                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-red-500 outline-none transition text-sm">
+                </div>
+                <div>
+                    <label
+                        class="block text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-2">Телефон</label>
+                    <input type="tel" required
+                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-red-500 outline-none transition text-sm">
+                </div>
+                <div>
+                    <label class="block text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-2">Суть
+                        задачи</label>
+                    <textarea rows="3"
+                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-red-500 outline-none transition text-sm"
+                        placeholder="Например: нужен алгоритм для БПЛА..."></textarea>
+                </div>
+                <button type="submit"
+                    class="w-full py-4 mt-4 mos-bg-red font-black uppercase text-xs tracking-widest rounded-xl hover:opacity-90 transition shadow-[0_0_20px_rgba(255,0,60,0.4)]">Отправить
+                    запрос</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById('universalModal');
+        const modalContent = document.getElementById('modalContent');
+
+        function openModal() {
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            // small delay to allow display flex to apply before opacity transition
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modalContent.classList.remove('scale-95');
+                modalContent.classList.add('scale-100');
+            }, 10);
+        }
+
+        function closeModal() {
+            modal.classList.add('opacity-0');
+            modalContent.classList.remove('scale-100');
+            modalContent.classList.add('scale-95');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }, 300);
+        }
+
+        function bgSuccess() {
+            alert('Заявка успешно отправлена! Мы свяжемся с вами в ближайшее время.');
+        }
+
+        // Close on outside click
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+
+</html>

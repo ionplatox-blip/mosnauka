@@ -1,0 +1,3213 @@
+<!doctype html>
+
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>МОСНАУКА — Реестр компетенций</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+      body {
+        font-family: Inter, system-ui, sans-serif;
+        background: #050505;
+      }
+
+      .mos-bg-red {
+        background-color: #ff003c;
+      }
+
+      .mos-text-red {
+        color: #ff003c;
+      }
+
+      .glass {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(16px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+    </style>
+  </head>
+
+  <body class="text-white">
+    <div
+      class="min-h-screen bg-[radial-gradient(circle_at_top_left,rgba(255,0,60,0.16),transparent_20%),radial-gradient(circle_at_top_right,rgba(255,255,255,0.08),transparent_18%),linear-gradient(180deg,#050505,#0b0f16)]"
+    >
+      <!-- Header -->
+      <header
+        class="sticky top-0 z-20 backdrop-blur border-b border-white/10 bg-black/40"
+      >
+        <div
+          class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between"
+        >
+          <a
+            class="text-3xl font-black italic tracking-tight uppercase hover:opacity-80 transition cursor-pointer"
+            href="index.html"
+            >МОС<span class="text-red-500">НАУКА</span></a
+          >
+          <div class="flex items-center gap-6">
+            <div
+              class="text-xs uppercase tracking-[0.22em] text-zinc-400 hidden md:block"
+            >
+              Реестр компетенций
+            </div>
+            <a
+              class="px-6 py-2 border border-white/20 rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-white/10 transition"
+              href="index.html"
+              >← На главную</a
+            >
+          </div>
+        </div>
+      </header>
+      <main class="max-w-7xl mx-auto px-6 py-10">
+        <!-- Title -->
+        <div class="mb-10 text-center">
+          <div
+            class="text-[10px] uppercase tracking-[0.26em] text-red-500 font-black mb-2 inline-flex items-center gap-2 justify-center"
+          >
+            <span class="w-2 h-2 rounded-full mos-bg-red animate-pulse"></span>
+            456 Центров подтверждены
+          </div>
+          <h1
+            class="text-5xl md:text-7xl font-black italic tracking-tighter uppercase leading-none mb-4"
+          >
+            Навигатор <br />
+            <span>технологий</span>
+          </h1>
+          <p class="text-zinc-400 text-lg max-w-2xl mx-auto font-light">
+            Поиск по компетенциям, оборудованиям, доступным слотам и стоимости
+            контрактов.
+          </p>
+          <div class="max-w-3xl mx-auto mt-8 relative group">
+            <input
+              class="w-full bg-white/5 border border-white/20 rounded-full py-4 pl-12 pr-6 text-white text-sm outline-none focus:border-red-500 transition shadow-[0_0_30px_rgba(255,255,255,0.05)] group-focus-within:shadow-[0_0_30px_rgba(255,0,60,0.15)]"
+              placeholder="Укажите технологию, оборудование или тип задачи..."
+              type="text"
+            />
+            <i
+              class="ph ph-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-xl text-gray-500 group-focus-within:text-red-500 transition"
+            ></i>
+            <button
+              class="absolute right-2 top-1/2 -translate-y-1/2 px-6 py-2 mos-bg-red text-white text-xs font-black uppercase tracking-widest rounded-full hover:opacity-90 transition"
+            >
+              Найти
+            </button>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-8 mt-12">
+          <!-- Sidebar Filters -->
+          <aside class="space-y-6">
+            <div class="glass p-6 rounded-3xl">
+              <h3
+                class="text-xs font-black uppercase tracking-widest text-gray-400 mb-4 flex items-center justify-between"
+              >
+                Тип организации <i class="ph ph-caret-down"></i>
+              </h3>
+              <div class="space-y-3">
+                <label class="flex items-center gap-3 cursor-pointer group">
+                  <input
+                    class="w-4 h-4 rounded bg-black border-white/20 text-red-500 focus:ring-red-500"
+                    type="checkbox"
+                  />
+                  <span
+                    class="text-sm font-medium text-gray-300 group-hover:text-white transition"
+                    >Университеты (ВУЗ)</span
+                  >
+                </label>
+                <label class="flex items-center gap-3 cursor-pointer group">
+                  <input
+                    class="w-4 h-4 rounded bg-black border-white/20 text-red-500 focus:ring-red-500"
+                    type="checkbox"
+                  />
+                  <span
+                    class="text-sm font-medium text-gray-300 group-hover:text-white transition"
+                    >НИИ и НЦ</span
+                  >
+                </label>
+                <label class="flex items-center gap-3 cursor-pointer group">
+                  <input
+                    class="w-4 h-4 rounded bg-black border-white/20 text-red-500 focus:ring-red-500"
+                    type="checkbox"
+                  />
+                  <span
+                    class="text-sm font-medium text-gray-300 group-hover:text-white transition"
+                    >Коммерческие (ООО)</span
+                  >
+                </label>
+              </div>
+            </div>
+            <div class="glass p-6 rounded-3xl">
+              <h3
+                class="text-xs font-black uppercase tracking-widest text-gray-400 mb-4 flex items-center justify-between"
+              >
+                Готовность <i class="ph ph-caret-down"></i>
+              </h3>
+              <div class="space-y-3">
+                <label class="flex items-center gap-3 cursor-pointer group">
+                  <input
+                    class="w-4 h-4 rounded bg-black border-white/20 text-red-500 focus:ring-red-500"
+                    type="checkbox"
+                  />
+                  <span
+                    class="text-sm font-medium text-gray-300 group-hover:text-white transition"
+                    >Свободно прямо сейчас</span
+                  >
+                </label>
+                <label class="flex items-center gap-3 cursor-pointer group">
+                  <input
+                    class="w-4 h-4 rounded bg-black border-white/20 text-red-500 focus:ring-red-500"
+                    type="checkbox"
+                  />
+                  <span
+                    class="text-sm font-medium text-gray-300 group-hover:text-white transition"
+                    >В течение месяца</span
+                  >
+                </label>
+              </div>
+            </div>
+          </aside>
+          <!-- Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div
+              class="card-item group relative p-8 border border-white/10 rounded-[2.5rem] bg-white/5 hover:border-red-500/50 hover:bg-white/[0.08] transition duration-500 flex flex-col justify-between cursor-pointer"
+              onclick="window.location.href = 'profile-org_1.html'"
+            >
+              <div>
+                <!-- Competencies Tags -->
+                <div class="flex flex-wrap justify-end gap-2 mb-6">
+                  <span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Исследования</span
+                  ><span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Работы</span
+                  ><span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Исследование</span
+                  ><span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Анализ</span
+                  >
+                </div>
+                <!-- Header -->
+                <h3
+                  class="text-2xl font-bold tracking-tight mb-6 leading-tight group-hover:text-red-500 transition-colors"
+                >
+                  МГУ им. М.В. Ломоносова
+                </h3>
+                <!-- Experience / Projects -->
+                <div class="space-y-4 mb-8">
+                  <div class="border-b border-white/10 pb-3 mb-3">
+                    <span
+                      class="text-gray-500 font-bold uppercase tracking-widest text-[9px] block mb-2"
+                      >Реализуемые проекты</span
+                    >
+                    <ul class="space-y-2 pb-2">
+                      <li
+                        class="text-xs text-gray-400 font-medium flex items-start gap-2"
+                      >
+                        <span class="text-red-500 mt-0.5 font-black">•</span
+                        ><span class="line-clamp-2"
+                          >Оценка влияния больших и маломерных судов на
+                          экосистему озера Байкал и прогноз допустимого их
+                          количества</span
+                        >
+                      </li>
+                      <li
+                        class="text-xs text-gray-400 font-medium flex items-start gap-2"
+                      >
+                        <span class="text-red-500 mt-0.5 font-black">•</span
+                        ><span class="line-clamp-2"
+                          >МАТЕМАТИЧЕСКОЕ МОДЕЛИРОВАНИЕ ГИДРОМЕТЕОРОЛОГИЧЕСКИХ
+                          ПРОЦЕССОВ ПРИ ОСВОЕНИИ НЕФТЕГАЗОВЫХ МЕСТОРОЖДЕНИЙ
+                          АРКТИЧЕСКОЙ ЗОНЫ</span
+                        >
+                      </li>
+                      <li
+                        class="text-xs text-gray-400 font-medium flex items-start gap-2"
+                      >
+                        <span class="text-red-500 mt-0.5 font-black">•</span
+                        ><span class="line-clamp-2"
+                          >Фармацевтическая разработка, доклиническое и
+                          клиническое исследования лекарственного препарата на
+                          основе секретома мезенхимных стромальных клеток (МСК)
+                          человека для лечения мужского бесплодия
+                          (продолжение)</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- Scientists / Capacity -->
+              <div
+                class="mt-auto pt-2 flex items-center justify-between border-t border-white/10 pt-4"
+              >
+                <div class="flex items-center gap-2">
+                  <div class="flex -space-x-1">
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                  </div>
+                  <span
+                    class="text-[10px] text-gray-400 font-bold uppercase tracking-widest ml-2"
+                    >Ведущий коллектив</span
+                  >
+                </div>
+                <div
+                  class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-gray-500 group-hover:bg-white/10 group-hover:text-white transition-colors duration-300"
+                >
+                  <i class="ph ph-arrow-right text-sm font-bold"></i>
+                </div>
+              </div>
+            </div>
+            <div
+              class="card-item group relative p-8 border border-white/10 rounded-[2.5rem] bg-white/5 hover:border-red-500/50 hover:bg-white/[0.08] transition duration-500 flex flex-col justify-between cursor-pointer"
+              onclick="window.location.href = 'profile-org_2.html'"
+            >
+              <div>
+                <!-- Competencies Tags -->
+                <div class="flex flex-wrap justify-end gap-2 mb-6">
+                  <span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Исследования</span
+                  ><span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Анализ</span
+                  ><span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Разработка</span
+                  ><span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Работы</span
+                  >
+                </div>
+                <!-- Header -->
+                <h3
+                  class="text-2xl font-bold tracking-tight mb-6 leading-tight group-hover:text-red-500 transition-colors"
+                >
+                  РУДН
+                </h3>
+                <!-- Experience / Projects -->
+                <div class="space-y-4 mb-8">
+                  <div class="border-b border-white/10 pb-3 mb-3">
+                    <span
+                      class="text-gray-500 font-bold uppercase tracking-widest text-[9px] block mb-2"
+                      >Реализуемые проекты</span
+                    >
+                    <ul class="space-y-2 pb-2">
+                      <li
+                        class="text-xs text-gray-400 font-medium flex items-start gap-2"
+                      >
+                        <span class="text-red-500 mt-0.5 font-black">•</span
+                        ><span class="line-clamp-2"
+                          >Спектроскопия и анализ молекулярных газов</span
+                        >
+                      </li>
+                      <li
+                        class="text-xs text-gray-400 font-medium flex items-start gap-2"
+                      >
+                        <span class="text-red-500 mt-0.5 font-black">•</span
+                        ><span class="line-clamp-2"
+                          >Проведение исследований по разработке методов
+                          баллистического проектирования и интеллектуального
+                          управления многоспутниковыми системами дистанционного
+                          зондирования Земли</span
+                        >
+                      </li>
+                      <li
+                        class="text-xs text-gray-400 font-medium flex items-start gap-2"
+                      >
+                        <span class="text-red-500 mt-0.5 font-black">•</span
+                        ><span class="line-clamp-2"
+                          >Нелинейные и нелокальные уравнения и их
+                          приложения</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- Scientists / Capacity -->
+              <div
+                class="mt-auto pt-2 flex items-center justify-between border-t border-white/10 pt-4"
+              >
+                <div class="flex items-center gap-2">
+                  <div class="flex -space-x-1">
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                  </div>
+                  <span
+                    class="text-[10px] text-gray-400 font-bold uppercase tracking-widest ml-2"
+                    >Ведущий коллектив</span
+                  >
+                </div>
+                <div
+                  class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-gray-500 group-hover:bg-white/10 group-hover:text-white transition-colors duration-300"
+                >
+                  <i class="ph ph-arrow-right text-sm font-bold"></i>
+                </div>
+              </div>
+            </div>
+            <div
+              class="card-item group relative p-8 border border-white/10 rounded-[2.5rem] bg-white/5 hover:border-red-500/50 hover:bg-white/[0.08] transition duration-500 flex flex-col justify-between cursor-pointer"
+              onclick="window.location.href = 'profile-org_3.html'"
+            >
+              <div>
+                <!-- Competencies Tags -->
+                <div class="flex flex-wrap justify-end gap-2 mb-6">
+                  <span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Карбида</span
+                  ><span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Никеля</span
+                  ><span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Титана</span
+                  ><span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Частиц</span
+                  >
+                </div>
+                <!-- Header -->
+                <h3
+                  class="text-2xl font-bold tracking-tight mb-6 leading-tight group-hover:text-red-500 transition-colors"
+                >
+                  МГТУ им. Н.Э. Баумана
+                </h3>
+                <!-- Experience / Projects -->
+                <div class="space-y-4 mb-8">
+                  <div class="border-b border-white/10 pb-3 mb-3">
+                    <span
+                      class="text-gray-500 font-bold uppercase tracking-widest text-[9px] block mb-2"
+                      >Реализуемые проекты</span
+                    >
+                    <ul class="space-y-2 pb-2">
+                      <li
+                        class="text-xs text-gray-400 font-medium flex items-start gap-2"
+                      >
+                        <span class="text-red-500 mt-0.5 font-black">•</span
+                        ><span class="line-clamp-2"
+                          >Изучение распространения и рассеяния упругих волн в
+                          слоистых анизотропных средах ограниченной толщины при
+                          наличии многочисленных неоднородностей с различным
+                          акустическим импедансом</span
+                        >
+                      </li>
+                      <li
+                        class="text-xs text-gray-400 font-medium flex items-start gap-2"
+                      >
+                        <span class="text-red-500 mt-0.5 font-black">•</span
+                        ><span class="line-clamp-2"
+                          >Физико-технологические основы применения
+                          высокоэнергетической обработки при изготовлении
+                          порошковых проволок для наплавки композиционных
+                          покрытий</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- Scientists / Capacity -->
+              <div
+                class="mt-auto pt-2 flex items-center justify-between border-t border-white/10 pt-4"
+              >
+                <div class="flex items-center gap-2">
+                  <div class="flex -space-x-1">
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                  </div>
+                  <span
+                    class="text-[10px] text-gray-400 font-bold uppercase tracking-widest ml-2"
+                    >Ведущий коллектив</span
+                  >
+                </div>
+                <div
+                  class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-gray-500 group-hover:bg-white/10 group-hover:text-white transition-colors duration-300"
+                >
+                  <i class="ph ph-arrow-right text-sm font-bold"></i>
+                </div>
+              </div>
+            </div>
+            <div
+              class="card-item group relative p-8 border border-white/10 rounded-[2.5rem] bg-white/5 hover:border-red-500/50 hover:bg-white/[0.08] transition duration-500 flex flex-col justify-between cursor-pointer"
+              onclick="window.location.href = 'profile-org_4.html'"
+            >
+              <div>
+                <!-- Competencies Tags -->
+                <div class="flex flex-wrap justify-end gap-2 mb-6">
+                  <span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >НИОКР</span
+                  ><span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Инновации</span
+                  >
+                </div>
+                <!-- Header -->
+                <h3
+                  class="text-2xl font-bold tracking-tight mb-6 leading-tight group-hover:text-red-500 transition-colors"
+                >
+                  РХТУ им. Д.И. Менделеева
+                </h3>
+                <!-- Experience / Projects -->
+                <div class="space-y-4 mb-8">
+                  <div class="border-b border-white/10 pb-3 mb-3">
+                    <span
+                      class="text-gray-500 font-bold uppercase tracking-widest text-[9px] block mb-2"
+                      >Реализуемые проекты</span
+                    >
+                    <ul class="space-y-2 pb-2">
+                      <li
+                        class="text-xs text-gray-400 font-medium flex items-start gap-2"
+                      >
+                        <span class="text-red-500 mt-0.5 font-black">•</span
+                        ><span class="line-clamp-2"
+                          >Комплексные научно-исследовательские работы</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- Scientists / Capacity -->
+              <div
+                class="mt-auto pt-2 flex items-center justify-between border-t border-white/10 pt-4"
+              >
+                <div class="flex items-center gap-2">
+                  <div class="flex -space-x-1">
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                  </div>
+                  <span
+                    class="text-[10px] text-gray-400 font-bold uppercase tracking-widest ml-2"
+                    >Ведущий коллектив</span
+                  >
+                </div>
+                <div
+                  class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-gray-500 group-hover:bg-white/10 group-hover:text-white transition-colors duration-300"
+                >
+                  <i class="ph ph-arrow-right text-sm font-bold"></i>
+                </div>
+              </div>
+            </div>
+            <div
+              class="card-item group relative p-8 border border-white/10 rounded-[2.5rem] bg-white/5 hover:border-red-500/50 hover:bg-white/[0.08] transition duration-500 flex flex-col justify-between cursor-pointer"
+              onclick="window.location.href = 'profile-org_5.html'"
+            >
+              <div>
+                <!-- Competencies Tags -->
+                <div class="flex flex-wrap justify-end gap-2 mb-6">
+                  <span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Работы</span
+                  ><span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Исследования</span
+                  ><span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Разработка</span
+                  ><span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Материалов</span
+                  >
+                </div>
+                <!-- Header -->
+                <h3
+                  class="text-2xl font-bold tracking-tight mb-6 leading-tight group-hover:text-red-500 transition-colors"
+                >
+                  МИРЭА
+                </h3>
+                <!-- Experience / Projects -->
+                <div class="space-y-4 mb-8">
+                  <div class="border-b border-white/10 pb-3 mb-3">
+                    <span
+                      class="text-gray-500 font-bold uppercase tracking-widest text-[9px] block mb-2"
+                      >Реализуемые проекты</span
+                    >
+                    <ul class="space-y-2 pb-2">
+                      <li
+                        class="text-xs text-gray-400 font-medium flex items-start gap-2"
+                      >
+                        <span class="text-red-500 mt-0.5 font-black">•</span
+                        ><span class="line-clamp-2"
+                          >Обеспечение качества высокотехнологичной продукции
+                          машиностроения на основе цифровых двойников
+                          технологических и производственных процессов</span
+                        >
+                      </li>
+                      <li
+                        class="text-xs text-gray-400 font-medium flex items-start gap-2"
+                      >
+                        <span class="text-red-500 mt-0.5 font-black">•</span
+                        ><span class="line-clamp-2"
+                          >Функциональные материалы для приборостроения</span
+                        >
+                      </li>
+                      <li
+                        class="text-xs text-gray-400 font-medium flex items-start gap-2"
+                      >
+                        <span class="text-red-500 mt-0.5 font-black">•</span
+                        ><span class="line-clamp-2"
+                          >Новые актуальные системы с ионами редкоземельных и
+                          переходных металлов для экологических, биологических и
+                          медицинских задач. От направленного дизайна до
+                          инновационных материалов (препаратов)</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- Scientists / Capacity -->
+              <div
+                class="mt-auto pt-2 flex items-center justify-between border-t border-white/10 pt-4"
+              >
+                <div class="flex items-center gap-2">
+                  <div class="flex -space-x-1">
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                  </div>
+                  <span
+                    class="text-[10px] text-gray-400 font-bold uppercase tracking-widest ml-2"
+                    >Ведущий коллектив</span
+                  >
+                </div>
+                <div
+                  class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-gray-500 group-hover:bg-white/10 group-hover:text-white transition-colors duration-300"
+                >
+                  <i class="ph ph-arrow-right text-sm font-bold"></i>
+                </div>
+              </div>
+            </div>
+            <div
+              class="card-item group relative p-8 border border-white/10 rounded-[2.5rem] bg-white/5 hover:border-red-500/50 hover:bg-white/[0.08] transition duration-500 flex flex-col justify-between cursor-pointer"
+              onclick="window.location.href = 'profile-org_6.html'"
+            >
+              <div>
+                <!-- Competencies Tags -->
+                <div class="flex flex-wrap justify-end gap-2 mb-6">
+                  <span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >НИОКР</span
+                  ><span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Инновации</span
+                  >
+                </div>
+                <!-- Header -->
+                <h3
+                  class="text-2xl font-bold tracking-tight mb-6 leading-tight group-hover:text-red-500 transition-colors"
+                >
+                  ЦАГИ
+                </h3>
+                <!-- Experience / Projects -->
+                <div class="space-y-4 mb-8">
+                  <div class="border-b border-white/10 pb-3 mb-3">
+                    <span
+                      class="text-gray-500 font-bold uppercase tracking-widest text-[9px] block mb-2"
+                      >Реализуемые проекты</span
+                    >
+                    <ul class="space-y-2 pb-2">
+                      <li
+                        class="text-xs text-gray-400 font-medium flex items-start gap-2"
+                      >
+                        <span class="text-red-500 mt-0.5 font-black">•</span
+                        ><span class="line-clamp-2"
+                          >Комплексные научно-исследовательские работы</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- Scientists / Capacity -->
+              <div
+                class="mt-auto pt-2 flex items-center justify-between border-t border-white/10 pt-4"
+              >
+                <div class="flex items-center gap-2">
+                  <div class="flex -space-x-1">
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                  </div>
+                  <span
+                    class="text-[10px] text-gray-400 font-bold uppercase tracking-widest ml-2"
+                    >Ведущий коллектив</span
+                  >
+                </div>
+                <div
+                  class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-gray-500 group-hover:bg-white/10 group-hover:text-white transition-colors duration-300"
+                >
+                  <i class="ph ph-arrow-right text-sm font-bold"></i>
+                </div>
+              </div>
+            </div>
+            <div
+              class="card-item group relative p-8 border border-white/10 rounded-[2.5rem] bg-white/5 hover:border-red-500/50 hover:bg-white/[0.08] transition duration-500 flex flex-col justify-between cursor-pointer"
+              onclick="window.location.href = 'profile-org_7.html'"
+            >
+              <div>
+                <!-- Competencies Tags -->
+                <div class="flex flex-wrap justify-end gap-2 mb-6">
+                  <span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >НИОКР</span
+                  ><span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Инновации</span
+                  >
+                </div>
+                <!-- Header -->
+                <h3
+                  class="text-2xl font-bold tracking-tight mb-6 leading-tight group-hover:text-red-500 transition-colors"
+                >
+                  НИЯУ МИФИ
+                </h3>
+                <!-- Experience / Projects -->
+                <div class="space-y-4 mb-8">
+                  <div class="border-b border-white/10 pb-3 mb-3">
+                    <span
+                      class="text-gray-500 font-bold uppercase tracking-widest text-[9px] block mb-2"
+                      >Реализуемые проекты</span
+                    >
+                    <ul class="space-y-2 pb-2">
+                      <li
+                        class="text-xs text-gray-400 font-medium flex items-start gap-2"
+                      >
+                        <span class="text-red-500 mt-0.5 font-black">•</span
+                        ><span class="line-clamp-2"
+                          >Комплексные научно-исследовательские работы</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- Scientists / Capacity -->
+              <div
+                class="mt-auto pt-2 flex items-center justify-between border-t border-white/10 pt-4"
+              >
+                <div class="flex items-center gap-2">
+                  <div class="flex -space-x-1">
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                  </div>
+                  <span
+                    class="text-[10px] text-gray-400 font-bold uppercase tracking-widest ml-2"
+                    >Ведущий коллектив</span
+                  >
+                </div>
+                <div
+                  class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-gray-500 group-hover:bg-white/10 group-hover:text-white transition-colors duration-300"
+                >
+                  <i class="ph ph-arrow-right text-sm font-bold"></i>
+                </div>
+              </div>
+            </div>
+            <div
+              class="card-item group relative p-8 border border-white/10 rounded-[2.5rem] bg-white/5 hover:border-red-500/50 hover:bg-white/[0.08] transition duration-500 flex flex-col justify-between cursor-pointer"
+              onclick="window.location.href = 'profile-org_8.html'"
+            >
+              <div>
+                <!-- Competencies Tags -->
+                <div class="flex flex-wrap justify-end gap-2 mb-6">
+                  <span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Исследования</span
+                  ><span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Разработка</span
+                  ><span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Основе</span
+                  ><span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Пациентов</span
+                  >
+                </div>
+                <!-- Header -->
+                <h3
+                  class="text-2xl font-bold tracking-tight mb-6 leading-tight group-hover:text-red-500 transition-colors"
+                >
+                  Первый МГМУ им. И.М. Сеченова
+                </h3>
+                <!-- Experience / Projects -->
+                <div class="space-y-4 mb-8">
+                  <div class="border-b border-white/10 pb-3 mb-3">
+                    <span
+                      class="text-gray-500 font-bold uppercase tracking-widest text-[9px] block mb-2"
+                      >Реализуемые проекты</span
+                    >
+                    <ul class="space-y-2 pb-2">
+                      <li
+                        class="text-xs text-gray-400 font-medium flex items-start gap-2"
+                      >
+                        <span class="text-red-500 mt-0.5 font-black">•</span
+                        ><span class="line-clamp-2"
+                          >Отчет по гранту на осуществление государственной
+                          поддержки создания и развития научных центров мирового
+                          уровня, выполняющих исследования и разработки по
+                          приоритетам научно-технологического развития на тему:
+                          Развернутый научный отчет Создание и развитие научного
+                          центра мирового уровня Цифровой биодизайн и
+                          персонализированное здравоохранение за 2024 г
+                          (заключительный) Этап 3</span
+                        >
+                      </li>
+                      <li
+                        class="text-xs text-gray-400 font-medium flex items-start gap-2"
+                      >
+                        <span class="text-red-500 mt-0.5 font-black">•</span
+                        ><span class="line-clamp-2"
+                          >ОТЧЕТ О НАУЧНО-ИССЛЕДОВАТЕЛЬСКОЙ РАБОТЕ
+                          МАКРОМОЛЕКУЛЯРНЫЙ ДИЗАЙН ПОЛИМЕРНЫХ МАТЕРИАЛОВ
+                          МЕДИЦИНСКОГО И ТЕХНИЧЕСКОГО НАЗНАЧЕНИЯ
+                          (промежуточный).</span
+                        >
+                      </li>
+                      <li
+                        class="text-xs text-gray-400 font-medium flex items-start gap-2"
+                      >
+                        <span class="text-red-500 mt-0.5 font-black">•</span
+                        ><span class="line-clamp-2"
+                          >Разработка технологии смарт биофабрикации для
+                          направленного формирования тканеинженерных конструкций
+                          (Промежуточный).</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- Scientists / Capacity -->
+              <div
+                class="mt-auto pt-2 flex items-center justify-between border-t border-white/10 pt-4"
+              >
+                <div class="flex items-center gap-2">
+                  <div class="flex -space-x-1">
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                  </div>
+                  <span
+                    class="text-[10px] text-gray-400 font-bold uppercase tracking-widest ml-2"
+                    >Ведущий коллектив</span
+                  >
+                </div>
+                <div
+                  class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-gray-500 group-hover:bg-white/10 group-hover:text-white transition-colors duration-300"
+                >
+                  <i class="ph ph-arrow-right text-sm font-bold"></i>
+                </div>
+              </div>
+            </div>
+            <div
+              class="card-item group relative p-8 border border-white/10 rounded-[2.5rem] bg-white/5 hover:border-red-500/50 hover:bg-white/[0.08] transition duration-500 flex flex-col justify-between cursor-pointer"
+              onclick="window.location.href = 'profile-org_9.html'"
+            >
+              <div>
+                <!-- Competencies Tags -->
+                <div class="flex flex-wrap justify-end gap-2 mb-6">
+                  <span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Основе</span
+                  ><span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Исследования</span
+                  ><span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Системы</span
+                  ><span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Разработка</span
+                  >
+                </div>
+                <!-- Header -->
+                <h3
+                  class="text-2xl font-bold tracking-tight mb-6 leading-tight group-hover:text-red-500 transition-colors"
+                >
+                  МАИ
+                </h3>
+                <!-- Experience / Projects -->
+                <div class="space-y-4 mb-8">
+                  <div class="border-b border-white/10 pb-3 mb-3">
+                    <span
+                      class="text-gray-500 font-bold uppercase tracking-widest text-[9px] block mb-2"
+                      >Реализуемые проекты</span
+                    >
+                    <ul class="space-y-2 pb-2">
+                      <li
+                        class="text-xs text-gray-400 font-medium flex items-start gap-2"
+                      >
+                        <span class="text-red-500 mt-0.5 font-black">•</span
+                        ><span class="line-clamp-2"
+                          >Разработка комплекса методов и технологий обеспечения
+                          прочности деталей планеров и двигателей самолетов
+                          нового поколения из перспективных материалов на основе
+                          многомасштабной цифровой расчетно-экспериментальной
+                          корреляции</span
+                        >
+                      </li>
+                      <li
+                        class="text-xs text-gray-400 font-medium flex items-start gap-2"
+                      >
+                        <span class="text-red-500 mt-0.5 font-black">•</span
+                        ><span class="line-clamp-2"
+                          >Развернутый заключительный отчет о реализации
+                          программы создания и развития центра НЦМУ «Сверхзвук»
+                          за 2024 год</span
+                        >
+                      </li>
+                      <li
+                        class="text-xs text-gray-400 font-medium flex items-start gap-2"
+                      >
+                        <span class="text-red-500 mt-0.5 font-black">•</span
+                        ><span class="line-clamp-2"
+                          >Формирование исходных данных для создания
+                          демонстратора ГСУ, проведение предварительных
+                          расчетов, формирование требований к компьютерным
+                          моделям основных узлов и систем ГСУ</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- Scientists / Capacity -->
+              <div
+                class="mt-auto pt-2 flex items-center justify-between border-t border-white/10 pt-4"
+              >
+                <div class="flex items-center gap-2">
+                  <div class="flex -space-x-1">
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                  </div>
+                  <span
+                    class="text-[10px] text-gray-400 font-bold uppercase tracking-widest ml-2"
+                    >Ведущий коллектив</span
+                  >
+                </div>
+                <div
+                  class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-gray-500 group-hover:bg-white/10 group-hover:text-white transition-colors duration-300"
+                >
+                  <i class="ph ph-arrow-right text-sm font-bold"></i>
+                </div>
+              </div>
+            </div>
+            <div
+              class="card-item group relative p-8 border border-white/10 rounded-[2.5rem] bg-white/5 hover:border-red-500/50 hover:bg-white/[0.08] transition duration-500 flex flex-col justify-between cursor-pointer"
+              onclick="window.location.href = 'profile-org_10.html'"
+            >
+              <div>
+                <!-- Competencies Tags -->
+                <div class="flex flex-wrap justify-end gap-2 mb-6">
+                  <span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >НИОКР</span
+                  ><span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Инновации</span
+                  >
+                </div>
+                <!-- Header -->
+                <h3
+                  class="text-2xl font-bold tracking-tight mb-6 leading-tight group-hover:text-red-500 transition-colors"
+                >
+                  ФИЦ Биотехнологии РАН
+                </h3>
+                <!-- Experience / Projects -->
+                <div class="space-y-4 mb-8">
+                  <div class="border-b border-white/10 pb-3 mb-3">
+                    <span
+                      class="text-gray-500 font-bold uppercase tracking-widest text-[9px] block mb-2"
+                      >Реализуемые проекты</span
+                    >
+                    <ul class="space-y-2 pb-2">
+                      <li
+                        class="text-xs text-gray-400 font-medium flex items-start gap-2"
+                      >
+                        <span class="text-red-500 mt-0.5 font-black">•</span
+                        ><span class="line-clamp-2"
+                          >Комплексные научно-исследовательские работы</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- Scientists / Capacity -->
+              <div
+                class="mt-auto pt-2 flex items-center justify-between border-t border-white/10 pt-4"
+              >
+                <div class="flex items-center gap-2">
+                  <div class="flex -space-x-1">
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                  </div>
+                  <span
+                    class="text-[10px] text-gray-400 font-bold uppercase tracking-widest ml-2"
+                    >Ведущий коллектив</span
+                  >
+                </div>
+                <div
+                  class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-gray-500 group-hover:bg-white/10 group-hover:text-white transition-colors duration-300"
+                >
+                  <i class="ph ph-arrow-right text-sm font-bold"></i>
+                </div>
+              </div>
+            </div>
+            <div
+              class="card-item group relative p-8 border border-white/10 rounded-[2.5rem] bg-white/5 hover:border-red-500/50 hover:bg-white/[0.08] transition duration-500 flex flex-col justify-between cursor-pointer"
+              onclick="window.location.href = 'profile-org_11.html'"
+            >
+              <div>
+                <!-- Competencies Tags -->
+                <div class="flex flex-wrap justify-end gap-2 mb-6">
+                  <span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >НИОКР</span
+                  ><span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Инновации</span
+                  >
+                </div>
+                <!-- Header -->
+                <h3
+                  class="text-2xl font-bold tracking-tight mb-6 leading-tight group-hover:text-red-500 transition-colors"
+                >
+                  ИОНХ им. Н.С. Курнакова РАН
+                </h3>
+                <!-- Experience / Projects -->
+                <div class="space-y-4 mb-8">
+                  <div class="border-b border-white/10 pb-3 mb-3">
+                    <span
+                      class="text-gray-500 font-bold uppercase tracking-widest text-[9px] block mb-2"
+                      >Реализуемые проекты</span
+                    >
+                    <ul class="space-y-2 pb-2">
+                      <li
+                        class="text-xs text-gray-400 font-medium flex items-start gap-2"
+                      >
+                        <span class="text-red-500 mt-0.5 font-black">•</span
+                        ><span class="line-clamp-2"
+                          >Комплексные научно-исследовательские работы</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- Scientists / Capacity -->
+              <div
+                class="mt-auto pt-2 flex items-center justify-between border-t border-white/10 pt-4"
+              >
+                <div class="flex items-center gap-2">
+                  <div class="flex -space-x-1">
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                  </div>
+                  <span
+                    class="text-[10px] text-gray-400 font-bold uppercase tracking-widest ml-2"
+                    >Ведущий коллектив</span
+                  >
+                </div>
+                <div
+                  class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-gray-500 group-hover:bg-white/10 group-hover:text-white transition-colors duration-300"
+                >
+                  <i class="ph ph-arrow-right text-sm font-bold"></i>
+                </div>
+              </div>
+            </div>
+            <div
+              class="card-item group relative p-8 border border-white/10 rounded-[2.5rem] bg-white/5 hover:border-red-500/50 hover:bg-white/[0.08] transition duration-500 flex flex-col justify-between cursor-pointer"
+              onclick="window.location.href = 'profile-org_12.html'"
+            >
+              <div>
+                <!-- Competencies Tags -->
+                <div class="flex flex-wrap justify-end gap-2 mb-6">
+                  <span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >НИОКР</span
+                  ><span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Инновации</span
+                  >
+                </div>
+                <!-- Header -->
+                <h3
+                  class="text-2xl font-bold tracking-tight mb-6 leading-tight group-hover:text-red-500 transition-colors"
+                >
+                  ИНХС им. А.В. Топчиева РАН
+                </h3>
+                <!-- Experience / Projects -->
+                <div class="space-y-4 mb-8">
+                  <div class="border-b border-white/10 pb-3 mb-3">
+                    <span
+                      class="text-gray-500 font-bold uppercase tracking-widest text-[9px] block mb-2"
+                      >Реализуемые проекты</span
+                    >
+                    <ul class="space-y-2 pb-2">
+                      <li
+                        class="text-xs text-gray-400 font-medium flex items-start gap-2"
+                      >
+                        <span class="text-red-500 mt-0.5 font-black">•</span
+                        ><span class="line-clamp-2"
+                          >Комплексные научно-исследовательские работы</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- Scientists / Capacity -->
+              <div
+                class="mt-auto pt-2 flex items-center justify-between border-t border-white/10 pt-4"
+              >
+                <div class="flex items-center gap-2">
+                  <div class="flex -space-x-1">
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                  </div>
+                  <span
+                    class="text-[10px] text-gray-400 font-bold uppercase tracking-widest ml-2"
+                    >Ведущий коллектив</span
+                  >
+                </div>
+                <div
+                  class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-gray-500 group-hover:bg-white/10 group-hover:text-white transition-colors duration-300"
+                >
+                  <i class="ph ph-arrow-right text-sm font-bold"></i>
+                </div>
+              </div>
+            </div>
+            <div
+              class="card-item group relative p-8 border border-white/10 rounded-[2.5rem] bg-white/5 hover:border-red-500/50 hover:bg-white/[0.08] transition duration-500 flex flex-col justify-between cursor-pointer"
+              onclick="window.location.href = 'profile-org_13.html'"
+            >
+              <div>
+                <!-- Competencies Tags -->
+                <div class="flex flex-wrap justify-end gap-2 mb-6">
+                  <span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >НИОКР</span
+                  ><span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Инновации</span
+                  >
+                </div>
+                <!-- Header -->
+                <h3
+                  class="text-2xl font-bold tracking-tight mb-6 leading-tight group-hover:text-red-500 transition-colors"
+                >
+                  ИФХЭ им. А.Н. Фрумкина РАН
+                </h3>
+                <!-- Experience / Projects -->
+                <div class="space-y-4 mb-8">
+                  <div class="border-b border-white/10 pb-3 mb-3">
+                    <span
+                      class="text-gray-500 font-bold uppercase tracking-widest text-[9px] block mb-2"
+                      >Реализуемые проекты</span
+                    >
+                    <ul class="space-y-2 pb-2">
+                      <li
+                        class="text-xs text-gray-400 font-medium flex items-start gap-2"
+                      >
+                        <span class="text-red-500 mt-0.5 font-black">•</span
+                        ><span class="line-clamp-2"
+                          >Комплексные научно-исследовательские работы</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- Scientists / Capacity -->
+              <div
+                class="mt-auto pt-2 flex items-center justify-between border-t border-white/10 pt-4"
+              >
+                <div class="flex items-center gap-2">
+                  <div class="flex -space-x-1">
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                  </div>
+                  <span
+                    class="text-[10px] text-gray-400 font-bold uppercase tracking-widest ml-2"
+                    >Ведущий коллектив</span
+                  >
+                </div>
+                <div
+                  class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-gray-500 group-hover:bg-white/10 group-hover:text-white transition-colors duration-300"
+                >
+                  <i class="ph ph-arrow-right text-sm font-bold"></i>
+                </div>
+              </div>
+            </div>
+            <div
+              class="card-item group relative p-8 border border-white/10 rounded-[2.5rem] bg-white/5 hover:border-red-500/50 hover:bg-white/[0.08] transition duration-500 flex flex-col justify-between cursor-pointer"
+              onclick="window.location.href = 'profile-org_14.html'"
+            >
+              <div>
+                <!-- Competencies Tags -->
+                <div class="flex flex-wrap justify-end gap-2 mb-6">
+                  <span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Материалов</span
+                  ><span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Основе</span
+                  ><span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Исследования</span
+                  ><span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Исследование</span
+                  >
+                </div>
+                <!-- Header -->
+                <h3
+                  class="text-2xl font-bold tracking-tight mb-6 leading-tight group-hover:text-red-500 transition-colors"
+                >
+                  Институт биохимической физики РАН
+                </h3>
+                <!-- Experience / Projects -->
+                <div class="space-y-4 mb-8">
+                  <div class="border-b border-white/10 pb-3 mb-3">
+                    <span
+                      class="text-gray-500 font-bold uppercase tracking-widest text-[9px] block mb-2"
+                      >Реализуемые проекты</span
+                    >
+                    <ul class="space-y-2 pb-2">
+                      <li
+                        class="text-xs text-gray-400 font-medium flex items-start gap-2"
+                      >
+                        <span class="text-red-500 mt-0.5 font-black">•</span
+                        ><span class="line-clamp-2"
+                          >Создание химико-аналитических систем на основе
+                          сверхчувствительных методов нанофотоники для
+                          мониторинга биологических рисков и предотвращения
+                          связанных с ними угроз.</span
+                        >
+                      </li>
+                      <li
+                        class="text-xs text-gray-400 font-medium flex items-start gap-2"
+                      >
+                        <span class="text-red-500 mt-0.5 font-black">•</span
+                        ><span class="line-clamp-2"
+                          >44.4. Комплексное изучение механизмов и эффектов
+                          действия природных и синтетических антиоксидантов,
+                          противоопухолевых препаратов, химических и физических
+                          факторов. Разработка новых методов терапии и
+                          диагностики социально-значимых заболеваний</span
+                        >
+                      </li>
+                      <li
+                        class="text-xs text-gray-400 font-medium flex items-start gap-2"
+                      >
+                        <span class="text-red-500 mt-0.5 font-black">•</span
+                        ><span class="line-clamp-2"
+                          >44.2. Физико-химические основы и принципы
+                          функционирования биологических макромолекул,
+                          регуляторных и надмолекулярных систем различной
+                          степени сложности; новые методы исследования,
+                          использование в современных высоких технологиях</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- Scientists / Capacity -->
+              <div
+                class="mt-auto pt-2 flex items-center justify-between border-t border-white/10 pt-4"
+              >
+                <div class="flex items-center gap-2">
+                  <div class="flex -space-x-1">
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                  </div>
+                  <span
+                    class="text-[10px] text-gray-400 font-bold uppercase tracking-widest ml-2"
+                    >Ведущий коллектив</span
+                  >
+                </div>
+                <div
+                  class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-gray-500 group-hover:bg-white/10 group-hover:text-white transition-colors duration-300"
+                >
+                  <i class="ph ph-arrow-right text-sm font-bold"></i>
+                </div>
+              </div>
+            </div>
+            <div
+              class="card-item group relative p-8 border border-white/10 rounded-[2.5rem] bg-white/5 hover:border-red-500/50 hover:bg-white/[0.08] transition duration-500 flex flex-col justify-between cursor-pointer"
+              onclick="window.location.href = 'profile-org_15.html'"
+            >
+              <div>
+                <!-- Competencies Tags -->
+                <div class="flex flex-wrap justify-end gap-2 mb-6">
+                  <span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >НИОКР</span
+                  ><span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Инновации</span
+                  >
+                </div>
+                <!-- Header -->
+                <h3
+                  class="text-2xl font-bold tracking-tight mb-6 leading-tight group-hover:text-red-500 transition-colors"
+                >
+                  Сколтех
+                </h3>
+                <!-- Experience / Projects -->
+                <div class="space-y-4 mb-8">
+                  <div class="border-b border-white/10 pb-3 mb-3">
+                    <span
+                      class="text-gray-500 font-bold uppercase tracking-widest text-[9px] block mb-2"
+                      >Реализуемые проекты</span
+                    >
+                    <ul class="space-y-2 pb-2">
+                      <li
+                        class="text-xs text-gray-400 font-medium flex items-start gap-2"
+                      >
+                        <span class="text-red-500 mt-0.5 font-black">•</span
+                        ><span class="line-clamp-2"
+                          >Комплексные научно-исследовательские работы</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- Scientists / Capacity -->
+              <div
+                class="mt-auto pt-2 flex items-center justify-between border-t border-white/10 pt-4"
+              >
+                <div class="flex items-center gap-2">
+                  <div class="flex -space-x-1">
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                  </div>
+                  <span
+                    class="text-[10px] text-gray-400 font-bold uppercase tracking-widest ml-2"
+                    >Ведущий коллектив</span
+                  >
+                </div>
+                <div
+                  class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-gray-500 group-hover:bg-white/10 group-hover:text-white transition-colors duration-300"
+                >
+                  <i class="ph ph-arrow-right text-sm font-bold"></i>
+                </div>
+              </div>
+            </div>
+            <div
+              class="card-item group relative p-8 border border-white/10 rounded-[2.5rem] bg-white/5 hover:border-red-500/50 hover:bg-white/[0.08] transition duration-500 flex flex-col justify-between cursor-pointer"
+              onclick="window.location.href = 'profile-org_16.html'"
+            >
+              <div>
+                <!-- Competencies Tags -->
+                <div class="flex flex-wrap justify-end gap-2 mb-6">
+                  <span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Исследования</span
+                  ><span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Основе</span
+                  ><span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Работы</span
+                  ><span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Научно</span
+                  >
+                </div>
+                <!-- Header -->
+                <h3
+                  class="text-2xl font-bold tracking-tight mb-6 leading-tight group-hover:text-red-500 transition-colors"
+                >
+                  НИТУ МИСИС
+                </h3>
+                <!-- Experience / Projects -->
+                <div class="space-y-4 mb-8">
+                  <div class="border-b border-white/10 pb-3 mb-3">
+                    <span
+                      class="text-gray-500 font-bold uppercase tracking-widest text-[9px] block mb-2"
+                      >Реализуемые проекты</span
+                    >
+                    <ul class="space-y-2 pb-2">
+                      <li
+                        class="text-xs text-gray-400 font-medium flex items-start gap-2"
+                      >
+                        <span class="text-red-500 mt-0.5 font-black">•</span
+                        ><span class="line-clamp-2"
+                          >НАУЧНЫЙ ОТЧЕТ Стратегический проект № СП2-П01
+                          Квантовый интернет «Квантовый интернет: квантовые
+                          вычислители, передача состояния, спутниковая квантовая
+                          коммуникация» по теме НИР № В523015: В рамках
+                          реализации программы стратегического академического
+                          лидерства «Приоритет-2030» и мероприятий направленных
+                          на проведение прорывных научных исследований и
+                          создание наукоемкой продукции и технологий,
+                          наращивание кадрового потенциала сектора исследований
+                          и разработок, Этап 1 (09.01.2024 – 31.12.2024),
+                          заключительный</span
+                        >
+                      </li>
+                      <li
+                        class="text-xs text-gray-400 font-medium flex items-start gap-2"
+                      >
+                        <span class="text-red-500 mt-0.5 font-black">•</span
+                        ><span class="line-clamp-2"
+                          >Научный отчет Стратегический проекта №СП3-П01
+                          Биомедицинские материалы и биоинженерия по теме НИР
+                          №В523015 Разработка и исследование материалов
+                          медицинского назначения и медицинских устройств на их
+                          основе Этап 4 (01.01.2024-31.12.2024),
+                          заключительный</span
+                        >
+                      </li>
+                      <li
+                        class="text-xs text-gray-400 font-medium flex items-start gap-2"
+                      >
+                        <span class="text-red-500 mt-0.5 font-black">•</span
+                        ><span class="line-clamp-2"
+                          >Отчет о выполненных раобтах по реализации проекта
+                          Нанобиотехнологические подходы для исследования
+                          механизмов возникновения и регуляции дисфункций мозга
+                          c использованием уникальной научной установки
+                          Сканирующий ион-проводящий микроскоп с конфокальным
+                          модулем, заключительный, этап 3</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- Scientists / Capacity -->
+              <div
+                class="mt-auto pt-2 flex items-center justify-between border-t border-white/10 pt-4"
+              >
+                <div class="flex items-center gap-2">
+                  <div class="flex -space-x-1">
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                  </div>
+                  <span
+                    class="text-[10px] text-gray-400 font-bold uppercase tracking-widest ml-2"
+                    >Ведущий коллектив</span
+                  >
+                </div>
+                <div
+                  class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-gray-500 group-hover:bg-white/10 group-hover:text-white transition-colors duration-300"
+                >
+                  <i class="ph ph-arrow-right text-sm font-bold"></i>
+                </div>
+              </div>
+            </div>
+            <div
+              class="card-item group relative p-8 border border-white/10 rounded-[2.5rem] bg-white/5 hover:border-red-500/50 hover:bg-white/[0.08] transition duration-500 flex flex-col justify-between cursor-pointer"
+              onclick="window.location.href = 'profile-org_17.html'"
+            >
+              <div>
+                <!-- Competencies Tags -->
+                <div class="flex flex-wrap justify-end gap-2 mb-6">
+                  <span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >НИОКР</span
+                  ><span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Инновации</span
+                  >
+                </div>
+                <!-- Header -->
+                <h3
+                  class="text-2xl font-bold tracking-tight mb-6 leading-tight group-hover:text-red-500 transition-colors"
+                >
+                  Химический факультет МГУ
+                </h3>
+                <!-- Experience / Projects -->
+                <div class="space-y-4 mb-8">
+                  <div class="border-b border-white/10 pb-3 mb-3">
+                    <span
+                      class="text-gray-500 font-bold uppercase tracking-widest text-[9px] block mb-2"
+                      >Реализуемые проекты</span
+                    >
+                    <ul class="space-y-2 pb-2">
+                      <li
+                        class="text-xs text-gray-400 font-medium flex items-start gap-2"
+                      >
+                        <span class="text-red-500 mt-0.5 font-black">•</span
+                        ><span class="line-clamp-2"
+                          >Комплексные научно-исследовательские работы</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- Scientists / Capacity -->
+              <div
+                class="mt-auto pt-2 flex items-center justify-between border-t border-white/10 pt-4"
+              >
+                <div class="flex items-center gap-2">
+                  <div class="flex -space-x-1">
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                  </div>
+                  <span
+                    class="text-[10px] text-gray-400 font-bold uppercase tracking-widest ml-2"
+                    >Ведущий коллектив</span
+                  >
+                </div>
+                <div
+                  class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-gray-500 group-hover:bg-white/10 group-hover:text-white transition-colors duration-300"
+                >
+                  <i class="ph ph-arrow-right text-sm font-bold"></i>
+                </div>
+              </div>
+            </div>
+            <div
+              class="card-item group relative p-8 border border-white/10 rounded-[2.5rem] bg-white/5 hover:border-red-500/50 hover:bg-white/[0.08] transition duration-500 flex flex-col justify-between cursor-pointer"
+              onclick="window.location.href = 'profile-org_18.html'"
+            >
+              <div>
+                <!-- Competencies Tags -->
+                <div class="flex flex-wrap justify-end gap-2 mb-6">
+                  <span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >НИОКР</span
+                  ><span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Инновации</span
+                  >
+                </div>
+                <!-- Header -->
+                <h3
+                  class="text-2xl font-bold tracking-tight mb-6 leading-tight group-hover:text-red-500 transition-colors"
+                >
+                  ИБХ им. М.М. Шемякина и Ю.А. Овчинникова
+                </h3>
+                <!-- Experience / Projects -->
+                <div class="space-y-4 mb-8">
+                  <div class="border-b border-white/10 pb-3 mb-3">
+                    <span
+                      class="text-gray-500 font-bold uppercase tracking-widest text-[9px] block mb-2"
+                      >Реализуемые проекты</span
+                    >
+                    <ul class="space-y-2 pb-2">
+                      <li
+                        class="text-xs text-gray-400 font-medium flex items-start gap-2"
+                      >
+                        <span class="text-red-500 mt-0.5 font-black">•</span
+                        ><span class="line-clamp-2"
+                          >Комплексные научно-исследовательские работы</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- Scientists / Capacity -->
+              <div
+                class="mt-auto pt-2 flex items-center justify-between border-t border-white/10 pt-4"
+              >
+                <div class="flex items-center gap-2">
+                  <div class="flex -space-x-1">
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                  </div>
+                  <span
+                    class="text-[10px] text-gray-400 font-bold uppercase tracking-widest ml-2"
+                    >Ведущий коллектив</span
+                  >
+                </div>
+                <div
+                  class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-gray-500 group-hover:bg-white/10 group-hover:text-white transition-colors duration-300"
+                >
+                  <i class="ph ph-arrow-right text-sm font-bold"></i>
+                </div>
+              </div>
+            </div>
+            <div
+              class="card-item group relative p-8 border border-white/10 rounded-[2.5rem] bg-white/5 hover:border-red-500/50 hover:bg-white/[0.08] transition duration-500 flex flex-col justify-between cursor-pointer"
+              onclick="window.location.href = 'profile-org_19.html'"
+            >
+              <div>
+                <!-- Competencies Tags -->
+                <div class="flex flex-wrap justify-end gap-2 mb-6">
+                  <span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >НИОКР</span
+                  ><span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Инновации</span
+                  >
+                </div>
+                <!-- Header -->
+                <h3
+                  class="text-2xl font-bold tracking-tight mb-6 leading-tight group-hover:text-red-500 transition-colors"
+                >
+                  НИУ МЭИ
+                </h3>
+                <!-- Experience / Projects -->
+                <div class="space-y-4 mb-8">
+                  <div class="border-b border-white/10 pb-3 mb-3">
+                    <span
+                      class="text-gray-500 font-bold uppercase tracking-widest text-[9px] block mb-2"
+                      >Реализуемые проекты</span
+                    >
+                    <ul class="space-y-2 pb-2">
+                      <li
+                        class="text-xs text-gray-400 font-medium flex items-start gap-2"
+                      >
+                        <span class="text-red-500 mt-0.5 font-black">•</span
+                        ><span class="line-clamp-2"
+                          >Комплексные научно-исследовательские работы</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- Scientists / Capacity -->
+              <div
+                class="mt-auto pt-2 flex items-center justify-between border-t border-white/10 pt-4"
+              >
+                <div class="flex items-center gap-2">
+                  <div class="flex -space-x-1">
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                  </div>
+                  <span
+                    class="text-[10px] text-gray-400 font-bold uppercase tracking-widest ml-2"
+                    >Ведущий коллектив</span
+                  >
+                </div>
+                <div
+                  class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-gray-500 group-hover:bg-white/10 group-hover:text-white transition-colors duration-300"
+                >
+                  <i class="ph ph-arrow-right text-sm font-bold"></i>
+                </div>
+              </div>
+            </div>
+            <div
+              class="card-item group relative p-8 border border-white/10 rounded-[2.5rem] bg-white/5 hover:border-red-500/50 hover:bg-white/[0.08] transition duration-500 flex flex-col justify-between cursor-pointer"
+              onclick="window.location.href = 'profile-org_20.html'"
+            >
+              <div>
+                <!-- Competencies Tags -->
+                <div class="flex flex-wrap justify-end gap-2 mb-6">
+                  <span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Соединений</span
+                  ><span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Синтеза</span
+                  ><span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Методов</span
+                  ><span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Органических</span
+                  >
+                </div>
+                <!-- Header -->
+                <h3
+                  class="text-2xl font-bold tracking-tight mb-6 leading-tight group-hover:text-red-500 transition-colors"
+                >
+                  ИОХ им. Н.Д. Зелинского РАН
+                </h3>
+                <!-- Experience / Projects -->
+                <div class="space-y-4 mb-8">
+                  <div class="border-b border-white/10 pb-3 mb-3">
+                    <span
+                      class="text-gray-500 font-bold uppercase tracking-widest text-[9px] block mb-2"
+                      >Реализуемые проекты</span
+                    >
+                    <ul class="space-y-2 pb-2">
+                      <li
+                        class="text-xs text-gray-400 font-medium flex items-start gap-2"
+                      >
+                        <span class="text-red-500 mt-0.5 font-black">•</span
+                        ><span class="line-clamp-2"
+                          >Разработка и совершенствование экологически
+                          безопасных селективных методов синтеза органических
+                          соединений (включая высокомолекулярные) с целью
+                          создания на их основе перспективных материалов (в том
+                          числе наноматериалов) с высокими эксплуатационными
+                          параметрами для использования в биологии, медицине,
+                          сельском хозяйстве и различных отраслях техники.</span
+                        >
+                      </li>
+                      <li
+                        class="text-xs text-gray-400 font-medium flex items-start gap-2"
+                      >
+                        <span class="text-red-500 mt-0.5 font-black">•</span
+                        ><span class="line-clamp-2"
+                          >Cоздание фундаментальных основ рационального дизайна
+                          нового поколения каталитических систем для
+                          высокоэффективных и экологически безопасных процессов
+                          получения энергии и моторных топлив, органического
+                          синтеза, защиты окружающей среды и глубокой
+                          переработки природного и альтернативного
+                          углеродсодержащего сырья в ценные химические
+                          продукты.</span
+                        >
+                      </li>
+                      <li
+                        class="text-xs text-gray-400 font-medium flex items-start gap-2"
+                      >
+                        <span class="text-red-500 mt-0.5 font-black">•</span
+                        ><span class="line-clamp-2"
+                          >Атомэкономный, регио- и стереонаправленный синтез,
+                          структурный и конформационный анализ природных
+                          соединений и их аналогов для создания новых
+                          лекарственных веществ и материалов, включая
+                          молекулярные пробы для фундаментальных исследованиях
+                          живых систем.</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- Scientists / Capacity -->
+              <div
+                class="mt-auto pt-2 flex items-center justify-between border-t border-white/10 pt-4"
+              >
+                <div class="flex items-center gap-2">
+                  <div class="flex -space-x-1">
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                  </div>
+                  <span
+                    class="text-[10px] text-gray-400 font-bold uppercase tracking-widest ml-2"
+                    >Ведущий коллектив</span
+                  >
+                </div>
+                <div
+                  class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-gray-500 group-hover:bg-white/10 group-hover:text-white transition-colors duration-300"
+                >
+                  <i class="ph ph-arrow-right text-sm font-bold"></i>
+                </div>
+              </div>
+            </div>
+            <div
+              class="card-item group relative p-8 border border-white/10 rounded-[2.5rem] bg-white/5 hover:border-red-500/50 hover:bg-white/[0.08] transition duration-500 flex flex-col justify-between cursor-pointer"
+              onclick="window.location.href = 'profile-org_21.html'"
+            >
+              <div>
+                <!-- Competencies Tags -->
+                <div class="flex flex-wrap justify-end gap-2 mb-6">
+                  <span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >НИОКР</span
+                  ><span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Инновации</span
+                  >
+                </div>
+                <!-- Header -->
+                <h3
+                  class="text-2xl font-bold tracking-tight mb-6 leading-tight group-hover:text-red-500 transition-colors"
+                >
+                  ООО "АССИГНА"
+                </h3>
+                <!-- Experience / Projects -->
+                <div class="space-y-4 mb-8">
+                  <div class="border-b border-white/10 pb-3 mb-3">
+                    <span
+                      class="text-gray-500 font-bold uppercase tracking-widest text-[9px] block mb-2"
+                      >Реализуемые проекты</span
+                    >
+                    <ul class="space-y-2 pb-2">
+                      <li
+                        class="text-xs text-gray-400 font-medium flex items-start gap-2"
+                      >
+                        <span class="text-red-500 mt-0.5 font-black">•</span
+                        ><span class="line-clamp-2"
+                          >Комплексные научно-исследовательские работы</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- Scientists / Capacity -->
+              <div
+                class="mt-auto pt-2 flex items-center justify-between border-t border-white/10 pt-4"
+              >
+                <div class="flex items-center gap-2">
+                  <div class="flex -space-x-1">
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                  </div>
+                  <span
+                    class="text-[10px] text-gray-400 font-bold uppercase tracking-widest ml-2"
+                    >Ведущий коллектив</span
+                  >
+                </div>
+                <div
+                  class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-gray-500 group-hover:bg-white/10 group-hover:text-white transition-colors duration-300"
+                >
+                  <i class="ph ph-arrow-right text-sm font-bold"></i>
+                </div>
+              </div>
+            </div>
+            <div
+              class="card-item group relative p-8 border border-white/10 rounded-[2.5rem] bg-white/5 hover:border-red-500/50 hover:bg-white/[0.08] transition duration-500 flex flex-col justify-between cursor-pointer"
+              onclick="window.location.href = 'profile-org_22.html'"
+            >
+              <div>
+                <!-- Competencies Tags -->
+                <div class="flex flex-wrap justify-end gap-2 mb-6">
+                  <span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >НИОКР</span
+                  ><span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Инновации</span
+                  >
+                </div>
+                <!-- Header -->
+                <h3
+                  class="text-2xl font-bold tracking-tight mb-6 leading-tight group-hover:text-red-500 transition-colors"
+                >
+                  ООО "БЕСПИЛОТНЫЙ ПОГРУЗЧИК"
+                </h3>
+                <!-- Experience / Projects -->
+                <div class="space-y-4 mb-8">
+                  <div class="border-b border-white/10 pb-3 mb-3">
+                    <span
+                      class="text-gray-500 font-bold uppercase tracking-widest text-[9px] block mb-2"
+                      >Реализуемые проекты</span
+                    >
+                    <ul class="space-y-2 pb-2">
+                      <li
+                        class="text-xs text-gray-400 font-medium flex items-start gap-2"
+                      >
+                        <span class="text-red-500 mt-0.5 font-black">•</span
+                        ><span class="line-clamp-2"
+                          >Комплексные научно-исследовательские работы</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- Scientists / Capacity -->
+              <div
+                class="mt-auto pt-2 flex items-center justify-between border-t border-white/10 pt-4"
+              >
+                <div class="flex items-center gap-2">
+                  <div class="flex -space-x-1">
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                  </div>
+                  <span
+                    class="text-[10px] text-gray-400 font-bold uppercase tracking-widest ml-2"
+                    >Ведущий коллектив</span
+                  >
+                </div>
+                <div
+                  class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-gray-500 group-hover:bg-white/10 group-hover:text-white transition-colors duration-300"
+                >
+                  <i class="ph ph-arrow-right text-sm font-bold"></i>
+                </div>
+              </div>
+            </div>
+            <div
+              class="card-item group relative p-8 border border-white/10 rounded-[2.5rem] bg-white/5 hover:border-red-500/50 hover:bg-white/[0.08] transition duration-500 flex flex-col justify-between cursor-pointer"
+              onclick="window.location.href = 'profile-org_23.html'"
+            >
+              <div>
+                <!-- Competencies Tags -->
+                <div class="flex flex-wrap justify-end gap-2 mb-6">
+                  <span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Исследования</span
+                  ><span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Анализ</span
+                  ><span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Водородному</span
+                  ><span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Охрупчиванию</span
+                  >
+                </div>
+                <!-- Header -->
+                <h3
+                  class="text-2xl font-bold tracking-tight mb-6 leading-tight group-hover:text-red-500 transition-colors"
+                >
+                  ООО "ИССЛЕДОВАТЕЛЬСКИЙ ЦЕНТР ТМК"
+                </h3>
+                <!-- Experience / Projects -->
+                <div class="space-y-4 mb-8">
+                  <div class="border-b border-white/10 pb-3 mb-3">
+                    <span
+                      class="text-gray-500 font-bold uppercase tracking-widest text-[9px] block mb-2"
+                      >Реализуемые проекты</span
+                    >
+                    <ul class="space-y-2 pb-2">
+                      <li
+                        class="text-xs text-gray-400 font-medium flex items-start gap-2"
+                      >
+                        <span class="text-red-500 mt-0.5 font-black">•</span
+                        ><span class="line-clamp-2"
+                          >Разработка конструкторской документации опытного
+                          комплекса оборудования для лазерной и гибридной
+                          лазерно-дуговой сварки неповоротных кольцевых стыков
+                          труб. Изготовление опытного комплекса оборудования.
+                          Разработка программы испытания и проведение приемочных
+                          испытаний опытного комплекса. Разработка технологии
+                          лазерной сварки кольцевых швов</span
+                        >
+                      </li>
+                      <li
+                        class="text-xs text-gray-400 font-medium flex items-start gap-2"
+                      >
+                        <span class="text-red-500 mt-0.5 font-black">•</span
+                        ><span class="line-clamp-2"
+                          >Анализ микроструктуры образцов выбранных марок
+                          низколегированной стали после лабораторной термической
+                          обработки по промышленным режимам и исследование их
+                          склонности к водородному охрупчиванию при испытании на
+                          одноосное растяжение и трещиностойкость. Изготовление
+                          сварных соединений для исследования. Анализ
+                          микроструктуры образцов аустенитной нержавеющей стали
+                          выбранных химических составов и исследование их
+                          склонности к водородному охрупчиванию. Анализ
+                          достигнутого при испытаниях содержания водорода в
+                          исследуемых материалах. Разработка программы испытаний
+                          металла бесшовных труб производства компании ТМК на
+                          стойкость к воздействию водородсодержащих сред в ООО
+                          «Газпром ВНИИГАЗ».</span
+                        >
+                      </li>
+                      <li
+                        class="text-xs text-gray-400 font-medium flex items-start gap-2"
+                      >
+                        <span class="text-red-500 mt-0.5 font-black">•</span
+                        ><span class="line-clamp-2"
+                          >АНАЛИЗ ВЛИЯНИЯ СОСТАВА ПЛАСТОВЫХ ФЛЮИДОВ
+                          МЕСТОРОЖДЕНИЙ НК РОСНЕФТЬ НА ИНТЕНСИВНОСТЬ ОБРАЗОВАНИЯ
+                          АСПО НА ТРУБНОЙ ПРОДУКЦИИ С ЗАЩИТНЫМИ ЛАКОКРАСОЧНЫМИ
+                          ПОКРЫТИЯМИ</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- Scientists / Capacity -->
+              <div
+                class="mt-auto pt-2 flex items-center justify-between border-t border-white/10 pt-4"
+              >
+                <div class="flex items-center gap-2">
+                  <div class="flex -space-x-1">
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                  </div>
+                  <span
+                    class="text-[10px] text-gray-400 font-bold uppercase tracking-widest ml-2"
+                    >Ведущий коллектив</span
+                  >
+                </div>
+                <div
+                  class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-gray-500 group-hover:bg-white/10 group-hover:text-white transition-colors duration-300"
+                >
+                  <i class="ph ph-arrow-right text-sm font-bold"></i>
+                </div>
+              </div>
+            </div>
+            <div
+              class="card-item group relative p-8 border border-white/10 rounded-[2.5rem] bg-white/5 hover:border-red-500/50 hover:bg-white/[0.08] transition duration-500 flex flex-col justify-between cursor-pointer"
+              onclick="window.location.href = 'profile-org_24.html'"
+            >
+              <div>
+                <!-- Competencies Tags -->
+                <div class="flex flex-wrap justify-end gap-2 mb-6">
+                  <span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Детекции</span
+                  ><span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Спасения</span
+                  ><span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Моделей</span
+                  ><span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Утопающих</span
+                  >
+                </div>
+                <!-- Header -->
+                <h3
+                  class="text-2xl font-bold tracking-tight mb-6 leading-tight group-hover:text-red-500 transition-colors"
+                >
+                  ООО «РЕС-АИР»
+                </h3>
+                <!-- Experience / Projects -->
+                <div class="space-y-4 mb-8">
+                  <div class="border-b border-white/10 pb-3 mb-3">
+                    <span
+                      class="text-gray-500 font-bold uppercase tracking-widest text-[9px] block mb-2"
+                      >Реализуемые проекты</span
+                    >
+                    <ul class="space-y-2 pb-2">
+                      <li
+                        class="text-xs text-gray-400 font-medium flex items-start gap-2"
+                      >
+                        <span class="text-red-500 mt-0.5 font-black">•</span
+                        ><span class="line-clamp-2"
+                          >«Разработка подходов по детекции обратных течений,
+                          водного транспорта и возрастных групп. Разработка
+                          рабочей конструкторской документации на БПЛА. Сбор и
+                          аннотация данных для обучения моделей по детекции
+                          обратных течений, водного транспорта и возрастных
+                          групп. (Промежуточный)».</span
+                        >
+                      </li>
+                      <li
+                        class="text-xs text-gray-400 font-medium flex items-start gap-2"
+                      >
+                        <span class="text-red-500 mt-0.5 font-black">•</span
+                        ><span class="line-clamp-2"
+                          >Этап №1 «Доработка и испытания опытного образца
+                          программно-аппаратного комплекса для спасения людей с
+                          применением БПЛА и алгоритмов компьютерного зрения на
+                          основе искусственного интеллекта» (договор
+                          №237ГС2ИИС12-D7/76663 от 24.09.2024) Этап №1 «Сбор и
+                          аннотация данных для дообучения моделей детекции людей
+                          и распознавания нестандартного поведения. Дообучение
+                          моделей детекции людей и распознавания нестандартного
+                          поведения на обновленных данных. Доработка конструкции
+                          БПЛА. Валидация моделей детекции людей и распознавания
+                          нестандартного поведения на тестовых видео для оценки
+                          их точности и производительности.»
+                          (промежуточный)</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- Scientists / Capacity -->
+              <div
+                class="mt-auto pt-2 flex items-center justify-between border-t border-white/10 pt-4"
+              >
+                <div class="flex items-center gap-2">
+                  <div class="flex -space-x-1">
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                  </div>
+                  <span
+                    class="text-[10px] text-gray-400 font-bold uppercase tracking-widest ml-2"
+                    >Ведущий коллектив</span
+                  >
+                </div>
+                <div
+                  class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-gray-500 group-hover:bg-white/10 group-hover:text-white transition-colors duration-300"
+                >
+                  <i class="ph ph-arrow-right text-sm font-bold"></i>
+                </div>
+              </div>
+            </div>
+            <div
+              class="card-item group relative p-8 border border-white/10 rounded-[2.5rem] bg-white/5 hover:border-red-500/50 hover:bg-white/[0.08] transition duration-500 flex flex-col justify-between cursor-pointer"
+              onclick="window.location.href = 'profile-org_25.html'"
+            >
+              <div>
+                <!-- Competencies Tags -->
+                <div class="flex flex-wrap justify-end gap-2 mb-6">
+                  <span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >НИОКР</span
+                  ><span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Инновации</span
+                  >
+                </div>
+                <!-- Header -->
+                <h3
+                  class="text-2xl font-bold tracking-tight mb-6 leading-tight group-hover:text-red-500 transition-colors"
+                >
+                  ООО "ЮНА"
+                </h3>
+                <!-- Experience / Projects -->
+                <div class="space-y-4 mb-8">
+                  <div class="border-b border-white/10 pb-3 mb-3">
+                    <span
+                      class="text-gray-500 font-bold uppercase tracking-widest text-[9px] block mb-2"
+                      >Реализуемые проекты</span
+                    >
+                    <ul class="space-y-2 pb-2">
+                      <li
+                        class="text-xs text-gray-400 font-medium flex items-start gap-2"
+                      >
+                        <span class="text-red-500 mt-0.5 font-black">•</span
+                        ><span class="line-clamp-2"
+                          >Комплексные научно-исследовательские работы</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- Scientists / Capacity -->
+              <div
+                class="mt-auto pt-2 flex items-center justify-between border-t border-white/10 pt-4"
+              >
+                <div class="flex items-center gap-2">
+                  <div class="flex -space-x-1">
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                  </div>
+                  <span
+                    class="text-[10px] text-gray-400 font-bold uppercase tracking-widest ml-2"
+                    >Ведущий коллектив</span
+                  >
+                </div>
+                <div
+                  class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-gray-500 group-hover:bg-white/10 group-hover:text-white transition-colors duration-300"
+                >
+                  <i class="ph ph-arrow-right text-sm font-bold"></i>
+                </div>
+              </div>
+            </div>
+            <div
+              class="card-item group relative p-8 border border-white/10 rounded-[2.5rem] bg-white/5 hover:border-red-500/50 hover:bg-white/[0.08] transition duration-500 flex flex-col justify-between cursor-pointer"
+              onclick="window.location.href = 'profile-org_26.html'"
+            >
+              <div>
+                <!-- Competencies Tags -->
+                <div class="flex flex-wrap justify-end gap-2 mb-6">
+                  <span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >НИОКР</span
+                  ><span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Инновации</span
+                  >
+                </div>
+                <!-- Header -->
+                <h3
+                  class="text-2xl font-bold tracking-tight mb-6 leading-tight group-hover:text-red-500 transition-colors"
+                >
+                  ООО "СМАРТ ПРОМ"
+                </h3>
+                <!-- Experience / Projects -->
+                <div class="space-y-4 mb-8">
+                  <div class="border-b border-white/10 pb-3 mb-3">
+                    <span
+                      class="text-gray-500 font-bold uppercase tracking-widest text-[9px] block mb-2"
+                      >Реализуемые проекты</span
+                    >
+                    <ul class="space-y-2 pb-2">
+                      <li
+                        class="text-xs text-gray-400 font-medium flex items-start gap-2"
+                      >
+                        <span class="text-red-500 mt-0.5 font-black">•</span
+                        ><span class="line-clamp-2"
+                          >Комплексные научно-исследовательские работы</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- Scientists / Capacity -->
+              <div
+                class="mt-auto pt-2 flex items-center justify-between border-t border-white/10 pt-4"
+              >
+                <div class="flex items-center gap-2">
+                  <div class="flex -space-x-1">
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                  </div>
+                  <span
+                    class="text-[10px] text-gray-400 font-bold uppercase tracking-widest ml-2"
+                    >Ведущий коллектив</span
+                  >
+                </div>
+                <div
+                  class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-gray-500 group-hover:bg-white/10 group-hover:text-white transition-colors duration-300"
+                >
+                  <i class="ph ph-arrow-right text-sm font-bold"></i>
+                </div>
+              </div>
+            </div>
+            <div
+              class="card-item group relative p-8 border border-white/10 rounded-[2.5rem] bg-white/5 hover:border-red-500/50 hover:bg-white/[0.08] transition duration-500 flex flex-col justify-between cursor-pointer"
+              onclick="window.location.href = 'profile-org_27.html'"
+            >
+              <div>
+                <!-- Competencies Tags -->
+                <div class="flex flex-wrap justify-end gap-2 mb-6">
+                  <span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >НИОКР</span
+                  ><span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Инновации</span
+                  >
+                </div>
+                <!-- Header -->
+                <h3
+                  class="text-2xl font-bold tracking-tight mb-6 leading-tight group-hover:text-red-500 transition-colors"
+                >
+                  ООО "БАЗОВЫЕ ТЕХНОЛОГИИ"
+                </h3>
+                <!-- Experience / Projects -->
+                <div class="space-y-4 mb-8">
+                  <div class="border-b border-white/10 pb-3 mb-3">
+                    <span
+                      class="text-gray-500 font-bold uppercase tracking-widest text-[9px] block mb-2"
+                      >Реализуемые проекты</span
+                    >
+                    <ul class="space-y-2 pb-2">
+                      <li
+                        class="text-xs text-gray-400 font-medium flex items-start gap-2"
+                      >
+                        <span class="text-red-500 mt-0.5 font-black">•</span
+                        ><span class="line-clamp-2"
+                          >Комплексные научно-исследовательские работы</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- Scientists / Capacity -->
+              <div
+                class="mt-auto pt-2 flex items-center justify-between border-t border-white/10 pt-4"
+              >
+                <div class="flex items-center gap-2">
+                  <div class="flex -space-x-1">
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                  </div>
+                  <span
+                    class="text-[10px] text-gray-400 font-bold uppercase tracking-widest ml-2"
+                    >Ведущий коллектив</span
+                  >
+                </div>
+                <div
+                  class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-gray-500 group-hover:bg-white/10 group-hover:text-white transition-colors duration-300"
+                >
+                  <i class="ph ph-arrow-right text-sm font-bold"></i>
+                </div>
+              </div>
+            </div>
+            <div
+              class="card-item group relative p-8 border border-white/10 rounded-[2.5rem] bg-white/5 hover:border-red-500/50 hover:bg-white/[0.08] transition duration-500 flex flex-col justify-between cursor-pointer"
+              onclick="window.location.href = 'profile-org_28.html'"
+            >
+              <div>
+                <!-- Competencies Tags -->
+                <div class="flex flex-wrap justify-end gap-2 mb-6">
+                  <span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >НИОКР</span
+                  ><span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Инновации</span
+                  >
+                </div>
+                <!-- Header -->
+                <h3
+                  class="text-2xl font-bold tracking-tight mb-6 leading-tight group-hover:text-red-500 transition-colors"
+                >
+                  ООО "СОЦИАЛЬНЫЕ СИСТЕМЫ"
+                </h3>
+                <!-- Experience / Projects -->
+                <div class="space-y-4 mb-8">
+                  <div class="border-b border-white/10 pb-3 mb-3">
+                    <span
+                      class="text-gray-500 font-bold uppercase tracking-widest text-[9px] block mb-2"
+                      >Реализуемые проекты</span
+                    >
+                    <ul class="space-y-2 pb-2">
+                      <li
+                        class="text-xs text-gray-400 font-medium flex items-start gap-2"
+                      >
+                        <span class="text-red-500 mt-0.5 font-black">•</span
+                        ><span class="line-clamp-2"
+                          >Комплексные научно-исследовательские работы</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- Scientists / Capacity -->
+              <div
+                class="mt-auto pt-2 flex items-center justify-between border-t border-white/10 pt-4"
+              >
+                <div class="flex items-center gap-2">
+                  <div class="flex -space-x-1">
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                  </div>
+                  <span
+                    class="text-[10px] text-gray-400 font-bold uppercase tracking-widest ml-2"
+                    >Ведущий коллектив</span
+                  >
+                </div>
+                <div
+                  class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-gray-500 group-hover:bg-white/10 group-hover:text-white transition-colors duration-300"
+                >
+                  <i class="ph ph-arrow-right text-sm font-bold"></i>
+                </div>
+              </div>
+            </div>
+            <div
+              class="card-item group relative p-8 border border-white/10 rounded-[2.5rem] bg-white/5 hover:border-red-500/50 hover:bg-white/[0.08] transition duration-500 flex flex-col justify-between cursor-pointer"
+              onclick="window.location.href = 'profile-org_29.html'"
+            >
+              <div>
+                <!-- Competencies Tags -->
+                <div class="flex flex-wrap justify-end gap-2 mb-6">
+                  <span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >НИОКР</span
+                  ><span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Инновации</span
+                  >
+                </div>
+                <!-- Header -->
+                <h3
+                  class="text-2xl font-bold tracking-tight mb-6 leading-tight group-hover:text-red-500 transition-colors"
+                >
+                  ООО "ПЛАТФОРМА СОРЕГУЛИРОВАНИЯ"
+                </h3>
+                <!-- Experience / Projects -->
+                <div class="space-y-4 mb-8">
+                  <div class="border-b border-white/10 pb-3 mb-3">
+                    <span
+                      class="text-gray-500 font-bold uppercase tracking-widest text-[9px] block mb-2"
+                      >Реализуемые проекты</span
+                    >
+                    <ul class="space-y-2 pb-2">
+                      <li
+                        class="text-xs text-gray-400 font-medium flex items-start gap-2"
+                      >
+                        <span class="text-red-500 mt-0.5 font-black">•</span
+                        ><span class="line-clamp-2"
+                          >Комплексные научно-исследовательские работы</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- Scientists / Capacity -->
+              <div
+                class="mt-auto pt-2 flex items-center justify-between border-t border-white/10 pt-4"
+              >
+                <div class="flex items-center gap-2">
+                  <div class="flex -space-x-1">
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                  </div>
+                  <span
+                    class="text-[10px] text-gray-400 font-bold uppercase tracking-widest ml-2"
+                    >Ведущий коллектив</span
+                  >
+                </div>
+                <div
+                  class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-gray-500 group-hover:bg-white/10 group-hover:text-white transition-colors duration-300"
+                >
+                  <i class="ph ph-arrow-right text-sm font-bold"></i>
+                </div>
+              </div>
+            </div>
+            <div
+              class="card-item group relative p-8 border border-white/10 rounded-[2.5rem] bg-white/5 hover:border-red-500/50 hover:bg-white/[0.08] transition duration-500 flex flex-col justify-between cursor-pointer"
+              onclick="window.location.href = 'profile-org_30.html'"
+            >
+              <div>
+                <!-- Competencies Tags -->
+                <div class="flex flex-wrap justify-end gap-2 mb-6">
+                  <span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >НИОКР</span
+                  ><span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Инновации</span
+                  >
+                </div>
+                <!-- Header -->
+                <h3
+                  class="text-2xl font-bold tracking-tight mb-6 leading-tight group-hover:text-red-500 transition-colors"
+                >
+                  ООО "РУБЕДО"
+                </h3>
+                <!-- Experience / Projects -->
+                <div class="space-y-4 mb-8">
+                  <div class="border-b border-white/10 pb-3 mb-3">
+                    <span
+                      class="text-gray-500 font-bold uppercase tracking-widest text-[9px] block mb-2"
+                      >Реализуемые проекты</span
+                    >
+                    <ul class="space-y-2 pb-2">
+                      <li
+                        class="text-xs text-gray-400 font-medium flex items-start gap-2"
+                      >
+                        <span class="text-red-500 mt-0.5 font-black">•</span
+                        ><span class="line-clamp-2"
+                          >Комплексные научно-исследовательские работы</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- Scientists / Capacity -->
+              <div
+                class="mt-auto pt-2 flex items-center justify-between border-t border-white/10 pt-4"
+              >
+                <div class="flex items-center gap-2">
+                  <div class="flex -space-x-1">
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                  </div>
+                  <span
+                    class="text-[10px] text-gray-400 font-bold uppercase tracking-widest ml-2"
+                    >Ведущий коллектив</span
+                  >
+                </div>
+                <div
+                  class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-gray-500 group-hover:bg-white/10 group-hover:text-white transition-colors duration-300"
+                >
+                  <i class="ph ph-arrow-right text-sm font-bold"></i>
+                </div>
+              </div>
+            </div>
+            <div
+              class="card-item group relative p-8 border border-white/10 rounded-[2.5rem] bg-white/5 hover:border-red-500/50 hover:bg-white/[0.08] transition duration-500 flex flex-col justify-between cursor-pointer"
+              onclick="window.location.href = 'profile-org_31.html'"
+            >
+              <div>
+                <!-- Competencies Tags -->
+                <div class="flex flex-wrap justify-end gap-2 mb-6">
+                  <span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >НИОКР</span
+                  ><span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Инновации</span
+                  >
+                </div>
+                <!-- Header -->
+                <h3
+                  class="text-2xl font-bold tracking-tight mb-6 leading-tight group-hover:text-red-500 transition-colors"
+                >
+                  ООО "ИНТЕРАКТИВНАЯ ВСЕЛЕННАЯ"
+                </h3>
+                <!-- Experience / Projects -->
+                <div class="space-y-4 mb-8">
+                  <div class="border-b border-white/10 pb-3 mb-3">
+                    <span
+                      class="text-gray-500 font-bold uppercase tracking-widest text-[9px] block mb-2"
+                      >Реализуемые проекты</span
+                    >
+                    <ul class="space-y-2 pb-2">
+                      <li
+                        class="text-xs text-gray-400 font-medium flex items-start gap-2"
+                      >
+                        <span class="text-red-500 mt-0.5 font-black">•</span
+                        ><span class="line-clamp-2"
+                          >Комплексные научно-исследовательские работы</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- Scientists / Capacity -->
+              <div
+                class="mt-auto pt-2 flex items-center justify-between border-t border-white/10 pt-4"
+              >
+                <div class="flex items-center gap-2">
+                  <div class="flex -space-x-1">
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                  </div>
+                  <span
+                    class="text-[10px] text-gray-400 font-bold uppercase tracking-widest ml-2"
+                    >Ведущий коллектив</span
+                  >
+                </div>
+                <div
+                  class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-gray-500 group-hover:bg-white/10 group-hover:text-white transition-colors duration-300"
+                >
+                  <i class="ph ph-arrow-right text-sm font-bold"></i>
+                </div>
+              </div>
+            </div>
+            <div
+              class="card-item group relative p-8 border border-white/10 rounded-[2.5rem] bg-white/5 hover:border-red-500/50 hover:bg-white/[0.08] transition duration-500 flex flex-col justify-between cursor-pointer"
+              onclick="window.location.href = 'profile-org_32.html'"
+            >
+              <div>
+                <!-- Competencies Tags -->
+                <div class="flex flex-wrap justify-end gap-2 mb-6">
+                  <span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >НИОКР</span
+                  ><span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Инновации</span
+                  >
+                </div>
+                <!-- Header -->
+                <h3
+                  class="text-2xl font-bold tracking-tight mb-6 leading-tight group-hover:text-red-500 transition-colors"
+                >
+                  ООО "ДРОНКАМ"
+                </h3>
+                <!-- Experience / Projects -->
+                <div class="space-y-4 mb-8">
+                  <div class="border-b border-white/10 pb-3 mb-3">
+                    <span
+                      class="text-gray-500 font-bold uppercase tracking-widest text-[9px] block mb-2"
+                      >Реализуемые проекты</span
+                    >
+                    <ul class="space-y-2 pb-2">
+                      <li
+                        class="text-xs text-gray-400 font-medium flex items-start gap-2"
+                      >
+                        <span class="text-red-500 mt-0.5 font-black">•</span
+                        ><span class="line-clamp-2"
+                          >Комплексные научно-исследовательские работы</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- Scientists / Capacity -->
+              <div
+                class="mt-auto pt-2 flex items-center justify-between border-t border-white/10 pt-4"
+              >
+                <div class="flex items-center gap-2">
+                  <div class="flex -space-x-1">
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                  </div>
+                  <span
+                    class="text-[10px] text-gray-400 font-bold uppercase tracking-widest ml-2"
+                    >Ведущий коллектив</span
+                  >
+                </div>
+                <div
+                  class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-gray-500 group-hover:bg-white/10 group-hover:text-white transition-colors duration-300"
+                >
+                  <i class="ph ph-arrow-right text-sm font-bold"></i>
+                </div>
+              </div>
+            </div>
+            <div
+              class="card-item group relative p-8 border border-white/10 rounded-[2.5rem] bg-white/5 hover:border-red-500/50 hover:bg-white/[0.08] transition duration-500 flex flex-col justify-between cursor-pointer"
+              onclick="window.location.href = 'profile-org_33.html'"
+            >
+              <div>
+                <!-- Competencies Tags -->
+                <div class="flex flex-wrap justify-end gap-2 mb-6">
+                  <span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >НИОКР</span
+                  ><span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Инновации</span
+                  >
+                </div>
+                <!-- Header -->
+                <h3
+                  class="text-2xl font-bold tracking-tight mb-6 leading-tight group-hover:text-red-500 transition-colors"
+                >
+                  ООО "ВОЛГАГОРА"
+                </h3>
+                <!-- Experience / Projects -->
+                <div class="space-y-4 mb-8">
+                  <div class="border-b border-white/10 pb-3 mb-3">
+                    <span
+                      class="text-gray-500 font-bold uppercase tracking-widest text-[9px] block mb-2"
+                      >Реализуемые проекты</span
+                    >
+                    <ul class="space-y-2 pb-2">
+                      <li
+                        class="text-xs text-gray-400 font-medium flex items-start gap-2"
+                      >
+                        <span class="text-red-500 mt-0.5 font-black">•</span
+                        ><span class="line-clamp-2"
+                          >Комплексные научно-исследовательские работы</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- Scientists / Capacity -->
+              <div
+                class="mt-auto pt-2 flex items-center justify-between border-t border-white/10 pt-4"
+              >
+                <div class="flex items-center gap-2">
+                  <div class="flex -space-x-1">
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                  </div>
+                  <span
+                    class="text-[10px] text-gray-400 font-bold uppercase tracking-widest ml-2"
+                    >Ведущий коллектив</span
+                  >
+                </div>
+                <div
+                  class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-gray-500 group-hover:bg-white/10 group-hover:text-white transition-colors duration-300"
+                >
+                  <i class="ph ph-arrow-right text-sm font-bold"></i>
+                </div>
+              </div>
+            </div>
+            <div
+              class="card-item group relative p-8 border border-white/10 rounded-[2.5rem] bg-white/5 hover:border-red-500/50 hover:bg-white/[0.08] transition duration-500 flex flex-col justify-between cursor-pointer"
+              onclick="window.location.href = 'profile-org_34.html'"
+            >
+              <div>
+                <!-- Competencies Tags -->
+                <div class="flex flex-wrap justify-end gap-2 mb-6">
+                  <span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Астровизирующего</span
+                  ><span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Датчика</span
+                  ><span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Навигационного</span
+                  ><span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Разработка</span
+                  >
+                </div>
+                <!-- Header -->
+                <h3
+                  class="text-2xl font-bold tracking-tight mb-6 leading-tight group-hover:text-red-500 transition-colors"
+                >
+                  ООО "КДП"
+                </h3>
+                <!-- Experience / Projects -->
+                <div class="space-y-4 mb-8">
+                  <div class="border-b border-white/10 pb-3 mb-3">
+                    <span
+                      class="text-gray-500 font-bold uppercase tracking-widest text-[9px] block mb-2"
+                      >Реализуемые проекты</span
+                    >
+                    <ul class="space-y-2 pb-2">
+                      <li
+                        class="text-xs text-gray-400 font-medium flex items-start gap-2"
+                      >
+                        <span class="text-red-500 mt-0.5 font-black">•</span
+                        ><span class="line-clamp-2"
+                          >Выбор оптической схемы навигационного
+                          астровизирующего датчика. Выбор типа программируемой
+                          логической интегральной схемы навигационного
+                          астровизирующего датчика. Разработка проектной
+                          конструкторской документации навигационного
+                          астровизирующего датчика. Разработка и монтаж печатных
+                          плат. Изготовление макетного образца навигационного
+                          астровизирующего датчика для стендовых испытаний.
+                          Проведение испытаний макетного образца навигационного
+                          астровизирующего датчика в наземных условиях.
+                          Разработка кодов для программируемой логической
+                          интегральной схемы. Разработка программных средств для
+                          имитатора звёздного неба. Разработка алгоритмов
+                          использования данных астровизирующего датчика в
+                          системах навигации. Расчет, разработка конструкции и
+                          изготовление проекционного объектива для имитатора
+                          звездного неба. Разработка имитатора звездного неба
+                          для тестирования астровизирующего датчика.
+                          (Промежуточный).</span
+                        >
+                      </li>
+                      <li
+                        class="text-xs text-gray-400 font-medium flex items-start gap-2"
+                      >
+                        <span class="text-red-500 mt-0.5 font-black">•</span
+                        ><span class="line-clamp-2"
+                          >Разработка навигационного астровизирующего датчика
+                          для беспилотных воздушных судов и космических
+                          аппаратов (Навигационный астровизирующий датчик)
+                          (заключительный)</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- Scientists / Capacity -->
+              <div
+                class="mt-auto pt-2 flex items-center justify-between border-t border-white/10 pt-4"
+              >
+                <div class="flex items-center gap-2">
+                  <div class="flex -space-x-1">
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                  </div>
+                  <span
+                    class="text-[10px] text-gray-400 font-bold uppercase tracking-widest ml-2"
+                    >Ведущий коллектив</span
+                  >
+                </div>
+                <div
+                  class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-gray-500 group-hover:bg-white/10 group-hover:text-white transition-colors duration-300"
+                >
+                  <i class="ph ph-arrow-right text-sm font-bold"></i>
+                </div>
+              </div>
+            </div>
+            <div
+              class="card-item group relative p-8 border border-white/10 rounded-[2.5rem] bg-white/5 hover:border-red-500/50 hover:bg-white/[0.08] transition duration-500 flex flex-col justify-between cursor-pointer"
+              onclick="window.location.href = 'profile-org_35.html'"
+            >
+              <div>
+                <!-- Competencies Tags -->
+                <div class="flex flex-wrap justify-end gap-2 mb-6">
+                  <span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >НИОКР</span
+                  ><span
+                    class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors"
+                    >Инновации</span
+                  >
+                </div>
+                <!-- Header -->
+                <h3
+                  class="text-2xl font-bold tracking-tight mb-6 leading-tight group-hover:text-red-500 transition-colors"
+                >
+                  ООО "КАРМА АНАЛИТИКА"
+                </h3>
+                <!-- Experience / Projects -->
+                <div class="space-y-4 mb-8">
+                  <div class="border-b border-white/10 pb-3 mb-3">
+                    <span
+                      class="text-gray-500 font-bold uppercase tracking-widest text-[9px] block mb-2"
+                      >Реализуемые проекты</span
+                    >
+                    <ul class="space-y-2 pb-2">
+                      <li
+                        class="text-xs text-gray-400 font-medium flex items-start gap-2"
+                      >
+                        <span class="text-red-500 mt-0.5 font-black">•</span
+                        ><span class="line-clamp-2"
+                          >Комплексные научно-исследовательские работы</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- Scientists / Capacity -->
+              <div
+                class="mt-auto pt-2 flex items-center justify-between border-t border-white/10 pt-4"
+              >
+                <div class="flex items-center gap-2">
+                  <div class="flex -space-x-1">
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-white/10 border border-[#050505] flex items-center justify-center text-[10px] text-white/50"
+                    >
+                      <i class="ph ph-user"></i>
+                    </div>
+                  </div>
+                  <span
+                    class="text-[10px] text-gray-400 font-bold uppercase tracking-widest ml-2"
+                    >Ведущий коллектив</span
+                  >
+                </div>
+                <div
+                  class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-gray-500 group-hover:bg-white/10 group-hover:text-white transition-colors duration-300"
+                >
+                  <i class="ph ph-arrow-right text-sm font-bold"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Pagination -->
+          <div class="mt-12 flex justify-center gap-2">
+            <button
+              class="w-10 h-10 rounded-full bg-white text-black font-black"
+            >
+              1
+            </button>
+            <button
+              class="w-10 h-10 rounded-full border border-white/20 text-white font-black hover:bg-white/10 transition"
+            >
+              2
+            </button>
+            <button
+              class="w-10 h-10 rounded-full border border-white/20 text-white font-black hover:bg-white/10 transition"
+            >
+              3
+            </button>
+            <span class="w-10 h-10 flex items-center justify-center">...</span>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
