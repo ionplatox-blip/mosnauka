@@ -1,0 +1,3141 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>МОСНАУКА - Платформа для R&D (V3)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #050505;
+            --primary: #ff003c;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: white;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            /* Remove document scroll, we use container scroll */
+            overflow-y: hidden;
+        }
+
+        /* Scroll Snap Container */
+        .slides-container {
+            height: 100vh;
+            width: 100vw;
+            overflow-y: scroll;
+            scroll-snap-type: y mandatory;
+            scroll-behavior: smooth;
+            /* Hide scrollbar for Chrome, Safari and Opera */
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+        }
+
+        .slides-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .slide {
+            scroll-snap-align: start;
+            scroll-snap-stop: always;
+            height: 100vh;
+            width: 100vw;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+
+        .slide-content {
+            width: 100%;
+            height: 100%;
+            padding: 2rem 4rem;
+            position: relative;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Base Typography and Colors */
+        .headline-style {
+            font-size: clamp(3rem, 5vw, 6rem);
+            font-weight: 900;
+            text-transform: uppercase;
+            font-style: italic;
+            letter-spacing: -0.05em;
+            line-height: 0.9;
+        }
+
+        .subheadline-style {
+            font-size: clamp(1.25rem, 2vw, 1.5rem);
+            color: #D1D5DB;
+            font-weight: 500;
+            line-height: 1.5;
+        }
+
+        .body-style {
+            font-size: clamp(1rem, 1.5vw, 1.125rem);
+            color: #9CA3AF;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+
+        .label-style {
+            font-size: clamp(0.625rem, 1vw, 0.75rem);
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.22em;
+            color: #6B7280;
+        }
+
+        /* UI Elements */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 9999px;
+            text-transform: uppercase;
+            font-weight: 900;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary:hover {
+            background-color: #d60032;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(255, 0, 60, 0.3);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 9999px;
+            text-transform: uppercase;
+            font-weight: 900;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Grid Background */
+        .bg-grid {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 80px 80px;
+            mask-image: radial-gradient(circle at center, black, transparent 80%);
+            -webkit-mask-image: radial-gradient(circle at center, black, transparent 80%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Animations */
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .text-glow {
+            text-shadow: 0 0 20px rgba(255, 0, 60, 0.5);
+        }
+
+        /* Layout Utility */
+        .layout-grid {
+            display: grid;
+            grid-template-columns: 35% 60%;
+            gap: 5%;
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            align-items: center;
+        }
+
+        @media (max-width: 1024px) {
+            .layout-grid {
+                grid-template-columns: 1fr;
+                grid-auto-flow: row;
+                gap: 2rem;
+            }
+
+            .slide-content {
+                padding: 2rem;
+            }
+        }
+
+        /* Global Background Glow */
+        .bg-glow {
+            position: absolute;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(255, 0, 60, 0.15) 0%, rgba(5, 5, 5, 0) 70%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Dots -->
+    <div class="fixed right-6 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-3">
+        <!-- Will be populated by JS -->
+    </div>
+
+    <main class="slides-container" id="presentationContainer">
+
+        <!-- SLIDE 01: HERO -->
+        <section class="slide" id="slide-01">
+            <div class="bg-grid opacity-50"></div>
+            <div class="bg-glow" style="transform: translate(-20%, -50%);"></div>
+
+            <div class="slide-content">
+                <div class="layout-grid">
+
+                    <!-- Left Column -->
+                    <div class="flex flex-col justify-center h-full relative z-10">
+                        <div class="label-style mb-4 text-red-500">Платформа Фонда «Московский инновационный кластер»
+                        </div>
+                        <h1 class="headline-style text-white mb-6 text-glow">МОСНАУКА</h1>
+                        <h2 class="subheadline-style mb-6 text-white text-2xl font-bold">Единая точка входа бизнеса в
+                            научные возможности Москвы.</h2>
+                        <p class="body-style mb-10 text-gray-400">Найти исполнителя. Проверить компетенции. Запустить
+                            НИОКР. Получить поддержку.</p>
+
+                        <div class="flex flex-col sm:flex-row gap-4 mb-12">
+                            <a href="#slide-02" class="btn-primary">
+                                Посмотреть платформу
+                                <i class="ph-bold ph-arrow-right"></i>
+                            </a>
+                            <a href="#slide-02" class="btn-secondary">
+                                <i class="ph-bold ph-map-trifold"></i>
+                                Карта R&D центров
+                            </a>
+                        </div>
+
+                        <!-- Proof Points -->
+                        <div class="flex flex-wrap gap-3">
+                            <div
+                                class="flex items-center gap-2 glass-panel px-4 py-2 text-xs font-bold uppercase tracking-wider text-gray-300">
+                                <i class="ph-fill ph-check-circle text-red-500"></i> поиск исполнителей
+                            </div>
+                            <div
+                                class="flex items-center gap-2 glass-panel px-4 py-2 text-xs font-bold uppercase tracking-wider text-gray-300">
+                                <i class="ph-fill ph-check-circle text-red-500"></i> верификация компетенций
+                            </div>
+                            <div
+                                class="flex items-center gap-2 glass-panel px-4 py-2 text-xs font-bold uppercase tracking-wider text-gray-300">
+                                <i class="ph-fill ph-check-circle text-red-500"></i> маршрут сделки
+                            </div>
+                            <div
+                                class="flex items-center gap-2 glass-panel px-4 py-2 text-xs font-bold uppercase tracking-wider text-gray-300">
+                                <i class="ph-fill ph-check-circle text-red-500"></i> поддержка и льготы
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Visual (Platform Mockup) -->
+                    <div
+                        class="relative w-full h-full min-h-[500px] flex items-center justify-center animate-float z-10">
+
+                        <!-- Main Mockup Container -->
+                        <div
+                            class="glass-panel w-full max-w-lg aspect-[4/3] p-6 flex flex-col relative overflow-hidden shadow-[0_0_50px_rgba(255,0,60,0.1)]">
+
+                            <!-- Search Bar -->
+                            <div
+                                class="w-full bg-[#111] rounded-xl p-3 mb-6 border border-white/10 flex items-center gap-3">
+                                <i class="ph ph-magnifying-glass text-gray-500 text-xl"></i>
+                                <div class="text-sm font-mono text-gray-400">разработка системы машинного зрения для
+                                    контроля качества...</div>
+                                <div
+                                    class="ml-auto bg-red-600 rounded-lg w-8 h-8 flex items-center justify-center shadow-lg">
+                                    <i class="ph-bold ph-arrow-right text-white"></i>
+                                </div>
+                            </div>
+
+                            <!-- Map and List Split -->
+                            <div class="flex gap-4 h-full">
+
+                                <!-- Map Area -->
+                                <div
+                                    class="w-1/2 h-full rounded-xl bg-[#111] border border-white/5 relative overflow-hidden flex items-center justify-center">
+                                    <div
+                                        class="absolute inset-0 bg-[url('https://api.mapbox.com/styles/v1/mapbox/dark-v10/static/37.6156,55.7522,10,0/400x400?access_token=YOUR_MAPBOX_TOKEN')] bg-cover opacity-50 grayscale">
+                                    </div>
+                                    <!-- Map Dots -->
+                                    <div
+                                        class="absolute w-3 h-3 bg-red-500 rounded-full top-1/4 left-1/4 shadow-[0_0_10px_rgba(255,0,0,0.8)]">
+                                    </div>
+                                    <div
+                                        class="absolute w-4 h-4 bg-red-500 rounded-full top-1/2 left-2/3 shadow-[0_0_15px_rgba(255,0,0,0.8)] flex items-center justify-center animate-ping">
+                                    </div>
+                                    <div
+                                        class="absolute w-3 h-3 bg-red-500 rounded-full bottom-1/3 left-1/3 shadow-[0_0_10px_rgba(255,0,0,0.8)]">
+                                    </div>
+                                    <div
+                                        class="absolute bottom-2 left-2 text-[8px] uppercase tracking-wider text-gray-500 font-bold">
+                                        Карта R&D центров</div>
+                                </div>
+
+                                <!-- Shortlist -->
+                                <div class="w-1/2 flex flex-col gap-3">
+                                    <div class="text-xs uppercase tracking-wider text-gray-500 font-bold mb-1">Shortlist
+                                        (3)</div>
+
+                                    <!-- List Items -->
+                                    <div
+                                        class="w-full bg-white/5 rounded-lg p-3 border border-white/10 relative overflow-hidden">
+                                        <div class="flex items-center gap-2 mb-2">
+                                            <div
+                                                class="w-6 h-6 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600">
+                                            </div>
+                                            <div class="h-2 w-16 bg-white/20 rounded"></div>
+                                        </div>
+                                        <div class="h-2 w-full bg-white/10 rounded mb-1"></div>
+                                        <div class="h-2 w-3/4 bg-white/10 rounded"></div>
+                                        <!-- Badge -->
+                                        <div
+                                            class="absolute top-2 right-2 bg-emerald-500/20 text-emerald-400 text-[8px] font-bold px-1.5 py-0.5 rounded flex items-center gap-1">
+                                            <i class="ph-fill ph-check-circle"></i> верифицировано
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="w-full bg-white/5 rounded-lg p-3 border border-white/10 relative overflow-hidden">
+                                        <div class="flex items-center gap-2 mb-2">
+                                            <div
+                                                class="w-6 h-6 rounded-full bg-gradient-to-br from-amber-500 to-orange-600">
+                                            </div>
+                                            <div class="h-2 w-20 bg-white/20 rounded"></div>
+                                        </div>
+                                        <!-- Coef 2 badge -->
+                                        <div
+                                            class="absolute top-2 right-2 bg-red-500/20 text-red-500 text-[8px] font-bold px-1.5 py-0.5 rounded flex items-center gap-1 border border-red-500/30">
+                                            <i class="ph-bold ph-lightning"></i> коэф 2
+                                        </div>
+                                    </div>
+
+                                    <!-- Docs block icon -->
+                                    <div class="mt-auto flex justify-end">
+                                        <div
+                                            class="glass-panel w-auto inline-flex items-center gap-2 px-3 py-1.5 text-[10px] text-gray-300">
+                                            <i class="ph-bold ph-file-text text-red-500"></i>
+                                            Сгенерировать ТЗ
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 02: SCIENCE BASE -->
+        <section class="slide" id="slide-02">
+            <div class="bg-grid"></div>
+
+            <div class="slide-content">
+                <div class="layout-grid">
+
+                    <!-- Left Column -->
+                    <div class="flex flex-col justify-center h-full relative z-10">
+                        <div class="label-style mb-4 text-gray-500">Текущая ситуация</div>
+                        <h2
+                            class="text-4xl md:text-5xl font-black uppercase italic tracking-tighter leading-[1.1] mb-6">
+                            У Москвы <br><span
+                                class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-800">уже
+                                есть</span> сильная наука
+                        </h2>
+                        <h3 class="subheadline-style mb-6 text-white text-xl">Но этот потенциал еще не превращен в
+                            удобный для бизнеса инструмент.</h3>
+                        <p class="body-style mb-10">Город не начинает с нуля. У Москвы уже есть масштабный научный
+                            контур, который нужно сделать видимым, проверяемым и доступным для заказного НИОКР.</p>
+
+                        <!-- Proof Points -->
+                        <div class="flex flex-col gap-3 border-l-2 border-red-600 pl-4">
+                            <div class="text-sm font-medium text-gray-300"><span class="text-red-500 font-bold">1
+                                    342</span> организации выполняют R&D</div>
+                            <div class="text-sm font-medium text-gray-300"><span class="text-red-500 font-bold">706,3
+                                    млрд ₽</span> внутренних затрат на R&D</div>
+                            <div class="text-sm font-medium text-gray-300"><span class="text-red-500 font-bold">227
+                                    770</span> человек заняты в R&D</div>
+                            <div class="text-sm font-medium text-gray-300"><span class="text-red-500 font-bold">47
+                                    747</span> публикаций Scopus</div>
+                        </div>
+                    </div>
+
+                    <!-- Right Visual (Oversized Metrics Wall) -->
+                    <div class="relative w-full h-full flex flex-col justify-center gap-6 z-10">
+
+                        <!-- Row 1 -->
+                        <div
+                            class="flex flex-col gap-1 w-full translate-x-4 transition-transform hover:translate-x-0 duration-500">
+                            <div class="text-[5rem] lg:text-[7rem] font-black leading-none text-white tracking-tighter">
+                                1 342</div>
+                            <div
+                                class="text-red-500 uppercase font-bold tracking-[0.2em] text-sm flex items-center gap-4">
+                                <div class="h-px bg-red-500/50 flex-grow max-w-[50px]"></div>
+                                организации
+                            </div>
+                        </div>
+
+                        <!-- Row 2 -->
+                        <div
+                            class="flex flex-col gap-1 w-full text-right -translate-x-4 transition-transform hover:translate-x-0 duration-500">
+                            <div
+                                class="text-[4rem] lg:text-[6rem] font-black leading-none text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 tracking-tighter">
+                                706,3 <span class="text-5xl">млрд ₽</span></div>
+                            <div
+                                class="text-gray-400 uppercase font-bold tracking-[0.2em] text-sm flex items-center justify-end gap-4">
+                                затраты на R&D
+                                <div class="h-px bg-gray-500/50 flex-grow max-w-[50px]"></div>
+                            </div>
+                        </div>
+
+                        <!-- Row 3 -->
+                        <div class="flex gap-8 mt-4">
+                            <div
+                                class="flex-1 glass-panel p-6 border-l-4 border-l-red-600 group hover:bg-white/5 transition-colors">
+                                <div class="text-3xl font-black text-white mb-2">227 770</div>
+                                <div class="text-[10px] text-gray-400 uppercase tracking-widest font-bold">занятые в R&D
+                                </div>
+                            </div>
+                            <div
+                                class="flex-1 glass-panel p-6 border-l-4 border-l-red-600 group hover:bg-white/5 transition-colors">
+                                <div class="text-3xl font-black text-white mb-2">47 747</div>
+                                <div class="text-[10px] text-gray-400 uppercase tracking-widest font-bold">публикации
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Focus Text -->
+                        <div
+                            class="absolute -right-8 top-1/2 -translate-y-1/2 rotate-90 origin-right text-[120px] font-black text-white/[0.02] whitespace-nowrap pointer-events-none">
+                            41.1% ДОЛЯ
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- SLIDE 03: GROWTH TARGET -->
+        <section class="slide" id="slide-03">
+            <div class="bg-grid"></div>
+
+            <div class="slide-content">
+                <div class="layout-grid">
+
+                    <!-- Left Column -->
+                    <div class="flex flex-col justify-center h-full relative z-10">
+                        <div class="label-style mb-4 text-red-500">Целевой ориентир</div>
+                        <h2 class="headline-style text-white mb-6">Цель Москвы — ускорить рост НИОКР</h2>
+                        <h3 class="subheadline-style mb-6 text-white text-xl">От текущей траектории — к 5% доли НИОКР в
+                            ВРП к 2030 году.</h3>
+                        <p class="body-style mb-10 text-gray-400">Платформа важна не сама по себе. Она нужна как
+                            городской инструмент ускорения кооперации и роста заказных НИОКР.</p>
+
+                        <!-- Proof Points -->
+                        <div class="flex flex-col gap-4">
+                            <div class="flex items-center gap-4 group">
+                                <div
+                                    class="w-12 h-12 rounded-full border border-red-500/30 flex items-center justify-center text-red-500 font-black group-hover:bg-red-500 group-hover:text-white transition-colors">
+                                    3%</div>
+                                <div class="text-sm font-bold text-gray-300 uppercase tracking-widest">в 2026 году</div>
+                            </div>
+                            <div class="flex items-center gap-4 group">
+                                <div
+                                    class="w-12 h-12 rounded-full border border-red-500/30 flex items-center justify-center text-red-500 font-black group-hover:bg-red-500 group-hover:text-white transition-colors">
+                                    3,5%</div>
+                                <div class="text-sm font-bold text-gray-300 uppercase tracking-widest">в 2027 году</div>
+                            </div>
+                            <div class="flex items-center gap-4 group">
+                                <div
+                                    class="w-12 h-12 rounded-full border-2 border-red-500 bg-red-500/10 flex items-center justify-center text-white font-black shadow-[0_0_15px_rgba(255,0,0,0.5)]">
+                                    5%</div>
+                                <div class="text-sm font-bold text-white uppercase tracking-widest">к 2030 году</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Visual (Target Ladder / Line Chart) -->
+                    <div class="relative w-full h-full min-h-[500px] flex items-end justify-center z-10 pb-10">
+                        <!-- Background Line (Trajectory) -->
+                        <svg class="absolute inset-0 w-full h-full" preserveAspectRatio="none" viewBox="0 0 1000 500">
+                            <path d="M 100,400 Q 400,350 500,250 T 900,100" fill="none" stroke="rgba(255,0,60,0.2)"
+                                stroke-width="4" stroke-dasharray="10 10" class="animate-pulse" />
+                            <path d="M 100,400 L 500,250 L 900,50" fill="none" stroke="url(#redGradient)"
+                                stroke-width="8" stroke-linecap="round" />
+                            <defs>
+                                <linearGradient id="redGradient" x1="0%" y1="100%" x2="100%" y2="0%">
+                                    <stop offset="0%" stop-color="#7f1d1d" />
+                                    <stop offset="100%" stop-color="#ff003c" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+
+                        <!-- Targets -->
+                        <div class="absolute w-full h-full">
+
+                            <!-- 2026 Node -->
+                            <div
+                                class="absolute left-[10%] bottom-[20%] flex flex-col items-center -translate-x-1/2 translate-y-1/2">
+                                <div class="text-sm text-gray-500 font-bold mb-2">2026</div>
+                                <div class="w-6 h-6 rounded-full bg-red-900 border-4 border-[#111] z-10"></div>
+                                <div class="mt-4 text-3xl font-black text-gray-300">3%</div>
+                            </div>
+
+                            <!-- 2027 Node -->
+                            <div
+                                class="absolute left-[50%] bottom-[50%] flex flex-col items-center -translate-x-1/2 translate-y-1/2">
+                                <div class="text-sm text-gray-500 font-bold mb-2">2027</div>
+                                <div
+                                    class="w-8 h-8 rounded-full bg-red-600 border-4 border-[#111] shadow-[0_0_20px_rgba(255,0,0,0.5)] z-10">
+                                </div>
+                                <div class="mt-4 text-5xl font-black text-white">3,5%</div>
+                            </div>
+
+                            <!-- 2030 Target Node -->
+                            <div
+                                class="absolute left-[90%] bottom-[90%] flex flex-col items-center -translate-x-1/2 translate-y-1/2">
+                                <div class="text-sm text-red-500 font-bold mb-2 uppercase tracking-widest">Цель</div>
+                                <div
+                                    class="w-12 h-12 rounded-full bg-red-500 border-4 border-white shadow-[0_0_30px_rgba(255,0,0,0.8)] z-10 animate-bounce">
+                                </div>
+                                <div class="mt-4 text-7xl font-black text-white text-glow">5%</div>
+                                <div class="text-xl text-gray-400 font-bold mt-2">2030</div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 04: WHY BUSINESS NEEDS R&D -->
+        <section class="slide" id="slide-04">
+            <div class="bg-grid opacity-30"></div>
+
+            <div class="slide-content">
+                <div class="layout-grid">
+
+                    <!-- Left Column -->
+                    <div class="flex flex-col justify-center h-full relative z-10">
+                        <div class="label-style mb-4 text-gray-500">Почему это вообще важно</div>
+                        <h2 class="text-4xl md:text-5xl font-black uppercase italic tracking-tighter leading-[1] mb-6">
+                            Без НИОКР бизнесу <span
+                                class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-800">все
+                                сложнее</span> расти
+                        </h2>
+                        <h3 class="subheadline-style mb-6 text-white text-xl">Компании уже не могут развиваться только
+                            за счет готовых решений и чужих технологий.</h3>
+                        <p class="body-style mb-10">В условиях технологических ограничений, ускорения продуктовых циклов
+                            и роста сложности задач компаниям нужны собственные прикладные разработки, адаптация
+                            технологий и кооперация с R&D-исполнителями.</p>
+
+                        <!-- Proof Points block -->
+                        <div class="space-y-4 border-l-2 border-white/10 pl-4 py-2">
+                            <div class="flex items-start gap-3">
+                                <i class="ph-fill ph-arrow-circle-up text-red-500 mt-1 min-w-[20px]"></i>
+                                <span class="text-sm text-gray-300 font-bold uppercase tracking-wider">Усложнение
+                                    технологических задач</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <i class="ph-fill ph-warning-circle text-red-500 mt-1 min-w-[20px]"></i>
+                                <span class="text-sm text-gray-300 font-bold uppercase tracking-wider">Рост стоимости
+                                    ошибки выбора технологии</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <i class="ph-fill ph-rocket text-red-500 mt-1 min-w-[20px]"></i>
+                                <span class="text-sm text-gray-300 font-bold uppercase tracking-wider">Необходимость
+                                    быстрее выводить новые продукты</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Visual (Conceptual Business Pressure Diagram) -->
+                    <div class="relative w-full h-full min-h-[500px] flex items-center justify-center p-8 z-10">
+
+                        <!-- Central Element (The Business) -->
+                        <div
+                            class="relative z-20 glass-panel border border-red-500 p-8 rounded-full w-48 h-48 flex items-center justify-center shadow-[0_0_50px_rgba(255,0,0,0.15)] bg-black/50">
+                            <div class="text-center">
+                                <i class="ph-fill ph-buildings text-4xl text-white mb-2"></i>
+                                <div class="text-sm font-black uppercase text-white">Бизнес</div>
+                                <div class="text-[10px] text-red-400 mt-1 font-bold">Собственный R&D</div>
+                            </div>
+                        </div>
+
+                        <!-- Pressure Arrows / Nodes around center -->
+                        <!-- 1. Limitations -->
+                        <div class="absolute top-[10%] left-[20%] text-center max-w-[150px] animate-float"
+                            style="animation-delay: 0s;">
+                            <i class="ph-bold ph-lock-key text-3xl text-gray-500 mb-2"></i>
+                            <div class="text-xs uppercase font-bold text-gray-400 mb-2">Ограничения</div>
+                            <div
+                                class="h-16 border-l-2 border-dashed border-red-500/50 mx-auto mt-2 flex flex-col items-center justify-end">
+                                <div class="w-3 h-3 border-b-2 border-r-2 border-red-500/50 rotate-45 mb-1"></div>
+                            </div>
+                        </div>
+
+                        <!-- 2. Velocity -->
+                        <div class="absolute top-[10%] right-[20%] text-center max-w-[150px] animate-float"
+                            style="animation-delay: 1s;">
+                            <i class="ph-bold ph-timer text-3xl text-gray-500 mb-2"></i>
+                            <div class="text-xs uppercase font-bold text-gray-400 mb-2">Скорость вывода продукта</div>
+                            <div
+                                class="h-16 border-l-2 border-dashed border-red-500/50 mx-auto mt-2 flex flex-col items-center justify-end">
+                                <div class="w-3 h-3 border-b-2 border-r-2 border-red-500/50 rotate-45 mb-1"></div>
+                            </div>
+                        </div>
+
+                        <!-- 3. Dependency -->
+                        <div class="absolute bottom-[10%] left-1/2 -translate-x-1/2 text-center max-w-[200px] animate-float"
+                            style="animation-delay: 2s;">
+                            <div
+                                class="h-16 border-l-2 border-dashed border-red-500/50 mx-auto mb-2 flex flex-col items-center justify-start">
+                                <div class="w-3 h-3 border-t-2 border-l-2 border-red-500/50 rotate-45 mt-1"></div>
+                            </div>
+                            <div class="text-xs uppercase font-bold text-gray-400 mt-2 mb-2">Технологическая зависимость
+                            </div>
+                            <i class="ph-bold ph-link-break text-3xl text-gray-500"></i>
+                        </div>
+
+                        <!-- Concentric rings to simulate pressure -->
+                        <div class="absolute w-[300px] h-[300px] rounded-full border border-white/5 z-0"></div>
+                        <div class="absolute w-[450px] h-[450px] rounded-full border border-white/5 z-0"></div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 05: PROBLEM FIELD -->
+        <section class="slide" id="slide-05">
+            <div class="bg-grid"></div>
+
+            <div class="slide-content">
+                <div class="layout-grid">
+
+                    <!-- Left Column -->
+                    <div class="flex flex-col justify-center h-full relative z-10">
+                        <div class="label-style mb-4 text-gray-500">Проблемное поле</div>
+                        <h2 class="text-4xl md:text-5xl font-black uppercase italic tracking-tighter leading-[1] mb-6">
+                            Три ключевых <span
+                                class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-800">барьера</span>
+                            для бизнеса
+                        </h2>
+                        <h3 class="subheadline-style mb-6 text-white text-xl">Поиск и доверие. Финансирование и риск.
+                            Коммуникация и сделка.</h3>
+                        <p class="body-style mb-10">Если не решить все три барьера сразу, платформа останется просто
+                            красивой витриной.</p>
+
+                        <!-- Proof Points block -->
+                        <div class="flex flex-col gap-4">
+                            <div class="flex items-center gap-4 glass-panel p-3 border-l-4 border-l-red-600">
+                                <i class="ph-bold ph-question text-red-500 text-xl"></i>
+                                <div class="text-sm font-bold text-gray-300 uppercase tracking-wider">Где искать и кому
+                                    доверять</div>
+                            </div>
+                            <div class="flex items-center gap-4 glass-panel p-3 border-l-4 border-l-red-600">
+                                <i class="ph-bold ph-shield-warning text-red-500 text-xl"></i>
+                                <div class="text-sm font-bold text-gray-300 uppercase tracking-wider">Как снизить риск
+                                    вложений в НИОКР</div>
+                            </div>
+                            <div class="flex items-center gap-4 glass-panel p-3 border-l-4 border-l-red-600">
+                                <i class="ph-bold ph-paper-plane-tilt text-red-500 text-xl"></i>
+                                <div class="text-sm font-bold text-gray-300 uppercase tracking-wider">Как быстро дойти
+                                    до контракта</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Visual (3 Vertical Issue Cards) -->
+                    <div class="relative w-full h-full flex flex-col justify-center gap-6 z-10 lg:pl-12">
+
+                        <!-- Card 1 -->
+                        <div
+                            class="glass-panel p-6 border-l-4 border-red-600 hover:bg-white/5 transition-all transform hover:-translate-y-2 flex gap-6 items-start">
+                            <div
+                                class="w-16 h-16 shrink-0 rounded-xl bg-red-900/30 flex items-center justify-center text-red-500 text-3xl">
+                                1</div>
+                            <div>
+                                <h4 class="text-xl font-bold text-white mb-2 uppercase tracking-wide">Поиск и доверие
+                                </h4>
+                                <p class="text-gray-400 text-sm leading-relaxed">Бизнес не понимает, куда идти и кто
+                                    реально умеет решать его задачу.</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div
+                            class="glass-panel p-6 border-l-4 border-red-600 hover:bg-white/5 transition-all transform hover:-translate-y-2 flex gap-6 items-start lg:ml-12">
+                            <div
+                                class="w-16 h-16 shrink-0 rounded-xl bg-red-900/30 flex items-center justify-center text-red-500 text-3xl">
+                                2</div>
+                            <div>
+                                <h4 class="text-xl font-bold text-white mb-2 uppercase tracking-wide">Финансирование и
+                                    риск</h4>
+                                <p class="text-gray-400 text-sm leading-relaxed">НИОКР — длинные и рискованные затраты,
+                                    которые сложно защищать внутри компании.</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div
+                            class="glass-panel p-6 border-l-4 border-red-600 hover:bg-white/5 transition-all transform hover:-translate-y-2 flex gap-6 items-start lg:ml-24">
+                            <div
+                                class="w-16 h-16 shrink-0 rounded-xl bg-red-900/30 flex items-center justify-center text-red-500 text-3xl">
+                                3</div>
+                            <div>
+                                <h4 class="text-xl font-bold text-white mb-2 uppercase tracking-wide">Коммуникация и
+                                    сделка</h4>
+                                <p class="text-gray-400 text-sm leading-relaxed">Даже после поиска исполнителя путь до
+                                    контракта остается слишком ручным и долгим.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 06: SEARCH AND VERIFICATION PROBLEM -->
+        <section class="slide" id="slide-06">
+            <div class="bg-grid"></div>
+
+            <div class="slide-content">
+                <div class="layout-grid">
+
+                    <!-- Left Column -->
+                    <div class="flex flex-col justify-center h-full relative z-10">
+                        <div class="label-style mb-4 text-red-500">Барьер 1</div>
+                        <h2 class="text-4xl md:text-5xl font-black uppercase italic tracking-tighter leading-[1] mb-4">
+                            Сложно понять, <br><span
+                                class="text-transparent bg-clip-text bg-gradient-to-r from-gray-300 to-gray-500">куда
+                                идти</span>
+                        </h2>
+                        <h3 class="subheadline-style mb-6 text-white text-xl">И еще сложнее — понять, кому можно
+                            доверять.</h3>
+                        <p class="body-style mb-8 text-gray-400">Бизнесу нужны не просто карточки организаций, а
+                            подтвержденные компетенции, реальные команды, оборудование и понятный цифровой след
+                            выполненных работ.</p>
+
+                        <!-- Proof Points -->
+                        <div class="flex flex-col gap-3">
+                            <div
+                                class="flex items-center gap-3 text-sm text-gray-300 font-bold uppercase tracking-wider">
+                                <i class="ph-bold ph-x text-red-500"></i> Нужна скорость подбора исполнителя
+                            </div>
+                            <div
+                                class="flex items-center gap-3 text-sm text-gray-300 font-bold uppercase tracking-wider">
+                                <i class="ph-bold ph-x text-red-500"></i> Нужны кейсы, а не самопрезентация
+                            </div>
+                            <div
+                                class="flex items-center gap-3 text-sm text-gray-300 font-bold uppercase tracking-wider">
+                                <i class="ph-bold ph-x text-red-500"></i> Нужен выход на людей и команды
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Visual (Before / After Selection) -->
+                    <div class="relative w-full h-full flex flex-col justify-center gap-8 z-10 p-4">
+
+                        <!-- BEFORE State (Chaos) -->
+                        <div class="relative w-full glass-panel p-6 border border-gray-700 bg-black/40">
+                            <div
+                                class="absolute -top-3 left-6 px-3 py-1 bg-gray-800 text-[10px] font-bold uppercase tracking-widest rounded text-gray-400 border border-gray-600">
+                                Обычно</div>
+
+                            <div class="flex flex-wrap gap-2 mt-2 opacity-50 justify-center">
+                                <div class="px-3 py-2 bg-gray-900 rounded border border-gray-700 text-xs text-gray-500">
+                                    Сайт вуза</div>
+                                <div class="px-3 py-2 bg-gray-900 rounded border border-gray-700 text-xs text-gray-500">
+                                    Выставка</div>
+                                <div class="px-3 py-2 bg-gray-900 rounded border border-gray-700 text-xs text-gray-500">
+                                    Реестр патентов</div>
+                                <div class="px-3 py-2 bg-gray-900 rounded border border-gray-700 text-xs text-gray-500">
+                                    Знакомые</div>
+                                <div class="px-3 py-2 bg-gray-900 rounded border border-gray-700 text-xs text-gray-500">
+                                    Гугл-запрос</div>
+                                <div class="px-3 py-2 bg-gray-900 rounded border border-gray-700 text-xs text-gray-500">
+                                    Pdf-каталог</div>
+                            </div>
+                            <div class="text-center mt-4 text-xs font-bold text-gray-500 uppercase tracking-widest">
+                                Хаотичный ручной поиск</div>
+                        </div>
+
+                        <!-- Transition Arrow -->
+                        <div class="flex justify-center text-red-500 text-3xl animate-bounce">
+                            <i class="ph-bold ph-arrow-down"></i>
+                        </div>
+
+                        <!-- AFTER State (MOSNAUKA Hub) -->
+                        <div
+                            class="relative w-full glass-panel p-6 border border-red-500/30 bg-red-900/10 shadow-[0_0_30px_rgba(255,0,0,0.1)]">
+                            <div
+                                class="absolute -top-3 left-6 px-3 py-1 bg-red-600 text-[10px] font-bold uppercase tracking-widest rounded text-white shadow-lg">
+                                В Моснауке</div>
+
+                            <div class="flex flex-col gap-4 mt-2">
+                                <!-- Shortlist Item -->
+                                <div
+                                    class="flex items-center justify-between p-3 bg-black/40 border border-white/10 rounded-lg">
+                                    <div class="flex items-center gap-4">
+                                        <div
+                                            class="w-10 h-10 rounded bg-red-900/50 flex items-center justify-center text-red-500">
+                                            <i class="ph-fill ph-buildings"></i>
+                                        </div>
+                                        <div>
+                                            <div class="text-sm font-bold text-white mb-1">МГТУ им. Баумана</div>
+                                            <div class="text-[10px] text-gray-400">Лаборатория робототехники</div>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col items-end gap-1">
+                                        <div
+                                            class="px-2 py-0.5 bg-emerald-500/20 text-emerald-400 text-[10px] font-bold rounded uppercase">
+                                            Верифицировано</div>
+                                        <div class="text-[10px] text-gray-500">12 проектов</div>
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="text-center mt-2 text-xs font-bold text-white uppercase tracking-widest text-glow">
+                                    Единый профиль + Верификация + Shortlist
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 07: FINANCING PROBLEM -->
+        <section class="slide" id="slide-07">
+            <div class="bg-grid opacity-30"></div>
+
+            <div class="slide-content">
+                <div class="layout-grid">
+
+                    <!-- Left Column -->
+                    <div class="flex flex-col justify-center h-full relative z-10">
+                        <div class="label-style mb-4 text-red-500">Барьер 2</div>
+                        <h2 class="text-4xl md:text-5xl font-black uppercase italic tracking-tighter leading-[1] mb-6">
+                            НИОКР для бизнеса — <span
+                                class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-800">рискованные</span>
+                            затраты
+                        </h2>
+                        <h3 class="subheadline-style mb-6 text-white text-xl">Компании боятся вкладываться в разработки,
+                            если не видят понятного пути до льгот и возврата.</h3>
+                        <p class="body-style mb-10 text-gray-400">Даже существующие федеральные механизмы работают
+                            слишком узко: проблема не в отсутствии льгот, а в трудности доступа к ним.</p>
+
+                        <!-- Proof Points -->
+                        <div class="flex flex-col gap-4">
+                            <div class="flex items-center gap-4 group">
+                                <div
+                                    class="w-14 h-14 shrink-0 rounded border border-red-500/30 flex items-center justify-center text-red-500 font-black text-sm group-hover:bg-red-500 group-hover:text-white transition-colors bg-[#111]">
+                                    &lt;30%</div>
+                                <div class="text-sm font-bold text-gray-300 uppercase tracking-widest leading-snug">
+                                    официальная доля затрат бизнеса на НИОКР в Москве</div>
+                            </div>
+                            <div class="flex items-center gap-4 group">
+                                <div
+                                    class="w-14 h-14 shrink-0 rounded border border-red-500/30 flex items-center justify-center text-red-500 font-black text-sm group-hover:bg-red-500 group-hover:text-white transition-colors bg-[#111]">
+                                    1/4</div>
+                                <div class="text-sm font-bold text-gray-300 uppercase tracking-widest leading-snug">
+                                    компаний пользуются налоговыми льготами на НИОКР</div>
+                            </div>
+                            <div class="flex items-center gap-4 group">
+                                <div
+                                    class="w-14 h-14 shrink-0 rounded border border-red-500/30 flex items-center justify-center text-red-500 font-black text-sm group-hover:bg-red-500 group-hover:text-white transition-colors bg-[#111]">
+                                    <i class="ph-bold ph-warning"></i>
+                                </div>
+                                <div class="text-sm font-bold text-gray-300 uppercase tracking-widest leading-snug">
+                                    Компании часто списывают НИОКР в OPEX вместо корректного учета</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Visual (Risk / Economics Panel) -->
+                    <div class="relative w-full h-full flex items-center justify-center z-10 p-4">
+
+                        <!-- 2x2 Grid Layout for Risks -->
+                        <div class="grid grid-cols-2 gap-4 w-full max-w-md">
+
+                            <!-- Risk 1: Timeline -->
+                            <div
+                                class="glass-panel p-6 border-t-2 border-red-600 hover:bg-white/5 transition-all text-center group">
+                                <div
+                                    class="w-12 h-12 rounded-full border border-red-500 text-red-500 flex items-center justify-center text-2xl mx-auto mb-4 group-hover:bg-red-500 group-hover:text-white transition-colors shadow-[0_0_15px_rgba(255,0,0,0.2)]">
+                                    <i class="ph-bold ph-hourglass-high"></i>
+                                </div>
+                                <div class="text-sm font-black uppercase text-white tracking-wider">Длинный горизонт
+                                </div>
+                            </div>
+
+                            <!-- Risk 2: Uncertainty -->
+                            <div
+                                class="glass-panel p-6 border-t-2 border-red-600 hover:bg-white/5 transition-all text-center group">
+                                <div
+                                    class="w-12 h-12 rounded-full border border-red-500 text-red-500 flex items-center justify-center text-2xl mx-auto mb-4 group-hover:bg-red-500 group-hover:text-white transition-colors shadow-[0_0_15px_rgba(255,0,0,0.2)]">
+                                    <i class="ph-bold ph-question"></i>
+                                </div>
+                                <div class="text-sm font-black uppercase text-white tracking-wider">Неопределенность
+                                    результата</div>
+                            </div>
+
+                            <!-- Risk 3: Accounting -->
+                            <div
+                                class="glass-panel p-6 border-b-2 border-red-600 hover:bg-white/5 transition-all text-center group">
+                                <div
+                                    class="w-12 h-12 rounded-full border border-red-500 text-red-500 flex items-center justify-center text-2xl mx-auto mb-4 group-hover:bg-red-500 group-hover:text-white transition-colors shadow-[0_0_15px_rgba(255,0,0,0.2)]">
+                                    <i class="ph-bold ph-calculator"></i>
+                                </div>
+                                <div class="text-sm font-black uppercase text-white tracking-wider">Сложный учет</div>
+                            </div>
+
+                            <!-- Risk 4: Tax rejections -->
+                            <div
+                                class="glass-panel p-6 border-b-2 border-red-600 hover:bg-white/5 transition-all text-center group">
+                                <div
+                                    class="w-12 h-12 rounded-full border border-red-500 text-red-500 flex items-center justify-center text-2xl mx-auto mb-4 group-hover:bg-red-500 group-hover:text-white transition-colors shadow-[0_0_15px_rgba(255,0,0,0.2)]">
+                                    <i class="ph-bold ph-prohibit"></i>
+                                </div>
+                                <div class="text-sm font-black uppercase text-white tracking-wider">Риск непризнания
+                                    затрат</div>
+                            </div>
+
+                        </div>
+
+                        <!-- Connecting Lines in Background -->
+                        <div class="absolute inset-0 pointer-events-none z-[-1] flex items-center justify-center">
+                            <div class="w-64 h-64 border border-red-500/20 rounded-full"></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 08: COMMUNICATION PROBLEM -->
+        <section class="slide" id="slide-08">
+            <div class="bg-grid"></div>
+
+            <div class="slide-content">
+                <div class="layout-grid">
+
+                    <!-- Left Column -->
+                    <div class="flex flex-col justify-center h-full relative z-10">
+                        <div class="label-style mb-4 text-red-500">Барьер 3</div>
+                        <h2 class="text-4xl md:text-5xl font-black uppercase italic tracking-tighter leading-[1] mb-6">
+                            Путь до контракта слишком <span
+                                class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-800">ручной</span>
+                        </h2>
+                        <h3 class="subheadline-style mb-6 text-white text-xl">Пользователь хочет одно окно и понятный
+                            маршрут, а не цепочку звонков и согласований.</h3>
+                        <p class="body-style mb-10 text-gray-400">Статичная витрина может закрыть аналитическую
+                            потребность, но не доводит до сделки. Для этого нужны инструменты deal flow, прямого
+                            контакта, онлайн-встреч, статусов и сопровождения.</p>
+
+                        <!-- Proof Points -->
+                        <div class="flex flex-col gap-3">
+                            <div
+                                class="flex items-center gap-3 text-sm text-gray-300 font-bold uppercase tracking-wider">
+                                <i class="ph-bold ph-minus-circle text-red-500 text-xl"></i> Слишком много ручной
+                                координации
+                            </div>
+                            <div
+                                class="flex items-center gap-3 text-sm text-gray-300 font-bold uppercase tracking-wider">
+                                <i class="ph-bold ph-minus-circle text-red-500 text-xl"></i> Отсутствует режим одного
+                                окна
+                            </div>
+                            <div
+                                class="flex items-center gap-3 text-sm text-gray-300 font-bold uppercase tracking-wider">
+                                <i class="ph-bold ph-minus-circle text-red-500 text-xl"></i> Нет встроенного мэтчинга и
+                                быстрых встреч
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Visual (Journey Breakdown Diagram) -->
+                    <div class="relative w-full h-full flex flex-col justify-center z-10 py-12 px-4 lg:px-12">
+
+                        <!-- Journey Steps -->
+                        <div
+                            class="relative flex flex-col gap-1 w-full max-w-lg ml-auto mr-auto glass-panel p-6 border border-red-500/30">
+                            <div
+                                class="absolute -top-3 right-6 px-3 py-1 bg-red-600 text-[10px] font-bold uppercase tracking-widest rounded text-white shadow-lg z-20 animate-pulse">
+                                Слишком длинный путь</div>
+
+                            <!-- Absolute line connecting dots -->
+                            <div class="absolute left-[39px] top-12 bottom-12 w-0.5 bg-gray-700 z-0"></div>
+
+                            <!-- Steps Loop -->
+                            <div class="flex items-center gap-4 relative z-10 group opacity-50">
+                                <div
+                                    class="w-8 h-8 rounded-full bg-gray-800 border-2 border-gray-600 flex flex-shrink-0 items-center justify-center text-xs font-black">
+                                    1</div>
+                                <div class="text-sm font-bold uppercase tracking-wider text-gray-400 py-3">Интерес и
+                                    поиск</div>
+                            </div>
+
+                            <div
+                                class="flex items-center gap-4 relative z-10 group bg-red-900/20 rounded p-2 -ml-2 border border-red-500/20">
+                                <div
+                                    class="w-8 h-8 rounded-full bg-red-900 border-2 border-red-500 flex flex-shrink-0 items-center justify-center text-xs font-black text-white shadow-[0_0_10px_rgba(255,0,0,0.5)]">
+                                    2</div>
+                                <div class="text-sm font-bold uppercase tracking-wider text-white">Холодные звонки</div>
+                                <i class="ph-bold ph-phone text-red-500 ml-auto"></i>
+                            </div>
+
+                            <div
+                                class="flex items-center gap-4 relative z-10 group bg-red-900/20 rounded p-2 -ml-2 border border-red-500/20 mt-1">
+                                <div
+                                    class="w-8 h-8 rounded-full bg-red-900 border-2 border-red-500 flex flex-shrink-0 items-center justify-center text-xs font-black text-white shadow-[0_0_10px_rgba(255,0,0,0.5)]">
+                                    3</div>
+                                <div class="text-sm font-bold uppercase tracking-wider text-white">Уточнения ТЗ в почте
+                                </div>
+                                <i class="ph-bold ph-envelope text-red-500 ml-auto"></i>
+                            </div>
+
+                            <div
+                                class="flex items-center gap-4 relative z-10 group bg-red-900/20 rounded p-2 -ml-2 border border-red-500/20 mt-1">
+                                <div
+                                    class="w-8 h-8 rounded-full bg-red-900 border-2 border-red-500 flex flex-shrink-0 items-center justify-center text-xs font-black text-white shadow-[0_0_10px_rgba(255,0,0,0.5)]">
+                                    4</div>
+                                <div class="text-sm font-bold uppercase tracking-wider text-white">Проверка
+                                    благонадежности ручная</div>
+                                <i class="ph-bold ph-magnifying-glass text-red-500 ml-auto"></i>
+                            </div>
+
+                            <div
+                                class="flex items-center gap-4 relative z-10 group bg-red-900/20 rounded p-2 -ml-2 border border-red-500/20 mt-1">
+                                <div
+                                    class="w-8 h-8 rounded-full bg-red-900 border-2 border-red-500 flex flex-shrink-0 items-center justify-center text-xs font-black text-white shadow-[0_0_10px_rgba(255,0,0,0.5)]">
+                                    5</div>
+                                <div class="text-sm font-bold uppercase tracking-wider text-white">Организация очной
+                                    встречи</div>
+                                <i class="ph-bold ph-users text-red-500 ml-auto"></i>
+                            </div>
+
+                            <div
+                                class="flex items-center gap-4 relative z-10 group bg-red-900/20 rounded p-2 -ml-2 border border-red-500/20 mt-1">
+                                <div
+                                    class="w-8 h-8 rounded-full bg-red-900 border-2 border-red-500 flex flex-shrink-0 items-center justify-center text-xs font-black text-white shadow-[0_0_10px_rgba(255,0,0,0.5)]">
+                                    6</div>
+                                <div class="text-sm font-bold uppercase tracking-wider text-white">Долгий обмен
+                                    документами</div>
+                                <i class="ph-bold ph-files text-red-500 ml-auto"></i>
+                            </div>
+
+                            <div class="flex items-center gap-4 relative z-10 group opacity-50 mt-1">
+                                <div
+                                    class="w-8 h-8 rounded-full bg-gray-800 border-2 border-gray-600 flex flex-shrink-0 items-center justify-center text-xs font-black">
+                                    7</div>
+                                <div class="text-sm font-bold uppercase tracking-wider text-gray-400 py-3">Заключение
+                                    контракта</div>
+                            </div>
+
+                        </div>
+
+                        <!-- Warning text at bottom -->
+                        <div
+                            class="text-center mt-6 text-xs font-bold text-red-500 uppercase tracking-widest leading-relaxed">
+                            60% времени уходит на административные барьеры, а не на само исследование
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 09: EXISTING PLATFORMS = SHOWCASES -->
+        <section class="slide" id="slide-09">
+            <div class="bg-grid"></div>
+
+            <div class="slide-content">
+                <div class="layout-grid">
+
+                    <!-- Left Column -->
+                    <div class="flex flex-col justify-center h-full relative z-10 lg:col-span-1">
+                        <div class="label-style mb-4 text-gray-500">Анализ рынка</div>
+                        <h2 class="text-4xl md:text-5xl font-black uppercase italic tracking-tighter leading-[1] mb-6">
+                            Существующие площадки — просто <span
+                                class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-800">витрины</span>
+                        </h2>
+                        <h3 class="subheadline-style mb-6 text-white text-xl">Они хороши как справочники, но не работают
+                            как инфраструктура кооперации.</h3>
+                        <p class="body-style mb-10">В России существуют десятки платформ, реестров и маркетплейсов в
+                            сфере науки и инноваций. Но почти все они работают по модели "доски объявлений".</p>
+
+                        <div class="glass-panel p-4 border-l-4 border-gray-600 bg-black/40">
+                            <div class="text-sm font-bold text-gray-400 mb-2 uppercase tracking-wide">Главный вывод
+                                аналитики</div>
+                            <p class="text-white text-sm">Ни одна из существующих площадок не закрывает полный цикл
+                                сделки и не снимает описанные ранее барьеры (поиск, риск, коммуникация) одновременно.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Right Visual (Comparison Table) -->
+                    <div
+                        class="relative w-full h-full flex items-center justify-center z-10 lg:col-span-1 py-8 overflow-hidden">
+
+                        <div
+                            class="w-full max-w-2xl bg-[#0a0a0a] rounded-xl border border-gray-800 overflow-hidden shadow-2xl">
+                            <!-- Table Header -->
+                            <div class="grid grid-cols-4 bg-[#111] border-b border-gray-800 p-4">
+                                <div class="col-span-1 text-[10px] font-black uppercase text-gray-500 tracking-wider">
+                                    Тип площадки</div>
+                                <div
+                                    class="col-span-1 text-[10px] font-black uppercase text-gray-500 tracking-wider text-center">
+                                    Верификация</div>
+                                <div
+                                    class="col-span-1 text-[10px] font-black uppercase text-gray-500 tracking-wider text-center">
+                                    Сделки онлайн</div>
+                                <div
+                                    class="col-span-1 text-[10px] font-black uppercase text-red-500 tracking-wider text-center flex items-center justify-center gap-1 group cursor-default">
+                                    МОСНАУКА <i
+                                        class="ph-fill ph-info text-red-700 opacity-50 relative group-hover:opacity-100 transition-opacity"><span
+                                            class="absolute hidden group-hover:block top-6 right-0 w-48 p-2 bg-black border border-red-500/50 rounded text-gray-300 text-[10px] normal-case tracking-normal z-50">Наш
+                                            целевой профиль закрывает все этапы</span></i>
+                                </div>
+                            </div>
+
+                            <!-- Row 1 -->
+                            <div
+                                class="grid grid-cols-4 border-b border-gray-800/50 p-4 hover:bg-white/5 transition-colors items-center">
+                                <div class="col-span-1">
+                                    <div class="text-xs font-bold text-white mb-1">Реестры оборудования</div>
+                                    <div class="text-[10px] text-gray-500">НАША ЛАБА, ЦКП</div>
+                                </div>
+                                <div class="col-span-1 text-center"><i
+                                        class="ph-bold ph-minus text-gray-600 text-lg"></i></div>
+                                <div class="col-span-1 text-center"><i
+                                        class="ph-bold ph-minus text-gray-600 text-lg"></i></div>
+                                <div class="col-span-1 text-center text-red-500"><i
+                                        class="ph-bold ph-check-circle text-lg shadow-[0_0_10px_rgba(255,0,0,0.3)] rounded-full"></i>
+                                </div>
+                            </div>
+
+                            <!-- Row 2 -->
+                            <div
+                                class="grid grid-cols-4 border-b border-gray-800/50 p-4 hover:bg-white/5 transition-colors items-center">
+                                <div class="col-span-1">
+                                    <div class="text-xs font-bold text-white mb-1">Биржи технологий</div>
+                                    <div class="text-[10px] text-gray-500">Роспатент, Сколково</div>
+                                </div>
+                                <div class="col-span-1 text-center text-gray-400"><i
+                                        class="ph-bold ph-check text-lg"></i><br><span
+                                        class="text-[8px] uppercase">Частично</span></div>
+                                <div class="col-span-1 text-center"><i
+                                        class="ph-bold ph-minus text-gray-600 text-lg"></i></div>
+                                <div class="col-span-1 text-center text-red-500"><i
+                                        class="ph-bold ph-check-circle text-lg shadow-[0_0_10px_rgba(255,0,0,0.3)] rounded-full"></i>
+                                </div>
+                            </div>
+
+                            <!-- Row 3 -->
+                            <div
+                                class="grid grid-cols-4 border-b border-gray-800/50 p-4 hover:bg-white/5 transition-colors items-center">
+                                <div class="col-span-1">
+                                    <div class="text-xs font-bold text-white mb-1">Маркетплейсы услуг</div>
+                                    <div class="text-[10px] text-gray-500">Sk R&D, платф. НТИ</div>
+                                </div>
+                                <div class="col-span-1 text-center text-gray-400"><i
+                                        class="ph-bold ph-check text-lg"></i></div>
+                                <div class="col-span-1 text-center text-gray-400"><i
+                                        class="ph-bold ph-check text-lg"></i><br><span
+                                        class="text-[8px] uppercase">Только МСП</span></div>
+                                <div class="col-span-1 text-center text-red-500"><i
+                                        class="ph-bold ph-check-circle text-lg shadow-[0_0_10px_rgba(255,0,0,0.3)] rounded-full"></i>
+                                </div>
+                            </div>
+
+                            <!-- Row 4 -->
+                            <div
+                                class="grid grid-cols-4 p-4 hover:bg-white/5 transition-colors items-center bg-red-900/10 border border-red-500/10">
+                                <div class="col-span-1">
+                                    <div class="text-xs font-bold text-white mb-1">Витрины вузов</div>
+                                    <div class="text-[10px] text-gray-500">Сайты организаций</div>
+                                </div>
+                                <div class="col-span-1 text-center text-green-500"><i
+                                        class="ph-bold ph-check text-lg"></i><br><span
+                                        class="text-[8px] uppercase">Внутренняя</span></div>
+                                <div class="col-span-1 text-center"><i
+                                        class="ph-bold ph-minus text-gray-600 text-lg"></i></div>
+                                <div class="col-span-1 text-center text-red-500 animate-pulse"><i
+                                        class="ph-fill ph-check-circle text-xl shadow-[0_0_15px_rgba(255,0,0,0.5)] rounded-full text-glow"></i>
+                                </div>
+                            </div>
+
+                            <div
+                                class="bg-[#111] p-3 text-center border-top border-gray-800 text-[10px] text-gray-500 uppercase tracking-widest">
+                                Большинство платформ останавливается на этапе "найти контакт"
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 10: WHY SHOWCASES FAIL -->
+        <section class="slide" id="slide-10">
+            <div class="bg-grid opacity-30"></div>
+
+            <div class="slide-content">
+                <div class="layout-grid">
+
+                    <!-- Left Column -->
+                    <div class="flex flex-col justify-center h-full relative z-10">
+                        <div class="label-style mb-4 text-gray-500">Проблематика витрин</div>
+                        <h2 class="text-4xl md:text-5xl font-black uppercase italic tracking-tighter leading-[1] mb-6">
+                            Почему подход витрины <span
+                                class="text-transparent bg-clip-text bg-gradient-to-r from-gray-400 to-gray-600">не
+                                работает</span> для НИОКР
+                        </h2>
+                        <h3 class="subheadline-style mb-6 text-white text-xl">НИОКР — это не покупка товара на Ozon. Это
+                            сложная кооперация.</h3>
+                        <p class="body-style mb-10 text-gray-400">Платформы-"доски объявлений" умирают, потому что не
+                            генерируют ценность в процессе самой сделки. Они полезны 5 минут на этапе поиска, после чего
+                            участники уходят общаться в почту.</p>
+                    </div>
+
+                    <!-- Right Visual (3 Failure Cards) -->
+                    <div class="relative w-full h-full flex flex-col justify-center gap-6 z-10 lg:pl-8">
+
+                        <!-- Card 1 -->
+                        <div
+                            class="relative glass-panel p-6 border border-gray-700 bg-black/40 overflow-hidden group hover:border-red-500/50 transition-colors">
+                            <div
+                                class="absolute top-0 right-0 w-24 h-24 bg-gray-800/30 rounded-full blur-2xl group-hover:bg-red-900/40 transition-colors">
+                            </div>
+                            <div class="flex items-start gap-4 relative z-10">
+                                <div class="text-4xl text-gray-600 group-hover:text-red-500 transition-colors"><i
+                                        class="ph-bold ph-user-circle-minus"></i></div>
+                                <div>
+                                    <h4 class="text-lg font-bold text-white mb-2 uppercase tracking-wide">Неактуальность
+                                        данных</h4>
+                                    <p class="text-sm text-gray-400 leading-relaxed">Без сделок на платформе у
+                                        организаций нет стимула обновлять каталоги оборудования и компетенций. Базы
+                                        устаревают за полгода.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div
+                            class="relative glass-panel p-6 border border-gray-700 bg-black/40 overflow-hidden group hover:border-red-500/50 transition-colors lg:ml-8">
+                            <div
+                                class="absolute top-0 right-0 w-24 h-24 bg-gray-800/30 rounded-full blur-2xl group-hover:bg-red-900/40 transition-colors">
+                            </div>
+                            <div class="flex items-start gap-4 relative z-10">
+                                <div class="text-4xl text-gray-600 group-hover:text-red-500 transition-colors"><i
+                                        class="ph-bold ph-handshake"></i></div>
+                                <div>
+                                    <h4 class="text-lg font-bold text-white mb-2 uppercase tracking-wide">Отток в "серую
+                                        зону"</h4>
+                                    <p class="text-sm text-gray-400 leading-relaxed">Найдя друг друга на витрине,
+                                        участники продолжают процесс офлайн из-за отсутствия удобных сервисов для
+                                        подписания NDA и ТЗ.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div
+                            class="relative glass-panel p-6 border border-gray-700 bg-black/40 overflow-hidden group hover:border-red-500/50 transition-colors lg:ml-16">
+                            <div
+                                class="absolute top-0 right-0 w-24 h-24 bg-gray-800/30 rounded-full blur-2xl group-hover:bg-red-900/40 transition-colors">
+                            </div>
+                            <div class="flex items-start gap-4 relative z-10">
+                                <div class="text-4xl text-gray-600 group-hover:text-red-500 transition-colors"><i
+                                        class="ph-bold ph-chart-line-down"></i></div>
+                                <div>
+                                    <h4 class="text-lg font-bold text-white mb-2 uppercase tracking-wide">Нулевая
+                                        аналитика для города</h4>
+                                    <p class="text-sm text-gray-400 leading-relaxed">Город видит только клики, но не
+                                        видит реальные сделки, объемы R&D-рынка, дефицитные компетенции и тренды
+                                        запросов бизнеса.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 11: NEW APPROACH (THE HUB) -->
+        <section class="slide" id="slide-11">
+            <div class="bg-grid"></div>
+
+            <div class="slide-content">
+                <div class="layout-grid">
+
+                    <!-- Left Column -->
+                    <div class="flex flex-col justify-center h-full relative z-10 lg:pr-8">
+                        <div class="label-style mb-4 text-red-500">Наш ответ</div>
+                        <h2 class="text-4xl md:text-5xl font-black uppercase italic tracking-tighter leading-[1] mb-6">
+                            Концепция <span
+                                class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-800">инфраструктурного</span>
+                            хаба
+                        </h2>
+                        <h3 class="subheadline-style mb-6 text-white text-xl">Мы переходим от информирования к
+                            сопровождению сделки.</h3>
+                        <p class="body-style mb-10 text-gray-400">Вместо еще одного каталога мы создаем единый B2B-хаб,
+                            который берет на себя рутину: от умного мэтчинга и гарантий безопасности до помощи в
+                            финансировании и трекинга результата.</p>
+
+                        <!-- Three transition arrows -->
+                        <div class="flex flex-col gap-6 w-full max-w-sm">
+                            <!-- 1 -->
+                            <div class="flex items-center gap-4">
+                                <div class="w-1/3 text-right text-xs font-bold text-gray-500 uppercase tracking-widest">
+                                    Витрина</div>
+                                <div class="flex-1 h-px bg-gradient-to-r from-gray-700 via-red-500 to-red-500 relative">
+                                    <div
+                                        class="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 border-t-2 border-r-2 border-red-500 rotate-45">
+                                    </div>
+                                </div>
+                                <div
+                                    class="w-1/3 text-left text-sm font-black text-red-500 uppercase tracking-widest text-glow">
+                                    Хаб</div>
+                            </div>
+
+                            <!-- 2 -->
+                            <div class="flex items-center gap-4">
+                                <div class="w-1/3 text-right text-xs font-bold text-gray-500 uppercase tracking-widest">
+                                    Каталог</div>
+                                <div class="flex-1 h-px bg-gradient-to-r from-gray-700 via-red-500 to-red-500 relative">
+                                    <div
+                                        class="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 border-t-2 border-r-2 border-red-500 rotate-45">
+                                    </div>
+                                </div>
+                                <div
+                                    class="w-1/3 text-left text-sm font-black text-red-500 uppercase tracking-widest text-glow">
+                                    Профиль</div>
+                            </div>
+
+                            <!-- 3 -->
+                            <div class="flex items-center gap-4">
+                                <div class="w-1/3 text-right text-xs font-bold text-gray-500 uppercase tracking-widest">
+                                    Контакты</div>
+                                <div class="flex-1 h-px bg-gradient-to-r from-gray-700 via-red-500 to-red-500 relative">
+                                    <div
+                                        class="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 border-t-2 border-r-2 border-red-500 rotate-45">
+                                    </div>
+                                </div>
+                                <div
+                                    class="w-1/3 text-left text-sm font-black text-red-500 uppercase tracking-widest text-glow">
+                                    Сделка</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Visual (Architecture Blueprint) -->
+                    <div class="relative w-full h-full flex flex-col items-center justify-center z-10 p-4">
+
+                        <!-- Blueprint Canvas -->
+                        <div
+                            class="w-full max-w-lg aspect-square border-2 border-red-500/20 rounded-full relative flex items-center justify-center">
+                            <!-- Concentric Circle -->
+                            <div class="absolute inset-4 border border-red-500/10 rounded-full border-dashed"></div>
+                            <div class="absolute inset-16 border border-gray-800 rounded-full"></div>
+                            <div class="absolute inset-32 border border-red-900/30 rounded-full"></div>
+
+                            <!-- Center Node (The Hub) -->
+                            <div
+                                class="absolute w-32 h-32 rounded-full bg-black border-2 border-red-500 shadow-[0_0_40px_rgba(255,0,0,0.3)] flex flex-col items-center justify-center z-20">
+                                <i class="ph-bold ph-strategy text-3xl text-red-500 mb-2"></i>
+                                <div class="text-xs font-black uppercase text-white tracking-widest">Хаб</div>
+                                <div class="text-[8px] text-red-400 font-bold uppercase mt-1">Окно сделки</div>
+                            </div>
+
+                            <!-- Orbiting Elements -->
+
+                            <!-- Match -->
+                            <div
+                                class="absolute top-[5%] left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-30">
+                                <div
+                                    class="w-12 h-12 rounded bg-[#111] border border-gray-700 flex items-center justify-center mb-2">
+                                    <i class="ph-bold ph-plugs-connected text-xl text-gray-300"></i>
+                                </div>
+                                <div
+                                    class="text-[10px] font-bold uppercase tracking-wider text-gray-400 bg-black/80 px-2 py-1 rounded">
+                                    Умный мэтчинг</div>
+                            </div>
+
+                            <!-- Deal Flow -->
+                            <div
+                                class="absolute top-1/2 right-[5%] translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-30">
+                                <div
+                                    class="w-12 h-12 rounded bg-[#111] border border-gray-700 flex items-center justify-center mb-2">
+                                    <i class="ph-bold ph-handshake text-xl text-gray-300"></i>
+                                </div>
+                                <div
+                                    class="text-[10px] font-bold uppercase tracking-wider text-gray-400 bg-black/80 px-2 py-1 rounded whitespace-nowrap">
+                                    Трекинг сделки (Deal flow)</div>
+                            </div>
+
+                            <!-- Safety -->
+                            <div
+                                class="absolute bottom-[5%] left-1/2 -translate-x-1/2 translate-y-1/2 flex flex-col items-center z-30">
+                                <div
+                                    class="w-12 h-12 rounded bg-red-900 border border-red-500 flex items-center justify-center mb-2 shadow-[0_0_15px_rgba(255,0,0,0.2)]">
+                                    <i class="ph-bold ph-shield-check text-xl text-white"></i>
+                                </div>
+                                <div
+                                    class="text-[10px] font-bold uppercase tracking-wider text-red-400 bg-black/80 px-2 py-1 rounded">
+                                    Гарантии и верификация</div>
+                            </div>
+
+                            <!-- Financial integration -->
+                            <div
+                                class="absolute top-1/2 left-[5%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-30">
+                                <div
+                                    class="w-12 h-12 rounded bg-[#111] border border-gray-700 flex items-center justify-center mb-2">
+                                    <i class="ph-bold ph-coin text-xl text-gray-300"></i>
+                                </div>
+                                <div
+                                    class="text-[10px] font-bold uppercase tracking-wider text-gray-400 bg-black/80 px-2 py-1 rounded">
+                                    Доступ к мерам</div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 12: WHAT IS MOSNAUKA -->
+        <section class="slide" id="slide-12">
+            <div class="bg-grid"></div>
+
+            <div class="slide-content">
+                <div class="layout-grid">
+
+                    <!-- Left Column -->
+                    <div class="flex flex-col justify-center h-full relative z-10">
+                        <div class="label-style mb-4 text-red-500">Определение</div>
+                        <h2 class="text-4xl md:text-5xl font-black uppercase italic tracking-tighter leading-[1] mb-6">
+                            Что такое <br> <span
+                                class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-800 text-6xl xl:text-7xl">МОСНАУКА</span>
+                        </h2>
+                        <h3 class="subheadline-style mb-6 text-white text-xl">Платформа для управления R&D-сделками и
+                            технологической кооперации.</h3>
+
+                        <p class="body-style mb-10 text-gray-400 leading-relaxed">Это городская B2B-инфраструктура,
+                            объединяющая заказчиков (бизнес), исполнителей (вузы/НИИ/малые инж. компании) и оператора
+                            (МИК) в едином цифровом пространстве для ускорения вывода инновационных продуктов на рынок.
+                        </p>
+
+                    </div>
+
+                    <!-- Right Visual (Badges & Tags) -->
+                    <div class="relative w-full h-full flex flex-col justify-center z-10 lg:pl-12">
+
+                        <!-- 3 Focus Badges -->
+                        <div class="flex flex-col gap-6">
+                            <!-- Badge 1 -->
+                            <div
+                                class="glass-panel p-6 border-l-4 border-red-600 bg-gradient-to-r from-red-900/20 to-transparent">
+                                <div class="flex items-center gap-4 mb-2">
+                                    <i class="ph-fill ph-check-circle text-red-500 text-2xl"></i>
+                                    <h4 class="text-lg font-bold text-white uppercase tracking-wide">Не только софт, но
+                                        и сервис</h4>
+                                </div>
+                                <p class="text-sm text-gray-400 pl-10">Команда трекеров МИК помогает сопровождать
+                                    сложные сделки в офлайне, используя платформу как CRM.</p>
+                            </div>
+
+                            <!-- Badge 2 -->
+                            <div
+                                class="glass-panel p-6 border-l-4 border-red-600 bg-gradient-to-r from-red-900/20 to-transparent">
+                                <div class="flex items-center gap-4 mb-2">
+                                    <i class="ph-fill ph-shield-check text-red-500 text-2xl"></i>
+                                    <h4 class="text-lg font-bold text-white uppercase tracking-wide">Рейтинги и
+                                        верификация</h4>
+                                </div>
+                                <p class="text-sm text-gray-400 pl-10">Каждый профиль исполнителя и каждая услуга
+                                    проходят оценку экспертного совета или подтверждаются метриками.</p>
+                            </div>
+
+                            <!-- Badge 3 -->
+                            <div
+                                class="glass-panel p-6 border-l-4 border-red-600 bg-gradient-to-r from-red-900/20 to-transparent">
+                                <div class="flex items-center gap-4 mb-2">
+                                    <i class="ph-fill ph-wallet text-red-500 text-2xl"></i>
+                                    <h4 class="text-lg font-bold text-white uppercase tracking-wide">Связка с экономикой
+                                    </h4>
+                                </div>
+                                <p class="text-sm text-gray-400 pl-10">Сделка на платформе — это "зеленый коридор" для
+                                    получения грантов, льготных кредитов и налоговых вычетов Москвы.</p>
+                            </div>
+                        </div>
+
+                        <!-- Bottom KPI Strip -->
+                        <div
+                            class="mt-8 flex gap-4 text-xs font-bold text-gray-500 uppercase tracking-widest p-4 border border-gray-800 rounded bg-black/60 justify-center">
+                            <span>Скорость</span>
+                            <span class="text-red-500">•</span>
+                            <span>Доверие</span>
+                            <span class="text-red-500">•</span>
+                            <span>Прозрачность</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 13: FEATURE 1 - PROFILE -->
+        <section class="slide" id="slide-13">
+            <div class="bg-grid"></div>
+
+            <div class="slide-content">
+                <div class="layout-grid">
+
+                    <!-- Left Column -->
+                    <div class="flex flex-col justify-center h-full relative z-10 lg:col-span-1">
+                        <div class="label-style mb-4 text-gray-500">Сервис 1</div>
+                        <h2 class="text-4xl md:text-5xl font-black uppercase italic tracking-tighter leading-[1] mb-6">
+                            Унифицированный профиль <span
+                                class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-800">R&D-центра</span>
+                        </h2>
+                        <h3 class="subheadline-style mb-6 text-white text-xl">Конец хаоса презентаций. Единый стандарт
+                            представления компетенций.</h3>
+                        <p class="body-style mb-10 text-gray-400">Мы заставляем исполнителей говорить на языке бизнеса.
+                            Вместо перечня патентов — конкретные проекты, оборудование, команды и сроки.</p>
+
+                        <div class="flex flex-col gap-3">
+                            <div
+                                class="flex items-center gap-3 text-sm text-gray-300 font-bold uppercase tracking-wider">
+                                <i class="ph-bold ph-check text-red-500"></i> Портфолио реальных внедрений
+                            </div>
+                            <div
+                                class="flex items-center gap-3 text-sm text-gray-300 font-bold uppercase tracking-wider">
+                                <i class="ph-bold ph-check text-red-500"></i> Каталог доступного оборудования (ЦКП)
+                            </div>
+                            <div
+                                class="flex items-center gap-3 text-sm text-gray-300 font-bold uppercase tracking-wider">
+                                <i class="ph-bold ph-check text-red-500"></i> Лица: лидеры направлений и команды
+                            </div>
+                            <div
+                                class="flex items-center gap-3 text-sm text-gray-300 font-bold uppercase tracking-wider">
+                                <i class="ph-bold ph-check text-red-500"></i> Текущая загрузка и готовность к новым
+                                задачам
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Visual (Profile Mockup) -->
+                    <div class="relative w-full h-full flex items-center justify-center z-10 lg:col-span-1 py-8">
+
+                        <!-- Mockup Container -->
+                        <div
+                            class="w-full max-w-lg aspect-[4/3] bg-black border border-gray-800 rounded-xl overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.8)] relative group">
+
+                            <!-- Mockup Header -->
+                            <div class="h-10 bg-[#111] border-b border-gray-800 flex items-center px-4 gap-2">
+                                <div class="w-3 h-3 rounded-full bg-red-500/50"></div>
+                                <div class="w-3 h-3 rounded-full bg-yellow-500/50"></div>
+                                <div class="w-3 h-3 rounded-full bg-green-500/50"></div>
+                                <div
+                                    class="ml-4 px-3 py-1 bg-black rounded text-[8px] text-gray-500 font-mono border border-gray-800">
+                                    mosnauka.ru/profile/mpei</div>
+                            </div>
+
+                            <!-- Mockup Body (Profile Layout) -->
+                            <div class="p-4 h-full overflow-hidden absolute inset-x-0 bottom-0 top-10">
+                                <!-- Top Section -->
+                                <div class="flex gap-4 mb-4">
+                                    <!-- Avatar -->
+                                    <div
+                                        class="w-16 h-16 rounded-lg bg-gray-800 border-2 border-red-500/50 flex items-center justify-center p-2 isolate overflow-hidden relative">
+                                        <div class="absolute inset-0 bg-red-900/20 z-0"></div>
+                                        <i class="ph-fill ph-buildings text-3xl text-red-400 relative z-10"></i>
+                                    </div>
+
+                                    <!-- Info -->
+                                    <div class="flex-1">
+                                        <div class="flex justify-between items-start">
+                                            <div>
+                                                <h4 class="text-white font-bold text-sm">Лаборатория энергоустановок
+                                                </h4>
+                                                <div class="text-[10px] text-gray-500">НИУ "МЭИ"</div>
+                                            </div>
+                                            <div
+                                                class="px-2 py-0.5 bg-green-500/20 text-green-400 text-[8px] font-bold rounded border border-green-500/30 uppercase">
+                                                Верифицирован</div>
+                                        </div>
+                                        <div class="flex gap-2 mt-2">
+                                            <span
+                                                class="text-[8px] px-1.5 py-0.5 bg-gray-800 text-gray-400 rounded">Энергетика</span>
+                                            <span
+                                                class="text-[8px] px-1.5 py-0.5 bg-gray-800 text-gray-400 rounded">Аппаратное
+                                                R&D</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Tabs -->
+                                <div class="flex gap-4 border-b border-gray-800 mb-4 pb-1">
+                                    <div class="text-[10px] font-bold text-red-500 border-b-2 border-red-500 pb-1">
+                                        Услуги (12)</div>
+                                    <div class="text-[10px] font-bold text-gray-500 pb-1">Кейсы (34)</div>
+                                    <div class="text-[10px] font-bold text-gray-500 pb-1">Оборудование (8)</div>
+                                    <div class="text-[10px] font-bold text-gray-500 pb-1">Команда (5)</div>
+                                </div>
+
+                                <!-- Content Grid -->
+                                <div class="grid grid-cols-2 gap-3 pb-8">
+                                    <!-- Card 1 -->
+                                    <div
+                                        class="bg-[#111] p-3 rounded border border-gray-800 hover:border-red-500/30 transition-colors">
+                                        <div class="text-[10px] font-bold text-white mb-1">Реверс-инжиниринг турбин
+                                        </div>
+                                        <div class="text-[8px] text-gray-500 mb-2">Разработка КД по образцу. Срок: от 2
+                                            мес.</div>
+                                        <div class="flex justify-between items-end">
+                                            <div class="text-[10px] font-bold text-red-400">от 500 тыс. ₽</div>
+                                            <div class="w-5 h-5 rounded-full border border-gray-700 bg-gray-800"></div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Card 2 -->
+                                    <div
+                                        class="bg-[#111] p-3 rounded border border-gray-800 hover:border-red-500/30 transition-colors">
+                                        <div class="text-[10px] font-bold text-white mb-1">Анализ тепломассообмена</div>
+                                        <div class="text-[8px] text-gray-500 mb-2">Численное моделирование. Срок: от 3
+                                            нед.</div>
+                                        <div class="flex justify-between items-end">
+                                            <div class="text-[10px] font-bold text-red-400">от 150 тыс. ₽</div>
+                                            <div class="w-5 h-5 rounded-full border border-gray-700 bg-gray-800"></div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Card 3 (Fade out) -->
+                                    <div
+                                        class="bg-[#111] p-3 rounded border border-gray-800 opacity-50 relative overflow-hidden">
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10">
+                                        </div>
+                                        <div class="text-[10px] font-bold text-white mb-1">Тепловизионное обследование
+                                        </div>
+                                        <div class="text-[8px] text-gray-500 mb-2">Выездные измерения напряжений...
+                                        </div>
+                                    </div>
+
+                                    <!-- Card 4 (Fade out) -->
+                                    <div
+                                        class="bg-[#111] p-3 rounded border border-gray-800 opacity-50 relative overflow-hidden">
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10">
+                                        </div>
+                                        <div class="text-[10px] font-bold text-white mb-1">Разработка стендов</div>
+                                        <div class="text-[8px] text-gray-500 mb-2">Установки для климатических...</div>
+                                    </div>
+                                </div>
+
+                                <!-- Floating Action Button Mockup -->
+                                <div
+                                    class="absolute bottom-4 right-4 bg-red-600 text-white px-4 py-2 rounded shadow-[0_0_20px_rgba(255,0,0,0.5)] text-[10px] font-bold uppercase tracking-wider animate-pulse flex items-center gap-2 z-20 hover:bg-red-500 cursor-pointer">
+                                    Связаться <i class="ph-bold ph-arrow-right"></i>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 14: FEATURE 2 - VERIFICATION -->
+        <section class="slide" id="slide-14">
+            <div class="bg-grid opacity-30"></div>
+
+            <div class="slide-content">
+                <div class="layout-grid">
+
+                    <!-- Left Column -->
+                    <div class="flex flex-col justify-center h-full relative z-10">
+                        <div class="label-style mb-4 text-gray-500">Сервис 2</div>
+                        <h2 class="text-4xl md:text-5xl font-black uppercase italic tracking-tighter leading-[1] mb-6">
+                            Модель <span
+                                class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-800">верификации</span>
+                            компетенций
+                        </h2>
+                        <h3 class="subheadline-style mb-6 text-white text-xl">Бизнес должен быть уверен, что команда
+                            справится.</h3>
+                        <p class="body-style mb-10 text-gray-400">Мы не пускаем на платформу всех подряд. Московский
+                            инновационный кластер (МИК) внедряет многоступенчатую систему оценки R&D-партнеров.</p>
+                    </div>
+
+                    <!-- Right Visual (Verification Pipeline Diagram) -->
+                    <div class="relative w-full h-full flex flex-col justify-center gap-4 z-10 lg:pl-12 py-8">
+
+                        <!-- Level 1 -->
+                        <div
+                            class="relative flex items-center justify-between glass-panel p-4 border border-gray-700 bg-black/50 group hover:border-red-500/50 transition-colors">
+                            <div
+                                class="absolute left-0 top-0 bottom-0 w-1 bg-gray-600 group-hover:bg-red-500 transition-colors">
+                            </div>
+
+                            <div class="flex items-center gap-4 w-1/3">
+                                <div
+                                    class="w-8 h-8 rounded bg-[#111] border border-gray-700 flex items-center justify-center text-gray-400 group-hover:text-red-500 transition-colors">
+                                    <i class="ph-bold ph-robot"></i>
+                                </div>
+                                <div class="text-xs font-bold uppercase tracking-widest text-white">Уровень 1</div>
+                            </div>
+
+                            <div class="w-1/3 text-center">
+                                <div class="text-sm font-bold text-white mb-1">Формальный скоринг</div>
+                                <div class="text-[10px] text-gray-500 px-2">Автоматизированная проверка</div>
+                            </div>
+
+                            <div class="w-1/3 flex justify-end">
+                                <ul class="text-[9px] text-gray-400 space-y-1 text-right">
+                                    <li>• Юрлица и суды</li>
+                                    <li>• Налоговая история</li>
+                                    <li>• Базовые показатели</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Connector -->
+                        <div class="h-4 border-l-2 border-red-500 border-dashed ml-8 opacity-50 animate-pulse"></div>
+
+                        <!-- Level 2 -->
+                        <div
+                            class="relative flex items-center justify-between glass-panel p-4 border border-red-500/30 bg-red-900/10 shadow-[0_0_15px_rgba(255,0,0,0.1)] group">
+                            <div
+                                class="absolute left-0 top-0 bottom-0 w-1 bg-red-500 shadow-[0_0_10px_rgba(255,0,0,0.5)]">
+                            </div>
+
+                            <div class="flex items-center gap-4 w-1/3">
+                                <div
+                                    class="w-8 h-8 rounded bg-red-900 border border-red-500 flex items-center justify-center text-white shadow-[0_0_10px_rgba(255,0,0,0.4)]">
+                                    <i class="ph-bold ph-users-three"></i>
+                                </div>
+                                <div class="text-xs font-bold uppercase tracking-widest text-red-500">Уровень 2</div>
+                            </div>
+
+                            <div class="w-1/3 text-center">
+                                <div class="text-sm font-bold text-white mb-1">Экспертный совет МИК</div>
+                                <div class="text-[10px] text-red-400 px-2 font-bold uppercase">Основной фильтр</div>
+                            </div>
+
+                            <div class="w-1/3 flex justify-end">
+                                <ul class="text-[9px] text-gray-300 space-y-1 text-right">
+                                    <li class="flex items-center justify-end gap-1"><i
+                                            class="ph-fill ph-check-circle text-red-500"></i> Оценка портфолио</li>
+                                    <li class="flex items-center justify-end gap-1"><i
+                                            class="ph-fill ph-check-circle text-red-500"></i> Интервью с лидером</li>
+                                    <li class="flex items-center justify-end gap-1"><i
+                                            class="ph-fill ph-check-circle text-red-500"></i> Аудит ресурсов</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Connector -->
+                        <div class="h-4 border-l-2 border-red-500 border-dashed ml-8 opacity-50 animate-pulse"></div>
+
+                        <!-- Level 3 -->
+                        <div
+                            class="relative flex items-center justify-between glass-panel p-4 border border-gray-700 bg-black/50 group hover:border-red-500/50 transition-colors">
+                            <div
+                                class="absolute left-0 top-0 bottom-0 w-1 bg-gray-600 group-hover:bg-red-500 transition-colors">
+                            </div>
+
+                            <div class="flex items-center gap-4 w-1/3">
+                                <div
+                                    class="w-8 h-8 rounded bg-[#111] border border-gray-700 flex items-center justify-center text-gray-400 group-hover:text-red-500 transition-colors">
+                                    <i class="ph-bold ph-star text-lg"></i>
+                                </div>
+                                <div class="text-xs font-bold uppercase tracking-widest text-white">Уровень 3</div>
+                            </div>
+
+                            <div class="w-1/3 text-center">
+                                <div class="text-sm font-bold text-white mb-1">Рейтинг по сделкам</div>
+                                <div class="text-[10px] text-gray-500 px-2">Динамическая оценка</div>
+                            </div>
+
+                            <div class="w-1/3 flex justify-end">
+                                <ul class="text-[9px] text-gray-400 space-y-1 text-right">
+                                    <li>• Отзывы заказчиков</li>
+                                    <li>• Соблюдение сроков</li>
+                                    <li>• Объем выручки на Хабе</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div
+                            class="mt-4 p-3 bg-red-900/20 border border-red-500/20 rounded flex items-start gap-3 justify-center text-center">
+                            <i class="ph-fill ph-info text-red-500 mt-0.5"></i>
+                            <div class="text-[10px] text-gray-300">
+                                Статус "Верифицирован" дает исполнителю приоритет в поисковой выдаче и <br>право
+                                участвовать в пилотных сделках с городским софинансированием.
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 15: FEATURE 3 - AI SEARCH -->
+        <section class="slide" id="slide-15">
+            <div class="bg-grid"></div>
+
+            <div class="slide-content">
+                <div class="layout-grid">
+
+                    <!-- Left Column -->
+                    <div class="flex flex-col justify-center h-full relative z-10 lg:col-span-1">
+                        <div class="label-style mb-4 text-gray-500">Сервис 3</div>
+                        <h2 class="text-4xl md:text-5xl font-black uppercase italic tracking-tighter leading-[1] mb-6">
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-800">Умный
+                                поиск</span> и мэтчинг (ИИ)
+                        </h2>
+                        <h3 class="subheadline-style mb-6 text-white text-xl">Бизнес не знает название кафедры. Он знает
+                            свою проблему.</h3>
+                        <p class="body-style mb-10 text-gray-400">Мы заменяем поиск по ключевым словам на семантический
+                            поиск. Система анализирует запрос бизнеса на естественном языке и подбирает релевантных
+                            исполнителей по их кейсам и услугам.</p>
+
+                        <div class="glass-panel p-4 border-l-4 border-red-600 bg-black/40">
+                            <div class="flex items-center gap-3 mb-2">
+                                <i class="ph-fill ph-magic-wand text-red-500 text-xl"></i>
+                                <div class="text-sm font-bold text-white uppercase tracking-wide">Как это работает</div>
+                            </div>
+                            <p class="text-sm text-gray-400">Вместо запроса "ГОСТ 34.602-89" завод пишет "нужно
+                                разработать корпус накопителя, ТЗ нет". Платформа находит 4 инжиниринговых центра,
+                                которые решали похожую задачу за последние 2 года.</p>
+                        </div>
+                    </div>
+
+                    <!-- Right Visual (Search Interface Mockup) -->
+                    <div class="relative w-full h-full flex flex-col justify-center z-10 lg:col-span-1 py-8 px-4">
+
+                        <!-- Search App Mockup -->
+                        <div
+                            class="w-full max-w-xl mx-auto bg-[#0a0a0a] rounded-xl border border-gray-800 overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.5)]">
+
+                            <!-- Search Bar Area -->
+                            <div class="p-6 border-b border-gray-800 bg-gradient-to-b from-[#111] to-black">
+                                <div class="flex items-center justify-between mb-4">
+                                    <div class="text-white font-bold tracking-tight">Поиск исполнителя</div>
+                                    <i class="ph-bold ph-faders text-gray-500"></i>
+                                </div>
+
+                                <!-- The Input -->
+                                <div class="relative group">
+                                    <div
+                                        class="absolute inset-0 bg-red-500/10 blur-xl group-focus-within:bg-red-500/20 transition-all rounded-lg">
+                                    </div>
+                                    <div
+                                        class="relative bg-black border border-gray-700 rounded-lg p-3 flex gap-3 focus-within:border-red-500/50 transition-colors shadow-inner">
+                                        <i class="ph-bold ph-sparkle text-red-500 text-xl animate-pulse mt-0.5"></i>
+                                        <div
+                                            class="text-sm font-mono text-gray-300 w-full typing-animation overflow-hidden whitespace-nowrap border-r-2 border-red-500 pr-1 pb-4">
+                                            Нам нужно разработать композитный корпус...
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- AI Process indicator -->
+                                <div
+                                    class="flex items-center gap-2 mt-4 text-[10px] text-gray-500 uppercase tracking-widest px-2">
+                                    <i class="ph-fill ph-spinner-gap animate-spin text-red-500"></i> Анализ 2 450
+                                    профилей...
+                                </div>
+                            </div>
+
+                            <!-- Results Area -->
+                            <div class="p-4 space-y-3 bg-black">
+                                <div class="text-[10px] font-bold text-gray-500 uppercase tracking-widest pl-2 mb-2">
+                                    Найдено: 3 релевантных команды</div>
+
+                                <!-- Result 1 -->
+                                <div
+                                    class="glass-panel p-3 border border-red-500/30 flex items-start gap-4 hover:bg-white/5 transition-colors cursor-pointer bg-red-900/10">
+                                    <div
+                                        class="w-10 h-10 shrink-0 rounded bg-black border border-gray-700 flex items-center justify-center text-red-500">
+                                        <i class="ph-fill ph-hexagon"></i>
+                                    </div>
+                                    <div class="flex-1">
+                                        <div class="flex justify-between items-start">
+                                            <h4 class="text-sm font-bold text-white mb-1">Центр НТИ "Композиты России"
+                                            </h4>
+                                            <div
+                                                class="px-1.5 py-0.5 bg-red-500/20 text-red-400 text-[8px] font-bold rounded">
+                                                98% совпадение</div>
+                                        </div>
+                                        <p class="text-[10px] text-gray-400 leading-tight mb-2">Имеют подтвержденный
+                                            опыт разработки корпусных деталей из ПКМ для авиастроения. 12 выполненных
+                                            контрактов.</p>
+                                        <div class="flex gap-2">
+                                            <span
+                                                class="text-[8px] px-1.5 py-0.5 bg-gray-800 text-gray-400 border border-gray-700 rounded">Верифицирован</span>
+                                            <span
+                                                class="text-[8px] px-1.5 py-0.5 bg-gray-800 text-gray-400 border border-gray-700 rounded">Оборудование
+                                                в наличии</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Result 2 -->
+                                <div
+                                    class="glass-panel p-3 border border-gray-800 flex items-start gap-4 hover:bg-white/5 transition-colors cursor-pointer">
+                                    <div
+                                        class="w-10 h-10 shrink-0 rounded bg-black border border-gray-700 flex items-center justify-center text-gray-500">
+                                        <i class="ph-fill ph-flask"></i>
+                                    </div>
+                                    <div class="flex-1">
+                                        <div class="flex justify-between items-start">
+                                            <h4 class="text-sm font-bold text-white mb-1">ИНХС РАН (Пластик-лаб)</h4>
+                                            <div
+                                                class="px-1.5 py-0.5 bg-yellow-500/20 text-yellow-500 text-[8px] font-bold rounded">
+                                                85% совпадение</div>
+                                        </div>
+                                        <p class="text-[10px] text-gray-500 leading-tight">Специализируются на
+                                            полимерных материалах. Могут разработать состав, но потребуется сторонний
+                                            инжиниринг.</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 16: FEATURE 4 - ACCOUNT & DEAL FLOW -->
+        <section class="slide" id="slide-16">
+            <div class="bg-grid opacity-30"></div>
+
+            <div class="slide-content">
+                <div class="layout-grid">
+
+                    <!-- Left Column -->
+                    <div class="flex flex-col justify-center h-full relative z-10 lg:pr-8">
+                        <div class="label-style mb-4 text-gray-500">Сервис 4</div>
+                        <h2 class="text-4xl md:text-5xl font-black uppercase italic tracking-tighter leading-[1] mb-6">
+                            Управление сделкой: <br><span
+                                class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-800">Deal
+                                Flow</span>
+                        </h2>
+                        <h3 class="subheadline-style mb-6 text-white text-xl">От первого контакта до закрывающего акта —
+                            в едином окне.</h3>
+
+                        <p class="body-style mb-8 text-gray-400">Личный кабинет бизнеса на МОСНАУКЕ — это контрольная
+                            панель для всех R&D-проектов компании. Больше никаких потерянных писем и непонятных
+                            статусов.</p>
+
+                        <div class="space-y-4">
+                            <div
+                                class="flex items-start gap-4 glass-panel p-4 border border-gray-800 hover:border-red-500/50 transition-colors group">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-[#111] flex items-center justify-center text-gray-400 group-hover:text-red-500 border border-gray-700">
+                                    <i class="ph-bold ph-kanban"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-1">Канбан-доска
+                                        проектов</h4>
+                                    <p class="text-xs text-gray-400">Переговоры → Формирование ТЗ → Договор → Исполнение
+                                        → Сдача.</p>
+                                </div>
+                            </div>
+
+                            <div
+                                class="flex items-start gap-4 glass-panel p-4 border border-gray-800 hover:border-red-500/50 transition-colors group">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-[#111] flex items-center justify-center text-gray-400 group-hover:text-red-500 border border-gray-700">
+                                    <i class="ph-bold ph-files"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-1">Шаблоны NDA и
+                                        договоров</h4>
+                                    <p class="text-xs text-gray-400">Выверенные юристами формы для быстрого старта
+                                        защиты интеллектуальной собственности.</p>
+                                </div>
+                            </div>
+
+                            <div
+                                class="flex items-start gap-4 glass-panel p-4 border border-red-500/30 bg-red-900/10 transition-colors group">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-red-900 text-white flex items-center justify-center border border-red-500">
+                                    <i class="ph-bold ph-headset"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-1">Подключение
+                                        трекера МИК</h4>
+                                    <p class="text-xs text-gray-300">Прямо в чате сделки можно позвать модератора для
+                                        разрешения споров или помощи с оформлением.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Visual (Deal Flow Interface) -->
+                    <div class="relative w-full h-full flex items-center justify-center z-10 py-8 px-4">
+
+                        <!-- Dashboard Mockup -->
+                        <div
+                            class="w-full max-w-xl aspect-video bg-[#0a0a0a] rounded-xl border border-gray-800 overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.8)] flex flex-col">
+
+                            <!-- Navbar -->
+                            <div class="h-12 border-b border-gray-800 bg-[#111] px-4 flex items-center justify-between">
+                                <div class="flex items-center gap-4">
+                                    <div class="text-red-500 font-black italic text-sm tracking-tighter">М</div>
+                                    <div
+                                        class="text-[10px] text-gray-400 font-bold uppercase tracking-widest hidden sm:block">
+                                        Личный кабинет заказчика</div>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <div class="bg-gray-800 rounded px-2 py-1 text-[10px] text-gray-400">ООО "АэроТех"
+                                    </div>
+                                    <div class="w-6 h-6 rounded-full bg-gray-700"></div>
+                                </div>
+                            </div>
+
+                            <!-- Main area -->
+                            <div class="flex-1 flex bg-black overflow-hidden relative">
+                                <!-- Sidebar -->
+                                <div
+                                    class="w-16 border-r border-gray-800 flex flex-col items-center py-4 gap-6 text-gray-600 hidden sm:flex">
+                                    <i class="ph-bold ph-squares-four text-xl hover:text-white cursor-pointer"></i>
+                                    <i class="ph-bold ph-kanban text-xl text-red-500 cursor-pointer"></i>
+                                    <i class="ph-bold ph-chats text-xl hover:text-white cursor-pointer relative">
+                                        <span class="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full"></span>
+                                    </i>
+                                    <i class="ph-bold ph-wallet text-xl hover:text-white cursor-pointer mt-auto"></i>
+                                </div>
+
+                                <!-- Content Workspace -->
+                                <div class="flex-1 p-4 sm:p-6 overflow-hidden flex flex-col">
+                                    <div class="flex justify-between items-end mb-6">
+                                        <div>
+                                            <h3 class="text-lg font-bold text-white mb-1">Сделки (R&D)</h3>
+                                            <div class="text-[10px] text-gray-500 uppercase tracking-widest">3 активных
+                                                проекта</div>
+                                        </div>
+                                        <button
+                                            class="bg-red-600 text-white px-3 py-1.5 rounded text-[10px] font-bold uppercase tracking-wider hover:bg-red-500">+
+                                            Новый запрос</button>
+                                    </div>
+
+                                    <!-- Kanban Columns Layout (Simplified) -->
+                                    <div class="grid grid-cols-3 gap-4 flex-1 overflow-hidden relative">
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black pointer-events-none z-10">
+                                        </div>
+
+                                        <!-- Col 1 -->
+                                        <div class="flex flex-col gap-2">
+                                            <div
+                                                class="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-2 flex items-center gap-2">
+                                                Переговоры <span class="bg-gray-800 text-gray-400 px-1 rounded">1</span>
+                                            </div>
+
+                                            <!-- Task Card -->
+                                            <div
+                                                class="bg-[#111] border border-gray-800 rounded p-3 cursor-pointer hover:border-gray-600 transition-colors">
+                                                <div
+                                                    class="px-1.5 py-0.5 bg-blue-900/30 text-blue-400 text-[8px] rounded uppercase font-bold inline-block mb-2">
+                                                    ПОИСК</div>
+                                                <div class="text-[10px] font-bold text-white mb-1 leading-tight">
+                                                    Разработка контроллера питания</div>
+                                                <div class="text-[8px] text-gray-500 mb-2">Отклики: 4 кандидата</div>
+                                                <div class="flex -space-x-1">
+                                                    <div class="w-4 h-4 rounded-full bg-gray-700 border border-black">
+                                                    </div>
+                                                    <div class="w-4 h-4 rounded-full bg-gray-600 border border-black">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Col 2 -->
+                                        <div class="flex flex-col gap-2">
+                                            <div
+                                                class="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-2 flex items-center gap-2">
+                                                Подготовка ТЗ <span
+                                                    class="bg-gray-800 text-gray-400 px-1 rounded">1</span></div>
+
+                                            <!-- Task Card Active -->
+                                            <div
+                                                class="bg-red-900/10 border border-red-500/50 rounded p-3 cursor-pointer relative shadow-[0_0_15px_rgba(255,0,0,0.1)]">
+                                                <div
+                                                    class="absolute top-3 right-3 w-1.5 h-1.5 bg-red-500 rounded-full animate-pulse">
+                                                </div>
+                                                <div
+                                                    class="px-1.5 py-0.5 bg-yellow-900/30 text-yellow-500 text-[8px] rounded uppercase font-bold inline-block mb-2">
+                                                    СОГЛАСОВАНИЕ</div>
+                                                <div class="text-[10px] font-bold text-white mb-1 leading-tight">
+                                                    Аэродинамический расчет БПЛА</div>
+                                                <div class="text-[8px] text-gray-400 mb-2">Исполнитель: ЦАГИ</div>
+                                                <div
+                                                    class="mt-2 pt-2 border-t border-gray-800 flex justify-between items-center text-[8px]">
+                                                    <span class="text-gray-500">Ждем правки к NDA</span>
+                                                    <i class="ph-bold ph-chats text-red-400 text-xs"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Col 3 -->
+                                        <div class="flex flex-col gap-2">
+                                            <div
+                                                class="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-2 flex items-center gap-2">
+                                                В работе <span class="bg-gray-800 text-gray-400 px-1 rounded">1</span>
+                                            </div>
+
+                                            <!-- Task Card -->
+                                            <div class="bg-[#111] border border-gray-800 rounded p-3 opacity-70">
+                                                <div
+                                                    class="px-1.5 py-0.5 bg-green-900/30 text-green-400 text-[8px] rounded uppercase font-bold inline-block mb-2">
+                                                    КОНТРАКТ АКТИВЕН</div>
+                                                <div class="text-[10px] font-bold text-white mb-1 leading-tight">
+                                                    Сертификация двигателей</div>
+                                                <div class="text-[8px] text-gray-500 mb-2">Исполнитель: МАИ</div>
+                                                <div class="w-full bg-gray-800 h-1 rounded mt-2 overflow-hidden">
+                                                    <div class="w-1/3 bg-green-500 h-full"></div>
+                                                </div>
+                                                <div class="text-[8px] text-gray-500 mt-1 text-right">Этап 1 из 3</div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 17: SECURITY (IP) -->
+        <section class="slide" id="slide-17">
+            <div class="bg-grid opacity-30"></div>
+
+            <div class="slide-content">
+                <div class="layout-grid">
+
+                    <!-- Left Column -->
+                    <div class="flex flex-col justify-center h-full relative z-10 lg:pr-8">
+                        <h2 class="text-4xl md:text-5xl font-black uppercase italic tracking-tighter leading-[1] mb-6">
+                            Безопасность и <br><span
+                                class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-800">защита
+                                ИС</span>
+                        </h2>
+                        <h3 class="subheadline-style mb-6 text-white text-xl">Коммерческая тайна — главный барьер
+                            открытых инноваций.</h3>
+                        <p class="body-style mb-10 text-gray-400">Корпорации боятся "светить" свои R&D-задачи. МОСНАУКА
+                            построена вокруг принципа privacy-first.</p>
+
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="w-12 h-12 shrink-0 rounded bg-red-900/20 border border-red-500/30 flex items-center justify-center text-red-500">
+                                    <i class="ph-bold ph-eye-slash text-2xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-bold text-white mb-1 uppercase tracking-wider">Скрытые
+                                        задачи (Blind Requests)</h4>
+                                    <p class="text-sm text-gray-400">Заказчик может опубликовать задачу анонимно.
+                                        Исполнители видят только техническую суть без указания бренда.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="w-12 h-12 shrink-0 rounded bg-red-900/20 border border-red-500/30 flex items-center justify-center text-red-500">
+                                    <i class="ph-bold ph-shield-check text-2xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-bold text-white mb-1 uppercase tracking-wider">NDA в один
+                                        клик</h4>
+                                    <p class="text-sm text-gray-400">Авторассылка соглашений о неразглашении перед
+                                        открытием деталей проекта конкретным исполнителям.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="w-12 h-12 shrink-0 rounded bg-red-900/20 border border-red-500/30 flex items-center justify-center text-red-500">
+                                    <i class="ph-bold ph-file-dashed text-2xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-bold text-white mb-1 uppercase tracking-wider">Депонирование
+                                        ТЗ</h4>
+                                    <p class="text-sm text-gray-400">Фиксация авторства на идею и техническое задание в
+                                        блокчейн-реестре до начала передачи данных.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Visual (Security Vault) -->
+                    <div class="relative w-full h-full flex items-center justify-center z-10 py-8 px-4">
+                        <!-- Vault Illustration -->
+                        <div class="relative w-full max-w-md aspect-square">
+                            <!-- Outer Rings -->
+                            <div
+                                class="absolute inset-4 border-2 border-red-500/10 rounded-full border-dashed animate-[spin_60s_linear_infinite]">
+                            </div>
+                            <div class="absolute inset-12 border-4 border-gray-800 rounded-full"></div>
+                            <div
+                                class="absolute inset-20 border-2 border-red-900/30 rounded-full border-dashed animate-[spin_40s_linear_infinite_reverse]">
+                            </div>
+
+                            <!-- Center Padlock -->
+                            <div
+                                class="absolute inset-32 bg-gradient-to-br from-[#111] to-black border-2 border-red-500 rounded-full flex flex-col items-center justify-center shadow-[0_0_50px_rgba(255,0,0,0.2)]">
+                                <i
+                                    class="ph-fill ph-lock-key text-5xl text-red-500 mb-2 drop-shadow-[0_0_10px_rgba(255,0,0,0.8)]"></i>
+                                <div class="text-[10px] font-black uppercase tracking-widest text-red-400 mt-2">Privacy
+                                    First</div>
+                            </div>
+
+                            <!-- Floating Data Particles -->
+                            <div
+                                class="absolute top-10 left-10 p-2 bg-[#111] border border-gray-800 rounded text-xs text-gray-500 font-mono shadow-lg shadow-black flex items-center gap-2">
+                                <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div> Encrypted
+                            </div>
+                            <div
+                                class="absolute bottom-10 right-10 p-2 bg-[#111] border border-gray-800 rounded text-xs text-gray-500 font-mono shadow-lg shadow-black flex items-center gap-2">
+                                <i class="ph-bold ph-fingerprint text-red-500"></i> No Name
+                            </div>
+                            <div
+                                class="absolute top-1/2 -right-4 -translate-y-1/2 p-2 bg-[#111] border border-gray-800 rounded text-xs text-gray-500 font-mono shadow-lg shadow-black flex items-center gap-2">
+                                <i class="ph-bold ph-file-text text-red-500"></i> D-NDA
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 18: OFFLINE SUPPORT (TRACKERS) -->
+        <section class="slide" id="slide-18">
+            <div class="bg-grid"></div>
+
+            <div class="slide-content">
+                <div class="layout-grid">
+
+                    <!-- Left Column -->
+                    <div class="flex flex-col justify-center h-full relative z-10 lg:pr-8">
+                        <h2 class="text-4xl md:text-5xl font-black uppercase italic tracking-tighter leading-[1] mb-6">
+                            Сопровождение: <br><span
+                                class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-800">офлайн
+                                трекеры</span>
+                        </h2>
+                        <h3 class="subheadline-style mb-6 text-white text-xl">ИТ-платформа не решает проблему доверия
+                            людей людьми.</h3>
+
+                        <p class="body-style mb-8 text-gray-400">Сложные R&D-сделки не заключаются по кнопке "купить".
+                            МОСНАУКА предоставляет сервис "технологического консьержа" — команду экспертов МИК, которые
+                            связывают онлайн с реальностью.</p>
+
+                        <div class="flex flex-col gap-4">
+                            <div class="glass-panel p-4 border-l-4 border-red-600">
+                                <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-2">Перевод с
+                                    научного на бизнес-язык</h4>
+                                <p class="text-xs text-gray-400">Помогаем академическим центрам правильно упаковать
+                                    коммерческое предложение.</p>
+                            </div>
+                            <div class="glass-panel p-4 border-l-4 border-red-600">
+                                <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-2">Фасилитация
+                                    встреч</h4>
+                                <p class="text-xs text-gray-400">Трекер выступает модератором на первых установочных
+                                    встречах, снимая барьеры недопонимания.</p>
+                            </div>
+                            <div class="glass-panel p-4 border-l-4 border-red-600">
+                                <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-2">Навигация по
+                                    грантам</h4>
+                                <p class="text-xs text-gray-400">Если на сделку не хватает бюджета, трекер прямо на
+                                    встрече подбирает городские меры поддержки.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Visual (Tracker Role Diagram) -->
+                    <div class="relative w-full h-full flex items-center justify-center z-10 py-8 px-4">
+
+                        <div
+                            class="w-full max-w-md aspect-[4/3] bg-[#0a0a0a] rounded-xl border border-gray-800 p-8 shadow-[0_0_50px_rgba(0,0,0,0.5)] flex flex-col items-center justify-between relative">
+
+                            <h3
+                                class="text-xs font-bold uppercase tracking-widest text-gray-500 w-full text-center border-b border-gray-800 pb-4">
+                                Треугольник сделки</h3>
+
+                            <!-- Top Node (Tracker) -->
+                            <div
+                                class="w-20 h-20 rounded-full bg-red-900 border-2 border-red-500 flex flex-col items-center justify-center z-20 shadow-[0_0_30px_rgba(255,0,0,0.3)] mt-8">
+                                <i class="ph-bold ph-user-focus text-2xl text-white mb-1"></i>
+                                <span class="text-[8px] font-bold uppercase text-red-200">Трекер МИК</span>
+                            </div>
+
+                            <!-- Connecting Lines -->
+                            <!-- Tracker to Business -->
+                            <div
+                                class="absolute top-[40%] left-[30%] w-[35%] h-[2px] bg-gradient-to-tr from-gray-700 to-red-500 origin-top-right -rotate-45 z-10">
+                                <div
+                                    class="w-2 h-2 bg-red-500 rounded-full absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 animate-ping">
+                                </div>
+                            </div>
+                            <!-- Tracker to Science -->
+                            <div
+                                class="absolute top-[40%] right-[30%] w-[35%] h-[2px] bg-gradient-to-tl from-gray-700 to-red-500 origin-top-left rotate-45 z-10">
+                                <div class="w-2 h-2 bg-red-500 rounded-full absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 animate-ping"
+                                    style="animation-delay: 0.5s;"></div>
+                            </div>
+                            <!-- Business to Science (Base) -->
+                            <div
+                                class="absolute bottom-[20%] left-[25%] right-[25%] h-[2px] bg-gray-800 border-b border-gray-700 border-dashed z-10">
+                            </div>
+
+
+                            <div class="w-full flex justify-between px-4 z-20 mb-4">
+                                <!-- Bottom Left (Business) -->
+                                <div
+                                    class="w-20 h-20 rounded-full bg-[#111] border border-gray-700 flex flex-col items-center justify-center">
+                                    <i class="ph-bold ph-factory text-2xl text-gray-400 mb-1"></i>
+                                    <span class="text-[8px] font-bold uppercase text-gray-500">Заказчик</span>
+                                </div>
+
+                                <!-- Bottom Right (Science) -->
+                                <div
+                                    class="w-20 h-20 rounded-full bg-[#111] border border-gray-700 flex flex-col items-center justify-center">
+                                    <i class="ph-bold ph-student text-2xl text-gray-400 mb-1"></i>
+                                    <span class="text-[8px] font-bold uppercase text-gray-500">Исполнитель</span>
+                                </div>
+                            </div>
+
+                            <div
+                                class="absolute bottom-1/4 left-1/2 -translate-x-1/2 text-[8px] text-gray-600 bg-[#0a0a0a] px-2 uppercase font-bold tracking-widest text-center z-30">
+                                Барьер доверия <br> <i class="ph-bold ph-x text-red-900 mt-1"></i>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 19: TIMELINE 2026-2027 -->
+        <section class="slide" id="slide-19">
+            <div class="bg-grid"></div>
+
+            <div class="slide-content">
+                <div class="layout-grid">
+
+                    <!-- Left Column -->
+                    <div class="flex flex-col justify-center h-full relative z-10 lg:pr-8">
+                        <h2 class="text-4xl md:text-5xl font-black uppercase italic tracking-tighter leading-[1] mb-6">
+                            Реалистичный <span
+                                class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-800">таймлайн</span>
+                        </h2>
+                        <h3 class="subheadline-style mb-6 text-white text-xl">Мы не обещаем чудес завтра. R&D имеет
+                            долгий цикл.</h3>
+
+                        <p class="body-style mb-10 text-gray-400">Платформа запускается в 2024 году, но
+                            макроэкономический эффект (работающий Коэффициент 2.0) будет достигнут к 2027 году из-за
+                            длительности производственных циклов.</p>
+
+                        <div class="flex flex-col gap-6">
+                            <div class="flex items-start gap-4">
+                                <div class="text-2xl font-black text-white italic mt-1">1.</div>
+                                <div>
+                                    <h4 class="text-lg font-bold text-red-500 mb-1 uppercase tracking-wider">Подготовка
+                                        базы (24-25)</h4>
+                                    <p class="text-sm text-gray-400">Оцифровка компетенций, запуск хаба, первые пилотные
+                                        сделки с поддержкой города. Обучение нейросетей на реальных кейсах.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="text-2xl font-black text-white italic mt-1">2.</div>
+                                <div>
+                                    <h4 class="text-lg font-bold text-red-500 mb-1 uppercase tracking-wider">Цикл
+                                        разработки (25-26)</h4>
+                                    <p class="text-sm text-gray-400">Тестирование новых продуктов, НИОКР,
+                                        прототипирование, получение разрешительной документации.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="text-2xl font-black text-white italic mt-1">3.</div>
+                                <div>
+                                    <h4 class="text-lg font-bold text-red-500 mb-1 uppercase tracking-wider">Рост
+                                        выручки (27+)</h4>
+                                    <p class="text-sm text-gray-400">Серийное производство, выход на рынок, кратный рост
+                                        оборотов МСП, рост Коэффициента кооперации.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Visual (Gantt/Timeline chart) -->
+                    <div class="relative w-full h-full flex items-center justify-center z-10 py-8 px-4">
+                        <div
+                            class="w-full max-w-lg aspect-square lg:aspect-video rounded-xl border border-gray-800 bg-[#0a0a0a] p-6 shadow-[0_0_50px_rgba(0,0,0,0.5)] flex flex-col relative overflow-hidden">
+                            <!-- Grid background -->
+                            <div class="absolute inset-x-6 top-16 bottom-8 flex justify-between">
+                                <div class="w-px h-full bg-gray-800"></div>
+                                <div class="w-px h-full bg-gray-800"></div>
+                                <div class="w-px h-full bg-gray-800"></div>
+                                <div class="w-px h-full bg-gray-800"></div>
+                                <div class="w-px h-full bg-gray-800"></div>
+                            </div>
+
+                            <!-- Timeline Header -->
+                            <div
+                                class="flex justify-between text-xs font-bold text-gray-500 uppercase tracking-widest pl-24 mb-6 z-10 relative">
+                                <span>2024</span>
+                                <span>2025</span>
+                                <span>2026</span>
+                                <span class="text-red-500">2027</span>
+                                <span>2030</span>
+                            </div>
+
+                            <!-- Rows -->
+                            <div class="flex flex-col gap-6 flex-1 z-10 relative">
+                                <!-- Row 1: IT -->
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="w-20 text-[10px] font-bold text-right text-gray-400 uppercase leading-tight shrink-0">
+                                        IT Платформа</div>
+                                    <div class="flex-1 h-6 relative">
+                                        <div
+                                            class="absolute left-0 w-1/3 h-full bg-[#111] border border-gray-600 rounded flex items-center px-2">
+                                            <span
+                                                class="text-[8px] text-gray-400 font-bold uppercase truncate">Разработка
+                                                и запуск</span>
+                                        </div>
+                                        <div
+                                            class="absolute left-1/3 right-0 h-full bg-gradient-to-r from-red-900/40 to-red-500/10 border border-red-500/20 rounded flex items-center px-2 ml-1">
+                                            <span
+                                                class="text-[8px] text-red-400 font-bold uppercase truncate">Масштабирование
+                                                сервисов (ИИ, Финтех)</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Row 2: Users -->
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="w-20 text-[10px] font-bold text-right text-gray-400 uppercase leading-tight shrink-0">
+                                        База участников</div>
+                                    <div class="flex-1 h-6 relative">
+                                        <div
+                                            class="absolute left-[10%] w-[30%] h-full bg-[#111] border border-gray-600 rounded flex items-center px-2">
+                                            <span
+                                                class="text-[8px] text-gray-400 font-bold uppercase truncate">Оцифровка</span>
+                                        </div>
+                                        <div
+                                            class="absolute left-[40%] right-0 h-full bg-gradient-to-r from-red-900/40 to-red-500/10 border border-red-500/20 rounded flex items-center px-2 ml-1">
+                                            <span
+                                                class="text-[8px] text-red-400 font-bold uppercase truncate">Органический
+                                                рост через сделки</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Row 3: R&D Cycle -->
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="w-20 text-[10px] font-bold text-right text-gray-400 uppercase leading-tight shrink-0">
+                                        Цикл НИОКР</div>
+                                    <div class="flex-1 h-6 relative overflow-hidden rounded">
+                                        <!-- Diagonal stripes background pattern -->
+                                        <div
+                                            class="absolute inset-0 right-1/4 bg-[repeating-linear-gradient(45deg,rgba(0,0,0,0),rgba(0,0,0,0)_5px,rgba(255,255,255,0.05)_5px,rgba(255,255,255,0.05)_10px)] border border-gray-700 rounded-l">
+                                        </div>
+                                        <div class="absolute left-1/4 right-1/2 flex items-center px-2">
+                                            <span class="text-[8px] font-bold text-gray-300 uppercase truncate">Долина
+                                                смерти (R&D)</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Row 4: Effect -->
+                                <div class="flex items-center gap-4 mt-auto">
+                                    <div
+                                        class="w-20 text-[10px] font-bold text-right text-red-500 uppercase leading-tight shrink-0 group">
+                                        Эффект <i class="ph-fill ph-trend-up"></i></div>
+                                    <div class="flex-1 h-12 relative flex items-end">
+                                        <!-- Curved line chart mapping to growth -->
+                                        <svg class="w-full h-full overflow-visible" preserveAspectRatio="none"
+                                            viewBox="0 0 100 50">
+                                            <!-- Gradient fill -->
+                                            <linearGradient id="effectGradient" x1="0" x2="0" y1="0" y2="1">
+                                                <stop offset="0%" stop-color="#ef4444" stop-opacity="0.5" />
+                                                <stop offset="100%" stop-color="#ef4444" stop-opacity="0" />
+                                            </linearGradient>
+                                            <path d="M 0 50 L 50 48 Q 65 40 75 10 T 100 -20 L 100 50 Z"
+                                                fill="url(#effectGradient)"></path>
+                                            <!-- Line -->
+                                            <path d="M 0 50 L 50 48 Q 65 40 75 10 T 100 -20" fill="none"
+                                                stroke="#ef4444" stroke-width="2"
+                                                class="animate-[dash_3s_linear_forwards] stroke-dasharray-[300] stroke-dashoffset-[300]">
+                                            </path>
+
+                                            <!-- Key point -->
+                                            <circle cx="75" cy="10" r="3" fill="#fff" class="animate-pulse"></circle>
+                                        </svg>
+                                        <div
+                                            class="absolute right-[22%] -top-4 text-[10px] font-black text-white bg-red-600 px-1.5 rounded translate-x-1/2">
+                                            Старт серийного пр-ва</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 20: 2030 FINANCE MODEL -->
+        <section class="slide" id="slide-20">
+            <div class="bg-grid"></div>
+
+            <div class="slide-content">
+                <div class="layout-grid">
+
+                    <!-- Left Column -->
+                    <div class="flex flex-col justify-center h-full relative z-10 lg:pr-8">
+                        <div class="label-style mb-4 text-red-500">Прогноз 2030</div>
+                        <h2 class="text-4xl md:text-5xl font-black uppercase italic tracking-tighter leading-[1] mb-6">
+                            Решение проблемы <br><span
+                                class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-800">1.057
+                                трлн руб.</span>
+                        </h2>
+                        <h3 class="subheadline-style mb-6 text-white text-xl">Платформа как инструмент закрытия
+                            бюджетного разрыва.</h3>
+
+                        <p class="body-style mb-8 text-gray-400">Москва ставит цель роста ИТ-сектора. В текущей
+                            парадигме роста не хватает >1 трлн рублей выручки МСП к 2030 году. МОСНАУКА — механизм
+                            компенсации этого разрыва через инновации.</p>
+
+                        <div class="glass-panel p-6 border-l-4 border-red-600 mt-4 relative overflow-hidden">
+                            <div
+                                class="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-red-900/20 to-transparent">
+                            </div>
+                            <div class="text-4xl font-black text-white italic tracking-tighter mb-2">+ 1,057 <span
+                                    class="text-xl text-red-500">трлн ₽</span></div>
+                            <p class="text-sm font-bold text-gray-300 uppercase tracking-widest">Дополнительная выручка
+                                ИТ-сектора</p>
+                            <p class="text-xs text-gray-500 mt-2">Суммарный эффект от новых высокотехнологичных
+                                производств, запущенных через Хаб.</p>
+                        </div>
+                    </div>
+
+                    <!-- Right Visual (Waterfall Chart Mockup) -->
+                    <div class="relative w-full h-full flex items-center justify-center z-10 py-8 px-4">
+                        <div
+                            class="w-full max-w-lg aspect-square lg:aspect-video rounded-xl border border-gray-800 bg-[#0a0a0a] p-6 shadow-[0_0_50px_rgba(0,0,0,0.5)] flex flex-col justify-end relative">
+
+                            <h3 class="absolute top-6 left-6 text-xs text-gray-500 font-bold uppercase tracking-widest">
+                                Целевая выручка (трлн руб.)</h3>
+
+                            <!-- Chart Area -->
+                            <div class="flex items-end h-[70%] gap-2 sm:gap-4 lg:gap-8 justify-between relative mt-10">
+                                <!-- Grid Lines -->
+                                <div class="absolute inset-0 flex flex-col justify-between pointer-events-none">
+                                    <div class="w-full h-px bg-gray-800 border-b border-gray-800 border-dashed"></div>
+                                    <div class="w-full h-px bg-gray-800 border-b border-gray-800 border-dashed"></div>
+                                    <div class="w-full h-px bg-gray-800 border-b border-gray-800 border-dashed"></div>
+                                    <div class="w-full h-px bg-gray-800 border-b border-gray-800 border-dashed"></div>
+                                    <div class="w-full h-px bg-gray-700"></div> <!-- Base line -->
+                                </div>
+
+                                <!-- Bar 1: Base -->
+                                <div class="w-16 flex flex-col items-center gap-2 z-10">
+                                    <div class="text-[10px] font-mono text-gray-400">1.8</div>
+                                    <div
+                                        class="w-full h-[30%] bg-[#111] border border-gray-600 rounded-t relative overflow-hidden">
+                                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+                                    </div>
+                                    <div
+                                        class="text-[8px] font-bold uppercase text-gray-500 text-center leading-tight h-8">
+                                        Прогноз без Хаба</div>
+                                </div>
+
+                                <!-- Operator (Plus) -->
+                                <div class="text-xl font-black text-gray-600 z-10 pb-16">+</div>
+
+                                <!-- Bar 2: Gap (The Solution) -->
+                                <div class="w-16 flex flex-col items-center gap-2 z-10">
+                                    <div class="text-[10px] font-mono font-bold text-red-500 animate-pulse">1.057</div>
+                                    <div
+                                        class="w-full h-[55%] bg-gradient-to-t from-red-900 to-red-600 border border-red-400 rounded-t shadow-[0_0_20px_rgba(255,0,0,0.3)] relative overflow-hidden group hover:h-[60%] transition-all cursor-pointer">
+                                        <div
+                                            class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPgo8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMSI+PC9yZWN0Pgo8cGF0aCBkPSJNMCAwTDggOFoiIHN0cm9rZT0iIzExMSIgc3Ryb2tlLXdpZHRoPSIxIi8+Cjwvc3ZnPg==')] opacity-30 mix-blend-overlay">
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="text-[8px] font-bold uppercase text-red-400 text-center leading-tight h-8">
+                                        Эффект МОСНАУКИ</div>
+                                </div>
+
+                                <!-- Operator (Equals) -->
+                                <div class="text-xl font-black text-gray-600 z-10 pb-16">=</div>
+
+                                <!-- Bar 3: Target -->
+                                <div class="w-16 flex flex-col items-center gap-2 z-10">
+                                    <div class="text-[10px] font-mono text-white font-bold">2.8</div>
+                                    <div
+                                        class="w-full h-[85%] bg-[#222] border-t-2 border-r-2 border-l-2 border-white rounded-t relative overflow-hidden">
+                                        <div
+                                            class="absolute inset-x-0 bottom-0 h-[30%] bg-[#111] border-t border-gray-600">
+                                        </div>
+                                        <div
+                                            class="absolute inset-x-0 bottom-[30%] top-0 bg-red-900/40 border-t border-red-500">
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="text-[8px] font-bold uppercase text-white text-center leading-tight h-8">
+                                        Цель 2030 (Указ РФ)</div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 21: PLATFORM VALUE FOR CITY -->
+        <section class="slide" id="slide-21">
+            <div class="bg-grid"></div>
+
+            <div class="slide-content">
+                <div class="layout-grid">
+
+                    <!-- Left Column -->
+                    <div class="flex flex-col justify-center h-full relative z-10 lg:pr-8">
+                        <div class="label-style mb-4 text-gray-500">Импакт</div>
+                        <h2 class="text-4xl md:text-5xl font-black uppercase italic tracking-tighter leading-[1] mb-6">
+                            Ценность для <br><span
+                                class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-800">экономики
+                                Москвы</span>
+                        </h2>
+                        <h3 class="subheadline-style mb-6 text-white text-xl">Платформа превращает науку из статьи
+                            расходов в драйвер ВРП.</h3>
+
+                        <p class="body-style mb-8 text-gray-400">Мы не просто улучшаем клиентский путь бизнеса. Мы
+                            создаем измеримые эффекты для бюджета и стратегической независимости города.</p>
+                    </div>
+
+                    <!-- Right Visual (2x2 Impact Matrix) -->
+                    <div class="relative w-full h-full flex flex-col justify-center gap-6 z-10 py-8 px-4">
+
+                        <!-- Row 1 -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <!-- Impact 1 -->
+                            <div
+                                class="glass-panel p-6 border-l-4 border-red-600 group hover:bg-red-900/10 transition-colors">
+                                <div class="flex items-center gap-4 mb-4">
+                                    <div
+                                        class="w-12 h-12 rounded bg-[#111] border border-gray-700 flex items-center justify-center text-red-500 group-hover:bg-red-900/40 group-hover:border-red-500 transition-all">
+                                        <i class="ph-bold ph-coins text-2xl"></i>
+                                    </div>
+                                    <h4 class="text-lg font-bold text-white uppercase tracking-wide leading-tight">Рост
+                                        ВРП и налогов</h4>
+                                </div>
+                                <p class="text-sm text-gray-400">Снижение трансакционных издержек ускоряет запуск новых
+                                    производств (от 3 до 1.5 лет), генерируя дополнительную налоговую базу.</p>
+                            </div>
+
+                            <!-- Impact 2 -->
+                            <div
+                                class="glass-panel p-6 border-l-4 border-gray-600 hover:border-red-500 group transition-colors">
+                                <div class="flex items-center gap-4 mb-4">
+                                    <div
+                                        class="w-12 h-12 rounded bg-[#111] border border-gray-700 flex items-center justify-center text-gray-400 group-hover:text-red-500 transition-colors">
+                                        <i class="ph-bold ph-buildings text-2xl"></i>
+                                    </div>
+                                    <h4 class="text-lg font-bold text-white uppercase tracking-wide leading-tight">
+                                        Локализация R&D</h4>
+                                </div>
+                                <p class="text-sm text-gray-400">Удержание технологических бюджетов внутри контура
+                                    Москвы. Корпорации заказывают НИОКР у столичных, а не зарубежных площадок.</p>
+                            </div>
+                        </div>
+
+                        <!-- Row 2 -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <!-- Impact 3 -->
+                            <div
+                                class="glass-panel p-6 border-l-4 border-gray-600 hover:border-red-500 group transition-colors">
+                                <div class="flex items-center gap-4 mb-4">
+                                    <div
+                                        class="w-12 h-12 rounded bg-[#111] border border-gray-700 flex items-center justify-center text-gray-400 group-hover:text-red-500 transition-colors">
+                                        <i class="ph-bold ph-chart-line-up text-2xl"></i>
+                                    </div>
+                                    <h4 class="text-lg font-bold text-white uppercase tracking-wide leading-tight">
+                                        Прозрачность мер поддержки</h4>
+                                </div>
+                                <p class="text-sm text-gray-400">Сквозная аналитика эффективности грантов. Переход от
+                                    "выдачи денег на процесс" к "оплате за подтвержденный результат" на платформе.</p>
+                            </div>
+
+                            <!-- Impact 4 -->
+                            <div
+                                class="glass-panel p-6 border-l-4 border-gray-600 hover:border-red-500 group transition-colors">
+                                <div class="flex items-center gap-4 mb-4">
+                                    <div
+                                        class="w-12 h-12 rounded bg-[#111] border border-gray-700 flex items-center justify-center text-gray-400 group-hover:text-red-500 transition-colors">
+                                        <i class="ph-bold ph-users text-2xl"></i>
+                                    </div>
+                                    <h4 class="text-lg font-bold text-white uppercase tracking-wide leading-tight">
+                                        Развитие инж. кадров</h4>
+                                </div>
+                                <p class="text-sm text-gray-400">Прямая связь вузов с реальным сектором обеспечивает
+                                    актуализацию образовательных программ под текущие потребности рынка.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 22: RESOURCES -->
+        <section class="slide" id="slide-22">
+            <div class="bg-grid opacity-30"></div>
+
+            <div class="slide-content">
+                <div class="layout-grid">
+
+                    <!-- Left Column -->
+                    <div class="flex flex-col justify-center h-full relative z-10 lg:pr-8">
+                        <h2 class="text-4xl md:text-5xl font-black uppercase italic tracking-tighter leading-[1] mb-6">
+                            Что нужно для <br><span
+                                class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-800">запуска?</span>
+                        </h2>
+                        <h3 class="subheadline-style mb-6 text-white text-xl">Платформа требует не столько кода, сколько
+                            административного рычага.</h3>
+
+                        <p class="body-style mb-8 text-gray-400">Успех МОСНАУКИ зависит от наличия критической массы
+                            верифицированных профилей на старте и бесшовной интеграции с сервисами i.moscow.</p>
+                    </div>
+
+                    <!-- Right Visual (Resource requirements) -->
+                    <div class="relative w-full h-full flex flex-col justify-center gap-6 z-10 py-8 px-4">
+
+                        <!-- Requirement blocks stacked diagonally or sequentially -->
+
+                        <!-- 1: Data -->
+                        <div
+                            class="glass-panel p-5 border border-red-500/30 bg-gradient-to-r from-[#111] to-black relative overflow-hidden group">
+                            <div class="absolute right-0 top-0 bottom-0 w-1 bg-red-500"></div>
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="w-12 h-12 rounded bg-black border border-gray-700 flex items-center justify-center text-red-500 shrink-0">
+                                    <i class="ph-bold ph-database text-2xl"></i>
+                                </div>
+                                <div>
+                                    <h4
+                                        class="text-sm font-bold text-white uppercase tracking-wider mb-1 flex items-center gap-2">
+                                        Данные <span
+                                            class="bg-red-900/50 text-red-400 text-[8px] px-1.5 py-0.5 rounded border border-red-500/20">Критично</span>
+                                    </h4>
+                                    <p class="text-[10px] text-gray-400 mb-2">Административная поддержка для "перегонки"
+                                        базовых реестров (МЭИ, МГТУ и др.) на новую платформу. Без первичной базы
+                                        ИИ-поиск не работает.</p>
+                                    <div class="text-[10px] font-mono text-red-500 font-bold">100+ якорных исполнителей
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2: Source connect -->
+                        <div
+                            class="glass-panel p-5 border border-gray-800 bg-gradient-to-r from-black to-[#0a0a0a] ml-4 lg:ml-8 relative overflow-hidden hover:border-gray-600 transition-colors">
+                            <div class="absolute right-0 top-0 bottom-0 w-1 bg-gray-600"></div>
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="w-12 h-12 rounded bg-black border border-gray-700 flex items-center justify-center text-gray-400 shrink-0">
+                                    <i class="ph-bold ph-plugs text-2xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-1">Интеграция с
+                                        i.moscow</h4>
+                                    <p class="text-[10px] text-gray-400 mb-2">Доступ к ЕСИА (Mos.ru) для авторизации
+                                        юрлиц и API реестров (статусы компаний, гранты, нарушения).</p>
+                                    <div class="text-[10px] font-mono text-gray-500 font-bold">SSO & Data API</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3: People (Trackers) -->
+                        <div
+                            class="glass-panel p-5 border border-gray-800 bg-gradient-to-r from-black to-[#0a0a0a] ml-8 lg:ml-16 relative overflow-hidden hover:border-gray-600 transition-colors">
+                            <div class="absolute right-0 top-0 bottom-0 w-1 bg-gray-600"></div>
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="w-12 h-12 rounded bg-black border border-gray-700 flex items-center justify-center text-gray-400 shrink-0">
+                                    <i class="ph-bold ph-users text-2xl"></i>
+                                </div>
+                                <div>
+                                    <h4
+                                        class="text-sm font-bold text-white uppercase tracking-wider mb-1 flex items-center gap-2">
+                                        Люди (Команда МИК)</h4>
+                                    <p class="text-[10px] text-gray-400 mb-2">Формирование или выделение штата
+                                        модераторов и "технологических трекеров" для сопровождения сложных сделок.</p>
+                                    <div class="text-[10px] font-mono text-gray-500 font-bold">5-10 трекеров на MVP
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 4: Cash -->
+                        <div
+                            class="glass-panel p-5 border border-gray-800 bg-gradient-to-r from-black to-[#0a0a0a] ml-12 lg:ml-24 relative overflow-hidden hover:border-gray-600 transition-colors">
+                            <div class="absolute right-0 top-0 bottom-0 w-1 bg-gray-600"></div>
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="w-12 h-12 rounded bg-black border border-gray-700 flex items-center justify-center text-gray-400 shrink-0">
+                                    <i class="ph-bold ph-money text-2xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-1">
+                                        Финансирование R&D</h4>
+                                    <p class="text-[10px] text-gray-400 mb-2">Синхронизация с льготным кредитованием под
+                                        залог ИС и грантами на пилотное тестирование для стимуляции первых сделок на
+                                        хабе.</p>
+                                    <div class="text-[10px] font-mono text-gray-500 font-bold">Квоты в Фонде Поддержки
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 23: TIMELINE (HORIZONTAL) -->
+        <section class="slide" id="slide-23">
+            <div class="bg-grid"></div>
+
+            <div class="slide-content">
+                <div class="layout-grid">
+
+                    <!-- Left Column -->
+                    <div class="flex flex-col justify-center h-full relative z-10 lg:pr-8">
+                        <h2 class="text-4xl md:text-5xl font-black uppercase italic tracking-tighter leading-[1] mb-6">
+                            План <br><span
+                                class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-800">запуска
+                                2024</span>
+                        </h2>
+                        <h3 class="subheadline-style mb-6 text-white text-xl">Короткий таймлайн ближайших шагов.</h3>
+
+                        <p class="body-style mb-8 text-gray-400">Переход от концепции к работающему MVP занимает 6
+                            месяцев при условии оперативного выделения бюджетов и межведомственной координации.</p>
+                    </div>
+
+                    <!-- Right Visual (Horizontal Flow) -->
+                    <div class="relative w-full h-full flex flex-col justify-center z-10 py-8 px-4">
+
+                        <!-- Horizontal Timeline Container -->
+                        <div class="w-full relative">
+
+                            <!-- Main connecting line -->
+                            <div
+                                class="absolute top-[3.5rem] left-[10%] right-[10%] h-1 bg-gray-800 hidden md:block z-0">
+                                <div class="h-full bg-red-600 w-2/3 shadow-[0_0_15px_rgba(255,0,0,0.5)]"></div>
+                            </div>
+
+                            <!-- Steps Grid -->
+                            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 relative z-10">
+
+                                <!-- Step 1 -->
+                                <div class="flex flex-row md:flex-col items-start gap-4 md:gap-6 group">
+                                    <div
+                                        class="w-16 h-14 md:w-28 md:h-28 shrink-0 rounded-xl bg-red-900 border-2 border-red-500 shadow-[0_0_20px_rgba(255,0,0,0.3)] flex flex-col items-center justify-center relative overflow-hidden group-hover:-translate-y-2 transition-transform">
+                                        <div class="absolute inset-0 bg-red-500/10 z-0"></div>
+                                        <div
+                                            class="text-[10px] md:text-xs font-bold text-red-200 uppercase tracking-widest z-10">
+                                            Месяц</div>
+                                        <div
+                                            class="text-2xl md:text-4xl font-black italic text-white z-10 drop-shadow-md">
+                                            01</div>
+                                    </div>
+                                    <div class="flex-1 mt-2">
+                                        <h4
+                                            class="text-sm md:text-base font-bold text-white mb-1 md:mb-2 uppercase tracking-wide">
+                                            Проектирование</h4>
+                                        <p class="text-[10px] md:text-xs text-gray-400">Формирование архитектуры БД.
+                                            Разработка CJM для бизнеса. Интеграция с реестрами МИК.</p>
+                                    </div>
+                                </div>
+
+                                <!-- Step 2 -->
+                                <div class="flex flex-row md:flex-col items-start gap-4 md:gap-6 group">
+                                    <div
+                                        class="w-16 h-14 md:w-28 md:h-28 shrink-0 rounded-xl bg-[#111] border-2 border-red-500/50 flex flex-col items-center justify-center relative overflow-hidden group-hover:-translate-y-2 transition-transform">
+                                        <div
+                                            class="absolute inset-x-0 bottom-0 h-1/2 bg-red-900/20 z-0 border-t border-red-500/30">
+                                        </div>
+                                        <div
+                                            class="text-[10px] md:text-xs font-bold text-gray-500 uppercase tracking-widest z-10">
+                                            Месяц</div>
+                                        <div class="text-2xl md:text-4xl font-black italic text-red-100 z-10">03</div>
+                                    </div>
+                                    <div class="flex-1 mt-2">
+                                        <h4
+                                            class="text-sm md:text-base font-bold text-white mb-1 md:mb-2 uppercase tracking-wide">
+                                            Разработка MVP</h4>
+                                        <p class="text-[10px] md:text-xs text-gray-400">Релиз каталога компетенций.
+                                            Запуск витрины услуг. Базовый личный кабинет.</p>
+                                    </div>
+                                </div>
+
+                                <!-- Step 3 -->
+                                <div class="flex flex-row md:flex-col items-start gap-4 md:gap-6 group">
+                                    <div
+                                        class="w-16 h-14 md:w-28 md:h-28 shrink-0 rounded-xl bg-[#111] border border-gray-700 flex flex-col items-center justify-center relative overflow-hidden group-hover:-translate-y-2 transition-transform">
+                                        <div
+                                            class="text-[10px] md:text-xs font-bold text-gray-500 uppercase tracking-widest z-10">
+                                            Месяц</div>
+                                        <div class="text-2xl md:text-4xl font-black italic text-gray-300 z-10">04</div>
+                                    </div>
+                                    <div class="flex-1 mt-2">
+                                        <h4
+                                            class="text-sm md:text-base font-bold text-white mb-1 md:mb-2 uppercase tracking-wide">
+                                            Сбор ядра</h4>
+                                        <p class="text-[10px] md:text-xs text-gray-400">Онбординг первых 50
+                                            R&D-партнеров (вузы, инж. центры). Верификация их услуг экспертным советом.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- Step 4 -->
+                                <div class="flex flex-row md:flex-col items-start gap-4 md:gap-6 group">
+                                    <div
+                                        class="w-16 h-14 md:w-28 md:h-28 shrink-0 rounded-xl bg-black border border-gray-800 flex flex-col items-center justify-center relative overflow-hidden group-hover:-translate-y-2 transition-transform">
+                                        <!-- Target marker -->
+                                        <i
+                                            class="ph-fill ph-target text-red-500 text-3xl opacity-20 absolute z-0 blur-sm"></i>
+                                        <div
+                                            class="text-[10px] md:text-xs font-bold text-gray-600 uppercase tracking-widest z-10">
+                                            Месяц</div>
+                                        <div class="text-2xl md:text-4xl font-black italic text-gray-500 z-10">06</div>
+                                    </div>
+                                    <div class="flex-1 mt-2">
+                                        <h4
+                                            class="text-sm md:text-base font-bold text-gray-300 mb-1 md:mb-2 uppercase tracking-wide">
+                                            Релиз платформы</h4>
+                                        <p class="text-[10px] md:text-xs text-gray-500">Открытие доступа для бизнеса.
+                                            Старт PR-кампании. Проведение первых 10 сделок в офлайн-формате через
+                                            трекеров.</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 24: DECISION -->
+        <section class="slide" id="slide-24">
+            <div class="bg-grid"></div>
+
+            <!-- Center Aligned Focus Slide -->
+            <div class="slide-content flex items-center justify-center h-full">
+                <div class="w-full max-w-4xl mx-auto flex flex-col items-center text-center relative z-10">
+
+                    <i
+                        class="ph-fill ph-check-square-offset text-6xl text-red-500 mb-6 drop-shadow-[0_0_15px_rgba(255,0,0,0.5)]"></i>
+
+                    <h2 class="text-5xl md:text-7xl font-black uppercase italic tracking-tighter leading-[0.9] mb-8">
+                        Проект <br><span
+                            class="text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-500">решения</span>
+                    </h2>
+
+                    <div
+                        class="w-full max-w-2xl bg-[#0a0a0a] border border-gray-800 rounded-xl p-8 md:p-12 shadow-[0_0_80px_rgba(0,0,0,0.8)] relative isolate overflow-hidden mb-10">
+                        <div class="absolute inset-0 bg-gradient-to-b from-red-900/10 to-transparent z-0"></div>
+
+                        <p class="text-xl md:text-2xl font-bold text-white mb-8 relative z-10">Прошу поддержать проект
+                            <span class="text-red-500">«МОСНАУКА»</span> и поручить:</p>
+
+                        <ul class="text-left text-gray-300 space-y-6 relative z-10">
+                            <li class="flex items-start gap-4">
+                                <i class="ph-bold ph-check text-red-500 text-xl shrink-0 mt-1"></i>
+                                <span class="text-base md:text-lg">Утвердить концепцию инфрастуктурного B2B-хаба по
+                                    управлению R&D сделками.</span>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <i class="ph-bold ph-check text-red-500 text-xl shrink-0 mt-1"></i>
+                                <span class="text-base md:text-lg">Одобрить создание Рабочей группы под эгидой ДПиИР
+                                    Москвы для контроля запуска MVP.</span>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <i class="ph-bold ph-check text-red-500 text-xl shrink-0 mt-1"></i>
+                                <span class="text-base md:text-lg">Согласовать финансирование разработки цифровой
+                                    платформы в рамках бюджета на 2024–2025 гг.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Red CTA Button Mockup / Decorative element -->
+                    <div
+                        class="inline-flex items-center gap-3 bg-red-600 hover:bg-red-500 transition-colors cursor-pointer text-white px-8 py-4 rounded font-bold uppercase tracking-widest border border-red-400 shadow-[0_0_20px_rgba(255,0,0,0.4)]">
+                        К обсуждению <i class="ph-bold ph-arrow-right"></i>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Complete Presentation Area End -->
+        <div id="slides-insertion-point"></div>
+
+    </main>
+
+    <!-- Navigation Dots -->
+    <div class="fixed right-6 top-1/2 -translate-y-1/2 flex flex-col gap-3 z-50 mix-blend-difference hidden md:flex"
+        id="nav-dots">
+        <!-- Dots will be populated by JS -->
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div
+        class="fixed bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-50 mix-blend-difference animate-bounce pointer-events-none">
+        <span class="text-[10px] uppercase font-bold tracking-widest text-white/50">Scroll</span>
+        <i class="ph ph-arrow-down text-white/50 text-xl"></i>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('presentationContainer');
+            const slides = document.querySelectorAll('.slide');
+            const dotsContainer = document.getElementById('nav-dots');
+
+            // Build Navigation Dots safely
+            function createDots() {
+                if (!dotsContainer) return;
+                dotsContainer.innerHTML = '';
+                slides.forEach((slide, index) => {
+                    const dot = document.createElement('div');
+                    dot.className = `w-2 h-2 rounded-full cursor-pointer transition-all duration-300 ${index === 0 ? 'bg-red-500 scale-125 opacity-100' : 'bg-white opacity-30 hover:opacity-100'}`;
+
+                    dot.addEventListener('click', () => {
+                        slide.scrollIntoView({ behavior: 'smooth' });
+                    });
+
+                    dotsContainer.appendChild(dot);
+                });
+            }
+
+            function updateActiveDot(index) {
+                if (!dotsContainer) return;
+                const dots = dotsContainer.querySelectorAll('div');
+                dots.forEach((dot, i) => {
+                    if (i === index) {
+                        dot.className = 'w-2 h-2 rounded-full cursor-pointer transition-all duration-300 bg-red-500 scale-125 opacity-100';
+                    } else {
+                        dot.className = 'w-2 h-2 rounded-full cursor-pointer transition-all duration-300 bg-white opacity-30 hover:opacity-100';
+                    }
+                });
+            }
+
+            // Initial dots creation
+            createDots();
+
+            // Intersection Observer
+            const observerOptions = {
+                root: container,
+                rootMargin: '0px',
+                threshold: 0.5
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const index = Array.from(slides).indexOf(entry.target);
+                        updateActiveDot(index);
+
+                        // Handle scroll indicator visibility
+                        const scrollIndicator = document.querySelector('.animate-bounce');
+                        if (scrollIndicator) {
+                            if (index > 0) {
+                                scrollIndicator.style.opacity = '0';
+                            } else {
+                                scrollIndicator.style.opacity = '1';
+                            }
+                        }
+                    }
+                });
+            }, observerOptions);
+
+            slides.forEach(slide => observer.observe(slide));
+        });
+    </script>
+</body>
+
+</html>

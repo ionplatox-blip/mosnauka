@@ -1,0 +1,2287 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>МОСНАУКА 3.0 — Презентация проекта (V2.0)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <style>
+    :root {
+      --mos-red: #ff003c;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      background-color: #050505;
+      color: #ffffff;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .mos-bg-red {
+      background-color: var(--mos-red);
+    }
+
+    .mos-text-red {
+      color: var(--mos-red);
+    }
+
+    /* Typography System */
+    .headline-style {
+      font-size: clamp(3rem, 6vw, 6rem);
+      line-height: 0.9;
+      font-weight: 900;
+      text-transform: uppercase;
+      font-style: italic;
+      letter-spacing: -0.05em;
+    }
+
+    .section-title {
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      line-height: 0.92;
+      font-weight: 900;
+      text-transform: uppercase;
+      font-style: italic;
+      letter-spacing: -0.02em;
+    }
+
+    .body-style {
+      font-size: 1.125rem;
+      /* text-lg */
+      color: #9ca3af;
+      /* gray-400 */
+      font-weight: 300;
+      line-height: 1.625;
+    }
+
+    @media (min-width: 768px) {
+      .body-style {
+        font-size: 1.25rem;
+        /* text-xl */
+      }
+    }
+
+    /* Premium UI Elements */
+    .glass-panel {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 24px;
+    }
+
+    .btn-primary {
+      background-color: var(--mos-red);
+      color: white;
+      font-weight: 700;
+      text-transform: uppercase;
+      border-radius: 9999px;
+      padding: 1rem 2rem;
+      box-shadow: 0 0 20px rgba(255, 0, 60, 0.4);
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 30px rgba(255, 0, 60, 0.6);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: white;
+      font-weight: 700;
+      text-transform: uppercase;
+      border-radius: 9999px;
+      padding: 1rem 2rem;
+      transition: all 0.3s ease;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Snap Scroll Framework */
+    .snap-container {
+      height: 100vh;
+      width: 100vw;
+      overflow-y: scroll;
+      scroll-snap-type: y mandatory;
+      scroll-behavior: smooth;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    .snap-container::-webkit-scrollbar {
+      display: none;
+    }
+
+    .slide {
+      height: 100vh;
+      width: 100vw;
+      scroll-snap-align: start;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .slide-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      max-width: 1400px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 2rem 4rem;
+      z-index: 10;
+    }
+
+    /* Navigation */
+    .slide-nav {
+      position: fixed;
+      right: 2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      z-index: 50;
+    }
+
+    .nav-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.2);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .nav-dot.active {
+      background-color: var(--mos-red);
+      transform: scale(1.5);
+    }
+
+    .nav-dot:hover {
+      background-color: rgba(255, 255, 255, 0.6);
+    }
+
+    /* Background Grid */
+    .bg-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      background-size: 50px 50px;
+      z-index: -1;
+      pointer-events: none;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation Dots Placeholder -->
+  <div class="slide-nav" id="slideNav"></div>
+
+  <!-- Main Scroll Container -->
+  <div class="snap-container" id="presentationContainer">
+
+    <!-- SLIDE 01: HERO -->
+    <section class="slide" id="slide-1">
+      <div class="bg-grid"></div>
+      <!-- Background element: subtle red pulse -->
+      <div
+        class="absolute w-[40rem] h-[40rem] bg-red-900/10 rounded-full top-[-10%] right-[-10%] blur-[100px] pointer-events-none">
+      </div>
+
+      <div class="slide-content flex-row items-center justify-between">
+        <!-- Left Column (55%) -->
+        <div class="w-full lg:w-[55%] flex flex-col items-start pr-8">
+          <div class="mb-4 flex items-center gap-3">
+            <span class="h-[1px] w-8 bg-red-600"></span>
+            <span class="text-[10px] md:text-xs font-black uppercase tracking-[0.22em] text-gray-500">
+              Фонд «Московский инновационный кластер»
+            </span>
+          </div>
+
+          <h1 class="headline-style text-white mb-4">
+            МОС<span class="mos-text-red">НАУКА</span>
+          </h1>
+
+          <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
+            Единая точка входа<br />бизнеса в научные<br />возможности Москвы
+          </h2>
+
+          <p class="body-style mb-10 max-w-xl text-xl border-l-4 border-l-red-500 pl-4 py-1">
+            От ИИ-матчинга исполнителя<br />до кэшбека налогов с Коэфф. 2.0
+          </p>
+
+          <div class="flex flex-wrap gap-4 mb-16">
+            <a href="#slide-2" class="btn-primary flex items-center gap-2">
+              Смотреть презентацию <i class="ph-bold ph-arrow-right"></i>
+            </a>
+          </div>
+
+          <!-- Stats Footer -->
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-6 w-full pt-6 border-t border-white/10 mt-auto">
+            <div>
+              <div class="text-white font-black text-2xl mb-1">1 342</div>
+              <div class="text-[10px] uppercase tracking-widest text-gray-500 font-bold">R&D-центров<br>в каталоге</div>
+            </div>
+            <div>
+              <div class="text-white font-black text-2xl mb-1">706</div>
+              <div class="text-[10px] uppercase tracking-widest text-gray-500 font-bold">млрд руб.<br>рынок НИОКР</div>
+            </div>
+            <div>
+              <div class="mos-text-red font-black text-2xl mb-1">2.0</div>
+              <div class="text-[10px] uppercase tracking-widest text-gray-500 font-bold">коэффициент<br>кешбэк налогов
+              </div>
+            </div>
+            <div>
+              <div class="text-white font-black text-2xl mb-1">100%</div>
+              <div class="text-[10px] uppercase tracking-widest text-gray-500 font-bold">бесплатно<br>для бизнеса</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column (45%) Mockup Visual -->
+        <div class="hidden lg:flex w-[45%] h-full justify-center items-center relative pl-8">
+          <!-- Premium Desktop Mockup -->
+          <div
+            class="w-full max-w-[500px] aspect-[4/5] bg-black/40 backdrop-blur-3xl border border-white/10 rounded-[32px] shadow-2xl flex flex-col overflow-hidden relative group">
+
+            <!-- Mockup Header -->
+            <div class="h-12 bg-white/5 border-b border-white/10 flex items-center justify-between px-6">
+              <div class="flex gap-2">
+                <div class="w-2 h-2 rounded-full bg-red-500/50"></div>
+                <div class="w-2 h-2 rounded-full bg-yellow-500/50"></div>
+                <div class="w-2 h-2 rounded-full bg-green-500/50"></div>
+              </div>
+            </div>
+
+            <!-- Mockup Content -->
+            <div class="p-6 flex flex-col gap-6 relative z-10 flex-1">
+              <!-- Search Bar -->
+              <div
+                class="w-full px-5 py-3 rounded-full bg-white/5 border border-white/10 text-gray-400 flex items-center gap-3">
+                <i class="ph ph-magnifying-glass text-lg"></i>
+                <span class="text-xs italic">Опишите задачу свободным языком...</span>
+              </div>
+
+              <!-- Mini Map placeholder -->
+              <div
+                class="w-full h-32 rounded-xl border border-white/10 bg-gradient-to-br from-white/5 to-transparent relative overflow-hidden flex items-center justify-center">
+                <i class="ph ph-map-pin text-4xl text-white/10"></i>
+                <!-- Fake marker -->
+                <div
+                  class="absolute top-1/2 left-1/2 w-3 h-3 bg-red-500 rounded-full shadow-[0_0_15px_rgba(255,0,0,0.8)] animate-pulse">
+                </div>
+              </div>
+
+              <!-- Shortlist -->
+              <div class="space-y-3">
+                <div
+                  class="p-4 rounded-xl bg-white/10 border border-white/20 flex gap-4 items-center scale-105 shadow-xl">
+                  <div class="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center shrink-0">
+                    <i class="ph-fill ph-flask text-blue-400"></i>
+                  </div>
+                  <div class="flex-1">
+                    <div class="text-white text-sm font-bold">Бауманский центр реверс-инжиниринга</div>
+                    <div class="text-[10px] text-emerald-400 font-bold uppercase tracking-wider">Матч 98%</div>
+                  </div>
+                  <i class="ph-fill ph-check-circle text-emerald-500"></i>
+                </div>
+                <div class="p-4 rounded-xl bg-white/5 border border-white/10 flex gap-4 items-center opacity-50">
+                  <div class="w-10 h-10 rounded-full bg-amber-500/20 flex items-center justify-center shrink-0">
+                    <i class="ph-fill ph-microscope text-amber-400"></i>
+                  </div>
+                  <div class="flex-1">
+                    <div class="text-white text-sm font-bold">Частный R&D-центр композитов</div>
+                    <div class="text-[10px] text-emerald-400">Матч 94%</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Floating Badges Layer -->
+            <div
+              class="absolute -right-6 top-1/3 transform translate-y-[-50%] flex flex-col gap-3 group-hover:-translate-x-4 transition-transform duration-500 z-20">
+              <div class="flex items-center gap-2 bg-black border border-white/20 rounded-full py-2 px-4 shadow-xl">
+                <i class="ph-fill ph-path text-red-500"></i>
+                <span class="text-[10px] uppercase font-bold text-white">маршрут НИОКР</span>
+              </div>
+              <div
+                class="flex items-center gap-2 bg-black border border-emerald-500/30 rounded-full py-2 px-4 shadow-xl ml-4">
+                <i class="ph-fill ph-seal-check text-emerald-500"></i>
+                <span class="text-[10px] uppercase font-bold text-white">верифицировано</span>
+              </div>
+              <div
+                class="flex items-center gap-2 bg-black border border-blue-500/30 rounded-full py-2 px-4 shadow-xl ml-8">
+                <i class="ph-fill ph-percent text-blue-500"></i>
+                <span class="text-[10px] uppercase font-bold text-white">коэфф. 2.0</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLACEHOLDER SLIDES 2-24 -->
+    <!-- SLIDE 02: THE PROBLEM (GAP) -->
+    <section class="slide" id="slide-2">
+      <div class="bg-grid"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-black via-transparent to-red-900/20 pointer-events-none"></div>
+      <div class="slide-content items-center justify-center text-center relative z-10">
+        <div class="mb-8 inline-block px-4 py-1 rounded-full border border-red-500/50 bg-red-500/10">
+          <span class="text-red-500 text-xs font-bold uppercase tracking-widest">Проблема</span>
+        </div>
+
+        <h2 class="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-8 leading-tight max-w-5xl">
+          Москва формирует <span class="text-white">20% ВРП России</span>,<br>но её доля в затратах на НИОКР <span
+            class="mos-text-red">стагнирует</span>.
+        </h2>
+
+        <div class="glass-panel p-8 md:p-12 max-w-4xl mx-auto border-red-500/30 relative overflow-hidden">
+          <div
+            class="absolute right-0 top-0 w-64 h-64 bg-red-600/20 blur-[80px] rounded-full translate-x-1/2 -translate-y-1/2">
+          </div>
+          <div class="flex flex-col md:flex-row items-center gap-8 relative z-10">
+            <div class="flex-1 text-left">
+              <p class="text-2xl font-bold text-white mb-2">Назревающий дефицит</p>
+              <p class="body-style">Разрыв с целевой траекторией для достижения технологического суверенитета критически
+                возрастает.</p>
+            </div>
+            <div class="w-px h-24 bg-white/10 hidden md:block"></div>
+            <div class="flex-1 text-center md:text-right">
+              <div class="text-5xl md:text-7xl font-black mos-text-red tracking-tighter mb-2">130<span
+                  class="text-3xl">млрд ₽</span></div>
+              <div class="text-sm uppercase tracking-widest text-gray-400 font-bold">прогноз разрыва к 2027 году</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- SLIDE 03: WHY IT MATTERS (GROWTH LADDER) -->
+    <section class="slide" id="slide-3">
+      <div class="bg-grid"></div>
+      <div class="slide-content justify-center relative z-10">
+        <h2 class="text-3xl md:text-5xl font-black text-white mb-4 text-center">Почему это важно <span
+            class="mos-text-red">прямо сейчас</span>?</h2>
+        <p class="body-style text-center max-w-3xl mx-auto mb-16">Без системного стимулирования R&D-кооперации
+          технологическое лидерство города оказывается под угрозой.</p>
+
+        <!-- 3 Blocks + Ladder Layout -->
+        <div class="flex flex-col lg:flex-row gap-12 items-end max-w-6xl mx-auto w-full">
+          <!-- Left: 3 Pain blocks -->
+          <div class="flex-1 space-y-4 w-full">
+            <div class="glass-panel p-6 flex items-start gap-4 hover:border-red-500/50 transition-colors">
+              <div class="w-12 h-12 rounded-full bg-red-500/20 flex items-center justify-center shrink-0">
+                <i class="ph-fill ph-trend-down text-red-500 text-xl"></i>
+              </div>
+              <div>
+                <h3 class="text-white font-bold text-lg mb-1">Утрата темпа инноваций</h3>
+                <p class="text-sm text-gray-400 leading-relaxed">Снижение скорости вывода новых высокотехнологичных
+                  продуктов на рынки.</p>
+              </div>
+            </div>
+            <div class="glass-panel p-6 flex items-start gap-4 hover:border-red-500/50 transition-colors">
+              <div class="w-12 h-12 rounded-full bg-red-500/20 flex items-center justify-center shrink-0">
+                <i class="ph-fill ph-plugs text-red-500 text-xl"></i>
+              </div>
+              <div>
+                <h3 class="text-white font-bold text-lg mb-1">Зависимость от импорта</h3>
+                <p class="text-sm text-gray-400 leading-relaxed">Невозможность быстрого замещения критических
+                  технологических узлов.</p>
+              </div>
+            </div>
+            <div class="glass-panel p-6 flex items-start gap-4 hover:border-red-500/50 transition-colors">
+              <div class="w-12 h-12 rounded-full bg-red-500/20 flex items-center justify-center shrink-0">
+                <i class="ph-fill ph-chart-line-down text-red-500 text-xl"></i>
+              </div>
+              <div>
+                <h3 class="text-white font-bold text-lg mb-1">Снижение конкурентоспособности</h3>
+                <p class="text-sm text-gray-400 leading-relaxed">Отток R&D-капитала в другие стимулирующие юрисдикции.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Growth Ladder 2026-2030 -->
+          <div class="flex-1 w-full h-full flex flex-col justify-end pt-12 lg:pt-0">
+            <p class="text-sm uppercase tracking-widest text-gray-500 font-bold mb-6 text-center lg:text-left">Целевая
+              траектория прироста НИОКР</p>
+            <div class="flex items-end gap-2 h-64 w-full">
+              <!-- Step 1 -->
+              <div class="flex-1 flex flex-col items-center group justify-end">
+                <div
+                  class="w-full bg-red-900/40 border-t-2 border-red-500 rounded-t-lg h-[20%] group-hover:bg-red-900/60 transition-colors relative flex justify-center pt-2">
+                  <span
+                    class="text-red-400 font-bold text-xs md:text-sm opacity-0 group-hover:opacity-100 transition-opacity absolute -top-8">+15%</span>
+                </div>
+                <div class="text-white font-black text-lg mt-3 opacity-50 group-hover:opacity-100 transition-opacity">
+                  26'</div>
+              </div>
+              <!-- Step 2 -->
+              <div class="flex-1 flex flex-col items-center group justify-end">
+                <div
+                  class="w-full bg-red-800/50 border-t-2 border-red-500 rounded-t-lg h-[40%] group-hover:bg-red-800/70 transition-colors relative flex justify-center pt-2">
+                  <span
+                    class="text-red-400 font-bold text-xs md:text-sm opacity-0 group-hover:opacity-100 transition-opacity absolute -top-8">+35%</span>
+                </div>
+                <div class="text-white font-black text-lg mt-3 opacity-50 group-hover:opacity-100 transition-opacity">
+                  27'</div>
+              </div>
+              <!-- Step 3 -->
+              <div class="flex-1 flex flex-col items-center group justify-end">
+                <div
+                  class="w-full bg-red-700/60 border-t-2 border-red-500 rounded-t-lg h-[60%] group-hover:bg-red-700/80 transition-colors relative flex justify-center pt-2">
+                  <span
+                    class="text-red-400 font-bold text-xs md:text-sm opacity-0 group-hover:opacity-100 transition-opacity absolute -top-8">+60%</span>
+                </div>
+                <div class="text-white font-black text-lg mt-3 opacity-50 group-hover:opacity-100 transition-opacity">
+                  28'</div>
+              </div>
+              <!-- Step 4 -->
+              <div class="flex-1 flex flex-col items-center group justify-end">
+                <div
+                  class="w-full bg-red-600 border-t-2 border-red-400 rounded-t-lg h-[90%] shadow-[0_0_30px_rgba(255,0,60,0.5)] relative flex justify-center pt-4">
+                  <div class="absolute inset-0 bg-gradient-to-t from-transparent to-white/20 rounded-t-lg"></div>
+                  <span class="text-white font-black text-lg drop-shadow-lg z-10 relative">+100%</span>
+                  <i class="ph-bold ph-flag-banner absolute top-12 text-white/30 text-3xl"></i>
+                </div>
+                <div class="text-white font-black text-xl mt-3 opacity-80 group-hover:opacity-100 transition-opacity">
+                  30'</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- SLIDE 04: SCIENCE BASE (MOSCOW POTENTIAL) -->
+    <section class="slide" id="slide-4">
+      <div class="bg-grid"></div>
+      <div class="slide-content items-center justify-center relative z-10 w-full">
+        <h2 class="text-3xl md:text-5xl font-black text-white mb-2 text-center">Абсолютный лидер научного потенциала
+        </h2>
+        <p class="body-style text-center mb-16 mx-auto max-w-2xl">На Москву приходится колоссальный объем ресурсов,
+          который требует новой модели дистрибуции и управления.</p>
+
+        <div class="grid grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-6 w-full max-w-7xl">
+          <!-- Metric 1 -->
+          <div
+            class="glass-panel p-6 flex flex-col items-center justify-center text-center group hover:border-red-500/50 transition-colors relative overflow-hidden h-48 lg:col-span-1">
+            <div class="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent pointer-events-none"></div>
+            <div class="text-4xl lg:text-5xl font-black text-white mb-2 group-hover:mos-text-red transition-colors">1
+              342</div>
+            <div class="text-xs uppercase tracking-widest text-gray-400 font-bold px-2">R&D-организации</div>
+          </div>
+
+          <!-- Metric 2 -->
+          <div
+            class="glass-panel p-6 flex flex-col items-center justify-center text-center group hover:border-red-500/50 transition-colors relative overflow-hidden h-48 lg:col-span-1 border-t-4 border-t-red-600">
+            <div class="absolute inset-0 bg-gradient-to-b from-red-500/10 to-transparent pointer-events-none"></div>
+            <div class="text-4xl lg:text-5xl font-black mos-text-red mb-2 drop-shadow-lg">&gt;30%</div>
+            <div class="text-xs uppercase tracking-widest text-gray-400 font-bold px-2">всех ученых страны</div>
+          </div>
+
+          <!-- Metric 3 -->
+          <div
+            class="glass-panel p-6 flex flex-col items-center justify-center text-center group hover:border-red-500/50 transition-colors relative overflow-hidden h-48 lg:col-span-1 md:col-span-2">
+            <div class="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent pointer-events-none"></div>
+            <div class="text-4xl lg:text-5xl font-black text-white mb-2 group-hover:mos-text-red transition-colors">706
+              <span class="text-2xl text-gray-500">млрд ₽</span>
+            </div>
+            <div class="text-xs uppercase tracking-widest text-gray-400 font-bold px-2">ежегодных затрат бизнеса</div>
+          </div>
+
+          <!-- Metric 4 -->
+          <div
+            class="glass-panel p-6 flex flex-col items-center justify-center text-center group hover:border-red-500/50 transition-colors relative overflow-hidden h-48 lg:col-span-1">
+            <div class="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent pointer-events-none"></div>
+            <div class="text-4xl lg:text-5xl font-black text-white mb-2 group-hover:mos-text-red transition-colors">120+
+            </div>
+            <div class="text-xs uppercase tracking-widest text-gray-400 font-bold px-2">вузов мирового уровня</div>
+          </div>
+
+          <!-- Metric 5 -->
+          <div
+            class="glass-panel p-6 flex flex-col items-center justify-center text-center group hover:border-red-500/50 transition-colors relative overflow-hidden h-48 lg:col-span-1">
+            <div class="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent pointer-events-none"></div>
+            <div class="text-4xl lg:text-5xl font-black text-white mb-2 group-hover:mos-text-red transition-colors">55%
+            </div>
+            <div class="text-xs uppercase tracking-widest text-gray-400 font-bold px-2">выданных патентов РФ</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- SLIDE 05: MARKET SCOPE (SPLIT SCHEME) -->
+    <section class="slide" id="slide-5">
+      <div class="bg-grid"></div>
+      <div class="slide-content flex flex-col justify-center relative z-10 w-full h-full max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-5xl font-black text-white mb-4">Единое окно для разрозненного рынка</h2>
+          <p class="body-style text-center mx-auto max-w-3xl">Платформа выступает доверенным цифровым брокером,
+            синхронизируя потребности бизнеса и возможности науки.</p>
+        </div>
+
+        <!-- 3-Column Ecosystem Layout -->
+        <div class="flex flex-col lg:flex-row items-stretch gap-6 w-full h-[50vh] min-h-[400px]">
+
+          <!-- Left: Business -->
+          <div class="flex-1 glass-panel border-white/5 p-8 flex flex-col relative overflow-hidden group">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-3xl"></div>
+            <div class="flex items-center gap-4 mb-8">
+              <div
+                class="w-12 h-12 rounded-xl bg-blue-500/20 flex items-center justify-center border border-blue-500/30">
+                <i class="ph-fill ph-buildings text-blue-400 text-2xl"></i>
+              </div>
+              <h3 class="text-2xl font-black text-white uppercase tracking-wider">Бизнес</h3>
+            </div>
+            <div class="space-y-4 relative z-10 flex-1 flex flex-col justify-center">
+              <div class="flex items-center gap-3"><i class="ph-bold ph-check text-white/40"></i><span
+                  class="text-lg text-gray-300">Реальные производственные задачи</span></div>
+              <div class="flex items-center gap-3"><i class="ph-bold ph-check text-white/40"></i><span
+                  class="text-lg text-gray-300">Бюджеты на внедрение</span></div>
+              <div class="flex items-center gap-3"><i class="ph-bold ph-check text-white/40"></i><span
+                  class="text-lg text-gray-300">Острая потребность в импортозамещении</span></div>
+            </div>
+          </div>
+
+          <!-- Middle: Hub (Platform) -->
+          <div
+            class="flex-1 lg:max-w-[320px] rounded-3xl bg-red-600 p-8 flex flex-col relative overflow-hidden shadow-[0_0_50px_rgba(255,0,60,0.3)] transform lg:scale-105 z-20">
+            <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10">
+            </div>
+            <!-- Connection Lines indicators -->
+            <div class="absolute left-[-15px] top-1/2 w-8 h-[2px] bg-red-400 hidden lg:block"></div>
+            <div class="absolute right-[-15px] top-1/2 w-8 h-[2px] bg-red-400 hidden lg:block"></div>
+
+            <div class="flex flex-col items-center justify-center text-center h-full gap-6 relative z-10">
+              <div
+                class="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-md flex items-center justify-center shadow-lg border border-white/30">
+                <i class="ph-fill ph-arrows-merge text-white text-3xl"></i>
+              </div>
+              <div>
+                <h3 class="text-xl font-black text-white mb-2 leading-tight uppercase">Хаб-ядро<br>Моснаука</h3>
+                <p class="text-sm font-medium text-white/80 uppercase tracking-widest leading-relaxed">
+                  Умный матчинг<br>Безопасность сделок<br>Льготы 2.0
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Science -->
+          <div class="flex-1 glass-panel border-white/5 p-8 flex flex-col relative overflow-hidden group">
+            <div class="absolute top-0 left-0 w-32 h-32 bg-emerald-500/10 rounded-full blur-3xl"></div>
+            <div class="flex items-center gap-4 mb-8 flex-row-reverse lg:flex-row">
+              <div
+                class="w-12 h-12 rounded-xl bg-emerald-500/20 flex items-center justify-center border border-emerald-500/30">
+                <i class="ph-fill ph-flask text-emerald-400 text-2xl"></i>
+              </div>
+              <h3 class="text-2xl font-black text-white uppercase tracking-wider text-right lg:text-left">Наука</h3>
+            </div>
+            <div
+              class="space-y-4 relative z-10 flex-1 flex flex-col justify-center items-end lg:items-start text-right lg:text-left">
+              <div class="flex items-center gap-3 flex-row-reverse lg:flex-row"><i
+                  class="ph-bold ph-check text-white/40"></i><span class="text-lg text-gray-300">Уникальные компетенции
+                  и кадры</span></div>
+              <div class="flex items-center gap-3 flex-row-reverse lg:flex-row"><i
+                  class="ph-bold ph-check text-white/40"></i><span class="text-lg text-gray-300">Современные
+                  лаборатории</span></div>
+              <div class="flex items-center gap-3 flex-row-reverse lg:flex-row"><i
+                  class="ph-bold ph-check text-white/40"></i><span class="text-lg text-gray-300">Опыт успешных НИОКР
+                  циклов</span></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- SLIDE 06: ACCELERATION & GRP SCALE -->
+    <section class="slide" id="slide-6">
+      <div class="bg-grid"></div>
+      <div
+        class="absolute right-0 bottom-0 w-[50vw] h-[50vw] bg-red-900/10 rounded-full blur-[120px] pointer-events-none translate-x-1/3 translate-y-1/3">
+      </div>
+
+      <div class="slide-content flex flex-col justify-center relative z-10 w-full h-full max-w-6xl mx-auto py-12">
+        <div class="mb-4 inline-block px-4 py-1 rounded-full border border-red-500/50 bg-red-500/10 w-max border-l-4">
+          <span class="text-red-500 text-xs font-bold uppercase tracking-widest">Макроэкономика</span>
+        </div>
+
+        <h2 class="text-4xl md:text-6xl font-black text-white mb-6 leading-tight max-w-4xl">
+          Необходимость <span class="mos-text-red italic">экспоненциального</span> ускорения
+        </h2>
+        <p class="body-style max-w-2xl mb-12">Перестроение цепей поставок и уход зарубежных вендоров создали уникальное
+          окно возможностей. Выигрывает тот, кто быстрее превратит научную идею в промышленную серию.</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+          <!-- Pillar 1 -->
+          <div class="glass-panel p-8 border-t-2 border-t-white/10 hover:border-t-red-500 transition-colors group">
+            <div
+              class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mb-6 group-hover:bg-red-500/20 transition-colors">
+              <i class="ph-bold ph-rocket text-3xl text-gray-400 group-hover:text-red-500 transition-colors"></i>
+            </div>
+            <div class="text-3xl font-black text-white mb-2">3x <span
+                class="text-lg text-gray-500 font-normal">рост</span></div>
+            <h3 class="font-bold text-white mb-2">Спрос на локализацию</h3>
+            <p class="text-sm text-gray-400">Кратный рост запросов от реального сектора на реверс-инжиниринг и создание
+              отечественных аналогов.</p>
+          </div>
+
+          <!-- Pillar 2 -->
+          <div
+            class="glass-panel p-8 border-t-2 border-t-red-600 bg-gradient-to-b from-red-900/10 to-transparent group transform md:-translate-y-4 shadow-xl shadow-red-900/20">
+            <div class="w-14 h-14 rounded-2xl bg-red-500/20 flex items-center justify-center mb-6">
+              <i class="ph-bold ph-clock-countdown text-3xl text-red-500"></i>
+            </div>
+            <div class="text-3xl font-black mos-text-red mb-2">-40% <span
+                class="text-lg text-gray-500 font-normal">времени</span></div>
+            <h3 class="font-bold text-white mb-2">Time-to-Market</h3>
+            <p class="text-sm text-gray-400">Критическое сжатие сроков вывода продуктов на рынок. Долгий поиск
+              исполнителя становится риском для бизнеса.</p>
+          </div>
+
+          <!-- Pillar 3 -->
+          <div class="glass-panel p-8 border-t-2 border-t-white/10 hover:border-t-red-500 transition-colors group">
+            <div
+              class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mb-6 group-hover:bg-red-500/20 transition-colors">
+              <i class="ph-bold ph-chart-polar text-3xl text-gray-400 group-hover:text-red-500 transition-colors"></i>
+            </div>
+            <div class="text-3xl font-black text-white mb-2">10+ <span
+                class="text-lg text-gray-500 font-normal">отраслей</span></div>
+            <h3 class="font-bold text-white mb-2">Сквозные технологии</h3>
+            <p class="text-sm text-gray-400">Потребность в кросс-отраслевом трансфере компетенций (ИИ, новые материалы,
+              микроэлектроника).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- SLIDE 07: SHOWCASE VS PLATFORM -->
+    <section class="slide" id="slide-7">
+      <div class="bg-grid"></div>
+      <div class="slide-content flex flex-col justify-center relative z-10 w-full h-full max-w-6xl mx-auto">
+        <h2 class="text-3xl md:text-5xl font-black text-white mb-12 text-center max-w-4xl mx-auto">
+          Почему <span class="text-gray-500 line-through">статичная витрина</span> не работает?
+        </h2>
+
+        <div class="flex flex-col md:flex-row gap-8 w-full items-stretch">
+
+          <!-- Left: Failed Model (Showcase) -->
+          <div
+            class="flex-1 glass-panel border border-red-500/20 p-8 md:p-10 relative overflow-hidden flex flex-col justify-between opacity-70 grayscale-[50%]">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-red-500/5 rounded-full blur-2xl"></div>
+            <div>
+              <div class="flex items-center gap-3 mb-6">
+                <i class="ph-bold ph-x-circle text-2xl text-red-400"></i>
+                <h3 class="text-2xl font-bold text-gray-300">Обычный каталог</h3>
+              </div>
+
+              <ul class="space-y-6">
+                <li class="flex gap-4 items-start">
+                  <span class="w-2 h-2 rounded-full bg-red-500/50 mt-2 shrink-0"></span>
+                  <div>
+                    <h4 class="text-white font-bold mb-1">Сложно искать</h4>
+                    <p class="text-sm text-gray-500 leading-relaxed">Нужно точно знать ключевые слова. Заказчик говорит
+                      на бизнес-языке, ученый — на техническом.</p>
+                  </div>
+                </li>
+                <li class="flex gap-4 items-start">
+                  <span class="w-2 h-2 rounded-full bg-red-500/50 mt-2 shrink-0"></span>
+                  <div>
+                    <h4 class="text-white font-bold mb-1">Нет гарантий</h4>
+                    <p class="text-sm text-gray-500 leading-relaxed">Стороны не доверяют друг другу. Риск срыва сроков
+                      НИОКР или нецелевого использования средств.</p>
+                  </div>
+                </li>
+                <li class="flex gap-4 items-start">
+                  <span class="w-2 h-2 rounded-full bg-red-500/50 mt-2 shrink-0"></span>
+                  <div>
+                    <h4 class="text-white font-bold mb-1">Мертвая база</h4>
+                    <p class="text-sm text-gray-500 leading-relaxed">Карточки профилей быстро устаревают без регулярной
+                      актуализации результатов.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- VS Badge -->
+          <div class="hidden md:flex items-center justify-center -mx-4 z-20">
+            <div
+              class="w-12 h-12 rounded-full bg-[#050505] border border-white/10 flex items-center justify-center text-gray-500 font-black italic shadow-2xl">
+              VS</div>
+          </div>
+
+          <!-- Right: Winning Model (Platform) -->
+          <div
+            class="flex-1 glass-panel border-red-500 p-8 md:p-10 relative overflow-hidden flex flex-col justify-between shadow-[0_0_40px_rgba(255,0,60,0.15)] transform md:scale-105 z-10">
+            <div class="absolute bottom-0 right-0 w-48 h-48 bg-red-600/20 rounded-full blur-3xl"></div>
+
+            <div>
+              <div class="flex items-center gap-3 mb-6">
+                <i class="ph-bold ph-check-circle text-2xl text-emerald-400"></i>
+                <h3 class="text-2xl font-black text-white mos-text-red">Умный R&D Брокер</h3>
+              </div>
+
+              <ul class="space-y-6">
+                <li class="flex gap-4 items-start">
+                  <div class="w-8 h-8 rounded-full bg-red-500/20 flex items-center justify-center shrink-0 mt-0.5">
+                    <i class="ph-bold ph-brain text-red-500"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-white font-bold mb-1">ИИ-семантический поиск</h4>
+                    <p class="text-sm text-gray-300 leading-relaxed">Перевод проблемы бизнеса ("нужно чтобы не
+                      ломалось") в стек научных задач. Точный матчинг.</p>
+                  </div>
+                </li>
+                <li class="flex gap-4 items-start">
+                  <div class="w-8 h-8 rounded-full bg-red-500/20 flex items-center justify-center shrink-0 mt-0.5">
+                    <i class="ph-bold ph-shield-check text-red-500"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-white font-bold mb-1">Сопровождение сделки</h4>
+                    <p class="text-sm text-gray-300 leading-relaxed">Типовые NDA, верификация исполнителей, гарант
+                      платежей и защита IP.</p>
+                  </div>
+                </li>
+                <li class="flex gap-4 items-start">
+                  <div class="w-8 h-8 rounded-full bg-red-500/20 flex items-center justify-center shrink-0 mt-0.5">
+                    <i class="ph-bold ph-coins text-red-500"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-white font-bold mb-1">Финансовый рычаг</h4>
+                    <p class="text-sm text-gray-300 leading-relaxed">Прямая интеграция с городскими мерами поддержки и
+                      налоговым Коэффициентом 2.0.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- SLIDE 08: MARKET PAINS (REAL CASES) -->
+    <section class="slide" id="slide-8">
+      <div class="bg-grid"></div>
+      <div class="slide-content flex flex-col justify-center relative z-10 w-full h-full max-w-6xl mx-auto py-12">
+        <h2 class="text-3xl md:text-5xl font-black text-white mb-4 text-center">Типичные проблемы участников</h2>
+        <p class="body-style text-center mb-12 mx-auto max-w-3xl">Запросы, с которыми мы сталкиваемся ежедневно при
+          ручной упаковке НИОКР-проектов.</p>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full max-w-5xl mx-auto">
+
+          <!-- Pain 1: Business -->
+          <div class="glass-panel p-8 border-l-4 border-l-blue-500 relative group">
+            <div class="absolute top-4 right-4 text-blue-500/20 group-hover:text-blue-500/40 transition-colors">
+              <i class="ph-fill ph-quotes text-6xl"></i>
+            </div>
+            <div class="flex items-center gap-4 mb-4 relative z-10">
+              <div
+                class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center border border-blue-500/50">
+                <i class="ph-bold ph-buildings text-blue-400"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-white text-lg">Заказчик (Промышленность)</h3>
+                <p class="text-xs text-gray-500 uppercase tracking-widest font-bold">Боль</p>
+              </div>
+            </div>
+            <p class="text-gray-300 text-lg leading-relaxed italic relative z-10">
+              «У нас сломался импортный контроллер. Мы не знаем, какой именно институт в Москве может сделать его
+              реверс-инжиниринг. А если найдем — как проверить их реальный опыт?»
+            </p>
+            <div
+              class="mt-4 inline-flex items-center gap-2 text-red-400 text-sm font-bold bg-red-900/20 px-3 py-1 rounded-full border border-red-500/20">
+              <i class="ph-bold ph-warning"></i> Высокий риск не найти исполнителя
+            </div>
+          </div>
+
+          <!-- Pain 2: Science -->
+          <div class="glass-panel p-8 border-l-4 border-l-emerald-500 relative group">
+            <div class="absolute top-4 right-4 text-emerald-500/20 group-hover:text-emerald-500/40 transition-colors">
+              <i class="ph-fill ph-quotes text-6xl"></i>
+            </div>
+            <div class="flex items-center gap-4 mb-4 relative z-10">
+              <div
+                class="w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center border border-emerald-500/50">
+                <i class="ph-bold ph-flask text-emerald-400"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-white text-lg">Исполнитель (ВУЗ / НИИ)</h3>
+                <p class="text-xs text-gray-500 uppercase tracking-widest font-bold">Боль</p>
+              </div>
+            </div>
+            <p class="text-gray-300 text-lg leading-relaxed italic relative z-10">
+              «Мы закупили дорогое измерительное оборудование, но оно простаивает 40% времени. Госзадание не покрывает
+              всех мощностей, а искать коммерческие заказы мы не умеем.»
+            </p>
+            <div
+              class="mt-4 inline-flex items-center gap-2 text-red-400 text-sm font-bold bg-red-900/20 px-3 py-1 rounded-full border border-red-500/20">
+              <i class="ph-bold ph-warning"></i> Упущенная коммерческая выгода
+            </div>
+          </div>
+
+          <!-- Pain 3: Current Process -->
+          <div class="glass-panel p-8 border-l-4 border-l-orange-500 lg:col-span-2 relative group overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-r from-orange-500/5 to-transparent"></div>
+            <!-- Progress bar indicating long time -->
+            <div class="absolute bottom-0 left-0 h-1 bg-orange-500 w-[80%] opacity-50"></div>
+            <div class="relative z-10 flex flex-col md:flex-row items-start md:items-center gap-6">
+              <div class="shrink-0 flex items-center gap-4">
+                <div
+                  class="w-16 h-16 rounded-2xl bg-orange-500/20 flex items-center justify-center border border-orange-500/50">
+                  <i class="ph-bold ph-hourglass-high text-3xl text-orange-400"></i>
+                </div>
+                <div class="md:hidden">
+                  <h3 class="font-bold text-white text-xl">Текущий процесс сделки</h3>
+                  <p class="text-xs text-gray-400 font-bold uppercase">Статус-кво</p>
+                </div>
+              </div>
+              <div>
+                <div class="hidden md:block mb-2">
+                  <h3 class="font-bold text-white text-xl">Текущий процесс сделки</h3>
+                </div>
+                <p class="text-gray-300 text-lg leading-relaxed italic">
+                  «Ручной поиск партнера, технический аудит, долгие согласования договора и NDA занимают <span
+                    class="text-white font-bold bg-red-600/30 px-2 border-b border-red-500">от 3 до 6 месяцев</span> еще
+                  до старта самой работы. Это неприемлемо.»
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- SLIDE 09: HOW IT WORKS (MECHANICS) -->
+    <section class="slide" id="slide-9">
+      <div class="bg-grid"></div>
+      <div class="slide-content flex flex-col justify-center relative z-10 w-full h-full max-w-6xl mx-auto py-12">
+        <h2 class="text-3xl md:text-5xl font-black text-white mb-4 text-center">Как Платформа решает эти проблемы</h2>
+        <p class="body-style text-center mb-16 mx-auto max-w-3xl">Автоматизация всего жизненного цикла технологического
+          контракта.</p>
+
+        <!-- Pipeline Layout -->
+        <div class="relative w-full">
+          <!-- Connecting Line -->
+          <div class="absolute top-1/2 left-0 w-full h-1 bg-white/10 -translate-y-1/2 hidden md:block"></div>
+          <!-- Active Progress Line -->
+          <div
+            class="absolute top-1/2 left-0 w-2/3 h-1 bg-red-600 -translate-y-1/2 hidden md:block shadow-[0_0_10px_rgba(255,0,60,0.8)]">
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 relative z-10">
+
+            <!-- Step 1 -->
+            <div class="flex flex-col items-center">
+              <div
+                class="w-20 h-20 rounded-full bg-[#0a0a0a] border-4 border-red-600 flex items-center justify-center mb-6 shadow-[0_0_30px_rgba(255,0,60,0.4)] z-10">
+                <span class="text-2xl font-black text-white">01</span>
+              </div>
+              <div
+                class="glass-panel p-6 text-center w-full min-h-[220px] flex flex-col justify-center border-t-2 border-transparent hover:border-red-500 transition-colors">
+                <div class="w-12 h-12 bg-white/5 rounded-xl mx-auto flex items-center justify-center mb-4">
+                  <i class="ph-fill ph-translate text-2xl text-blue-400"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-2">Оцифровка запроса</h3>
+                <p class="text-sm text-gray-400">ИИ-модуль переводит проблему с бизнес-языка на язык науки. Формируется
+                  цифровое ТЗ.</p>
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="flex flex-col items-center transform md:-translate-y-4">
+              <div
+                class="w-20 h-20 rounded-full bg-[#0a0a0a] border-4 border-red-600 flex items-center justify-center mb-6 shadow-[0_0_30px_rgba(255,0,60,0.4)] z-10 relative">
+                <div class="absolute inset-0 rounded-full border border-red-400 animate-ping opacity-20"></div>
+                <span class="text-2xl font-black text-white">02</span>
+              </div>
+              <div
+                class="glass-panel p-6 text-center w-full border-red-500/50 bg-gradient-to-b from-red-900/10 to-transparent min-h-[220px] flex flex-col justify-center shadow-lg shadow-red-900/20">
+                <div class="w-12 h-12 bg-red-500/20 rounded-xl mx-auto flex items-center justify-center mb-4">
+                  <i class="ph-bold ph-git-merge text-2xl mos-text-red"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-2">Матчинг и Контракт</h3>
+                <p class="text-sm text-gray-300">Подбор исполнителя с релевантным опытом. Использование <b>типовых
+                    смарт-контрактов</b>.</p>
+              </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="flex flex-col items-center">
+              <div
+                class="w-20 h-20 rounded-full bg-[#0a0a0a] border-4 border-white/20 flex items-center justify-center mb-6 z-10 bg-gradient-to-br from-gray-900 to-black">
+                <span class="text-2xl font-black text-white/50">03</span>
+              </div>
+              <div
+                class="glass-panel p-6 text-center w-full min-h-[220px] flex flex-col justify-center border-t-2 border-transparent hover:border-white/20 transition-colors">
+                <div class="w-12 h-12 bg-white/5 rounded-xl mx-auto flex items-center justify-center mb-4">
+                  <i class="ph-bold ph-shield-check text-2xl text-emerald-400"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-2">Трекинг и Льготы</h3>
+                <p class="text-sm text-gray-400">Отслеживание КТ проекта. Автоматическая подготовка документов для
+                  субсидий и льгот ГОСТ.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- SLIDE 10: SOLUTION DEFINITION (4 PILLARS) -->
+    <section class="slide" id="slide-10">
+      <div class="bg-grid"></div>
+      <div class="slide-content flex flex-col justify-center relative z-10 w-full h-full max-w-6xl mx-auto py-12">
+        <h2 class="text-3xl md:text-5xl font-black text-white mb-2 text-center">Архитектура Платформы</h2>
+        <p class="body-style text-center mb-16 mx-auto max-w-3xl">Единая технологическая среда, объединяющая 4 ключевых
+          компонента успешного НИОКР.</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
+
+          <!-- Pillar 1 -->
+          <div
+            class="glass-panel p-8 group hover:border-blue-500/50 transition-colors flex flex-col relative overflow-hidden">
+            <div
+              class="absolute -right-4 -top-4 w-24 h-24 bg-blue-500/10 rounded-full blur-xl group-hover:bg-blue-500/20 transition-colors">
+            </div>
+            <div
+              class="text-5xl font-black text-white/5 mb-4 group-hover:text-blue-500/10 transition-colors absolute top-4 right-6">
+              01</div>
+            <div
+              class="w-14 h-14 rounded-2xl bg-blue-500/20 flex items-center justify-center mb-6 border border-blue-500/30 relative z-10">
+              <i class="ph-bold ph-magnifying-glass text-3xl text-blue-400"></i>
+            </div>
+            <h3 class="font-black text-white text-xl mb-3 relative z-10">Умный поиск</h3>
+            <p class="text-sm text-gray-400 relative z-10">Единый реестр компетенций, патентов и свободного оборудования
+              Москвы с ИИ-матчингом.</p>
+          </div>
+
+          <!-- Pillar 2 -->
+          <div
+            class="glass-panel p-8 group hover:border-red-500/50 transition-colors flex flex-col relative overflow-hidden transform lg:-translate-y-4">
+            <div
+              class="absolute -right-4 -top-4 w-24 h-24 bg-red-500/10 rounded-full blur-xl group-hover:bg-red-500/20 transition-colors">
+            </div>
+            <div
+              class="text-5xl font-black text-white/5 mb-4 group-hover:text-red-500/10 transition-colors absolute top-4 right-6">
+              02</div>
+            <div
+              class="w-14 h-14 rounded-2xl bg-red-500/20 flex items-center justify-center mb-6 border border-red-500/30 relative z-10 shadow-[0_0_15px_rgba(255,0,60,0.5)]">
+              <i class="ph-bold ph-handshake text-3xl mos-text-red"></i>
+            </div>
+            <h3 class="font-black text-white text-xl mb-3 relative z-10">Доверенная среда</h3>
+            <p class="text-sm text-gray-400 relative z-10">Типовые NDA, смарт-контракты, ЭДО и сервис "Безопасная
+              сделка" (эскроу-счета для НИОКР).</p>
+          </div>
+
+          <!-- Pillar 3 -->
+          <div
+            class="glass-panel p-8 group hover:border-emerald-500/50 transition-colors flex flex-col relative overflow-hidden">
+            <div
+              class="absolute -right-4 -top-4 w-24 h-24 bg-emerald-500/10 rounded-full blur-xl group-hover:bg-emerald-500/20 transition-colors">
+            </div>
+            <div
+              class="text-5xl font-black text-white/5 mb-4 group-hover:text-emerald-500/10 transition-colors absolute top-4 right-6">
+              03</div>
+            <div
+              class="w-14 h-14 rounded-2xl bg-emerald-500/20 flex items-center justify-center mb-6 border border-emerald-500/30 relative z-10">
+              <i class="ph-bold ph-projector-screen-chart text-3xl text-emerald-400"></i>
+            </div>
+            <h3 class="font-black text-white text-xl mb-3 relative z-10">Трекинг проектов</h3>
+            <p class="text-sm text-gray-400 relative z-10">Управление жизненным циклом (TRL), контроль контрольных точек
+              (КТ) и онлайн-отчетность.</p>
+          </div>
+
+          <!-- Pillar 4 -->
+          <div
+            class="glass-panel p-8 group hover:border-orange-500/50 transition-colors flex flex-col relative overflow-hidden transform lg:-translate-y-4">
+            <div
+              class="absolute -right-4 -top-4 w-24 h-24 bg-orange-500/10 rounded-full blur-xl group-hover:bg-orange-500/20 transition-colors">
+            </div>
+            <div
+              class="text-5xl font-black text-white/5 mb-4 group-hover:text-orange-500/10 transition-colors absolute top-4 right-6">
+              04</div>
+            <div
+              class="w-14 h-14 rounded-2xl bg-orange-500/20 flex items-center justify-center mb-6 border border-orange-500/30 relative z-10">
+              <i class="ph-bold ph-coins text-3xl text-orange-400"></i>
+            </div>
+            <h3 class="font-black text-white text-xl mb-3 relative z-10">Финансовый рычаг</h3>
+            <p class="text-sm text-gray-400 relative z-10">Авто-подбор субсидий и автоматическое формирование пакета
+              документов на налоговую льготу (коэф. 2.0).</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- SLIDE 11: SEARCH MODES -->
+    <section class="slide" id="slide-11">
+      <div class="bg-grid"></div>
+      <div class="slide-content flex flex-col justify-center relative z-10 w-full h-full max-w-6xl mx-auto py-12">
+        <div class="flex flex-col md:flex-row gap-12 items-center">
+
+          <div class="w-full md:w-1/3 text-center md:text-left">
+            <h2 class="text-3xl md:text-5xl font-black text-white mb-6 leading-tight">Три уровня<br><span
+                class="mos-text-red italic">поиска</span></h2>
+            <p class="body-style mb-8">Платформа адаптируется под специфику конкретного пользователя, предлагая
+              инструменты от самостоятельного изучения до комплексного консалтинга.</p>
+          </div>
+
+          <div class="w-full md:w-2/3 flex flex-col gap-4">
+            <!-- Mode 1 -->
+            <div
+              class="glass-panel p-6 flex items-center gap-6 border-l-4 border-l-gray-500 hover:border-l-white transition-colors group">
+              <div
+                class="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center shrink-0 border border-white/10 group-hover:bg-white/10 transition-colors">
+                <i class="ph-bold ph-map-trifold text-3xl text-gray-400 group-hover:text-white transition-colors"></i>
+              </div>
+              <div>
+                <div class="flex items-center gap-3">
+                  <h3 class="text-xl font-bold text-white mb-1">Витрина & Карта</h3>
+                  <span
+                    class="text-[10px] uppercase font-bold text-gray-500 border border-gray-600 px-2 py-0.5 rounded-full">Самостоятельно</span>
+                </div>
+                <p class="text-sm text-gray-400 leading-relaxed">Классический поиск по базе из 1342+ организаций с
+                  помощью фильтров. Интерактивная карта распределения научно-лабораторного оборудования Москвы.</p>
+              </div>
+            </div>
+
+            <!-- Mode 2 -->
+            <div
+              class="glass-panel p-6 flex items-center gap-6 border-l-4 border-l-red-500 transform md:-translate-x-8 shadow-2xl shadow-red-900/20 bg-gradient-to-r from-red-900/10 to-transparent">
+              <div
+                class="w-16 h-16 rounded-2xl bg-red-500/20 flex items-center justify-center shrink-0 border border-red-500/30 shadow-[0_0_15px_rgba(255,0,60,0.5)]">
+                <i class="ph-bold ph-robot text-3xl mos-text-red"></i>
+              </div>
+              <div>
+                <div class="flex items-center gap-3">
+                  <h3 class="text-xl font-bold text-white mb-1">AI-Ассистент</h3>
+                  <span
+                    class="text-[10px] uppercase font-bold text-red-300 border border-red-500/50 bg-red-900/30 px-2 py-0.5 rounded-full">Умный
+                    подбор</span>
+                </div>
+                <p class="text-sm text-gray-300 leading-relaxed">Перевод свободных текстовых запросов (болей) в форпосты
+                  технологий. Семантический поиск по миллионам патентов и научных статей для 100% точности.</p>
+              </div>
+            </div>
+
+            <!-- Mode 3 -->
+            <div
+              class="glass-panel p-6 flex items-center gap-6 border-l-4 border-l-amber-500 hover:border-l-amber-400 transition-colors group">
+              <div
+                class="w-16 h-16 rounded-2xl bg-amber-500/10 flex items-center justify-center shrink-0 border border-amber-500/20 group-hover:bg-amber-500/20 transition-colors">
+                <i class="ph-bold ph-user-focus text-3xl text-amber-500"></i>
+              </div>
+              <div>
+                <div class="flex items-center gap-3">
+                  <h3 class="font-bold text-white mb-1">Личный R&D Брокер</h3>
+                  <span
+                    class="text-[10px] uppercase font-bold text-amber-500 border border-amber-600/50 px-2 py-0.5 rounded-full">Под
+                    ключ</span>
+                </div>
+                <p class="text-sm text-gray-400 leading-relaxed">Для составных и стратегических проектов. Закрепленный
+                  специалист-трекер сопровождает процесс от формирования консорциума до внедрения технологии.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- SLIDE 12: MATCHING ALGORITHM MATRIX -->
+    <section class="slide" id="slide-12">
+      <div class="bg-grid"></div>
+      <div class="slide-content flex flex-col justify-center relative z-10 w-full h-full max-w-6xl mx-auto py-12">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-5xl font-black text-white mb-4">Матрица Матчинга</h2>
+          <p class="body-style max-w-2xl mx-auto">Как именно система выбирает "Топ-3" идеальных кандидата из тысяч
+            возможных исполнителей.</p>
+        </div>
+
+        <div class="flex flex-col lg:flex-row items-center justify-center gap-8 w-full max-w-5xl mx-auto">
+
+          <!-- Input -->
+          <div class="glass-panel p-6 rounded-2xl flex-1 text-center border-dashed border-2 border-white/20">
+            <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <i class="ph-bold ph-file-text text-xl text-white"></i>
+            </div>
+            <h3 class="font-bold text-white mb-2">Входящий запрос</h3>
+            <ul class="text-sm text-gray-400 space-y-2 text-left bg-black/40 p-4 rounded-xl">
+              <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-gray-600"></i> Описание задачи
+              </li>
+              <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-gray-600"></i> Бюджетные рамки
+              </li>
+              <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-gray-600"></i> Требуемый TRL
+              </li>
+            </ul>
+          </div>
+
+          <!-- Algorithm Core -->
+          <div
+            class="w-16 h-16 shrink-0 rounded-full bg-red-600 text-white flex items-center justify-center shadow-[0_0_30px_rgba(255,0,60,0.5)] transform rotate-90 lg:rotate-0 z-20">
+            <i class="ph-bold ph-arrow-right text-2xl lg:block hidden"></i>
+            <i class="ph-bold ph-arrow-down text-2xl block lg:hidden"></i>
+          </div>
+
+          <!-- Black Box (Filters) -->
+          <div
+            class="glass-panel p-1 border-red-500/30 bg-gradient-to-br from-red-600/20 to-transparent flex-[2] relative">
+            <div
+              class="absolute -top-3 left-1/2 -translate-x-1/2 bg-red-900 text-red-300 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full border border-red-500/50">
+              Фильтры & Приоритеты</div>
+            <div class="bg-[#050505]/90 rounded-xl p-6 h-full flex flex-col justify-center">
+              <div class="grid grid-cols-2 gap-4">
+                <div class="flex flex-col gap-1">
+                  <span class="text-red-500 font-bold text-lg">01.</span>
+                  <span class="text-white text-sm">Свободное оборудование (ЕГИСУ)</span>
+                </div>
+                <div class="flex flex-col gap-1">
+                  <span class="text-red-500 font-bold text-lg">02.</span>
+                  <span class="text-white text-sm">Релевантные патенты</span>
+                </div>
+                <div class="flex flex-col gap-1">
+                  <span class="text-red-500 font-bold text-lg">03.</span>
+                  <span class="text-white text-sm">Опыт аналогичных НИОКР</span>
+                </div>
+                <div class="flex flex-col gap-1">
+                  <span class="text-red-500 font-bold text-lg">04.</span>
+                  <span class="text-white text-sm">Рейтинг надежности</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Algorithm Core -->
+          <div
+            class="w-16 h-16 shrink-0 rounded-full bg-red-600 text-white flex items-center justify-center shadow-[0_0_30px_rgba(255,0,60,0.5)] transform rotate-90 lg:rotate-0 z-20">
+            <i class="ph-bold ph-arrow-right text-2xl lg:block hidden"></i>
+            <i class="ph-bold ph-arrow-down text-2xl block lg:hidden"></i>
+          </div>
+
+          <!-- Output -->
+          <div
+            class="glass-panel p-6 rounded-2xl flex-1 text-center border-emerald-500/30 bg-gradient-to-t from-emerald-900/10 to-transparent">
+            <div
+              class="w-12 h-12 bg-emerald-500/20 border border-emerald-500/50 rounded-full flex items-center justify-center mx-auto mb-4">
+              <i class="ph-bold ph-star text-xl text-emerald-400"></i>
+            </div>
+            <h3 class="font-bold text-white mb-2">Short-list (Топ-3)</h3>
+            <p class="text-sm text-gray-400 mb-4">Гарантированные кандидаты с высокой вероятностью успеха.</p>
+            <button
+              class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-2 px-4 rounded transition-colors text-sm">
+              Начать сделку
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- SLIDE 13: DEAL SECURITY -->
+    <section class="slide" id="slide-13">
+      <div class="bg-grid"></div>
+      <div class="slide-content flex flex-col justify-center relative z-10 w-full h-full max-w-6xl mx-auto py-12">
+        <div class="text-center mb-16">
+          <div
+            class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 mb-6">
+            <i class="ph-bold ph-shield-check text-3xl"></i>
+          </div>
+          <h2 class="text-3xl md:text-5xl font-black text-white mb-4">Безопасность и Доверие</h2>
+          <p class="body-style max-w-2xl mx-auto">Платформа берет на себя юридические и финансовые риски, выступая
+            независимым арбитром в сделке.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+
+          <!-- Feature 1 -->
+          <div class="glass-panel p-8 group hover:border-blue-500/50 transition-colors relative h-full">
+            <div class="absolute inset-0 bg-gradient-to-br from-blue-900/10 to-transparent pointer-events-none"></div>
+            <div class="relative z-10">
+              <h3 class="font-black text-white text-xl mb-4 flex items-center gap-3">
+                <i class="ph-bold ph-user-circle-check text-blue-400 text-2xl"></i>
+                Верификация 100%
+              </h3>
+              <ul class="space-y-3 text-sm text-gray-400">
+                <li class="flex gap-2"><i class="ph-bold ph-check text-blue-500 shrink-0 mt-0.5"></i> Допуск только
+                  проверенных юр. лиц через Госуслуги/Mos.ru.</li>
+                <li class="flex gap-2"><i class="ph-bold ph-check text-blue-500 shrink-0 mt-0.5"></i> Скоринг надежности
+                  профиля на базе реализованных проектов.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Feature 2 -->
+          <div class="glass-panel p-8 group hover:border-blue-500/50 transition-colors relative h-full">
+            <div class="absolute inset-0 bg-gradient-to-br from-blue-900/10 to-transparent pointer-events-none"></div>
+            <div class="relative z-10">
+              <h3 class="font-black text-white text-xl mb-4 flex items-center gap-3">
+                <i class="ph-bold ph-file-lock text-blue-400 text-2xl"></i>
+                Smart-Документы
+              </h3>
+              <ul class="space-y-3 text-sm text-gray-400">
+                <li class="flex gap-2"><i class="ph-bold ph-check text-blue-500 shrink-0 mt-0.5"></i> Конструктор
+                  типовых NDA и договоров на НИОКР за 5 минут.</li>
+                <li class="flex gap-2"><i class="ph-bold ph-check text-blue-500 shrink-0 mt-0.5"></i> Подписание простой
+                  электронной подписью (ПЭП) прямо на платформе.</li>
+                <li class="flex gap-2"><i class="ph-bold ph-check text-blue-500 shrink-0 mt-0.5"></i> Автоматизированная
+                  защита прав на интеллектуальную собственность (IP).</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Feature 3 -->
+          <div
+            class="glass-panel p-8 group hover:border-blue-500/50 transition-colors relative h-full border-t-2 border-blue-500">
+            <div class="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-transparent pointer-events-none"></div>
+            <div class="absolute -right-4 -bottom-4 w-32 h-32 bg-blue-500/20 rounded-full blur-2xl"></div>
+            <div class="relative z-10">
+              <h3 class="font-black text-white text-xl mb-4 flex items-center gap-3">
+                <i class="ph-bold ph-bank text-blue-400 text-2xl"></i>
+                Эскроу-модель
+              </h3>
+              <ul class="space-y-3 text-sm text-gray-300">
+                <li class="flex gap-2"><i class="ph-bold ph-check text-blue-400 shrink-0 mt-0.5"></i> Средства заказчика
+                  резервируются на специальном счете.</li>
+                <li class="flex gap-2"><i class="ph-bold ph-check text-blue-400 shrink-0 mt-0.5"></i> Исполнитель
+                  получает транши только после приемки контрольной точки (КТ).</li>
+                <li class="flex gap-2"><i class="ph-bold ph-check text-blue-400 shrink-0 mt-0.5"></i> Защита от
+                  нецелевого расходования грантов.</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- SLIDE 14: STATE SUPPORT & ROI 2.0 -->
+    <section class="slide" id="slide-14">
+      <div class="bg-grid"></div>
+      <div class="slide-content flex flex-col justify-center relative z-10 w-full h-full max-w-6xl mx-auto py-12">
+        <div class="flex flex-col lg:flex-row items-center gap-12 w-full">
+
+          <!-- Left Info -->
+          <div class="w-full lg:w-1/2">
+            <div
+              class="mb-4 inline-block px-4 py-1 rounded-full border border-emerald-500/50 bg-emerald-500/10 text-emerald-400 text-xs font-bold uppercase tracking-widest">
+              Прямая выгода
+            </div>
+            <h2 class="text-4xl md:text-5xl font-black text-white mb-6 leading-tight">
+              Снижение стоимости НИОКР до <span class="text-emerald-400">50%</span>
+            </h2>
+            <p class="body-style mb-8 max-w-lg">Платформа автоматически интегрирует сделки с федеральными и московскими
+              мерами поддержки инноваций.</p>
+
+            <div class="space-y-4">
+              <div class="glass-panel p-5 flex items-start gap-4">
+                <div
+                  class="w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center shrink-0 border border-emerald-500/50 mt-1">
+                  <span class="text-emerald-400 font-bold">1</span>
+                </div>
+                <div>
+                  <h4 class="text-white font-bold mb-1">Гранты Москвы (АИК)</h4>
+                  <p class="text-sm text-gray-400">Субсидирование до 50% затрат на патентование, пилотирование решений и
+                    регистрацию РИД.</p>
+                </div>
+              </div>
+              <div class="glass-panel p-5 flex items-start gap-4">
+                <div
+                  class="w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center shrink-0 border border-emerald-500/50 mt-1">
+                  <span class="text-emerald-400 font-bold">2</span>
+                </div>
+                <div>
+                  <h4 class="text-white font-bold mb-1">Фонды и Институты развития</h4>
+                  <p class="text-sm text-gray-400">Прямой экспорт карточки проекта на платформы ФСИ, Сколково, МИК для
+                    получения микрогрантов.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Graphic: Coefficient 2.0 -->
+          <div class="w-full lg:w-1/2 flex justify-center lg:justify-end mt-8 lg:mt-0">
+            <div class="relative w-[320px] h-[320px] md:w-[400px] md:h-[400px]">
+              <!-- Outer glow -->
+              <div class="absolute inset-0 bg-emerald-500/20 rounded-full blur-[80px] z-0 animate-pulse"></div>
+
+              <!-- Circular container -->
+              <div
+                class="absolute inset-4 rounded-full border-4 border-dashed border-emerald-500/30 animate-[spin_20s_linear_infinite] z-10">
+              </div>
+              <div class="absolute inset-8 rounded-full border border-emerald-500/50 z-10"></div>
+
+              <!-- Inner Core -->
+              <div
+                class="absolute inset-0 flex flex-col items-center justify-center z-20 text-center glass-panel rounded-full shadow-[0_0_50px_rgba(16,185,129,0.3)] bg-gradient-to-b from-[#0a0a0a] to-emerald-900/20 border-emerald-500">
+                <span class="text-sm text-emerald-400 font-bold uppercase tracking-widest mb-2">Налоговый
+                  мультипликатор</span>
+                <div class="text-7xl font-black text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.5)] mb-2">x2.0</div>
+                <p class="text-sm text-gray-300 px-8">Затраты малого и среднего<br>бизнеса на НИОКР списываются<br>в
+                  двойном размере</p>
+              </div>
+
+              <!-- Orbiting Elements -->
+              <div
+                class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-emerald-600 flex items-center justify-center shadow-lg border-2 border-[#050505] z-30">
+                <i class="ph-bold ph-receipt text-xl text-white"></i>
+              </div>
+              <div
+                class="absolute bottom-1/4 right-0 translate-x-1/2 w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center shadow-lg border-2 border-[#050505] z-30">
+                <i class="ph-bold ph-bank text-xl text-white"></i>
+              </div>
+              <div
+                class="absolute bottom-1/4 left-0 -translate-x-1/2 w-12 h-12 rounded-full bg-red-600 flex items-center justify-center shadow-lg border-2 border-[#050505] z-30">
+                <i class="ph-bold ph-trend-up text-xl text-white"></i>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- SLIDE 15: BUSINESS ACCOUNT DASHBOARD -->
+    <section class="slide" id="slide-15">
+      <div class="bg-grid"></div>
+      <div class="slide-content flex flex-col justify-center relative z-10 w-full h-full max-w-6xl mx-auto py-12">
+        <h2 class="text-3xl md:text-5xl font-black text-white mb-8 text-center">Единое окно управления R&D</h2>
+
+        <!-- Mockup Container -->
+        <div
+          class="glass-panel p-2 rounded-xl border border-gray-700/50 shadow-2xl overflow-hidden bg-[#0A0A0A]/95 w-full max-w-5xl mx-auto">
+          <!-- Browser Header -->
+          <div class="flex items-center gap-2 px-4 py-3 border-b border-gray-800 bg-black/50">
+            <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+            <div class="w-3 h-3 rounded-full bg-amber-500/80"></div>
+            <div class="w-3 h-3 rounded-full bg-emerald-500/80"></div>
+            <div class="ml-4 text-xs font-mono text-gray-500 flex items-center gap-2">
+              <i class="ph-bold ph-lock-key"></i> my.mosnauka.ru/dashboard
+            </div>
+          </div>
+
+          <!-- Dashboard Content -->
+          <div class="p-6 grid grid-cols-12 gap-6 h-[500px] overflow-hidden">
+
+            <!-- Sidebar -->
+            <div class="col-span-3 border-r border-gray-800 pr-4 flex flex-col gap-4">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 rounded bg-red-600 flex items-center justify-center text-white font-bold">Я</div>
+                <div>
+                  <div class="text-sm font-bold text-white">Яндекс.Технологии</div>
+                  <div class="text-[10px] text-gray-500">Заказчик НИОКР</div>
+                </div>
+              </div>
+              <div class="flex items-center gap-3 text-sm text-red-400 font-bold bg-red-500/10 p-2 rounded"><i
+                  class="ph-fill ph-squares-four"></i> Дашборд</div>
+              <div class="flex items-center gap-3 text-sm text-gray-400 p-2 hover:bg-white/5 rounded transition-colors">
+                <i class="ph-bold ph-folder-open"></i> Мои проекты <span
+                  class="ml-auto bg-gray-800 text-[10px] px-2 py-0.5 rounded">3</span>
+              </div>
+              <div class="flex items-center gap-3 text-sm text-gray-400 p-2 hover:bg-white/5 rounded transition-colors">
+                <i class="ph-bold ph-magnifying-glass"></i> Поиск исполнителя
+              </div>
+              <div class="flex items-center gap-3 text-sm text-gray-400 p-2 hover:bg-white/5 rounded transition-colors">
+                <i class="ph-bold ph-file-text"></i> Документы
+              </div>
+              <div class="flex items-center gap-3 text-sm text-gray-400 p-2 hover:bg-white/5 rounded transition-colors">
+                <i class="ph-bold ph-wallet"></i> Финансы
+              </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="col-span-6 flex flex-col gap-4">
+              <!-- Metrics -->
+              <div class="grid grid-cols-3 gap-4">
+                <div class="bg-gray-900/50 p-4 rounded-lg border border-gray-800">
+                  <div class="text-xs text-gray-500 mb-1">Бюджет НИОКР</div>
+                  <div class="text-xl font-bold text-white">45.2 млн ₽</div>
+                </div>
+                <div class="bg-emerald-900/20 p-4 rounded-lg border border-emerald-500/30">
+                  <div class="text-xs text-emerald-500/70 mb-1">Доступно субсидий</div>
+                  <div class="text-xl font-bold text-emerald-400">12.5 млн ₽</div>
+                </div>
+                <div class="bg-gray-900/50 p-4 rounded-lg border border-gray-800">
+                  <div class="text-xs text-gray-500 mb-1">Активных заявок</div>
+                  <div class="text-xl font-bold text-white">3</div>
+                </div>
+              </div>
+
+              <!-- Active Project -->
+              <div class="flex-1 bg-gray-900/40 border border-gray-800 rounded-lg p-5">
+                <div class="flex justify-between items-center mb-4">
+                  <h4 class="font-bold text-white">Активный проект: Разработка ИИ для БПЛА</h4>
+                  <span class="text-[10px] bg-blue-500/20 text-blue-400 px-2 py-1 rounded">TRL 4 (Макет)</span>
+                </div>
+
+                <!-- Timeline -->
+                <div class="relative w-full h-1 bg-gray-800 rounded mb-8 mt-6">
+                  <div class="absolute top-0 left-0 h-full bg-red-500 rounded" style="width: 60%"></div>
+
+                  <!-- Dots -->
+                  <div class="absolute -top-1.5 left-0 w-4 h-4 rounded-full bg-red-500 border-2 border-[#0A0A0A]"></div>
+                  <div class="absolute -top-1.5 left-[30%] w-4 h-4 rounded-full bg-red-500 border-2 border-[#0A0A0A]">
+                  </div>
+                  <div
+                    class="absolute -top-1.5 left-[60%] w-4 h-4 rounded-full bg-white border-2 border-red-500 shadow-[0_0_10px_rgba(255,0,60,0.5)] z-10">
+                  </div>
+                  <div class="absolute -top-1.5 left-[100%] w-4 h-4 rounded-full bg-gray-800 border-2 border-[#0A0A0A]">
+                  </div>
+
+                  <!-- Labels -->
+                  <div class="absolute top-4 left-0 -translate-x-1/2 text-[9px] text-gray-500 font-mono">ТЗ</div>
+                  <div class="absolute top-4 left-[30%] -translate-x-1/2 text-[9px] text-gray-500 font-mono">Контракт
+                  </div>
+                  <div class="absolute top-4 left-[60%] -translate-x-1/2 text-[9px] text-white font-bold font-mono">
+                    Прототип</div>
+                  <div class="absolute top-4 left-[100%] -translate-x-1/2 text-[9px] text-gray-500 font-mono">Внедрение
+                  </div>
+                </div>
+
+                <div class="bg-black/50 p-3 rounded text-xs text-gray-400 flex items-center gap-3">
+                  <i class="ph-fill ph-warning-circle text-amber-500 text-lg"></i>
+                  Требуется подписание акта по этапу "Разработка прототипа" со стороны МФТИ.
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Side (Matches) -->
+            <div class="col-span-3 flex flex-col gap-3">
+              <h4 class="text-sm font-bold text-white mb-2 font-mono flex items-center justify-between">
+                Новые отклики <span class="bg-red-500 text-white text-[10px] px-1.5 py-0.5 rounded-full">2</span>
+              </h4>
+
+              <div
+                class="bg-gray-900/60 p-3 rounded-lg border border-gray-800 hover:border-gray-600 transition-colors cursor-pointer">
+                <div class="flex items-center justify-between mb-2">
+                  <div class="text-xs font-bold text-white">МАИ</div>
+                  <div class="text-[10px] text-emerald-400 flex items-center gap-1"><i
+                      class="ph-fill ph-check-circle"></i> 98% match</div>
+                </div>
+                <p class="text-[10px] text-gray-500 mb-2 truncate">Лаборатория беспилотных систем</p>
+                <div class="flex gap-2">
+                  <button
+                    class="flex-1 bg-white/10 hover:bg-white/20 text-[10px] text-white py-1 rounded transition-colors">Профиль</button>
+                  <button
+                    class="flex-1 bg-red-600 hover:bg-red-500 text-[10px] text-white py-1 rounded transition-colors">Чат</button>
+                </div>
+              </div>
+
+              <div
+                class="bg-gray-900/60 p-3 rounded-lg border border-gray-800 hover:border-gray-600 transition-colors cursor-pointer opacity-70">
+                <div class="flex items-center justify-between mb-2">
+                  <div class="text-xs font-bold text-white">МГТУ им. Баумана</div>
+                  <div class="text-[10px] text-emerald-500/70 flex items-center gap-1"><i
+                      class="ph-fill ph-check-circle"></i> 85% match</div>
+                </div>
+                <p class="text-[10px] text-gray-500 mb-2 truncate">Кафедра робототехники</p>
+                <div class="flex gap-2">
+                  <button
+                    class="flex-1 bg-white/10 hover:bg-white/20 text-[10px] text-white py-1 rounded transition-colors">Профиль</button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- SLIDE 16: PROFILE / PEOPLE CARD MOCKUP -->
+    <section class="slide" id="slide-16">
+      <div class="bg-grid"></div>
+      <div class="slide-content flex flex-col justify-center relative z-10 w-full h-full max-w-6xl mx-auto py-12">
+        <h2 class="text-3xl md:text-5xl font-black text-white mb-8 text-center">Профили ученых и коллективов</h2>
+        <p class="body-style text-center mb-12 max-w-3xl mx-auto">Детализированные паспорта компетенций научных центров,
+          лабораторий и конкретных экспертов.</p>
+
+        <div class="flex flex-col md:flex-row gap-6 items-start justify-center w-full max-w-4xl mx-auto">
+
+          <!-- Left Profile Card -->
+          <div class="glass-panel p-6 rounded-2xl w-full md:w-1/3 flex flex-col items-center">
+            <div class="relative mb-6">
+              <img src="./assets/man1.jpg" alt="Scientist"
+                class="w-32 h-32 object-cover rounded-full border-4 border-gray-800 shadow-xl"
+                onerror="this.src='https://placehold.co/128x128/1a1a1a/cccccc?text=Photo'">
+              <div
+                class="absolute bottom-0 right-0 w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center border-2 border-[#111] shadow-lg">
+                <i class="ph-bold ph-check text-white text-sm"></i>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-1 text-center">Иванов А.С.</h3>
+            <p class="text-sm text-gray-400 mb-4 text-center">Доктор физико-математических наук, ИТМО</p>
+
+            <div class="w-full flex justify-between text-center border-y border-gray-800 py-3 mb-4">
+              <div>
+                <div class="text-lg font-bold text-white">45</div>
+                <div class="text-[10px] text-gray-500 uppercase">Публикаций</div>
+              </div>
+              <div class="w-px bg-gray-800"></div>
+              <div>
+                <div class="text-lg font-bold text-white">12</div>
+                <div class="text-[10px] text-gray-500 uppercase">Патентов</div>
+              </div>
+              <div class="w-px bg-gray-800"></div>
+              <div>
+                <div class="text-lg font-bold text-emerald-400">4</div>
+                <div class="text-[10px] text-gray-500 uppercase">Сделки</div>
+              </div>
+            </div>
+
+            <button
+              class="w-full bg-red-600 hover:bg-red-500 text-white font-bold py-2 rounded transition-colors text-sm">Связаться</button>
+          </div>
+
+          <!-- Right Details (Tags & Specs) -->
+          <div class="glass-panel p-6 rounded-2xl w-full md:w-2/3">
+            <h4 class="text-sm uppercase font-bold text-gray-500 mb-4 tracking-wider flex items-center gap-2">
+              <i class="ph-bold ph-tag"></i> Компетенции
+            </h4>
+            <div class="flex flex-wrap gap-2 mb-8">
+              <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded text-xs">Машинное обучение</span>
+              <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded text-xs">Компьютерное зрение</span>
+              <span
+                class="px-3 py-1 border border-red-500/50 text-red-400 bg-red-900/20 rounded text-xs flex items-center gap-1"><i
+                  class="ph-bold ph-star"></i> Нейронные сети</span>
+              <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded text-xs">Python</span>
+              <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded text-xs">PyTorch</span>
+            </div>
+
+            <h4 class="text-sm uppercase font-bold text-gray-500 mb-4 tracking-wider flex items-center gap-2">
+              <i class="ph-bold ph-archive"></i> Завершенные НИОКР (Выборка)
+            </h4>
+            <div class="space-y-3">
+              <div
+                class="p-3 border border-gray-800 rounded-lg bg-black/40 flex justify-between items-center group hover:border-gray-600 transition-colors">
+                <div>
+                  <div class="text-sm text-white font-bold group-hover:text-red-400 transition-colors">Алгоритм
+                    распознавания дефектов сварки</div>
+                  <div class="text-xs text-gray-500">Заказчик: ПАО "Газпром" • 2023</div>
+                </div>
+                <div
+                  class="w-8 h-8 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-400 border border-emerald-500/30">
+                  <i class="ph-bold ph-check"></i>
+                </div>
+              </div>
+              <div
+                class="p-3 border border-gray-800 rounded-lg bg-black/40 flex justify-between items-center group hover:border-gray-600 transition-colors">
+                <div>
+                  <div class="text-sm text-white font-bold group-hover:text-red-400 transition-colors">Система навигации
+                    складских дронов</div>
+                  <div class="text-xs text-gray-500">Заказчик: Ozon • 2024</div>
+                </div>
+                <div
+                  class="w-8 h-8 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-400 border border-emerald-500/30">
+                  <i class="ph-bold ph-check"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- SLIDE 17: SUPPORT ROUTE (ROADMAP) -->
+    <section class="slide" id="slide-17">
+      <div class="bg-grid"></div>
+      <div class="slide-content flex flex-col justify-center relative z-10 w-full h-full max-w-6xl mx-auto py-12">
+        <h2 class="text-3xl md:text-5xl font-black text-white mb-12 text-center">Бесшовный маршрут до льгот</h2>
+
+        <div class="relative w-full max-w-5xl mx-auto">
+          <!-- Connecting Line -->
+          <div class="absolute top-1/2 left-0 w-full h-1 bg-gray-800 -translate-y-1/2 z-0 hidden md:block"></div>
+          <div
+            class="absolute top-1/2 left-0 w-full h-1 bg-gradient-to-r from-red-600 via-emerald-500 to-blue-500 -translate-y-1/2 z-0 opacity-50 hidden md:block">
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+
+            <!-- Step 1 -->
+            <div class="relative z-10 flex flex-col items-center">
+              <div
+                class="w-16 h-16 rounded-full bg-[#111] border-4 border-red-600 flex items-center justify-center mb-4 text-red-500 text-2xl shadow-[0_0_20px_rgba(255,0,0,0.3)]">
+                <i class="ph-bold ph-file-text"></i>
+              </div>
+              <div class="glass-panel p-4 text-center w-full">
+                <div class="text-xs font-bold text-red-500 uppercase tracking-wider mb-2">Шаг 1</div>
+                <h4 class="text-sm font-bold text-white mb-1">Сделка на платформе</h4>
+                <p class="text-[10px] text-gray-400">Формирование ТЗ и заключение смарт-контракта.</p>
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="relative z-10 flex flex-col items-center">
+              <div
+                class="w-16 h-16 rounded-full bg-[#111] border-4 border-emerald-500 flex items-center justify-center mb-4 text-emerald-400 text-2xl shadow-[0_0_20px_rgba(16,185,129,0.3)]">
+                <i class="ph-bold ph-flask"></i>
+              </div>
+              <div class="glass-panel p-4 text-center w-full">
+                <div class="text-xs font-bold text-emerald-500 uppercase tracking-wider mb-2">Шаг 2</div>
+                <h4 class="text-sm font-bold text-white mb-1">Реализация НИОКР</h4>
+                <p class="text-[10px] text-gray-400">Трекинг контрольных точек и обмен электронными документами (ЭДО).
+                </p>
+              </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="relative z-10 flex flex-col items-center">
+              <div
+                class="w-16 h-16 rounded-full bg-[#111] border-4 border-blue-500 flex items-center justify-center mb-4 text-blue-400 text-2xl shadow-[0_0_20px_rgba(59,130,246,0.3)]">
+                <i class="ph-bold ph-certificate"></i>
+              </div>
+              <div class="glass-panel p-4 text-center w-full">
+                <div class="text-xs font-bold text-blue-500 uppercase tracking-wider mb-2">Шаг 3</div>
+                <h4 class="text-sm font-bold text-white mb-1">Регистрация РИД</h4>
+                <p class="text-[10px] text-gray-400">Авто-патрулирование документов в Роспатент для фиксации
+                  интеллектуальной собственности.</p>
+              </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="relative z-10 flex flex-col items-center">
+              <div
+                class="w-16 h-16 rounded-full bg-amber-500 flex items-center justify-center mb-4 text-[#111] text-2xl shadow-[0_0_30px_rgba(245,158,11,0.6)] animate-pulse">
+                <i class="ph-bold ph-money"></i>
+              </div>
+              <div class="glass-panel p-4 text-center w-full border-amber-500/50 bg-amber-900/10">
+                <div class="text-xs font-bold text-amber-500 uppercase tracking-wider mb-2">Шаг 4</div>
+                <h4 class="text-sm font-bold text-white mb-1">Получение льгот</h4>
+                <p class="text-[10px] text-gray-300">Пакет документов для ФНС (коэф 2.0) готов по клику.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- SLIDE 18: COEF 2.0 PROBLEM (THE FUNNEL) -->
+    <section class="slide" id="slide-18">
+      <div class="bg-grid"></div>
+      <div class="slide-content flex flex-col justify-center relative z-10 w-full h-full max-w-6xl mx-auto py-12">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-5xl font-black text-white mb-4">Почему корпорации не используют льготу
+            2.0?</h2>
+          <p class="body-style max-w-2xl mx-auto text-red-400">Сложность администрирования и страх налоговых
+            проверок блокируют механизм инвестиций.</p>
+        </div>
+
+        <div class="flex flex-col lg:flex-row items-center gap-12 w-full max-w-5xl mx-auto">
+
+          <!-- Big Number -->
+          <div class="w-full lg:w-1/3 flex flex-col items-center justify-center">
+            <div class="relative">
+              <div
+                class="text-[150px] font-black text-transparent bg-clip-text bg-gradient-to-b from-red-600 to-red-900 leading-none drop-shadow-[0_0_30px_rgba(255,0,0,0.5)]">
+                60<span class="text-[80px]">%</span>
+              </div>
+              <div
+                class="absolute -right-4 -top-4 w-12 h-12 bg-red-600 rounded-full flex items-center justify-center shadow-lg border-2 border-[#111] animate-bounce">
+                <i class="ph-bold ph-warning text-white font-bold"></i>
+              </div>
+            </div>
+            <p class="text-center font-bold text-white text-xl mt-4">Российских компаний</p>
+            <p class="text-center text-gray-400 text-sm">Отказываются от налоговой льготы на НИОКР из-за
+              бюрократических барьеров.</p>
+          </div>
+
+          <!-- Funnel / Barriers -->
+          <div class="w-full lg:w-2/3 flex flex-col gap-4">
+
+            <!-- Barrier 1 -->
+            <div
+              class="glass-panel p-5 flex items-center gap-6 border-l-4 border-l-red-600 relative overflow-hidden group">
+              <div class="absolute inset-0 bg-red-900/10 w-0 z-0 transition-all duration-500 group-hover:w-full">
+              </div>
+              <div
+                class="w-12 h-12 rounded bg-black/50 border border-gray-700 flex items-center justify-center shrink-0 text-red-500 z-10">
+                <i class="ph-bold ph-scales text-2xl"></i>
+              </div>
+              <div class="z-10">
+                <h4 class="text-white font-bold mb-1">Сложность доказательства новизны</h4>
+                <p class="text-xs text-gray-400">ФНС требует строгих обоснований отнесения работ к НИОКР
+                  согласно ГОСТ. У бизнеса нет методологии.</p>
+              </div>
+            </div>
+
+            <!-- Barrier 2 -->
+            <div
+              class="glass-panel p-5 flex items-center gap-6 border-l-4 border-l-amber-500 relative overflow-hidden group ml-6">
+              <div class="absolute inset-0 bg-amber-900/10 w-0 z-0 transition-all duration-500 group-hover:w-full">
+              </div>
+              <div
+                class="w-12 h-12 rounded bg-black/50 border border-gray-700 flex items-center justify-center shrink-0 text-amber-500 z-10">
+                <i class="ph-bold ph-files text-2xl"></i>
+              </div>
+              <div class="z-10">
+                <h4 class="text-white font-bold mb-1">Генерирование кипы документов</h4>
+                <p class="text-xs text-gray-400">Для отчета нужны: приказ о создании комиссии, смета,
+                  календарный план, ТЗ, акты, отчет о патентных исследованиях.</p>
+              </div>
+            </div>
+
+            <!-- Barrier 3 -->
+            <div
+              class="glass-panel p-5 flex items-center gap-6 border-l-4 border-l-gray-500 relative overflow-hidden group ml-12">
+              <div
+                class="absolute inset-0 bg-emerald-900/10 w-full z-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+              </div>
+              <div
+                class="w-12 h-12 rounded bg-emerald-500/20 border border-emerald-500/50 flex items-center justify-center shrink-0 text-emerald-400 z-10 shadow-[0_0_15px_rgba(16,185,129,0.3)]">
+                <i class="ph-bold ph-check-square-offset text-2xl"></i>
+              </div>
+              <div class="z-10">
+                <h4 class="text-emerald-400 font-bold mb-1">Решение: Автоматизация Моснауки</h4>
+                <p class="text-xs text-gray-300">Платформа автоматически генерирует весь пакет документов в
+                  правильном формате в процессе реализации проекта. Риск отказа ФНС снижается до 0%.</p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- SLIDE 19: TIMELINE 2026/2027 R&D GAP -->
+    <section class="slide" id="slide-19">
+      <div class="bg-grid"></div>
+      <div class="slide-content flex flex-col justify-center relative z-10 w-full h-full max-w-6xl mx-auto py-12">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-5xl font-black text-white mb-4">Ближайший горизонт: 2026-2027</h2>
+          <p class="body-style max-w-2xl mx-auto">Платформа нацелена на сокращение разрыва во внутренних
+            затратах на исследования.</p>
+        </div>
+
+        <div class="relative w-full max-w-5xl mx-auto mt-8">
+          <!-- Timeline Line -->
+          <div class="absolute top-[80px] left-0 w-full h-0.5 bg-gray-800"></div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-12 relative z-10">
+
+            <!-- 2026 Block -->
+            <div class="relative">
+              <div
+                class="absolute top-[80px] left-1/2 -translate-x-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-black border-4 border-red-600 shadow-[0_0_15px_rgba(255,0,0,0.5)]">
+              </div>
+
+              <div class="text-center mb-8 h-[60px]">
+                <div class="text-4xl font-black text-white glow-text-red inline-block mb-1">2026</div>
+                <div class="text-xs uppercase tracking-widest text-red-500 font-bold">Пилотный запуск</div>
+              </div>
+
+              <div class="mt-12 glass-panel p-6 border-red-900/30 text-center flex flex-col items-center">
+                <div class="w-16 h-16 rounded-full bg-red-500/10 flex items-center justify-center mb-4 text-red-400">
+                  <i class="ph-fill ph-chart-line text-3xl"></i>
+                </div>
+                <h4 class="text-xl font-bold text-white mb-2">Формирование базы</h4>
+                <div class="text-3xl font-black font-mono text-red-500 mb-2">130+ млрд ₽</div>
+                <p class="text-xs text-gray-400">разрыв между текущим объемом ВЗДРИ и целевым ориентиром Москвы
+                  на этот год.</p>
+
+                <div class="w-full bg-black/50 rounded p-3 mt-4 text-left border border-gray-800">
+                  <div class="flex items-center gap-2 mb-1">
+                    <i class="ph-bold ph-target text-emerald-400"></i> <span class="text-xs font-bold text-white">Цель
+                      Моснауки:</span>
+                  </div>
+                  <p class="text-[10px] text-gray-300">Агрегация топ-100 лабораторий и первых 50 якорных
+                    заказчиков.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2027 Block -->
+            <div class="relative">
+              <div
+                class="absolute top-[80px] left-1/2 -translate-x-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-black border-4 border-emerald-500 shadow-[0_0_15px_rgba(16,185,129,0.5)]">
+              </div>
+
+              <div class="text-center mb-8 h-[60px]">
+                <div class="text-4xl font-black text-white glow-text-emerald inline-block mb-1">2027</div>
+                <div class="text-xs uppercase tracking-widest text-emerald-500 font-bold">Масштабирование</div>
+              </div>
+
+              <div class="mt-12 glass-panel p-6 border-emerald-900/30 text-center flex flex-col items-center">
+                <div
+                  class="w-16 h-16 rounded-full bg-emerald-500/10 flex items-center justify-center mb-4 text-emerald-400">
+                  <i class="ph-fill ph-rocket t text-3xl"></i>
+                </div>
+                <h4 class="text-xl font-bold text-white mb-2">Покрытие разрыва</h4>
+                <div class="text-3xl font-black font-mono text-emerald-500 mb-2">~ 40%</div>
+                <p class="text-xs text-gray-400">покрытие технологического разрыва за счет вовлечения среднего
+                  бизнеса.</p>
+
+                <div class="w-full bg-black/50 rounded p-3 mt-4 text-left border border-gray-800">
+                  <div class="flex items-center gap-2 mb-1">
+                    <i class="ph-bold ph-target text-emerald-400"></i> <span class="text-xs font-bold text-white">Цель
+                      Моснауки:</span>
+                  </div>
+                  <p class="text-[10px] text-gray-300">Интеграция с федеральными льготами, полная автоматизация
+                    отчетности для ФНС.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- SLIDE 20: WATERFALL CHART (1.057 TRILLION) -->
+    <section class="slide" id="slide-20">
+      <div class="bg-grid"></div>
+      <div class="slide-content flex flex-col justify-center relative z-10 w-full h-full max-w-6xl mx-auto py-12">
+        <h2 class="text-3xl md:text-5xl font-black text-white mb-4 text-center">Финансовая цель 2030</h2>
+        <p class="body-style text-center mb-12 max-w-3xl mx-auto">Структура покрытия совокупного дефицита
+          НИОКР-инвестиций (1.057 трлн руб.)</p>
+
+        <div class="w-full max-w-5xl mx-auto glass-panel p-8 rounded-xl relative">
+
+          <!-- Waterfall Chart Container -->
+          <div
+            class="flex items-end justify-between h-[300px] border-b-2 border-l-2 border-gray-600 pb-2 pl-4 relative">
+
+            <!-- Y-Axis Labels -->
+            <div
+              class="absolute left-[-50px] top-0 h-full flex flex-col justify-between text-[10px] text-gray-500 font-mono py-2">
+              <span>1.5 трлн</span>
+              <span>1.0 трлн</span>
+              <span>0.5 трлн</span>
+              <span>0</span>
+            </div>
+
+            <!-- Column 1: Base (Current trajectory) -->
+            <div class="flex flex-col items-center group w-[15%]">
+              <div class="text-xs font-bold text-white mb-2 group-hover:-translate-y-2 transition-transform">
+                Базовый рост</div>
+              <div class="w-full bg-gray-700/80 rounded-t h-[30%] flex items-end justify-center pb-2 relative">
+                <span class="text-xs font-mono font-bold text-white">~350 млрд</span>
+              </div>
+              <div class="text-[10px] text-gray-500 mt-2 text-center">Органический<br>тренд</div>
+            </div>
+
+            <!-- Column 2: Platform Deals (Bridge) -->
+            <div class="flex flex-col items-center group w-[15%] pb-[30%]">
+              <div class="text-xs font-bold text-emerald-400 mb-2 group-hover:-translate-y-2 transition-transform">
+                + Сделки</div>
+              <div
+                class="w-full bg-emerald-600/80 border border-emerald-400 rounded h-[18%] flex items-center justify-center shadow-[0_0_15px_rgba(16,185,129,0.3)]">
+                <span class="text-xs font-mono font-bold text-white">400 млрд</span>
+              </div>
+              <div class="text-[10px] text-gray-500 mt-[120%] text-center">Новые консорциумы<br>через брокера
+              </div>
+            </div>
+
+            <!-- Column 3: Tax Benefit 2.0 (Bridge) -->
+            <div class="flex flex-col items-center group w-[15%] pb-[48%] relative">
+              <div
+                class="absolute left-[-100%] top-[40%] w-[100%] h-px border-t border-dashed border-gray-500 font-mono text-[9px] text-gray-500 whitespace-nowrap pt-1">
+                Суммарный эффект</div>
+              <div class="text-xs font-bold text-blue-400 mb-2 group-hover:-translate-y-2 transition-transform">
+                + Налоги 2.0</div>
+              <div
+                class="w-full bg-blue-600/80 border border-blue-400 rounded h-[12%] flex items-center justify-center shadow-[0_0_15px_rgba(59,130,246,0.3)]">
+                <span class="text-xs font-mono font-bold text-white">250 млрд</span>
+              </div>
+            </div>
+
+            <!-- Column 4: Subsidies (Bridge) -->
+            <div class="flex flex-col items-center group w-[15%] pb-[60%]">
+              <div class="text-xs font-bold text-amber-400 mb-2 group-hover:-translate-y-2 transition-transform">+
+                Гранты</div>
+              <div
+                class="w-full bg-amber-600/80 border border-amber-400 rounded h-[5%] flex items-center justify-center shadow-[0_0_15px_rgba(245,158,11,0.3)]">
+                <span class="text-xs font-mono font-bold text-white">57 млрд</span>
+              </div>
+            </div>
+
+            <!-- Column 5: Total Target -->
+            <div class="flex flex-col items-center group w-[20%]">
+              <div class="text-xs font-bold text-white mb-2 glow-text-red">Цель 2030 (Указ N 309)</div>
+              <div
+                class="w-full bg-gradient-to-t from-red-900 to-red-600 rounded-t h-[65%] flex items-start justify-center pt-4 shadow-[0_0_30px_rgba(255,0,0,0.4)] border border-red-500">
+                <div class="flex flex-col items-center">
+                  <span class="text-xl font-mono font-black text-white">1.057 трлн ₽</span>
+                  <span class="text-[10px] text-red-200 mt-1 uppercase">ВЗДРИ</span>
+                </div>
+              </div>
+              <div class="text-[10px] text-gray-400 mt-2 text-center">Общий объем инвестиций<br>к 2030 году
+              </div>
+            </div>
+
+          </div>
+
+          <div class="mt-8 flex items-start gap-4 p-4 bg-red-900/10 border border-red-500/30 rounded-lg">
+            <i class="ph-fill ph-target text-3xl text-red-500"></i>
+            <p class="text-sm text-gray-300"><span class="font-bold text-white">Резюме:</span> Моснаука 3.0
+              решает общенациональную задачу по достижению 2% затрат на исследования от ВВП путем вовлечения
+              частного капитала, используя инфраструктуру г. Москвы как тестовый полигон и гарант.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- SLIDE 21: ECONOMIC ENGINE -->
+    <section class="slide" id="slide-21">
+      <div class="bg-grid"></div>
+      <div class="slide-content flex flex-col justify-center relative z-10 w-full h-full max-w-6xl mx-auto py-12">
+        <h2 class="text-3xl md:text-5xl font-black text-white mb-4 text-center">Экономический движок Платформы
+        </h2>
+        <p class="body-style text-center mb-12 mx-auto max-w-3xl text-emerald-400">Переход от разовых грантов к
+          системному со-финансированию.</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-5xl mx-auto">
+
+          <!-- The Loop -->
+          <div class="glass-panel p-8 rounded-2xl flex flex-col items-center justify-center relative overflow-hidden">
+            <div class="absolute inset-0 bg-emerald-900/10 z-0"></div>
+            <h3 class="font-bold text-white text-xl mb-8 relative z-10 text-center">Замкнутый цикл инвестиций
+            </h3>
+
+            <div class="relative w-64 h-64 z-10 text-[#050505] font-black font-mono">
+              <!-- Circle 1: Business -->
+              <div
+                class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-32 rounded-full border-[6px] border-amber-500 bg-amber-500/20 flex items-center justify-center shadow-[0_0_20px_rgba(245,158,11,0.5)] z-20">
+                <span class="text-white text-center text-sm leading-tight">Бизнес<br><span
+                    class="text-[9px] text-amber-200 uppercase tracking-widest">+ Льготы 2.0</span></span>
+              </div>
+
+              <!-- Circle 2: Platform -->
+              <div
+                class="absolute bottom-0 left-0 w-32 h-32 rounded-full border-[6px] border-emerald-500 bg-emerald-500/20 flex items-center justify-center shadow-[0_0_20px_rgba(16,185,129,0.5)] z-20">
+                <span class="text-white text-center text-sm leading-tight">Моснаука<br><span
+                    class="text-[9px] text-emerald-200 uppercase tracking-widest">+ Смарт-сделка</span></span>
+              </div>
+
+              <!-- Circle 3: Science -->
+              <div
+                class="absolute bottom-0 right-0 w-32 h-32 rounded-full border-[6px] border-blue-500 bg-blue-500/20 flex items-center justify-center shadow-[0_0_20px_rgba(59,130,246,0.5)] z-20">
+                <span class="text-white text-center text-sm leading-tight">Наука<br><span
+                    class="text-[9px] text-blue-200 uppercase tracking-widest">+ ВЗДРИ</span></span>
+              </div>
+
+              <!-- Arrows (Approximations) -->
+              <i
+                class="ph-bold ph-arrow-bend-down-left absolute top-1/4 left-1/4 -translate-y-1/2 text-2xl text-emerald-400 rotate-45 z-10"></i>
+              <i
+                class="ph-bold ph-arrow-bend-down-right absolute bottom-1/4 left-1/2 -translate-x-1/2 text-2xl text-blue-400 z-10"></i>
+              <i
+                class="ph-bold ph-arrow-bend-up-left absolute top-1/4 right-1/4 -translate-y-1/2 text-2xl text-amber-400 -rotate-45 z-10"></i>
+            </div>
+          </div>
+
+          <!-- Value Proposition -->
+          <div class="flex flex-col justify-center gap-6 relative z-10">
+            <div class="bg-gradient-to-r from-red-600 to-red-900 p-[2px] rounded-xl overflow-hidden shadow-xl">
+              <div class="bg-[#050505] p-6 rounded-[10px] h-full">
+                <h4 class="text-red-500 font-bold uppercase tracking-widest text-xs mb-2">Для бизнеса</h4>
+                <p class="text-white text-sm">Снижение стоимости разработки в 2 раза за счет налогового
+                  мультипликатора и региональных субсидий. Минимизация рисков (эскроу).</p>
+              </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-blue-600 to-blue-900 p-[2px] rounded-xl overflow-hidden shadow-xl">
+              <div class="bg-[#050505] p-6 rounded-[10px] h-full">
+                <h4 class="text-blue-500 font-bold uppercase tracking-widest text-xs mb-2">Для науки</h4>
+                <p class="text-white text-sm">Внебюджетное финансирование, загрузка оборудования, формирование
+                  реального портфеля компетенций для рынка.</p>
+              </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-emerald-600 to-emerald-900 p-[2px] rounded-xl overflow-hidden shadow-xl">
+              <div class="bg-[#050505] p-6 rounded-[10px] h-full">
+                <h4 class="text-emerald-500 font-bold uppercase tracking-widest text-xs mb-2">Для государства
+                </h4>
+                <p class="text-white text-sm">Обеспечение технологического суверенитета, достижение показателей
+                  ВЗДРИ и рост наукоемкого ВРП.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- SLIDE 22: RESOURCES (4 QUADRANTS) -->
+    <section class="slide" id="slide-22">
+      <div class="bg-grid"></div>
+      <div class="slide-content flex flex-col justify-center relative z-10 w-full h-full max-w-6xl mx-auto py-12">
+        <h2 class="text-3xl md:text-5xl font-black text-white mb-8 text-center">Ресурсы для запуска</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-4xl mx-auto">
+
+          <!-- Data -->
+          <div class="glass-panel p-8 group hover:-translate-y-1 transition-transform border-t-2 border-red-600">
+            <div class="flex items-center gap-4 mb-4">
+              <div
+                class="w-12 h-12 rounded bg-red-500/10 border border-red-500/30 flex items-center justify-center text-red-500">
+                <i class="ph-bold ph-database text-2xl"></i>
+              </div>
+              <h3 class="text-xl font-bold text-white">Данные</h3>
+            </div>
+            <ul class="text-sm text-gray-400 space-y-2 list-disc list-inside">
+              <li>Интеграция с ЕГИСУ НИОКР</li>
+              <li>Доступ к базе ФИПС (патенты)</li>
+              <li>Справочники Минпромторга</li>
+            </ul>
+          </div>
+
+          <!-- Code -->
+          <div class="glass-panel p-8 group hover:-translate-y-1 transition-transform border-t-2 border-blue-600">
+            <div class="flex items-center gap-4 mb-4">
+              <div
+                class="w-12 h-12 rounded bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-500">
+                <i class="ph-bold ph-code text-2xl"></i>
+              </div>
+              <h3 class="text-xl font-bold text-white">IT-Инфраструктура</h3>
+            </div>
+            <ul class="text-sm text-gray-400 space-y-2 list-disc list-inside">
+              <li>Разработка ядра платформы</li>
+              <li>LLM-адаптация для матчинга</li>
+              <li>Интеграция с Госуслугами ЕА</li>
+            </ul>
+          </div>
+
+          <!-- People -->
+          <div class="glass-panel p-8 group hover:-translate-y-1 transition-transform border-t-2 border-amber-500">
+            <div class="flex items-center gap-4 mb-4">
+              <div
+                class="w-12 h-12 rounded bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-500">
+                <i class="ph-bold ph-users text-2xl"></i>
+              </div>
+              <h3 class="text-xl font-bold text-white">Команда</h3>
+            </div>
+            <ul class="text-sm text-gray-400 space-y-2 list-disc list-inside">
+              <li>R&D брокеры и аналитики (МГУ)</li>
+              <li>Юристы по IP и смарт-контрактам</li>
+              <li>Менеджеры по работе с бизнесом</li>
+            </ul>
+          </div>
+
+          <!-- Money -->
+          <div
+            class="glass-panel p-8 group hover:-translate-y-1 transition-transform border-t-2 border-emerald-500 bg-gradient-to-br from-emerald-900/10 to-transparent">
+            <div class="flex items-center gap-4 mb-4">
+              <div
+                class="w-12 h-12 rounded bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 shadow-[0_0_15px_rgba(16,185,129,0.3)]">
+                <i class="ph-bold ph-money text-2xl"></i>
+              </div>
+              <h3 class="text-xl font-bold text-white">Бюджет пилота</h3>
+            </div>
+            <div class="text-3xl font-black text-emerald-400 font-mono mb-2">150 млн ₽</div>
+            <p class="text-[10px] text-gray-500">На развитие платформы и маркетинг (2025-2026 гг.)</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- SLIDE 23: LAUNCH TIMELINE -->
+    <section class="slide" id="slide-23">
+      <div class="bg-grid"></div>
+      <div class="slide-content flex flex-col justify-center relative z-10 w-full h-full max-w-6xl mx-auto py-12">
+        <h2 class="text-3xl md:text-5xl font-black text-white mb-12 text-center">План реализации Пилота
+          (2025-2026)</h2>
+
+        <div class="relative w-full max-w-5xl mx-auto">
+          <!-- Central Main Line -->
+          <div class="absolute inset-y-0 left-12 md:left-1/2 w-1 bg-gray-800 -translate-x-1/2 z-0"></div>
+
+          <div class="flex flex-col gap-8">
+
+            <!-- Q3 2025 -->
+            <div
+              class="relative z-10 flex items-center justify-start md:justify-end md:pr-12 group w-full md:w-1/2 ml-auto md:ml-0 text-left md:text-right">
+              <div
+                class="absolute top-1/2 left-0 md:right-0 md:left-auto w-4 h-4 rounded-full bg-red-600 border-2 border-[#111] -translate-y-1/2 md:translate-x-1/2 -translate-x-1/2 -ml-12 md:ml-0 shadow-[0_0_15px_rgba(255,0,0,0.5)]">
+              </div>
+              <div
+                class="glass-panel p-5 rounded-xl border-l-4 md:border-l-0 md:border-r-4 border-red-600 relative overflow-hidden w-full max-w-sm group-hover:-translate-y-1 transition-transform ml-4 md:ml-0">
+                <div
+                  class="absolute inset-0 bg-red-900/10 w-full z-0 opacity-0 group-hover:opacity-100 transition-opacity">
+                </div>
+                <div class="relative z-10">
+                  <span class="text-xs font-bold text-red-500 tracking-widest uppercase mb-1 block">Q3
+                    2025</span>
+                  <h4 class="text-lg font-bold text-white mb-2">Альфа-версия Платформы</h4>
+                  <ul
+                    class="text-[10px] text-gray-400 space-y-1 pr-4 md:pr-0 md:pl-4 list-disc list-inside md:list-none text-left md:text-right">
+                    <li>Интеграция с ЕГИСУ НИОКР</li>
+                    <li>Каталог 1342+ организаций Москвы</li>
+                    <li>Первые 10 сделок в ручном режиме</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Q4 2025 -->
+            <div class="relative z-10 flex items-center justify-start md:pl-12 group w-full md:w-1/2 md:ml-auto">
+              <div
+                class="absolute top-1/2 left-0 w-4 h-4 rounded-full bg-amber-500 border-2 border-[#111] -translate-y-1/2 -translate-x-1/2 -ml-12 md:ml-0 shadow-[0_0_15px_rgba(245,158,11,0.5)]">
+              </div>
+              <div
+                class="glass-panel p-5 rounded-xl border-l-4 border-amber-500 relative overflow-hidden w-full max-w-sm group-hover:-translate-y-1 transition-transform ml-4 md:ml-0">
+                <div
+                  class="absolute inset-0 bg-amber-900/10 w-full z-0 opacity-0 group-hover:opacity-100 transition-opacity">
+                </div>
+                <div class="relative z-10 text-left">
+                  <span class="text-xs font-bold text-amber-500 tracking-widest uppercase mb-1 block">Q4
+                    2025</span>
+                  <h4 class="text-lg font-bold text-white mb-2">Модуль Смарт-контрактов</h4>
+                  <ul class="text-[10px] text-gray-400 space-y-1 pl-4 list-disc list-outside">
+                    <li>Легитимизация ЭДО (ПЭП)</li>
+                    <li>Типовые договоры на R&D и NDA</li>
+                    <li>Авто-расчет цены проекта</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Q1 2026 -->
+            <div
+              class="relative z-10 flex items-center justify-start md:justify-end md:pr-12 group w-full md:w-1/2 ml-auto md:ml-0 text-left md:text-right">
+              <div
+                class="absolute top-1/2 left-0 md:right-0 md:left-auto w-4 h-4 rounded-full bg-blue-500 border-2 border-[#111] -translate-y-1/2 md:translate-x-1/2 -translate-x-1/2 -ml-12 md:ml-0 shadow-[0_0_15px_rgba(59,130,246,0.5)]">
+              </div>
+              <div
+                class="glass-panel p-5 rounded-xl border-l-4 md:border-l-0 md:border-r-4 border-blue-500 relative overflow-hidden w-full max-w-sm group-hover:-translate-y-1 transition-transform ml-4 md:ml-0">
+                <div
+                  class="absolute inset-0 bg-blue-900/10 w-full z-0 opacity-0 group-hover:opacity-100 transition-opacity">
+                </div>
+                <div class="relative z-10">
+                  <span class="text-xs font-bold text-blue-500 tracking-widest uppercase mb-1 block">Q1
+                    2026</span>
+                  <h4 class="text-lg font-bold text-white mb-2">Налоговый модуль (Коэф 2.0)</h4>
+                  <ul
+                    class="text-[10px] text-gray-400 space-y-1 pr-4 md:pr-0 md:pl-4 list-disc list-inside md:list-none text-left md:text-right">
+                    <li>Авто-отчет по ГОСТ для ФНС</li>
+                    <li>Стыковка с грантами АИК Москвы</li>
+                    <li>Запуск "Безопасной сделки" (Эскроу)</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Q2 2026 -->
+            <div class="relative z-10 flex items-center justify-start md:pl-12 group w-full md:w-1/2 md:ml-auto">
+              <div
+                class="absolute top-1/2 left-0 w-4 h-4 rounded-full bg-emerald-500 border-2 border-[#111] -translate-y-1/2 -translate-x-1/2 -ml-12 md:ml-0 shadow-[0_0_15px_rgba(16,185,129,0.5)]">
+              </div>
+              <div
+                class="glass-panel p-5 rounded-xl border-l-4 border-emerald-500 relative overflow-hidden w-full max-w-sm group-hover:-translate-y-1 transition-transform ml-4 md:ml-0 bg-emerald-900/10 border-emerald-500/50">
+                <div
+                  class="absolute inset-0 bg-emerald-900/20 w-full z-0 opacity-0 group-hover:opacity-100 transition-opacity">
+                </div>
+                <div class="relative z-10 text-left">
+                  <span class="text-xs font-bold text-emerald-400 tracking-widest uppercase mb-1 block">Q2
+                    2026</span>
+                  <h4 class="text-lg font-bold text-emerald-300 mb-2 glow-text-emerald">Полноценный Launch</h4>
+                  <ul class="text-[10px] text-gray-300 space-y-1 pl-4 list-disc list-outside">
+                    <li>500+ зарегистрированных компаний</li>
+                    <li>>2 млрд ₽ объем сделок на платформе</li>
+                    <li>ИИ-ассистент на базе патентов</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 24: DECISION (CALL TO ACTION) -->
+    <section class="slide" id="slide-24">
+      <div class="bg-grid"></div>
+      <div
+        class="slide-content flex flex-col items-center justify-center relative z-10 w-full h-full max-w-4xl mx-auto py-12 text-center">
+
+        <div
+          class="w-24 h-24 mb-6 rounded-full bg-gradient-to-br from-red-600 to-red-900 flex items-center justify-center shadow-[0_0_40px_rgba(255,0,0,0.6)] animate-pulse border-4 border-[#050505]">
+          <img src="./assets/mosnauka-logo.png" alt="M" class="w-12 h-12 object-contain filter invert"
+            onerror="this.style.display='none'">
+          <i class="ph-bold ph-power text-4xl text-white"></i>
+        </div>
+
+        <h2 class="text-5xl md:text-7xl font-black text-white mb-6 uppercase tracking-tight">Решение</h2>
+        <p class="text-xl text-gray-300 mb-12 max-w-2xl font-light leading-relaxed">Создание единого
+          научно-технологического брокера Москвы — Моснаука 3.0.</p>
+
+        <div
+          class="glass-panel p-8 md:p-12 w-full border border-red-500/30 bg-gradient-to-t from-red-900/20 to-transparent relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-900 via-red-500 to-red-900">
+          </div>
+
+          <h3 class="text-2xl font-bold text-white mb-8">ПРОСИМ:</h3>
+
+          <div class="flex flex-col gap-4 text-left max-w-2xl mx-auto">
+            <div class="flex items-start gap-4">
+              <div
+                class="w-8 h-8 rounded shrink-0 bg-white/10 flex items-center justify-center text-white font-bold border border-white/20">
+                1</div>
+              <p class="text-sm md:text-base text-gray-200">Одобрить Концепцию создания экосистемы «Моснаука».
+              </p>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div
+                class="w-8 h-8 rounded shrink-0 bg-white/10 flex items-center justify-center text-white font-bold border border-white/20">
+                2</div>
+              <p class="text-sm md:text-base text-gray-200">Поручить Департаменту предпринимательства и
+                инновационного развития города Москвы (АИК) сформировать рабочую группу по реализации проекта.
+              </p>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div
+                class="w-8 h-8 rounded shrink-0 bg-red-600/30 flex items-center justify-center text-red-400 font-bold border border-red-500/50 shadow-[0_0_15px_rgba(255,0,0,0.3)]">
+                3</div>
+              <p class="text-sm md:text-base text-white font-bold inline-block border-b border-red-500/50 pb-1">
+                Выделить финансирование на разработку Пилота в размере 150 млн руб. на 2025-2026 гг.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="mt-16 text-gray-600 text-xs tracking-widest uppercase flex items-center gap-4">
+          <span>2026</span>
+          <div class="w-12 h-px bg-gray-700"></div>
+          <span>Фонд Московский инновационный кластер</span>
+          <div class="w-12 h-px bg-gray-700"></div>
+          <span>Конфиденциально</span>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Script for Navigation -->
+  <script>
+    const container = document.getElementById("presentationContainer");
+    const navContainer = document.getElementById("slideNav");
+    const slides = document.querySelectorAll(".slide");
+
+    slides.forEach((slide, index) => {
+      const dot = document.createElement("div");
+      dot.className = "nav-dot";
+      if (index === 0) dot.classList.add("active");
+      dot.setAttribute("title", "Слайд " + (index + 1));
+
+      dot.addEventListener("click", () => {
+        slide.scrollIntoView({ behavior: "smooth" });
+      });
+      navContainer.appendChild(dot);
+    });
+
+    const dots = document.querySelectorAll(".nav-dot");
+
+    container.addEventListener("scroll", () => {
+      let currentSlide = Math.round(container.scrollTop / window.innerHeight);
+      dots.forEach((dot) => dot.classList.remove("active"));
+      if (dots[currentSlide]) {
+        dots[currentSlide].classList.add("active");
+      }
+    });
+  </script>
+</body>
+
+</html>
