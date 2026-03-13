@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | МГУ им. М.В. Ломоносова</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-mgu.html">МГУ им. М.В. Ломоносова</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">сверхзвуковые течения</span> <span class="tag">вихревые взаимодействия</span> <span class="tag">численное моделирование процессов механики жидкости и газа</span> <span class="tag">проницаемые тела</span> <span class="tag">экспериментальная аэромеханика</span> <span class="tag">вязкая несжимаемая жидкость</span> <span class="tag">ударно-волновые структуры</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Вязкая жидкость</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Прикладная аэродинамика</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Строительная физика</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Газовая динамика</span></div>
+          <h1 style="font-size:1.5rem">Математическое и физическое моделирование нестационарных взаимодействий неограниченных газовых потоков и струй со сплошными и проницаемыми телами (промежуточный)</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">29,016 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225012904374-7</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2024-01-01 — 2024-12-31</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№6</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">15</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">Правительство России</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>Правительство Российской Федерации</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>Выполнен цикл экспериментальных исследований обтекания сверхзвуковым потоком газа конически заостренных осесимметричных цилиндрических тел c кольцевыми выемами (кавернами) на поверхности с целью изучения возможности управления отрывными режимами течения в кольцевых кавернах. Показана возможность управления режимами сверхзвукового обтекания кольцевой каверны на конически заостренном осесимметричном теле пассивными методами, определяющими структуру и параметры потока на входе в каверну. Применение проницаемого кольцевого интерцептора на входе каверну приводит к существенному расширению области открытых режимов при практически неизменных границах области замкнутых режимов течения и, как следствие, способствует сокращению области неоднозначности. Полученные данные указывают на возможность управления режимами обтекания кольцевой каверны и значительно расширить область открытых режимов течения в каверне.
+Разработан модифицированный метод вязких вихревых доменов для прямого численного моделирования двумерных течений около цилиндрических тел. Метод основан на использовании конформного отображения из внешней области контура цилиндра во внешнюю область круга. Выведены преобразованные уравнения Навье-Стокса вязкой несжимаемой жидкости при произвольном конформном отображении. Эти уравнения решаются в отображенной плоскости. Применение метода позволяет на порядки сократить время расчета и существенно расширяет возможности моделирования течения при больших значениях числа Рейнольдса. Выполнены расчеты обтекания эллиптического цилиндра при значениях числа Рейнольдса до одного миллиона. Воспроизведён эффект кризиса сопротивления.
+Экспериментально исследована задача аэроупругих колебаний круглого цилиндра в потоке сплошной среды. Показано, что в режиме крутильных колебаний вихревые дорожки Кармана, генерируемые верхней и нижней частями цилиндра, смещены по фазе приблизительно на π.Изменение фазы происходит скачком в близи закрепления балки, которая ведет себя как раз делительная пластина (splitter plate), предотвращающая образование вихрей в сечениях вблизи оси вращения цилиндра.
+Исследована интенсификация отрывного течения и теплообмена в канале с наклонной канавкой на нагретой изотермической стенке при вдуве струйки газа в центре ее дна. При умеренных и высоких расходах вдува порядка 0.07-0.1% закрученный воздушный поток достигает концевой части канавки и вызывает рост относительной местной теплоотдачи в срединном сечении до 1.6- 2.8 в сравнении с плоскопараллельным каналом, суммарная относительная теплоотдача от участка, ограниченного контуром канавки, доходит до 1.4. Для тестирования программного обеспечения распараллеленных вычислительных систем предложен валидационный тест, основанный на исследовании явления интенсификации отрывного турбулентного течения воздуха и теплообмена в наклонной овально-траншейной лунке, расположенной на пластине или в канале. Его особенностью является наличие большого перепада статического давления в месте сопряжения цилиндрической и сферической частей, а также формирование высоких возвратных скоростей, сопоставимых со скоростью набегающего потока. 
+Продолжены физические и численные эксперименты по обтеканию фасадов зданий различной конфигурации. Показано, что из-за эффекта аэродинамической интерференции необходимо уделять особое внимание величине шага по азимуту набегающего потока. Так, для качественного определения положительных пиковых ветровых нагрузок, воздействующих как на отдельно стоящее здание, так и на архитектурный ансамбль, достаточно использовать шаг 15 градусов. Вместе с тем, для определения отрицательной пиковой нагрузки подобной дискретизации оказывается недостаточно, исследования показывают, что в большинстве случаев необходимо использовать шаг по азимуту равный 5 градусам.
+Проведен комплекс аналитических и экспериментальных исследований изменения коэффициента теплопроводности плит из экструзионного пенополистирола (XPS). По результатам серии экспериментов на современном испытательном оборудовании была апробирована разработанная математическая модель изменения коэффициента теплопроводности газонаполненных пористых материалов с течением времени. Установлено, что на основе выбранной математической модели можно с высокой точностью прогнозировать значения коэффициента теплопроводности в течение периода эксплуатации по значениям четырех экспериментальных измерений.</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (10)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Инюхин Александр Валерьевич</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Демченко Ярослав Владиславович</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Гагарин Владимир Геннадьевич</strong> <span style="color:#71717a;font-size:0.8rem">Доктор технических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Пастушков Павел Павлович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат технических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Симоненко Михаил Михайлович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Дынникова Галина Яковлевна</strong> <span style="color:#71717a;font-size:0.8rem">Доктор физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Синявин Алексей Александрович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Зубков Александр Фёдорович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Андронов Петр Роальдович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Чулюнин Алексей Юрьевич</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li></ul>
+              
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

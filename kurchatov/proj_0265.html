@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | НИЦ "Курчатовский институт"</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-kurchatov.html">НИЦ &quot;Курчатовский институт&quot;</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">магнитное поле</span> <span class="tag">оптическая спектроскопия</span> <span class="tag">облучение электронами</span> <span class="tag">дефекты кристаллической решетки</span> <span class="tag">алмаз</span> <span class="tag">полупроводники</span> <span class="tag">фононы</span> <span class="tag">анизотропия</span> <span class="tag">теплопроводность</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Полупроводники</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Дефекты кристаллической структуры</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Тепловые свойства твердых тел</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Колебания кристаллических решеток</span></div>
+          <h1 style="font-size:1.5rem">Рассеяние фононов на дефектах кристаллической решетки в полупроводниках с высокой теплопроводностью (заключительный, этап 2024 г.)</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">1,500 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225041414781-5</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2024-01-01 — 2024-12-31</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№2</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">3</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">РНФ</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>Российский научный фонд</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>1. Проведено измерение теплопроводности k(T) высокочистых монокристаллов алмаза разной ориентации, выращенных методом HPHT и CVD, в зависимости от температуры в интервале от 5 до 410 К. Для анализа экспериментальных данных по k(Т) была использована теоретическая модель, основанная на теории Каллауэя фононной теплопроводности. Эта модель хорошо аппроксимирует измеренные k(Т) для чистых монокристаллов алмаза при ограниченном наборе подгоночных параметров. Проведен расчет теплопроводности k(T) образцов алмаза при низких температурах с учетом эффекта фононной фокусировки на основе теории МакКарди, Мариса и Элбаума в приближении чисто диффузного граничного рассеяния фононов. Получены данные об эффекте фокусировки для поперечных и продольной фононных мод. Расчетные величины теплопроводности сравниваются с экспериментальными данными для образцов алмаза в форме квадратных пластин с разными осями вдоль [100] и [110]. При низких температурах вблизи 5 К эксперимент и теория показывают удовлетворительное совпадение, но выше 10 К экспериментально анизотропия не наблюдается. Обсуждаются возможные причины этого рассогласования.
+2. Исследована теплопроводность алмазов, подвергнутых облучению электронами с энергией 3 МэВ. Выполнены измерения для синтетических HPHT алмазов: чистого типа IIa и содержащего примесный азот с концентрацией порядка 100 ppm. Облучение в дозе 5*10^{18} см-2 подавляет теплопроводность во всем диапазоне исследованных температур. Для чистого алмаза сильнейшее уменьшение наблюдается при 25–30 К, где k(T) падает в 350 раз. Эффект слабеет с ростом температуры и составляет 1.56 раза при 300 К. Теплопроводность алмаза типа Ib уменьшается после облучения гораздо меньше при низких температурах, но больше при T &gt; 140 К, чем k(T) чистого алмаза. Различие в степени подавления теплопроводности алмазов радиационными дефектами столь велико, что k(T) для чистого алмаза становится меньше, чем для легированного азотом алмаза при T &lt; 50 К. Видимо, тип радиационных дефектов, которые доминируют в рассеянии фононов, разный в чистом и легированном алмазе. 
+Изучено влияние высокотемпературного отжига на k(T) облученных алмазов. Измерения k(T) после последовательных отжигов при постоянной температуре от 200°C и до 1800°C с шагом по температуре в 200°C показывают различный характер изменения k(T) при отжиге. Чистый образец демонстрирует очень слабое изменение k(T) при отжиге до 400°C включительно, а затем относительно постоянное увеличение теплопроводности с температурой отжига. Но образец, легированный азотом, резко увеличивает теплопроводность после отжига при 400°C, а затем относительно медленно увеличивает k(T) при последующих отжигах. После отжига при максимальной температуре (1800°C) теплопроводность чистого образца практически восстанавливается до исходной величины как при комнатной температуре, составляя 22.6 Вт см-1К-1 при 298 К, так и при температурах в интервале 5-6 К. Но при промежуточных температурах его k(T) остается существенно пониженной по сравнению с исходным состоянием до облучения – примерно в 2 раза при температуре максимума около 60 К. Теплопроводность образца с азотом также восстанавливается до исходной величины при высоких температурах (18.2 Вт см-1К-1 при 298 К), но остается сильно подавленной при низких температурах.
+3. Разработана методика измерений k(T) кристаллов в сильном магнитном поле. Определено влияние магнитного поля 14 Тл на чувствительность термопары для внесения поправок в измеряемую теплопроводность. Впервые проведены измерения влияния сильного магнитного поля 14 Тл на k(T) алмаза, содержащего примесный азот в концентрации около 3 ppm, в диапазоне температур от 6 до 92 К. Не обнаружен эффект магнитного поля при T &gt; 10 К, при более низких температурах возможно уменьшение теплопроводности на пределе погрешности эксперимента. Также измерена k(T) монокристаллического карбида кремния политипа 6H-SiC в магнитном поле 14 Тл в интервале от 5.4 до 91 К. Магнитное поле не влияет на теплопроводность 6H-SiC при T &gt; 10 К в пределах экспериментальной погрешности, при T &lt; 10 К теплопроводность уменьшается в поле, составляя примерно 6% при температуре 6.5 К.</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (2)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Инюшкин Александр Васильевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Чернодубов Даниил Андреевич</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li></ul>
+              
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

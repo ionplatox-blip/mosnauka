@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | МГУ им. М.В. Ломоносова</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-mgu.html">МГУ им. М.В. Ломоносова</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">инсулиноподобный фактор роста</span> <span class="tag">протеинкиназы цианобактерий</span> <span class="tag">тропонин</span> <span class="tag">поли-3-оксибутират</span> <span class="tag">натрий-калий-атфаза</span> <span class="tag">иммунохимические тест системы</span> <span class="tag">fo∙f1-атфаза</span> <span class="tag">белок-белковые взаимодействия</span> <span class="tag">фосфорилирование</span> <span class="tag">структура белков</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Фотофизические и фотохимические процессы в биологии</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Молекулярная иммунология</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Молекулярная биоэнергетика</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Пространственная структура и свойства биополимеров</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Макромолекулярные ассоциации и проблемы узнавания в молекулярной биологии</span></div>
+          <h1 style="font-size:1.5rem">Структура и свойства белков</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">41,349 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225012402576-2</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2024-01-01 — 2024-12-31</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№4</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">27</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">Правительство России</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>Правительство Российской Федерации</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>Белки и ферменты участвуют практически во всех процессах, происходящих в клетке. По этой причине изучение структуры и механизма функционирования белков является важной и актуальной задачей, решение которой представляет не только теоретический, но и большой практически интерес, обусловленный тем, что мутации и повреждения белков, а также дестабилизация их структуры являются причиной многих заболеваний человека. Сотрудники кафедры занимаются изучением многих регуляторных белков и ферментов. Краткое резюме выполненных исследований приводится ниже.
+Исследования в области биоэнергетики: Показано, что энергизация мембраны митохондрий сердца быка ухудшает взаимодействие дигидрокапсаицина и ротенона, специфических ингибиторов NADH:убихинон-оксидоредуктазы (комплекса I) дыхательной цепи, с убихинон-связывающим центром фермента. Влияние энергизации опосредовано через повышение уровня восстановленности убихинона в дыхательной цепи. Удаление адениновых нуклеотидов под действием фосфатаз вызывает вентурицидин-чувствительное разобщение мембран Paracoccus denitrificans.
+Исследование транспортных АТРаз. Установлено, что изменение внутриклеточных концентраций Na+ и K+ приводит к изменению экспрессии генов. В связи с тем, что механизм действия другого  в качестве препарата для лечения психических расстройств, до сих пор не установлен, представлялось целесообразным оценить влияние Li+ на экспрессию генов в эндотелиальных клетках. Изучено влияние повышенных внутриклеточных концентраций Na+ или Li+ на транскрипцию Na+i/K+i чувствительных генов. Установлено, что обработка эндотелиальных клеток человека (HUVEC) LiCl в течение 1,5 ч приводила к накоплению Li+ в клетках. За этим следует повышение уровней мРНК FOS и EGR1 и снижение уровней мРНК JUN и MYC. Обработка HUVEC Na+-ионофором монензином приводит к накоплению Na+ и потере ионов K+. При этом монензин не оказывал существенного влияния на экспрессию генов. Инкубация HUVEC с повышенной внеклеточной концентрацией NaCl увеличивала внутриклеточную концентрацию K+ и транскрипцию гена ATF3, а транскрипция гена JUN снижалась. Эти результаты показывают, что ионы Na+ и Li+ по-разному влияют на профиль экспрессии генов в клетках, что, вероятно, связано с тем, что они по-разному влияют на соотношение внутриклеточных одновалентных катионов.
+Анализ белков теплового шока и адаптерного белка Bag3.Проанализировано взаимодействие полноразмерного адаптерного белка BAG3 и его IPV домена с  различными малыми белками теплового шока и их кристаллиновыми доменами. Установлено, что только HspB8 и его кристаллиновый домен образуют прочные комплексы с интактным BAG3 и его IPV доменом. Это может быть обусловлено тем, что только HspB8 образует с BAG3 и его фрагментом комплексы со стехиометрией BAG3/малый белок теплового шока равной один к двум. Изучено взаимодействие  малых белков теплового шока и их кристаллиновых доменов с С-концевым фрагментом филамина, содержащим 22-24 иммуноглобулин подобные домены. Установлено, что только HspB7 и его α-кристаллиновый домен образуют прочные комплексы с С-концевым доменом филамина С, что может влиять на его димеризацию и участие в регуляции мышечного сокращения. 
+Создание новых материалов, используемых в биологии и медицине. В настоящее время уделяется значительное внимание применению электроактивных материалов, имитирующих электрофизиологическое микроокружение, свойственное биологическим тканям, таким, как кость, хрящ, сухожилие, кожа, связки и склера, в регенеративной медицине. Проанализировано взаимодействие культур клеток (in vitro), а также тканей животных (in vivo) с электроактивным полимерным материалом, который был получен путём бактериального синтеза, поли-3-оксибутиратом (ПОБ). Установлено наличие пьезоэлектрических свойств этого биомиметического материала. Благодаря этому, а также сочетанию физико-химических свойств, биосовместимости и способности к биодеградации ПОБ является перспективным материалом для создания на его основе биоинженерных конструкций в том числе с остеокондуктивными свойствами. Исследован рост и дифференцировка мезенхимальных стволовых клеток крысы (МСК) и других клеточных культур при контакте с конструкциями на основе ПОБ и его композитов.
+Анализ процессов, происходящих при воспалении. Разработана и охарактеризована модель активации воспалительного ответа в культуре кардиомиоцитов. Показано, что стимуляция кардиомиоцитов провоспалительными цитокинами приводит к возрастанию провоспалительного фактора NF kappa B. На модели культуры кардиомиоцитов, дифференцированных из индуцированных плюрипотентных стволовых клеток (ИПСК) впервые показано возрастание протеолиза IGFBP-4 под действием PAPP-A при моделировании воспалительного фенотипа под действием фактора некроза опухоли альфа, а также интерлейкина 1 beta, и интерлейкина Установлено, что активность PAPP-A как фермента возрастает в астроцитах, полученных от пациентов с болезнью Паркинсона, имеющей спонтанную этиологию, и не изменяется в случае астроцитов, полученных от пациентов с болезнью Паркинсона, возникающей вследствие мутаций.
+Исследование регуляторного тропонин-тропомиозинового комплекса сердца и скелетных мышц. Тропониновый комплекс (ИТС) состоит из тропонинов И (ТнИ), тропонина С (ТнС) и тропонина Т (ТнТ) и является ключевым регулятором сокращения поперечнополосатых мышц. Показано, что тройной тропониновый комплекс диссоциирует при 37°С в буферном растворе, цитратной, гепариновой и ЭДТА плазмах, а также в сыворотке с образованием двойного ТнИ-ТнС (ИС)-комплекса и свободного сТнТ. ИС комплекс далее диссоциирует в гепариновой и ЭДТА плазмах с образованием свободного тропонина С (ТнС). Изучено влияние гепарина на иммунохимическое определение сердечных тропонинов. Показано, что гепарин взаимодействует со свободным сТнТ и с сТнТ в составе тройного тропонинового комплекса. Проведено исследование влияния ревматоидного фактора и HAMA антител на иммунохимическое определение сердечной изоформы ТнИ. Получены высокоочищенные препараты Fab фрагментов моноклональных антител мыши, специфичных к сТнИ.
+Влияние различных видов стресса на жизнедеятельность  клеток. Исследованы процессы, индуцированные  галогенируюим стрессом, испытываемым бактериями, оказавшимися в фагосоме нейтрофила. В качестве модели были использованы активные нейтрофилы фагоцитирующие бактериальные клетки E.coli, экспрессирующие ген биосенсора Hypocrates2 для регистрации различных активных форм галогенов (HOCl, HOBr, HOSCN). Регистрацию флуоресцентного сигнала в бактериальных клетках была проведена при помощи широкопольной флуоресцентной микроскопии. Установлено, что Hypocrates2CS может неспецифично окисляться высокими дозами HOCl, что может приводить к ложному выводу о низком вкладе галогенирующего стресса в сигнал Hypocrates2.  
+Мультипотентные мезенхимальные стромальные клетки (МСК) регулируют восстановление тканей посредством паракринной активности. При этом секретируемые ими белки могут играть важную роль в регуляции развития фиброза - дифференциации фибробластов в миофибробласты. Оптимизирован метод выделения секретома МСК из кондиционированной среды (КС) и его разделения на субфракции внеклеточных везикул (ВВ) и растворимых факторов (РФ). Установлено, что субфракции КС усиливют антифибротический эффект, ингибируя дифференциацию фибробластов в миофибробласты in vitro. Проведен сравнительный протеомный анализ фракций секретома МСК. Обнаружено, что КС обогащен активаторами NF-κB,  подтвержено, что  КС, но не ВВ или РФ, активируют целевые гены NF-κB (COX2, IL6 и т. д.) в фибробластах кожи человека. Установлено, что ВВ и РФ обогащены регуляторами пути TGF-β, Notch, IGF и Wnt Таким образом, обогащение белком фракций секретома МСК и паттернов клеточной субпопуляции смещает баланс в дифференцировке фибробластов в миофибробласты, что следует учитывать при исследованиях паракринных эффектов МСК и терапевтического использования секретома МСК.
+Фоторецепторы растений. Изучены структура и функциональные свойства обнаруженных нами ранее двух типов основного фоторецептора растений фитохрома A (phyA′ и phyA″), различающихся по физико-химическим свойствам и осуществляющих разные типы фоторегуляторных ответов . Прослежено влияние высокотемпературного стресса на состояние phyА сорго (Sorghum bicolor L.) in vivo и в клетках экспрессирующих его E. coli. Установлено, что в трансгенной культуре E. coli относительно медленно развивается стрессовый ответ и менее выражен пик концентрации АТФ, чем в исходной культуре E. coli BL-21. Показано, что предварительное освещение культуры клеток E. coli дальним красным светом влияет на фотохимические свойства phyА и подавляет синтез общего/внутриклеточного АТФ. Охарактеризован  мутант ячменя albino с дефицитом пигментов фотосинтеза по состоянию в нем phyА и его нативных пулов. Обнаружено действие дальнего красного света на phyA в колеоптилях ячменя — относительно быстрое (десятки минут) индуцированное превращение phyA′ в phyA″. Этот эффект является частью сложного процесса адаптации растений к свету в условиях глубокой затененности, что обеспечивает эволюционные преимущества высших растений.</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (17)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Харитонов Алексей Викторович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Букач Олеся Владимировна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Шатов Владислав Михайлович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Блощицына Марина Николаевна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Муранова Лидия Константиновна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Храмова Юлия Владимировна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Коппель Лариса Алексеевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Озрина Рада Драгановна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Лопина Ольга Дмитриевна</strong> <span style="color:#71717a;font-size:0.8rem">Доктор биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Заболотский Артур Игоревич</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Тюлина Ольга Владимировна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Коган Александр Ефимович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Березникова Анастасия Вячеславовна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Синещеков Виталий Алексеевич</strong> <span style="color:#71717a;font-size:0.8rem">Доктор биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Воинова Вера Владимировна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li></ul>
+              <p style='color:#52525b;font-size:0.8rem;margin-top:0.5rem'>...и ещё 2</p>
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

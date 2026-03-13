@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | МГУ им. М.В. Ломоносова</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-mgu.html">МГУ им. М.В. Ломоносова</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">базы данных</span> <span class="tag">россия</span> <span class="tag">метод максимальной энтропии</span> <span class="tag">днк-баркодинг</span> <span class="tag">моделирование пространственного распределения</span> <span class="tag">голарктика</span> <span class="tag">мхи</span> <span class="tag">скрытые виды</span> <span class="tag">редкие виды</span> <span class="tag">скрытое разнообразие</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Эволюционное учение</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Таксономия и номенклатура в биологии</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Споровые растения</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Биогеография</span></div>
+          <h1 style="font-size:1.5rem">К стабильной системе мхов, основанной на молекулярных данных и ее приложениям в ДНК-баркодинге и биогеографии</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">7,000 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225020307420-9</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2023-05-15 — 2023-12-31</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№1</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">4</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">РНФ</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>Российский научный фонд</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>Показатели выполнения плана работ следующие (запланировано/выпол-ненено) «--» - не выполнен; «-» недовыполнен; «+» - выполнен; «++» - перевыполнен; «-/++» - не все заявленные работы выполнены, но в целом план перевыполнен; после «*» комментарии:
+-Получено последовательностей филогенетических маркеров всего: 2000 / 2850 (++)
+-Добавлено в датасет «а» (4 маркера): 154 / 154-4 (рода Российской флоры порядка Hypnales) + 90 (другие рода мировой флоры порядка Hypnales) + 80 (рода мировой флоры подкласса Dicranidae) (-/++) * не удалось получить амплификаты маркеров для представителей 4 родов Hypnales – комментарии приводятся в детализированной части отчета по данному пункту
+-Добавлено в датасет «б» (trnS-trnF / rps4+trnL-trnF): 460/460 (+)
+-Проведено интегративно-таксономических исследований/ревизий в отдельных группах криптических видов в Dicranales и отчасти Hypnales и Sphagnales: 4 (Ditrichaceae, Symblepharis, Leskeaceae, Sphagnum girgensohnii &amp; tescorum) / 11 (Ditrichaceae – 2 отдельных исследования «по цене одного», Symblepharis, Weissia, Fissidens, Didymodon, Tortella, Leskeaceae, Miyabea, Leptodictyum, Sphagnum girgensohnii &amp; tescorum, Sphagnum warnstorfii) (++) * две экспедиции не состоялись: в Дагестан – из-за позднего заключения соглашения с РНФ (планировалась в мае), в Якутию – из соображений «кризисного менеджмента» - т.е. для обеспечения выполнения более важных задач проекта.
+-Проведено экспедиций (где), собрано образцов: 3 (Дагестан - 300, Бурятия - 600, Якутия – 500) / 4 (Краснодарский край - 100, Бурятия - 1200, остров Карагинский - 300, Приморье – 200) (-/++)
+-Обработано ранее собранных коллекций (число, число образцов): 3 (Шикотан – 1000, Приморье, Уссурийский заповедник - 1000, Полярный Урал – 1000) / 10 (Шикотан – 900, Приморье, Уссурийский заповедник - 800, Полярный Урал – 800, Юг Дагестана, сборы Федосова и Дудова – 500, Юг Приморья, сборы Дзизюровой – 200, Сихоте-Алиньский заповедник – 300, Юг Сахалина – 200, Эвенкия, сборы Бардунова – 100, Эвенкия, сборы Щербины – 300, Тува (сборы Бардунова) – 100, север Иркутской области – 100, юго-восток Красноярского края – 200) – всего 4500 образцов (++).
+-В базу данных Флоры мхов России включено: 3000 / 5500 (++) 
+-Опубликовано и принято в печать статей, индексируемых WoS и Scopus: 6 / 13: 5 (1 WoS, 4 Scopus, 1 РИНЦ - опубликованы) 7 (Scopus) - приняты; 2 статьи вышли с указанием номера предыдущего проекта коллектива (14-18-00121) (++)</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (7)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Писаренко Ольга Юрьевна</strong> <span style="color:#71717a;font-size:0.8rem">Доктор биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Игнатова Елена Анатольевна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Федорова Алина Викторовна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Федосов Владимир Эрнстович</strong> <span style="color:#71717a;font-size:0.8rem">Доктор биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Шкурко Анна Валентиновна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Рябенко Ольга Ивановна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Дудов Сергей Валерьевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат географических наук</span></li></ul>
+              
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

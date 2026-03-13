@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | МГУ им. М.В. Ломоносова</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-mgu.html">МГУ им. М.В. Ломоносова</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">квантовая теория поля</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Квантовая механика</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Математические методы теоретической физики</span></div>
+          <h1 style="font-size:1.5rem">ОТЧЕТ О НАУЧНО-ИССЛЕДОВАТЕЛЬСКОЙ РАБОТЕ по теме: Математические методы теории поля и квантовой статистики (промежуточный)</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">11,992 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225050615618-3</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2024-01-01 — 2024-12-31</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№4</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">5</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">Правительство России</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>Правительство Российской Федерации</div>
+                </div><div class="metric-box" style="text-align:left">
+                  <div class="label">Исполнитель</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">МОСКОВСКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ ИМЕНИ М.В.ЛОМОНОСОВА, МГУ ИМЕНИ М.В.ЛОМОНОСОВА, МОСКОВСКИЙ УНИВЕРСИТЕТ ИЛИ МГУ</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>Научно-исследовательская работа &quot;Математические методы теории поля и квантовой статистики&quot; включает в себя разработку новых подходов и методов в нелокальной нелинейной статистической физике, квантовой механике и теории поля; построение моделей многих взаимодействующих частиц, допускающих точные решения; применение современных численных методов для математического моделирования систем многих взаимодействующих частиц.
+
+В рамках научно-исследовательской работы  рассмотрено описание квантовой системы с электромагнитным взаимодействием в рамках аппарата функции квази-плотности вероятностей. На трёхмерных точных решениях уравнения Шрёдингера, соответствующих Ψ-модели, сравниваются свойства функции Вигнера и функции Вейля-Стратоновича. Рассмотрена математическая постановка задачи о поперечных колебаниях вертикального стержня под действием силы тяжести, трения и внешнего импульсного воздействия, приводящего к тепловому расширению стержня. Динамика рассматриваемой системы соответствует поведению тепловыделяющего топливного элемента (ТЭ) импульсного реактора и связана с динамической устойчивостью происходящих в нем процессов. Динамика ТЭ описывается неоднородным линейным дифференциальным уравнением четвертого порядка с непостоянными коэффициентами. Рассмотрена задача о нахождении собственных частот и собственных функций тепловыделяющего элемента (твэла) ядерного реактора. В качестве модели твэла используется стержень с кусочно-постоянной плотностью материала в продольном направлении. В работах в явном виде найдены средние значения импульсов и энергий квантовой системы, согласующиеся для обеих функций. Существенным отличием между функцией Вигнера и Вейля-Стратоновича является импульсная плотность вероятностей.  Показано, что функция Вейля-Стратоновича не является положительной для Гауссовых волновых функций. Найдены волновые функции (Ψ-модель), для которых функция Вейля-Стратоновича является положительной, что приводит к расширению теоремы Хадсона и её обобщению на трёхмерный случай для калибровочно-инвариантной функции Вейля-Стратоновича. Получен вид уравнения Моэля для электромагнитной системы в виде второго уравнения Власова, что привело к возможности построения аппроксимации Власова-Моэля для обрыва цепочки Власова на втором уравнении. Показано, что усреднение электромагнитной аппроксимации Власова-Моэля по пространству импульсов дает известные выражения для внешней электромагнитной силы, используемой в физике плазмы. Найдено решение описывающее динамику ТЭ с использованием концепции обобщенных функций, выраженных в виде разложения в ряд по собственным функциям координат, зависящим от некоторого параметра «p». Получены коэффициенты разложения собственных функций в явном виде и оценена точность численного решения для некоторых важных частных случаев. В явном виде найдено частотное уравнение, численно-аналитическим методом определены собственные частоты первых двенадцати гармоник. Получены аналитические выражения для собственных функций ТЭ, дающие хорошее совпадение с расчётами по методу Галёркина и численными расчётами в среде ANSYS. 
+
+Изучена эволюция N одинаковых по массе и заряду частиц, взаимодействующих с потенциалом дельта-функции. С помощью теории полугрупп определено решение цепочки квантовых кинетических уравнений для корреляционных матриц.
+
+Изучен фазовый переход гранецентрированный кубический кристалл – однородная фаза в гелии, происходящем при относительно высоких температурах. Проведено исследование поведения теплоемкости при постоянном объеме  для конденсированных состояний при высоких температурах. Рассчитаны характеристики фазового перехода гранецентрированный кубический кристалл – однородная фаза в гелии на основе корреляционного ячеечно - кластерного разложения. Проведено сравнение теоретических данных с данными эксперимента и получено хорошее совпадение. В окрестности фазового перехода теплоемкость при постоянном объеме для конденсированных состояний с ростом температуры уменьшается.
+
+Предложен универсальный способ проведения вычислений в рамках обобщённой статистики, порождаемой параметрическими энтропиями Тсаллиса, Реньи и Шарма–Миттала. Суть метода заключается в использовании вспомогательного гамма-распределения, параметры которого соответствуют тому или иному варианту статистики. Выведены соотношения, позволяющие выразить обобщенную статистическую сумму и среднюю энергию через канонические величины. На примере статистики Реньи продемонстрирована эффективность предложенного метода. Получено распределение Максвелла–Реньи и рассчитаны его характеристики, на основе которых были выдвинуты предположения о возможной природе обобщающего параметра.
+	
+Изучены факторизованные состояния в анизотропной модели Гейзенберга. Получено соотношения между параметрами гамильтониана XYZ модели с внешним полем и направлениями намагниченности на подрешатках в случае, когда система находится в неелевском состоянии.
+
+Предложена простейшая математическая модель в системе комплемента иммунной системы организмов в которой фактор «Н» является простым переключателем  вида «есть реакция - нет реакции»  в сложной биохимической системе реакций с положительной обратной связью между различными компонентами комплемента.
+
+Разработан метод изометрического отображения, позволяющий, на основе композиции нескольких квантовых ресурсов, генерировать объекты, используемые в квантовой обработке информации. Данный подход позволяет получать r-однородные подпространства, новые коды квантовой коррекции ошибок, подпространства состояний с дистиллируемой сцепленностью, подпространства состояний, генерирующих сцепленные смешанные состояния с положительным частичным следом.
+
+Изучалось приближенное аналитическое решение спектральной задачи для конечномерной матрицы специального вида, которое оказывается очень простой и достаточно удовлетворительной моделью метастабильного состояния. При этом воспроизводится большинство характерных свойств метастабильного уровня: форма линии, динамика распада и плотность состояний. Корректность приближенного аналитического решения была проверена посредством непосредственного численного счета.
+
+В рамках расширенной модели Хаббарда на гексагональной решетке исследовано повевение электропроводности в зависимости от констант взаимодействия (в одном узле и в соседних узлах). Использовался метод функций Грина и соотношение Грина-Кубо для оценки проводимости. Реализовано решение некорректно поставленной задачи для уравнения Фредгольма 1 рода. Получена зависимость проводимости от величины интенсивности взаимодействия в соседних узлах в области параметров модели V00 ≈ V01. Выявлены области по величине интенсивности взаимодействия, разделенные фазовыми переходами.
+
+Рассмотрена модель составной открытой системы, состоящей из двухуровневой системы и затухающего квантового осциллятора, который находится в когерентном состоянии. Получены диссипативные поправки к уравнениям в приближении заданного поля накачки. Рассмотрен нелинейных затухающий осциллятор и  к нему применены методы с проектором Кавасаки-Гантона и гауссовским анзацем. Получена эффективная нелинейная гауссовская динамика.
+
+Полученные результаты являются новыми и опубликованы в научных рецензируемых журналах.</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (12)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Беккиев Азрет Юсупович</strong> <span style="color:#71717a;font-size:0.8rem">Доктор физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Дубиковский Андрей Игоревич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Садовникова Марианна Борисовна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Перепелкин Евгений Евгеньевич</strong> <span style="color:#71717a;font-size:0.8rem">Доктор физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Садовников Борис Иосифович</strong> <span style="color:#71717a;font-size:0.8rem">Доктор физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Мостовой Сергей Дмитриевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Коваль Геннадий Васильевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Савченко Александр Максимович</strong> <span style="color:#71717a;font-size:0.8rem">Доктор физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Бычков Максим Евгеньевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Дергачев Максим Алексеевич</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Голиков Дмитрий Сергеевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Власов Александр Анатольевич</strong> <span style="color:#71717a;font-size:0.8rem">Доктор физико-математических наук</span></li></ul>
+              
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

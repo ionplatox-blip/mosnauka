@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | МГУ им. М.В. Ломоносова</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-mgu.html">МГУ им. М.В. Ломоносова</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">БАКТЕРИОЛОГИЧЕСКИЕ ИССЛЕДОВАНИЯ</span> <span class="tag">УСТОЙЧИВОСТЬ К ПРОТИВОМИКРОБНЫМ ПРЕПАРАТАМ</span> <span class="tag">АНТИБИОТИКОРЕЗИСТЕНТНОСТЬ</span> <span class="tag">ПЕРСОНИФИЦИРОВАННЫЕ ПОДХОДЫ</span> <span class="tag">ФАРМАКО-ЭКОНОМИЧЕСКИЙ АНАЛИЗ</span> <span class="tag">ФОРМУЛЯРНЫЙ ПЕРЕЧЕНЬ</span> <span class="tag">МОЛЕКУЛЯРНО-ГЕНЕТИЧЕСКИЕ ИССЛЕДОВАНИЯ</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Клиническая фармакология</span></div>
+          <h1 style="font-size:1.5rem">Изучение резистентности возбудителей и разработка персонифицированных подходов к выбору и назначению противомикробных препаратов</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">25,864 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225012001183-7</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2024-01-01 — 2024-12-31</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№2</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">5</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">Правительство России</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>Правительство Российской Федерации</div>
+                </div><div class="metric-box" style="text-align:left">
+                  <div class="label">Исполнитель</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">МОСКОВСКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ ИМЕНИ М.В.ЛОМОНОСОВА, МГУ ИМЕНИ М.В.ЛОМОНОСОВА, МОСКОВСКИЙ УНИВЕРСИТЕТ ИЛИ МГУ</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>Объектом исследования являются:
+- клинически значимые микроорганизмы, выделенные из биологического материала пациентов (мазки зева, кровь, мокрота, моча мазки ануса, операционный материал, и др.) с заболеваниями, состояниями инфекционного генеза, вызванные Klebsiella pneumoniae, Klebsiella oxytoca, Pseudomonas aeruginosa, Acinetobacter baumannii и MRSA (Methicillin-resistant Staphylococcus aureus) и другими микроорганизма;
+Участниками исследований являются пациенты и сотрудники Медицинского научно-образовательного института МГУ имени М.В. Ломоносова.
+Цель этапа НИР – Систематизация лабораторных данных по резистентности клинически значимых микроорганизмов на локальном уровне, совершенствование подходов выбора и проведения противомикробной терапии в условиях многопрофильной медицинской организации.
+При проведении данного этапа НИР использовались: клинические, инструментальные методы диагностики, лабораторно-диагностические, включая микроскопические, микробиологические методы с определением чувствительности возбудителей к противомикробным препаратам. Микроорганизмы с признаками резистентности исследовались дополнительно с применением молекулярно-генетических методов диагностики. 
+В ходе выполнения данного этапа НИР получены следующие научные результаты:
+1) Проведен комплексный анализ резистентности возбудителей, включая молекулярно-генетические исследования, в условиях медицинской организации на основе коллекции изолятов бактерий, выделенных у больных с симптомами инфекции, находившихся на стационарном лечении в отделениях медицинской организации (2021-2023гг.). 
+Результаты по данному разделу НИР:
+- статья в журнале «Молекулярная биология» (Мещурова С.Ю., Коробова А.Г., Самоходская Л.М. Анализ частоты встречаемости продуцентов беталактамаз среди энтеробактерий, выделенных у больных хирургического и терапевтического профиля);
+- тезисы и стендовый доклад на XXVI Международном конгрессе МАКМАХ по антимикробной терапии и клинической микробиологии, Москва, Россия, 29-31 мая 2024 (Коробова А.Г., Мещурова С.Ю., Самоходская Л.М. Особенности видового состава и чувствительности к антибиотикам возбудителей интраабдоминальных инфекций у больных в многопрофильном стационаре. Клиническая микробиология и антимикробная химиотерапия, 2024, том 26, Приложение 1);
+- тезисы и стендовый доклад на II Российском конгрессе по медицинской микробиологии и инфектологии, Москва, Russia, 29 февраля - 1 марта 2024 (Коробова А.Г., Щапина М.Ю., Мещурова С.Ю., Самоходская Л.М. Чувствительность к антибиотикам и бактериофагам Staphylococcus aureus, выделенных от пациентов в многопрофильном стационаре. Лабораторная диагностика. Восточная Европа, 2024, том 13, № 1, Приложение, с. 175);
+- тезисы и стендовый доклад на II Российском конгрессе по медицинской микробиологии и инфектологии, Москва, Russia, 29 февраля - 1 марта 2024 (Коробова А.Г., Мещурова С.Ю., Тивелева А.А., Кириллова К.И., Самоходская Л.М. Оценка синергизма ингибиторозащищенных бета-лактамов с азтреонамом in vitro в отношении карбапенемазопродуцирующих энтеробактерий. Лабораторная диагностика. Восточная Европа, 2024, том 13, № 1, Приложение, с. 61).
+- стендовый доклад, XXVI Международный конгресс МАКМАХ по антимикробной терапии и клинической микробиологии (Москва, 29-31 мая 2024), Щапина М.Ю., Мещурова С.Ю., Коробова А.Г., Залепаев П.В., Самоходская Л.М. Чувствительность к антибиотикам и бактериофагам Pseudomonas aeruginosa, выделенных от пациентов в многопрофильном стационаре 
+-стендовый доклад XXVI Международный конгресс МАКМАХ по антимикробной терапии и клинической микробиологии (Москва, 29-31 мая 2024), Коробова А.Г., Мещурова С.Ю., Самоходская Л.М. Особенности видового состава и чувствительности к антибиотикам возбудителей интраабдоминальных инфекций у больных в многопрофильном стационаре ()
+- стендовый доклад Конгресс бактериологов, посвященного 50-летию ФБУН &quot;Государственный научный центр прикладной микробиологии и биотехнологии&quot; Роспотребнадзора, Москва, 17-19 сентября 2024 года
+Беляева А.Р., Коробова А.Г., Мещурова С.Ю., Залепаев П.В., Самоходская Л.М. Чувствительность изолятов Pseudomonas aeruginosa, выделенных в многопрофильном стационаре, к дезинфицирующему средству на основе четвертичных аммониевых соединений и полигуанидинов (стендовый доклад)
+- устный доклад Форум анестезиологов и реаниматологов России (ФАРР-2024) / Съезд Федерации анестезиологов и реаниматологов, 12-14 октября 2024, Санкт-Петербург, Мещурова С.Ю., Коробова А.Г., Залепаев П.В., Малахов П.С., Самоходская Л.М. Анализ спектра микроорганизмов, выделенных у больных с симптомами инфекции мочевыводящих путей в отделении реанимации и интенсивной терапии.
+-  Внедрение результатов НИР в образовательный процесс по темам «Бактериофаги: роль в лечении бактериальных инфекций. Опыт изучения чувствительности бактерий к бактериофагам в МНОЦ МГУ», «Ингибиторозащищенные беталактамы: активность в отношении полирезистентных грамотрицательных бактерий. Анализ чувствительности бактерий к ингибиоторозащищенным беталактамам в МНОЦ МГУ», «K. pneumoniae – возбудитель нозокомиальных инфекций, тенденции антибиотикорезистентности в России. Анализ данных на онлайн-платформе AMRmap».(Коробова А.Г.)
+2) Подготовлена структура и начато формирование электронной базы данных резистентности возбудителей, выделенных у больных с симптомами инфекции, находившихся на стационарном лечении в отделениях медицинской организации. Электронная база станет частью системы Комплексного мониторинга циркуляции резистентных штаммов и потребления противомикробных препаратов в условиях многопрофильной медицинской организации.
+3) Осуществлен набор данных в рамках протокола с анкетированием пациентов «Микробиологическая структура патогенных и условно-патогенных микроорганизмов нижних отделов женской половой системы по данным профилактического медицинского осмотра сотрудников». Проведен предварительный статистический анализ данных, собран биологический материал для проведения молекулярно-генетических исследований.
+3) Осуществлен набор данных в рамках протокола с анкетированием пациентов «Микробиологическая структура патогенных и условно-патогенных микроорганизмов нижних отделов женской половой системы по данным профилактического медицинского осмотра сотрудников» (n=132) Проведен предварительный статистический анализ данных, собран биологический материал для проведения молекулярно-генетических исследований.
+4) Проведен анализ данных результатов цитологических и микробиологических исследований сотрудников, обследованных во время профилактического медицинского осмотра (n=132). Получены предварительные данные по структуре инфекционных агентов, полученных из биологического материала нижних отделов женской половой системы.
+5) Разработан технический макет «Карты противомикробной профилактики и терапии».
+6) Подготовлена научная работа по теме «Состояние вагинального микробиоценоза в различных возрастных группах» (защита курсовой работы)
+Область применения результатов
+Область применения результатов данного исследования – клиническая медицина, медицинская наука. Разрабатываемые научные продукты и алгоритмы действий направлены совершенствование методов диагностики и лекарственной терапии инфекционных состояний, вызванных патогенными микроорганизмами, особенно резистентными. Разрабатываемые информационные ресурсы по сбору, обработке и хранению стандартизованных электронных медицинских данных, предназначены для формирования специализированных электронных баз данных, с возможностью цифрового многофакторного анализа, в том числе как инструмент для осуществления комплексного локального мониторинга (микробиологического, эпидемиологического и лекарственного) в целях предупреждения развития устойчивости к противомикробным препаратам. Персонифицированные подходы выбора лекарственной терапии противомикробными препаратами позволят повысить качество лечебных мероприятий и исходов заболеваний.</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (16)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Щербакова Лия Ниязовна</strong> <span style="color:#71717a;font-size:0.8rem">Доктор медицинских наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Самоходская Лариса Михайловна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат медицинских наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Камалов Давид Михайлович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат медицинских наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Армаганов Арташес Георгиевич</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Коробова Анна Геннадьевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат медицинских наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Нестерова Ольга Юрьевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат медицинских наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Габбасова Ляля Адыгамовна</strong> <span style="color:#71717a;font-size:0.8rem">Доктор медицинских наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Павликова Елена Петровна</strong> <span style="color:#71717a;font-size:0.8rem">Доктор медицинских наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Буравлева Кристина Владимировна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Джайн Марк</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат медицинских наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Малахов Павел Сергеевич</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Кубышкин Валерий Алексеевич</strong> <span style="color:#71717a;font-size:0.8rem">Доктор медицинских наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Панина Ольга Борисовна</strong> <span style="color:#71717a;font-size:0.8rem">Доктор медицинских наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Сорокина Марина Павловна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Кириллова Карина Игоревна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li></ul>
+              <p style='color:#52525b;font-size:0.8rem;margin-top:0.5rem'>...и ещё 1</p>
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

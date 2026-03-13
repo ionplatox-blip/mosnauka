@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | ИБХ РАН</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-ibh.html">ИБХ РАН</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">Воспаление,</span> <span class="tag">нейтрофилы,</span> <span class="tag">микроглия,</span> <span class="tag">активные формы серы,</span> <span class="tag">гипогалогенный стресс,</span> <span class="tag">бактериальная инфекция,</span> <span class="tag">ишемический инсульт</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Молекулярная нейробиология</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Молекулярная иммунология</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Медицинская биохимия</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Медицинская иммунология</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Патологическая физиология</span></div>
+          <h1 style="font-size:1.5rem">Активные формы серы и хлора как медиаторы воспалительных процессов</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">7,000 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225032714144-3</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2024-01-01 — 2024-12-31</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№3</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">5</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">РНФ</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>Российский научный фонд</div>
+                </div><div class="metric-box" style="text-align:left">
+                  <div class="label">Исполнитель</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">ИБХ РАН</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>Объекты исследования: новый тип генетически кодируемого инструмента Persic для регистрации динамики пер-/полисульфидов; динамика галогенирующего стресса в клеточных моделях нейтрофилов и нейтрофил-подобных клеток; редокс-параметры при ишемическом инсульте на модели окклюзии средней мозговой артерии у крыс; редокс-параметры при воспалительных реакциях на модели рыбе Danio rerio.
+Цель работы: исследование редокс-параметров, в частности динамики пероксида водорода, активных форм серы, продуктов галогенирующего стресса, в условиях патологических процессов на культурах клеток и в моделях in vivo.
+Основными задачами в рамках проекта были:
+- Создание принципиального нового генетически кодируемого флуоресцентного биосенсора для регистрации активных форм серы;
+- Исследование динамики галогенирующего стресса и активных форм серы в модели фагоцитоза нейтрофилов;
+- Исследование динамики галогенирующего стресса в моделях нейровоспаления;
+- Исследование временной динамики редокс-параметров в клетках головного мозга крыс при развитии ишемического инсульта;
+- Исследование динамики уровня полисульфидов в тканях мозга мышей линии 5xFAD, предрасположенных к модели Альцгеймера;
+- Исследование динамики галогенирующего стресса в моделях воспаления in vivo на объекте рыбы Danio rerio.
+Методы проведения работы: получение молекулярно-генетических конструкций; тестирование свойств нового биосенсора Persic на выделенном и очищенном препарате белка in vitro; ведение и микроскопия культуры первичных нейтрофилов, клеток линии HL-60; выделение первичной нейрональной культуры из эмбрионов мыши; наработка аденоассоциированных вирусов; флуоресцентная микроскопия; моделирование ишемического инсульта у крыс линии SHR путем окклюзии средней мозговой артерии; моделирование гипергликемии у грызунов путем инъекции стрептозотоцина; регистрация флуоресцентного сигнала посредством оптоволоконных зондов в глубоких структурах мозга крыс и мышей in vivo; моделирование воспалительных реакций у рыб Danio rerio.
+Результаты работы: 
+- Разработан и охарактеризован генетически кодируемый флуоресцентный биосенсор для регистрации полисульфидов в живых системах. Биосенсор, получивший название Persic (от Persulfide Indicator), создан на основе сенсорного домена BigR из бактерии X. fastidiosa и интегрированного в его структуру флуоресцентного белка cpYFP. Биосенсор демонстрирует рациометрическое обратимое изменение флуоресцентного сигнала при взаимодействии с высокой чувствительностью с пер- и полисульфидами, при этом инструмент не реагирует с другими биологически значимыми окислителями. Флуоресцентный сигнал биосенсора Persic стабилен при изменении рН в физиологическом диапазоне. Для биосенсора методом мутагенеза по ключевым аминокислотным остаткам, ответственным за взаимодействие с полисульфидами, была получена контрольная версия;
+- Протестирован биосенсор Persic в эукариотических клетках: линии HeLa Kyoto (в условиях экзогенной добавки Na2S4), HUVEC (в условиях VEGF-опосредованной эндогенной продукции H2S), а также в первичной культуре нейронов мыши (в условиях гипоксии/реоксигенации, экзогенной добавки Na2S4 и при воздействии ингибитора ГАМК - бикукулина, а также нейрон-возбуждающих агентов – глутамата и хлорида калия. В условиях эукариот биосенсор Persic реагирует на экзогенные добавки полисульфидов. Стимуляция клеток HUVEC ростовым фактором VEGF привела к незначительному снижению полисульфидов. Рост уровня полисульфидов мы наблюдали в нейронах при их активации бикукулином и калием хлора. Гипоксия и последующая реоксигенация не вызывает изменений в сигнале биосенсора Persic;
+- Исследована динамика галогенирующего стресса, величины рН и уровня полисульфидов при фагоцитозе бактериальных клеток первичными нейтрофилами человека. Проведено детальное сравнение pH-чувствительности Hypocrates2, Hypocrates2CS и SypHer3s. Установлено, что кривые насыщения сигнала в достаточной степени совпадают для всех трех белков. Таким образом, с учетом низкой чувствительности к галогенирующим агентам, SypHer3s может быть использован в качестве инертного контроля для Hypocrates2. При помощи химического ингибитора (DPI) и сенсора Hypocrates2 показано, что НАДФН-оксидаза является единственным источником H2O2 для миелопероксидазной реакции. При помощи химического ингибитора (L-NMMA) и сенсора Hypocrates2 показано, что активные формы азота не принимают участия в регуляции продукции HOCl в полости фагосомы. При помощи химических ингибиторов (Go 6983 и Wortmannin) и сенсора Hypocrates2 показано, что активность PKC и PI3K влияет на степень гипогалогенного стресса, испытываемого бактериями в полости фагосомы, при этом PKC вносит больший вклад в данный процесс. При помощи сенсора Hypocrates2 показано, что обработка нейтрофилов медленным донором H2S (GYY 4137) снижает их способность синтезировать HOCl в полости фагосомы. Не было обнаружено каких-либо значительных эффектов от инкубации нейтрофилов с быстрыми донорами H2S. При помощи сенсора Hypocrates2 показано, что ингибирование активности H2S-производящих ферментов (CSE и CBS) при помощи PAG в нейтрофиле происходит слабое подавление галогенирующего стресса. При помощи сенсора Persic показано, что гипогалогенный стресс в полости фагосомы не приводит к продукции выраженного количества полисульфидов в цитоплазме бактерий. Установлено, что в первые моменты созревания фагосомы происходит защелачивание цитозоля бактерий на 0,6-0,8 единицы, при этом ингибировании НАДФН-оксиды, миелопероксидазы, протеинкиназы С ингибируют этот процесс;
+- Исследована динамика гипогалогенных кислот в полученной стабильной линии нейтрофил-подобных клеток HL-60 с экспрессией гена Hypocrates2. Установлено, что данные клетки синтезируют значительно меньшие количества гипогалогенных кислот в люмене фагосомы по сравнению с первичными нейтрофилами. Установлено, что в ходе фагоцитоза происходит относительно медленное проникновение галогенирующих агентов в цитозоль HL-60;
+- Получен протокол выделения мышиной тройной культуры нейронов, астроцитов и микроглии, где микроглия находится в не активированном состоянии. Проведена серия исследований воспалительных реакций, вызванных условиями гипоксии/реоксигенации, глутамат-опосредованной эксайтотоксичности, индукции липополисахаридами, механической травмой. Увеличение концентрации глутамата в среде, наличие липополисахаридов приводят к развитию выраженного галогенирующего стресса. В условиях гипоксии/реоксигенации впервые в нейрональной культуре напрямую показана продукция пероксинитрита;
+- Установлено, что астроциты демонстрируют более окисленный статус по сравнению с нейронами в условиях ишемии на модели ишемического инсульта у крыс путем окклюзии средней мозговой артерии. Для этого была исследована in vivo динамика Н2О2 в нейронах и астроцитах тканей мозга крыс при развитии инсульта с помощью высокочувствительного биосенсора HyPer7 и техники оптоволоконного нейроинтерфейса;
+- Установлено, высокий гликемический статус усугубляет последствия инсульта, в частности, в виде более объемных повреждений мозга крыс на модели окклюзии средней мозговой артерии, однако молекулярный механизм обусловлен не через повышение генерации Н2О2 в клетках. Судя по всему, более выраженное ишемическое повреждение тканей мозга при высоком гликемическом статусе происходит с участием других редокс-процессов;
+- Исследована динамика полисульфидов в тканях мозга крыс при развитии ишемического инсульта с помощью биосенора Persic и техники оптоволоконного нейроинтерфейса. Показано, что динамика пер- и полисульфидов не изменяется в клетках ишемизированной ткани в острой фазе патогенеза, однако начинает снижаться примерно через 20 часов с момента окклюзии артерии;
+- Исследован уровень полисульфидов in vivo в клетках мозга мышей линии 5xFAD, предрасположенных к развитию болезни Альцгеймера с помощью биосенора Persic и техники оптоволоконного нейроинтерфейса. В мышах линии 5xFAD в 7-месячном возрасте уровень полисульфидации в клетках мозга достоверно не отличается от показателя в группе здоровых мышей. При этом больший разброс значения сигнала Persic характерен именно для группы 5xFAD;
+- Получена коллекция трансгенных линий рыб Danio rerio с экспрессией биосенсора Persic в тканях повсеместно, биосенсора Hypocrates2 и его контрольной версии, а также красного флуоресцентного белка mCherry локально в нейтрофилах;
+- Впервые исследована динамика галогенирующего стресса на уровне нейтрофилов в моделях in vivo. В тканях рыбы Danio rerio было показано, что при воспалении, вызванном механическим повреждением тканей или бактериальной инфекцией, галогенирующий стресс испытывают как клетки окружения нейтрофилов, так и бактерии в фагосомах. Однако в обоих моделях сами нейтрофилы обеспечивают собственную надежную внутриклеточную защиту от продуктов ими же производимого галогенирующего стресса;
+- Исследована динамика Н2О2 в различных клетках и их компартментах тканей рыб Danio rerio в условиях гипоксии. Н2О2 образуется исключительно в матриксе митохондрий клеток, при этом не диффундирует в цитозоль и при реоксигенации нейтрализуется в этом же компартменте.
+Область применения результатов: наука и медицина, исследование воспалительных реакций, скрининг лекарственных препаратов.
+Предполагаемая экономическая эффективность или значимость работы: последующее использование созданных подходов может быть использовано в качестве платформы для скрининга лекарственных препаратов, направленных на подавление воспалительных реакций при различных заболеваниях.
+Прогнозные предположения о развитии объекта исследования: созданные генетически кодируемые инструменты могут быть использована для поиска новых подходов терапии различных заболеваний с выраженными острыми или хроническими воспалительными реакциями.
+Работа выполнена в полном объеме в соответствии с планами.</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (5)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Сергеева Анастасия Дмитриевна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Катруха Вероника Алексеевна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Чебаненко Виктория Валерьевна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Костюк Александр Игоревич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Билан Дмитрий Сергеевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li></ul>
+              
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

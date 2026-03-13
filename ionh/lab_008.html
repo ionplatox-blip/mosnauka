@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Лаборатория теоретических основ химической технологии | ИОНХ РАН</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-ionh.html">ИОНХ РАН</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Лаборатория теоретических основ химической техноло</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1rem"><span class="tag">Органическая химия</span> <span class="tag">Химическая технология</span></div>
+          <h1>Лаборатория теоретических основ химической технологии</h1>
+          <p style="color:#a1a1aa;line-height:1.7;margin-top:1rem">Разработаны научно обоснованные технологические схемы переработки отходов электроники с использованием высокоэффективных экологически безопасных экстракционных систем на основе водорастворимых полимеров. Создана модель высокоинтенсивного массообмена в дисперсно-кольцевом потоке жидкости и газа (пара) и метод расчёта пленочных колонн с нисходящим потоком фаз. Результаты внедрены в промышленность. Раскрыт механизм и построена теория диффузионно-тепловой неустойчивости Марангони. Показана связь с интенсификацией промышленных процессов. Разработаны экстракционные методы получения органических кислот из жидких отходов производства (например, отходов производства капролактама, растворов ферментации и др.), что создает предпосылки для разработки инновационных технологий, импортозамещения и повышения экологической безопасности в области процессов разделения смесей. Разработаны методы расчёта ряда новых гибридных процессов на основе дистилляции и кристаллизации из расплава. Разработан экстракционный метод получения частиц оксидов металлов различной формы нано- и микрометрового размера на межфазной границе в двухфазных водных системах. Создан научно-обоснованный метод расчёта экстрактивной ректификации с учётом реальной кинетики массообмена в стекающей по насадке плёнке жидкости. Составлены оптимальные схемы технологической реализации процессов ультразвукового возбуждения нелинейных потоков, существенно повышающих эффективность экстракции и создающих уникальную ситуацию изолированности жидкости от соприкосновения с аппаратурой внешнего воздействия.</p>
+        </div>
+
+        <!-- CTA Block -->
+        <div style="background:linear-gradient(135deg,rgba(255,0,60,0.08),rgba(255,0,60,0.02));border:1px solid rgba(255,0,60,0.2);border-radius:1.5rem;padding:2rem;margin-bottom:2rem">
+          <div style="font-size:1rem;font-weight:800;margin-bottom:0.75rem">📨 Связаться с лабораторией</div>
+          
+          <div style="display:flex;flex-wrap:wrap;gap:0.75rem;margin-top:1rem">
+            <button onclick="openRequestModal('Запрос на НИОКР — Лаборатория теоретических основ химическ')" style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.75rem 1.5rem;border-radius:1rem;background:#ff003c;color:white;font-size:0.75rem;font-weight:800;text-transform:uppercase;letter-spacing:0.05em;border:none;cursor:pointer">📋 Направить запрос на НИОКР</button>
+            <button onclick="openRequestModal('Запрос зав. лабораторией — Лаборатория теоретических осно')" style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.75rem 1.5rem;border-radius:1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:#a1a1aa;font-size:0.75rem;font-weight:800;text-transform:uppercase;cursor:pointer">✉ Написать зав. лабораторией</button>
+            <a href='https://colab.ws/labs/809' target='_blank' style='display:inline-flex;align-items:center;gap:0.5rem;padding:0.75rem 1.5rem;border-radius:1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:#a1a1aa;font-size:0.75rem;font-weight:800;text-transform:uppercase'>🔗 Профиль CoLab</a>
+          </div>
+        </div>
+
+        
+        <div class="info-card">
+              <h2>🧪 Методы</h2>
+              <p>Хроматография Масс-спектрометрия ЯМР-спектроскопия ИК-спектроскопия</p>
+            </div>
+        
+
+        <div class="section-header" style="margin-top:2.5rem">
+          <h2 class="section-title">👩‍🔬 Учёные (9)</h2>
+        </div>
+        <div class="cards-grid" style="grid-template-columns:repeat(auto-fill,minmax(300px,1fr))">
+          <a href="sci_101.html" class="preview-card">
+              <div class="avatar"><img src="https://colab.ws/storage/images/aUXWSgakwxHzPM1gEg2bwPppmtZ1eaCsuLkuscQx.jpg" alt="Вошкин Андрей Алексеевич" loading="lazy"></div>
+              <div style="min-width:0">
+                <h3>Вошкин Андрей Алексеевич</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem">Заведующий лабораторией</div>
+                <div class="meta">Глубокие эвтектические растворители, Жидкостная экстракция, Ионные жидкости</div>
+                <div class="meta" style="margin-top:0.25rem">📚 61 публ.</div>
+              </div>
+            </a>
+<a href="sci_102.html" class="preview-card">
+              <div class="avatar"><img src="https://colab.ws/storage/images/7hIpbbQtAO589QZXPeV3CD9zoNjP8Bj2LIVhmyMk.jpg" alt="Юлия Заходяева" loading="lazy"></div>
+              <div style="min-width:0">
+                <h3>Юлия Заходяева</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem">Старший научный сотрудник</div>
+                <div class="meta">Глубокие эвтектические растворители, Жидкостная экстракция, Ионные жидкости</div>
+                <div class="meta" style="margin-top:0.25rem">📚 45 публ.</div>
+              </div>
+            </a>
+<a href="sci_103.html" class="preview-card">
+              <div class="avatar"><img src="https://colab.ws/storage/images/RYSb9tDw3joLkTIBcE9SHBBu6VWnoxNPMjvR0Nlz.png" alt="Андрей Полковниченко" loading="lazy"></div>
+              <div style="min-width:0">
+                <h3>Андрей Полковниченко</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem">Научный сотрудник</div>
+                <div class="meta">Химическая технология, Distillation, Глубокие эвтектические растворители</div>
+                <div class="meta" style="margin-top:0.25rem">📚 18 публ.</div>
+              </div>
+            </a>
+<a href="sci_104.html" class="preview-card">
+              <div class="avatar"><div class="initials">ЕЛ</div></div>
+              <div style="min-width:0">
+                <h3>Егор Лупачев</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem">Научный сотрудник</div>
+                <div class="meta">Distillation, Химическая технология, Глубокие эвтектические растворители</div>
+                <div class="meta" style="margin-top:0.25rem">📚 14 публ.</div>
+              </div>
+            </a>
+<a href="sci_105.html" class="preview-card">
+              <div class="avatar"><img src="https://colab.ws/storage/images/64ubw9Oqsl7Co0Fsmrh5K6116zbTY8JNSACNOGVu.jpg" alt="Инна Зиновьева" loading="lazy"></div>
+              <div style="min-width:0">
+                <h3>Инна Зиновьева</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem">Научный сотрудник</div>
+                <div class="meta">Глубокие эвтектические растворители, Жидкостная экстракция, Зеленая химия</div>
+                <div class="meta" style="margin-top:0.25rem">📚 17 публ.</div>
+              </div>
+            </a>
+<a href="sci_106.html" class="preview-card">
+              <div class="avatar"><div class="initials">НМ</div></div>
+              <div style="min-width:0">
+                <h3>Никита Милевский</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem">Младший научный сотрудник</div>
+                <div class="meta">Глубокие эвтектические растворители, Жидкостная экстракция, Ионные жидкости</div>
+                <div class="meta" style="margin-top:0.25rem">📚 12 публ.</div>
+              </div>
+            </a>
+<a href="sci_107.html" class="preview-card">
+              <div class="avatar"><div class="initials">АК</div></div>
+              <div style="min-width:0">
+                <h3>Алексей Кисель</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem">Младший научный сотрудник</div>
+                <div class="meta">Distillation, Химическая технология, Глубокие эвтектические растворители</div>
+                <div class="meta" style="margin-top:0.25rem">📚 5 публ.</div>
+              </div>
+            </a>
+<a href="sci_108.html" class="preview-card">
+              <div class="avatar"><div class="initials">АМ</div></div>
+              <div style="min-width:0">
+                <h3>Арина Милевская</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem">Младший научный сотрудник</div>
+                <div class="meta">Глубокие эвтектические растворители, Жидкостная экстракция, Ионные жидкости</div>
+                <div class="meta" style="margin-top:0.25rem">📚 5 публ.</div>
+              </div>
+            </a>
+<a href="sci_109.html" class="preview-card">
+              <div class="avatar"><div class="initials">ДЛ</div></div>
+              <div style="min-width:0">
+                <h3>Дмитрий Лобович</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem">Младший научный сотрудник</div>
+                <div class="meta">Жидкостная экстракция, Глубокие эвтектические растворители, Ионные жидкости</div>
+                <div class="meta" style="margin-top:0.25rem">📚 2 публ.</div>
+              </div>
+            </a>
+
+        </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

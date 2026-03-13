@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | ОИВТ РАН</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-oivt.html">ОИВТ РАН</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">плазменные технологии</span> <span class="tag">фундаментальные принципы</span> <span class="tag">плазмохимическая конверсия</span> <span class="tag">математическое моделирование</span> <span class="tag">кинетика</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Применение плазмы</span></div>
+          <h1 style="font-size:1.5rem">ОТЧЁТ О НАУЧНО-ИССЛЕДОВАТЕЛЬСКОЙ РАБОТЕ по теме: &quot;Фундаментальные принципы холодной многофазной неравновесной плазмы и технологии на на основе&quot; а рамках Гранта Российского научного фонда № 21-79-30062 (заключительный)</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">129,500 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225012201884-1</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2021-03-19 — 2024-12-15</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№1</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">10</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">РНФ</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>Российский научный фонд</div>
+                </div><div class="metric-box" style="text-align:left">
+                  <div class="label">Исполнитель</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">ОИВТ РАН</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>Разработан прототип экспериментального комплекса по исследованию комбинированных (гибридных) разрядов на основе электронно-пучковой плазмы, создана вакуумная система для установки с выводом пучка в камеру для исследования физико-химических процессов в плазме.
+Исследован новый тип разряда: спрей-разряда. Получены детальные характеристики распыла (средний диаметр капель, диаметр по Заутеру, распределения компонент вектора скорости по диаметрам). Показано, что спрей-разряд позволяет проводить генерацию стерилизующих газов (озон, соединения азота), а также потенциально других соединений, вид которых определяется составом жидкости распыла, что может иметь ряд технологических применений.
+Разработан численный алгоритм позволяющий прогнозировать выход вещества на электроде в ходе приэлектродных стадийных реакций в гетерогенных процессах, находить скорости констант приэлектродных процессов в соответствие с заданными экспериментальными данными по выходу, а так же рассчитывать концентрации веществ, участвующих в приэлектродных процессах.
+Проведено исследование деструкции органических соединений под действием разряда с жидким электролитным катодом на примере водных растворов изопропилового спирта и этиленгликоля. Показано, что при обработке раствора органической примеси разрядом с жидким катодом зависимости её концентрации от времени при всех разрядных промежутках хорошо аппроксимируются экспоненциальными функциями. Показано, что скорость деструкции органического соединения в разряде с жидким катодом растёт с увеличинием разрядного промежутка.
+Разработан прототип модульного высокоуровневого кода для расчёта кинетики низкотемпературной плазмы методами PiC+MCC (Particles in Cell + Monte-Carlo Collisions) c базовой поддержкой одно-, двух- и трёхмерных задач и настраиваемым набором столкновительных процессов.
+Реализован успешный расчет сопряженного теплообмена на поверхности раздела “газ – твердое тело”, “жидкость – твердое тело”, выполнен учет зависимости теплофизических подвижной среды от температуры; показана устойчивая работа граничных условий фазового перехода для определения движения межфазной границы; успешно применен механизм деформируемой сетки для смещения узлов методом деформации, а также полное перестроение сетки при ухудшении качества её элементов; достигнута устойчивость расчета при достижении больших температурных градиентов (до 1е7 К/м).
+Разработана физико-математическая модель развития электрогидродинамической неустойчивости на границе раздела двух жидкостей с разным значением диэлектрической проницаемости помещенных в неоднородное электрическое поле, включающая в себя уравнение движения вязкой жидкости (уравнение Навье-Стокса), уравнение непрерывности и уравнение Пуассона для расчета распределения напряженности электрического поля. На основе разработанной физико-математической модели методом прямого численного моделирования (DNS-Multiphase) в двумерной постановке (2D) выполнены расчеты по развитию гидродинамического течения двух несмешивающихся жидкостей. 
+Разработан проточный плазмохимический реактор капиллярного типа на основе емкостного ВЧ разряда, позволяющий интенсифицировать редокс-процессы и проводить контролируемые химические превращения без преобладания окислительной деструкции органических веществ. Показана возможность проведения реакции электрофильного ароматического замещения в мягких условиях и в отсутствии катализа серной кислотой, а также возможность селективного окисления бензильного атома углерода с образованием альдегидов и карбоновых кислот.
+Исследована и доказана применимость пучково-плазменных реакторов для осаждения покрытий из неорганических и органических синтетических полимеров на металлических и неметаллических подложках, в том числе имеющих сложную пространственную геометрию. Осаждение полимерных покрытий проводили в ЭПП гелия или воздуха, осаждение покрытий из углерода производилось в атмосфере инертных газов (He, Ar) и азота.
+Разработан способ обработки жидкости в виде распыляемой струи помощью гибридной электронно-пучковой и ВЧ-плазмы для целей плазмохимической конверсии. Достигнута конверсия водных растворов перекиси водорода и этилового спирта в диолы, альдегиды, сложные и простые эфиры, метанол, а также в продукты присоединения метильных групп и изомеризации углеродного скелета.
+Для задач плазмохимической конверсии под действием электронного пучка проведены 0D расчеты нестационарной неравновесной функции распределения электронов проведены для газовой смеси при нормальных условиях - давлении 1 атм и температуре 290 К в метано-воздушной смеси. Основной энерговклад деградационного спектра электронов в газе приходится на процессы ионизации молекул (~50%) и возбуждение их внутренних уровней – электронных, колебательных и вращательных (~48%), а роль упругих столкновений и прилипания электронов к молекулам  не существенна.
+С помощью собственных 0D кодов, основанных на двух принципиально разных подходах решения нестационарного кинетического уравнения Больцмана, а именно на стохастическом (Монте-Карло) и детерминистическом (двучленное приближение, полученное в результате разложения по полиномам Лежандра), найдена функция распределения энергии электронов в локальном приближении (пространственно-однородный случай) в скрещенных электрических и магнитных полях в смесях с разным соотношением воды (H2O) и метана (CH4). 
+Проведены расчётно-теореретические исследования распространения электронного пучка в неоднорождном поле плотности фоновых компонент. В результате были получены 2D-axial решения (пространственные распределения концентрации электронов, частот реакций и эФРЭ) при варьировании энергии пучка, важные для организации плазмохимических процессов. 
+Для теоретического обоснования использования плазмохимической технологии синтеза метанола и углеводородов строения С5-С7 из природного и попутного нефтяного газа были собраны базы данных по кинетическим процессам в чистом метане и его смесей с окислителями – кислородом и углекислым газом. Показано, что для умеренных значений мощности имеет место линейная зависимость выхода метанола от энерговклада в разряд. Исследование конверсии метана в смесях с разным содержанием окислителя показало, что выход метанола падает с увеличением мольной доли кислорода или углекислого газа. В исследуемом диапазоне состава смесей метана с кислородом наработка метанола была наибольшей в смеси CH4/O2=95/5. 
+В результате выполнения проекта сформулированы перспективные направления использования разработанных плазменных процессов.</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (22)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Бабаева Наталья Юрьевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Кашапов Наиль Фаикович</strong> <span style="color:#71717a;font-size:0.8rem">Доктор технических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Арефьев Константин Юрьевич</strong> <span style="color:#71717a;font-size:0.8rem">Доктор технических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Тюфтяев Александр Семенович</strong> <span style="color:#71717a;font-size:0.8rem">Доктор технических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Чистолинов Андрей Владимирович</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Гаджиев Махач Хайрудинович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Кашапов Ленар Наилевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат технических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Савельев Андрей Сергеевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Антипов Сергей Николаевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Кашапов Рамиль Наилевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат технических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Коновалов Владимир Петрович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Александров Николай Леонидович</strong> <span style="color:#71717a;font-size:0.8rem">Доктор физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Чебакова Виолетта Юрьевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Гайсин Алмаз Фивзатович</strong> <span style="color:#71717a;font-size:0.8rem">Доктор технических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Василяк Леонид Михайлович</strong> <span style="color:#71717a;font-size:0.8rem">Доктор физико-математических наук</span></li></ul>
+              <p style='color:#52525b;font-size:0.8rem;margin-top:0.5rem'>...и ещё 7</p>
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

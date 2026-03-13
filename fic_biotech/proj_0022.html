@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | ФИЦ Биотехнологии РАН</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-fic_biotech.html">ФИЦ Биотехнологии РАН</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">ГЕНЫ  АНТИБИОТИКОРЕЗИСТЕНТНОСТИ</span> <span class="tag">СТОЧНЫЕ  ВОДЫ</span> <span class="tag">МЕТАГЕНОМИКА</span> <span class="tag">МИКРОБИОМ</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Молекулярная генетика</span></div>
+          <h1 style="font-size:1.5rem">Метагеномный анализ распространения генетических детерминант антибиотикорезистентности в микробных сообществах сточных вод города Москвы</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">3,000 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225031113048-4</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2022-07-27 — 2024-06-30</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№1</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">2</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">РНФ</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>Российский научный фонд</div>
+                </div><div class="metric-box" style="text-align:left">
+                  <div class="label">Исполнитель</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">ФИЦ БИОТЕХНОЛОГИИ РАН</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>Плохо контролируемое и нерациональное использование антибиотиков в медицине, ветеринарии и сельском хозяйстве приводит к селекции и распространению бактериальных штаммов, резистентных к антибиотикам, в том числе обладающих множественной лекарственной устойчивостью. Большинство используемых антибиотиков в конечном итоге попадают в сточные воды. Поэтому станции по очистке сточных вод являются одним из основных источников как устойчивых к антибиотикам бактерий, так и генов устойчивости к антибиотикам (резистом), попадающих затем в окружающую среду. Задачей проекта является изучение структуры и разнообразия резистома сточных вод очистных сооружений города Москвы методами метагеномики. Московские станции очистки сточных вод, являвшиеся одними из крупнейших в мире, ежедневно очищают около 6 млн. куб. м. воды. Очищенные сточные воды сбрасываются в реку Москва. С учетом их масштаба, очистные сооружения Москвы могут быть одним из крупнейших «распространителей» детерминант резистентности к антибиотикам в стране, однако, их резистом до настоящего времени практически не исследован. 
+	В ходе выполнения проекта отобраны образцы активного ила двух установок по очистке сточных вод  Москвы, использующих разные технологии очистки сточных вод, городской сточной воды, поступающей на очистку, и воды, прошедшей биологическую очистку на двух установках. Определены физико-химические характеристики сточных вод до и после очистки, собраны образцы биомассы микроорганизмов и выделены препараты метагеномной ДНК. Анализ составов микробных сообществ воды и активных илов показал, что в микробиоме поступающей на очистку воды преобладают фекальные загрязнители. Состав микробиома активных илов сильно отличается от микробиома поступающей на очистку воды и  в них в больших количествах были найдены бактерии, участвующие в удалении азота и фосфора, многочисленность которых согласуется с высокой эффективностью удаления этих контаминантов. Состав микробных сообществ очищенной воды был близок к активному илу. Сравнительный анализ составов микробных сообществ сточных вод показал, что фекальные загрязнители и потенциальные патогены удаляются при очистке с высокой эффективностью, их доли в микробиоме воды после биологической очистки снижаются в 50-100 раз. 
+	Проведено секвенирование метагеномов городских сточных вод поступающих на очистку, активных илов двух крупных очистных установок, использующих разные технологии очистки сточных вод, и сточных вод, прошедших на них очистку. Охарактеризовано разнообразие генов устойчивости к антибиотикам, их принадлежность к различным таксономическим линиями микроорганизмов, характер локализации генов резистентности, а также выявлены генетические детерминанты множественной лекарственной устойчивости и оценено влияние используемых технологий очистки сточных вод на распространение генов антибиотикорезистентности. В метагеноме городских сточных вод, поступающих на очистку, выявлено 544  гена резистентности к антибиотикам (ARG). Среди наиболее многочисленных ARG были бета-лактамазы классов А, С, D и металло-бета-лактамазы, рифампин-АДФ-рибозилтрансфераза, Erm 23S рибосомальная РНК-метилтрансфераза, аминогликозид нуклеотидил-, ацетил- и фосфо-трансферазы. В общей сложности на долю резистома приходилось около 0.05% метагенома неочищенных сточных вод. Примерно такие же значения характерны для крупных городов в европейских странах. После очистки доля резистома в метагеноме воды снижается, но всего в 2-4 раза. Но поскольку общая концентрация микроорганизмов в очищенной воде примерно на 2 порядка ниже, чем до очистки, общее содержание генов резистентности в воде снижается существенно. 	В поступающих на очистку городских сточных водах различные семейства генов представлены наиболее «равномерно» и доля ни одного из ARG могут придавать устойчивость к антисептикам, сульфонамидам, бета-лактамам, аминогликозидам и тетрациклинам. Такой состав резистома в целом отражает структуру использования антибиотиков в сфере здравоохранения в России и по ряду позиций отличается от резистома сточных вод крупных городов за рубежом. В микробиоме поступающей на очистку воды выявлено больше мультирезистентных штаммов бактерий, чем в активном иле и очищенной воде. Некоторые из этих бактерий представляют патогены человека. 
+	В метагеноме поступающих на очистку сточных вод выявлено 255 контигов, содержащих гены резистентности и гомологичных  плазмидам. Почти половина имела гомологию и с последовательностями других мобильных элементов (интегроны, транспозоны и др.). «Хозяевами» плазмид являются Escherichia coli, Klebsiella pneumoniae, Klebsiella oxytoca, Aeromonas sp., Salmonella enterica и др. Эти данные указывают на ключевую роль плазмид и других мобильных элементов в распространении генов антибиотикорезистентности в сточных водах. Сравнение резистомов сточных вод Москвы и крупных городов других стран мира показало, что общее содержание и состав резистомов в сточных водах зависят от региональных социальных, медицинских и экологических факторов.</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (1)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Бегматов Шахжахон Абдуллаевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li></ul>
+              
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

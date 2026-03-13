@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | НИЯУ МИФИ</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-mifi.html">НИЯУ МИФИ</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">СИЛОВАЯ ЭЛЕКТРОНИКА, СВЕРХВЫСОКАЯ ЧАСТОТА, ИСТОЧНИК ВТОРИЧНОГО ПИТАНИЯ, ТРАНЗИСТОР С ВЫСОКОЙ ПОДВИЖНОСТЬЮ ЭЛЕКТРОНОВ, НИТРИД ГАЛЛИЯ</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Дискретные полупроводниковые приборы</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Проектирование и конструирование радиодеталей и компонентов</span></div>
+          <h1 style="font-size:1.5rem">ОТЧЕТ О НАУЧНО-ИССЛЕДОВАТЕЛЬСКОЙ РАБОТЕ по теме: Лаборатория «Технологии проектирования нитридгаллиевой ЭКБ и функциональных схем»
+Код (шифр) научной темы «FSWU-2023-0088»
+Этап 2
+(заключительный)</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">17,295 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225021209907-1</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2024-01-01 — 2024-12-31</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№2</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">6</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">МИНОБРНАУКИ РОССИИ</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>МИНИСТЕРСТВО НАУКИ И ВЫСШЕГО ОБРАЗОВАНИЯ РОССИЙСКОЙ ФЕДЕРАЦИИ</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>Объектом исследования являются транзисторы с высокой подвижнотью двумерного электронного газа на основе гетероструктур AIIIN, предназначенные для использования в преобразовательной технике, включая устройства питания мощных лазеров, а также в приемо-передающих модулях для телекоммуникационных систем поколения 5G+.
+Цель выполнения работ – разработка технологических основ формирования компонентной базы на основе гетероструктур AIIIN для использования в преобразовательной технике, включая устройства питания мощных лазеров, а также в приемо-передающих модулях для телекоммуникационных систем поколения 5G+. Привлечение к научно-техническим работам студентов и аспирантов НИЯУ МИФИ и их профессиональная подготовка в области проектирования ЭКБ на основе новых широкозонных материалов и сложнофункциональных блоков для дальнейшей работы на промышленных и научных предприятиях.
+В ходе выполнения работ было установлено, что:
+- заметный вклад в рассеяние носителей заряда в диапазоне ns, характерном для гетероструктур AlN/GaN HEMT (ns &gt; 1∙1013 см-2) вносит шероховатость гетерограницы. Причем влияние шероховатости на подвижность оказывается существенно выше, чем в классических AlGaN/GaN гетерокомпозициях с ns в диапазоне 5∙1012 ÷ 1∙1013. Данный факт следует учитывать при оптимизации процесса выращивания AlN/GaN ГС для HEMT технологии;
+- увеличение напряжения сток-исток полевого транзистора на основе AIIIN HEMT достигается за счет оптимизации межэлектродного расстояния, причем для достижения максимального рабочего напряжеия более 600 В необходимо обесечить расстояние между контактом затвора и стока не менее 25 мкм и длину полевой платы «field-plate» от 10 до 14 мкм для гетерероструктуры со спейсерным слоем AlN толщиной не более 1 нм;
+- тестовые СВЧ транзисторы с затвором Шоттки (Lg  150 нм) имеют максимальный ток насыщения стока до 1,4 А/мм (при UGS = + 2,5 В), крутизну характеристики GM до 330 мСм/мм и сопротивление в открытом состоянии до Ron = 2,7 Ом*мм. Предельные частоты усиления по току ft и по мощности fmax достигают 50 и 80 ГГц, соответственно;
+- наилучшими характеристиками стабилизатора тока на основе GaN для линейки лазерных диодов с потребляемой мощностью до 1 кВт с точки зрения снижения пульсаций обладает пассивный компенсатор пульсаций. Также рассматривались методы устранения выбросов тока на нагрузке в рассмотренных преобразователях. Наиболее оптимальным с точки зрения снижения потерь способом оказалось использование функции «мягкого старта» ШИМ-контроллера. Недостатком же этого способа является удлинение фронта токового импульса. По этой причине, выбор в пользу той или иной схемы источника питания зависит от того, под какой сценарий использования он рассчитывается.
+На основе проведенных исследований подана заявка на получение патента на изобретение по теме «Способ формирования транзистора на основе нитридов III группы» (№2024139630 от 26.12.2024).
+Научная новизна работ заключается в создании комплексного физико-технологического подхода к формированию силовых и мощных СВЧ транзисторов, включающего в себя экспериментально исследованную конструкцию гетероструктуры с заданными электрофизическими характеристиками и оптимизированную численными методами топологию приборов.
+Эффективность использования нитригаллиевых транзисторов в силовой и преобразовательной технике заключается в снижении потерь при переключении, повышению удельной мощности устройства и снижению массогабаритных характеристик.
+Прогнозное предположение о развитии объекта исследования. На основе проведенных исследований могут быть реализованы опытно-технологические и опытно-конструкторские работы, направленные на организацию производства транзисторов на основе нитридов III группы.
+Степень внедрения – результаты НИР могут быть использованы в устройствах питания мощных лазеров после проведения соответствующих ОКР, в том числе в ООО «НПП «Инжект».</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (28)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Вергелес Семен Сергеевич</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Гришаков Константин Сергеевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Скрипник Александр Павлович</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Султанов Азрет Оюсович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Горелов Андрей Алексеевич</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Школьников Эдуард Яковлевич</strong> <span style="color:#71717a;font-size:0.8rem">Доктор физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Тертышная Юлия Андреевна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Калошин Михаил Михайлович</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Маргушин Роман Евгеньевич</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Номоев Сергей Андреевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат технических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Громыко Давид Вадимович</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Феклистов Дмитрий Юрьевич</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Степанов Дмитрий Сергеевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат технических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Косогорова Татьяна Александровна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Горбунов Михаил Анатольевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат физико-математических наук</span></li></ul>
+              <p style='color:#52525b;font-size:0.8rem;margin-top:0.5rem'>...и ещё 13</p>
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

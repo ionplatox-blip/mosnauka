@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | ИНХС РАН</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-inhs.html">ИНХС РАН</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">полимерные мембраны</span> <span class="tag">норборнен</span> <span class="tag">оптически-активные мономеры</span> <span class="tag">разделение энантиомеров</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Синтез высокомолекулярных соединений. Физико-химические основы синтеза высокомолекулярных соединений</span></div>
+          <h1 style="font-size:1.5rem">Функциональные полимерные мембранные материалы на основе оптически-активных замещенных норборненов для разделения энантиомеров. Отчет по этапу 2 (20-13-00428-П)</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">7,000 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225022612059-4</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2024-01-01 — 2024-12-31</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№2</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">РНФ</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>Российский научный фонд</div>
+                </div><div class="metric-box" style="text-align:left">
+                  <div class="label">Исполнитель</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">ИНХС РАН</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>В рамках реализации Проекта в 2024 году систематически изучена аддитивная гомо- и сополимеризация мономеров норборненового типа, полученных из различных диаминов, в том числе оптически-активного 1R,3S-изофорондиамина (IPDA), и ангидрида цис-5-норборнен-экзо-2,3-дикарбоновой кислоты, в присутствии одно- и двухкомпонентных катализаторов на основе Pd-комплексов с N-гетероциклическим карбеновым лигандом ((NHC)Pd-комплексы). Сополимеризация бифункциональных мономеров исследована на примере бинарной сополимеризации с оптически-активным мономером, содержащим фрагмента пинана. Оптимизированы условия полимеризации данных бифункциональных мономеров, содержащих имидные фрагменты, что позволило получить целевые гомо- и сополимеры с выходами до 75%. Полученные полимеры являются стеклообразными и аморфными. Установлено существенное влияние природы спейсера между норборнановыми фрагментами на сорбционные свойства синтезированных аддитивных полимеров. Наличие гибкого, олигометиленового мостика приводит к образованию непористой структуры. В свою очередь, введение циклоалифатического, более жесткого мостика, открывает возможности для получения полимеров с относительно высокой сорбционной емкостью по СО2 и одновременно низкой сорбцией азота. Например, сорбция аддитивного гомополимера на основе мономера, полученного из IPDA, превышает 13 см3/г.
+Исследована возможность синтеза (NHC)Pd-комплексов с симметричным оптически-активным NHC-лигандом на основе (S)-(-)-1-(4-метилфенил)этиламина. В качестве предшественников NHC-лиганда выбраны и синтезированы соответствующие имидазолиниевые соли с выходами 83-93%. Из синтезированных солей получено два новых Pd-комплекса. Один из данных палладиевых комплексов получен по реакции имидазолиниевой соли с Pd(OAc)2 в присутствии tBuOK и NaI. В результате выделен комплекс с двумя NHC-лигандами (Pd1, (NHC)2PdI2) с выходом 73%. Изучение каталитической активности данного комплекса в реакции аддитивной полимеризации (АП) модельных мономеров (норборнена, 5-этилиден-2-норборнена (ЭНБ)) обнаружило его низкую активность. Учитывая невысокую активность комплекса Pd1 и недостаточную селективность процесса АП в его присутствии, был синтезирован родственный Pd-комплекс с этим же карбеновым лигандом, но содержащим аллильный лиганд (Pd2), с 45% выходом. При активации Na+[B(3,5-(CF3)2C6H3)4]-, активность комплекса Pd2 оказалась значительно выше активности комплекса Pd1 в АП. Данный катализатор позволил получить поли(ЭНБ) с высокими молекулярными массами и узким молекулярно-массовым распределением. АП, катализируемая комплексом Pd2, протекает селективно, на воздухе и не требует инертной атмосферы. В то же время, АП надимида на основе 1-фенилэтиламина в присутствии комплекса Pd2 привела к образованию олигомерных продуктов. Варьирование условий полимеризации не привело к желаемому образованию высокомолекулярных продуктов. Таким образом, на основе оптически-активного NHC-лиганда получены новые Pd-комплексы, которые являются активными катализаторами АП норборнена и некоторых его производных.
+С целью синтеза оптически-активных полиимидов (ПИ) на основе диаминов и диангидридов впервые исследована поликонденсация диангидрида норборнан-2,3,5,6-тетракарбоновой кислоты (NBDA) с IPDA. ПИ, растворимый в хлороформе, получен одностадийной каталитической полициклоконденсацией NBDA с IPDA в расплаве бензойной кислоты. По второму способу, получение ПИ проводили двухстадийным методом – низкотемпературной поликонденсацией силилированного IPDA с NBDA в амидном растворителе с образованием растворимого форполимера с последующей его имидизацией в твердой фазе. Оптимизирован режим термической обработки полученного форполимера, позволяющий получать полимер с составом, соответствующим целевому ПИ.
+Впервые исследованы газотранспортные свойства полимеров, объединяющих в своей структуре фрагменты как норборнена, так и терпенов. Метатезисный полинорборнен с фрагментами пинана в имидной группе (PNBpin) является менее проницаемым, чем метатезисный полинорборнен (MPNB) и по уровню газопроницаемости сопоставим с ацетатом целлюлозы (CA). Таким образом, хотя принято считать, что введение объемных и жестких групп в боковые цепи полимеров приводит к увеличению газопроницаемости, в случае одновременного наличия полярных групп в боковых цепях, эффект от введения объемного заместителя может быть нивелирован. В случае изомерного полимера по отношению к PNBpin (аддитивного полимера PM4) или при введении жестких сшивок poly(NBpin-co-NBI) (10 масс.% сшивающего агента) наблюдается рост газопроницаемости. Идеальные селективности разделения СО2-содержащих пар газов для данных полимеров заметно превышают соответствующие значения для МPNB и в некоторых случаях для CA. В частности, для PNBpin и PM4 получены высокие значения селективности по паре CO2/N2 (более 25), что позволяет рассматривать их в качестве перспективных мембранных материалов для дальнейших, более детальных исследований.
+Одной из ключевых задач Проекта являлось исследование мембранного разделения энантиомеров с помощью синтезированных в Проекте полинорборненов, содержащих имидные фрагменты. В качестве объектов для изучения проницаемости и оценки возможности разделения энантиомеров выбраны 1-фенилэтанол (ФЭ) и миндальная кислота (МК). Проницаемость данных соединений исследована в трех средах – в метаноле, гексане, а также в смеси метанол/ацетон.
+Исследование проницаемости ФЭ и МК через мембраны на основе синтезированных сополимеров позволило установить существенное влияние природы сшивающего агента, пенетранта и растворителя на проницаемость. Максимальная проницаемость достигается в случае введения бифункционального мономера с длинным, гибким спейсером или с более коротким жестки спейсером в углеводородном растворителе (гексане). Например, поток ФЭ через пленки аддитивных полинорборненов в гексане был более, чем на порядок выше, чем поток ФЭ в среде метанола. При разделении МК сохранялись данные закономерности. Проницаемость аддитивных пленок в целом выше, чем их метатезисных аналогов.
+Изучена эффективность разделения энантиомеров ФЭ и МК с помощью мембран на основе разработанных метатезисных и аддитивных полимеров. Метатезисные полимеры оказались малоэффективны для разделения как ФЭ, так и МК. Аддитивные полимеры в случае разделения ФЭ также были малоэффективными – энантиомерный избыток не превышал 10-40%. Однако при разделении МК аддитивными полимерами была достигнута очень высокая эффективность разделения. Например, в случае гомополимера PM4 был получен энантиомерный избыток 99-100%.
+Синтезированные в работе предшественники лигандов, комплексы на их основе, а также полимеры комплексно проанализированы с помощью физико-химических методов анализа: ЯМР-, ИК-, КР-спектроскопии, ГПХ, ДСК, ТГА, РФА, поляриметрического метода анализа, и др.</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (8)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Хрычикова Анна Петровна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Лежнин Петр Павлович</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Бермешев Максим Владимирович</strong> <span style="color:#71717a;font-size:0.8rem">Доктор химических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Карпов Глеб Олегович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат химических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Андреянов Федор Александрович</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Алентьев Дмитрий Александрович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат химических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Жигарев Всеволод Александрович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат химических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Садовников Кирилл Сергеевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат химических наук</span></li></ul>
+              
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

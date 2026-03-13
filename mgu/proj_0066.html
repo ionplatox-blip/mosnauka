@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | МГУ им. М.В. Ломоносова</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-mgu.html">МГУ им. М.В. Ломоносова</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">вакцины</span> <span class="tag">вирус шарки сливы</span> <span class="tag">универсальные платформы-адъюванты</span> <span class="tag">вирусы растений</span> <span class="tag">вирусные и клеточные белки при вирусной инфекции</span> <span class="tag">вирусоподобные частицы</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Молекулярная биология вирусов</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Морфология и физиология вирусов</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Репликация вирусов</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Вирусные препараты</span></div>
+          <h1 style="font-size:1.5rem">Вирусы растений и искусственные вирусоподобные частицы: изучение биологических и структурных особенностей и использование в биотехнологии</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">33,048 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225012402597-7</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2024-01-01 — 2024-12-31</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№4</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">10</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">Правительство России</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>Правительство Российской Федерации</div>
+                </div><div class="metric-box" style="text-align:left">
+                  <div class="label">Исполнитель</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">МОСКОВСКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ ИМЕНИ М.В.ЛОМОНОСОВА, МГУ ИМЕНИ М.В.ЛОМОНОСОВА, МОСКОВСКИЙ УНИВЕРСИТЕТ ИЛИ МГУ</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>1.	Получение моделей кандидатных вакцин на основе вирионов фитовирусов и вирусоподобных частиц, полученных на их основе.
+
+1.1.	Изучение возможности использования ранее полученной модели кандидатной вакцины против SARS-CoV для защиты от новых циркулирующих вариантов SARS-CoV.   
+
+Продолжено изучение вакцины-кандидата, полученного ранее на основе трех рекомбинантных антигенов (3АГ) и сферически модифицированных частиц (СЧ) вируса табачной мозаики. Было четко продемонстрировано, что три различных мышиных сыворотки, специфичные к каждому из трех рекомбинантных антигенов -  Co1, PE или CoF, спроектированных на основании данных об первом, уханьском варианте SARS-CoV-2, взаимодействуют с S-белком гетерологичного омикронного варианта SARS-CoV-2. Показано, что композиция из  3АГ со всеми используемыми адъювантными препаратами (адъювантом Фрейнда, Al(OH)3 и СЧ) вызывают образование IgG к омикронному S-белку. 
+
+1.2.	Получение и характеристика рекомбинантного антигена вируса болезни Ньюкасла для создания прототипа кандидатной ветеринарной вакцины.
+
+Продолжено изучение иммунологических свойств полученного ранее рекомбинантного белка Сastle1, содержащего эпитопы белка HN (Hemagglutinin-neuraminidase), актуальные для циркулирующих высоко патогенных штаммов вируса болезни Ньюкасла (NDV). Показана относительная универсальность спроектированного нами антигена Castle1: мышиные антитела к этому антигену узнают, как минимум, 2 различных изолята NDV, а куриные антитела к двум различным изолятам NDV узнают антиген Castle1.  
+
+1.3.	Изучение структурно модифицированных частиц (СЧ), полученных  на основе вируса мозаики альтернантеры (ВМальт).
+
+Исследовались условия образования, свойства и потенциал практического применения структурно модифицированных частиц (СЧ), полученных из растительного вируса мозаики альтернантеры (ВМальт). Определены количественные параметры спиралевидной укладки белка в цельных вирионах ВМальт и в нитевидных вирусоподобных частицах (ВПЧ) ВМальт, построены 3D-реконструкции для вирионов и ВПЧ ВМАльт, продемонстрировано, что укладка белка оболочки (БО) в составе ВПЧ отличается от укладки БО в составе вириона. Определены условия образования сферических частиц (СЧ) из нитевидных вирионов и нитевидных ВПЧ ВМальт и определены закономерности термической перестройки.  Продемонстрирована стабильность вирионов и ВПЧ ВМАльт в широком диапазоне условий, в том числе в физиологических условиях и при лиофилизации. Показано, что СЧ ВМальт, способны адсорбировать целевые белки за счет нековалентных взаимодействий в условиях in vitro, а также могут быть использованы для химической конъюгации целевых белков, т.е. способны служить в качестве платформы-носителя для потенциальной иммунизации или таргетной доставки для целевых белков. Впервые продемонстрирована специфическая адсорбция и возможность проникновения СЧ  ВМАльт в культуру опухолевых клеток.
+
+2.	Получение новых результатов о структурных и функциональных свойствах белков ряда фитовирусов для выявления их роли в патогенезе и взаимодействии с клеточными белками хозяина.
+
+2.1.	Влияние экспрессии в листьях растений Nicotiana benthamiana хеликазного домена РНК-зависимой РНК-полимеразы вируса табачной мозаики (ВТМ) и других белков растительного и животного происхождения на развитие программируемой клеточной смерти (ПКС). 
+
+Гиперчувствительный ответ растения на вирусную инфекцию выражается в образовании локальных некротических повреждений, образование которых включает программируемую клеточную смерть. На не содержащих связанного с гиперчувствительным ответом на вирусную инфекцию гена N  растениях Nicotiana benthamiana показано, что экспрессия растительного гена вакуолярной протеиназы не вызывает образования некрозов на инокулированных листьях, экспрессия генов белка вируса табачной мозаики р50 и животного проапоптотического гена Bax вызывают образование некрозов, а экспрессия антиапоптотического животного гена Bcl-xl подавляет образование некрозов как при совместной экспрессии с геном Bax, так и при совместной экспрессии с геном белка вируса табачной мозаики р50. Ключевым отличием N. benthamiana от ранее использованного содержащего ген N Nicotiana tabacum был эффект подавления «растительного» p50 «животным» ингибитором Bcl-xl. Пути развития программируемой клеточной смерти в данных видах растений обсуждаются.
+
+2.2.	Исследование вирусных векторов на основе российского изолята нового кукумовируса – вируса мозаики лиатриса. 
+
+Ранее на основе к-ДНК копии вируса табачной мозаики (ВТМ) был создан вектор, в котором ген белка оболочки ВТМ был заменен на ген белка оболочки Московского изолята нового икосаэдрического РНК-содержащего кукумовируса – вируса мягкой крапчатой мозаики лиатриса (Gayfeather mild mottle mosaic virus, GfMMV-Mo), выделенного из растений Arctium lappa и подробно охарактеризованного в нашей лаборатории. В отчетный период показано, что этот вектор способен распространяться по растению и вызывать образование в листьях икосаэдрических частиц - как инфекционных, так и рыхлых, по-видимому, не содержащих РНК - потенциальных «наноконтейнеров» для биотехнологического применения. Показано, что распределение локусов инфекции после дальнего транспорта рекомбинантного вируса не отличается от распределения GfMMV-Mo в верхних листьях, но уровень накопления вируса дикого типа в растении выше, чем при распространении и экспрессии рекомбинантного вектора. Для сравнения эффективности накопления частиц-«наноконтейнеров» в растительной и бактериальной системах оптимизирован экспрессионный вектор для образования подобных «нанокотейнеров» в бактериях.
+              
+3.		Получение новых данных о распространенности, круге хозяев, генетическом разнообразии и молекулярной гетерогенности вирусов плодовых и цветочных культур, циркулирующих на территории РФ.
+
+На крапиве двудомной (Urtica dioica L., семейство Urticaceae) в Главном ботаническом саду имени Н.В. Цицина РАН (г. Москва) (ГБС), найден новый баднавирус Badnavirus urticae (nettle badnavirus 1, NBV1), новый представитель рода  Badnavirus в семействе Caulimoviridae. Методом высокопроизводительного секвенирования (NTS) секвенирован его полный геном, определены систематическое положение и  молекулярно-биологические свойства. Последовательность полного генома депонирована в GenBank. 
+Впервые методом NTS секвенирован полный геном вируса мозаики спирантеса (водной орхидеи)  (spiranthes mosaic virus 3, SpiMV3, род Potyvirus, семейство Potyviridae), обнаруженный на растении флокса Ph. paniculata в Ботаническом саду МГУ имени М.В. Ломоносова.  Полная последовательность генома SpiMV3 депонирована в GenBank. Определены молекулярно-биологические и филогенетические особенности вируса. SpiMV3 также обнаружен на флоксах из ГБС им. Н.В.Цицина. 
+Впервые изучены распространенность, штаммовая принадлежность и генетическое разнообразие изолятов вируса оспы сливы (plum pox virus, PPV, род Potyvirus, семейство Potyviridae) в районе Большого Сочи (Краснодарский край). Показано, что сливовые изоляты вируса из Адлера и персиковый изолят из Субтропического научного центра относились к штамму D, сливовые изоляты из Дагомыса – к штамму Rec, вишневый изолят PPV - к штамму С.
+В коллекции косточковых ГБС впервые на территории РФ было обнаружено дерево черешни (P. avium), при изучении которого  с помощью HTS получены прочтения, родственные капилловирусу черешни А (cherry virus A, род Capillovirus, семейство Betaflexiviridae), собран полный геном нового изолята этого вируса, названного SwC14.</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (16)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Рябчевская Екатерина Михайловна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Иванов Петр Алексеевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Худайназарова Нелли Шамильевна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Репина Мария Николаевна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Чирков Сергей Николаевич</strong> <span style="color:#71717a;font-size:0.8rem">Доктор биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Архипенко Марина Владимировна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Аграновский Алексей Анатольевич</strong> <span style="color:#71717a;font-size:0.8rem">Доктор биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Соловьева Анна Дмитриевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Гасанова Татьяна Владимировна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Шевелева Анна Александровна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Гущин Владимир Алексеевич</strong> <span style="color:#71717a;font-size:0.8rem">Доктор биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Коваленко Ангелина Олеговна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Грановский Дмитрий Львович</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Скурат Евгений Владимирович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Кондакова Ольга Александровна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li></ul>
+              <p style='color:#52525b;font-size:0.8rem;margin-top:0.5rem'>...и ещё 1</p>
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

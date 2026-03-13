@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | ИФХЭ РАН</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-ifhe.html">ИФХЭ РАН</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">семикарбазоны</span> <span class="tag">амидоалкилирование</span> <span class="tag">гетероциклизация</span> <span class="tag">1,2,4-триазепины</span> <span class="tag">полиазамакроциклы</span> <span class="tag">алкилирование</span> <span class="tag">восстановление</span> <span class="tag">комплексообразование</span> <span class="tag">окислительное дегидрирование</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Гетероциклические соединения</span></div>
+          <h1 style="font-size:1.5rem">Функционально замещенные 14-членные 1,2,4,8,9,11-гексаазамакроциклы с различной степенью ненасыщенности: дизайн, синтез и использование в качестве лигандов в координационной и супрамолекулярной химии</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">1,500 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225020408209-8</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2024-01-01 — 2024-12-31</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№2</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">2</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">РНФ</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>Российский научный фонд</div>
+                </div><div class="metric-box" style="text-align:left">
+                  <div class="label">Исполнитель</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">ИФХЭ РАН</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>Разработаны препаративные методы синтеза оригинальных 14-членных циклических бис-семикарбазонов и 7-членных циклических семикарбазонов из ациклических предшественников с использованием семикарбазидного подхода. В качестве ключевых соединений использованы 4-(α-арил-γ-оксоалкил)семикарбазоны, содержащие различные заместители у карбонильной группы (Me, i-Pr, Bu, i-Bu, t-Bu), а также имеющие C=O группу, включенную в циклопентановое кольцо. Эти соединения были получены реакцией амидоалкилирования синтетических эквивалентов соответствующих 2-оксоэтильных карбанионов с 4-(тозилметил)- и/или 4-(метоксиметил)семикарбазонами ароматических альдегидов. 4-(Тозилметил)семикарбазоны синтезированы реакцией семикарбазонов альдегидов с соответствующими альдегидами и п-толуолсульфиновой кислотой. Обработкой с MeONa в MeOH они были превращены в 4-(метоксиметил)семикарбазоны альдегидов. В качестве нуклеофильных компонентов реакции амидоалкилирования были использованы β-оксоэфиры, 1,3-дикетоны и силиловые эфиры кетонов. Выбор этих компонентов определялся их синтетической доступностью и особенностями протекания конкретных реакций амидоалкилирования. В случае использования в качестве нуклеофилов β-оксоэфиров, полученные продукты амидоалкилирования были подвергнуты кетонному расщеплению под действием щелочей в водно-спиртовых смесях с образованием ключевых семикарбазон-содержащих кетонов с фрагментами BuC=O и i-PrC=O, а в случае использования ацетилацетона как нуклеофила, полученные продукты замещения ретро-реакцией Кляйзена превращались в ключевые кетоны с фрагментами MeC=O. В результате исследования реакции полученных 4-(оксоалкил)семикарбазонов с гидразином в различных условиях были синтезированы гидразоны этих кетонов и/или гидразоны соответствующих семикарбазидов. Детально изучена кислотно-промотируемая гетероциклизация всех полученных 4-(оксоалкил)семикарбазонов и -семикарбазидов, а также их гидразонов. Показано, что направление циклизации в значительной степени определяется заместителями при карбонильной или гидразоновой группе. Показано, что полученные 14-членные циклические бис-семикарбазоны могут путем различных модификаций превращены в новые типы гексаазамакроциклов. Основные пути модификации включали их диалкилирование по атомам азота N2 и N9, восстановление связей C=N, комплексообразование и окислительное дегидрирование. В результате изучения алкилирования макроциклов нами разработан синтез широкого набора их 2,9-диалкилзамещенных представителей. В качестве алкилирующих реагентов были использованы алкилиодиды, алкилбромиды, аллилбромид, пропаргилбромид, бензилхлорид, 1,4-дибромбутан и 1,5-дибромпентан. Основаниями служили либо суспензия NaH в ДМФА либо раствор димсилнатрия в ДМСО. При этом целевые алкилированные макроциклы в виде транс-изомеров были получены с хорошими выходами и с высокой степенью чистоты. Синтезированные 2,9-ди(4-бромбутил)- и 2,9-ди(5-бромпентил)замещенные макроциклы реакцией с пиперидином или пирролидином были превращены в соответствующие продукты замещения атомов брома на пиперидиновый или пирролидиновый фрагменты. Полученные макроциклы содержат донорные атомы азота в боковых цепях, которые могут выступать в качестве дополнительных центров связывания с катионами металлов. Реакцией 2,9-ди(4-бромбутил)-замещенных макроциклов с азидом натрия в ДМФА были синтезированы 2,9-ди(4-азидобутил)-замещенные макроциклы. Нами были также получены водорастворимые представители 14-членных циклических бис-семикарбазонов, четвертичные аммонийные соли, при обработке 2,9-ди[4-(пиперидинобутил)]-замещенных макроциклов избытком метилиодида в CHCl3. Важным направлением модификации 14-членных циклических бис-семикарбазонов является восстановление двух связей C=N в их молекулах. Так как при таком восстановлении два атома азота значительно изменяют свою природу, то можно было ожидать, что полученные при этом макроциклические семикарбазиды будут обладать специфическими металл-связывающими свойствами. Основное внимание было уделено восстановлению связей C=N в 2,9-диалкилированных 14-членных циклических бис-семикарбазонах. В качестве восстановителя был использован цианоборгидрид натрия в MeOH в слабокислой среде. В результате реакции с высокими выходами были получены соответствующие 14-членные циклические бис-семикарбазиды, причем исключительно стереоселективно в виде одного стереоизомера, который является мезо-формой и характеризуется наличием центра инверсии. Нами показано, что 14-членные циклические бис-семикарбазоны и бис-семикарбазиды могут служить эффективными лигандами для катионов переходных металлов, в качестве которых в основном использовались Ni(II) и Co(II). Комплексы получались реакцией соответствующих лигандов с солями Ni(II) или Co(II) (как правило, с ацетатами). Реакция окислительного дегидрирования была изучена на примере некоторых макроциклических семикарбазонов, изотиосемикарбазонов и их Ni(II)-комплексов. Реагентами служили, главным образом, хлоранил и DDQ. Показано, что во всех случаях, в зависимости от субстрата и окислителя, реакции протекали с различной легкостью, направленностью и полнотой. Наиболее полно и гладко протекала эта реакция в случае Ni(II)-комплекса макроциклического бис-изотиосемикарбазона, не имеющего заместителей при sp3-атомах углерода. Дегидрирование протекало даже при действии кислорода воздуха, но особенно эффективно оно проходило в присутствии хлоранила, в результате чего был получен Ni(II)-комплекс ароматического бис-изотиосемикарбазона.</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (1)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Фесенко Анастасия Андреевна</strong> <span style="color:#71717a;font-size:0.8rem">Доктор химических наук</span></li></ul>
+              
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

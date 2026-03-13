@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | МГУ им. М.В. Ломоносова</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-mgu.html">МГУ им. М.В. Ломоносова</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">генетика поведения</span> <span class="tag">когнитивное поведение</span> <span class="tag">нейробиология</span> <span class="tag">физиология поведения</span> <span class="tag">нейропатология</span> <span class="tag">стрессовые факторы</span> <span class="tag">механизмы научения</span> <span class="tag">наночастицы</span> <span class="tag">нейрохимия</span> <span class="tag">ионизирующие излучения</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Высшая нервная деятельность. Поведение</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Физиология сенсорных систем</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Физиология центральной нервной системы</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Общая нейрофизиология</span></div>
+          <h1 style="font-size:1.5rem">Нейробиологические основы поведения животных</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">39,551 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225012402590-8</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2024-01-01 — 2024-12-31</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№4</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">29</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">Правительство России</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>Правительство Российской Федерации</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>Основная часть отчета содержит 10 разделов. Объектами исследований являются лабораторные крысы, различные линии крыс, селектированных по чувствительности к аудиогенной эпилепсии, лабораторные и природные мышевидные грызуны, различные линии мышей, селектированных по поведенческим признакам, вороны, виноградные улитки (Helix lucorum) и простейшие (Paramecium caudatum и Tetrahymena thermophila). Исследования по теме охватывают широкий круг проблем современной науки о поведении и его нейробиологических основ молекулярных механизмов жизнедеятельности простейших, неассоциативного научения у моллюсков, ассоциативного научения у крыс, когнитивного поведения мышевидных грызунов, довербальных форм мышления у серых ворон и глазодвигательного поведения у обезьян. В рамках научной темы исследованы нейробиологические основы жизнедеятельности и поведения различных организмов (от простейших до высших млекопитающих) в норме и патологии с использованием физиологических, фармакологических, биохимических, нейрохимических и нейрогенетических подходов.
+Продемонстрирована экспрессия двух различных вариантов альфа7-субъединицы ацетилхолиновых рецепторов (АХР) в командных нейронах улитки Helix lucorum. Произведено клонирование второй версии α7-субъединицы АХР для дальнейших исследований ее физиологических и фармакологических свойств. 
+Исследовано влияние наноразмерных частиц на изменчивость адаптивного поведения одноклеточных организмов Paramecium caudatum и Tetrahymena thermophila. Валидизированы экспериментальные клеточные модели окислительного стресса, индуцированного введением различных наночастиц у этих организмов. Проведено фармакологическое исследование поведенческих эффектов клеток Paramecium caudatum с применением агонистов и блокаторов адренорецепторов.
+На разных видах мышевидных грызунов природных популяций, обитающих в различных экологических условиях, выявлены особенности пространственного поведения в экспериментальных средах, отличающихся по нескольким факторам.
+Исследована роль синхронизации электрической активности в частотном диапазоне тета-ритма в системе гиппокамп-префронтальная кора в процессах обучении и памяти у крыс.
+Исследованы поведенческие и нейрохимические характеристики у лабораторных мышей в модели пренатальной марганцевой токсичности. Пренатальное потребление марганца совместно с нейротоксином МФТП привело к ухудшению поведенческих показателей по сравнению с использованием только МФТП. Продемонстрировано нейропротекторное действие наномицеллярного комплекса карнозина с липоевой кислотой, снижающего эффект нейротоксичности.
+Изучен кальцитонин-ген родственного пептида в патогенезе кластерной головной боли. Определены частоты генотипов и аллелей полиморфных сайтов в отобранных генах в выборке пациентов с мигренью, в контрольной выборке и в выборке пациентов с КГБ. Продемонстрирована диагностическая ценность генетических детерминантов болевого синдрома при цефалгиях для их эффективного лечения.
+Проведены исследования когнитивных способностей лабораторных мышей, селектированных на успешное выполнение когнитивного теста. На двух линиях мышей, селектированных на большой и малый относительный вес мозга, проведено исследование эффектов атомоксетина (блокатора обратного захвата норадреналина) на решение когнитивного теста и на исследовательское поведение. Проведено комплексное исследование антиэпилептического эффекта электросудорожной терапии на модели аудиогенной эпилепсии у крыс.
+Разработан новый комплекс протоорудийных задач для широких сравнительных исследований наглядно-действенного мышления у серых ворон. Проведена оценка способности серых ворон понимать структуру нового комплекса протоорудийных задач на подтягивание приманки при помощи выскальзывающей веревки и оценка способности этих птиц к кооперации.
+Проведено исследование поведения крыс в модели малоинванизвной ринологической операции, в частности отклонения физиологических, поведенческих, когнитивных функций, а также эмоциональных состояний в условиях умеренного эмоционального стресса, которые могут приводить к дезадаптации.
+Продемонстрированы ранние радиационные эффекты воздействия высокоэнергичных ионов углерода на функционирования зрительно-моторной системы у обезьян. Полученные результаты могут быть использованы для оценки возможных ранних рисков радиационных поражений этой системы космонавтов в дальних космических экспедициях.</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (14)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Сурина Наталья Михайловна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Николаев Георгий Михайлович</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Терещенко Леонид Викторович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Иноземцев Анатолий Николаевич</strong> <span style="color:#71717a;font-size:0.8rem">Доктор биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Карпухина Ольга Вячеславовна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Перепелкина Ольга Викторовна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Полетаева Инга Игоревна</strong> <span style="color:#71717a;font-size:0.8rem">Доктор биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Зорина Зоя Александровна</strong> <span style="color:#71717a;font-size:0.8rem">Доктор биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Ловать Максим Львович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Мойсенович Анастасия Михайловна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Королев Алексей Геннадьевич</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Латанов Александр Васильевич</strong> <span style="color:#71717a;font-size:0.8rem">Доктор биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Федотова Ирина Борисовна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Смирнова Анна Анатольевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li></ul>
+              
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

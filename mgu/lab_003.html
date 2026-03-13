@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Лаборатория химии нуклеопротеидов, кафедра Химии природных соединений, Химический факультет | МГУ им. М.В. Ломоносова</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-mgu.html">МГУ им. М.В. Ломоносова</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Лаборатория химии нуклеопротеидов, кафедра Химии п</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1rem"><span class="tag">Молекулярная биология</span> <span class="tag">Биохимия</span> <span class="tag">Геномика</span> <span class="tag">Генетика</span> <span class="tag">Медицина</span> <span class="tag">Цитология</span></div>
+          <h1>Лаборатория химии нуклеопротеидов, кафедра Химии природных соединений, Химический факультет</h1>
+          <p style="color:#a1a1aa;line-height:1.7;margin-top:1rem">Система обеспечивает точную количественную оценку и распознавание целевых фрагментов ДНК (до 5 мишеней) в реакциях большого объема. Система включает в себя передовые в отрасли технологии и автономную функциональность, чтобы обеспечить надежный и простой в использовании инструмент qPCR (ПЦР-РВ) для получения надежных результатов.</p>
+        </div>
+
+        <!-- CTA Block -->
+        <div style="background:linear-gradient(135deg,rgba(255,0,60,0.08),rgba(255,0,60,0.02));border:1px solid rgba(255,0,60,0.2);border-radius:1.5rem;padding:2rem;margin-bottom:2rem">
+          <div style="font-size:1rem;font-weight:800;margin-bottom:0.75rem">📨 Связаться с лабораторией</div>
+          <div style="font-size:0.8rem;color:#10b981;margin-bottom:0.5rem">✉ dontsova@belozersky.msu.ru</div>
+          <div style="display:flex;flex-wrap:wrap;gap:0.75rem;margin-top:1rem">
+            <button onclick="openRequestModal('Запрос на НИОКР — Лаборатория химии нуклеопротеидов, кафед')" style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.75rem 1.5rem;border-radius:1rem;background:#ff003c;color:white;font-size:0.75rem;font-weight:800;text-transform:uppercase;letter-spacing:0.05em;border:none;cursor:pointer">📋 Направить запрос на НИОКР</button>
+            <button onclick="openRequestModal('Запрос зав. лабораторией — Лаборатория химии нуклеопротеи')" style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.75rem 1.5rem;border-radius:1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:#a1a1aa;font-size:0.75rem;font-weight:800;text-transform:uppercase;cursor:pointer">✉ Написать зав. лабораторией</button>
+            <a href='https://colab.ws/labs/67' target='_blank' style='display:inline-flex;align-items:center;gap:0.5rem;padding:0.75rem 1.5rem;border-radius:1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:#a1a1aa;font-size:0.75rem;font-weight:800;text-transform:uppercase'>🔗 Профиль CoLab</a>
+          </div>
+        </div>
+
+        <div class="info-card">
+              <h2>🔬 Оборудование</h2>
+              <p>NanoDrop™ 2000 (Thermo Scientific™) Спектрофотометр, используется для количественной оценки и оценки чистоты ДНК, РНК, белка и многого другого. Микрообъемный спектрофотометр с запатентованной технологией удержания образцов, который измеряет объемы образцов размером всего 0,5 мкл. JANUS® G3 Liquid Handling Workstations (PerkinElmer) Роботизированная станция Janus позволяет осуществлять высокопроизводительный скрининг. Систему можно запрограммировать определенным образом на раскапывание образцов. Trans-Blot Turbo Transfer System (Bio-Rad) Система для быстрого переноса белков из геля на мембрану. Используется при проведении вестерн-блоттинга. Mini-PROTEAN® Tetra Handcast Systems (Bio-Rad) Система для проведения вертикального электрофореза полиакриламидных гелей небольших размеров. Система идеально подходит для разделения и анализа белков, в том числе методами вестерн-блоттинга. PowerPac™ Basic Power Supply (Bio-Rad) Источник тока для проведения гель-электрофореза. CFX96 Touch Deep Well Real-Time PCR Detection System (Bio-Rad) Система обеспечивает точную количественную оценку и распознавание целевых фрагментов ДНК (до 5 мишеней) в реакциях большого объема. Система включает в себя передовые в отрасли технологии и автономную функциональность, чтобы обеспечить надежный и простой в использовании инструмент qPCR (ПЦР-РВ) для получения надежных результатов. Система гель-документирования ChemiDoc (BioRad) Самая быстрая система визуализации хемилюминесценции, флуоресценции и колориметрии. Управляется программным обеспечением для захвата и анализа изображений Image Lab. Typhoon FLA 9500 Biomolecular Imager Быстрый неконфокальный лазерный сканер для образцов: окрашенных гелей, флуоресцентно-меченных красителем, хемилюминесцентных блотов, меченных радиоизотопами Victor X5 2030 (Perkin Elmer) Количественный анализ (белки, нуклеиновые кислоты, клетки, бактерии и др.), скрининга лекарственных препаратов и метаболитов, иммуноферментный анализ, для кинетических и токсикологических иссл</p>
+            </div>
+        <div class="info-card">
+              <h2>🧪 Методы</h2>
+              <p>CRISPR-Cas Вестерн-блот Культура клеток и тканей Toe-print ПЦР-РВ Работа с лабораторными животными Работа с бактериальными штаммами Клонирование Секвенирование по Сенгеру Выделение и очистка целевых белков In vitro трансляция Саузерн-блот Нозерн-блот Масс-спектрометрия Создание генноинженерных конструкций для экспрессии целевых белков Работа с прокариотическими клетками: культивирование, трансформация, работа с фагами Работа с эукариотическими клетками: культивирование, трансфекция, инфекция Выделение рибонуклеопротеидных комплексов, работа с рибосомами и их комплексами Аффинная хроматография Ультрацентрифугирование FISH (Флуоресцентная гибридизация in situ) Гель-электрофорез</p>
+            </div>
+        
+
+        <div class="section-header" style="margin-top:2.5rem">
+          <h2 class="section-title">👩‍🔬 Учёные (23)</h2>
+        </div>
+        <div class="cards-grid" style="grid-template-columns:repeat(auto-fill,minmax(300px,1fr))">
+          <a href="sci_038.html" class="preview-card">
+              <div class="avatar"><img src="https://colab.ws/storage/images/28Dup9gYW5vrb7wJSljs6Ig7NXvYb1CcIw0j3D2W.jpg" alt="Донцова Ольга Анатольевна" loading="lazy"></div>
+              <div style="min-width:0">
+                <h3>Донцова Ольга Анатольевна</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem">Заведующий лабораторией</div>
+                <div class="meta">Перевод, РНК, Рибосома</div>
+                <div class="meta" style="margin-top:0.25rem">📚 80 публ.</div>
+              </div>
+            </a>
+<a href="sci_039.html" class="preview-card">
+              <div class="avatar"><div class="initials">МЗ</div></div>
+              <div style="min-width:0">
+                <h3>Мария Зверева</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem">Профессор</div>
+                <div class="meta">Геномика, Клеточная биология, Молекулярная биология</div>
+                <div class="meta" style="margin-top:0.25rem">📚 34 публ.</div>
+              </div>
+            </a>
+<a href="sci_040.html" class="preview-card">
+              <div class="avatar"><img src="https://colab.ws/storage/images/NZlmdd7vYzN8NUgmCSFREDziOGjJOaVsGJlnUelJ.jpg" alt="Мария Рубцова" loading="lazy"></div>
+              <div style="min-width:0">
+                <h3>Мария Рубцова</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem">Профессор</div>
+                <div class="meta">Геномика, Клеточная биология, Молекулярная биология</div>
+                <div class="meta" style="margin-top:0.25rem">📚 18 публ.</div>
+              </div>
+            </a>
+<a href="sci_041.html" class="preview-card">
+              <div class="avatar"><img src="https://colab.ws/storage/images/85238200-2af2-42e0-b23f-ab93d729964b.jpg.200x200_q95_crop_detail_upscale.jpg" alt="Петр Сергиев" loading="lazy"></div>
+              <div style="min-width:0">
+                <h3>Петр Сергиев</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem">Ведущий научный сотрудник</div>
+                <div class="meta">Перевод, РНК, Рибосома</div>
+                <div class="meta" style="margin-top:0.25rem">📚 48 публ.</div>
+              </div>
+            </a>
+<a href="sci_042.html" class="preview-card">
+              <div class="avatar"><div class="initials">ДС</div></div>
+              <div style="min-width:0">
+                <h3>Дмитрий Скворцов</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem">Доцент</div>
+                <div class="meta">Геномика, Клеточная биология, Молекулярная биология</div>
+                <div class="meta" style="margin-top:0.25rem">📚 38 публ.</div>
+              </div>
+            </a>
+<a href="sci_043.html" class="preview-card">
+              <div class="avatar"><img src="https://colab.ws/storage/images/DaGHPgndDyUEeSh0ZdF4E2RpQVNLt6rm2yRvJycT.jpg" alt="Радик Шафиков" loading="lazy"></div>
+              <div style="min-width:0">
+                <h3>Радик Шафиков</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem">Младший научный сотрудник</div>
+                <div class="meta">Биоорганическая химия, Молекулярная онкология, Органическая химия</div>
+                <div class="meta" style="margin-top:0.25rem">📚 8 публ.</div>
+              </div>
+            </a>
+<a href="sci_044.html" class="preview-card">
+              <div class="avatar"><div class="initials">ЕК</div></div>
+              <div style="min-width:0">
+                <h3>Екатерина Комарова</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem">Младший научный сотрудник</div>
+                <div class="meta">Молекулярная биология, Перевод, РНК</div>
+                <div class="meta" style="margin-top:0.25rem">📚 9 публ.</div>
+              </div>
+            </a>
+<a href="sci_045.html" class="preview-card">
+              <div class="avatar"><div class="initials">НШ</div></div>
+              <div style="min-width:0">
+                <h3>Никита Шепелев</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem">Младший научный сотрудник</div>
+                <div class="meta">Молекулярная биология, Геномика, Клеточная биология</div>
+                <div class="meta" style="margin-top:0.25rem">📚 1 публ.</div>
+              </div>
+            </a>
+<a href="sci_046.html" class="preview-card">
+              <div class="avatar"><img src="https://colab.ws/storage/images/HgOeqneo2lPM6ztWrp6jA9r7jig8QRyDuFJWG8Sy.jpg" alt="Александр Руденко" loading="lazy"></div>
+              <div style="min-width:0">
+                <h3>Александр Руденко</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem">Младший научный сотрудник</div>
+                <div class="meta">Биоинженерия, Биохимия, Медицинская химия</div>
+                <div class="meta" style="margin-top:0.25rem">📚 4 публ.</div>
+              </div>
+            </a>
+<a href="sci_047.html" class="preview-card">
+              <div class="avatar"><img src="https://colab.ws/storage/images/TiFBZeGSp9QK6CW53SKIugBCdd5fYNDLZOgIJSbX.jpg" alt="Софья Марьясина" loading="lazy"></div>
+              <div style="min-width:0">
+                <h3>Софья Марьясина</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem">Младший научный сотрудник</div>
+                <div class="meta">Метаболомика, Структура белка, Белок-лигандные взаимодействия</div>
+                <div class="meta" style="margin-top:0.25rem">📚 8 публ.</div>
+              </div>
+            </a>
+<a href="sci_048.html" class="preview-card">
+              <div class="avatar"><div class="initials">АН</div></div>
+              <div style="min-width:0">
+                <h3>Арина Никандрова</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem"></div>
+                <div class="meta">Перевод, РНК, Рибосома</div>
+                <div class="meta" style="margin-top:0.25rem">📚 3 публ.</div>
+              </div>
+            </a>
+<a href="sci_049.html" class="preview-card">
+              <div class="avatar"><img src="https://colab.ws/storage/images/GNAyWjjtomj134bzpO5ITnoQbhIp1ycgS9X1D9C7.jpg" alt="Федор Грабовенко" loading="lazy"></div>
+              <div style="min-width:0">
+                <h3>Федор Грабовенко</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem">Аспирант</div>
+                <div class="meta">SELEX, Аптамеры, Биохимия</div>
+                <div class="meta" style="margin-top:0.25rem">📚 2 публ.</div>
+              </div>
+            </a>
+<a href="sci_050.html" class="preview-card">
+              <div class="avatar"><img src="https://colab.ws/storage/images/iK0Tpr9SwA85lny6XAiSr92wvqlpTMEl5jUQ1mI1.jpg" alt="Елизавета Разумова" loading="lazy"></div>
+              <div style="min-width:0">
+                <h3>Елизавета Разумова</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem">Аспирант</div>
+                <div class="meta">Молекулярная биология, Перевод, РНК</div>
+                <div class="meta" style="margin-top:0.25rem">📚 3 публ.</div>
+              </div>
+            </a>
+<a href="sci_051.html" class="preview-card">
+              <div class="avatar"><div class="initials">ВМ</div></div>
+              <div style="min-width:0">
+                <h3>Валерия Марина</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem">Аспирант</div>
+                <div class="meta">Молекулярная биология, Перевод, РНК</div>
+                <div class="meta" style="margin-top:0.25rem">📚 4 публ.</div>
+              </div>
+            </a>
+<a href="sci_052.html" class="preview-card">
+              <div class="avatar"><img src="https://colab.ws/storage/images/NlugtvvS5Ep90LF7KVvseG29ZENKlAOfIkvv01Xt.jpg" alt="Инна Волынкина" loading="lazy"></div>
+              <div style="min-width:0">
+                <h3>Инна Волынкина</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem">Аспирант</div>
+                <div class="meta">Антибиотики, Рибосома, Трансляция</div>
+                <div class="meta" style="margin-top:0.25rem">📚 2 публ.</div>
+              </div>
+            </a>
+<a href="sci_053.html" class="preview-card">
+              <div class="avatar"><div class="initials">МК</div></div>
+              <div style="min-width:0">
+                <h3>Максим Кряквин</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem"></div>
+                <div class="meta">Перевод, РНК, Рибосома</div>
+                <div class="meta" style="margin-top:0.25rem">📚 1 публ.</div>
+              </div>
+            </a>
+<a href="sci_054.html" class="preview-card">
+              <div class="avatar"><div class="initials">АК</div></div>
+              <div style="min-width:0">
+                <h3>Анастасия Каракчиева</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem"></div>
+                <div class="meta">Биохимия, Клеточная биология, Коллоидная химия</div>
+                <div class="meta" style="margin-top:0.25rem">📚 0 публ.</div>
+              </div>
+            </a>
+<a href="sci_055.html" class="preview-card">
+              <div class="avatar"><div class="initials">КА</div></div>
+              <div style="min-width:0">
+                <h3>Камиль Айсин</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem"></div>
+                <div class="meta">Иммунотерапия рака, Метаболомика, Молекулярная биология</div>
+                <div class="meta" style="margin-top:0.25rem">📚 0 публ.</div>
+              </div>
+            </a>
+<a href="sci_056.html" class="preview-card">
+              <div class="avatar"><img src="https://colab.ws/storage/images/eUmlfkt3kwLaczftUK25Ifi7NpA5Ewive3d7mitL.jpg" alt="Виталий Буев" loading="lazy"></div>
+              <div style="min-width:0">
+                <h3>Виталий Буев</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem"></div>
+                <div class="meta">Молекулярная биология</div>
+                <div class="meta" style="margin-top:0.25rem">📚 0 публ.</div>
+              </div>
+            </a>
+<a href="sci_057.html" class="preview-card">
+              <div class="avatar"><div class="initials">ЮК</div></div>
+              <div style="min-width:0">
+                <h3>Юрий Карпенко</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem"></div>
+                <div class="meta">Молекулярная биология</div>
+                <div class="meta" style="margin-top:0.25rem">📚 0 публ.</div>
+              </div>
+            </a>
+<a href="sci_058.html" class="preview-card">
+              <div class="avatar"><img src="https://colab.ws/storage/images/EksLmb8fYxnwQ6IwYzn8TFRsv8u1TvmYuuAyZqyf.jpg" alt="Святослав Балтин" loading="lazy"></div>
+              <div style="min-width:0">
+                <h3>Святослав Балтин</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem"></div>
+                <div class="meta">Генетика, Генетика растений, Молекулярная биология</div>
+                <div class="meta" style="margin-top:0.25rem">📚 4 публ.</div>
+              </div>
+            </a>
+<a href="sci_059.html" class="preview-card">
+              <div class="avatar"><div class="initials">ЕГ</div></div>
+              <div style="min-width:0">
+                <h3>Екатерина Гусева</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem"></div>
+                <div class="meta">Перевод, РНК, Рибосома</div>
+                <div class="meta" style="margin-top:0.25rem">📚 3 публ.</div>
+              </div>
+            </a>
+<a href="sci_060.html" class="preview-card">
+              <div class="avatar"><div class="initials">МХ</div></div>
+              <div style="min-width:0">
+                <h3>Мария Хохлова</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem"></div>
+                <div class="meta"></div>
+                <div class="meta" style="margin-top:0.25rem">📚 0 публ.</div>
+              </div>
+            </a>
+
+        </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

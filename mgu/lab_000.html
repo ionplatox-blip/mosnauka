@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Научно-исследовательская лаборатория эрозии почв и русловых процессов имени Н.И. Маккавеева | МГУ им. М.В. Ломоносова</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-mgu.html">МГУ им. М.В. Ломоносова</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Научно-исследовательская лаборатория эрозии почв и</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1rem"><span class="tag">География</span> <span class="tag">Гидрология</span> <span class="tag">Математическое моделирование</span> <span class="tag">Гидрогеология</span></div>
+          <h1>Научно-исследовательская лаборатория эрозии почв и русловых процессов имени Н.И. Маккавеева</h1>
+          <p style="color:#a1a1aa;line-height:1.7;margin-top:1rem">НИЛ ЭПиРП – крупнейший научно-исследовательский коллектив в России, занимающийся изучением эрозионно-русловых систем - форм рельефа и создающих их процессов, обусловленных работой водных потоков. Как структурное подразделение Географического факультета Московского университета Лаборатория начала функционировать 1 сентября 1969. В 1998 г в связи с 90-летием со дня рождения основателя и первого руководителя лаборатории Н.И. Маккавеева (1908 – 1983 гг.) решением Учёного Совета МГУ ей было присвоено его имя, и с тех пор лаборатория именуется как Научно-исследовательская лаборатория эрозии почв и русловых процессов имени Н.И. Маккавеева. Основные направлениями деятельности лаборатории являются:</p>
+        </div>
+
+        <!-- CTA Block -->
+        <div style="background:linear-gradient(135deg,rgba(255,0,60,0.08),rgba(255,0,60,0.02));border:1px solid rgba(255,0,60,0.2);border-radius:1.5rem;padding:2rem;margin-bottom:2rem">
+          <div style="font-size:1rem;font-weight:800;margin-bottom:0.75rem">📨 Связаться с лабораторией</div>
+          
+          <div style="display:flex;flex-wrap:wrap;gap:0.75rem;margin-top:1rem">
+            <button onclick="openRequestModal('Запрос на НИОКР — Научно-исследовательская лаборатория эро')" style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.75rem 1.5rem;border-radius:1rem;background:#ff003c;color:white;font-size:0.75rem;font-weight:800;text-transform:uppercase;letter-spacing:0.05em;border:none;cursor:pointer">📋 Направить запрос на НИОКР</button>
+            <button onclick="openRequestModal('Запрос зав. лабораторией — Научно-исследовательская лабор')" style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.75rem 1.5rem;border-radius:1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:#a1a1aa;font-size:0.75rem;font-weight:800;text-transform:uppercase;cursor:pointer">✉ Написать зав. лабораторией</button>
+            <a href='https://colab.ws/labs/452' target='_blank' style='display:inline-flex;align-items:center;gap:0.5rem;padding:0.75rem 1.5rem;border-radius:1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:#a1a1aa;font-size:0.75rem;font-weight:800;text-transform:uppercase'>🔗 Профиль CoLab</a>
+          </div>
+        </div>
+
+        <div class="info-card">
+              <h2>🔬 Оборудование</h2>
+              <p>ADCP Профилограф River Ray Измерительный комплекс Комплекты портативных турбидиметров Комплекты фильтровальных установок Millipore Муфельная печь ЭКПС- 10 Сушильный шкаф UT-4623 Лазерный анализатор частиц ЛАСКА-ТД Судно &quot;Профессор Маккавеев&quot; Речной теплоход Акустический профилограф ADCP CHC RCP1200Khz Измерительный комплекс Комплекс спектрометрический СКС-07П(09П)_Г_Р с полупроводниковым детектором из ОЧГ</p>
+            </div>
+        <div class="info-card">
+              <h2>🧪 Методы</h2>
+              <p>Дистанционные методы мониторинга мутности Акустические методы изучения мутности воды Мониторинг русловых процессов: натурные исследования и стационарные наблюдения Полуавтоматизированные методы определения горизонтальных русловых деформаций Метод балансов наносов Математическое и физическое моделирование Мультимодельный подход Экспериментальные методы исследования Почвенно-морфологический метод Радиоцезиевый, метод трассеров, метод хрономаркеров (цезий-137 глобального и Чернобыльского происхождения) Геоморфологическое картографирование Метод «отпечатков пальцев» (fingerprinting technique)</p>
+            </div>
+        
+
+        <div class="section-header" style="margin-top:2.5rem">
+          <h2 class="section-title">👩‍🔬 Учёные (14)</h2>
+        </div>
+        <div class="cards-grid" style="grid-template-columns:repeat(auto-fill,minmax(300px,1fr))">
+          <a href="sci_000.html" class="preview-card">
+              <div class="avatar"><img src="https://colab.ws/storage/images/qmbifH1utMmV6hGvQvQNl8JnB2S1RjPKjDPPaB9a.jpg" alt="Чалов Сергей Романович" loading="lazy"></div>
+              <div style="min-width:0">
+                <h3>Чалов Сергей Романович</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem">Заведующий лабораторией</div>
+                <div class="meta">Гидрология, Речные наносы, Русловые процессы</div>
+                <div class="meta" style="margin-top:0.25rem">📚 35 публ.</div>
+              </div>
+            </a>
+<a href="sci_001.html" class="preview-card">
+              <div class="avatar"><img src="https://colab.ws/storage/images/EstBpFIB8gDrQEUkgWLfAgZF9EUKSjB9mr1aPmx8.jpg" alt="Валентин Голосов" loading="lazy"></div>
+              <div style="min-width:0">
+                <h3>Валентин Голосов</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem">Ведущий научный сотрудник</div>
+                <div class="meta">Заиление водохранилищ, Латеральная миграция радионуклидов, Речные бассейны</div>
+                <div class="meta" style="margin-top:0.25rem">📚 39 публ.</div>
+              </div>
+            </a>
+<a href="sci_002.html" class="preview-card">
+              <div class="avatar"><img src="https://colab.ws/storage/images/qkvFiJDcu5Kr61f4h74zR7r3WPlMgALikaCdEKmR.jpg" alt="Всеволод Морейдо" loading="lazy"></div>
+              <div style="min-width:0">
+                <h3>Всеволод Морейдо</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem">Старший научный сотрудник</div>
+                <div class="meta">Гидрология, Речные наносы, Русловые процессы</div>
+                <div class="meta" style="margin-top:0.25rem">📚 12 публ.</div>
+              </div>
+            </a>
+<a href="sci_003.html" class="preview-card">
+              <div class="avatar"><img src="https://colab.ws/storage/images/qGVanEM1OZ2l7WsCyBfjZpP4PRwORjoEKTXk92Wd.jpg" alt="Дмитрий Ботавин" loading="lazy"></div>
+              <div style="min-width:0">
+                <h3>Дмитрий Ботавин</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem">Старший научный сотрудник</div>
+                <div class="meta">ГИС, Геоинформатика, Геоморфология</div>
+                <div class="meta" style="margin-top:0.25rem">📚 2 публ.</div>
+              </div>
+            </a>
+<a href="sci_004.html" class="preview-card">
+              <div class="avatar"><img src="https://colab.ws/storage/images/FOIRHXBgTB5T9WoJzjd8yfuEnmP9Ja5gfmU2Um7A.png" alt="Анатолий Цыпленков" loading="lazy"></div>
+              <div style="min-width:0">
+                <h3>Анатолий Цыпленков</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem">Старший научный сотрудник</div>
+                <div class="meta">Гидрология, Флювиальная геоморфология, Эрозия почв</div>
+                <div class="meta" style="margin-top:0.25rem">📚 5 публ.</div>
+              </div>
+            </a>
+<a href="sci_005.html" class="preview-card">
+              <div class="avatar"><img src="https://colab.ws/storage/images/rPyQ6MHGN0rZiEDcWmoI5dp3lSqCA81D7dwOvagh.jpg" alt="Валерий Бондарев" loading="lazy"></div>
+              <div style="min-width:0">
+                <h3>Валерий Бондарев</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem">Старший научный сотрудник</div>
+                <div class="meta">Водные ресурсы, Геоэкология, Землепользование</div>
+                <div class="meta" style="margin-top:0.25rem">📚 1 публ.</div>
+              </div>
+            </a>
+<a href="sci_006.html" class="preview-card">
+              <div class="avatar"><div class="initials">МИ</div></div>
+              <div style="min-width:0">
+                <h3>Максим Иванов</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem">Старший научный сотрудник</div>
+                <div class="meta">Заиление водохранилищ, Латеральная миграция радионуклидов, Речные бассейны</div>
+                <div class="meta" style="margin-top:0.25rem">📚 11 публ.</div>
+              </div>
+            </a>
+<a href="sci_007.html" class="preview-card">
+              <div class="avatar"><div class="initials">ЕШ</div></div>
+              <div style="min-width:0">
+                <h3>Евгения Шамшурина</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem">Научный сотрудник</div>
+                <div class="meta">Малые водосборы, Почвоведение, Радиоэкология</div>
+                <div class="meta" style="margin-top:0.25rem">📚 4 публ.</div>
+              </div>
+            </a>
+<a href="sci_008.html" class="preview-card">
+              <div class="avatar"><img src="https://colab.ws/storage/images/Iuml31IZ9PU17kbSf8B61753y9GRKdS273YUElVG.jpg" alt="Евгения Фингерт" loading="lazy"></div>
+              <div style="min-width:0">
+                <h3>Евгения Фингерт</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem">Инженер 1 категории</div>
+                <div class="meta">Гидродинамика, Гидроинформатика, Гидрологическое моделирование</div>
+                <div class="meta" style="margin-top:0.25rem">📚 3 публ.</div>
+              </div>
+            </a>
+<a href="sci_009.html" class="preview-card">
+              <div class="avatar"><img src="https://colab.ws/storage/images/sjy1FFIFYWsqE8GEioytOItIFg1lZsozr4MGwqVz.jpg" alt="Данила Школьный" loading="lazy"></div>
+              <div style="min-width:0">
+                <h3>Данила Школьный</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem">Научный сотрудник</div>
+                <div class="meta">Гидрология, Русловые процессы, Речные наносы</div>
+                <div class="meta" style="margin-top:0.25rem">📚 2 публ.</div>
+              </div>
+            </a>
+<a href="sci_010.html" class="preview-card">
+              <div class="avatar"><img src="https://colab.ws/storage/images/If8hllBaZQqCMvzEeHDdeAPWXxnornjEpllZBsLZ.jpg" alt="Георгий Голубцов" loading="lazy"></div>
+              <div style="min-width:0">
+                <h3>Георгий Голубцов</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem">Инженер 1 категории</div>
+                <div class="meta">Русловые процессы, Гидрология, Речные наносы</div>
+                <div class="meta" style="margin-top:0.25rem">📚 2 публ.</div>
+              </div>
+            </a>
+<a href="sci_011.html" class="preview-card">
+              <div class="avatar"><img src="https://colab.ws/storage/images/AJsi3A9SKwpiUypkVAnAF1VRxdeFYEFToaRN4nW9.jpg" alt="Анна Куракова" loading="lazy"></div>
+              <div style="min-width:0">
+                <h3>Анна Куракова</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem">Младший научный сотрудник</div>
+                <div class="meta">ГИС, География, Геоморфология</div>
+                <div class="meta" style="margin-top:0.25rem">📚 2 публ.</div>
+              </div>
+            </a>
+<a href="sci_012.html" class="preview-card">
+              <div class="avatar"><img src="https://colab.ws/storage/images/7cXHLqi6RqyKz89Vwk8nhFeCcMMXW8lyngMgex1F.jpg" alt="Екатерина Промахова" loading="lazy"></div>
+              <div style="min-width:0">
+                <h3>Екатерина Промахова</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem">Младший научный сотрудник</div>
+                <div class="meta">Гидрология, Речные наносы, Русловые процессы</div>
+                <div class="meta" style="margin-top:0.25rem">📚 3 публ.</div>
+              </div>
+            </a>
+<a href="sci_013.html" class="preview-card">
+              <div class="avatar"><img src="https://colab.ws/storage/images/HY0Lfvc5WQYL5v9avH78HaoSASiFX1bf7IIElFMr.jpg" alt="Виктор Иванов" loading="lazy"></div>
+              <div style="min-width:0">
+                <h3>Виктор Иванов</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem">Аспирант</div>
+                <div class="meta">Взвешенные наносы, География, Гидрология</div>
+                <div class="meta" style="margin-top:0.25rem">📚 2 публ.</div>
+              </div>
+            </a>
+
+        </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | ФИЦ Биотехнологии РАН</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-fic_biotech.html">ФИЦ Биотехнологии РАН</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">ДРЕВНЯЯ ДНК</span> <span class="tag">ЭПИГЕНЕТИКА</span> <span class="tag">МЕТИЛИРОВАНИЕ ДНК</span> <span class="tag">ШИРОКОГЕНОМНОЕ СЕКВЕНИРОВАНИЕ</span> <span class="tag">КАВКАЗ</span> <span class="tag">ДАРКВЕТИ-МЕШОКОВСКАЯ КУЛЬТУРА</span> <span class="tag">ЭНЕОЛИТ</span> <span class="tag">МЕТИЛ-ДНК СВЯЗЫВАЮЩИЕ БЕЛКИ</span> <span class="tag">KAISO</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Молекулярная биология гена</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Общие вопросы</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Молекулярная генетика</span></div>
+          <h1 style="font-size:1.5rem">Эпигеномика и геномика адаптационных процессов</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">45,000 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225012802815-8</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2024-01-01 — 2024-12-31</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№3</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">5</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">МИНОБРНАУКИ РОССИИ</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>МИНИСТЕРСТВО НАУКИ И ВЫСШЕГО ОБРАЗОВАНИЯ РОССИЙСКОЙ ФЕДЕРАЦИИ</div>
+                </div><div class="metric-box" style="text-align:left">
+                  <div class="label">Исполнитель</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">ФИЦ БИОТЕХНОЛОГИИ РАН</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>Эпигенетические модификации играют важную роль в регуляции экспрессии генов, не изменяя при этом последовательность нуклеотидов в ДНК. Эти обратимые химические модификации ДНК и гистонов влияют на структуру хроматина и доступность генов для транскрипции, определяя функции клетки. В последние годы значительно возрос интерес к изучению эпигенетических механизмов в контексте развития и заболеваний человека, в том числе оказывающих различное влияние на метаболические заболевания [1]. Генетические и негенетические факторы, включая старение, диету и физические упражнения, взаимодействуют с эпигенетикой и совместно влияют на формирование фенотипа. Понимание эпигенетических механизмов может быть применено для диагностики и лечения метаболических заболеваний, поиска эпигенетических биомаркеров, разработки эпигенетических препаратов и даже для эпигенетического редактирования. Огромный потенциал для изучения метаболических заболеваний представляет исследование эпигенетических модификаций геномов древних людей. Отличный от современного образ жизни древнего человека позволяет использовать профиль эпигенетических модификаций древнего человека в качестве эпигенетической «нормы» - предполагая, что древние люди современного типа в меньшей степени были подвержены таким неблагоприятным факторам, как малоподвижный образ жизни и высококалорийное питание с высокой долей жиров и простых углеводов.
+Данный научный проект направлен на комплексное изучение эпигенетических модификаций в геноме человека, как древнего, так и современного, а также в геномах клеточных линий человека с особым фокусом на метилирование цитозина в ДНК (метилцитозин, mC) и аденина в РНК (метиладенозин, m6A). Исследование проводится с использованием современных высокопроизводительных методов, таких как широкогеномное, бисульфитное секвенирование и метод S9.6-DRIP [2]. На данном этапе проекта была поставлена цель картировать ДНК-РНК гибриды (R-петли) в геноме разных типов клеточных линий человека (hPSCs, HAP1, Caki1), а также провести всесторонний анализ генома древнего человека с помощью современных статистических методов (F статистик, qpAdm и др.), для последующего изучения его эпигенетических модификаций.
+В результате выполненных работ было проведено геномное картирование ДНК-РНК гибридов (R-петель) в разных типах клеточных линий человека (hPSCs, HAP1, Caki1), с использованием метода иммунопреципитации с антителами S9.6 (S9.6-DRIP) с последующим полногеномным секвенированием. Данные показали, что распределение пиков ДНК-РНК гибридов (R-петель) специфично для разных типов клеточных линий человека. Выполнен сравнительный анализ генома древнего человека из энеолитического могильника на Северном Кавказе (в Нальчике) и геномов древних индивидуумов с прилегающих территорий, в том числе древнего населения хвалынской культуры в Нижнем Поволжье. Установлено, что в геноме исследуемого образца присутствует сочетание трех основных генетических компонент: кавказских охотников-собирателей, охотников-собирателей европейской степи и очень ранних земледельцев Западной Азии. Человек из Нальчикского могильника генетически оказался ближе к представителям Северной Месопотамии и Загроса, которые проживали там в VIII–VII тысячелетиях до н.э., чем к соседям из Южного Кавказа, которые жили в этом регионе в VI тысячелетии до н.э. Несмотря на то, что исследуемый индивид является представителем дарквети-мешоковской культуры эпохи энеолита (ок. 5000-3500/3300 гг. до н. э.), это самая ранняя из известных на Северном Кавказе культур, экономическое благополучие которой базировалось на разведении домашнего скота и выращивании хлебных зерновых, большая часть генома унаследована от охотников собирателей, чей образ жизни, вероятно, способствовал сохранению предполагаемой нами эпигенетической «нормы», не смотря на начало освоения выращивания  хлебных зерновых.</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (9)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Трифонов Виктор Анатольевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат исторических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Женило Светлана Валерьевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Абрамов Павел Михайлович</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Рузов Алексей Сергеевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Жур Кристина Валерьевна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Прохорчук Егор Борисович</strong> <span style="color:#71717a;font-size:0.8rem">Доктор биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Жигалова Надежда Алексеевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Леонова Мария Владимировна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Шарко Федор Сергеевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li></ul>
+              
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

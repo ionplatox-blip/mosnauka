@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | МГУ им. М.В. Ломоносова</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-mgu.html">МГУ им. М.В. Ломоносова</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">ЖИРОВАЯ ТКАНЬ</span> <span class="tag">ИГЛИСТАЯ МЫШЬ</span> <span class="tag">СЕКВЕНИРОВАНИЕ РНК</span> <span class="tag">КАРДИОМИОЦИТЫ</span> <span class="tag">КАРДИОСФЕРЫ</span> <span class="tag">МИКРОРНК</span> <span class="tag">РЕГЕНЕРАЦИЯ</span> <span class="tag">ФИБРОЗ</span> <span class="tag">КЛЕТОЧНЫЙ ПРОДУКТ</span> <span class="tag">ГЕННАЯ ТЕРАПИЯ</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Общие и теоретические проблемы нормальной и патологической физиологии</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Медицинская биохимия</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Патологическая физиология</span></div>
+          <h1 style="font-size:1.5rem">Выяснение роли экспрессии генов, эпигенетической регуляции и рецепторов межклеточных взаимодействий в процессах регенерации органов и тканей с целью выявления перспективных мишеней для создания новых биомедицинских препаратов</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">90,000 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225122921261-3</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2025-05-30 — 2025-12-31</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№1</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">3</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">МИНОБРНАУКИ РОССИИ</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>МИНИСТЕРСТВО НАУКИ И ВЫСШЕГО ОБРАЗОВАНИЯ РОССИЙСКОЙ ФЕДЕРАЦИИ</div>
+                </div><div class="metric-box" style="text-align:left">
+                  <div class="label">Исполнитель</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">МОСКОВСКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ ИМЕНИ М.В.ЛОМОНОСОВА, МГУ ИМЕНИ М.В.ЛОМОНОСОВА, МОСКОВСКИЙ УНИВЕРСИТЕТ ИЛИ МГУ</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>Объектами исследования на отчетном этапе стали животные и клеточные модели регенерации или фиброза тканей в ответ на повреждение, а также получаемые первичные материалы, выделяемые из тканей или культур клеток (препараты РНК, гистологические материалы и срезы, белковые изоляты). Вторым классом объектов являются библиотеки РНК, готовящиеся к использованию в дальнейшем для секвенирования и получения «больших данных». Последние будут использованы для биоинформатического анализа в поисках мишеней для управления регенеративными процессами.
+Целью работы является проведение поисковых исследований с использованием генетических технологий с дальнейшей трансляцией их результатов путем создания прототипов генотерапевтических препаратов или биомедицинских клеточных продуктов, предназначенных для стимуляции регенерации.
+Методы и методология работы построены по описательно-сравнительному типу и опираются на отчетном этапе на получение моделей повреждения и регенерации роговицы глаза, ткани легкого, миокарда и дистальной фаланги пальца у животных. Также в проекте использован подход по сравнению животных с высокой (Acomys cahirinus) и низкой (Mus musculus) способностью к регенерации. С точки зрения поисковой работы высокая эффективность обнаружения мишеней обеспечивается применением высокопроизводительного транскриптомного анализа, а также использованием методов генетического трейсинга для анализа изменения структуры ткани после повреждения.
+На отчетном этапе в работе использованы методы острого опыта на животных, методы молекулярной биологии, биохимии, культуральные подходы, проточная цитометрия и целый ряд скрининговых методов. В прикладном плане активное развитие получила разработка высокотехнологичных клеточных препаратов на основе генетически модифицированных прогениторных клеток в виде сфероидных клеточных конструкций (кардиосферы).
+Результаты работы и их новизна затрагивают целый спектр задач проекта. К ключевым достижениям на отчетном этапе можно отнести организационные аспекты (создание на базе головной организации научно-образовательного центра «Генетические технологии в регенеративной биомедицине», формирование научной молодежной группы на базе со-исполнителя), а также создание уникальных и воспроизводимых моделей повреждения жизненно важных органов и их дальнейшей регенерации или фиброзирования. Второй пул работ опирается на сравнение животных, использованных в работе и обладающих различным потенциалом к регенерации, показавших выраженные преимущества Acomys cahirinus над лабораторными линиями Mus musculus. Отработан метод выделения единичных ядер из тканей Acomys cahirinus и Mus musculus. Разработана и охарактеризована модель диет-индуцированного ожирения у Acomys cahirinus, в то время как Acomys cahirinus были защищены от развития метаболических нарушений при высокожировой диете. Выбран метод получения 3D клеточных конструкций по типу сфероидов.
+При поддержке индустриального партнера выполнены важнейшие работы по подготовке библиотек РНК для секвенирования и отработке протоколов выделения РНК из ядер единичных клеток с предоставлением необходимых для работы аппаратных мощностей и человеческих ресурсов.
+Также в ходе реализации этапа были предприняты значительные усилия по развитию молодых кадров – разработаны и внедрены программы ДПО, проведена «Школа по регенеративной медицине» с привлечением специалистов и слушателей из регионов России.
+Область применения результатов НИР – создание биологических препаратов, направленных на стимуляцию регенеративных процессов в тканях человека с помощью генной терапии или применения клеточных продуктов на основе генетических технологий. Методологические и прикладные результаты проекта могут быть использованы для дальнейшего ведения как фундаментальных исследований в области регенеративной физиологии и медицины, так и для решения прикладных задач по созданию соответствующих новых классов лекарственных препаратов.
+Экономическая эффективность и значимость работы в краткосрочной перспективе заключается в повышении эффективности поиска новых мишеней для уникального класса лекарственных препаратов, направленных на стимуляцию регенерации тканей. Долгосрочные эффекты реализации НИР связаны с уменьшением бремени расходов по инвалидности или иной стойкой утрате функций органов и частей тела человека за счет внедрения препаратов генной терапии, активирующих процесс регенерации тканей человека.</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (41)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Ефименко Анастасия Юрьевна</strong> <span style="color:#71717a;font-size:0.8rem">Доктор медицинских наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Тюрин-Кузьмин Петр Алексеевич</strong> <span style="color:#71717a;font-size:0.8rem">Доктор биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Кулебякин Константин Юрьевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Карагяур Максим Николаевич</strong> <span style="color:#71717a;font-size:0.8rem">Доктор биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Рубина Ксения Андреевна</strong> <span style="color:#71717a;font-size:0.8rem">Доктор биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Монакова Анна Олеговна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Толстолужинская Анастасия Евгеньевна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Тарасова Елена Владимировна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат экономических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Путляева Лидия Викторовна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Калинина Наталья Игорьевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Бирюкова Виктория Николаевна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Бондарев Андрей Дмитриевич</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Бозов Кирилл Дмитриевич</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Бутузова Дарья Андреевна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Примак Александра Леонидовна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li></ul>
+              <p style='color:#52525b;font-size:0.8rem;margin-top:0.5rem'>...и ещё 26</p>
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

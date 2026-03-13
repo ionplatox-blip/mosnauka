@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | МГТУ им. Баумана</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-bauman.html">МГТУ им. Баумана</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">Реакции циклоприсоединения</span> <span class="tag">Рн-чувствительные полимеры</span> <span class="tag">Термочувствительные полимеры</span> <span class="tag">Фоточувствительные полимеры</span> <span class="tag">Раневые повязки</span> <span class="tag">Гидрогели с избирательным откликом</span> <span class="tag">4d печать</span> <span class="tag">3d печать</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Структура и свойства природных и синтетических высокомолекулярных соединений</span></div>
+          <h1 style="font-size:1.5rem">4D печать функциональных полимеров с избирательно активируемым откликом</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">23,100 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225072318006-0</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2021-04-01 — 2024-12-31</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№1</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">20</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">РНФ</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>Российский научный фонд</div>
+                </div><div class="metric-box" style="text-align:left">
+                  <div class="label">Исполнитель</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">МГТУ ИМ. Н.Э. БАУМАНА</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>1. Показано, что водный раствор азобензолсодержащего ПУ не совместим с водным раствором ПНИПАМ при концентрация последнего от 0.5 до 2.5 масс.%. Показано, что возможно получение гелевых пленок на основе смеси полимеров (азобензолсодержащий полиуретан 3 масс.%, ПВС 0.5 масс.%) и обработанных насыщенным раствором тетрабората натрия.
+2. Показано, что возможно получение гелевых пленок на основе смеси полимеров (азобензолсодержащий полиуретан 3 масс.%, ПВС 0.5 масс.%) и полученные пленки способны менять форму (изгибаться) за счет транс­цис перехода азобензола, индуцированного УФ-воздействием. Требуется не менее 1 часа воздействия на пленку для получения эффекта.
+3. Показано, что латексы на основе поливинилацетата 0.05 масс.% И 0.0028М хлорида натрия, могут служить носителями водонерастворимого природного pH-чувствительного красителя куркумина с концентрацией 0 .1 -1 .0 мг/мл. Показано, что куркумин в сочетании с латексами сохраняет свой pH переход при 8, изменяя цвет с желтого на оранжево-красный. Система куркумин- латекс стабильна в диапазоне pH 3-9 и при этом сохраняется температурный переход жесткие-мягкие частицы для латексов.
+4. Продемонстрировано, что коллоидную систему, приготовленную при температуре 0-3°С, на основе 0,05 масс.% латексных наночастиц, 0,0028 М NaCl и 0,5 мг/мл куркумина, помещенная в пакет для диализа, может использоваться как сенсор для детекции температуры хранения мясных или рыбных продуктов и их свежести. Наличие циклов разморозки- заморозки продуктов можно определить визуально по гомогенности сенсора (температурные переход жесткие-мягкие частицы для латексов), а о свежести продуктов - по цвету сенсора (pH переход куркумина).
+5. Показано, что краткосрочная культура (до 3-го дня) BMECs и As на 7 масс.% геле CNC-g-PNIPAM могут быть использованы для реконструкции in v it r o локального микроокружения опухоли, контролируемого гемато-энцефалического барьера.
+6. Была изучена проницаемость по Дарси (измерение времени истечения потока среды через гель заданного размера) и с помощью программы ImageJ был проведен анализ СЭМ изображений для определения размера фибрилл и размера пор для гелей на основе альдегидной НКЦ и сополимеров акриламида и гидразида акриловой кислоты для концентрации 3 масс.% и соотношения компонентов (НКЦ/полимер) 1/1. Диаметр фибрилл составил 25-29 нм для всех гелей, размер пор согласно проницаемости по Дарси составил 400 нм для всех гелей.
+7. Данные диаметра фибрилл и размера пор легли в основу расчета модуля сгибания и модуля растяжения индивидуальных фибрилл. Расчет проводился согласно ранее разработанной теории (10.1073/pnas.222075512). Модуль растяжения Ks (*10~(15)Дж) составил 0,0073, 0.0431, 0,1051 и 0,9608 для гелей-1,2,3 и 4, соответственно (гели отличаются количеством сшивок). 
+Модуль сгибания КЬ (*10л (15)Дж) составил 1,41, 4,13, 7,38 и 85,7 для гелей-1,2,3 и 4, соответственно (гели отличаются количеством сшивок).
+8. Показано, что гели с небольшой концентрацией сшивок обладают нелинейно-механическими свойствами, в то время как наиболее прочный гель с максимальной концентрацией сшивок не обладает данным свойством. В нелинейной области дифференциальный модуль К&#x27; зависит от стресса в степени п, коэффициент п называется коэффициентом нелинейности и составил 0.75, 0.51 и 0.34 для гелей 1,2 и 3, соответственно.
+9. Для гелей на основе альдегидной НКЦ и сополимеров акриламида и гидразида акриловой кислоты были изучены процессы релаксации при нагрузке 10%. Показано, что наибольшим восстановлением обладают гели с высокой степенью сшивки.
+10. Проведено сравнение различных методов определения концентрации альдегидных групп в НКЦ. Исследовано 2 типа альдегидной НКЦ, отличающихся содержанием альдегидных групп. Использовали взаимодействие с гидроксил амином с последующим титрованием выделившейся НС1 или элементным анализом на азот продукта реакции. Также исследовали взаимодействие альдегидной группы с третбутилкарбазатом и фотометрическое определение непрореагировавшего третбутилкарабазата. Показано, что методом фотометрического определения является более точным.
+11. Количество альдегидных групп не влияет на методы исследования. Была протестирована альдегидная НКЦ и альдегидная НКЦ, содержащая фурановые группы. Показано, что наличие фурановых функциональных групп не влияет на полученные результаты титрования, однако, занижает данные для метода определения элементным анализом. pH исходной альдегидной НКЦ составляет 4-4.3, изменение pH за счет добавления щелочи или карбоната натрия негативно сказывается на реакции с гидроксиламином, но положительно на реакции с третбутилкарбазатом. Таким образом, спектрофотометрическое определение альдегидных групп по непрореагировавшему трет-бутилкарбазату является более точным и универсальным методом определения, который в меньшей степени зависит от присутствия других функциональных групп и pH системы. 
+12. Показано, что при соотношении НКЦ/латекс от 0,25 до 2,0 и общей концентрации выше 7 масс.% система находится в состоянии геля. 
+При исследовании реологии гелей был обнаружен эффект куполо-образного увеличения модуля накопления, G&#x27;, с увеличением нагрузки, у, который наблюдался только при определенном соотношении НКЦ/латекс и выше определенной концентрации.
+Результаты выполнения проекта представлены на 9 конференциях различного уровня, опубликовано 7 тезисов докладов в сборниках конференций, входящих в РИНЦ. Опубликовано 2 статьи в журналах Q1 и 1 статья в журнале Q2. Результаты проекта были интегрированы в образовательные программы МГТУ им. Н.Э. Баумана (&quot;Современные методы физической химии&quot;, &quot;Наука на кухне: от мишленовского ресторана к мягкой материи&quot;), которые очно читаются руководителем проекта с сентября 2023, а участники проекта ассистируют в лабораторных работах.</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (7)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Колдобский Андрей Борисович</strong> <span style="color:#71717a;font-size:0.8rem">Доктор химических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Морозов Максим Игоревич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат технических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Кирейнов Алексей Валерьевич</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Беляева Анастасия Александровна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат химических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Голубков Сергей Сергеевич</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Стаценко Татьяна Геннадьевна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Морозова Софья Михайловна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат химических наук</span></li></ul>
+              
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

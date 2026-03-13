@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | МГУ им. М.В. Ломоносова</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-mgu.html">МГУ им. М.В. Ломоносова</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">таксономия</span> <span class="tag">сосудистые растения</span> <span class="tag">пространственные данные</span> <span class="tag">базы данных</span> <span class="tag">россия</span> <span class="tag">ботаника</span> <span class="tag">гис</span> <span class="tag">флора</span> <span class="tag">пространственный анализ</span> <span class="tag">география растений</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Общие вопросы</span></div>
+          <h1 style="font-size:1.5rem">Атлас флоры России: система документации и анализа пространственного разнообразия растений</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">4,000 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225012803318-3</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2023-01-01 — 2023-12-31</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№3</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">6</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">РНФ</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>Российский научный фонд</div>
+                </div><div class="metric-box" style="text-align:left">
+                  <div class="label">Исполнитель</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">МОСКОВСКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ ИМЕНИ М.В.ЛОМОНОСОВА, МГУ ИМЕНИ М.В.ЛОМОНОСОВА, МОСКОВСКИЙ УНИВЕРСИТЕТ ИЛИ МГУ</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>Наиболее важными результатами в 2023 г. (третий год проекта из четырёх), которые уже сейчас определяют важнейшие достижения проекта, стали: Этап 6 (в части создания и размещения в открытом доступе базы данных «Vascular plants of the Soviet Far East (1985–2006)», 156 760 точек); Этап 10 (в части размещения в открытом доступе карт «Атласа флоры России» для 8793 видов сосудистых растений, в т.ч. 4882 полностью проверенные карты); Этап 15 (в части создания новой карты флористического районирования России).
+
+Этап 1. Подготовка и сканирование новых материалов. В 2023 г. в фонды Гербария МГУ поступило и было полностью обработано 14 354 образца (план не менее 12 тыс.). Общий объем физической коллекции достиг отметки в 1 121 615 образцов, по объемам фондовой коллекции это 59-й гербарий мира. Доля оцифрованных коллекций превышает 95%. В результате активного роста коллекций и инфраструктурных решений Гербарий Московского университета получил дополнительные институциональные голоса для голосования на Номенклатурной сессии Международного ботанического конгресса, который состоится в 2024 г. в Мадриде. Число голосов было увеличено с трёх до четырёх (или пяти). Окончательное решение будет опубликовано в феврале 2024 г.
+
+Этап 2. Геопривязка образцов по алгоритму ИСТРА; Этап 3. Геопривязка образцов ручная. За отчётный год мы впервые ввели в базу координаты для 82 132 образцов (планировалось, что будет привязано к координатам не менее 25 тыс. образцов – 15 тыс. шт. по алгоритму ИСТРА; 10 тыс. шт. ручных геопривязок). Однако результаты 2023 г. в этой части гораздо значительнее – мы заметно улучшили качество геоданных в результате планомерной ручной верификации автоматических геопривязок: так, с территории России за 2023 г. в базе было учтено 41,8 тыс. новых ручных геопривязок (было 406,2 тыс., стало 448,0 тыс.).
+
+Этап 4. Ввод текстовых данных с этикеток. По итогам 2023 г., достигнутые результаты заметно превосходят плановые – введено 64 тыс. этикеток (было 561 тыс., стало 625 тыс.) (планировалось, что будет введён в базу данных текст этикеток не менее 15 тыс. образцов). Эта работа не является приоритетной для «Атласа», однако она позволяет сократить время, необходимое для точной ручной геопривязки образцов (Этап 3). Кроме того, оцифровка текстовых данных стала эффективным инструментом для геопривязки образцов с помощью автоматических и полуавтоматических методов обработки текстового корпуса (Этап 4).
+
+Этап 5. Анализ пространственных пропусков. Результатами анализа пространственных пропусков стал ранжированный перечень атласов, флор и сводок, которые будут в приоритетном порядке переведены в формат базы данных для закрытия максимального числа квадратов.
+
+Этап 6. Оцифровка печатных атласов. Результаты работ по оцифровке 1135 карт по 4142 видам из восьмитомной сводки «Сосудистые растения Советского Дальнего Востока» (1985–1996) полностью размещены в открытом доступе по адресу https://doi.org/10.15468/pa3dv8 . Из этого источника после оцифровки карт мы получили следующее число новых записей по регионам: Чукотский АО – 17573 шт., Магаданская область – 10254 шт., Камчатский край – 22605 шт., Хабаровский край – 25428 шт., Амурская область – 18921 шт., ЕАО – 3323 шт., Приморский край – 38709 шт., Сахалинская область – 18817 шт., а также Якутия – 41 шт.
+
+Этап 7. Публикация материалов в ЦГ МГУ. Общее число геопривязок Цифрового гербария МГУ превышает 905 тыс., общее число введенных этикеток превышает 625 тыс. Эти результаты являются ключевыми индикаторами состояния проекта в части работы с гербарными коллекциями. Счетчики числа геопривязок и числа оцифрованных этикеток находится на главной странице портала (http://plant.depo.msu.ru/) и обновляются в режиме реального времени. Общая статистика Цифрового гербария МГУ на 29.11.2023 г.: образцов – 1297712, изображений – 1274394, видов – 36959, геопривязок – 905211, этикеток + OCR – 625329 + 660857.
+
+Этап 8. Поддержка ЦГ МГУ. Производился непрерывно в режиме 365/7/24. Осуществлялся членами IT-команды для обеспечения распределенного доступа к данным как членов научной группы, так и пользователей. Также на серверы Цифрового гербария МГУ переведена фундаментальная электронная библиотека «Флора и фауна», созданную А.Б. Шипуновым. После смерти основателя в декабре 2022 г. она едва не была утрачена (общий объем 16 437 наименований отсканированных книг по различным вопросам ботаники и зоологии и около 6 тыс. флор на иностранных языках). Доступно зеркало системы по адресу https://shipunov.depo.msu.ru/shipunov/school/sch-ru.htm 
+
+Этап 9. Разработка портала. Работы по данному этапу в 2023 году не предполагались.
+
+Этап 10. Подготовка картографических сервисов. В качестве ключевого результата для проекта в 2023 году мы разместили в открытом доступе комплект обновлённых и отредактированных карт «Атласа флоры России», который содержит сеточные карты 8793 видов сосудистых растений, в т.ч. 4882 полностью проверенные карты. Обновлённые карты опубликованы в Цифровом гербарии МГУ. Прямые ссылки на комплект карты: https://plant.depo.msu.ru/module/collectionpublic?openparams=[open-id=301765963] 
+https://plant.depo.msu.ru/open/public/search?collection=ATLAS
+https://plant.depo.msu.ru/open/public/search?searchBy=any&amp;queryString=FLORUS%20ATLAS
+
+Этап 11. Подготовка публикаций. За третий год проекта полностью подготовлено и опубликовано 2 статьи в Q1-журналах Web of Science Core Collection (журналы «Molecular Biology and Evolution», «Ecology and Evolution»). Кроме того, издано 2 статьи в журналах, индексируемых в Scopus (журналы «Botanica Pacifica», «Ботанический журнал»).
+
+Этап 12. Подготовка отчетов. Технический этап.
+
+Этап 13. Подготовка наборов данных для онлайн публикации. Этап 14. Интеграция сторонних наборов данных. На 3.12.2022 г. по сосудистым растениям России поисковый модуль GBIF выдавал 5 137 464 находки (без учёта Крыма), а годом позже (30.11.2023 г.) ¬– 6 273 944 шт. Таким образом, за третий год практической реализации проекта данные по флоре России в GBIF выросли на 1 136 480 ед. Кроме того, имеется 220 354 находки по сосудистым растениям Крыма (только с геопривязками), что на 30 730 шт. больше, чем год назад (было 189 624 ед.). Таким образом, общий объем данных по флоре сосудистых растений России в GBIF составляет 6 494 298 записей.
+
+Этап 15. Анализ данных. Мы провели флористическое районирование России на основе датасета FLORUS23 с использованием кластерного и филогенетического анализа сеточных данных. Оно состоит из 26 безранговых районов, которым мы дали предварительные названия. Ниже приведен список районов и для каждого дан топ-вид с максимальным индикаторным значением IndVal. Ареалы этих видов наилучшим образом характеризуют получившиеся пространственные выделы: 1) Алтае-Саянский: Juniperus pseudosabina (0,57); 2) Становой: Salix alexii-skvortzovii (0,40); 3) Северо-Европейский: Melampyrum sylvaticum (0,31); 4) Уральский: Seseli krylovii (0,87); 5) Путоранский: Papaver variegatum (0,53); 6) Восточносибирский: Thesium repens (0,27); 7) Кавказский: Trifolium trichocephalum (0,92); 8) Кольско-Ямальский: Hieracium alpinum (0,47); 9) Курило-Сахалинский: Abies sachalinensis (0,85); 10) Крымско-Кубанский: Alyssum hirsutum (0,72); 11) Джугджурский: Crepis burejensis (0,39); 12) Курило-Камчатский: Cypripedium yatabeanum (0,55); 13) Корякский: Mertensia pubescens (0,40); 14) Даурский: Oxytropis myriophylla (0,75); 15) Верхоянский: Smelowskia jacutica (0,44); 16) Ишимский: Seseli strictum (0,69); 17) Среднеобский: Abies sibirica (0,20); 18) Урало-Донской: Stachys recta (0,62); 19) Среднерусский: Picea abies (0,46); 20) Маньчжурский: Vitis amurensis (0,71); 21) Прикаспийский: Artemisia pauciflora (0,76); 22) Гыдано-Новоземельский: Phippsia concinna (0,29); 23) Высокоарктический: Saxifraga platysepala (0,59); 24) Лено-Чукотский: Cardamine digitata (0,38); 25) Якутский: Papaver jacuticum (0,41); 26) Колымский: Eremogone tschuktschorum (0,22).</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (4)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Дудов Сергей Валерьевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат географических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Серегин Алексей Петрович</strong> <span style="color:#71717a;font-size:0.8rem">Доктор биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Майоров Сергей Робертович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Шнер Юлия Вячеславовна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li></ul>
+              
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | РТУ МИРЭА</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-mirea.html">РТУ МИРЭА</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">АКТИВНЫЕ ДИЭЛЕКТРИКИ</span> <span class="tag">СЕГНЕТОЭЛЕКТРИКИ</span> <span class="tag">КРИСТАЛЛИЧЕСКАЯ СТРУКТУРА</span> <span class="tag">ДИЭЛЕКТРИЧЕСКИЕ СВОЙСТВА</span> <span class="tag">КОНДЕНСАТОРНЫЕ МАТЕРИАЛЫ</span> <span class="tag">ЭЛЕКТРЕТНЫЕ ПОЛИМЕРНЫЕ ПЛЕНКИ</span> <span class="tag">СЕГНЕТОЭЛЕКТРИКИ-РЕЛАКСОРЫ</span> <span class="tag">ПЬЕЗОКЕРАМИКА</span> <span class="tag">МОНОКРИСТАЛЛЫ</span> <span class="tag">ТВЕРДЫЕ РАСТВОРЫ</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Диэлектрические материалы</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Сегнетоэлектрики и антисегнетоэлектрики</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Химическая термодинамика. Термохимия. Равновесия. Физико-химический анализ, фазовые переходы</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Сегнетоэлектрики и пьезоэлектрики</span></div>
+          <h1 style="font-size:1.5rem">РАЗРАБОТКА ПОЛИФУНКЦИОНАЛЬНЫХ ПЬЕЗО-, ПИРО-, СЕГНЕТОЭЛЕКТРИЧЕСКИХ МАТЕРИАЛОВ ДЛЯ НОВЫХ ПЕРСПЕКТИВ-НЫХ УСТРОЙСТВ ЭЛЕКТРОННОЙ ТЕХНИКИ</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">17,295 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225021710547-0</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2024-01-01 — 2024-12-31</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№3</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">4</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">МИНОБРНАУКИ РОССИИ</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>МИНИСТЕРСТВО НАУКИ И ВЫСШЕГО ОБРАЗОВАНИЯ РОССИЙСКОЙ ФЕДЕРАЦИИ</div>
+                </div><div class="metric-box" style="text-align:left">
+                  <div class="label">Исполнитель</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">РТУ МИРЭА</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>Отчет 118 с., 28 рис., 5 табл., 160 источн.
+ 
+Приводятся результаты выполненных в 2024 году в соответствии с планом реализации проекта исследований, направленных на разработку новых перспективных пьезоэлектрических, конденсаторных, нелинейных электрических, СВЧ и других функциональных материалов электронной техники, на раскрытие механизмов возникновения в них особых диэлектрических, электрических, магнитных и других свойств. Основными объектами исследований являлись твердые растворы со структурой перовскита, образующиеся в системах BiScO3–PbTiO3–PbMg1/3Nb2/3O3 (BS–PT–PMN), BaTiO3–PbFe2/3W1/3O3 (BT–PFW), BaTiO3–BaZrO3–PbTiO3 (BT–BZr–PT), монокристаллы фаз Bi2Ti2O7 и R-CuCrO2 со структурами пирохлора и делафоссита, электретные полимерные пленки. В указанных системах определены режимы получения керамических образцов твердых растворов с сегнетоэлектрическими (СЭ) и родственными свойствами, осуществлен их синтез для ранее не изученных составов, прослежена эволюция кристаллической структуры и электрофизических свойств твердых растворов с изменением их состава, выявлен и изучен кроссовер между СЭ и сегнетоэлектрическим-релаксорным (СЭ-Р) состояниями, определены составы, проявляющие возвратные СЭ-Р свойства. Установлены составы твердых растворов системы BS–PT–PMN, имеющие высокий пьезоэлектрический модуль (d33≳500 пКл/Н). Установлено, что использование добавок легкоплавких компонент Pb5Ge3O11 и Na2B4O7 к BT–PFW понижает температуру спекания керамики до 950оС с сохранением высоких диэлектрических характеристик в области комнатной температуры, что позволяет использовать такую керамику для создания многослойных конденсаторов с межслоевыми электродами из Ag/Pd. Изучены диэлектрические и нелинейные электрические свойства выращенных монокристаллов R-CuCrO2, проявляющих эффект порогового по электрическому полю переключения из высокоомного в низкоомное состояние, имеющий потенциал применения в современных устройствах микроэлектроники. На примере кристаллов Bi2Ti2O7 впервые установлена возможность возникновения СЭ-Р свойств, связанных не с наличием структурного беспорядка как в PbMg1/3Nb2/3O3, а с наличием геометрической фрустрации кристаллической структуры. Получены и изучены новые электретные полимерные пленки на основе диацетата целлюлозы с внедренными в них полярными молекулами.
+Все полученные результаты являются оригинальными.
+Результаты НИР представляют интерес как для фундаментальных исследований в области физики новых функциональных материалов, так и для практических применений в области разработок и совершенствования технологий новых перспективных функциональных материалов электронной техники.
+По результатам работ за отчетный период (2024 год) оформлено 7 научных публикаций, из них 4 статьи в индексированных ведущих Российских и зарубежных научных изданиях; сделаны два доклада на Международных конференциях; зарегистрирована новая заявка на патент; в Диссертационных советах при РТУ МИРЭА защищены две кандидатские диссертации; результаты разработок проекта представлялись на международной специализированная выставке «Композит-экспо».
+Программа исследований на отчетном этапе, установленная планом реализации проекта, выполнена полностью.</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (10)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Федулов Дмитрий Юрьевич</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Козлов Владислав Игоревич</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Сысоев Максим Алексеевич</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Спицин Александр Игоревич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат технических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Колобанов Алексей Иванович</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Соколов Илья Евгеньевич</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Сайфулина Диана Алексеевна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Ерофеева Александра Сергеевна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Каменцев Константин Евгеньевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат технических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Буш Александр Андреевич</strong> <span style="color:#71717a;font-size:0.8rem">Доктор технических наук</span></li></ul>
+              
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

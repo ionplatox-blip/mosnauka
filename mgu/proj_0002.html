@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | МГУ им. М.В. Ломоносова</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-mgu.html">МГУ им. М.В. Ломоносова</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">морфология</span> <span class="tag">insecta</span> <span class="tag">трех- мерная электронная микроскопия</span> <span class="tag">полет</span> <span class="tag">анатомия</span> <span class="tag">миниатюризация</span> <span class="tag">методы</span> <span class="tag">насекомые</span> <span class="tag">arthropoda</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Энтомология</span></div>
+          <h1 style="font-size:1.5rem">Изучение миниатюризации в различных группах наземных членистоногих</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">7,000 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225041614895-7</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2024-01-01 — 2024-12-31</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№3</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">2</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">РНФ</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>Российский научный фонд</div>
+                </div><div class="metric-box" style="text-align:left">
+                  <div class="label">Исполнитель</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">МОСКОВСКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ ИМЕНИ М.В.ЛОМОНОСОВА, МГУ ИМЕНИ М.В.ЛОМОНОСОВА, МОСКОВСКИЙ УНИВЕРСИТЕТ ИЛИ МГУ</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>Завершена работа в нескольких направлениях изучения миниатюризации в различных группах наземных членистоногих, основные из них: исследование анатомии миниатюрного наездника Сamptoptera; сравнительный анализ морфологических особенностей, связанных с миниатюризацией у пауков и клещей; аллометрический анализ масштабирования центральной нервной системы насекомых; изучение механики полета трипсов; а также обобщение всех полученных результатов. В результате комплексного исследования анатомии двух видов рода Camptoptera (Hymenoptera: Mymaridae) с использованием гистологических методов, матричной томографии и трехмерного компьютерного моделирования, показано что что данного миниатюрного наездника не наблюдается принципиальных упрощений организации, как и у большинства других микронасекомых, за исключением ЦНС, которая почти безядерная. Camptoptera sp. демонстрирует как универсальные последствия миниатюризации (например, упрощение эндоскелета и выделительной системы, увеличение относительного объема ЦНС и другие), так и специфические (незначительные изменения в наборе мышц, безядерные нейроны и другие).
+Проведено сравнение анатомии миниатюрных паукообразных с более крупными паукообразными, а также с миниатюрными насекомыми. Несмотря на маленькие размеры, принципиальных изменения в анатомии по сравнению с более крупными паукообразными из родственных групп не происходит, хотя наблюдается ряд особенностей, связанных с миниатюризацией. Миниатюрные паукообразные демонстрируют сходные с насекомыми последствия миниатюризации: олигомеризация и увеличение объема нервной системы, утрата или значительное упрощение кровеносной и дыхательной систем,
+увеличение относительного объема половой системы (у клеща). В отличие от миниатюрных насекомых и клещей у паука не наблюдается уменьшения объема пищеварительной системы или увеличение относительного объема половой системы. Мы полагаем, что пределы миниатюризации паукообразных ограничивает размер ЦНС, как и у насекомых, но пауков, как у хищников, минимальные размеры также определяются и размером пищеварительной системы. На основе оригинальных и литературных данных проведен масштабный аллометрический анализ ЦНС насекомых. В анализ вошли данные для более 250 видов из 79 семейств из 13 отрядов. Показано, что относительно выраженная гипоаллометрия свойственна для всей ЦНС целиком, однако мозг демонстрирует значительно более высокую степень гипоаллометрии, чем ганглии брюшной нервной цепочки и все другие системы органов. Отдельные нейропилярные центры масштабируются по-разному.
+Для нейропилярных центров нижнего порядка характерна корреляция с относительным размером центров высшего порядка (оптические и антеннальные доли коррелируют с размером центрального комплекса и грибовидных тел, а также числом и типовым составом сенсорных единиц анализаторов). Анализ числа, размера и плотности нейронов в мозге показал, что с уменьшением размера тела значительно сокращается число и размер клеток нервной системы, однако плотность нейронов увеличивается, а разброс размеров нейронов уменьшается. Несмотря на разный характер масштабирования нейропилярных центров мозга и уменьшение числа нейронов в составе ЦНС, нейропиль как всей ЦНС, так и мозга, в частности, демонстрирует строгую изометрию. Независимо от размера тела соотношение объема нейропиля и клеточной коры мозга у всех изученных членистоногих разных размерных классов постоянно и составляет около 60%, что подтверждает установленную нами ранее константу. Методами масштабного и численного моделирования изучена аэродинамика перистых крыльев трипсов на модельном объекте Frankliniella occidentalis (Thysanoptera: Thripidae). Кинематических параметры передних крыльев рассчитаны по скоростным видеозаписям. F. occidentalis совершает взмахи с частотой 230 Гц, траектория движения крыльев U-образная, что характерно для большинства миниатюрных насекомых, во время трансляций углы атаки достигают 72°, среднее по циклу число Рейнольдса 12,6. По фотографиям препаратов изучено строение крыльев. Веер щетинок F. occidentalis неоднородный: передний край
+мембраны несет прямые гладкие щетинки; на заднем крае более длинны волнистых щетинок с меньшим зазором, расположенных в два ряда. В полете ряды щетинок перекрещены под углом 10–15°, образуя сетчатую структуру. Согласно численному моделированию упрощенного перистого крыла с параллельными щетинками, большая часть аэродинамических сил генерируются на трансляционных фазах крылового цикла, такая несимметричность цикла характерна для микронасекомых. Эквивалентные мембранозные крылья, создают сходные по динамике, но в среднем большие на 19% аэродинамические силы. В эксперименте соотношение подъемной силы к лобовому сопротивлению перистой модели составляет 0,29–0,43 при условиях, соответствующих трансляционым движениям крыльев F. occidentalis.
+Такое низкое аэродинамическое качество крыла типично для микронасекомых из-за относительно большого влияния сил вязкого трения. В этом случае существенная часть аэродинамических сил генерируется за счет лобового сопротивления крыла, что и было подтверждено нами в расчете и эксперименте. Подъемная сила и лобовое сопротивление перистой модели снижается на 3–6% при перекрещивании щетинок, поэтому мы можем утверждать, что двурядная конфигурация служит не для увеличения аэродинамической эффективности крыла, а вероятнее всего механически стабилизирует веер щетинок в полете.</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (6)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Прописцова Евгения Алексеевна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Фарисенков Сергей Эдуардович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Макарова Анастасия Алексеевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Петров Петр Николаевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Десятиркина Инна Александровна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Лапина Надежда Алексеевна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li></ul>
+              
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

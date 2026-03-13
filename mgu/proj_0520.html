@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | МГУ им. М.В. Ломоносова</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-mgu.html">МГУ им. М.В. Ломоносова</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">лёгочная гипертензия</span> <span class="tag">про- и антивоспалительные протеазы гемостаза</span> <span class="tag">роль окислительного стресса в патогенезе паркинсонизма и половых дисфункций</span> <span class="tag">регуляция артериального давления и тонуса сосудов в онтогенезе</span> <span class="tag">механизмы секреции ацетилхолина</span> <span class="tag">регуляция секреции ацетилхолина в нервно-мышечных синапсах</span> <span class="tag">пре- и неонатальные стрессы</span> <span class="tag">электрофизиология миокарда</span> <span class="tag">пептидные регуляторы</span> <span class="tag">механизмы абсансной эпилепсии</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Возрастная физиология</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Физиологически активные вещества</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Кровообращение</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Общая нейрофизиология</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Общие и теоретические проблемы нормальной и патологической физиологии</span></div>
+          <h1 style="font-size:1.5rem">Механизмы физиологических адаптаций</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">50,314 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225012803234-6</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2024-01-01 — 2024-12-31</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№4</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">11</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">Правительство России</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>Правительство Российской Федерации</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>При реализации проекта «Механизмы физиологических адаптаций» в 2024 году были проведены исследования на различных уровнях организации: молекулярно-клеточном , тканевом, организменном. Для решения задач, поставленных в проекте, экспериментаторы моделировали различные физиологических и патологических состояний организма. Использование таких экспериментальных моделей дало возможность в лабораторных условиях исследовать механизмы нормально протекающих процессов, а также различных заболеваний, возникающих у человека. Все это позволило получить новые приоритетные научные данные. 
+
+В блоке исследований, посвященных расстройствам аутистического спектра и поискам подходов к их коррекции, патологию моделировали путем постнатального введения соли вальпроевой кислоты (ВПК). Показано, что постнатальное введение пептида вазопрессинового ряда Ac-D-SPRG в дозе 10 мкг/кг с 14-го по 21-ый дни жизни уменьшает негативное влияние ВПК на социальное поведение крыс в постнатальной вальпроатной модели расстройства аутистического спектра. Такое введение пептидов на фоне действия ВПК сдвигает параметры зоосоциального поведения от привязанности к маме и сибсу в сторону взаимодействия с чужой самкой и чужим незнакомым детенышем. Следовательно, введение пептида вазопрессинового ряда Ac-D-SPRG может купировать негативное влияние ВПК на уровень тревожности, степень депрессивно-подобного поведения и обучение животных. 
+
+В модели пренатальной алкогольной интоксикации была проведена оценка эффектов многократных ингаляций аргонсодержащей смесью (74% Ar, 21% O2, 5% N2) в сравнении с искусственным воздухом (79% N2, 21% O2) на поведение белых крыс. У потомства, подвергнутого пренатальной алкогольной интоксикации, наблюдалась тенденция к снижению качества развития вестибуло-моторных рефлексов, а также подавлению ориентировочно-исследовательского поведения. Ингаляции инертным газом аргоном скорректировали когнитивные нарушения, вызванные пренатальной алкогольной интоксикацией.
+
+При оценке отставленного влияния пренатальной гипоксии, перенесенной на разных сроках гестации, было показано, что оно носит разнонаправленный характер на характер социальных взаимодействий у потомства крыс. Продемонстрировано, что в 3-4-недельном возрасте у детенышей белых крыс, переживших гипоксию на 10-е сутки гестации, снижено стремление к социальной новизне, в то время как после перенесенной перинатальной гипоксии наблюдается обратная тенденция. Падение интереса к новым социальным контактам сохраняется у детенышей и в 7-недельном возрасте и проявляется преимущественно у самок, в то время как последствия перинатальной гипоксии с возрастом постепенно сглаживаются. Таким образом, влияние острой внутриутробной гипоксии на характер социальных взаимодействий в большей степени проявляется в раннем постнатальном периоде. Кроме того, последствия гипоксии периода раннего органогенеза по сравнению с перинатальной гипоксией оказываются более выраженными и, по крайней мере, у самок, сохраняются вплоть до конца препубертатного периода.
+
+В рамках реализации проекта была разработана модель неонатального воспаления у белых крыс – введение липополисахарида в дозе 50 мкг/кг на 7-ой и 9-ый дни жизни крыс. Показано, что данное воздействие вызывает увеличение уровня TNFα в сыворотке крови, приводит к замедлению увеличения массы тела, но не влияет на реакцию крыс на непредсказуемое стрессогенное воздействие.
+
+В работе оценивали применимость методов машинного обучения для анализа многомерных данных автоматизированного фенотипирования мышей на модели различения пола и гормонального статуса особи (на примере половых гормонов). Был разработан иерархический классификатор, позволяющий с высокой точностью (0.97) различать пол и гормональный статус мышей, что свидетельствует о применимости данного метода для решения задач классификации животных по физиологическому статусу.
+
+При исследовании поведенческих и электрофизиологических характеристик крыс линий Крушинского-Молодкиной (КМ) и субпопуляций крыс линии WAG/Rij с абсансной и со смешанной эпилепсией (абсансная и аудиогенная эпилепсия) было показано, что повышенный уровень тревожности у абсансных крыс линии WAG/Rij с аудиогенной эпилепсией (WAG/Rij-AGS) генетически обусловлен, а депрессивноподобное поведение у крыс WAG/Rij не зависит от предрасположенности к аудиогенным судорогам. У крыс WAG/Rij-AGS зарегистрированы отклонения в социальном поведении, но они оказываются более выраженными у крыс линии КМ с аудиогенной эпилепсией. Высокочастотная стимуляция области дорсального стриатума, отличающаяся по плотности дофаминовых рецепторов у аудиогенных и неаудиогенных групп крыс, указывает на различия вовлеченности дорсального стриатума в контроль абсансной и смешанной форм эпилепсии у WAG/Rij-AGS и WAG/Rij-nonAGS (с абсансной эпилепсией) субпопуляций. Показано, что у крыс линии КМ регистрируемые пик-волновые разряды, более частые и более продолжительные, чем у крыс WAG/Rij-AGS и WAG/Rij-nonAGS субпопуляций.
+
+При изучении роли рецепторов, активируемых протеазами, в развитии повреждений мозговой ткани у мышей в условиях диабета было показано, что гипергликемия в условиях стрептозотоцин-вызванного диабета сопровождается повышением экспрессии рецептора, активируемого протеазами 1 типа (ПАР1) в коре и гиппокампе, но не в мозжечке. При этом это изменение коррелирует с нарастанием нейровоспаления в указанных структурах мозга. Таким образом, ПАР1 может быть одним из ключевых рецепторов, который опосредует вызванную диабетом индукцию нейровоспаления у мышей.
+
+Изучение прерывистой ингаляции молекулярным водородом у крыс с монокроталиновой легочной гипертензией  не выявило изменения артериального давления. Однако наблюдалось уменьшение воспаления и фиброза легочной ткани, снижение симпатического компонента барорефлекса в опытах in vivo и  чувствительности  альфа1-адренорецепторов к фенилэфрину в экспериментах на изолированных сосудах. Предполагается, что молекулярный водород оказывает влияние на центральную регуляцию сердечно-сосудистой системы и изменяет чувствительность артерий к агонистам альфа1-адренорецепторов.
+
+В рамках выполнения проекта была разработана модель культивирования изолированных артерий (на примере артерий икроножной мышцы крысы). Показано, что культивирование изолированных артерий в течение 12 ч приводит к небольшому уменьшению их чувствительности к агонисту альфа1-адренорецепторов метоксамину без уменьшения максимальной силы сокращения и изменения реакции эндотелий-зависимого расслабления на ацетилхолин. Это сопровождалось уменьшением содержания мРНК альфа актина и гладкомышечной изоформы тяжелых цепей миозина, содержание немышечной изоформы тяжелых цепей миозина не изменялось.
+
+Наконец, впервые было показано, что активация постсинаптических мышечных пуринорецепторов  Р2Y1-типа  со стороны эндогенных АТФ/АДФ возможна в моторных синапсах мыши за счет паннексин-зависимого источника  эндогенной АТФ при условии заторможенной активности эктонуклеотидазы (ЭН). В случае же сохранения активности ЭН в синапсах преобладает активация пресинаптических пуринорецепторов  (Р2Y13 /P2X7 типов) как со стороны везикулярных источников АТФ, так и не везикулярных (паннексин-зависимых).   
+
+Таким образом, в результате проведенных исследований были получены новые данные о механизмах физиологических адаптаций организма в нормальных условиях и при развитии патологий, а также предложены новые возможные способы коррекции некоторых заболеваний. Необходимо отметить, что переход к персонализированной медицине, высокотехнологичному здравоохранению и технологиям здоровьесбережения является одним из важных направлений стратегии научно-технологического развития нашей страны. В связи с этим, исследование различных механизмов физиологических адаптаций организма имеет не только теоретическое, но и практическое значение, способствуя решению фундаментальных и прикладных задач здоровьесбережения.</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (20)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Закирьянова Гузалия Фаритовна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Андреев-Андриевский Александр Александрович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Умарова Белла Анверовна</strong> <span style="color:#71717a;font-size:0.8rem">Доктор биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Маклакова Анастасия Сергеевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Тарасова Екатерина Олеговна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Медведева Наталия Александровна</strong> <span style="color:#71717a;font-size:0.8rem">Доктор биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Швецова Анастасия Алексеевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Сарычева Наталия Юрьевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Гайдуков Александр Евгеньевич</strong> <span style="color:#71717a;font-size:0.8rem">Доктор биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Манченко Дарья Михайловна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Глазова Наталия Юрьевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Крушинская Янина Валерьевна</strong> <span style="color:#71717a;font-size:0.8rem">Доктор биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Артемьева Марина Михайловна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Маслова Мария Вадимовна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Горбачева Любовь Руфэльевна</strong> <span style="color:#71717a;font-size:0.8rem">Доктор биологических наук</span></li></ul>
+              <p style='color:#52525b;font-size:0.8rem;margin-top:0.5rem'>...и ещё 5</p>
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

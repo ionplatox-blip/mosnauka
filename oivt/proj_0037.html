@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | ОИВТ РАН</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-oivt.html">ОИВТ РАН</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">эмбрион</span> <span class="tag">бластоциста</span> <span class="tag">биопсия трофэктодермы</span> <span class="tag">фемтосекундные лазерные импульсы</span> <span class="tag">машинное обучение</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Распознавание образов. Обработка изображений</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Воздействие лазерного излучения на вещество</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Эмбриональное развитие</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Методы и аппаратура в эмбриологии</span></div>
+          <h1 style="font-size:1.5rem">Разработка безопасного метода микрохирургии эмбрионов на основе машинного обучения в рамках вспомогательных репродуктивных технологий с использованием импульсов лазерного излучения фемтосекундной длительности (промежуточный, этап 2)</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">7,000 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225021310062-2</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2024-01-09 — 2024-12-13</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№2</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">РНФ</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>Российский научный фонд</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>1. Определение оптимальных параметров лазерного воздействия для реализации процедуры биопсии клеток трофэктодермы с использованием фемтосекундных лазерных импульсов.
+Было спроектировано и изготовлено крепление микроманипуляторов, удерживающие микропипетки к моторизованному предметному столику микроскопа. С помощью одной микропипетки присасывали бластоцисту со стороны ВКМ, удерживая её в статичном состоянии во время реза. С помощью второй — всасывали внутрь фрагмент трофэктодермы (ТЭ) за пределами блестящей оболочки эмбриона, который должен был быть подвергнут биопсии, называемый биоптат. Задача биопсии состояла в отделении биоптата за счет разрушения клеток перешейка, соединяющего биоптат и клетки ТЭ бластоцисты.
+Режим биопсии клеток ТЭ последовательностью лазерных импульсов, следующих с частотой f=2,5 кГц, при перемещении лазерного луча по заданной траектории поперек перешейка биоптата, оказался неэффективен. Оператор, задав траекторию и запустив процедуру, лишен возможности вмешаться в ход процесса. Было показано, что режим «цуга» импульсов (последовательность импульсов, количество которых задается оператором) может быть более эффективным с точки зрения сокращения времени и трудозатрат на процедуру биопсии клеток ТЭ, но не сокращает общее число импульсов, воздействующих на клетку и энерговклад в ближайшие клетки эмбриона. Было показано, что оптимальным режимом лазерного воздействия является режим одиночного импульса.
+Было проведено сравнение результатов экспериментов по отсечению биоптата с различной шириной перешейка H~5–30 мкм одиночными импульсами с интенсивностью I_514=5–16 ТВт/см2 (для λ=514 нм) и I_1028=10–65 ТВт/см2 (для λ=1028 нм). Было показано, что увеличение интенсивности I позволяет снизить требуемое количество импульсов N для любого значения H. Построена диаграмма для каждой длины волны. 
+
+2. Оценка биологических эффектов в клетках эмбриона индуцируемых фемтосекундными лазерными импульсами.
+Для оценки безопасности лазерного воздействия и определения оптимальной длины волны лазерного излучения были проведены исследования биологических эффектов, индуцируемых лазерными импульсами, — наличие активных форм кислорода (АФК) и уровень экспрессии белков теплового шока (БТШ). Исследование эмбрионов с помощью конфокальной микроскопии на наличие АФК и БТШ в клетках, прилегающих к области лазерного воздействия при биопсии, не выявило яркоокрашенных клеток. Вместе с тем, общий уровень яркости свечения красителя в клетках мог различаться в эмбрионах экспериментальных групп и группах отрицательного и положительного контроля.
+С точки зрения оказываемых биологических эффектов, использование импульсов видимого диапазона спектра выглядит более предпочтительным — интенсивность I_514=12 ТВт/см2 позволяла достаточно эффективно осуществлять отсечение биоптата, при этом не провоцируя повышение уровня АФК в клетках эмбриона, хотя и приводила к увеличению уровня экспрессии генов Hsp70.
+
+3. Отработка подходов к решению и разработка алгоритма для задач распознавания границ оболочки эмбриона и автоматизированного наложения траектории движения луча.
+Были изучены подходы для решения задачи распознавания отдельных элементов эмбриона — задача сегментации. Для решения этой задачи была использована нейросеть Mask R-CNN. Для ее обучения был накоплен массив, содержащий около 300 уникальных фотографий эмбриона мыши на стадии бластоцисты. Нейросеть была обучена для определения полости эмбриона и границ его оболочки. Проведена оценка точности определения границ оболочки эмбриона.
+Были изучены подходы для распознавания смещения эмбриона в кадре, вследствие его дрейфа при отсутствии закрепления в холдинговой пипетке — решена задача Object Tracking (отслеживание объекта в кадре). Были рассмотрены несколько методов, основанных как на машинном обучении, так и математических моделях. Даны оценки быстродействия каждого из методов и его точности; выбраны фавориты: MIL и MFT.
+
+4. Модернизация программного обеспечения для выполнения бесконтактной микрохирургии в автоматизированном режиме.
+Программное обеспечение для управления системой «Фемтосекундный лазерный скальпель» было модернизировано с внедрением модуля автоматического наложения траектории и трекинга объекта. После обнаружения оболочки эмбриона нейросетью, программа автоматически накладывала траектории перемещения лазерного луча. 
+
+5. Определение оптимальных параметров лазерного воздействия при выполнении процедуры ВЛХ на эмбрионах человека.
+Впервые микрохирургия блестящей оболочки человека была проведена с использованием лазерных импульсов фемтосекундной длительности. 
+Исследование проводилось на криоконсервированных бластоцистах человека, оставшихся после завершения программ ЭКО и переданных пациентами для проведения исследований в ФГБУ «НМИЦ АГП им. В.И.Кулакова». Все пациенты были проинформированы о возможности использования их биологического материала в научных целях и дали письменное информированное согласие на использование их эмбрионов для проведения исследований.
+Диссекцию оболочки осуществляли последовательностью фемтосекундных лазерных импульсов как на длине волны излучения λ=514 нм, так и λ=1028 нм, следующих с частотой f=2,5 кГц при линейном перемещении лазерного луча по заданной траектории. 
+Определен диапазон максимально допустимых интенсивностей лазерного импульса. Показано, что из-за неоднородности структуры блестящей оболочки человека интенсивности I&gt;2,9 ТВт/см2 (для λ=514 нм) и I&gt;6,5 ТВт/см2 (для λ=1028 нм) не пригодны для микрохирургии. При превышении указанного значения в среде наблюдался оптический пробой, сопровождающийся формированием кавитационных пузырьков и ударной волны, способной повредить ближайшие клетки эмбриона.
+Построена зависимость ширины надреза D от интенсивности лазерных импульсов I и их количества N_p, приходящихся на поверхность размером равную диаметру лазерного пучка 2r0. Здесь N_p=2r0∙f/υ, f=2,5 кГц — частота следования импульсов, υ — скорость движения лазерного луча, а физический смысл параметра N_p заключается в охарактеризовании степени пространственного перекрытия лазерных импульсов при движении луча.
+Показано, что одно и то же значение ширины надреза D может быть получено при различной комбинации лазерных параметров I и N_p.
+Для длины волны λ=514 нм предложен функционал D(I, N_p, r0), описывающий экспериментальные данные в виде полиномиальной зависимости от указанных параметров. Экспериментальные данные и их математическая аппроксимация позволяют предсказать значение ширины надреза для выбранных параметров лазерного воздействия, включая радиус лазерного пучка r0, скорость его движения υ (пространственное перекрытие N_p) и интенсивность импульсов I. 
+
+Подготовлены к подаче и/или направленны в печать 3 публикации, 1 статья принята в печать и будет опубликована до конца 2024 г.
+Результаты исследований представлены на 2х международных конференциях.</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (6)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Ситников Дмитрий Сергеевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Ромашевский Сергей Андреевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат технических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Филатов Максим Алексеевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Силаева Юлия Юрьевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Пронкин Александр Артурович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат технических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Кубекина Марина Владиславовна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li></ul>
+              
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

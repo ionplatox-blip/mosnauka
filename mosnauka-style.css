@@ -1,0 +1,303 @@
+/* ═══════════════════════════════════════════════════
+   МОСНАУКА — Unified Design System
+   Shared CSS for all pages: passports, labs, scientists, projects
+   ═══════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg-primary: #050505;
+  --bg-card: rgba(255,255,255,0.03);
+  --border: rgba(255,255,255,0.08);
+  --border-hover: rgba(255,0,60,0.3);
+  --text: #f0f0f0;
+  --text-muted: #a1a1aa;
+  --text-dim: #52525b;
+  --red: #ff003c;
+  --red-soft: rgba(255,0,60,0.15);
+  --radius-lg: 2rem;
+  --radius-md: 1rem;
+  --radius-sm: 0.5rem;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+a { color: inherit; text-decoration: none; }
+
+/* ── Page background gradient ── */
+.mos-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(255,0,60,0.12), transparent 25%),
+    radial-gradient(circle at top right, rgba(255,255,255,0.05), transparent 20%),
+    linear-gradient(180deg, #050505, #0b0f16);
+}
+
+/* ── Glass card ── */
+.glass {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(20px);
+}
+
+/* ── Header ── */
+.mos-header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  background: rgba(0,0,0,0.4);
+}
+.mos-header-inner {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.mos-logo {
+  font-size: 1.5rem;
+  font-weight: 900;
+  font-style: italic;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+}
+.mos-logo:hover { opacity: 0.8; }
+.mos-red { color: var(--red); }
+
+/* ── Breadcrumbs ── */
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  max-width: 80rem;
+  margin: 0 auto;
+  font-size: 0.75rem;
+  color: var(--text-dim);
+}
+.breadcrumbs a { color: var(--text-muted); transition: color 0.2s; }
+.breadcrumbs a:hover { color: white; }
+
+/* ── Main container ── */
+.mos-main {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1.5rem 4rem;
+}
+
+/* ── Section headers ── */
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0.5rem;
+  margin-bottom: 1.5rem;
+  margin-top: 3.5rem;
+}
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-style: italic;
+  letter-spacing: -0.02em;
+}
+
+/* ── Provenance tags ── */
+.provenance-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.6rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.tag-colab {
+  border: 1px solid rgba(16,185,129,0.3);
+  color: #10b981;
+}
+.tag-egisu {
+  border: 1px solid rgba(56,189,248,0.3);
+  color: #38bdf8;
+}
+
+/* ── Cards grid ── */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 1.5rem;
+}
+
+/* ── Detail page: hero card ── */
+.detail-hero {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  margin-bottom: 2rem;
+}
+.detail-hero h1 {
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+/* ── Tags / badges ── */
+.tag {
+  display: inline-flex;
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-sm);
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border);
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+/* ── Info card (used in detail pages) ── */
+.info-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+.info-card h2 {
+  font-size: 1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-style: italic;
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+.info-card p {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+
+/* ── Preview cards (scientist in lab, project links, etc) ── */
+.preview-card {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  transition: border-color 0.2s;
+}
+.preview-card:hover {
+  border-color: var(--border-hover);
+}
+.preview-card .avatar {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  flex-shrink: 0;
+}
+.preview-card .avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.preview-card .initials {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #dc2626, #7f1d1d);
+  color: white;
+  font-weight: 900;
+  font-size: 0.875rem;
+}
+.preview-card h3 {
+  font-size: 0.875rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+.preview-card .meta {
+  font-size: 0.65rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+/* ── Stat metric boxes ── */
+.metric-box {
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border);
+}
+.metric-box .label {
+  font-size: 0.55rem;
+  text-transform: uppercase;
+  font-weight: 900;
+  color: var(--text-dim);
+  margin-bottom: 0.25rem;
+}
+.metric-box .value {
+  font-size: 1.75rem;
+  font-weight: 900;
+  font-style: italic;
+}
+
+/* ── Footer ── */
+.mos-footer {
+  padding: 5rem 1.5rem;
+  border-top: 1px solid var(--border);
+  margin-top: 5rem;
+  background: rgba(0,0,0,0.4);
+  text-align: center;
+}
+.mos-footer .logo {
+  font-size: 1.75rem;
+  font-weight: 900;
+  font-style: italic;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+.mos-footer .copy {
+  color: rgba(255,255,255,0.15);
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.5em;
+}
+
+/* ── Utilities ── */
+.text-red { color: var(--red); }
+.truncate { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

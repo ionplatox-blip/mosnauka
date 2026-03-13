@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Лаборатория Полисераазотистых Гетероциклов | ИОХ РАН</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-ioh.html">ИОХ РАН</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Лаборатория Полисераазотистых Гетероциклов</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1rem"><span class="tag">Органическая химия</span></div>
+          <h1>Лаборатория Полисераазотистых Гетероциклов</h1>
+          <p style="color:#a1a1aa;line-height:1.7;margin-top:1rem">Исследование строения и свойств молекул и молекулярных систем, динамики внутри - и межмолекулярных обменных процессов, реакционной способности новых классов органических, элементорганических соединений и полимеров в растворах.</p>
+        </div>
+
+        <!-- CTA Block -->
+        <div style="background:linear-gradient(135deg,rgba(255,0,60,0.08),rgba(255,0,60,0.02));border:1px solid rgba(255,0,60,0.2);border-radius:1.5rem;padding:2rem;margin-bottom:2rem">
+          <div style="font-size:1rem;font-weight:800;margin-bottom:0.75rem">📨 Связаться с лабораторией</div>
+          <div style="font-size:0.8rem;color:#10b981;margin-bottom:0.5rem">✉ katerina.knyazev@gmail.com</div>
+          <div style="display:flex;flex-wrap:wrap;gap:0.75rem;margin-top:1rem">
+            <button onclick="openRequestModal('Запрос на НИОКР — Лаборатория Полисераазотистых Гетероцикл')" style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.75rem 1.5rem;border-radius:1rem;background:#ff003c;color:white;font-size:0.75rem;font-weight:800;text-transform:uppercase;letter-spacing:0.05em;border:none;cursor:pointer">📋 Направить запрос на НИОКР</button>
+            <button onclick="openRequestModal('Запрос зав. лабораторией — Лаборатория Полисераазотистых ')" style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.75rem 1.5rem;border-radius:1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:#a1a1aa;font-size:0.75rem;font-weight:800;text-transform:uppercase;cursor:pointer">✉ Написать зав. лабораторией</button>
+            <a href='https://colab.ws/labs/51' target='_blank' style='display:inline-flex;align-items:center;gap:0.5rem;padding:0.75rem 1.5rem;border-radius:1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:#a1a1aa;font-size:0.75rem;font-weight:800;text-transform:uppercase'>🔗 Профиль CoLab</a>
+          </div>
+        </div>
+
+        <div class="info-card">
+              <h2>🔬 Оборудование</h2>
+              <p>Микроскоп электронный просвечивающий HT7700, Hitachi (ЦКП ИОХ РАН) Исследование микро- и нано-структуры мелкодисперсных порошков, тонких плёнок и срезов (толщиной менее 100 нм). Получение электронных дифракционных картин. Микроскоп электронный сканирующий SU-8000, Hitachi (ЦКП ИОХ РАН) Исследование микроструктуры, морфологии и локального состава материалов (в т.ч. наноматериалов) Монокристальный дифрактометр Bruker D8 Quest Исследование строения низкомолекулярных органических и металлоорганических веществ в кристалле. Масс-спектрометрический времяпролётный комплекс высокого разрешения Maxis и MicroTOF II, Bruker Daltonic (ЦКП ИОХ РАН) Анализ и исследование веществ и смесей веществ методом масс-спектрометрии высокого разрешения с использованием ионизации электрораспылением или химической ионизации при атмосферном давлении. ЯМР-Cпектрометр AVneo-300, Bruker Исследование строения и свойств молекул и молекулярных систем, динамики внутри - и межмолекулярных обменных процессов, реакционной способности новых классов органических, элементорганических соединений и полимеров в растворах. ЯМР-Спектрометр Fourier 300 HD, Bruker Corporation (ЦКП ИОХ РАН) Исследование строения и свойств молекул и молекулярных систем, динамики внутри- и межмолекулярных обменных процессов, реакционной способности новых классов органических, элементорганических соединений и полимеров в растворах Микроволновая печь CEM Discover (ЦКП ИОХ РАН) Быстрое, полное, воспроизводимое и безопасное кислотное разложение органических и неорганических образцов Ротационный испаритель IKA RV 10 Быстрое удаление жидкостей отгонкой их при пониженном давлении Спектрофотометр СФ-2000</p>
+            </div>
+        <div class="info-card">
+              <h2>🧪 Методы</h2>
+              <p>Тонкий органический синтез ЯМР-спектроскопия Спектрофотометрия Рентгеноструктурный анализ</p>
+            </div>
+        
+
+        <div class="section-header" style="margin-top:2.5rem">
+          <h2 class="section-title">👩‍🔬 Учёные (21)</h2>
+        </div>
+        <div class="cards-grid" style="grid-template-columns:repeat(auto-fill,minmax(300px,1fr))">
+          <a href="sci_000.html" class="preview-card">
+              <div class="avatar"><img src="https://colab.ws/storage/images/HLevhQ25ISnU9EXKAgGwKD0TlTCv8d67YukXzkYW.png" alt="Ракитин Олег Алексеевич" loading="lazy"></div>
+              <div style="min-width:0">
+                <h3>Ракитин Олег Алексеевич</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem">Заведующий лабораторией</div>
+                <div class="meta">Synthetic Organic Chemistry, Органическая химия, Светодиоды</div>
+                <div class="meta" style="margin-top:0.25rem">📚 115 публ.</div>
+              </div>
+            </a>
+<a href="sci_001.html" class="preview-card">
+              <div class="avatar"><img src="https://colab.ws/storage/images/6ASppntb0eIocrKZ1V6uvk3UGZE5lDvUoFnBz40w.png" alt="Лидия Константинова" loading="lazy"></div>
+              <div style="min-width:0">
+                <h3>Лидия Константинова</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem">Ведущий научный сотрудник</div>
+                <div class="meta">Супрамолекулярная химия, Большие данные, Катализ</div>
+                <div class="meta" style="margin-top:0.25rem">📚 40 публ.</div>
+              </div>
+            </a>
+<a href="sci_002.html" class="preview-card">
+              <div class="avatar"><img src="https://colab.ws/storage/images/be4wY0SdewpKiKXzUjjcTXfgpdShM2yjYnONG9UY.png" alt="Владимир Огурцов" loading="lazy"></div>
+              <div style="min-width:0">
+                <h3>Владимир Огурцов</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem">Старший научный сотрудник</div>
+                <div class="meta">Большие данные, Катализ, Квантовые технологии</div>
+                <div class="meta" style="margin-top:0.25rem">📚 21 публ.</div>
+              </div>
+            </a>
+<a href="sci_003.html" class="preview-card">
+              <div class="avatar"><img src="https://colab.ws/storage/images/BEUHAo8H07BSIxEJEmVFb9U3Odad8NAgonP9DZky.png" alt="Екатерина Князева" loading="lazy"></div>
+              <div style="min-width:0">
+                <h3>Екатерина Князева</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem">Старший научный сотрудник</div>
+                <div class="meta">Synthetic Organic Chemistry, Органическая химия, Светодиоды</div>
+                <div class="meta" style="margin-top:0.25rem">📚 24 публ.</div>
+              </div>
+            </a>
+<a href="sci_004.html" class="preview-card">
+              <div class="avatar"><img src="https://colab.ws/storage/images/YQPCxU9YqHcZZtbBHrq8qJ4MGnaF46f4EJEOSZ6c.jpg" alt="Тимофей Чмовж" loading="lazy"></div>
+              <div style="min-width:0">
+                <h3>Тимофей Чмовж</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem">Старший научный сотрудник</div>
+                <div class="meta">Synthetic Organic Chemistry, Органическая химия, Светодиоды</div>
+                <div class="meta" style="margin-top:0.25rem">📚 27 публ.</div>
+              </div>
+            </a>
+<a href="sci_005.html" class="preview-card">
+              <div class="avatar"><img src="https://colab.ws/storage/images/DabBcRmaMPbs9hqN8jwGjX7lw5HjwfzSm5cvPuQM.png" alt="Максим Михайлов" loading="lazy"></div>
+              <div style="min-width:0">
+                <h3>Максим Михайлов</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem">Ведущий Инженер</div>
+                <div class="meta">Гетероциклические соединения, Органическая химия, Фотовольтаика</div>
+                <div class="meta" style="margin-top:0.25rem">📚 9 публ.</div>
+              </div>
+            </a>
+<a href="sci_006.html" class="preview-card">
+              <div class="avatar"><img src="https://colab.ws/storage/images/udcbeeGiHg1LyrbGSXfZHX5k4hQXLRjstj8Bf3FN.png" alt="Олег Большаков" loading="lazy"></div>
+              <div style="min-width:0">
+                <h3>Олег Большаков</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem">Ведущий Инженер</div>
+                <div class="meta">Большие данные, Катализ, Квантовые технологии</div>
+                <div class="meta" style="margin-top:0.25rem">📚 12 публ.</div>
+              </div>
+            </a>
+<a href="sci_007.html" class="preview-card">
+              <div class="avatar"><div class="initials">НГ</div></div>
+              <div style="min-width:0">
+                <h3>Никита Гудим</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem">Научный сотрудник</div>
+                <div class="meta">Гетероциклические соединения, Органическая химия, Фотовольтаика</div>
+                <div class="meta" style="margin-top:0.25rem">📚 7 публ.</div>
+              </div>
+            </a>
+<a href="sci_008.html" class="preview-card">
+              <div class="avatar"><img src="https://colab.ws/storage/images/pQubdC7ZI9fPfnGyBjjWUuj0cEi0xNmoeSBRmxdB.png" alt="Наталья Обручникова" loading="lazy"></div>
+              <div style="min-width:0">
+                <h3>Наталья Обручникова</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem">Младший научный сотрудник</div>
+                <div class="meta">Супрамолекулярная химия, Большие данные, Катализ</div>
+                <div class="meta" style="margin-top:0.25rem">📚 14 публ.</div>
+              </div>
+            </a>
+<a href="sci_009.html" class="preview-card">
+              <div class="avatar"><img src="https://colab.ws/storage/images/JDvXdK2QKrwJn9qJNrI4ebhEcEqbnVs6BEHr8mhc.png" alt="Светлана Воронцова" loading="lazy"></div>
+              <div style="min-width:0">
+                <h3>Светлана Воронцова</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem">Младший научный сотрудник</div>
+                <div class="meta">Апоптоз, Клеточная биология, Механизмы эпигенетической регуляции транскрипции</div>
+                <div class="meta" style="margin-top:0.25rem">📚 5 публ.</div>
+              </div>
+            </a>
+<a href="sci_010.html" class="preview-card">
+              <div class="avatar"><img src="https://colab.ws/storage/images/h0dg3kMaTS3QjwfbcYCXU3bZOnBQpN02FwuNoEOb.png" alt="Михаил Толмачев" loading="lazy"></div>
+              <div style="min-width:0">
+                <h3>Михаил Толмачев</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem">Аспирант</div>
+                <div class="meta">Супрамолекулярная химия</div>
+                <div class="meta" style="margin-top:0.25rem">📚 2 публ.</div>
+              </div>
+            </a>
+<a href="sci_011.html" class="preview-card">
+              <div class="avatar"><img src="https://colab.ws/storage/images/5oF4KC0r4VDeXZvqcT8r1iiartyY0WTOXlE9PLAC.png" alt="Ольга Устименко" loading="lazy"></div>
+              <div style="min-width:0">
+                <h3>Ольга Устименко</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem"></div>
+                <div class="meta">Synthetic Organic Chemistry, Органическая химия, Светодиоды</div>
+                <div class="meta" style="margin-top:0.25rem">📚 3 публ.</div>
+              </div>
+            </a>
+<a href="sci_012.html" class="preview-card">
+              <div class="avatar"><img src="https://colab.ws/storage/images/Zrwn1FbTvrJ7YSMWEDAPQeHwQaHyNcrEFqoc7CXw.png" alt="Герман Чхетиани" loading="lazy"></div>
+              <div style="min-width:0">
+                <h3>Герман Чхетиани</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem"></div>
+                <div class="meta">Synthetic Organic Chemistry, Органическая химия, Светодиоды</div>
+                <div class="meta" style="margin-top:0.25rem">📚 1 публ.</div>
+              </div>
+            </a>
+<a href="sci_013.html" class="preview-card">
+              <div class="avatar"><img src="https://colab.ws/storage/images/wgQ95uuFZIHV1qxuxzXedf73gfUm12LzWGWeQLg3.png" alt="Александр Постников" loading="lazy"></div>
+              <div style="min-width:0">
+                <h3>Александр Постников</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem"></div>
+                <div class="meta"></div>
+                <div class="meta" style="margin-top:0.25rem">📚 0 публ.</div>
+              </div>
+            </a>
+<a href="sci_014.html" class="preview-card">
+              <div class="avatar"><img src="https://colab.ws/storage/images/Jht5SZUuggsTyEJNmWrIJSJDkGxxY5ZUS0P9kxg8.png" alt="Клим Погорянский" loading="lazy"></div>
+              <div style="min-width:0">
+                <h3>Клим Погорянский</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem"></div>
+                <div class="meta"></div>
+                <div class="meta" style="margin-top:0.25rem">📚 0 публ.</div>
+              </div>
+            </a>
+<a href="sci_015.html" class="preview-card">
+              <div class="avatar"><img src="https://colab.ws/storage/images/y9RCjGKUOchgsQYSP8tUvbFs955BbD6hqNUoqGNQ.png" alt="Артем Чадин" loading="lazy"></div>
+              <div style="min-width:0">
+                <h3>Артем Чадин</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem"></div>
+                <div class="meta"></div>
+                <div class="meta" style="margin-top:0.25rem">📚 0 публ.</div>
+              </div>
+            </a>
+<a href="sci_016.html" class="preview-card">
+              <div class="avatar"><img src="https://colab.ws/storage/images/IXwoONxChYzD9Ai8cLGpLlQRVwEgHWSXLbwuZUva.png" alt="Тимофей Кудряшев" loading="lazy"></div>
+              <div style="min-width:0">
+                <h3>Тимофей Кудряшев</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem"></div>
+                <div class="meta"></div>
+                <div class="meta" style="margin-top:0.25rem">📚 0 публ.</div>
+              </div>
+            </a>
+<a href="sci_017.html" class="preview-card">
+              <div class="avatar"><img src="https://colab.ws/storage/images/FDqiJATd9HG9mz2L6FbI1rARnMfNAQYkZ5Ec78xi.jpg" alt="Дарья Алехина" loading="lazy"></div>
+              <div style="min-width:0">
+                <h3>Дарья Алехина</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem"></div>
+                <div class="meta">Synthetic Organic Chemistry, Органическая химия, Светодиоды</div>
+                <div class="meta" style="margin-top:0.25rem">📚 4 публ.</div>
+              </div>
+            </a>
+<a href="sci_018.html" class="preview-card">
+              <div class="avatar"><img src="https://colab.ws/storage/images/t3llIySf5i06oDOhEK8upecCYTDkporEjKNVDns7.jpg" alt="Карим Гайсин" loading="lazy"></div>
+              <div style="min-width:0">
+                <h3>Карим Гайсин</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem"></div>
+                <div class="meta">Органический синтез, Synthetic Organic Chemistry, Органическая химия</div>
+                <div class="meta" style="margin-top:0.25rem">📚 4 публ.</div>
+              </div>
+            </a>
+<a href="sci_016.html" class="preview-card">
+              <div class="avatar"><div class="initials">ТК</div></div>
+              <div style="min-width:0">
+                <h3>Тимофей Кудряшев</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem"></div>
+                <div class="meta">Synthetic Organic Chemistry, Органическая химия, Светодиоды</div>
+                <div class="meta" style="margin-top:0.25rem">📚 9 публ.</div>
+              </div>
+            </a>
+<a href="sci_019.html" class="preview-card">
+              <div class="avatar"><img src="https://colab.ws/storage/images/8TABdCP9AOvxTftVuAMaXrwrhkDNRUQFtZ1mpvgU.jpg" alt="Егор Котов" loading="lazy"></div>
+              <div style="min-width:0">
+                <h3>Егор Котов</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem"></div>
+                <div class="meta">Synthetic Organic Chemistry, Органическая химия, Светодиоды</div>
+                <div class="meta" style="margin-top:0.25rem">📚 1 публ.</div>
+              </div>
+            </a>
+
+        </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

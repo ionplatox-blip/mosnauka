@@ -1,0 +1,1116 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>МОСНАУКА — Паспорт: ИБХ РАН</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+      body { font-family: Inter, system-ui, sans-serif; background: #050505; color: white; }
+      .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.08); }
+      .mos-red { color: #ff003c; }
+      .mos-bg-red { background: #ff003c; }
+      .provenance-tag { font-size: 8px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.1em; padding: 2px 8px; border-radius: 4px; }
+      .tag-egisu { background: rgba(0, 120, 255, 0.1); color: #40a0ff; border: 1px solid rgba(0, 120, 255, 0.2); }
+      .tag-colab { background: rgba(255, 0, 60, 0.1); color: #ff4070; border: 1px solid rgba(255, 0, 60, 0.2); }
+      .tag-org { background: rgba(255, 255, 255, 0.05); color: #aaa; border: 1px solid rgba(255, 255, 255, 0.1); }
+
+      /* Section titles */
+      .section-header {
+        display: flex; align-items: center; justify-content: space-between;
+        padding: 0 0.5rem; margin-bottom: 1.5rem; margin-top: 3.5rem;
+      }
+      .section-title {
+        font-size: 1.5rem; font-weight: 900; text-transform: uppercase;
+        font-style: italic; letter-spacing: -0.02em;
+      }
+
+      /* Chunk 3: Lab cards */
+      .labs-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+        gap: 1.5rem;
+      }
+      /* Chunk 4: Scientists */
+      .sci-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 1rem;
+      }
+      .sci-card.hidden { display: none; }
+      .line-clamp-2 {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+      #sci-search {
+        background: rgba(255,255,255,0.04);
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 1rem;
+        padding: 0.75rem 1.25rem 0.75rem 2.75rem;
+        color: white;
+        font-size: 0.875rem;
+        width: 100%;
+        outline: none;
+        transition: border-color 0.2s;
+      }
+      #sci-search:focus {
+        border-color: rgba(255,0,60,0.5);
+      }
+      #sci-search::placeholder { color: rgba(255,255,255,0.25); }
+      /* Chunk 5: RID + Projects */
+      .rid-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 1rem;
+      }
+    </style>
+</head>
+<body>
+  <div class="min-h-screen bg-[radial-gradient(circle_at_top_left,rgba(255,0,60,0.12),transparent_25%),radial-gradient(circle_at_top_right,rgba(255,255,255,0.05),transparent_20%),linear-gradient(180deg,#050505,#0b0f16)]">
+
+    <!-- ═══ HEADER ═══ -->
+    <header class="sticky top-0 z-30 backdrop-blur-md border-b border-white/10 bg-black/40">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        <a class="text-2xl font-black italic tracking-tight uppercase hover:opacity-80 transition" href="index.html">
+          МОС<span class="mos-red">НАУКА</span>
+        </a>
+        <div class="flex items-center gap-4">
+          <span class="text-[10px] uppercase tracking-widest text-zinc-500 font-bold">Паспорт организации v2.0</span>
+          <a href="catalog.html" class="text-xs font-bold uppercase hover:text-red-500 transition">Реестр</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 py-10">
+
+      <!-- ═══ BREADCRUMBS ═══ -->
+      <div class="mb-10 flex items-center justify-between">
+        <div class="flex items-center gap-2 text-[10px] uppercase font-bold tracking-widest text-zinc-500">
+          <a href="index.html" class="hover:text-white">Главная</a>
+          <span>/</span>
+          <a href="catalog.html" class="hover:text-white">Реестр</a>
+          <span>/</span>
+          <span class="text-zinc-300">ИБХ РАН</span>
+        </div>
+        <a href="catalog.html" class="px-5 py-2 border border-white/10 rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-white/5 transition">
+          ← К списку
+        </a>
+      </div>
+
+      <!-- ═══ HERO SECTION ═══ -->
+      <section class="glass rounded-[2.5rem] p-10 relative overflow-hidden mb-8">
+        <!-- Bg watermark -->
+        <div class="absolute top-0 right-0 p-8 opacity-5 pointer-events-none">
+          <img src="https://colab.ws/storage/images/X2Np7qgg35SQZeA49vSByPRyivUptGisFRfGtJqI.png" class="w-64 h-64 grayscale invert" alt="">
+        </div>
+
+        <div class="relative z-10">
+          <!-- Identity -->
+          <div class="flex items-center gap-5 mb-6">
+            <div class="w-20 h-20 rounded-2xl bg-white p-2 flex items-center justify-center shrink-0">
+              <img src="https://colab.ws/storage/images/X2Np7qgg35SQZeA49vSByPRyivUptGisFRfGtJqI.png" class="max-w-full max-h-full object-contain" alt="ИБХ РАН logo">
+            </div>
+            <div>
+              <h1 class="text-3xl md:text-5xl font-black tracking-tight uppercase leading-tight mb-2">ИБХ РАН</h1>
+              <p class="text-zinc-400 font-medium">Институт биоорганической химии им. академиков М.М. Шемякина и Ю.А. Овчинникова РАН</p>
+            </div>
+          </div>
+
+          <!-- Contact row -->
+          <div class="flex flex-wrap gap-6 mt-6">
+            <div class="flex items-center gap-2 text-zinc-400 text-sm">
+              <i class="ph ph-map-pin mos-red"></i>
+              <span>Москва, ул. Миклухо-Маклая, 16/10 к1</span>
+            </div>
+            <a href="https://www.ibch.ru/" target="_blank" class="flex items-center gap-2 text-zinc-300 text-sm hover:text-white transition">
+              <i class="ph ph-globe mos-red"></i>
+              <span>www.ibch.ru</span>
+            </a>
+          </div>
+
+          <!-- Verified badge + Contact CTA -->
+          <div class="mt-6 flex flex-wrap gap-3 items-center">
+            <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-[11px] font-bold uppercase tracking-wide">
+              <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              Верифицировано МОСНАУКОЙ
+            </span>
+          </div>
+          <div class="mt-4 p-5 rounded-2xl bg-gradient-to-r from-red-500/20 to-red-500/5 border border-red-500/30 flex flex-wrap items-center justify-between gap-4">
+            <div>
+              <div class="text-sm font-bold">📨 Заинтересованы в сотрудничестве?</div>
+              <div class="text-[11px] text-zinc-400 mt-1">Направьте запрос на НИОКР, консультацию или партнёрство</div>
+            </div>
+            <div class="flex gap-2">
+              <a href="javascript:void(0)" onclick="openRequestModal('Запрос по ИБХ РАН')" class="px-6 py-3 rounded-xl bg-red-500 text-white text-[11px] font-black uppercase tracking-wide hover:bg-red-600 transition inline-flex items-center gap-2 shadow-lg">
+                <i class="ph ph-envelope-simple"></i> Направить запрос
+              </a>
+              <a href="https://www.ibch.ru/" target="_blank" class="px-5 py-3 rounded-xl bg-white/5 border border-white/10 text-[11px] font-bold uppercase text-zinc-400 hover:bg-white/10 transition inline-flex items-center gap-2">
+                <i class="ph ph-globe"></i> Сайт
+              </a>
+            </div>
+          </div>
+
+          <!-- ═══ METRICS ROW ═══ -->
+          <div class="grid grid-cols-2 md:grid-cols-5 gap-4 mt-10">
+            <a href="#section-labs" class="p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-white/30 transition cursor-pointer block">
+              <div class="text-[9px] uppercase font-black text-zinc-500 mb-1">Лаборатории</div>
+              <div class="text-3xl font-black italic">4</div>
+            </a>
+            <a href="#section-scientists" class="p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-white/30 transition cursor-pointer block">
+              <div class="text-[9px] uppercase font-black text-zinc-500 mb-1">Учёные</div>
+              <div class="text-3xl font-black italic">30</div>
+            </a>
+            <a href="#section-projects" class="p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-white/30 transition cursor-pointer block">
+              <div class="text-[9px] uppercase font-black text-zinc-500 mb-1">Проекты НИОКР</div>
+              <div class="text-3xl font-black italic">93</div>
+            </a>
+            <a href="#section-rid" class="p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-white/30 transition cursor-pointer block">
+              <div class="text-[9px] uppercase font-black text-zinc-500 mb-1">РИД</div>
+              <div class="text-3xl font-black italic">6</div>
+            </a>
+            <a href="#section-projects" class="p-4 rounded-2xl bg-red-500/5 border border-red-500/20 hover:border-red-500/40 transition cursor-pointer block">
+              <div class="text-[9px] uppercase font-black text-red-400/70 mb-1">Объём НИОКР</div>
+              <div class="text-3xl font-black italic mos-red">2.1 млрд ₽</div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ CHUNK 2: About section ═══ -->
+      <section class="glass rounded-[2.5rem] p-10 mb-8">
+        <div class="flex items-center justify-between mb-6">
+          <h2 class="text-xl font-black uppercase italic tracking-tight">Об организации</h2>
+        </div>
+        <p class="text-[15px] text-zinc-300 leading-relaxed mb-6">«ИБХ РАН» — ведущий научно-исследовательский центр, объединяющий 4 лабораторий и 30 учёных. Исследовательский профиль охватывает транскриптом,, мутагенез,, вакцина,, воспаление,, нейтрофилы,. Опубликовано свыше 779 научных работ, выполнено 93 проектов НИОКТР и зарегистрировано 6 результатов интеллектуальной деятельности.</p>
+        <details class="group">
+          <summary class="cursor-pointer text-sm font-bold text-red-400 hover:text-red-300 transition select-none flex items-center gap-2">
+            <i class="ph ph-caret-right text-xs transition-transform group-open:rotate-90"></i>
+            Подробнее об исследовательской деятельности
+          </summary>
+          <div class="mt-6 pt-6 border-t border-white/10">
+            <h3 class="text-zinc-200 text-sm font-bold uppercase tracking-wide mb-3">Ключевые компетенции (по данным ЕГИСУ)</h3><div style="display:flex;flex-wrap:wrap;gap:0.4rem;margin-bottom:1.5rem"><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">транскриптом, <span style="color:#52525b">(4)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">мутагенез, <span style="color:#52525b">(4)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">вакцина, <span style="color:#52525b">(4)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">воспаление, <span style="color:#52525b">(3)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">нейтрофилы, <span style="color:#52525b">(3)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">гипогалогенный стресс, <span style="color:#52525b">(3)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">онкология, <span style="color:#52525b">(3)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">регенерация <span style="color:#52525b">(3)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">флуоресцентный белок, <span style="color:#52525b">(3)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">нейродегенеративные заболевания, <span style="color:#52525b">(3)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">люциферин, <span style="color:#52525b">(3)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">антимикробные пептиды, <span style="color:#52525b">(3)</span></span></div><h3 class="text-zinc-200 text-sm font-bold uppercase tracking-wide mb-3">Ведущие лаборатории</h3><ul class="text-zinc-400 text-sm space-y-1 ml-4 mb-6 list-disc"><li>Лаборатория оптического биоимиджинга (3 сотр.)</li><li>Лаборатория углеводов (1 сотр.)</li><li>Лаборатория рационального дизайна химиотерапевтических агентов (4 сотр.)</li><li>Лаборатория Молекулярной биофизики (3 сотр.)</li></ul><h3 class="text-zinc-200 text-sm font-bold uppercase tracking-wide mb-3">Ключевые заказчики НИОКР</h3><ul class="text-zinc-400 text-sm space-y-1 ml-4 mb-6 list-disc"><li><strong class="text-zinc-300">РНФ</strong> — 56 проектов</li><li><strong class="text-zinc-300">МИНОБРНАУКИ РОССИИ</strong> — 28 проектов</li><li><strong class="text-zinc-300">ИБГ РАН</strong> — 1 проектов</li></ul><h3 class="text-zinc-200 text-sm font-bold uppercase tracking-wide mb-3">Интеллектуальная собственность</h3><p class="text-zinc-400 text-sm mb-6">Портфель из 6 РИД: изобретение — 6.</p><h3 class="text-zinc-200 text-sm font-bold uppercase tracking-wide mb-3">Финансирование и результаты</h3><p class="text-zinc-400 text-sm">Суммарный объём финансирования: <strong class="text-white">2,051.9 млн руб.</strong> (93 проектов, по данным ЕГИСУ НИОКТР). По итогам проектов опубликовано 575 научных работ.</p>
+          </div>
+        </details>
+      </section>
+
+      <!-- ═══ TOP-3 FEATURED ═══ -->
+      <section class="glass rounded-[2.5rem] p-10 mb-8">
+        <h2 class="text-lg font-black uppercase italic tracking-tight mb-6">⭐ Ведущие лаборатории и учёные</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div>
+            <div class="text-[10px] uppercase font-black text-zinc-500 mb-3 tracking-widest">🏛️ Топ-3 лаборатории</div>
+            <div class="flex flex-col gap-3"><a href="ibh/lab_002.html" class="glass rounded-2xl p-5 group hover:border-red-500/30 transition flex flex-col">
+          <div class="flex flex-wrap gap-1.5 mb-3"><span class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-[8px] uppercase font-bold text-zinc-500">Медицинская химия</span> <span class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-[8px] uppercase font-bold text-zinc-500">Органическая химия</span></div>
+          <div class="text-sm font-bold group-hover:text-red-400 transition leading-snug mb-2">Лаборатория рационального дизайна химиотерапевтических агентов</div>
+          <div class="text-[10px] text-zinc-500 font-bold mt-auto">👥 4 учёных</div>
+        </a>
+<a href="ibh/lab_000.html" class="glass rounded-2xl p-5 group hover:border-red-500/30 transition flex flex-col">
+          <div class="flex flex-wrap gap-1.5 mb-3"><span class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-[8px] uppercase font-bold text-zinc-500">Биотехнология</span> <span class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-[8px] uppercase font-bold text-zinc-500">Микроскопия</span></div>
+          <div class="text-sm font-bold group-hover:text-red-400 transition leading-snug mb-2">Лаборатория оптического биоимиджинга</div>
+          <div class="text-[10px] text-zinc-500 font-bold mt-auto">👥 3 учёных</div>
+        </a>
+<a href="ibh/lab_003.html" class="glass rounded-2xl p-5 group hover:border-red-500/30 transition flex flex-col">
+          <div class="flex flex-wrap gap-1.5 mb-3"><span class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-[8px] uppercase font-bold text-zinc-500">Биофизика</span> <span class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-[8px] uppercase font-bold text-zinc-500">Нанотехнологии</span></div>
+          <div class="text-sm font-bold group-hover:text-red-400 transition leading-snug mb-2">Лаборатория Молекулярной биофизики</div>
+          <div class="text-[10px] text-zinc-500 font-bold mt-auto">👥 3 учёных</div>
+        </a>
+</div>
+          </div>
+          <div>
+            <div class="text-[10px] uppercase font-black text-zinc-500 mb-3 tracking-widest">🏆 Топ-3 учёных</div>
+            <div class="flex flex-col gap-3"><a href="ibh/sci_003.html" class="glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-3 items-center">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white font-bold text-sm">БН</div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Бовин Николай Владимирович</div>
+            <div class="text-[10px] text-zinc-500 truncate">Лаборатория углеводов</div>
+            <div class="flex items-center gap-2 mt-1">
+              <span class="text-[9px] text-zinc-600">📚 164 публ.</span> 
+            </div>
+          </div>
+        </a>
+<a href="ibh/sci_008.html" class="glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-3 items-center">
+          <img src="https://colab.ws/storage/images/dFHRJRr1XuY85WoEYRFT7xfFwI7RqCaA1dbazI8D.jpg" class="w-12 h-12 rounded-xl object-cover border border-white/10" loading="lazy">
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Олейников Владимир Александрович</div>
+            <div class="text-[10px] text-zinc-500 truncate">Лаборатория Молекулярной биофизики</div>
+            <div class="flex items-center gap-2 mt-1">
+              <span class="text-[9px] text-zinc-600">📚 30 публ.</span> 
+            </div>
+          </div>
+        </a>
+<a href="ibh/sci_000.html" class="glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-3 items-center">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white font-bold text-sm">МА</div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Мишин Александр С</div>
+            <div class="text-[10px] text-zinc-500 truncate">Лаборатория оптического биоимиджинга</div>
+            <div class="flex items-center gap-2 mt-1">
+              <span class="text-[9px] text-zinc-600">📚 18 публ.</span> 
+            </div>
+          </div>
+        </a>
+</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ TABS: Labs / Scientists ═══ -->
+      <div class="glass rounded-2xl p-4 mb-4" style="border:1px solid rgba(56,189,248,0.15);background:rgba(56,189,248,0.03)">
+        <div class="flex items-center gap-2 text-[10px] text-sky-400/70 font-bold uppercase">
+          <i class="ph ph-info"></i>
+          Показаны лаборатории и учёные, зарегистрированные на платформе CoLab. Фактическое число сотрудников может быть больше.
+        </div>
+      </div>
+      <div class="section-header" id="section-labs">
+        <div class="flex items-center gap-4">
+          <button id="tab-labs" onclick="switchTab('labs')" class="section-title" style="background:none;border:none;color:white;cursor:pointer;padding:0">🔬 Лаборатории (4)</button>
+          <button id="tab-sci" onclick="switchTab('sci')" class="text-lg font-black uppercase italic tracking-tight opacity-30 hover:opacity-60 transition" style="background:none;border:none;color:white;cursor:pointer;padding:0" id="section-scientists">🎓 Учёные (11)</button>
+        </div>
+        <span class="provenance-tag tag-colab">CoLab Data</span>
+      </div>
+
+      <!-- Labs panel -->
+      <div id="panel-labs">
+        <div class="text-sm text-zinc-400 mb-3" id="lab-counter">Показаны 3 из 4</div>
+        <div class="labs-grid" id="labs-container">
+          <div class="lab-item glass rounded-[2rem] p-8 hover:border-red-500/30 transition shadow-lg flex flex-col" data-idx="0" style="">
+          <div class="flex flex-wrap gap-2 mb-4"><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Биотехнология</span><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Микроскопия</span><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Физиология растений</span></div>
+          <a href="ibh/lab_000.html" class="group">
+            <h3 class="text-lg font-bold mb-3 group-hover:text-red-400 transition leading-snug">Лаборатория оптического биоимиджинга</h3>
+          </a>
+          <p class="text-xs text-zinc-500 leading-relaxed mb-4 flex-1">Основным фокусом Лаборатории оптического имиджинга является создание технологий для оптического имиджинга, разработка новых подходов и алгоритмов авто...</p>
+          
+          <div class="mt-6 flex items-center justify-between pt-4 border-t border-white/5">
+            <span class="text-[10px] font-black uppercase text-zinc-500">👥 3 сотрудников</span>
+            
+          </div>
+          <div class="flex gap-2 mt-3">
+            <a href="ibh/lab_000.html" class="flex-1 text-center px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-[9px] font-bold uppercase tracking-wide text-zinc-400 hover:bg-white/10 transition">Подробнее</a>
+            <a href="javascript:void(0)" onclick="openRequestModal('Связаться с лабораторией Лаборатория оптического биоими')" class="flex-1 text-center px-3 py-2 rounded-xl bg-red-500/10 border border-red-500/30 text-[9px] font-bold uppercase tracking-wide text-red-400 hover:bg-red-500/20 transition cursor-pointer">📨 Связаться</a>
+          </div>
+        </div>
+<div class="lab-item glass rounded-[2rem] p-8 hover:border-red-500/30 transition shadow-lg flex flex-col" data-idx="1" style="">
+          <div class="flex flex-wrap gap-2 mb-4"><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Биоорганическая химия</span><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Иммунология</span><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Клеточная биология</span></div>
+          <a href="ibh/lab_001.html" class="group">
+            <h3 class="text-lg font-bold mb-3 group-hover:text-red-400 transition leading-snug">Лаборатория углеводов</h3>
+          </a>
+          <p class="text-xs text-zinc-500 leading-relaxed mb-4 flex-1">The laboratory focussed at basic problems of glycobiology and application of glyco-molecules in medicine. The main directions comprise synthesis of ol...</p>
+          
+          <div class="mt-6 flex items-center justify-between pt-4 border-t border-white/5">
+            <span class="text-[10px] font-black uppercase text-zinc-500">👥 1 сотрудников</span>
+            
+          </div>
+          <div class="flex gap-2 mt-3">
+            <a href="ibh/lab_001.html" class="flex-1 text-center px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-[9px] font-bold uppercase tracking-wide text-zinc-400 hover:bg-white/10 transition">Подробнее</a>
+            <a href="javascript:void(0)" onclick="openRequestModal('Связаться с лабораторией Лаборатория углеводов')" class="flex-1 text-center px-3 py-2 rounded-xl bg-red-500/10 border border-red-500/30 text-[9px] font-bold uppercase tracking-wide text-red-400 hover:bg-red-500/20 transition cursor-pointer">📨 Связаться</a>
+          </div>
+        </div>
+<div class="lab-item glass rounded-[2rem] p-8 hover:border-red-500/30 transition shadow-lg flex flex-col" data-idx="2" style="">
+          <div class="flex flex-wrap gap-2 mb-4"><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Медицинская химия</span><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Органическая химия</span><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Вирусология</span></div>
+          <a href="ibh/lab_002.html" class="group">
+            <h3 class="text-lg font-bold mb-3 group-hover:text-red-400 transition leading-snug">Лаборатория рационального дизайна химиотерапевтических агентов</h3>
+          </a>
+          <p class="text-xs text-zinc-500 leading-relaxed mb-4 flex-1">Поиск решений для направленной разработки биологически значимых малых молекул.</p>
+          
+          <div class="mt-6 flex items-center justify-between pt-4 border-t border-white/5">
+            <span class="text-[10px] font-black uppercase text-zinc-500">👥 4 сотрудников</span>
+            
+          </div>
+          <div class="flex gap-2 mt-3">
+            <a href="ibh/lab_002.html" class="flex-1 text-center px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-[9px] font-bold uppercase tracking-wide text-zinc-400 hover:bg-white/10 transition">Подробнее</a>
+            <a href="javascript:void(0)" onclick="openRequestModal('Связаться с лабораторией Лаборатория рационального диза')" class="flex-1 text-center px-3 py-2 rounded-xl bg-red-500/10 border border-red-500/30 text-[9px] font-bold uppercase tracking-wide text-red-400 hover:bg-red-500/20 transition cursor-pointer">📨 Связаться</a>
+          </div>
+        </div>
+<div class="lab-item glass rounded-[2rem] p-8 hover:border-red-500/30 transition shadow-lg flex flex-col" data-idx="3" style="display:none">
+          <div class="flex flex-wrap gap-2 mb-4"><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Биофизика</span><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Нанотехнологии</span><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Биоматериалы</span></div>
+          <a href="ibh/lab_003.html" class="group">
+            <h3 class="text-lg font-bold mb-3 group-hover:text-red-400 transition leading-snug">Лаборатория Молекулярной биофизики</h3>
+          </a>
+          <p class="text-xs text-zinc-500 leading-relaxed mb-4 flex-1">В лаборатории изучают взаимодействие биологических молекул методами оптической спектроскопии, в частности, колебательной спектроскопии (КР и ГКР) и ми...</p>
+          
+          <div class="mt-6 flex items-center justify-between pt-4 border-t border-white/5">
+            <span class="text-[10px] font-black uppercase text-zinc-500">👥 3 сотрудников</span>
+            
+          </div>
+          <div class="flex gap-2 mt-3">
+            <a href="ibh/lab_003.html" class="flex-1 text-center px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-[9px] font-bold uppercase tracking-wide text-zinc-400 hover:bg-white/10 transition">Подробнее</a>
+            <a href="javascript:void(0)" onclick="openRequestModal('Связаться с лабораторией Лаборатория Молекулярной биофи')" class="flex-1 text-center px-3 py-2 rounded-xl bg-red-500/10 border border-red-500/30 text-[9px] font-bold uppercase tracking-wide text-red-400 hover:bg-red-500/20 transition cursor-pointer">📨 Связаться</a>
+          </div>
+        </div>
+        </div>
+        <div class="mt-4 text-center">
+          <button id="lab-more" onclick="showMore('lab-item', 'lab-more', 'lab-counter', 4, 3)" class="px-6 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-widest hover:bg-white/10 transition text-zinc-400">
+            Показать ещё 3
+          </button>
+        </div>
+      </div>
+
+      <!-- Scientists panel (hidden by default) -->
+      <div id="panel-sci" style="display:none">
+        <div class="text-sm text-zinc-400 mb-3" id="sci-counter">Показаны 3 из 11</div>
+        <div class="relative mb-6">
+          <i class="ph ph-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-zinc-500"></i>
+          <input id="sci-search" type="text" placeholder="Поиск по имени или области исследования...">
+          <div id="sci-count" class="absolute right-4 top-1/2 -translate-y-1/2 text-[10px] text-zinc-500 font-bold">11 учёных</div>
+        </div>
+        <div class="sci-grid" id="sci-grid">
+          <a href="ibh/sci_000.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="мишин александр с" data-areas="анализ данных конфокальная микроскопия локализационная микроскопия микроскопия сверхвысокого разрешения флуоресценция биотехнология молекулярная биология флуоресцентная микроскопия генетика цитология биофизика квантовая химия фотохимия органическая электроника светодиоды спектроскопия кр (рамановская) теория функционала плотности белки белок-белковые взаимодействия белок-лигандные взаимодействия внутренне неупорядоченные белки кальцийсвязывающие белки клеточная сигнализация металлсвязывающие белки структура белка спектроскопия поглощения рентгеновских лучей вычислительная биология мембранные белки молекулярная динамика биолюминесценция биоорганическая химия органическая химия полный синтез катализ материаловедение car-t-клетки аутоиммунные заболевания нефрология ревматология" data-idx="0" style="">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">МА</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Мишин Александр С</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория оптического биоимиджинга</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Анализ данных, Конфокальная микроскопия, Локализационная микроскопия, Микроскопия сверхвысокого разрешения +35</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 18 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="ibh/sci_001.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="алексей гавриков" data-areas="анализ данных конфокальная микроскопия локализационная микроскопия микроскопия сверхвысокого разрешения флуоресценция биотехнология молекулярная биология флуоресцентная микроскопия генетика цитология органическая электроника светодиоды спектроскопия кр (рамановская) теория функционала плотности биофизика" data-idx="1" style="">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">АГ</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Алексей Гавриков</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория оптического биоимиджинга</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Анализ данных, Конфокальная микроскопия, Локализационная микроскопия, Микроскопия сверхвысокого разрешения +11</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 9 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="ibh/sci_002.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="максим перфилов" data-areas="биотехнология микроскопия сверхвысокого разрешения молекулярная биология флуоресцентная микроскопия анализ данных конфокальная микроскопия локализационная микроскопия флуоресценция клеточное репрограммирование редактирование генома трансгенные и нокаутные животные" data-idx="2" style="">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/9ue2HAuMESvgTsADBUQAEQzsVSf9gqNUOjTz4B1J.png" class="w-full h-full object-cover" alt="Максим Перфилов" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Максим Перфилов</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория оптического биоимиджинга</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Биотехнология, Микроскопия сверхвысокого разрешения, Молекулярная биология, Флуоресцентная микроскопия +7</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 6 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="ibh/sci_003.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="бовин николай владимирович" data-areas="атомно-силовая микроскопия биофизика искусственный интеллект машинное обучение нейросети оптические покрытия поверхностно-усиленная рамановская спектроскопия противораковая активность спектроскопия кр (рамановская) таргетеая доставка наночастицы сканирующая зондовая микроскопия спектроскопия биоматериалы биомедицина композиты биомедицинского назначения нанокомпозиты биомедицинского назначения регенеративная медицина масс-спектрометрия органическая химия углеводы целостность исследования липоплексы липосомы противоопухолевые препараты ферменты флуоресцентный имиджинг флуоресценция фосфолипиды (phospholipids) наука о полимерах теория и компьютерное моделирование мягких сред аналитическая химия протеомика токсикология фармакология гибридные материалы зеленая химия катализ металл-органические координационные полимеры неорганическая химия порфирины физическая химия фотокатализ фотохимия химия координационных соединений элементоорганическая химия ямр-спектроскопия биомаркеры молекулярная биология молекулярная онкология" data-idx="3" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">БН</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Бовин Николай Владимирович</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория углеводов</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Атомно-силовая микроскопия, Биофизика, Искусственный интеллект, Машинное обучение +46</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 164 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="ibh/sci_004.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="осипова зинаида м" data-areas="биолюминесценция биоорганическая химия органическая химия полный синтез большие данные катализ квантовые технологии машинное обучение метал-органические каркасы сенсоры молекулярное моделирование энзимология" data-idx="4" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/1ErBA6ck0o8tU4VZWGegVErUmMpGNLkvztuc8BjE.jpg" class="w-full h-full object-cover" alt="Осипова Зинаида М" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Осипова Зинаида М</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория рационального дизайна химиотерапевтических агентов</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Биолюминесценция, Биоорганическая химия, Органическая химия, Полный синтез +8</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 11 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="ibh/sci_005.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="ольга белозерова" data-areas="антибиотики биоинформатика генетика генетика дрожжей микробиология микробная геномика биолюминесценция биоорганическая химия органическая химия полный синтез перевод рнк рибосома молекулярная биология геномика клеточная биология белок-лигандные взаимодействия ямр-спектроскопия биоинженерия биохимия медицинская химия биотехнология микроскопия сверхвысокого разрешения флуоресцентная микроскопия молекулярное моделирование энзимология" data-idx="5" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">ОБ</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Ольга Белозерова</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория рационального дизайна химиотерапевтических агентов</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Антибиотики, Биоинформатика, Генетика, Генетика дрожжей +22</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 8 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="ibh/sci_006.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="дмитрий юзабчук" data-areas="медицинская химия молекулярное моделирование" data-idx="6" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">ДЮ</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Дмитрий Юзабчук</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория рационального дизайна химиотерапевтических агентов</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Медицинская химия, Молекулярное моделирование</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 2 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="ibh/sci_007.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="рената загитова" data-areas="биолюминесценция биоорганическая химия органическая химия полный синтез молекулярное моделирование энзимология" data-idx="7" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">РЗ</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Рената Загитова</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория рационального дизайна химиотерапевтических агентов</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Биолюминесценция, Биоорганическая химия, Органическая химия, Полный синтез +2</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 3 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="ibh/sci_008.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="олейников владимир александрович" data-areas="атомно-силовая микроскопия биофизика искусственный интеллект машинное обучение нейросети оптические покрытия поверхностно-усиленная рамановская спектроскопия противораковая активность спектроскопия кр (рамановская) таргетеая доставка наночастицы сканирующая зондовая микроскопия спектроскопия жидкие кристаллы фотохимия плазмоника биоматериалы биомедицина композиты биомедицинского назначения нанокомпозиты биомедицинского назначения регенеративная медицина нанопровода супрамолекулярная химия зеленые технологии катализ лазерная абляция наноматериалы солнечная энергетика электронная микроскопия лучевая терапия нанотехнологии химия полимеров оптическая диффузионная спектроскопия фотодинамическая терапия (фдт) апоптоз белковая инженерия противоопухолевые препараты резистентность опухолей таргетная терапия адресная доставка лекарств анализ комплексообразования между наночастицами и биомолекулами биоматериаловедение биополимеры - структура взаимодействие с биополимерами дисперсные системы доставка лекарств золь-гель химия магнитные наночастицы полимерные материалы полимерные микро- и наноконтейнеры с контролируемыми свойствами полимеры для доставки лекарств системы доставки лекарственных веществ токсикология функционально градиентные скаффолды 3d cell culture cancer treatment nanomaterials for biomedicine биодеградация биоинженерия биотехнология высокомолекулярные соединения магнитные материалы вирусы люминесцнетные полупроводниковые квантовые нанокристаллы молекулярные и наноструктурированные сенсибилизаторы активных форм кислорода наночастицы оксидов металлов спектроскопия кругового и магнитного кругового дихроизма ультразвук и кавитация фотофизика и фотохимия многоатомных систем и наночастиц голографическая релаксометрия голография диффузия конфокальная микроскопия микроскопия голограмм" data-idx="8" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/dFHRJRr1XuY85WoEYRFT7xfFwI7RqCaA1dbazI8D.jpg" class="w-full h-full object-cover" alt="Олейников Владимир Александрович" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Олейников Владимир Александрович</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория Молекулярной биофизики</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Атомно-силовая микроскопия, Биофизика, Искусственный интеллект, Машинное обучение +70</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 30 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="ibh/sci_009.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="антон залыгин" data-areas="атомно-силовая микроскопия биофизика искусственный интеллект машинное обучение нейросети оптические покрытия поверхностно-усиленная рамановская спектроскопия противораковая активность спектроскопия кр (рамановская) таргетеая доставка наночастицы сканирующая зондовая микроскопия спектроскопия жидкие кристаллы фотохимия 3d cell culture cancer treatment nanomaterials for biomedicine биодеградация биоинженерия биоматериалы биотехнология высокомолекулярные соединения магнитные материалы нанотехнологии нанопровода криогенная техника люминесцентные материалы оптика физико-химическое материаловедение биополимеры - структура биосовместимость плазмоника" data-idx="9" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/NP9Gmml7kniJ6EWzxPBRIz6k5Dvg7ZFpLhVHThre.jpg" class="w-full h-full object-cover" alt="Антон Залыгин" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Антон Залыгин</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория Молекулярной биофизики</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Атомно-силовая микроскопия, Биофизика, Искусственный интеллект, Машинное обучение +29</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 6 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="ibh/sci_010.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="сергей машуров" data-areas="атомно-силовая микроскопия биофизика молекулярная динамика" data-idx="10" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/6zdm9ySkjuGZfpZlVK4gTgRnPPDvFI0kSsFsmShq.jpg" class="w-full h-full object-cover" alt="Сергей Машуров" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Сергей Машуров</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория Молекулярной биофизики</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Атомно-силовая микроскопия, Биофизика, Молекулярная динамика</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 0 публ.</span>
+            </div>
+          </div>
+        </a>
+        </div>
+        <div class="mt-4 text-center">
+          <button id="sci-more" onclick="showMore('sci-card', 'sci-more', 'sci-counter', 11, 3)" class="px-6 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-widest hover:bg-white/10 transition text-zinc-400">
+            Показать ещё 3
+          </button>
+        </div>
+      </div>
+
+      <script>
+        // Tab switching
+        function switchTab(tab) {
+          document.getElementById('panel-labs').style.display = tab === 'labs' ? '' : 'none';
+          document.getElementById('panel-sci').style.display = tab === 'sci' ? '' : 'none';
+          document.getElementById('tab-labs').style.opacity = tab === 'labs' ? '1' : '0.3';
+          document.getElementById('tab-sci').style.opacity = tab === 'sci' ? '1' : '0.3';
+        }
+        // Scientist search
+        (function() {
+          const input = document.getElementById('sci-search');
+          const grid = document.getElementById('sci-grid');
+          const counter = document.getElementById('sci-count');
+          if (!input || !grid) return;
+          const cards = grid.querySelectorAll('.sci-card');
+          input.addEventListener('input', function() {
+            const q = this.value.toLowerCase().trim();
+            let visible = 0;
+            cards.forEach(c => {
+              const name = c.dataset.name || '';
+              const areas = c.dataset.areas || '';
+              const match = !q || name.includes(q) || areas.includes(q);
+              c.classList.toggle('hidden', !match);
+              if (match) visible++;
+            });
+            counter.textContent = visible + ' учёных';
+          });
+        })();
+      </script>
+
+      <!-- ═══ CHUNK 5: Projects ═══ -->
+      <div class="section-header" id="section-projects">
+        <h2 class="section-title">💼 Проекты НИОКР (93)</h2>
+        <span class="provenance-tag tag-egisu">ЕГИСУ</span>
+      </div>
+      <section class="glass rounded-[2.5rem] overflow-hidden mb-8">
+        <div class="p-6 border-b border-white/10 flex items-center justify-between">
+          <span class="text-sm text-zinc-400" id="proj-counter">Показаны 5 из 93</span>
+          <a href="ibh/projects.html" class="text-xs font-bold text-red-400 hover:text-red-300 transition uppercase">Все проекты →</a>
+        </div>
+        <div id="proj-list"><a href="ibh/proj_0000.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="0">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Динамика гипогалогенного стресса при воспалительных процессах кишечника в некоторых моделях in vivo на объекте Danio rer</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Воспаление является сложным биологическим процессом, который возникает в результате реакции иммунной...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">Воспаление,, нейтрофилы,, гипогалогенный стресс,, Danio rerio,, генетически кодируемые сенсоры</span>
+            <span class='text-[10px] text-zinc-600'>| РНФ</span>
+            <span class='text-[10px] text-zinc-600'>| 2023–2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">1,500 тыс. ₽</span>
+          </div>
+        </a>
+<a href="ibh/proj_0001.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="1">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Модульные пептидно-белковые конструкции для ранней диагностики и лечения онкологических заболеваний</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Были получены модельные конструкции в виде конъюгатов pHLIP с белками. Они представляли собой гибрид...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">pH-чувствительный пептид,, флуоресценция,, таргетная визуализация рака,, хирургия с визуальным контролем,, фотодинамическая терапия</span>
+            <span class='text-[10px] text-zinc-600'>| РНФ</span>
+            <span class='text-[10px] text-zinc-600'>| 2023–2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">1,500 тыс. ₽</span>
+          </div>
+        </a>
+<a href="ibh/proj_0002.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="2">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Структурный и функциональный анализ регуляции геномов, молекулярно-генетические механизмы раннего развития и регенерации</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>В отчете представлены результаты работ, выполненных в 2024 году согласно ГЗ по Проекту «Структурный ...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">ТЕРАПИЯ ГЕННАЯ,, ОНКОЛОГИЯ,, МИКОБАКТЕРИИ,, ТУБЕРКУЛЕЗ,, ТРАНСКРИПТОМ,</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">76,023 тыс. ₽</span>
+          </div>
+        </a>
+<a href="ibh/proj_0003.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="3">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Исследование роли никотиновых рецепторов в воспалительных процессах и канцерогенезе</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Основной целью данного проекта является выяснение роли нейрональных никотиновых ацетилхолиновых реце...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">НИКОТИНОВЫЕ АЦЕТИЛХОЛИНОВЫЕ РЕЦЕПТОРЫ,, РЕЦЕПТОРЫ ГАММА-АМИНОМАСЛЯНОЙ КИСЛОТЫ А-ТИПА,, ОНКОГЕНЕЗ,, РАКОВЫЕ КЛЕТОЧНЫЕ ЛИНИИ,, ВОСПАЛИТЕЛЬНЫЕ ПРОЦЕССЫ,</span>
+            <span class='text-[10px] text-zinc-600'>| РНФ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">7,000 тыс. ₽</span>
+          </div>
+        </a>
+<a href="ibh/proj_0004.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="4">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Поли(АДФ-рибоза) полимераза (PARP) и устойчивость растений к биотическим и абиотическим стрессам</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Численность населения Земли к 2050 г., как ожидается, превысит 9 миллиардов человек, что означает не...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">тельца Кахаля, коилин,, клеточное ядро,, абиотический стресс,, биотический стресс,</span>
+            <span class='text-[10px] text-zinc-600'>| РНФ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">7,000 тыс. ₽</span>
+          </div>
+        </a>
+<a href="ibh/proj_0005.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="5">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Разработка иммуно-RCA в формате микроэррея для детекции опухоль-резидентных антигликановых антител человека</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Целью проекта является разработка универсального метода для детекции сверхмалых количеств любых анти...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">гликозилирование, паратоп,, онкология,, иммуно-RCA,, гликановый мультиэррей,</span>
+            <span class='text-[10px] text-zinc-600'>| РНФ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">1,500 тыс. ₽</span>
+          </div>
+        </a>
+<a href="ibh/proj_0006.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="6">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Исследование протекторного действия пептидов белков Hsp70 и Mts1 у мышей ICR с ЛПС-индуцированным сепсисом</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Основным объектом исследования были высококатегорированные самки мышей линии ICR с охарактеризованны...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">ПЕПТИД HSP70 H1,, ПЕПТИД MTS1 M1,, ФАКТОР НЕКРОЗА ОПУХОЛИ,, ЛАБОРАТОРНЫЕ МЫШИ,, МОДЕЛЬ СЕПСИСА</span>
+            <span class='text-[10px] text-zinc-600'>| ИБГ РАН</span>
+            <span class='text-[10px] text-zinc-600'>| 2025</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">700 тыс. ₽</span>
+          </div>
+        </a>
+<a href="ibh/proj_0007.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="7">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Исследование молекулярных структурных характеристик комплексов включения супрамеров фосфолипидных производных циклодекст</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>В настоящее время, благодаря достижениям в области нанотехнологий, открываются новые возможности для...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">мицеллоподобные наночастицы,, молекулярная динамика,, амфифильность,, циклодекстрины,, самосборка</span>
+            <span class='text-[10px] text-zinc-600'>| РНФ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">1,500 тыс. ₽</span>
+          </div>
+        </a>
+<a href="ibh/proj_0008.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="8">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Белковая корона липосом и ее влияние на взаимодействия с клетками кровеносного русла</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Проект направлен на установление связи между композицией липосомальной системы доставки лекарств, ст...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">Липосомы,, белковая корона,, липофильные пролекарства,, гликоконъюгаты,, протеомный анализ,</span>
+            <span class='text-[10px] text-zinc-600'>| РНФ</span>
+            <span class='text-[10px] text-zinc-600'>| 2021–2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">24,000 тыс. ₽</span>
+          </div>
+        </a>
+<a href="ibh/proj_0009.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="9">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Изучение структуры, динамики и биологического действия белков и пептидов методами структурной биологии и биоинженерии ка</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Целью работы является изучение структуры, динамики и биологического действия белков и пептидов метод...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">СТРУКТУРНЫЕ ДЕТЕРМИНАНТЫ АКТИВНОСТИ БИОМОЛЕКУЛ, МЕЖМОЛЕКУЛЯРНЫЕ ВЗАИМОДЕЙСТВИЯ, ВЗАИМОСВЯЗЬ СТРУКТУРЫ И ФУНКЦИИ БИОМОЛЕКУЛ, СТРУКТУРНАЯ БИОИНФОРМАТИКА, МОЛЕКУЛЯРНОЕ МОДЕЛИРОВАНИЕ, ЛАЗЕРНАЯ СКАНИРУЮЩАЯ КОНФОКАЛЬНАЯ МИКРОСКОПИЯ</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">80,840 тыс. ₽</span>
+          </div>
+        </a>
+<a href="ibh/proj_0010.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="10">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Разработка интегральной платформы для создания высокоспецифичных лигандов калиевых каналов</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Да данном этапе проекта были внесены точечные мутации в известные лиганды и получены плазмидные вект...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">ионный канал,, потенциал-чувствительный канал,, калиевый канал,, лиганд,, блокатор,</span>
+            <span class='text-[10px] text-zinc-600'>| РНФ</span>
+            <span class='text-[10px] text-zinc-600'>| 2023–2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">6,000 тыс. ₽</span>
+          </div>
+        </a>
+<a href="ibh/proj_0011.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="11">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Новое в иммунотерапии и иммунодиагностике социально значимых заболеваний с использованием мультифункциональных гибридных</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Объектом исследования являются: рекомбинантные белки и мультифункциональные гибридные наноконструкци...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">ГИБРИДНЫЕ НАНОСРУКТУРЫ,, РАДИОНУКЛИДНАЯ ДИАГНОСТИКА,, АДРЕСНЫЕ ПОЛИПЕПТИДЫ,, МЕТАЛЛООРГАНИЧЕКИЕ СКАФФОЛДЫ,, ФЛУОРЕСЦЕНТНЫЙ БЕЛОК,</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">84,181 тыс. ₽</span>
+          </div>
+        </a>
+<a href="ibh/proj_0012.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="12">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Таргетированные флуоресцентные липосомы как система для неинвазивной оптической детекции первичных опухолей и удаленных </div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Таргетная оптическая биовизуализация, выполняемая неинвазивно и в режиме реального времени, является...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">Таргетная доставка,, адресные липосомы,, неинвазивный биоимиджинг</span>
+            <span class='text-[10px] text-zinc-600'>| РНФ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">7,000 тыс. ₽</span>
+          </div>
+        </a>
+<a href="ibh/proj_0013.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="13">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Идентификация генов - потенциальных мишеней терапии нейрогенных опухолей</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Злокачественные нейрогенные опухоли – одна из главных причин смерти онкологических больных в России ...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">транскрипция,, нейрогенные опухоли,, гетерогенность опухолей,, гибель опухолевых клеток</span>
+            <span class='text-[10px] text-zinc-600'>| РНФ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">7,000 тыс. ₽</span>
+          </div>
+        </a>
+<a href="ibh/proj_0014.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="14">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Разработка новых биоматериалов и бионанотехнологий для диагностики и терапии социально значимых заболеваний</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Представлены решения исследовательских задач по нескольким направлениям, соответствующим теме проект...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">АСТРОЦИТЫ, 3D КОРРЕЛЯТИВНАЯ МИКРОСКОПИЯ,, ВАКЦИНА,, СИЛАН-СИЛОКСАНОВЫЕ ПОЛИМЕРЫ,, МАГНИТНЫЕ НАНОЧАСТИЦЫ,</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">86,737 тыс. ₽</span>
+          </div>
+        </a>
+<a href="ibh/proj_0015.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="15">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Установление интермедиатов биосинтетического пути люциферина полихет рода Odontosyllis</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Изучение биолюминесцентной системы полихет Odontosyllis undecimdonta — является актуальной и перспек...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">Биолюминисценция,, люциферин,, биосинтез природных соединений,, Odontosyllis,, биоимиджинг</span>
+            <span class='text-[10px] text-zinc-600'>| РНФ</span>
+            <span class='text-[10px] text-zinc-600'>| 2023–2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">6,000 тыс. ₽</span>
+          </div>
+        </a>
+<a href="ibh/proj_0016.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="16">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Исследование нейрон-глиальных перестроений в головном мозге в норме и при патологии с помощью метода 3D-корреляционной м</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Одной из главных задач биомедицины является разработка методов для раннего выявления и предотвращени...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">НЕЙРОН-ГЛИАЛЬНЫЕ ВЗАИМОДЕЙСТВИЯ,, ИМИДЖИНГ,, БОЛЕЗНЬ АЛЬЦГЕЙМЕРА,, ЭЛЕКТРОННАЯ МИКРОСКОПИЯ,, СКАНИРУЮЩАЯ-ЗОНДОВАЯ МИКРОСКОПИЯ,</span>
+            <span class='text-[10px] text-zinc-600'>| РНФ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">7,000 тыс. ₽</span>
+          </div>
+        </a>
+<a href="ibh/proj_0017.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="17">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Разработка средств профилактики и лечения  COVID-19 и сопутствующих инфекционных заболеваний с использованием генетическ</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Цель работы: Развитие генетических технологий для разработки новых технологий и лекарственных средст...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">Ультравысокопроизводительный скрининг,, микрофлюидика,, антимикробные пептиды,, терапевтические антитела,, опухоль-специфические антитела,</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">99,000 тыс. ₽</span>
+          </div>
+        </a>
+<a href="ibh/proj_0018.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="18">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Гомо- и гетеро- тетрамерные потенциал-зависимые калиевые каналы Kv1 в клетках эукариот и их взаимодействия с поровыми бл</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>В проекте предложена и успешно апробирована концепция создания аналитических клеточных систем (АКС) ...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">ПОТЕНЦИАЛ-ЗАВИСИМЫЕ КАЛИЕВЫЕ КАНАЛЫ KV1;, ПЕПТИДНЫЕ БЛОКАТОРЫ</span>
+            <span class='text-[10px] text-zinc-600'>| РНФ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">7,000 тыс. ₽</span>
+          </div>
+        </a>
+<a href="ibh/proj_0019.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="19">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Поиск, структурно-функциональная характеристика и биологическая активность пептидных лигандов кислоточувствительных ионн</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>На третьем (финальном) этапе выполнение проекта по поиску и характеристике пептидных лигандов кислот...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">животные модели, электрофизиология,, структурно-функциональный анализ,, мутагенез,, анальгезия,</span>
+            <span class='text-[10px] text-zinc-600'>| РНФ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024–2025</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">6,000 тыс. ₽</span>
+          </div>
+        </a>
+<a href="ibh/proj_0020.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="20">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Инновационные средства биологической защиты сельскохозяйственных растений на основе природных пептидов</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Объектом исследования являются яды беспозвоночных (пауков, скорпионов, сколопендр, перепончатокрылых...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">пептид,, инсектицид,, токсин,, яд,, ионный канал</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">15,000 тыс. ₽</span>
+          </div>
+        </a>
+<a href="ibh/proj_0021.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="21">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Генетические РНК-технологии: новый ресурс для развития биологии и биотехнологии растений</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Сельскохозяйственные растения постоянно и одновременно подвержены различным биотическим и абиотическ...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">гены-мишени, транскриптом,, картофель,, фузариум,, фитофтора,</span>
+            <span class='text-[10px] text-zinc-600'>| РНФ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">28,000 тыс. ₽</span>
+          </div>
+        </a>
+<a href="ibh/proj_0022.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="22">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Разработка технологий биоимиджинга, хемо-, опто- и термогенетики</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Объекты исследования: флуоресцентные белки, флуоресцентные сенсоры, синтетические хромофоры, хемоген...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">Ионотропность, ОКСИДАЗА D-АМИНОКИСЛОТ, плазматическая  мембрана, SARS-COV2,, биоимиджинг,</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">89,677 тыс. ₽</span>
+          </div>
+        </a>
+<a href="ibh/proj_0023.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="23">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Создание и тестирование эффективной ДНК вакцины для профилактики бруцеллёза</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Настоящий проект по теме ««Создание и тестирование эффективной ДНК-вакцины для профилактики бруцеллё...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">ДНК,, вакцина,, плазмида,, миникольцо,, бруцеллёз</span>
+            
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">10,000 тыс. ₽</span>
+          </div>
+        </a>
+<a href="ibh/proj_0024.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="24">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Взаимодействие противоположно направленных сигналов эндогенных биоактивных липидов лизофосфатидилинозита, анандамида и 2</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>В рамках научно-исследовательской работы изучено взаимодействие эндоканнабиноидов (анандамида и 2-ар...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">эндоканнабиноиды,, параканнабиноиды,, рак молочной железы,, пролиферация,, цитотоксичность,</span>
+            <span class='text-[10px] text-zinc-600'>| РНФ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">1,500 тыс. ₽</span>
+          </div>
+        </a>
+<a href="ibh/proj_0025.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="25">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Системaтический анализ трансляции коротких Открытых Рамок Считывания (кОРC) и исследование свойств их пептидных продукто</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>В результате выполнения работ за отчетный период год получены следующие основные результаты: 
+
+1) Пр...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">рибосомный профайлинг, пептидомика,, микробелки,, кОРС,, Короткие открытые рамки считывания,</span>
+            <span class='text-[10px] text-zinc-600'>| РНФ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">7,000 тыс. ₽</span>
+          </div>
+        </a>
+<a href="ibh/proj_0026.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="26">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Молекулярные механизмы действия модуляторов активности протеасомы химической и белковой природы</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Объектом исследования являются протеасомы, иммунопротеасомы, ингибиторы и модуляторы активности прот...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">убиквитин-подобный домен, полиубиквитиновая цепь,, ингибитор,, спермин,, иммунопротеасома,</span>
+            <span class='text-[10px] text-zinc-600'>| РНФ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">7,000 тыс. ₽</span>
+          </div>
+        </a>
+<a href="ibh/proj_0027.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="27">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Разработка инструментов для диагностики и терапии инфекционных заболеваний и доведения их до практической реализации.</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Объектами исследования были: штаммы клинических изолятов Klebsiella pneumoniae; бактериофаги активны...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">БАКТЕРИОФАГ,, BST-ПОДОБНАЯ ДНК-ПОЛИМЕРАЗА,, МРНК,, ПРОТЕАЗЫ MPRO,, SARS-CoV-2</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">172,946 тыс. ₽</span>
+          </div>
+        </a>
+<a href="ibh/proj_0028.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="28">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Пептидные и белковые соединения на основе структур змеиных токсинов как перспективные средства для коррекции патологий с</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Основными объектами исследования являются компоненты яда змей, которые в проведенных ранее исследова...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">Сердечно-сосудистая система,, реперфузионное повреждение,, артериальное давление,, гипертония,, токсин,</span>
+            <span class='text-[10px] text-zinc-600'>| РНФ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">6,500 тыс. ₽</span>
+          </div>
+        </a>
+<a href="ibh/proj_0029.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="29">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Создание и структурно-функциональное исследование искусственных биокатализаторов и природных мультикаталитических компле</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>В ходе исследования ферментов, формирующих семейство АТР-зависимых Lon-протеаз, проведен углубленный...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">ААА+-БЕЛКИ,, АТР-ЗАВИСИМЫЕ Lon-ПРОТЕАЗЫ,, ПОДСЕМЕЙСТВО Lon-BA-ПРОТЕАЗ,, НАНОТЕЛО К LonA-ПРОТЕАЗЕ,, ПРОЛИН-БОГАТЫЕ АНТИМИКРОБНЫЕ ПЕПТИДЫ,</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">61,407 тыс. ₽</span>
+          </div>
+        </a>
+</div>
+        <div class="p-4 text-center">
+          <button id="proj-more" onclick="showMore('proj-item', 'proj-more', 'proj-counter', 93)" class="px-6 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-widest hover:bg-white/10 transition text-zinc-400">
+            Показать ещё 5
+          </button>
+        </div>
+      </section>
+
+      <!-- ═══ RID Section ═══ -->
+      <div class="section-header" id="section-rid">
+        <h2 class="section-title">🧬 Результаты интеллектуальной деятельности (6)</h2>
+        <span class="provenance-tag tag-egisu">ЕГИСУ</span>
+      </div>
+      <div class="rid-grid mb-6">
+        <div class="glass rounded-2xl p-5 text-center">
+          <div class="text-2xl mb-2">💡</div>
+          <div class="text-2xl font-black italic">6</div>
+          <div class="text-[10px] uppercase font-bold text-zinc-500 mt-1">Изобретение</div>
+        </div>
+
+      </div>
+      <section class="glass rounded-[2.5rem] overflow-hidden mb-8">
+        <div class="p-6 border-b border-white/10 flex items-center justify-between">
+          <span class="text-sm text-zinc-400" id="rid-counter">Показаны 5 из 6</span>
+          <a href="ibh/rid_list.html" class="text-xs font-bold text-red-400 hover:text-red-300 transition uppercase">Все РИД →</a>
+        </div>
+        <div id="rid-list"><a href="ibh/rid_0000.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="0">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💡</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">Тест-системы для определения РНК дальневосточного, сибирского, европейского и байкальского субтипов </div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Изобретение представляет собой тест-системы для выявления РНК дальневосточного, ...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Изобретение</span>
+                <span class='text-[10px] text-zinc-600'>| LAMP, TBEV,, петлевая изотермическая амплификация,</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="ibh/rid_0001.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="1">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💡</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">ПРОТИВОВИРУСНЫЙ АГЕНТ ТАРГЕТНОГО ДЕЙСТВИЯ НА ОСНОВЕ КОНЪЮГАТА МЕТИЛАМИКУМАЦИН-ПЕПТИД</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Изобретение относится к биотехнологии и медицине, а именно решает задачу получен...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Изобретение</span>
+                <span class='text-[10px] text-zinc-600'>| противовирусные препараты, SARS-CoV-2</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="ibh/rid_0002.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="2">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💡</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">Комбинация UTR GPI и EMCV для создания мРНК-вакцин</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Изобретение относится к биомедицине и касается разработки мРНК-вакцин. Предложен...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Изобретение</span>
+                <span class='text-[10px] text-zinc-600'>| мРНК, вакцина</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="ibh/rid_0003.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="3">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💡</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">ДНК-последовательности, предназначенные для вакцинации человека и животных от развития заболевания, </div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Настоящее изобретение относится к области молекулярной биологии и генетической и...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Изобретение</span>
+                <span class='text-[10px] text-zinc-600'>| иммунизация, Brucella melitensis,, саРНК,</span>
+                
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="ibh/rid_0004.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="4">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💡</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">Способ тестирования трансляционной активности UTR на основе секретируемой люциферазы для создания мР</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Изобретение относится к области биомедицины и касается разработки способа быстро...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Изобретение</span>
+                <span class='text-[10px] text-zinc-600'>| РНК, вакцина, мРНК-вакцины</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="ibh/rid_0005.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="5">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💡</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">РЕКОМБИНАНТНЫЙ СТАФИЛОЛИТИЧЕСКИЙ ФЕРМЕНТ РИТАФИН</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Изобретение относится к микробиологии, биотехнологии и медицине, а именно решает...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Изобретение</span>
+                <span class='text-[10px] text-zinc-600'>| Staphylococcus aureus, нуклеотидная SEQ ID NO:1 последовательность, рекомбинантный стафилолитический фермент</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+</div>
+        <div class="p-4 text-center">
+          <button id="rid-more" onclick="showMore('rid-item', 'rid-more', 'rid-counter', 6)" class="px-6 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-widest hover:bg-white/10 transition text-zinc-400">
+            Показать ещё 5
+          </button>
+        </div>
+      </section>
+
+      <script>
+        // Generic show-more function
+        function showMore(itemClass, btnId, counterId, total, step) {
+          step = step || 5;
+          const items = document.querySelectorAll('.' + itemClass);
+          let shown = 0;
+          items.forEach(el => {
+            if (el.style.display !== 'none') shown++;
+          });
+          items.forEach(el => {
+            const idx = parseInt(el.dataset.idx);
+            if (idx < shown + step) {
+              el.style.display = '';
+            }
+          });
+          const totalShown = Math.min(shown + step, items.length);
+          document.getElementById(counterId).textContent = 'Показаны ' + totalShown + ' из ' + total;
+          if (totalShown >= items.length) {
+            document.getElementById(btnId).style.display = 'none';
+          }
+        }
+      </script>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-20 border-t border-white/10 mt-20 bg-black/40">
+      <div class="max-w-7xl mx-auto px-6 text-center">
+        <div class="text-3xl font-black italic uppercase mb-8">МОС<span class="mos-red">НАУКА</span></div>
+        <p class="text-zinc-500 text-sm max-w-2xl mx-auto italic mb-8">Единая экосистема технологического развития площадок и заказчиков в Москве.</p>
+        <div class="flex justify-center gap-8 mb-8">
+          <div class="text-[10px] text-zinc-600 uppercase font-bold">Источник: <span class="text-emerald-500">CoLab</span> — лаборатории, учёные</div>
+          <div class="text-[10px] text-zinc-600 uppercase font-bold">Источник: <span class="text-sky-500">ЕГИСУ</span> — проекты, РИД</div>
+        </div>
+        <div class="text-white/20 text-[10px] uppercase font-bold tracking-[0.5em]">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ ОБЪЕКТА</div>
+      </div>
+    </footer>
+
+    <!-- Scroll to top button -->
+    <button onclick="window.scrollTo({top:0,behavior:'smooth'})" id="scroll-top" class="fixed bottom-8 right-8 w-12 h-12 rounded-full bg-red-500/80 text-white flex items-center justify-center shadow-lg hover:bg-red-500 transition z-50" style="display:none" title="Наверх">
+      <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg>
+    </button>
+
+    <!-- Request Modal -->
+    <div id="requestModal" style="position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem">
+      <div style="background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative">
+        <button onclick="closeModal()" style="position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer">&times;</button>
+        <div id="modalForm">
+          <h2 class="text-xl font-black mb-1">📨 Направить запрос</h2>
+          <div id="modalContext" class="text-xs text-zinc-500 mb-6">через платформу МОСНАУКА</div>
+          <label class="block text-[10px] uppercase font-black text-zinc-500 mb-1 tracking-widest">Ваше ФИО *</label>
+          <input type="text" id="reqName" placeholder="Иванов Иван Иванович" class="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-sm mb-3" style="color:white">
+          <label class="block text-[10px] uppercase font-black text-zinc-500 mb-1 tracking-widest">Организация</label>
+          <input type="text" id="reqOrg" placeholder="ООО «Компания»" class="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-sm mb-3" style="color:white">
+          <label class="block text-[10px] uppercase font-black text-zinc-500 mb-1 tracking-widest">Email *</label>
+          <input type="email" id="reqEmail" placeholder="email@example.com" class="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-sm mb-3" style="color:white">
+          <label class="block text-[10px] uppercase font-black text-zinc-500 mb-1 tracking-widest">Тип запроса</label>
+          <select id="reqType" class="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-sm mb-3" style="color:white;appearance:none">
+            <option>Запрос на НИОКР</option>
+            <option>Консультация</option>
+            <option>Сотрудничество / Партнёрство</option>
+            <option>Использование оборудования</option>
+            <option>Другое</option>
+          </select>
+          <label class="block text-[10px] uppercase font-black text-zinc-500 mb-1 tracking-widest">Сообщение *</label>
+          <textarea id="reqMsg" placeholder="Опишите ваш запрос..." class="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-sm mb-4" style="color:white;min-height:5rem;resize:vertical"></textarea>
+          <button onclick="submitRequest()" class="w-full py-3 rounded-xl bg-red-500 text-white text-[11px] font-black uppercase tracking-widest hover:bg-red-600 transition">Отправить запрос</button>
+        </div>
+        <div id="modalSuccess" style="display:none;text-align:center;padding:2rem 0">
+          <div style="font-size:3rem;margin-bottom:1rem">✅</div>
+          <h3 class="text-lg font-black mb-2">Запрос отправлен!</h3>
+          <p class="text-sm text-zinc-400">Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+          <button onclick="closeModal()" class="mt-6 w-full py-3 rounded-xl bg-white/5 border border-white/10 text-sm font-bold text-zinc-400 hover:bg-white/10 transition">Закрыть</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      window.addEventListener('scroll', function() {
+        document.getElementById('scroll-top').style.display = window.scrollY > 400 ? 'flex' : 'none';
+      });
+      function openRequestModal(context) {
+        document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+        document.getElementById('modalForm').style.display = '';
+        document.getElementById('modalSuccess').style.display = 'none';
+        document.getElementById('requestModal').style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      }
+      function closeModal() {
+        document.getElementById('requestModal').style.display = 'none';
+        document.body.style.overflow = '';
+      }
+      function submitRequest() {
+        var n = document.getElementById('reqName').value.trim();
+        var e = document.getElementById('reqEmail').value.trim();
+        var m = document.getElementById('reqMsg').value.trim();
+        if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+        document.getElementById('modalForm').style.display = 'none';
+        document.getElementById('modalSuccess').style.display = '';
+      }
+      document.getElementById('requestModal').addEventListener('click', function(e) {
+        if (e.target === this) closeModal();
+      });
+    </script>
+  </div>
+</body>
+</html>

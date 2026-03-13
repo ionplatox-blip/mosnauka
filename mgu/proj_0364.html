@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | МГУ им. М.В. Ломоносова</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-mgu.html">МГУ им. М.В. Ломоносова</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">опухоли предстательной железы</span> <span class="tag">конъюгаты</span> <span class="tag">ПСМА</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Радиационные методы и средства исследования в биологии и медицине</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Биомедицинское применение источников ионизирующих излучений</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Пептиды, белки</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Общие синтетические методы</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Реакционная способность</span></div>
+          <h1 style="font-size:1.5rem">Разработка новых радиофармацевтических препаратов для диагностики опухолей предстательной железы</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">21,000 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225102219409-3</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2022-05-12 — 2024-12-31</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№1</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">9</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">РНФ</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>Российский научный фонд</div>
+                </div><div class="metric-box" style="text-align:left">
+                  <div class="label">Исполнитель</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">МОСКОВСКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ ИМЕНИ М.В.ЛОМОНОСОВА, МГУ ИМЕНИ М.В.ЛОМОНОСОВА, МОСКОВСКИЙ УНИВЕРСИТЕТ ИЛИ МГУ</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>Наработка лигандов и конъюгатов производилась по методикам, разработанным на предыдущем этапе. Сборку пептидной последовательности проводили методом твердофазного пептидного синтеза (SPPS) на смоле 2-CTC по следующей стратегии. Данная стратегия предполагает добавление аминокислотных остатков нестандартным способом: в этом синтетическом маршруте N-концевой фрагмент использовался в качестве первого звена полипептидной цепи через промежуточный фрагмент 1,3 - диаминопропана, который необходим для создания свободной аминогруппы для дальнейшей конъюгации с хелатирующим агентом (doi:10.1016/j.mencom.2023.06.010). Таким образом, были получены иммобилизованные на твердофазном носителе дипептидные фрагменты (a-e), которые затем были модифицированы производными янтарной кислоты. Эти производные были использованы в качестве векторных фрагментов для дальнейшей модификации на смоле 2-CTC. Далее была проведена реакция с дипептидами a-e (схес использованием активаторов пептидного синтеза HOBt/HBTU/DIPEA. Выбор смолы 2-CTC был обусловлен возможностью полного удаления полученных структурных фрагментов с твердой фазы без затрагивания защитных групп боковых цепей аминокислот, таких как t-Bu - эфиры. Для этого модифицированный пептид удаляли с полимерной подложки раствором с низким содержанием TFA: DCM-TFA, 99,25%-0,75% v/v, получая серию аминолигандов 1a - 1m.
+Для получения мономодальных PSMA-нацеленных конъюгатов 3a-3m коммерчески доступный хелатирующий агент DOTA-(tBu)3-OH был присоединен к терминальной аминогруппе соединений 11a-11m с помощью активаторов HOBt/HBTU/DIPEA.
+Для удаления трет-бутильных защитных групп на последней стадии использовали смесь TFA/TIPS/H2O (95%/2,5%/2,5%/ v/v). 
+
+Таким образом, были получены целевые соединения 3a-3m. Наработана серия конъюгатов для in vivo испытаний PKA-30, PKA-32, PKA-41, PKA-49, PSMA-617, PKA-66, PKA-70, PKA-71.
+
+На основании структуры предшественника 2h лидирующей последовательности (DCL-(p-COOt-Bu)-L-Phe-L-Tyr(3-NO2)-NH2 была синтезирована серия из двух конъюгатов (4a – 4b) с хелатирующими агентами DTPA, NODA-GA, CHX-DTPA и DOTA-GA которые имеют одинаковые векторный и дипептидный фрагменты для дальнейшего изучения
+На примере одного из азидо- лигандов осуществлен синтез конъюгата, с производным биспидина, результате был получен конъюгат PSMA-Bisp.
+Также на примере амино-лиганда ПСМА, содержащего м-Cl бензильный фрагмент и дипептидный фрагментй L-Phe-L-Phe был опробован подход введения радиоизотопов иода. Для этого вместо хелатирующего фрагмента для модификации лиганда были использованы производные бензойной кислоты, содержащие фрагмент трибутил-олова (SnBu3) в пара или мета положении бензойной кислоты. В дальнейшем группа SnBu3 замещалась с помощью радиоактивного иодида натрия [123I]NaI.
+
+При выполнении работы мы столкнулись со сложностями, связанными с привитием клеточной линии 22Rv1, поэтому в качестве ПСМА-экспрессирующей линии были получены ксенографты LNCaP.
+
+Для ряда конъюгатов, меченных 177Lu исследование проводилось на ксенографтных моделях PC-3-pip и PC-3. Чтобы подтвердить, что поглощение [177Lu]Lu-13B, [177Lu]Lu-13A и [177Lu]Lu-13F в ксенотрансплантатах PC-3pip специфично для PSMA, биораспределение этого соединения было измерено у мышей, несущих PSMA-негативные ксенотрансплантаты PC-3. Тест на специфичность in vivo показал значительно более высокую активность поглощения опухоли в PSMA-позитивных ксенотрансплантатах по сравнению с PSMA-негативными ксенотрансплантатами для вариантов, меченных [177Lu]Lu, через 4 ч после введения. Вариант [177Lu]Lu-13B имел наименьшее поглощение опухолью (2,03 ± 0,06 % ID/г через 4 ч после введения. Однако опухолевое поглощение всех тестируемых вариантов [177Lu]Lu-13B, [177Lu]Lu-13A и [177Lu]Lu-13F существенно не отличалось.
+
+В рамках проекта была получена клеточная линия CT-26-PSMA с индуцированной ПСМА экспрессией. Для предварительной оценки возможности применения новых лигандов для терапии онкологических заболеваний был выполнен сравнительных эксперимент на иммунодефицитных мышах с перевитыми опухолями предстательной железы. Критериями оценки терапевтического действия исследуемых радиофармпрепаратов на привитые опухоли линии CT-26-PSMA являлись: динамика изменения их объема, торможение роста (ТРО, %) по отношению к контролю и регрессия (%). Для оценки фармакокинетических параметров конъюгатов с 68Ga была подобрана дозировка вводимой активности для исследования = 1 МБк/мышь. В случае оценки терапевтического эффекта 177Lu была использована активность вводимых конъюгатов ~25-27 МБк/мышь.
+
+Осуществлен анализ биораспределения и фармакокинетики комплексов 68Ga PKA-30, PKA-32, PKA-41, PKA-49, PSMA-617, PKA-66, PKA-70, PKA-71. Были выявлены наиболее перспективные радиофармацевтические конъюгаты с точки зрения исследования фармакокинетических параметров , среди которых оказались молекулы PKA-49-DOTA) и PKA-66-DTPA.
+
+Для серии 13A-13F была успешно проведено комплексообразование с 177Lu. Радиохимические выходы для всех вариантов были близки к 100 %. Дополнительная очистка не требовалась, так как радиохимическая чистота составляла более 95 %. Удельная активность находилась в диапазоне 8,9-9,02 МБк/нмоль. Анализ методом радио-ВЭЖХ подтвердил идентичность молекул радиомеченого лиганда PSMA и радиохимическую чистоту.
+
+Предварительное насыщение клеток PSMA немеченым таргетным агентом привело к значительному снижению связывания вариантов [177Lu]Lu-13B, [177Lu]Lu-13E, [177Lu]Lu-13C, [177Lu]Lu-13A и [177Lu]Lu-13F с клетками PC-3pip (PSMA+). В тоже время все соединения не связывались с PSMA-негативными клетками PC-3. Вариант [177Lu]Lu-13D показал низкий уровень связывания с PSMA по сравнению с блокированной группой  и был исключен из последующих исследований in vitro и in vivo.
+Для исследования in vivo биораспределения металлокомплексов на мышах были получены радиоконъюгаты лютеция-177 с новыми лигандами — [177Lu]Lu-PKA-32, [177Lu]Lu-PKA-49 в сравнении с [177Lu]Lu-PSMA-617. Для всех образцов РХЧ составляла более 95%. Оценка ТРО проводилась на иммунодефицитных мышах с перевитыми опухолями линии CT-26-PSMA.
+
+Совместно с Лабораторией Радионуклидов и Радиофармпрепаратов НИЦ &quot;Курчатовский Институт&quot; было проведено мечение изотопом тербия 161Tb 4 конъюгатов с хелатирующим агентом DOTA, в качестве образца сравнения был использован стандартный конъюгат PSMA-617-DOTA.
+
+В результате синтеза и исследования новых радифоармацевтических конъюгатов было показано, что наиболее перспективными для дальнейшей разработки и оптимизации структуры наиболее перспективны диагностичекие конъюгаты 68Ga-PKA-49-DOTA и 68Ga-PKA-66-DTPA. В качестве потенциальных терапевтических конъюгатов 177Lu-PKA-49-DOTA и 161Tb-m-Cl-DCL-L-Phe-L-Tyr-DOTA.</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (4)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Успенская Анастасия Алексеевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат химических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Мачулкин Алексей Эдуардович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат химических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Зык Николай Юрьевич</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Петров Станислав Александрович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат химических наук</span></li></ul>
+              
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

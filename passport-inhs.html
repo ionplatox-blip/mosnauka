@@ -1,0 +1,1708 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>МОСНАУКА — Паспорт: ИНХС РАН</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+      body { font-family: Inter, system-ui, sans-serif; background: #050505; color: white; }
+      .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.08); }
+      .mos-red { color: #ff003c; }
+      .mos-bg-red { background: #ff003c; }
+      .provenance-tag { font-size: 8px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.1em; padding: 2px 8px; border-radius: 4px; }
+      .tag-egisu { background: rgba(0, 120, 255, 0.1); color: #40a0ff; border: 1px solid rgba(0, 120, 255, 0.2); }
+      .tag-colab { background: rgba(255, 0, 60, 0.1); color: #ff4070; border: 1px solid rgba(255, 0, 60, 0.2); }
+      .tag-org { background: rgba(255, 255, 255, 0.05); color: #aaa; border: 1px solid rgba(255, 255, 255, 0.1); }
+
+      /* Section titles */
+      .section-header {
+        display: flex; align-items: center; justify-content: space-between;
+        padding: 0 0.5rem; margin-bottom: 1.5rem; margin-top: 3.5rem;
+      }
+      .section-title {
+        font-size: 1.5rem; font-weight: 900; text-transform: uppercase;
+        font-style: italic; letter-spacing: -0.02em;
+      }
+
+      /* Chunk 3: Lab cards */
+      .labs-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+        gap: 1.5rem;
+      }
+      /* Chunk 4: Scientists */
+      .sci-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 1rem;
+      }
+      .sci-card.hidden { display: none; }
+      .line-clamp-2 {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+      #sci-search {
+        background: rgba(255,255,255,0.04);
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 1rem;
+        padding: 0.75rem 1.25rem 0.75rem 2.75rem;
+        color: white;
+        font-size: 0.875rem;
+        width: 100%;
+        outline: none;
+        transition: border-color 0.2s;
+      }
+      #sci-search:focus {
+        border-color: rgba(255,0,60,0.5);
+      }
+      #sci-search::placeholder { color: rgba(255,255,255,0.25); }
+      /* Chunk 5: RID + Projects */
+      .rid-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 1rem;
+      }
+    </style>
+</head>
+<body>
+  <div class="min-h-screen bg-[radial-gradient(circle_at_top_left,rgba(255,0,60,0.12),transparent_25%),radial-gradient(circle_at_top_right,rgba(255,255,255,0.05),transparent_20%),linear-gradient(180deg,#050505,#0b0f16)]">
+
+    <!-- ═══ HEADER ═══ -->
+    <header class="sticky top-0 z-30 backdrop-blur-md border-b border-white/10 bg-black/40">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        <a class="text-2xl font-black italic tracking-tight uppercase hover:opacity-80 transition" href="index.html">
+          МОС<span class="mos-red">НАУКА</span>
+        </a>
+        <div class="flex items-center gap-4">
+          <span class="text-[10px] uppercase tracking-widest text-zinc-500 font-bold">Паспорт организации v2.0</span>
+          <a href="catalog.html" class="text-xs font-bold uppercase hover:text-red-500 transition">Реестр</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 py-10">
+
+      <!-- ═══ BREADCRUMBS ═══ -->
+      <div class="mb-10 flex items-center justify-between">
+        <div class="flex items-center gap-2 text-[10px] uppercase font-bold tracking-widest text-zinc-500">
+          <a href="index.html" class="hover:text-white">Главная</a>
+          <span>/</span>
+          <a href="catalog.html" class="hover:text-white">Реестр</a>
+          <span>/</span>
+          <span class="text-zinc-300">ИНХС РАН</span>
+        </div>
+        <a href="catalog.html" class="px-5 py-2 border border-white/10 rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-white/5 transition">
+          ← К списку
+        </a>
+      </div>
+
+      <!-- ═══ HERO SECTION ═══ -->
+      <section class="glass rounded-[2.5rem] p-10 relative overflow-hidden mb-8">
+        <!-- Bg watermark -->
+        <div class="absolute top-0 right-0 p-8 opacity-5 pointer-events-none">
+          <img src="https://colab.ws/storage/images/SjxztHSBAjGQnTj0mCC3Ji1QWYjlub8I65eTzv4g.png" class="w-64 h-64 grayscale invert" alt="">
+        </div>
+
+        <div class="relative z-10">
+          <!-- Identity -->
+          <div class="flex items-center gap-5 mb-6">
+            <div class="w-20 h-20 rounded-2xl bg-white p-2 flex items-center justify-center shrink-0">
+              <img src="https://colab.ws/storage/images/SjxztHSBAjGQnTj0mCC3Ji1QWYjlub8I65eTzv4g.png" class="max-w-full max-h-full object-contain" alt="ИНХС РАН logo">
+            </div>
+            <div>
+              <h1 class="text-3xl md:text-5xl font-black tracking-tight uppercase leading-tight mb-2">ИНХС РАН</h1>
+              <p class="text-zinc-400 font-medium">Институт нефтехимического синтеза им. А.В. Топчиева РАН</p>
+            </div>
+          </div>
+
+          <!-- Contact row -->
+          <div class="flex flex-wrap gap-6 mt-6">
+            <div class="flex items-center gap-2 text-zinc-400 text-sm">
+              <i class="ph ph-map-pin mos-red"></i>
+              <span>Москва, Ленинский проспект, д. 29</span>
+            </div>
+            <a href="http://ips.ac.ru/" target="_blank" class="flex items-center gap-2 text-zinc-300 text-sm hover:text-white transition">
+              <i class="ph ph-globe mos-red"></i>
+              <span>ips.ac.ru</span>
+            </a>
+          </div>
+
+          <!-- Verified badge + Contact CTA -->
+          <div class="mt-6 flex flex-wrap gap-3 items-center">
+            <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-[11px] font-bold uppercase tracking-wide">
+              <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              Верифицировано МОСНАУКОЙ
+            </span>
+          </div>
+          <div class="mt-4 p-5 rounded-2xl bg-gradient-to-r from-red-500/20 to-red-500/5 border border-red-500/30 flex flex-wrap items-center justify-between gap-4">
+            <div>
+              <div class="text-sm font-bold">📨 Заинтересованы в сотрудничестве?</div>
+              <div class="text-[11px] text-zinc-400 mt-1">Направьте запрос на НИОКР, консультацию или партнёрство</div>
+            </div>
+            <div class="flex gap-2">
+              <a href="javascript:void(0)" onclick="openRequestModal('Запрос по ИНХС РАН')" class="px-6 py-3 rounded-xl bg-red-500 text-white text-[11px] font-black uppercase tracking-wide hover:bg-red-600 transition inline-flex items-center gap-2 shadow-lg">
+                <i class="ph ph-envelope-simple"></i> Направить запрос
+              </a>
+              <a href="http://ips.ac.ru/" target="_blank" class="px-5 py-3 rounded-xl bg-white/5 border border-white/10 text-[11px] font-bold uppercase text-zinc-400 hover:bg-white/10 transition inline-flex items-center gap-2">
+                <i class="ph ph-globe"></i> Сайт
+              </a>
+            </div>
+          </div>
+
+          <!-- ═══ METRICS ROW ═══ -->
+          <div class="grid grid-cols-2 md:grid-cols-5 gap-4 mt-10">
+            <a href="#section-labs" class="p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-white/30 transition cursor-pointer block">
+              <div class="text-[9px] uppercase font-black text-zinc-500 mb-1">Лаборатории</div>
+              <div class="text-3xl font-black italic">3</div>
+            </a>
+            <a href="#section-scientists" class="p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-white/30 transition cursor-pointer block">
+              <div class="text-[9px] uppercase font-black text-zinc-500 mb-1">Учёные</div>
+              <div class="text-3xl font-black italic">47</div>
+            </a>
+            <a href="#section-projects" class="p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-white/30 transition cursor-pointer block">
+              <div class="text-[9px] uppercase font-black text-zinc-500 mb-1">Проекты НИОКР</div>
+              <div class="text-3xl font-black italic">31</div>
+            </a>
+            <a href="#section-rid" class="p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-white/30 transition cursor-pointer block">
+              <div class="text-[9px] uppercase font-black text-zinc-500 mb-1">РИД</div>
+              <div class="text-3xl font-black italic">24</div>
+            </a>
+            <a href="#section-projects" class="p-4 rounded-2xl bg-red-500/5 border border-red-500/20 hover:border-red-500/40 transition cursor-pointer block">
+              <div class="text-[9px] uppercase font-black text-red-400/70 mb-1">Объём НИОКР</div>
+              <div class="text-3xl font-black italic mos-red">796 млн ₽</div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ CHUNK 2: About section ═══ -->
+      <section class="glass rounded-[2.5rem] p-10 mb-8">
+        <div class="flex items-center justify-between mb-6">
+          <h2 class="text-xl font-black uppercase italic tracking-tight">Об организации</h2>
+        </div>
+        <p class="text-[15px] text-zinc-300 leading-relaxed mb-6">«ИНХС РАН» — ведущий научно-исследовательский центр, объединяющий 3 лабораторий и 47 учёных. Исследовательский профиль охватывает бензол, гетерогенный катализ, цеолит, алкилирование, гидрирование. Опубликовано свыше 685 научных работ, выполнено 31 проектов НИОКТР и зарегистрировано 24 результатов интеллектуальной деятельности.</p>
+        <details class="group">
+          <summary class="cursor-pointer text-sm font-bold text-red-400 hover:text-red-300 transition select-none flex items-center gap-2">
+            <i class="ph ph-caret-right text-xs transition-transform group-open:rotate-90"></i>
+            Подробнее об исследовательской деятельности
+          </summary>
+          <div class="mt-6 pt-6 border-t border-white/10">
+            <h3 class="text-zinc-200 text-sm font-bold uppercase tracking-wide mb-3">Ключевые компетенции (по данным ЕГИСУ)</h3><div style="display:flex;flex-wrap:wrap;gap:0.4rem;margin-bottom:1.5rem"><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">бензол <span style="color:#52525b">(8)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">гетерогенный катализ <span style="color:#52525b">(7)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">цеолит <span style="color:#52525b">(7)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">алкилирование <span style="color:#52525b">(7)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">гидрирование <span style="color:#52525b">(5)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">пропилен <span style="color:#52525b">(4)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">диизопропилбензолы <span style="color:#52525b">(4)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">трансалкилирование <span style="color:#52525b">(4)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">разложение гидроперекиси <span style="color:#52525b">(4)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">гидроперекись кумола <span style="color:#52525b">(4)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">каталитический крекинг <span style="color:#52525b">(3)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">бионефть <span style="color:#52525b">(3)</span></span></div><h3 class="text-zinc-200 text-sm font-bold uppercase tracking-wide mb-3">Ведущие лаборатории</h3><ul class="text-zinc-400 text-sm space-y-1 ml-4 mb-6 list-disc"><li>Лаборатория химии углеводородов (5 сотр.)</li><li>Лаборатория &quot;Кремнийорганических и углеводородных циклических соединений&quot; (№ 10) (20 сотр.)</li><li>Лаборатория реологии полимеров (6 сотр.)</li></ul><h3 class="text-zinc-200 text-sm font-bold uppercase tracking-wide mb-3">Ключевые заказчики НИОКР</h3><ul class="text-zinc-400 text-sm space-y-1 ml-4 mb-6 list-disc"><li><strong class="text-zinc-300">МИНОБРНАУКИ РОССИИ</strong> — 12 проектов</li><li><strong class="text-zinc-300">РНФ</strong> — 11 проектов</li><li><strong class="text-zinc-300">ИНХС РАН</strong> — 3 проектов</li></ul><h3 class="text-zinc-200 text-sm font-bold uppercase tracking-wide mb-3">Интеллектуальная собственность</h3><p class="text-zinc-400 text-sm mb-6">Портфель из 24 РИД: изобретение — 23, полезная модель — 1.</p><h3 class="text-zinc-200 text-sm font-bold uppercase tracking-wide mb-3">Финансирование и результаты</h3><p class="text-zinc-400 text-sm">Суммарный объём финансирования: <strong class="text-white">796.0 млн руб.</strong> (31 проектов, по данным ЕГИСУ НИОКТР). По итогам проектов опубликовано 139 научных работ.</p>
+          </div>
+        </details>
+      </section>
+
+      <!-- ═══ TOP-3 FEATURED ═══ -->
+      <section class="glass rounded-[2.5rem] p-10 mb-8">
+        <h2 class="text-lg font-black uppercase italic tracking-tight mb-6">⭐ Ведущие лаборатории и учёные</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div>
+            <div class="text-[10px] uppercase font-black text-zinc-500 mb-3 tracking-widest">🏛️ Топ-3 лаборатории</div>
+            <div class="flex flex-col gap-3"><a href="inhs/lab_001.html" class="glass rounded-2xl p-5 group hover:border-red-500/30 transition flex flex-col">
+          <div class="flex flex-wrap gap-1.5 mb-3"><span class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-[8px] uppercase font-bold text-zinc-500">Катализ</span> <span class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-[8px] uppercase font-bold text-zinc-500">Химия полимеров</span></div>
+          <div class="text-sm font-bold group-hover:text-red-400 transition leading-snug mb-2">Лаборатория &quot;Кремнийорганических и углеводородных циклических соединений&quot; (№ 10)</div>
+          <div class="text-[10px] text-zinc-500 font-bold mt-auto">👥 20 учёных</div>
+        </a>
+<a href="inhs/lab_002.html" class="glass rounded-2xl p-5 group hover:border-red-500/30 transition flex flex-col">
+          <div class="flex flex-wrap gap-1.5 mb-3"><span class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-[8px] uppercase font-bold text-zinc-500">Химическая технология</span> <span class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-[8px] uppercase font-bold text-zinc-500">Химия полимеров</span></div>
+          <div class="text-sm font-bold group-hover:text-red-400 transition leading-snug mb-2">Лаборатория реологии полимеров</div>
+          <div class="text-[10px] text-zinc-500 font-bold mt-auto">👥 6 учёных</div>
+        </a>
+<a href="inhs/lab_000.html" class="glass rounded-2xl p-5 group hover:border-red-500/30 transition flex flex-col">
+          <div class="flex flex-wrap gap-1.5 mb-3"><span class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-[8px] uppercase font-bold text-zinc-500">Катализ</span> <span class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-[8px] uppercase font-bold text-zinc-500">Синтез</span></div>
+          <div class="text-sm font-bold group-hover:text-red-400 transition leading-snug mb-2">Лаборатория химии углеводородов</div>
+          <div class="text-[10px] text-zinc-500 font-bold mt-auto">👥 5 учёных</div>
+        </a>
+</div>
+          </div>
+          <div>
+            <div class="text-[10px] uppercase font-black text-zinc-500 mb-3 tracking-widest">🏆 Топ-3 учёных</div>
+            <div class="flex flex-col gap-3"><a href="inhs/sci_000.html" class="glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-3 items-center">
+          <img src="https://colab.ws/storage/images/gEtqPo2HkvKu5rkIVFnIAFnoKPITgooGeKq6KYCm.jpg" class="w-12 h-12 rounded-xl object-cover border border-white/10" loading="lazy">
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Максимов Антон Львович</div>
+            <div class="text-[10px] text-zinc-500 truncate">Лаборатория химии углеводородов</div>
+            <div class="flex items-center gap-2 mt-1">
+              <span class="text-[9px] text-zinc-600">📚 292 публ.</span> 
+            </div>
+          </div>
+        </a>
+<a href="inhs/sci_005.html" class="glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-3 items-center">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white font-bold text-sm">БМ</div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Бермешев Максим Владимирович</div>
+            <div class="text-[10px] text-zinc-500 truncate">Лаборатория &quot;Кремнийорганических и углеводородных циклических соединений&quot; (№ 10)</div>
+            <div class="flex items-center gap-2 mt-1">
+              <span class="text-[9px] text-zinc-600">📚 76 публ.</span> 
+            </div>
+          </div>
+        </a>
+<a href="inhs/sci_006.html" class="glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-3 items-center">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white font-bold text-sm">КЗ</div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Кирилл Зайцев</div>
+            <div class="text-[10px] text-zinc-500 truncate">Лаборатория &quot;Кремнийорганических и углеводородных циклических соединений&quot; (№ 10)</div>
+            <div class="flex items-center gap-2 mt-1">
+              <span class="text-[9px] text-zinc-600">📚 41 публ.</span> 
+            </div>
+          </div>
+        </a>
+</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ TABS: Labs / Scientists ═══ -->
+      <div class="glass rounded-2xl p-4 mb-4" style="border:1px solid rgba(56,189,248,0.15);background:rgba(56,189,248,0.03)">
+        <div class="flex items-center gap-2 text-[10px] text-sky-400/70 font-bold uppercase">
+          <i class="ph ph-info"></i>
+          Показаны лаборатории и учёные, зарегистрированные на платформе CoLab. Фактическое число сотрудников может быть больше.
+        </div>
+      </div>
+      <div class="section-header" id="section-labs">
+        <div class="flex items-center gap-4">
+          <button id="tab-labs" onclick="switchTab('labs')" class="section-title" style="background:none;border:none;color:white;cursor:pointer;padding:0">🔬 Лаборатории (3)</button>
+          <button id="tab-sci" onclick="switchTab('sci')" class="text-lg font-black uppercase italic tracking-tight opacity-30 hover:opacity-60 transition" style="background:none;border:none;color:white;cursor:pointer;padding:0" id="section-scientists">🎓 Учёные (31)</button>
+        </div>
+        <span class="provenance-tag tag-colab">CoLab Data</span>
+      </div>
+
+      <!-- Labs panel -->
+      <div id="panel-labs">
+        <div class="text-sm text-zinc-400 mb-3" id="lab-counter">Показаны 3 из 3</div>
+        <div class="labs-grid" id="labs-container">
+          <div class="lab-item glass rounded-[2rem] p-8 hover:border-red-500/30 transition shadow-lg flex flex-col" data-idx="0" style="">
+          <div class="flex flex-wrap gap-2 mb-4"><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Катализ</span><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Синтез</span><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">&quot;Зеленая&quot; химия</span></div>
+          <a href="inhs/lab_000.html" class="group">
+            <h3 class="text-lg font-bold mb-3 group-hover:text-red-400 transition leading-snug">Лаборатория химии углеводородов</h3>
+          </a>
+          <p class="text-xs text-zinc-500 leading-relaxed mb-4 flex-1">Лаборатория химии углеводородов была создана в 1986 году для проведения фундаментальных исследований в области активации, функционализации и каталитич...</p>
+          <div class="mt-4 p-3 rounded-xl bg-black/40 border border-white/5">
+              <div class="text-[9px] uppercase font-black text-zinc-500 mb-1">Оборудование</div>
+              <div class="text-[11px] text-zinc-400 leading-snug">Газовый хроматограф с пламенно-ионизационным детектором SHIMADZU GC-17 Газовые хроматографы Шимадзу одни из самых надёжн</div>
+            </div>
+          <div class="mt-6 flex items-center justify-between pt-4 border-t border-white/5">
+            <span class="text-[10px] font-black uppercase text-zinc-500">👥 5 сотрудников</span>
+            
+          </div>
+          <div class="flex gap-2 mt-3">
+            <a href="inhs/lab_000.html" class="flex-1 text-center px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-[9px] font-bold uppercase tracking-wide text-zinc-400 hover:bg-white/10 transition">Подробнее</a>
+            <a href="javascript:void(0)" onclick="openRequestModal('Связаться с лабораторией Лаборатория химии углеводородо')" class="flex-1 text-center px-3 py-2 rounded-xl bg-red-500/10 border border-red-500/30 text-[9px] font-bold uppercase tracking-wide text-red-400 hover:bg-red-500/20 transition cursor-pointer">📨 Связаться</a>
+          </div>
+        </div>
+<div class="lab-item glass rounded-[2rem] p-8 hover:border-red-500/30 transition shadow-lg flex flex-col" data-idx="1" style="">
+          <div class="flex flex-wrap gap-2 mb-4"><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Катализ</span><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Химия полимеров</span><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Элементоорганическая химия</span></div>
+          <a href="inhs/lab_001.html" class="group">
+            <h3 class="text-lg font-bold mb-3 group-hover:text-red-400 transition leading-snug">Лаборатория &quot;Кремнийорганических и углеводородных циклических соединений&quot; (№ 10)</h3>
+          </a>
+          <p class="text-xs text-zinc-500 leading-relaxed mb-4 flex-1">Лаборатория &quot;Кремнийорганических и углеводородных циклических соединений&quot; осуществляет исследования фундаментальных закономерностей термических, и кат...</p>
+          
+          <div class="mt-6 flex items-center justify-between pt-4 border-t border-white/5">
+            <span class="text-[10px] font-black uppercase text-zinc-500">👥 20 сотрудников</span>
+            
+          </div>
+          <div class="flex gap-2 mt-3">
+            <a href="inhs/lab_001.html" class="flex-1 text-center px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-[9px] font-bold uppercase tracking-wide text-zinc-400 hover:bg-white/10 transition">Подробнее</a>
+            <a href="javascript:void(0)" onclick="openRequestModal('Связаться с лабораторией Лаборатория &quot;Кремнийорган')" class="flex-1 text-center px-3 py-2 rounded-xl bg-red-500/10 border border-red-500/30 text-[9px] font-bold uppercase tracking-wide text-red-400 hover:bg-red-500/20 transition cursor-pointer">📨 Связаться</a>
+          </div>
+        </div>
+<div class="lab-item glass rounded-[2rem] p-8 hover:border-red-500/30 transition shadow-lg flex flex-col" data-idx="2" style="">
+          <div class="flex flex-wrap gap-2 mb-4"><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Химическая технология</span><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Химия полимеров</span><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Композиты</span></div>
+          <a href="inhs/lab_002.html" class="group">
+            <h3 class="text-lg font-bold mb-3 group-hover:text-red-400 transition leading-snug">Лаборатория реологии полимеров</h3>
+          </a>
+          <p class="text-xs text-zinc-500 leading-relaxed mb-4 flex-1">Помимо реологии в основные направление научной деятельности входит: исследование нефтей различного происхождения, включая тяжелые нефти в широком темп...</p>
+          
+          <div class="mt-6 flex items-center justify-between pt-4 border-t border-white/5">
+            <span class="text-[10px] font-black uppercase text-zinc-500">👥 6 сотрудников</span>
+            <span class="text-[10px] text-emerald-400 font-bold">✉ rheo@ips.ac.ru</span>
+          </div>
+          <div class="flex gap-2 mt-3">
+            <a href="inhs/lab_002.html" class="flex-1 text-center px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-[9px] font-bold uppercase tracking-wide text-zinc-400 hover:bg-white/10 transition">Подробнее</a>
+            <a href="javascript:void(0)" onclick="openRequestModal('Связаться с лабораторией Лаборатория реологии полимеров')" class="flex-1 text-center px-3 py-2 rounded-xl bg-red-500/10 border border-red-500/30 text-[9px] font-bold uppercase tracking-wide text-red-400 hover:bg-red-500/20 transition cursor-pointer">📨 Связаться</a>
+          </div>
+        </div>
+        </div>
+        <div class="mt-4 text-center">
+          <button id="lab-more" onclick="showMore('lab-item', 'lab-more', 'lab-counter', 3, 3)" class="px-6 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-widest hover:bg-white/10 transition text-zinc-400">
+            Показать ещё 3
+          </button>
+        </div>
+      </div>
+
+      <!-- Scientists panel (hidden by default) -->
+      <div id="panel-sci" style="display:none">
+        <div class="text-sm text-zinc-400 mb-3" id="sci-counter">Показаны 3 из 31</div>
+        <div class="relative mb-6">
+          <i class="ph ph-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-zinc-500"></i>
+          <input id="sci-search" type="text" placeholder="Поиск по имени или области исследования...">
+          <div id="sci-count" class="absolute right-4 top-1/2 -translate-y-1/2 text-[10px] text-zinc-500 font-bold">31 учёных</div>
+        </div>
+        <div class="sci-grid" id="sci-grid">
+          <a href="inhs/sci_000.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="максимов антон львович" data-areas="зеленая химия катализ фотокатализ алюмосиликатные нанотрубки алюмосиликаты бионефть галлуазит гетерогенный катализ гидропроцессы материалы оболочка-ядро нефтепереработка упорядоченные мезопористые оксиды кремния цеолиты биотехнология метатезисная полимеризация масс-спектрометрия супрамолекулярная химия 2d материалы иерархически пористые материалы композиционные материалы костные цементы нанокомпозиты огнеупорные материалы полимерные композиты растровая электронная микроскопия рентгеновская дифракция синхротронное излучение умные материалы электронная микроскопия нефтехимия газохимия катализаторы гидрирования высокомолекулярные соединения коллоидная химия реология функциональные материалы биотопливо гидродеоксигенация фосфиды переходных металлов спектроскопия поглощения рентгеновских лучей получение водорода 3d-печать 3d-прототипирование графический дизайн синтез наноматериалов физико-химическая характеристика гибридных материалов гидротермальный синтез неорганическая химия низкотемпературная адсорбция азота редкоземельные элементы (рзэ) материаловедение нанозимы наноматериалы химия твердого тела церий органическая химия редкоземельные элементы спектроскопия физическая химия фталоцианины химия химия координационных соединений нековалентные взаимодействия искусственный интеллект машинное обучение нанотехнологии нанохимия computational materials science теория функционала плотности asymmetric catalysis комплексы переходных металлов механизмы реакций synthetic organic chemistry медицинская химия синтез комплексы tetrapyrrolic compounds лантаноиды органический синтез водородная энергетика малые молекулы перенос заряда с-h функционализация химия элементоорганических соединений электрокатализ электросинтез координационная химия материалы аналитическая химия химия природных соединений структура молекулярных кристаллов водородные технологии гетероциклические соединения органические полупроводники химическая технология химия энергонасыщенных соединений дендримеры полимеры силиконовые материалы химия органических и элементоорганических соединений; химия полимеров; получение материалов кремнийорганическая химия кремнийорганические соединения металлоорганическая химия электрохимия титаносиликаты полимеры и композиты олигомеризация фотохимия химия гетероциклов биологическая активность ямр-спектроскопия метатезис горение многофазный поток теплофизика химическая физика энергетика природные полимеры гибридные материалы клатрохелаты красители порфиразины порфирины тетраазахлорины фотодинамическая терапия (фдт) фотосенсибилизаторы фталоцианинаты функциональные красители" data-idx="0" style="">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/gEtqPo2HkvKu5rkIVFnIAFnoKPITgooGeKq6KYCm.jpg" class="w-full h-full object-cover" alt="Максимов Антон Львович" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Максимов Антон Львович</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория химии углеводородов</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Зеленая химия, Катализ, Фотокатализ, Алюмосиликатные нанотрубки +124</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 292 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="inhs/sci_001.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="вера остроумова" data-areas="зеленая химия катализ фотокатализ гетерогенный катализ нефтехимия" data-idx="1" style="">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">ВО</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Вера Остроумова</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория химии углеводородов</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Зеленая химия, Катализ, Фотокатализ, Гетерогенный катализ +1</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 17 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="inhs/sci_002.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="мария князева" data-areas="координационная химия материалы органическая химия супрамолекулярная химия рентгеноструктурный анализ коллоидная химия наноматериалы нековалентные взаимодействия умные материалы физическая химия масс-спектрометрия метатезисная полимеризация синхротронное излучение структурная биология структурная химия" data-idx="2" style="">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">МК</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Мария Князева</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория химии углеводородов</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Координационная химия, Материалы, Органическая химия, Супрамолекулярная химия +11</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 30 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="inhs/sci_003.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="алексей садовников" data-areas="зеленая химия катализ фотокатализ материаловедение нанозимы наноматериалы редкоземельные элементы (рзэ) функциональные материалы химия твердого тела церий газохимия нефтехимия гидротермальный синтез неорганическая химия низкотемпературная адсорбция азота растровая электронная микроскопия рентгеновская дифракция 2d материалы иерархически пористые материалы композиционные материалы костные цементы нанокомпозиты огнеупорные материалы полимерные композиты синхротронное излучение умные материалы электронная микроскопия органическая химия органический синтез гибридные материалы металл-органические координационные полимеры порфирины физическая химия фотохимия химия координационных соединений элементоорганическая химия ямр-спектроскопия кристаллохимия магниты наночастицы биотехнология высокотемпературные материалы углерод углеродные материалы коллоидная химия машинное обучение слоистые гидроксиды апконверсия наноплазмоника спектроскопия флуоресценция альтернативная энергетика оптика печатные технологии сенсорика синтез наноматериалов электроника цеолиты неорганический синтез химическая термодинамика" data-idx="3" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">АС</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Алексей Садовников</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория химии углеводородов</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Зеленая химия, Катализ, Фотокатализ, Материаловедение +56</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 26 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="inhs/sci_004.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="вадим самойлов" data-areas="метатезисная полимеризация масс-спектрометрия высокомолекулярные соединения коллоидная химия композиционные материалы реология функциональные материалы зеленая химия катализ фотокатализ газохимия гетерогенный катализ нефтехимия получение водорода" data-idx="4" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">ВС</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Вадим Самойлов</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория химии углеводородов</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Метатезисная полимеризация, Масс-спектрометрия, Высокомолекулярные соединения, Коллоидная химия +10</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 23 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="inhs/sci_005.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="бермешев максим владимирович" data-areas="метатезисная полимеризация высокомолекулярные соединения мембраные материалы аддитивная полимеризация катализ комплексы переходных металлов большие данные квантовые технологии машинное обучение метал-органические каркасы сенсоры коллоидная химия композиционные материалы реология функциональные материалы мембранное газоразделение микропористые материалы полинорборнены масс-спектрометрия кремнийорганические соединения химия полимеров ионные жидкости синтез полимеров физика полимеров медицинская химия органическая химия полимеры алюминий металлоорганическая химия органический синтез титан химия высокомолекулярных соединений элементоорганическая химия метатезис materials chemistry synthetic organic chemistry наука о полимерах ямр-спектроскопия композиты нековалентные взаимодействия химия координационных соединений инженерия кристаллов фотокатализ химия органических и элементоорганических соединений; химия полимеров; получение материалов супрамолекулярная химия взаимодействие плазмы с материалами математическое моделирование низкотемпературная плазма полимерные материалы" data-idx="5" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">БМ</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Бермешев Максим Владимирович</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория &quot;Кремнийорганических и углеводородных циклических соединений&quot; (№ 10)</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Метатезисная полимеризация, Высокомолекулярные соединения, Мембраные материалы, Аддитивная полимеризация +45</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 76 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="inhs/sci_006.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="кирилл зайцев" data-areas="алюминий катализ металлоорганическая химия органический синтез титан люминесценция спектроскопия метатезисная полимеризация высокомолекулярные соединения мембраные материалы нейробиология нейрофизиология оптогенетика эпилепсия анализ данных магнетизм мессбауэровская спектроскопия неорганическая химия синхротронное излучение спиновые волны кристаллохимия умные материалы химия координационных соединений ab initio matrix isolation астрофизика взаимодействие рентгеновского и синхротронного излучений с веществом высокопроизводительные вычисления вычислительная химия ик-спектроскопия квантовая химия космические исследования криогенная техника матричная изоляция механизмы реакций молекулярная спектроскопия молекулярное моделирование невалентные взаимодействия нековалентные взаимодействия расчетные методы в химии рентгеновское излучение синглетный кислород физическая химия фотохимия химическая физика эпр-спектроскопия большие данные квантовые технологии машинное обучение метал-органические каркасы сенсоры химия высокомолекулярных соединений элементоорганическая химия" data-idx="6" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">КЗ</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Кирилл Зайцев</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория &quot;Кремнийорганических и углеводородных циклических соединений&quot; (№ 10)</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Алюминий, Катализ, Металлоорганическая химия, Органический синтез +49</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 41 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="inhs/sci_007.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="евгения бермешева" data-areas="nhc pd -комплексы аддитивная полимеризация норбонены" data-idx="7" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">ЕБ</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Евгения Бермешева</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория &quot;Кремнийорганических и углеводородных циклических соединений&quot; (№ 10)</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">NHC Pd -комплексы, Аддитивная полимеризация, Норбонены</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 0 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="inhs/sci_008.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="дмитрий алентьев" data-areas="высокомолекулярные соединения мембраные материалы метатезисная полимеризация аддитивная полимеризация мембранное газоразделение микропористые материалы полинорборнены алюминий катализ металлоорганическая химия органический синтез титан кремнийорганические соединения химия полимеров ионные жидкости синтез полимеров физика полимеров масс-спектрометрия органическая химия композиты materials chemistry synthetic organic chemistry композиционные материалы наука о полимерах ямр-спектроскопия большие данные квантовые технологии машинное обучение метал-органические каркасы сенсоры коллоидная химия реология функциональные материалы химия высокомолекулярных соединений элементоорганическая химия" data-idx="8" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/jCokZ1l0RQDVzcvfUChMRv1Vu8qHK0RMV2MKj4ww.jpg" class="w-full h-full object-cover" alt="Дмитрий Алентьев" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Дмитрий Алентьев</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория &quot;Кремнийорганических и углеводородных циклических соединений&quot; (№ 10)</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Высокомолекулярные соединения, Мембраные материалы, Метатезисная полимеризация, Аддитивная полимеризация +31</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 19 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="inhs/sci_009.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="алена возняк" data-areas="метатезисная полимеризация аддитивная полимеризация высокомолекулярные соединения катализ комплексы переходных металлов коллоидная химия композиционные материалы реология функциональные материалы мембраные материалы метатезис большие данные квантовые технологии машинное обучение метал-органические каркасы сенсоры органическая химия органический синтез фосфорорганическая химия химия полимеров кремнийорганические соединения ионные жидкости синтез полимеров физика полимеров медицинская химия полимеры металлоорганическая химия нековалентные взаимодействия химия координационных соединений масс-спектрометрия инженерия кристаллов фотокатализ химия органических и элементоорганических соединений; химия полимеров; получение материалов мембранное газоразделение микропористые материалы полинорборнены" data-idx="9" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">АВ</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Алена Возняк</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория &quot;Кремнийорганических и углеводородных циклических соединений&quot; (№ 10)</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Метатезисная полимеризация, Аддитивная полимеризация, Высокомолекулярные соединения, Катализ +32</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 17 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="inhs/sci_010.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="глеб карпов" data-areas="метатезисная полимеризация большие данные катализ квантовые технологии машинное обучение метал-органические каркасы сенсоры высокомолекулярные соединения коллоидная химия композиционные материалы реология функциональные материалы мембраные материалы аддитивная полимеризация комплексы переходных металлов кремнийорганические соединения химия полимеров" data-idx="10" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/IDb4AwV75Hk6LaoxIaSCwzTW4uZRyfbH27JGeGVM.jpg" class="w-full h-full object-cover" alt="Глеб Карпов" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Глеб Карпов</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория &quot;Кремнийорганических и углеводородных циклических соединений&quot; (№ 10)</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Метатезисная полимеризация, Большие данные, Катализ, Квантовые технологии +13</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 10 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="inhs/sci_011.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="александр моронцев" data-areas="метатезисная полимеризация высокомолекулярные соединения коллоидная химия композиционные материалы реология функциональные материалы метатезис аддитивная полимеризация катализ комплексы переходных металлов медицинская химия органическая химия полимеры большие данные квантовые технологии машинное обучение метал-органические каркасы сенсоры масс-спектрометрия" data-idx="11" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">АМ</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Александр Моронцев</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория &quot;Кремнийорганических и углеводородных циклических соединений&quot; (№ 10)</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Метатезисная полимеризация, Высокомолекулярные соединения, Коллоидная химия, Композиционные материалы +15</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 9 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="inhs/sci_012.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="кирилл садовников" data-areas="медицинская химия органическая химия полимеры метатезисная полимеризация метатезис биофотоника компьютерная томография магнитно-резонансная томография (мрт) масс-спектрометрия высокомолекулярные соединения коллоидная химия композиционные материалы реология функциональные материалы атомно-силовая микроскопия покрытия растровая электронная микроскопия антибиотики аддитивная полимеризация катализ комплексы переходных металлов" data-idx="12" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">КС</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Кирилл Садовников</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория &quot;Кремнийорганических и углеводородных циклических соединений&quot; (№ 10)</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Медицинская химия, Органическая химия, Полимеры, Метатезисная полимеризация +17</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 6 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="inhs/sci_013.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="всеволод жигарев" data-areas="масс-спектрометрия метатезисная полимеризация высокомолекулярные соединения коллоидная химия композиционные материалы реология функциональные материалы метатезис медицинская химия органическая химия полимеры" data-idx="13" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">ВЖ</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Всеволод Жигарев</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория &quot;Кремнийорганических и углеводородных циклических соединений&quot; (№ 10)</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Масс-спектрометрия, Метатезисная полимеризация, Высокомолекулярные соединения, Коллоидная химия +7</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 1 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="inhs/sci_014.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="федор андреянов" data-areas="кремнийорганические соединения химия полимеров метатезисная полимеризация высокомолекулярные соединения мембраные материалы ионные жидкости синтез полимеров физика полимеров большие данные катализ квантовые технологии машинное обучение метал-органические каркасы сенсоры коллоидная химия композиционные материалы реология функциональные материалы" data-idx="14" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">ФА</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Федор Андреянов</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория &quot;Кремнийорганических и углеводородных циклических соединений&quot; (№ 10)</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Кремнийорганические соединения, Химия полимеров, Метатезисная полимеризация, Высокомолекулярные соединения +14</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 4 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="inhs/sci_015.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="петр лежнин" data-areas="химия высокомолекулярных соединений элементоорганическая химия метатезисная полимеризация алюминий катализ металлоорганическая химия органический синтез титан высокомолекулярные соединения мембраные материалы" data-idx="15" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">ПЛ</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Петр Лежнин</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория &quot;Кремнийорганических и углеводородных циклических соединений&quot; (№ 10)</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Химия высокомолекулярных соединений, Элементоорганическая химия, Метатезисная полимеризация, Алюминий +6</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 1 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="inhs/sci_016.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="валерия наземутдинова" data-areas="метатезис метатезисная полимеризация высокомолекулярные соединения коллоидная химия композиционные материалы реология функциональные материалы медицинская химия органическая химия полимеры масс-спектрометрия" data-idx="16" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/iRo3VQwIKVJupparhTmkr1FDcmBsY3c6yoh9H1RA.jpg" class="w-full h-full object-cover" alt="Валерия Наземутдинова" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Валерия Наземутдинова</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория &quot;Кремнийорганических и углеводородных циклических соединений&quot; (№ 10)</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Метатезис, Метатезисная полимеризация, Высокомолекулярные соединения, Коллоидная химия +7</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 1 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="inhs/sci_017.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="максим зоткин" data-areas="аддитивная полимеризация мембранное газоразделение метатезисная полимеризация микропористые материалы полинорборнены высокомолекулярные соединения мембраные материалы масс-спектрометрия химия полимеров доставка лекарств синтез амфифильных биодеградируемых сополимеров фотодинамическая терапия (фдт) химически индуцированная фотодинамическая терамия" data-idx="17" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/Ux7eJxzcccy0JLmdlOCleu9qS1qak02cUZboW2Lb.jpg" class="w-full h-full object-cover" alt="Максим Зоткин" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Максим Зоткин</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория &quot;Кремнийорганических и углеводородных циклических соединений&quot; (№ 10)</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Аддитивная полимеризация, Мембранное газоразделение, Метатезисная полимеризация, Микропористые материалы +9</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 2 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="inhs/sci_018.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="артём лунин" data-areas="ионные жидкости синтез полимеров физика полимеров метатезисная полимеризация высокомолекулярные соединения мембраные материалы кремнийорганические соединения химия полимеров коллоидная химия композиционные материалы реология функциональные материалы" data-idx="18" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">АЛ</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Артём Лунин</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория &quot;Кремнийорганических и углеводородных циклических соединений&quot; (№ 10)</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Ионные жидкости, Синтез полимеров, Физика полимеров, Метатезисная полимеризация +8</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 2 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="inhs/sci_019.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="анна хрычикова" data-areas="аддитивная полимеризация высокомолекулярные соединения катализ комплексы переходных металлов метатезисная полимеризация большие данные квантовые технологии машинное обучение метал-органические каркасы сенсоры металлоорганическая химия нековалентные взаимодействия органическая химия химия координационных соединений инженерия кристаллов фотокатализ химия органических и элементоорганических соединений; химия полимеров; получение материалов медицинская химия полимеры" data-idx="19" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">АХ</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Анна Хрычикова</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория &quot;Кремнийорганических и углеводородных циклических соединений&quot; (№ 10)</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Аддитивная полимеризация, Высокомолекулярные соединения, Катализ, Комплексы переходных металлов +15</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 2 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="inhs/sci_020.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="всеволод степанянц" data-areas="" data-idx="20" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">ВС</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Всеволод Степанянц</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория &quot;Кремнийорганических и углеводородных циклических соединений&quot; (№ 10)</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2"></div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 0 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="inhs/sci_021.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="полина антонова" data-areas="высокомолекулярные соединения катализ" data-idx="21" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/pnqLI74sechfpzj7m5jX5o3WkCOsuls96jokxzI3.jpg" class="w-full h-full object-cover" alt="Полина Антонова" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Полина Антонова</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория &quot;Кремнийорганических и углеводородных циклических соединений&quot; (№ 10)</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Высокомолекулярные соединения, Катализ</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 0 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="inhs/sci_022.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="клим закиров" data-areas="" data-idx="22" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">КЗ</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Клим Закиров</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория &quot;Кремнийорганических и углеводородных циклических соединений&quot; (№ 10)</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2"></div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 0 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="inhs/sci_023.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="данила васин" data-areas="" data-idx="23" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">ДВ</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Данила Васин</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория &quot;Кремнийорганических и углеводородных циклических соединений&quot; (№ 10)</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2"></div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 0 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="inhs/sci_024.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="михаил бояркин" data-areas="" data-idx="24" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">МБ</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Михаил Бояркин</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория &quot;Кремнийорганических и углеводородных циклических соединений&quot; (№ 10)</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2"></div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 0 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="inhs/sci_025.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="зуев кирилл владимирович" data-areas="высокомолекулярные соединения коллоидная химия композиционные материалы реология функциональные материалы пористые материалы механика и реология полимеров переработка полимеров создание новых полимерных материалов формование волокон" data-idx="25" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/hmURlRyrx0uEzxYmZsJFLss4nZ63CY7L8X6L7LCQ.jpg" class="w-full h-full object-cover" alt="Зуев Кирилл Владимирович" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Зуев Кирилл Владимирович</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория реологии полимеров</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Высокомолекулярные соединения, Коллоидная химия, Композиционные материалы, Реология +6</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 7 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="inhs/sci_026.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="валерий куличихин" data-areas="" data-idx="26" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">ВК</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Валерий Куличихин</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория реологии полимеров</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2"></div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 0 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="inhs/sci_027.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="александр малкин" data-areas="" data-idx="27" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/tlRSYinv7fsJoxoOOvKhFbS0YzWTZB3LndjsOnOE.jpg" class="w-full h-full object-cover" alt="Александр Малкин" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Александр Малкин</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория реологии полимеров</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2"></div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 0 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="inhs/sci_028.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="андрей субботин" data-areas="механика и реология полимеров физика сплошных сред физикохимия полимеров электроспиннинг наука о полимерах теория и компьютерное моделирование мягких сред" data-idx="28" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/fH5yii8rSivlNB6S9dsk5IZ4pHLehvLU3bd8Pogx.jpg" class="w-full h-full object-cover" alt="Андрей Субботин" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Андрей Субботин</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория реологии полимеров</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Механика и реология полимеров, Физика сплошных сред, Физикохимия полимеров, Электроспиннинг +2</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 29 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="inhs/sci_029.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="мария миронова" data-areas="" data-idx="29" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/ViTqaHhrdIvgveczQuKRQqMlIvRgznGEUUWglzzj.jpg" class="w-full h-full object-cover" alt="Мария Миронова" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Мария Миронова</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория реологии полимеров</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2"></div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 0 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="inhs/sci_030.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="лидия варфоломеева" data-areas="механика и реология полимеров переработка полимеров реология создание новых полимерных материалов формование волокон композиционные материалы пористые материалы высокомолекулярные соединения коллоидная химия функциональные материалы" data-idx="30" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/7yZdaV4sEvMRAaZPaCtRI1Buif0FEalD63GGdvMO.jpg" class="w-full h-full object-cover" alt="Лидия Варфоломеева" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Лидия Варфоломеева</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория реологии полимеров</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Механика и реология полимеров, Переработка полимеров, Реология, Создание новых полимерных материалов +6</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 17 публ.</span>
+            </div>
+          </div>
+        </a>
+        </div>
+        <div class="mt-4 text-center">
+          <button id="sci-more" onclick="showMore('sci-card', 'sci-more', 'sci-counter', 31, 3)" class="px-6 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-widest hover:bg-white/10 transition text-zinc-400">
+            Показать ещё 3
+          </button>
+        </div>
+      </div>
+
+      <script>
+        // Tab switching
+        function switchTab(tab) {
+          document.getElementById('panel-labs').style.display = tab === 'labs' ? '' : 'none';
+          document.getElementById('panel-sci').style.display = tab === 'sci' ? '' : 'none';
+          document.getElementById('tab-labs').style.opacity = tab === 'labs' ? '1' : '0.3';
+          document.getElementById('tab-sci').style.opacity = tab === 'sci' ? '1' : '0.3';
+        }
+        // Scientist search
+        (function() {
+          const input = document.getElementById('sci-search');
+          const grid = document.getElementById('sci-grid');
+          const counter = document.getElementById('sci-count');
+          if (!input || !grid) return;
+          const cards = grid.querySelectorAll('.sci-card');
+          input.addEventListener('input', function() {
+            const q = this.value.toLowerCase().trim();
+            let visible = 0;
+            cards.forEach(c => {
+              const name = c.dataset.name || '';
+              const areas = c.dataset.areas || '';
+              const match = !q || name.includes(q) || areas.includes(q);
+              c.classList.toggle('hidden', !match);
+              if (match) visible++;
+            });
+            counter.textContent = visible + ' учёных';
+          });
+        })();
+      </script>
+
+      <!-- ═══ CHUNK 5: Projects ═══ -->
+      <div class="section-header" id="section-projects">
+        <h2 class="section-title">💼 Проекты НИОКР (31)</h2>
+        <span class="provenance-tag tag-egisu">ЕГИСУ</span>
+      </div>
+      <section class="glass rounded-[2.5rem] overflow-hidden mb-8">
+        <div class="p-6 border-b border-white/10 flex items-center justify-between">
+          <span class="text-sm text-zinc-400" id="proj-counter">Показаны 5 из 31</span>
+          <a href="inhs/projects.html" class="text-xs font-bold text-red-400 hover:text-red-300 transition uppercase">Все проекты →</a>
+        </div>
+        <div id="proj-list"><a href="inhs/proj_0000.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="0">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Селективная пиролитическая переработка биомассы для производства высококачественного жидкого топлива и ценных продуктов.</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>В отчете представлены результаты исследований, выполненных по 2 этапу Соглашения № 075-15-2023-583 о...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">НЕФТЕХИМИЧЕСКОЕ СЫРЬЕ, ЭНЕРГОЭФФЕКТИВНОСТЬ, НАНОРАЗМЕРНЫЕ КАТАЛИЗАТОРЫ, ЦЕОЛИТСОДЕРЖАЩИЕ КАТАЛИЗАТОРЫ, КАТАЛИТИЧЕСКИЙ КРЕКИНГ</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">10,000 тыс. ₽</span>
+          </div>
+        </a>
+<a href="inhs/proj_0001.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="1">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Научно-исследовательский отчёт о выполненных работах  по Договору 256-24-07-25-ЕП-223   «Исследование состава продуктов </div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Получены результаты изучения состава продуктов дериватизации деканолом в присутствии трифтометансуль...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">деконволюция, идентификация, петролеомика, дериватизация, фотоионизация при атмосферном давлении</span>
+            <span class='text-[10px] text-zinc-600'>| ИНХС РАН</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">1,200 тыс. ₽</span>
+          </div>
+        </a>
+<a href="inhs/proj_0002.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="2">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Одноатомные родиевые катализаторы на основе наноразмерного цеолита ZSM-5 с микро- и микро-мезопористой структурой -  пут</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Объектом исследования настоящей НИР являются моно- и биметаллические цеолитные катализаторы с высоко...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">ПОЛУЧЕНИЕ УГЛЕВОДОРОДОВ С2+ И УКСУСНОЙ КИСЛОТЫ, НИЗКОТЕМПЕРАТУРНАЯ ОКИСЛИТЕЛЬНАЯ КОНВЕРСИЯ МЕТАНА, БИМЕТАЛЛИЧЕСКИЕ СИСТЕМЫ, ЦЕОЛИТЫ ZSM-5, РОДИЕВЫЕ ОДНОАТОМНЫЕ КАТАЛИЗАТОРЫ</span>
+            <span class='text-[10px] text-zinc-600'>| РНФ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">6,000 тыс. ₽</span>
+          </div>
+        </a>
+<a href="inhs/proj_0003.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="3">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Разработка каталитических систем, содержащих благородные металлы, на основе микро-мезопористых материалов для получение </div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>В отчете представлены результаты исследований, выполненных по трем этапам Соглашения № 22-79-10294 «...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">Гидрирование, ароматические углеводороды, бионефть, биомасса, мезопористые материалы</span>
+            <span class='text-[10px] text-zinc-600'>| РНФ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024–2025</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">6,000 тыс. ₽</span>
+          </div>
+        </a>
+<a href="inhs/proj_0004.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="4">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">ВЫСОКОТЕХНОЛОГИЧНЫЕ ПОЛИМЕРНЫЕ МАТЕРИАЛЫ, НАНОКОМПОЗИТЫ И АДГЕЗИВЫ: СИНТЕЗ, МОДИФИКАЦИЯ И ИССЛЕДОВАНИЕ ИХ КОНСТРУКЦИОННЫ</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Работы ведутся по следующим направлениям: 
+1. Развитие подходов к синтезу и модификации полимеров дл...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">МИКРОФЛЮИДНЫЕ УСТРОЙСТВА, УГЛЕРОД-КАРБИДОКРЕМНИЕВЫЕ ВОЛОКНА, ЧУВСТВИТЕЛЬНЫЕ К ДАВЛЕНИЮ АДГЕЗИВЫ, БИОЦИДНОСТЬ, НАНОКОМПОЗИТЫ</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">105,666 тыс. ₽</span>
+          </div>
+        </a>
+<a href="inhs/proj_0005.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="5">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Функциональные присадки и реагенты для нефтегазовой отрасли</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Цель настоящего исследования заключается в создании фундаментальных основ новых технологий получения...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">присадки к топливам, модификаторы вязкости, вязкостные и реологические свойства смазочных материалов, антиокислители, модификаторы трения</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">16,998 тыс. ₽</span>
+          </div>
+        </a>
+<a href="inhs/proj_0006.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="6">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Создание гибридных материалов типа квантовая точка - аптамеры для онковизуализации</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Основная идея проекта направлена на создание комплексов КТ-аптамер, которые с одной стороны обладают...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">БЛОК-СОПОЛИМЕРЫ, КВАНТОВЫЕ ТОЧКИ, НАНОЧАСТИЦЫ, ОПЦ-ПОЛИМЕРИЗАЦИЯ, ПОЛИМЕРНЫЕ КОМПЛЕКСЫ</span>
+            <span class='text-[10px] text-zinc-600'>| РНФ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">1,500 тыс. ₽</span>
+          </div>
+        </a>
+<a href="inhs/proj_0007.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="7">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Создание, развитие и усовершенствование технологических основ процессов переработки углеродсодержащего сырья для получен</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Отчет 311 с., рис. 141, табл. 50, сх. 12, источников 471, прил. 1
+Ключевые слова: СПИРО[2,4]ГЕПТАДИЕ...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">СПИРО[2,4]ГЕПТАДИЕН-4,6, НОРБОРНАН, N-КОНДЕНСИРОВАННЫЕ ГЕТЕРОЦИКЛЫ, ВНУТРИМОЛЕКУЛЯРНАЯ ЦИКЛИЗАЦИЯ, НАНОРАЗМЕРНЫЙ КАТАЛИЗАТОР</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">73,839 тыс. ₽</span>
+          </div>
+        </a>
+<a href="inhs/proj_0008.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="8">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Новый класс микропористых полимерных материалов для мембранного газоразделения и хранения газов: полинорборнены с карбоц</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Отчет 42 с., 10 рис., 12 табл., 7 схем. Отчет включает описание проделанной работы и результатов Про...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">микропористые материалы, высокопроницаемые полимеры, мембранное газоразделение, аддитивная полимеризация, метатезисная полимеризация</span>
+            <span class='text-[10px] text-zinc-600'>| РНФ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024–2025</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">6,000 тыс. ₽</span>
+          </div>
+        </a>
+<a href="inhs/proj_0009.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="9">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Развитие каталитических систем на основе N-гетероциклических карбеновых Pd-комплексов с целью создания высокоактивных и </div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>В рамках выполнения Проекта в 2024 году изучено влияние фосфиновых лигандов на активность разработан...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">Pd-катализаторы, норборнены, N-гетероциклические карбены, функциональные материалы, аддитивная полимеризация</span>
+            <span class='text-[10px] text-zinc-600'>| РНФ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">6,000 тыс. ₽</span>
+          </div>
+        </a>
+<a href="inhs/proj_0010.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="10">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">&quot;Проведение исследований по очистке сырья производства изопропилбензола, фенола и ацетона от примесей, влияющих на стаби</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Цели работы: Проведение физико-химических исследований укрупненной опытной партии катализаторов алки...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">ацетон, фенол, бензол, пропилен, диизопропилбензолы, трансалкилирование</span>
+            <span class='text-[10px] text-zinc-600'>| ИНХС РАН</span>
+            <span class='text-[10px] text-zinc-600'>| 2025</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">5,000 тыс. ₽</span>
+          </div>
+        </a>
+<a href="inhs/proj_0011.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="11">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Высокоэффективные мембраны и мембранные материалы для процессов разделения и очистки газовых и жидких смесей. Мембранный</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Отчет на 159 стр., 56 табл., 78 рис., 209 источ., 1 прил.
+
+Ключевые слова: 1,2-ДИЗАМЕЩЕННЫЕ ПОЛИАЦЕТ...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">1,2-ДИЗАМЕЩЕННЫЕ ПОЛИАЦЕТИЛЕНЫ, ПОЛИМЕРНЫЕ МЕМБРАНЫ, ПОЛИМЕРЫ ДЛЯ МЕМБРАН, МЕМБРАННОЕ ГАЗО-ПАРОРАЗДЕЛЕНИЕ, ПАРАМЕТРЫ МАССОПЕРЕНОСА</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">66,201 тыс. ₽</span>
+          </div>
+        </a>
+<a href="inhs/proj_0012.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="12">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Полимеры и сополимеры ангидрида норборнен-2,3-дикарбоновой кислоты – новые реакционноспособные модификаторы эпоксидных с</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Проведено систематическое исследование метатезисной гомополимеризации ангидрида 5,6-норборнендикарбо...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">(ангидрид 5,6-норборнендикарбоновой кислоты), метатезисная полимеризация, гомополимер, эпоксидный олигомер, модификация</span>
+            <span class='text-[10px] text-zinc-600'>| РНФ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024–2025</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">1,500 тыс. ₽</span>
+          </div>
+        </a>
+<a href="inhs/proj_0013.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="13">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Новые наноматериалы для глубокой переработки и повышения эффективности использования углеводородного сырья</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Отчет 140 с., 78 рис., 37 табл., 91 источн., 3 прил.
+Ключевые слова: НАНОЦЕОЛИТЫ С ИЕРАРХИЧЕСКОЙ СТР...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">НЕНАНЕСЕННЫЙ СУЛЬФИДНЫЙ КАТАЛИЗАТОР, ТЯЖЕЛОЕ НЕФТЯНОЕ СЫРЬЁ, ГИДРОКОНВЕРСИЯ, ОКСИДЫ УГЛЕРОДА, СЛАРРИ-РЕАКТОР</span>
+            
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">53,469 тыс. ₽</span>
+          </div>
+        </a>
+<a href="inhs/proj_0014.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="14">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Разработка катализатора жидкофазного алкилирования бензола этиленом</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>В настоящее время для получения этилбензола на промышленной площадке ООО «Газпром нефтехим Салават» ...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">Алкилирование, этилен, бензол, гетерогенный катализатор, цеолит</span>
+            
+            <span class='text-[10px] text-zinc-600'>| 2023–2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">11,400 тыс. ₽</span>
+          </div>
+        </a>
+<a href="inhs/proj_0015.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="15">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Проведение исследований по очистке сырья производства изопропилбензола, фенола и ацетона от примесей, влияющих на стабил</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Отчет 104 с., 20 рис., 29 табл., 11 источн., 8 прил.
+АЛКИЛИРОВАНИЕ, ГЕТЕРОГЕННЫЙ КАТАЛИЗ, ЦЕОЛИТ, ГИ...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">АЦЕТОН, БЕНЗОЛ, ПРОПИЛЕН, ДИИЗОПРОПИЛБЕНЗОЛЫ, ТРАНСАЛКИЛИРОВАНИЕ</span>
+            <span class='text-[10px] text-zinc-600'>| ИНХС РАН</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">6,000 тыс. ₽</span>
+          </div>
+        </a>
+<a href="inhs/proj_0016.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="16">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Разработка и промышленное освоение производства химических продуктов широкого назначения (строительство, автотранспорт) </div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Объектами исследований являются:
+- цеолитные катализаторы алкилирования бензола и трансалкилирования...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">ацетон, бензол, пропилен, диизопропилбензолы, трансалкилирование</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2023</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">127,800 тыс. ₽</span>
+          </div>
+        </a>
+<a href="inhs/proj_0017.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="17">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Разработка молекулярной армирующей фазы на основе MQ-сополимеров для создания совместимых с карбоцепными каучуками компо</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>В отчете представлены результаты исследований, выполненных по проекту РНФ №23-23-00105 «Разработка м...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">композиционный материал, MQ-сополимер, молекулярный наполнитель, реологические свойства, вязкоупругость</span>
+            <span class='text-[10px] text-zinc-600'>| РНФ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">1,500 тыс. ₽</span>
+          </div>
+        </a>
+<a href="inhs/proj_0018.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="18">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Разработка катализатора жидкофазного алкилирования бензола этиленом</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>На промышленной площадке ООО «Газпром нефтехим Салават» реализована и используется технология газофа...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">Алкилирование, этилен, бензол, гетерогенный катализатор, цеолит</span>
+            
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">7,410 тыс. ₽</span>
+          </div>
+        </a>
+<a href="inhs/proj_0019.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="19">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Функциональные полимерные мембранные материалы на основе оптически-активных замещенных норборненов для разделения энанти</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>В рамках реализации Проекта в 2024 году систематически изучена аддитивная гомо- и сополимеризация мо...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">полимерные мембраны, норборнен, оптически-активные мономеры, разделение энантиомеров</span>
+            <span class='text-[10px] text-zinc-600'>| РНФ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">7,000 тыс. ₽</span>
+          </div>
+        </a>
+<a href="inhs/proj_0020.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="20">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Теоретические основы и закономерности термокаталитических превращений ископаемого, альтернативного и возобновляемого угл</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Отчет 245 с., рис. 116, табл. 61, источников 212, прил. 2
+Ключевые слова: ГЕТЕРОГЕННЫЙ КАТАЛИЗ; НАНО...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">ГИДРОКОНВЕРСИЯ, ДВУМЕРНАЯ ГАЗОВАЯ ХРОМАТОГРАФИЯ, АЛЛИЛИРОВАНИЕ, ПОЛИОКСИМЕТИЛЕНОВЫЕ ЭФИРЫ, КАТАЛИТИЧЕСКИЙ КРЕКИНГ</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">62,380 тыс. ₽</span>
+          </div>
+        </a>
+<a href="inhs/proj_0021.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="21">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Разработка молекулярной армирующей фазы на основе MQ-сополимеров для создания совместимых с карбоцепными каучуками компо</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>В отчете представлены результаты исследований, выполненных по 1 этапу научного проекта РНФ №23-23-00...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">композиционный материал, MQ-сополимер, молекулярный наполнитель, реологические свойства, вязкоупругость</span>
+            <span class='text-[10px] text-zinc-600'>| РНФ</span>
+            <span class='text-[10px] text-zinc-600'>| 2023</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">1,500 тыс. ₽</span>
+          </div>
+        </a>
+<a href="inhs/proj_0022.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="22">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Мембраны на основе полигетероариленов с бензимидазольными фрагментами для высокотемпературного выделения и очистки водор</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Целью настоящего проекта является исследование газотранспортных свойств новых полигетероариленов с б...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">полимерные мембраны, полигетероарилены, бензимидазольные фрагменты, высокотемпературное газоразделение, выделение водорода</span>
+            <span class='text-[10px] text-zinc-600'>| РНФ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">7,000 тыс. ₽</span>
+          </div>
+        </a>
+<a href="inhs/proj_0023.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="23">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Извлечение и утилизация диоксида углерода</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Отчет 241 с., 54 рис., 22 табл., 268 источников, 3 приложения.
+Ключевые слова: ДИОКСИД УГЛЕРОДА, МЕМ...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">СИНТЕЗ ФИШЕРА-ТРОПША, ЦЕОЛИТЫ, ТЕРМОСТАБИЛЬНЫЕ СОЛИ, АЛКАНОЛАМИНЫ, АДСОРБЦИЯ</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">17,295 тыс. ₽</span>
+          </div>
+        </a>
+<a href="inhs/proj_0024.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="24">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">НОВЫЕ КАТАЛИЗАТОРЫ И МЕТОДЫ ИНТЕНСИФИКАЦИИ ПРОЦЕССОВ НЕФТЕПЕРЕРАБОТКИ И НЕФТЕГАЗОХИМИИ (ГИДРОГЕНИЗАЦИЯ, ДЕГИДРОАРОМАТИЗА</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Отчет на 224 стр., 115 рис., 16 табл., 496 источ.
+Ключевые слова: ПОЛИМЕРИЗАЦИЯ, ПОЛИЭТИЛЕН, ПОЛИ(ПР...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">ФОТОКАТАЛИТИЧЕСКОЕ ИОДОСУЛЬФОНИЛИРОВАНИЕ, МЕХАНИЗМЫ ПЛАЗМОХИМИЧЕСКИХ РЕАКЦИЙ, СВЧ РАЗРЯД, НЕРАВНОВЕСНАЯ ПЛАЗМА, ПЛАЗМОХИМИЯ</span>
+            
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">78,932 тыс. ₽</span>
+          </div>
+        </a>
+<a href="inhs/proj_0025.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="25">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">ВОДОРОДНЫЕ ТЕХНОЛОГИИ ДЛЯ ВОЗОБНОВЛЯЕМЫХ ЭНЕРГОНОСИТЕЛЕЙ И ПРОИЗВОДСТВА ХИМИЧЕСКОЙ ПРОДУКЦИИ</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Отчёт стр. 67, рис. 32, табл. 25, источников 45.
+Ключевые слова: ВОДОРОДНАЯ ЭНЕРГЕТИКА, КАТАЛИТИЧЕСК...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">ВОЗОБНОВЛЯЕМОЕ СЫРЬЁ, ВОДОРОДНАЯ ЕМКОСТЬ, ДЕГИДРИРОВАНИЕ, ЖИДКИЙ ОРГАНИЧЕСКИЙ НОСИТЕЛЬ ВОДОРОДА, ФРАКЦИОНИРОВАНИЕ, ХРАНЕНИЕ И ТРАНСПОРТ ВОДОРОДА</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">17,295 тыс. ₽</span>
+          </div>
+        </a>
+<a href="inhs/proj_0026.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="26">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Мониторинг и удаление антибиотиков из сточных вод путем мембранного разделения</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>В ходе данного этапа разработаны программа и методики испытаний лабораторного стенда для нанофильтра...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">КОМПОЗИЦИОННЫЕ МЕМБРАНЫ, ПОЛУЧЕНИЕ МЕМБРАН, МЕМБРАННАЯ ФИЛЬТРАЦИЯ, МЕМБРАНЫ, ПОЛИГУАНИДИН</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">5,000 тыс. ₽</span>
+          </div>
+        </a>
+<a href="inhs/proj_0027.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="27">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Разработка катализатора жидкофазного алкилирования бензола этиленом</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>На промышленной площадке ООО «Газпром нефтехим Салават» реализована и используется технология газофа...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">Алкилирование, этилен, бензол, гетерогенный катализатор, цеолит</span>
+            
+            <span class='text-[10px] text-zinc-600'>| 2024–2025</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">600 тыс. ₽</span>
+          </div>
+        </a>
+<a href="inhs/proj_0028.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="28">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Олигомеры на основе алкилзамещенных норборненов – потенциальные основы перспективных моторных масел: синтез, микрострукт</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Впервые проведено систематическое исследование процесса метатезисной олигомеризации 5-этил-2-норборн...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">олигомеры, метатезис, гидрирование, постмодификация, алкил-замещенные норборнены</span>
+            <span class='text-[10px] text-zinc-600'>| РНФ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">7,000 тыс. ₽</span>
+          </div>
+        </a>
+<a href="inhs/proj_0029.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="29">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Разработка и промышленное освоение производства химических продуктов широкого назначения (строительство, автотранспорт) </div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Объектами исследований являются:
+- цеолитные катализаторы алкилирования бензола и трансалкилирования...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">бензол, бензол, пропилен, диизопропилбензолы, трансалкилирование</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">68,500 тыс. ₽</span>
+          </div>
+        </a>
+</div>
+        <div class="p-4 text-center">
+          <button id="proj-more" onclick="showMore('proj-item', 'proj-more', 'proj-counter', 31)" class="px-6 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-widest hover:bg-white/10 transition text-zinc-400">
+            Показать ещё 5
+          </button>
+        </div>
+      </section>
+
+      <!-- ═══ RID Section ═══ -->
+      <div class="section-header" id="section-rid">
+        <h2 class="section-title">🧬 Результаты интеллектуальной деятельности (24)</h2>
+        <span class="provenance-tag tag-egisu">ЕГИСУ</span>
+      </div>
+      <div class="rid-grid mb-6">
+        <div class="glass rounded-2xl p-5 text-center">
+          <div class="text-2xl mb-2">💡</div>
+          <div class="text-2xl font-black italic">23</div>
+          <div class="text-[10px] uppercase font-bold text-zinc-500 mt-1">Изобретение</div>
+        </div>
+<div class="glass rounded-2xl p-5 text-center">
+          <div class="text-2xl mb-2">⚙️</div>
+          <div class="text-2xl font-black italic">1</div>
+          <div class="text-[10px] uppercase font-bold text-zinc-500 mt-1">Полезная модель</div>
+        </div>
+
+      </div>
+      <section class="glass rounded-[2.5rem] overflow-hidden mb-8">
+        <div class="p-6 border-b border-white/10 flex items-center justify-between">
+          <span class="text-sm text-zinc-400" id="rid-counter">Показаны 5 из 24</span>
+          <a href="inhs/rid_list.html" class="text-xs font-bold text-red-400 hover:text-red-300 transition uppercase">Все РИД →</a>
+        </div>
+        <div id="rid-list"><a href="inhs/rid_0000.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="0">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💡</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">ПОЛИКАРБОСИЛАН НА ОСНОВЕ СОПОЛИМЕРОВ  1,1,3,3-ТЕТРАМЕТИЛ-1,3-ДИСИЛАЦИКЛОБУТАНА  И 1,3-ДИСИЛАЦИКЛОБУТ</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Изобретение относится к синтезу поликарбосилана на основе сополимеров 1,1,3,3-те...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Изобретение</span>
+                <span class='text-[10px] text-zinc-600'>| Поликарбосилан, карбид кремния, молекулярная масса, волокна</span>
+                
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="inhs/rid_0001.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="1">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💡</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">СПОСОБ ПОЛУЧЕНИЯ ПОЛИОКСИМЕТИЛЕНОВЫХ ЭФИРОВ (ВАРИАНТЫ)</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Изобретение относится к области нефтехимии и, более конкретно, к способу получен...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Изобретение</span>
+                <span class='text-[10px] text-zinc-600'>| Полиоксиметиленовые эфиры, топлива, смазочные материалы, компоненты горюче-смазочных материалов, смещение химического равновесия, формальдегид, параформальдегид, триоксан, 2-этилгексанол, циклогексанол</span>
+                
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="inhs/rid_0002.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="2">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💡</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">МОКРЫЙ СПОСОБ ФОРМОВАНИЯ ПОЛОВОЛОКОННОЙ МЕМБРАНЫ И УСТРОЙСТВО ДЛЯ ЕГО ОСУЩЕСТВЛЕНИЯ</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Изобретение относится к области производства половолоконных мембран для разделен...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Изобретение</span>
+                <span class='text-[10px] text-zinc-600'>| половолоконная мембрана, формование, вязкость, носитель</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="inhs/rid_0003.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="3">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💡</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">ТЕРМОСТАБИЛЬНЫЙ ГИБКИЙ КАТОДНЫЙ ЭЛЕКТРОД ДЛЯ СУПЕРКОНДЕНСАТОРА И ЭКОЛОГИЧНЫЙ СПОСОБ ЕГО ПОЛУЧЕНИЯ</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Изобретение относится к области создания новых гибких гибридных катодных электро...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Изобретение</span>
+                <span class='text-[10px] text-zinc-600'>| Гибкий электрод, катодный электрод, суперконденсатор, электроактивное покрытие, полисопряженный полимер, полидифениламин-2-карбоновая кислота, восстановленный оксид графена, анодированная графитовая фольга</span>
+                
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="inhs/rid_0004.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="4">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💡</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">СПОСОБ УГЛЕКИСЛОТНОЙ КОНВЕРСИИ ИЗОБУТАНОЛА</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Впервые разработан способ углекислотной конверсии изобутанола (с конверсией до 1...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Изобретение</span>
+                <span class='text-[10px] text-zinc-600'>| изо-бутиловый спирт, углекислотная конверсия, катализатор, синтез-газ</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="inhs/rid_0005.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="5">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💡</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">СПОСОБ ПОЛУЧЕНИЯ ЖЕЛЕЗОСОДЕРЖАЩЕГО ЦЕОЛИТА СТРУКТУРНОГО ТИПА ZSM-5 В ПРОТОННОЙ ФОРМЕ ДЛЯ ГЕТЕРОГЕННО</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Предложен способ получения железосодержащего цеолита структурного типа ZSM-5, вк...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Изобретение</span>
+                <span class='text-[10px] text-zinc-600'>| железосодержащий цеолит, ZSM-5, протонная форма, гетерогенный катализ</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="inhs/rid_0006.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="6">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💡</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">ГИБКИЙ ЭЛЕКТРОД ДЛЯ СУПЕРКОНДЕНСАТОРА И СПОСОБ ЕГО ПОЛУЧЕНИЯ</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Предложен гибкий катодный электрод для СК, состоящий из токоотводящей подложки и...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Изобретение</span>
+                <span class='text-[10px] text-zinc-600'>| Гибкий электрод, катодный электрод, суперконденсатор, электроактивное покрытие, полисопряженный полимер, полифенотиазин, полифеноксазин, восстановленный оксид графена, анодированная графитовая фольга.</span>
+                
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="inhs/rid_0007.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="7">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💡</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">Способ повышения термической стабильности бионефти</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Изобретение относится к области переработки биомассы и, более конкретно, к спосо...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Изобретение</span>
+                <span class='text-[10px] text-zinc-600'>| Бионефть, биомасса, термическая стабильность, газообразный аммиак, проточный реактор, каталитический крекинг</span>
+                
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="inhs/rid_0008.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="8">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💡</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">СПОСОБ ПОЛУЧЕНИЯ КАТАЛИЗАТОРА И СПОСОБ ПОЛУЧЕНИЯ ЭКЗО-ТЕТРАГИДРОДИЦИКЛОПЕНТАДИЕНА В ЕГО ПРИСУТСТВИИ</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Изобретение относится к области гетерогенного катализа, конкретнее к способу изо...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Изобретение</span>
+                <span class='text-[10px] text-zinc-600'>| Катализатор, экзо-тетрагиродициклопентадиен, изомеризация, высокоэнергетическое топливо</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="inhs/rid_0009.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="9">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💡</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">ГИБКИЙ КАТОДНЫЙ ЭЛЕКТРОД ДЛЯ СУПЕРКОНДЕНСАТОРА И СПОСОБ ЕГО ПОЛУЧЕНИЯ</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Изобретение относится к области создания новых гибких гибридных катодных электро...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Изобретение</span>
+                <span class='text-[10px] text-zinc-600'>| Гибкий электрод, катодный электрод, суперконденсатор, электроактивное покрытие, полисопряженный полимер, полидифениламин-2-карбоновая кислота, восстановленный оксид графена, анодированная графитовая фольга</span>
+                
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="inhs/rid_0010.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="10">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💡</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">СПОСОБ ПОЛУЧЕНИЯ НАНОРАЗМЕРНОГО ГАЛЛИЙСОДЕРЖАЩЕГО ЦЕОЛИТА СТРУКТУРНОГО ТИПА ZSM-5 В ПРОТОННОЙ ФОРМЕ </div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Предложен способ получения наноразмерного галлийсодержащего цеолита структурного...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Изобретение</span>
+                <span class='text-[10px] text-zinc-600'>| Наноразмерный галлийсодержащий цеолит, ZSM-5, протонная форма, гетерогенный катализ</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="inhs/rid_0011.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="11">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💡</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">ЭКОЛОГИЧНАЯ НИЗКОТЕМПЕРАТУРНАЯ ПЛАСТИЧНАЯ СМАЗКА И СПОСОБ ЕЕ ПОЛУЧЕНИЯ</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Предложена экологичная низкотемпературная пластичная смазка на основе базового м...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Изобретение</span>
+                <span class='text-[10px] text-zinc-600'>| пластичная смазка, биоуголь, вязкость, трение, низкие температуры, биоразлагаемость</span>
+                
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="inhs/rid_0012.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="12">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💡</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">СПОСОБ ПОЛУЧЕНИЯ ФРАКЦИИ АЛКИЛ(С3–С10)–ФЕНОЛОВ</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Изобретение относится к области переработки растительного сырья и более конкретн...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Изобретение</span>
+                <span class='text-[10px] text-zinc-600'>| Оксид молибдена, бионефть, алкилфенолы, гидродеоксигенация, алкилирование</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="inhs/rid_0013.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="13">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💡</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">СПОСОБ ПОЛУЧЕНИЯ БИОУГЛЯ КАК ЗАГУСТИТЕЛЯ ДЛЯ СМАЗОЧНЫХ МАТЕРИАЛОВ</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Предложен способ получения биоугля как загустителя для использования в смазочных...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Изобретение</span>
+                <span class='text-[10px] text-zinc-600'>| целлюлоза, гидротермальная карбонизация, биоуголь, возобновляемое сырье, вязкость, трение, пластичная смазка</span>
+                
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="inhs/rid_0014.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="14">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💡</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">ЭПОКСИДНЫЙ РЕНТГЕНОЗАЩИТНЫЙ МАТЕРИАЛ И СПОСОБ ЕГО ПОЛУЧЕНИЯ</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Предложен рентгенозащитный материал, включающий эпоксидный олигомер, аминный отв...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Изобретение</span>
+                <span class='text-[10px] text-zinc-600'>| эпоксидный олигомер, сплав Вуда, сплав Розе, сплав Филда, рентгенозащитный материал, свинцовый эквивалент, наночастицы диоксида кремния</span>
+                
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="inhs/rid_0015.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="15">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💡</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">СПОСОБ ПОЛУЧЕНИЯ ПАРА-КСИЛОЛА</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Изобретение относится к области химической переработки сырья на основе терефтале...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Изобретение</span>
+                <span class='text-[10px] text-zinc-600'>| Оксид молибдена, полиэтилентерефталат, терефталевая кислота, пара-ксилол</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="inhs/rid_0016.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="16">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💡</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">СПОСОБ УГЛЕКИСЛОТНОЙ КОНВЕРСИИ ИЗОБУТАНОЛА</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Впервые предложен способ углекислотной конверсии изобутанола (с конверсией до 10...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Изобретение</span>
+                <span class='text-[10px] text-zinc-600'>| изо-бутиловый спирт, углекислотная конверсия, катализатор, синтез-газ</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="inhs/rid_0017.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="17">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💡</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">СПОСОБ ПОЛУЧЕНИЯ УГЛЕВОДОРОДОВ – КОМПОНЕНТОВ МОТОРНЫХ И АВИАЦИОННЫХ ТОПЛИВ КОНВЕРСИЕЙ РАПСОВОГО МАСЛ</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Разработан способ одностадийной каталитической конверсии рапсового масла в углев...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Изобретение</span>
+                <span class='text-[10px] text-zinc-600'>| рапсовое масло, конверсия, катализатор, компоненты топлив</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="inhs/rid_0018.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="18">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">⚙️</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">УСТРОЙСТВО ДЛЯ ПОДАЧИ АММИАКА В ГАЗООБРАЗНОМ СОСТОЯНИИ ПРИ ПОВЫШЕННОМ ДАВЛЕНИИ</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Полезная модель относится к устройствам, позволяющим подавать в реакционную сист...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Полезная модель</span>
+                <span class='text-[10px] text-zinc-600'>| Аммиак газообразный, газонасыщение, аммиак сжиженный, парожидкостное равновесие</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="inhs/rid_0019.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="19">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💡</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">СПОСОБ ПОВЫШЕНИЯ ТЕРМИЧЕСКОЙ СТАБИЛЬНОСТИ БИОНЕФТИ</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Изобретение относится к области переработки биомассы и, более конкретно, к спосо...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Изобретение</span>
+                <span class='text-[10px] text-zinc-600'>| Бионефть, биомасса, термическая стабильность, амин, моноэтаноламин, диэтаноламин, метилдиэтаноламин</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="inhs/rid_0020.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="20">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💡</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">СПОСОБ ПОЛУЧЕНИЯ ЦЕОЛИТА ТИПА ZSM-5 В ПРОТОННОЙ ФОРМЕ ИЗ БЕНТОНИТА ДЛЯ ГЕТЕРОГЕННОГО КАТАЛИЗА</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Предложен способ получения цеолита для гетерогенного катализа структурного типа ...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Изобретение</span>
+                <span class='text-[10px] text-zinc-600'>| бентонит, ZSM-5, протонная форма, гетерогенный катализ</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="inhs/rid_0021.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="21">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💡</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">НИЗКОТЕМПЕРАТУРНАЯ СМАЗОЧНАЯ КОМПОЗИЦИЯ</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Изобретение относится к жидким композициям, содержащие полиоксиметиленовые эфиры...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Изобретение</span>
+                <span class='text-[10px] text-zinc-600'>| Смазочная композиция, полиоксиметиленовый эфир</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="inhs/rid_0022.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="22">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💡</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">СПОСОБ ПОЛУЧЕНИЯ СИНТЕЗ-ГАЗА</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Используемый катализатор представляет собой катализатор, содержащий магний, алюм...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Изобретение</span>
+                <span class='text-[10px] text-zinc-600'>| Синтез-газ, кислородная конверсия метана, катализатор, платина, кобальт, оксид магния, алюмомагниевая шпинель</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="inhs/rid_0023.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="23">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💡</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">СПОСОБ УГЛЕКИСЛОТНОЙ КОНВЕРСИИ ИЗОБУТАНОЛА</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Впервые предложен способ углекислотной конверсии изобутанола (с конверсией до 10...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Изобретение</span>
+                <span class='text-[10px] text-zinc-600'>| изо-бутиловый спирт, углекислотная конверсия, катализатор, синтез-газ</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+</div>
+        <div class="p-4 text-center">
+          <button id="rid-more" onclick="showMore('rid-item', 'rid-more', 'rid-counter', 24)" class="px-6 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-widest hover:bg-white/10 transition text-zinc-400">
+            Показать ещё 5
+          </button>
+        </div>
+      </section>
+
+      <script>
+        // Generic show-more function
+        function showMore(itemClass, btnId, counterId, total, step) {
+          step = step || 5;
+          const items = document.querySelectorAll('.' + itemClass);
+          let shown = 0;
+          items.forEach(el => {
+            if (el.style.display !== 'none') shown++;
+          });
+          items.forEach(el => {
+            const idx = parseInt(el.dataset.idx);
+            if (idx < shown + step) {
+              el.style.display = '';
+            }
+          });
+          const totalShown = Math.min(shown + step, items.length);
+          document.getElementById(counterId).textContent = 'Показаны ' + totalShown + ' из ' + total;
+          if (totalShown >= items.length) {
+            document.getElementById(btnId).style.display = 'none';
+          }
+        }
+      </script>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-20 border-t border-white/10 mt-20 bg-black/40">
+      <div class="max-w-7xl mx-auto px-6 text-center">
+        <div class="text-3xl font-black italic uppercase mb-8">МОС<span class="mos-red">НАУКА</span></div>
+        <p class="text-zinc-500 text-sm max-w-2xl mx-auto italic mb-8">Единая экосистема технологического развития площадок и заказчиков в Москве.</p>
+        <div class="flex justify-center gap-8 mb-8">
+          <div class="text-[10px] text-zinc-600 uppercase font-bold">Источник: <span class="text-emerald-500">CoLab</span> — лаборатории, учёные</div>
+          <div class="text-[10px] text-zinc-600 uppercase font-bold">Источник: <span class="text-sky-500">ЕГИСУ</span> — проекты, РИД</div>
+        </div>
+        <div class="text-white/20 text-[10px] uppercase font-bold tracking-[0.5em]">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ ОБЪЕКТА</div>
+      </div>
+    </footer>
+
+    <!-- Scroll to top button -->
+    <button onclick="window.scrollTo({top:0,behavior:'smooth'})" id="scroll-top" class="fixed bottom-8 right-8 w-12 h-12 rounded-full bg-red-500/80 text-white flex items-center justify-center shadow-lg hover:bg-red-500 transition z-50" style="display:none" title="Наверх">
+      <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg>
+    </button>
+
+    <!-- Request Modal -->
+    <div id="requestModal" style="position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem">
+      <div style="background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative">
+        <button onclick="closeModal()" style="position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer">&times;</button>
+        <div id="modalForm">
+          <h2 class="text-xl font-black mb-1">📨 Направить запрос</h2>
+          <div id="modalContext" class="text-xs text-zinc-500 mb-6">через платформу МОСНАУКА</div>
+          <label class="block text-[10px] uppercase font-black text-zinc-500 mb-1 tracking-widest">Ваше ФИО *</label>
+          <input type="text" id="reqName" placeholder="Иванов Иван Иванович" class="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-sm mb-3" style="color:white">
+          <label class="block text-[10px] uppercase font-black text-zinc-500 mb-1 tracking-widest">Организация</label>
+          <input type="text" id="reqOrg" placeholder="ООО «Компания»" class="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-sm mb-3" style="color:white">
+          <label class="block text-[10px] uppercase font-black text-zinc-500 mb-1 tracking-widest">Email *</label>
+          <input type="email" id="reqEmail" placeholder="email@example.com" class="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-sm mb-3" style="color:white">
+          <label class="block text-[10px] uppercase font-black text-zinc-500 mb-1 tracking-widest">Тип запроса</label>
+          <select id="reqType" class="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-sm mb-3" style="color:white;appearance:none">
+            <option>Запрос на НИОКР</option>
+            <option>Консультация</option>
+            <option>Сотрудничество / Партнёрство</option>
+            <option>Использование оборудования</option>
+            <option>Другое</option>
+          </select>
+          <label class="block text-[10px] uppercase font-black text-zinc-500 mb-1 tracking-widest">Сообщение *</label>
+          <textarea id="reqMsg" placeholder="Опишите ваш запрос..." class="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-sm mb-4" style="color:white;min-height:5rem;resize:vertical"></textarea>
+          <button onclick="submitRequest()" class="w-full py-3 rounded-xl bg-red-500 text-white text-[11px] font-black uppercase tracking-widest hover:bg-red-600 transition">Отправить запрос</button>
+        </div>
+        <div id="modalSuccess" style="display:none;text-align:center;padding:2rem 0">
+          <div style="font-size:3rem;margin-bottom:1rem">✅</div>
+          <h3 class="text-lg font-black mb-2">Запрос отправлен!</h3>
+          <p class="text-sm text-zinc-400">Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+          <button onclick="closeModal()" class="mt-6 w-full py-3 rounded-xl bg-white/5 border border-white/10 text-sm font-bold text-zinc-400 hover:bg-white/10 transition">Закрыть</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      window.addEventListener('scroll', function() {
+        document.getElementById('scroll-top').style.display = window.scrollY > 400 ? 'flex' : 'none';
+      });
+      function openRequestModal(context) {
+        document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+        document.getElementById('modalForm').style.display = '';
+        document.getElementById('modalSuccess').style.display = 'none';
+        document.getElementById('requestModal').style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      }
+      function closeModal() {
+        document.getElementById('requestModal').style.display = 'none';
+        document.body.style.overflow = '';
+      }
+      function submitRequest() {
+        var n = document.getElementById('reqName').value.trim();
+        var e = document.getElementById('reqEmail').value.trim();
+        var m = document.getElementById('reqMsg').value.trim();
+        if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+        document.getElementById('modalForm').style.display = 'none';
+        document.getElementById('modalSuccess').style.display = '';
+      }
+      document.getElementById('requestModal').addEventListener('click', function(e) {
+        if (e.target === this) closeModal();
+      });
+    </script>
+  </div>
+</body>
+</html>

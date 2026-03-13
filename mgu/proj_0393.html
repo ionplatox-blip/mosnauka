@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | МГУ им. М.В. Ломоносова</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-mgu.html">МГУ им. М.В. Ломоносова</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">ИММУНОГЕННАЯ ГИБЕЛЬ КЛЕТОК</span> <span class="tag">ОБРАЗОВАНИЕ МЕМБРАННЫХ ПОР</span> <span class="tag">РМЖ</span> <span class="tag">ПРОГНОСТИЧЕСКИЕ МОДЕЛИ</span> <span class="tag">ПИРОПТОЗ</span> <span class="tag">НЕКРОПТОЗ</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Математическая биология и теоретическое моделирование биологических процессов. Биоинформатика</span></div>
+          <h1 style="font-size:1.5rem">Разработка прогностической модели для оценки выживаемости пациентов с раком молочной железы, основанной на экспрессии генов, регулирующих процессы порообразования в иммуногенной гибели клеток</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">1,500 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225092318991-7</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2024-08-05 — 2025-06-30</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№1</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">1</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">РНФ</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>Российский научный фонд</div>
+                </div><div class="metric-box" style="text-align:left">
+                  <div class="label">Исполнитель</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">МОСКОВСКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ ИМЕНИ М.В.ЛОМОНОСОВА, МГУ ИМЕНИ М.В.ЛОМОНОСОВА, МОСКОВСКИЙ УНИВЕРСИТЕТ ИЛИ МГУ</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>Объект исследований или разработки: 	
+Объектом настоящего исследования являются молекулярные механизмы, ассоциированные с эффекторной фазой иммуногенной гибели клеток (ИГК), в различных молекулярных подтипах рака молочной железы (РМЖ), включая изменения экспрессии генов, регулирующих образование мембранных пор в процессе гибели клеток, механизмы репарации мембран, а также высвобождение молекулярных паттернов, ассоциированных с повреждением (DAMPs), опосредующих иммунный ответ. Исследование будет сфокусировано на комплексной оценке взаимосвязи этих молекулярных изменений с ключевыми клинико-патоморфологическими характеристиками опухолей РМЖ (стадия, TNM, подтип), наличием драйверных мутаций, общей мутационной нагрузкой и особенностями опухолевого иммунного микроокружения. 
+Цель работы:
+Основной целью разработки является создание и валидация новой прогностической математической модели (на основе регрессионного анализа пропорциональных рисков Кокса) для стратификации риска исхода (рецидив, общая выживаемость) у пациенток с РМЖ, интегрирующей выявленные изменения экспрессии генов, связанных с ИГК, а также клинически значимые параметры. 
+Задачи НИР: 
+В ходе первого года работы планируется:
+1.	Получить экспрессионные данные для обучающей и валидационной когорты и соответствующие клинико-патологические сведения пациентов с РМЖ. Сформировать список генов, связанных с образованием пор в процессе клеточной гибели, механизмами репарации мембран, а также молекулярных паттернов (DAMPs), опосредующих иммунный ответ в процессе клеточной гибели.
+2.	Провести описательный анализ геномных данных, оценить клинико-патоморфологические данные пациентов в виде графиков и таблиц.
+3.	Кластеризовать экспрессионные данные для выявления различных молекулярных паттернов на основе списка генов, сформированного в п.2. Провести анализ выживаемости, построить Каплан-Мейеровские кривые и карту Санки для сравнения полученных кластеров с уже существующими молекулярными подтипами; Оценить инфильтрации иммунными клетками на основании алгоритмов TIMER, CIBERSORT, XCELL, а также проанализировать мутационную нагрузки опухоли и драйверных мутаций в кластерах. Провести сравнение клинико-патоморфологических характеристик пациентов между полученными кластерами.
+4.	Провести одномерный и многомерный регрессионный анализ пропорциональных рисков Кокса для определения ключевых генов, значимо ассоциированных с выживаемостью (OS). Рассчитать балл риска для каждого пациента в соответствии с формулой, полученной на основании многомерного регрессионного анализа пропорциональных рисков Кокса. Распределить пациентов в группу высокого риска или группу низкого риска. Построить кривые выживаемости на данных обучающей и валидационной выборки
+5.	Оценить прогностическую эффективность модели при различных конечных точках (1, 3 или 5 лет) с помощью ROC-кривых. Оценить взаимосвязь балла риска на основе полученной генной сигнатуры с клиническими характеристиками на данных обучающей и валидационной выборки.
+6.	Провести анализ вариабельности наборов генов (GSVA) для дальнейшего выявления различий в биологических процессах между группами высокого и низкого риска. Оценить инфильтрацию иммунными клетками и наличие драйверных мутаций между группой высокого и низкого риска. 
+Основные результаты НИР:
+В отчетном периоде была проведена работа по анализу молекулярных, клинических и иммунных аспектов инвазивного рака молочной железы (РМЖ) на основе данных международной базы TCGA-BRCA. На первом этапе осуществлен сбор и интеграция экспрессионных данных для более 60 000 транскриптов генов и 1098 пациентов, с последующим формированием исследуемой когорты из 919 женщин с наиболее полной клинико-геномной информацией. Особое внимание уделено характеристикам опухолей, включая подтипы РМЖ по классификации PAM50, степени злокачественности, стадированию TNM, статусу рецепторов (ER/PR/HER2), а также наличию мутаций в ключевых генах риска (BRCA1, BRCA2, TP53 и др.).
+Сформирован специализированный набор из 70 генов, ассоциированных с эффектами формирования пор в клеточных мембранах, механизмами репарации, и сигнальными путями DAMPs, играющими ключевую роль в иммунном ответе на гибель клеток. На их основе осуществлена кластеризация пациентов методом консенсусной кластеризации, позволившая выделить три отчетливо различающихся по биологическим признакам и молекулярным профилям кластера. Кластеры демонстрируют различия по возрасту, подтипам опухолей, частоте мутаций, статусам рецепторов, а также показателям хромосомной нестабильности и уровню гипоксии.
+Проведен подробный анализ клинико-молекулярных параметров внутри выделенных кластеров. Например, в кластере 1 преобладают агрессивные базальноподобные и HER2-положительные подтипы с характерной высокой частотой мутаций TP53, повышенной экспрессией газдермина B и признаками иммунной инфильтрации CD8+ Т-клеток и макрофагов М1. Кластеры 2 и 3, напротив, обогащены гормонозависимыми люминальными опухолями с преобладанием мутаций CDH1 и выраженной экспрессией DAMPs. Анализ инфильтрации опухолей иммунными клетками дополнительно выявил различие в составе и активности клеточного иммунного ответа, что важно для понимания механизмов противоопухолевого иммунитета.
+Для выявления связи между экспрессией генов и клиническим исходом проведен одномерный и многомерный регрессионный анализ Кокса. Выделен ряд генов, экспрессия которых достоверно ассоциирована с прогнозом. Модель с использованием LASSO-регуляризации позволила определить оптимальный набор из 29 прогностических генов. Прогностическая значимость модели подтверждена высокими AUC (до 0,85 на годовом горизонте), что указывает на успешную стратификацию пациентов на высоко- и низкорисковые группы.
+Сравнительный анализ показал, что у пациентов высокого риска чаще наблюдаются агрессивные молекулярные подтипы, более поздние стадии болезни, большая хромосомная нестабильность и выраженная гипоксия, а иммунное микроокружение характеризуется относительно низким уровнем инфильтрации активированных дендритных клеток, NK-клеток и M1-макрофагов. В группе низкого риска отмечена активация иммуногенных путей и экспрессия генов, провоцирующих воспалительный ответ и иммунную гибель опухолевых клеток. Геномный анализ выявил значимые различия и по патогенным мутациям: мутации TP53 преобладают при высоком риске, а CDH1 — при низком, что согласуется с известными молекулярными механизмами РМЖ. Проведен функциональный анализ (GO и KEGG), выявивший значимое обогащение иммунных и воспалительных сигнальных путей, цитокиновых сетей и путей взаимодействия опухоли с микросредой. Таким образом, за отчетный период разработана и апробирована модель стратификации прогноза при РМЖ, основанная на генах, вовлеченных в процесс иммуногенной клеточной гибели, а результаты подтвердили ключевую роль интеграции геномных и иммунологических данных для повышения точности и клинической релевантности прогноза. 
+Область применения результатов:
+Результаты проекта найдут применение в персонализированной онкологии для прогнозирования течения рака молочной железы (РМЖ) и оптимизации терапевтических стратегий. Разработанная прогностическая модель и номограмма позволят клиницистам стратифицировать пациентов по риску рецидива или смертности на основе интеграции молекулярных данных (экспрессия генов порообразования, репарации мембран, DAMPs), иммунного микроокружения опухоли и клинических параметров (стадия, подтип РМЖ, лечение), что повысит точность назначения адъювантной химио- и иммунотерапии. Полученные данные о корреляции уровня риска с чувствительностью к препаратам и биомаркерами ответа на иммунотерапию могут быть использованы для разработки индивидуализированных схем лечения, особенно для резистентных подтипов РМЖ.</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (2)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Мамедова Айгун Рахиб кызы</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Замараев Алексей Владимирович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li></ul>
+              
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,1309 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>МОСНАУКА — Паспорт: ИМЕТ РАН</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+      body { font-family: Inter, system-ui, sans-serif; background: #050505; color: white; }
+      .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.08); }
+      .mos-red { color: #ff003c; }
+      .mos-bg-red { background: #ff003c; }
+      .provenance-tag { font-size: 8px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.1em; padding: 2px 8px; border-radius: 4px; }
+      .tag-egisu { background: rgba(0, 120, 255, 0.1); color: #40a0ff; border: 1px solid rgba(0, 120, 255, 0.2); }
+      .tag-colab { background: rgba(255, 0, 60, 0.1); color: #ff4070; border: 1px solid rgba(255, 0, 60, 0.2); }
+      .tag-org { background: rgba(255, 255, 255, 0.05); color: #aaa; border: 1px solid rgba(255, 255, 255, 0.1); }
+
+      /* Section titles */
+      .section-header {
+        display: flex; align-items: center; justify-content: space-between;
+        padding: 0 0.5rem; margin-bottom: 1.5rem; margin-top: 3.5rem;
+      }
+      .section-title {
+        font-size: 1.5rem; font-weight: 900; text-transform: uppercase;
+        font-style: italic; letter-spacing: -0.02em;
+      }
+
+      /* Chunk 3: Lab cards */
+      .labs-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+        gap: 1.5rem;
+      }
+      /* Chunk 4: Scientists */
+      .sci-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 1rem;
+      }
+      .sci-card.hidden { display: none; }
+      .line-clamp-2 {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+      #sci-search {
+        background: rgba(255,255,255,0.04);
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 1rem;
+        padding: 0.75rem 1.25rem 0.75rem 2.75rem;
+        color: white;
+        font-size: 0.875rem;
+        width: 100%;
+        outline: none;
+        transition: border-color 0.2s;
+      }
+      #sci-search:focus {
+        border-color: rgba(255,0,60,0.5);
+      }
+      #sci-search::placeholder { color: rgba(255,255,255,0.25); }
+      /* Chunk 5: RID + Projects */
+      .rid-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 1rem;
+      }
+    </style>
+</head>
+<body>
+  <div class="min-h-screen bg-[radial-gradient(circle_at_top_left,rgba(255,0,60,0.12),transparent_25%),radial-gradient(circle_at_top_right,rgba(255,255,255,0.05),transparent_20%),linear-gradient(180deg,#050505,#0b0f16)]">
+
+    <!-- ═══ HEADER ═══ -->
+    <header class="sticky top-0 z-30 backdrop-blur-md border-b border-white/10 bg-black/40">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        <a class="text-2xl font-black italic tracking-tight uppercase hover:opacity-80 transition" href="index.html">
+          МОС<span class="mos-red">НАУКА</span>
+        </a>
+        <div class="flex items-center gap-4">
+          <span class="text-[10px] uppercase tracking-widest text-zinc-500 font-bold">Паспорт организации v2.0</span>
+          <a href="catalog.html" class="text-xs font-bold uppercase hover:text-red-500 transition">Реестр</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 py-10">
+
+      <!-- ═══ BREADCRUMBS ═══ -->
+      <div class="mb-10 flex items-center justify-between">
+        <div class="flex items-center gap-2 text-[10px] uppercase font-bold tracking-widest text-zinc-500">
+          <a href="index.html" class="hover:text-white">Главная</a>
+          <span>/</span>
+          <a href="catalog.html" class="hover:text-white">Реестр</a>
+          <span>/</span>
+          <span class="text-zinc-300">ИМЕТ РАН</span>
+        </div>
+        <a href="catalog.html" class="px-5 py-2 border border-white/10 rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-white/5 transition">
+          ← К списку
+        </a>
+      </div>
+
+      <!-- ═══ HERO SECTION ═══ -->
+      <section class="glass rounded-[2.5rem] p-10 relative overflow-hidden mb-8">
+        <!-- Bg watermark -->
+        <div class="absolute top-0 right-0 p-8 opacity-5 pointer-events-none">
+          <img src="https://colab.ws/storage/images/xPkBfCeZcvv9Mu5MguDZrQQwkM80qFRg354w62sp.png" class="w-64 h-64 grayscale invert" alt="">
+        </div>
+
+        <div class="relative z-10">
+          <!-- Identity -->
+          <div class="flex items-center gap-5 mb-6">
+            <div class="w-20 h-20 rounded-2xl bg-white p-2 flex items-center justify-center shrink-0">
+              <img src="https://colab.ws/storage/images/xPkBfCeZcvv9Mu5MguDZrQQwkM80qFRg354w62sp.png" class="max-w-full max-h-full object-contain" alt="ИМЕТ РАН logo">
+            </div>
+            <div>
+              <h1 class="text-3xl md:text-5xl font-black tracking-tight uppercase leading-tight mb-2">ИМЕТ РАН</h1>
+              <p class="text-zinc-400 font-medium">Институт металлургии и материаловедения им. А.А. Байкова РАН</p>
+            </div>
+          </div>
+
+          <!-- Contact row -->
+          <div class="flex flex-wrap gap-6 mt-6">
+            <div class="flex items-center gap-2 text-zinc-400 text-sm">
+              <i class="ph ph-map-pin mos-red"></i>
+              <span>Москва, Ленинский проспект, д. 49</span>
+            </div>
+            <a href="https://www.imet.ac.ru/" target="_blank" class="flex items-center gap-2 text-zinc-300 text-sm hover:text-white transition">
+              <i class="ph ph-globe mos-red"></i>
+              <span>www.imet.ac.ru</span>
+            </a>
+          </div>
+
+          <!-- Verified badge + Contact CTA -->
+          <div class="mt-6 flex flex-wrap gap-3 items-center">
+            <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-[11px] font-bold uppercase tracking-wide">
+              <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              Верифицировано МОСНАУКОЙ
+            </span>
+          </div>
+          <div class="mt-4 p-5 rounded-2xl bg-gradient-to-r from-red-500/20 to-red-500/5 border border-red-500/30 flex flex-wrap items-center justify-between gap-4">
+            <div>
+              <div class="text-sm font-bold">📨 Заинтересованы в сотрудничестве?</div>
+              <div class="text-[11px] text-zinc-400 mt-1">Направьте запрос на НИОКР, консультацию или партнёрство</div>
+            </div>
+            <div class="flex gap-2">
+              <a href="javascript:void(0)" onclick="openRequestModal('Запрос по ИМЕТ РАН')" class="px-6 py-3 rounded-xl bg-red-500 text-white text-[11px] font-black uppercase tracking-wide hover:bg-red-600 transition inline-flex items-center gap-2 shadow-lg">
+                <i class="ph ph-envelope-simple"></i> Направить запрос
+              </a>
+              <a href="https://www.imet.ac.ru/" target="_blank" class="px-5 py-3 rounded-xl bg-white/5 border border-white/10 text-[11px] font-bold uppercase text-zinc-400 hover:bg-white/10 transition inline-flex items-center gap-2">
+                <i class="ph ph-globe"></i> Сайт
+              </a>
+            </div>
+          </div>
+
+          <!-- ═══ METRICS ROW ═══ -->
+          <div class="grid grid-cols-2 md:grid-cols-5 gap-4 mt-10">
+            <a href="#section-labs" class="p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-white/30 transition cursor-pointer block">
+              <div class="text-[9px] uppercase font-black text-zinc-500 mb-1">Лаборатории</div>
+              <div class="text-3xl font-black italic">6</div>
+            </a>
+            <a href="#section-scientists" class="p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-white/30 transition cursor-pointer block">
+              <div class="text-[9px] uppercase font-black text-zinc-500 mb-1">Учёные</div>
+              <div class="text-3xl font-black italic">42</div>
+            </a>
+            <a href="#section-projects" class="p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-white/30 transition cursor-pointer block">
+              <div class="text-[9px] uppercase font-black text-zinc-500 mb-1">Проекты НИОКР</div>
+              <div class="text-3xl font-black italic">16</div>
+            </a>
+            <a href="#section-rid" class="p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-white/30 transition cursor-pointer block">
+              <div class="text-[9px] uppercase font-black text-zinc-500 mb-1">РИД</div>
+              <div class="text-3xl font-black italic">12</div>
+            </a>
+            <a href="#section-projects" class="p-4 rounded-2xl bg-red-500/5 border border-red-500/20 hover:border-red-500/40 transition cursor-pointer block">
+              <div class="text-[9px] uppercase font-black text-red-400/70 mb-1">Объём НИОКР</div>
+              <div class="text-3xl font-black italic mos-red">585 млн ₽</div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ CHUNK 2: About section ═══ -->
+      <section class="glass rounded-[2.5rem] p-10 mb-8">
+        <div class="flex items-center justify-between mb-6">
+          <h2 class="text-xl font-black uppercase italic tracking-tight">Об организации</h2>
+        </div>
+        <p class="text-[15px] text-zinc-300 leading-relaxed mb-6">«ИМЕТ РАН» — ведущий научно-исследовательский центр, объединяющий 6 лабораторий и 42 учёных. Исследовательский профиль охватывает материаловедение. Опубликовано свыше 680 научных работ, выполнено 16 проектов НИОКТР и зарегистрировано 12 результатов интеллектуальной деятельности.</p>
+        <details class="group">
+          <summary class="cursor-pointer text-sm font-bold text-red-400 hover:text-red-300 transition select-none flex items-center gap-2">
+            <i class="ph ph-caret-right text-xs transition-transform group-open:rotate-90"></i>
+            Подробнее об исследовательской деятельности
+          </summary>
+          <div class="mt-6 pt-6 border-t border-white/10">
+            <h3 class="text-zinc-200 text-sm font-bold uppercase tracking-wide mb-3 mt-0">Исследовательский профиль</h3><p class="text-zinc-400 text-sm mb-2">Научная деятельность сосредоточена в нескольких ключевых направлениях:</p><ul class="text-zinc-400 text-sm space-y-1 ml-4 mb-6 list-disc"><li><strong class="text-zinc-300">Материаловедение</strong> — композиты, керамика, аддитивные технологии</li></ul><h3 class="text-zinc-200 text-sm font-bold uppercase tracking-wide mb-3">Ключевые компетенции (по данным ЕГИСУ)</h3><div style="display:flex;flex-wrap:wrap;gap:0.4rem;margin-bottom:1.5rem"><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">керамика <span style="color:#52525b">(4)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">титан <span style="color:#52525b">(3)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">механические свойства <span style="color:#52525b">(3)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">термическая плазма <span style="color:#52525b">(3)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">магнитные свойства <span style="color:#52525b">(3)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">коррозионная стойкость <span style="color:#52525b">(3)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">композит <span style="color:#52525b">(2)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">композиционные материалы <span style="color:#52525b">(2)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">аддитивные технологии <span style="color:#52525b">(2)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">сфероидизация <span style="color:#52525b">(2)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">магнитные материалы <span style="color:#52525b">(2)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">модуль упругости <span style="color:#52525b">(2)</span></span></div><h3 class="text-zinc-200 text-sm font-bold uppercase tracking-wide mb-3">Ведущие лаборатории</h3><ul class="text-zinc-400 text-sm space-y-1 ml-4 mb-6 list-disc"><li>Лаборатория 12: Физикохимии тугоплавких и редких металлов и сплавов (5 сотр.)</li><li>Лаборатория проблем металлургии комплексных руд им. академика И.П. Бардина (6 сотр.)</li><li>Лаборатория прочности и пластичности металлических и композиционных материалов и наноматериалов (№10) (6 сотр.)</li><li>Структурная механика и физика разрушения материалов им. академика И.И. Новикова (7 сотр.)</li><li>Лаборатория диагностики материалов (0 сотр.)</li><li>Лаборатория металловедения цветных и легких металлов им. академика А.А. Бочвара (0 сотр.)</li></ul><h3 class="text-zinc-200 text-sm font-bold uppercase tracking-wide mb-3">Ключевые заказчики НИОКР</h3><ul class="text-zinc-400 text-sm space-y-1 ml-4 mb-6 list-disc"><li><strong class="text-zinc-300">МИНОБРНАУКИ РОССИИ</strong> — 12 проектов</li><li><strong class="text-zinc-300">РНФ</strong> — 4 проектов</li></ul><h3 class="text-zinc-200 text-sm font-bold uppercase tracking-wide mb-3">Интеллектуальная собственность</h3><p class="text-zinc-400 text-sm mb-6">Портфель из 12 РИД: изобретение — 11, секрет производства (ноу хау) — 1.</p><h3 class="text-zinc-200 text-sm font-bold uppercase tracking-wide mb-3">Финансирование и результаты</h3><p class="text-zinc-400 text-sm">Суммарный объём финансирования: <strong class="text-white">585.5 млн руб.</strong> (16 проектов, по данным ЕГИСУ НИОКТР). По итогам проектов опубликовано 426 научных работ.</p>
+          </div>
+        </details>
+      </section>
+
+      <!-- ═══ TOP-3 FEATURED ═══ -->
+      <section class="glass rounded-[2.5rem] p-10 mb-8">
+        <h2 class="text-lg font-black uppercase italic tracking-tight mb-6">⭐ Ведущие лаборатории и учёные</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div>
+            <div class="text-[10px] uppercase font-black text-zinc-500 mb-3 tracking-widest">🏛️ Топ-3 лаборатории</div>
+            <div class="flex flex-col gap-3"><a href="imet/lab_003.html" class="glass rounded-2xl p-5 group hover:border-red-500/30 transition flex flex-col">
+          <div class="flex flex-wrap gap-1.5 mb-3"><span class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-[8px] uppercase font-bold text-zinc-500">Материаловедение</span></div>
+          <div class="text-sm font-bold group-hover:text-red-400 transition leading-snug mb-2">Структурная механика и физика разрушения материалов им. академика И.И. Новикова</div>
+          <div class="text-[10px] text-zinc-500 font-bold mt-auto">👥 7 учёных</div>
+        </a>
+<a href="imet/lab_001.html" class="glass rounded-2xl p-5 group hover:border-red-500/30 transition flex flex-col">
+          <div class="flex flex-wrap gap-1.5 mb-3"><span class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-[8px] uppercase font-bold text-zinc-500">&quot;Зеленая&quot; химия</span> <span class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-[8px] uppercase font-bold text-zinc-500">Металлургия</span></div>
+          <div class="text-sm font-bold group-hover:text-red-400 transition leading-snug mb-2">Лаборатория проблем металлургии комплексных руд им. академика И.П. Бардина</div>
+          <div class="text-[10px] text-zinc-500 font-bold mt-auto">👥 6 учёных</div>
+        </a>
+<a href="imet/lab_002.html" class="glass rounded-2xl p-5 group hover:border-red-500/30 transition flex flex-col">
+          <div class="flex flex-wrap gap-1.5 mb-3"><span class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-[8px] uppercase font-bold text-zinc-500">Металлы и их сплавы</span> <span class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-[8px] uppercase font-bold text-zinc-500">Механика</span></div>
+          <div class="text-sm font-bold group-hover:text-red-400 transition leading-snug mb-2">Лаборатория прочности и пластичности металлических и композиционных материалов и наноматериалов (№10)</div>
+          <div class="text-[10px] text-zinc-500 font-bold mt-auto">👥 6 учёных</div>
+        </a>
+</div>
+          </div>
+          <div>
+            <div class="text-[10px] uppercase font-black text-zinc-500 mb-3 tracking-widest">🏆 Топ-3 учёных</div>
+            <div class="flex flex-col gap-3"><a href="imet/sci_011.html" class="glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-3 items-center">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white font-bold text-sm">КА</div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Колмаков Алексей Георгиевич</div>
+            <div class="text-[10px] text-zinc-500 truncate">Лаборатория прочности и пластичности металлических и композиционных материалов и наноматериалов (№10)</div>
+            <div class="flex items-center gap-2 mt-1">
+              <span class="text-[9px] text-zinc-600">📚 80 публ.</span> 
+            </div>
+          </div>
+        </a>
+<a href="imet/sci_005.html" class="glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-3 items-center">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white font-bold text-sm">СГ</div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Садыхов Гусейн Бахлулович</div>
+            <div class="text-[10px] text-zinc-500 truncate">Лаборатория проблем металлургии комплексных руд им. академика И.П. Бардина</div>
+            <div class="flex items-center gap-2 mt-1">
+              <span class="text-[9px] text-zinc-600">📚 42 публ.</span> 
+            </div>
+          </div>
+        </a>
+<a href="imet/sci_013.html" class="glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-3 items-center">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white font-bold text-sm">ДП</div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Дмитрий Просвирнин</div>
+            <div class="text-[10px] text-zinc-500 truncate">Лаборатория прочности и пластичности металлических и композиционных материалов и наноматериалов (№10)</div>
+            <div class="flex items-center gap-2 mt-1">
+              <span class="text-[9px] text-zinc-600">📚 38 публ.</span> 
+            </div>
+          </div>
+        </a>
+</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ TABS: Labs / Scientists ═══ -->
+      <div class="glass rounded-2xl p-4 mb-4" style="border:1px solid rgba(56,189,248,0.15);background:rgba(56,189,248,0.03)">
+        <div class="flex items-center gap-2 text-[10px] text-sky-400/70 font-bold uppercase">
+          <i class="ph ph-info"></i>
+          Показаны лаборатории и учёные, зарегистрированные на платформе CoLab. Фактическое число сотрудников может быть больше.
+        </div>
+      </div>
+      <div class="section-header" id="section-labs">
+        <div class="flex items-center gap-4">
+          <button id="tab-labs" onclick="switchTab('labs')" class="section-title" style="background:none;border:none;color:white;cursor:pointer;padding:0">🔬 Лаборатории (6)</button>
+          <button id="tab-sci" onclick="switchTab('sci')" class="text-lg font-black uppercase italic tracking-tight opacity-30 hover:opacity-60 transition" style="background:none;border:none;color:white;cursor:pointer;padding:0" id="section-scientists">🎓 Учёные (24)</button>
+        </div>
+        <span class="provenance-tag tag-colab">CoLab Data</span>
+      </div>
+
+      <!-- Labs panel -->
+      <div id="panel-labs">
+        <div class="text-sm text-zinc-400 mb-3" id="lab-counter">Показаны 3 из 6</div>
+        <div class="labs-grid" id="labs-container">
+          <div class="lab-item glass rounded-[2rem] p-8 hover:border-red-500/30 transition shadow-lg flex flex-col" data-idx="0" style="">
+          <div class="flex flex-wrap gap-2 mb-4"><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Материаловедение</span></div>
+          <a href="imet/lab_000.html" class="group">
+            <h3 class="text-lg font-bold mb-3 group-hover:text-red-400 transition leading-snug">Лаборатория 12: Физикохимии тугоплавких и редких металлов и сплавов</h3>
+          </a>
+          <p class="text-xs text-zinc-500 leading-relaxed mb-4 flex-1">4) Синтез высокочистых интерметаллидов, карбидов, боридов, карбоборидов, исследование взаимосвязи их физических свойств с примесным составом и структу...</p>
+          
+          <div class="mt-6 flex items-center justify-between pt-4 border-t border-white/5">
+            <span class="text-[10px] font-black uppercase text-zinc-500">👥 5 сотрудников</span>
+            
+          </div>
+          <div class="flex gap-2 mt-3">
+            <a href="imet/lab_000.html" class="flex-1 text-center px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-[9px] font-bold uppercase tracking-wide text-zinc-400 hover:bg-white/10 transition">Подробнее</a>
+            <a href="javascript:void(0)" onclick="openRequestModal('Связаться с лабораторией Лаборатория 12: Физикохимии ту')" class="flex-1 text-center px-3 py-2 rounded-xl bg-red-500/10 border border-red-500/30 text-[9px] font-bold uppercase tracking-wide text-red-400 hover:bg-red-500/20 transition cursor-pointer">📨 Связаться</a>
+          </div>
+        </div>
+<div class="lab-item glass rounded-[2rem] p-8 hover:border-red-500/30 transition shadow-lg flex flex-col" data-idx="1" style="">
+          <div class="flex flex-wrap gap-2 mb-4"><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">&quot;Зеленая&quot; химия</span><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Металлургия</span><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Химическая технология</span></div>
+          <a href="imet/lab_001.html" class="group">
+            <h3 class="text-lg font-bold mb-3 group-hover:text-red-400 transition leading-snug">Лаборатория проблем металлургии комплексных руд им. академика И.П. Бардина</h3>
+          </a>
+          <p class="text-xs text-zinc-500 leading-relaxed mb-4 flex-1">Основная научная область лаборатории – разработка научных основ и технологии комплексной переработки железосодержащего редкометалльного и других видов...</p>
+          
+          <div class="mt-6 flex items-center justify-between pt-4 border-t border-white/5">
+            <span class="text-[10px] font-black uppercase text-zinc-500">👥 6 сотрудников</span>
+            
+          </div>
+          <div class="flex gap-2 mt-3">
+            <a href="imet/lab_001.html" class="flex-1 text-center px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-[9px] font-bold uppercase tracking-wide text-zinc-400 hover:bg-white/10 transition">Подробнее</a>
+            <a href="javascript:void(0)" onclick="openRequestModal('Связаться с лабораторией Лаборатория проблем металлурги')" class="flex-1 text-center px-3 py-2 rounded-xl bg-red-500/10 border border-red-500/30 text-[9px] font-bold uppercase tracking-wide text-red-400 hover:bg-red-500/20 transition cursor-pointer">📨 Связаться</a>
+          </div>
+        </div>
+<div class="lab-item glass rounded-[2rem] p-8 hover:border-red-500/30 transition shadow-lg flex flex-col" data-idx="2" style="">
+          <div class="flex flex-wrap gap-2 mb-4"><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Металлы и их сплавы</span><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Механика</span><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Металлургия</span></div>
+          <a href="imet/lab_002.html" class="group">
+            <h3 class="text-lg font-bold mb-3 group-hover:text-red-400 transition leading-snug">Лаборатория прочности и пластичности металлических и композиционных материалов и наноматериалов (№10)</h3>
+          </a>
+          <p class="text-xs text-zinc-500 leading-relaxed mb-4 flex-1">Лаборатория может предложить разработки в области новых конструкционных материалов, предназначенных для пар трения различного назначения (подшипники с...</p>
+          
+          <div class="mt-6 flex items-center justify-between pt-4 border-t border-white/5">
+            <span class="text-[10px] font-black uppercase text-zinc-500">👥 6 сотрудников</span>
+            
+          </div>
+          <div class="flex gap-2 mt-3">
+            <a href="imet/lab_002.html" class="flex-1 text-center px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-[9px] font-bold uppercase tracking-wide text-zinc-400 hover:bg-white/10 transition">Подробнее</a>
+            <a href="javascript:void(0)" onclick="openRequestModal('Связаться с лабораторией Лаборатория прочности и пласти')" class="flex-1 text-center px-3 py-2 rounded-xl bg-red-500/10 border border-red-500/30 text-[9px] font-bold uppercase tracking-wide text-red-400 hover:bg-red-500/20 transition cursor-pointer">📨 Связаться</a>
+          </div>
+        </div>
+<div class="lab-item glass rounded-[2rem] p-8 hover:border-red-500/30 transition shadow-lg flex flex-col" data-idx="3" style="display:none">
+          <div class="flex flex-wrap gap-2 mb-4"><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Материаловедение</span></div>
+          <a href="imet/lab_003.html" class="group">
+            <h3 class="text-lg font-bold mb-3 group-hover:text-red-400 transition leading-snug">Структурная механика и физика разрушения материалов им. академика И.И. Новикова</h3>
+          </a>
+          <p class="text-xs text-zinc-500 leading-relaxed mb-4 flex-1">Области научных интересов: оценка характеристик поврежденности в конструкционных сталях и сплавах при статическом и циклическом нагружении; фрактодиаг...</p>
+          
+          <div class="mt-6 flex items-center justify-between pt-4 border-t border-white/5">
+            <span class="text-[10px] font-black uppercase text-zinc-500">👥 7 сотрудников</span>
+            
+          </div>
+          <div class="flex gap-2 mt-3">
+            <a href="imet/lab_003.html" class="flex-1 text-center px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-[9px] font-bold uppercase tracking-wide text-zinc-400 hover:bg-white/10 transition">Подробнее</a>
+            <a href="javascript:void(0)" onclick="openRequestModal('Связаться с лабораторией Структурная механика и физика ')" class="flex-1 text-center px-3 py-2 rounded-xl bg-red-500/10 border border-red-500/30 text-[9px] font-bold uppercase tracking-wide text-red-400 hover:bg-red-500/20 transition cursor-pointer">📨 Связаться</a>
+          </div>
+        </div>
+<div class="lab-item glass rounded-[2rem] p-8 hover:border-red-500/30 transition shadow-lg flex flex-col" data-idx="4" style="display:none">
+          <div class="flex flex-wrap gap-2 mb-4"></div>
+          <a href="imet/lab_004.html" class="group">
+            <h3 class="text-lg font-bold mb-3 group-hover:text-red-400 transition leading-snug">Лаборатория диагностики материалов</h3>
+          </a>
+          <p class="text-xs text-zinc-500 leading-relaxed mb-4 flex-1"></p>
+          
+          <div class="mt-6 flex items-center justify-between pt-4 border-t border-white/5">
+            <span class="text-[10px] font-black uppercase text-zinc-500">👥 0 сотрудников</span>
+            
+          </div>
+          <div class="flex gap-2 mt-3">
+            <a href="imet/lab_004.html" class="flex-1 text-center px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-[9px] font-bold uppercase tracking-wide text-zinc-400 hover:bg-white/10 transition">Подробнее</a>
+            <a href="javascript:void(0)" onclick="openRequestModal('Связаться с лабораторией Лаборатория диагностики матери')" class="flex-1 text-center px-3 py-2 rounded-xl bg-red-500/10 border border-red-500/30 text-[9px] font-bold uppercase tracking-wide text-red-400 hover:bg-red-500/20 transition cursor-pointer">📨 Связаться</a>
+          </div>
+        </div>
+<div class="lab-item glass rounded-[2rem] p-8 hover:border-red-500/30 transition shadow-lg flex flex-col" data-idx="5" style="display:none">
+          <div class="flex flex-wrap gap-2 mb-4"></div>
+          <a href="imet/lab_005.html" class="group">
+            <h3 class="text-lg font-bold mb-3 group-hover:text-red-400 transition leading-snug">Лаборатория металловедения цветных и легких металлов им. академика А.А. Бочвара</h3>
+          </a>
+          <p class="text-xs text-zinc-500 leading-relaxed mb-4 flex-1"></p>
+          
+          <div class="mt-6 flex items-center justify-between pt-4 border-t border-white/5">
+            <span class="text-[10px] font-black uppercase text-zinc-500">👥 0 сотрудников</span>
+            
+          </div>
+          <div class="flex gap-2 mt-3">
+            <a href="imet/lab_005.html" class="flex-1 text-center px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-[9px] font-bold uppercase tracking-wide text-zinc-400 hover:bg-white/10 transition">Подробнее</a>
+            <a href="javascript:void(0)" onclick="openRequestModal('Связаться с лабораторией Лаборатория металловедения цве')" class="flex-1 text-center px-3 py-2 rounded-xl bg-red-500/10 border border-red-500/30 text-[9px] font-bold uppercase tracking-wide text-red-400 hover:bg-red-500/20 transition cursor-pointer">📨 Связаться</a>
+          </div>
+        </div>
+        </div>
+        <div class="mt-4 text-center">
+          <button id="lab-more" onclick="showMore('lab-item', 'lab-more', 'lab-counter', 6, 3)" class="px-6 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-widest hover:bg-white/10 transition text-zinc-400">
+            Показать ещё 3
+          </button>
+        </div>
+      </div>
+
+      <!-- Scientists panel (hidden by default) -->
+      <div id="panel-sci" style="display:none">
+        <div class="text-sm text-zinc-400 mb-3" id="sci-counter">Показаны 3 из 24</div>
+        <div class="relative mb-6">
+          <i class="ph ph-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-zinc-500"></i>
+          <input id="sci-search" type="text" placeholder="Поиск по имени или области исследования...">
+          <div id="sci-count" class="absolute right-4 top-1/2 -translate-y-1/2 text-[10px] text-zinc-500 font-bold">24 учёных</div>
+        </div>
+        <div class="sci-grid" id="sci-grid">
+          <a href="imet/sci_000.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="кольчугина наталья борисовна" data-areas="инженерия магниты монокристаллы постоянные магниты редкоземельные металлы редкоземельные элементы (рзэ)" data-idx="0" style="">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/tTnFIedrNimy8oUhdGgzJCNFQXs8hQhuvlfpUHea.jpg" class="w-full h-full object-cover" alt="Кольчугина Наталья Борисовна" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Кольчугина Наталья Борисовна</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория 12: Физикохимии тугоплавких и редких металлов и сплавов</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Инженерия, Магниты, Монокристаллы, Постоянные магниты +2</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 17 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="imet/sci_001.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="анна бакулина" data-areas="инженерия магниты монокристаллы постоянные магниты редкоземельные металлы редкоземельные элементы (рзэ)" data-idx="1" style="">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/8b97b3ce-bfe6-4360-8f1e-f067fe554fa0.jpg.200x200_q95_crop_detail_upscale.jpg" class="w-full h-full object-cover" alt="Анна Бакулина" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Анна Бакулина</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория 12: Физикохимии тугоплавких и редких металлов и сплавов</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Инженерия, Магниты, Монокристаллы, Постоянные магниты +2</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 13 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="imet/sci_002.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="павел прокофьев" data-areas="инженерия магниты монокристаллы постоянные магниты редкоземельные металлы редкоземельные элементы (рзэ) pvd-покрытия материаловедение металлургия порошковая металлургия сферические порошки титановые сплавы умные материалы" data-idx="2" style="">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">ПП</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Павел Прокофьев</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория 12: Физикохимии тугоплавких и редких металлов и сплавов</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Инженерия, Магниты, Монокристаллы, Постоянные магниты +9</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 9 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="imet/sci_003.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="николай дормидонтов" data-areas="инженерия магниты монокристаллы постоянные магниты редкоземельные металлы редкоземельные элементы (рзэ) материаловедение металлургия порошковая металлургия сферические порошки титановые сплавы умные материалы pvd-покрытия композиты магнитные материалы рентгеноструктурный анализ бимедицина биофизика биохимия генетика кардиология митохондрии окислительный стресс сахарный диабет 3d-печать коррозия сплавы титан механические свойства материалов обработка металлов давлением" data-idx="3" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/BQD7wnM6A3tPuNv6ZgcTRovuWmmIvQInHnrCPwSW.jpg" class="w-full h-full object-cover" alt="Николай Дормидонтов" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Николай Дормидонтов</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория 12: Физикохимии тугоплавких и редких металлов и сплавов</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Инженерия, Магниты, Монокристаллы, Постоянные магниты +26</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 11 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="imet/sci_004.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="роман вахрушев" data-areas="pvd-покрытия керамика керамические покрытия композиты композиционные материалы магниты нанокомпозиты наноматериалы порошковая металлургия постоянные магниты редкоземельные металлы редкоземельные элементы (рзэ) материаловедение высокотемпературные материалы катализ коллоидная химия нефтехимия углеродные материалы" data-idx="4" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">РВ</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Роман Вахрушев</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория 12: Физикохимии тугоплавких и редких металлов и сплавов</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">PVD-покрытия, Керамика, Керамические покрытия, Композиты +14</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 3 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="imet/sci_005.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="садыхов гусейн бахлулович" data-areas="металлургия химическая технология" data-idx="5" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">СГ</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Садыхов Гусейн Бахлулович</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория проблем металлургии комплексных руд им. академика И.П. Бардина</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Металлургия, Химическая технология</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 42 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="imet/sci_006.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="константин гончаров" data-areas="металлургия химическая технология" data-idx="6" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">КГ</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Константин Гончаров</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория проблем металлургии комплексных руд им. академика И.П. Бардина</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Металлургия, Химическая технология</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 16 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="imet/sci_007.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="карен анисонян" data-areas="металлургия химическая технология" data-idx="7" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">КА</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Карен Анисонян</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория проблем металлургии комплексных руд им. академика И.П. Бардина</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Металлургия, Химическая технология</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 25 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="imet/sci_008.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="михаил хасанов" data-areas="металлургия химическая технология" data-idx="8" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/h6YmVN3xJ3pw2XtqnjTp93FVs0cYtAHdGZMU5zPD.jpg" class="w-full h-full object-cover" alt="Михаил Хасанов" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Михаил Хасанов</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория проблем металлургии комплексных руд им. академика И.П. Бардина</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Металлургия, Химическая технология</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 4 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="imet/sci_009.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="дмитрий зиновеев" data-areas="гидрометаллургия металлургия зеленая химия зеленые технологии инженерия физическая химия химическая технология редкоземельные элементы (рзэ) рециклинг отходов глинозем керамика композиционные материалы материаловедение" data-idx="9" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/x7EWerPXrayBaOorM3n7VzFVRlz781LqXpfRthxP.png" class="w-full h-full object-cover" alt="Дмитрий Зиновеев" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Дмитрий Зиновеев</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория проблем металлургии комплексных руд им. академика И.П. Бардина</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Гидрометаллургия, Металлургия, Зеленая химия, Зеленые технологии +9</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 14 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="imet/sci_010.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="павел грудинский" data-areas="зеленая химия зеленые технологии инженерия металлургия физическая химия химическая технология гидрометаллургия редкоземельные элементы (рзэ) рециклинг отходов глинозем керамика композиционные материалы материаловедение" data-idx="10" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">ПГ</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Павел Грудинский</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория проблем металлургии комплексных руд им. академика И.П. Бардина</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Зеленая химия, Зеленые технологии, Инженерия, Металлургия +9</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 13 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="imet/sci_011.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="колмаков алексей георгиевич" data-areas="материаловедение металлургия порошковая металлургия сферические порошки титановые сплавы умные материалы pvd-покрытия металлы и сплавы физика твердого  тела механические свойства материалов обработка металлов давлением композиционные материалы 3d-печать коррозия сплавы титан керамика биокерамика гетерогенный катализ диоксид циркония костные цементы спекание фосфаты кальция гидротермальный синтез неорганическая химия низкотемпературная адсорбция азота растровая электронная микроскопия редкоземельные элементы (рзэ) рентгеновская дифракция нанозимы наноматериалы функциональные материалы химия твердого тела церий бимедицина биофизика биохимия генетика кардиология митохондрии окислительный стресс сахарный диабет аэрогели золь-гель химия ионные жидкости ионогели биокоррозия биоматериалы биоинформатика клеточная биология противоопухолевый иммунитет экспериментальная онкология инженерия магниты монокристаллы постоянные магниты редкоземельные металлы автономные материалы биоактивные респонсивные материалы биомиметика иммунный ландшафт прецизионная медицина регенеративная медицина регенераторная ниша системомиметика биомоделирование in vitro магнитные полупроводники нанокристаллическая структура наноструктуры полупроводники структурные переходы тонкие пленки фотопроводимость аналитическая химия спектроскопия кр (рамановская)" data-idx="11" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">КА</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Колмаков Алексей Георгиевич</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория прочности и пластичности металлических и композиционных материалов и наноматериалов (№10)</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Материаловедение, Металлургия, Порошковая металлургия, Сферические порошки +71</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 80 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="imet/sci_012.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="михаил севостьянов" data-areas="материаловедение металлургия порошковая металлургия сферические порошки титановые сплавы умные материалы pvd-покрытия механические свойства материалов обработка металлов давлением металлы и сплавы физика твердого  тела 3d-печать коррозия сплавы титан керамика композиционные материалы бимедицина биофизика биохимия генетика кардиология митохондрии окислительный стресс сахарный диабет биокерамика гетерогенный катализ диоксид циркония костные цементы спекание фосфаты кальция инженерия магниты монокристаллы постоянные магниты редкоземельные металлы редкоземельные элементы (рзэ) зеленая химия зеленые технологии физическая химия химическая технология химия ветеринария вирусология гистология клеточная биология молекулярная биология молекулярная генетика ультраструктурные исследования аналитическая химия спектроскопия кр (рамановская) биогеохимия почвоведение экология биоинформатика биоматериалы противоопухолевый иммунитет экспериментальная онкология хроматография автономные материалы биоактивные респонсивные материалы биомиметика иммунный ландшафт прецизионная медицина регенеративная медицина регенераторная ниша системомиметика биомоделирование in vitro рентгеновская дифракция рентгеноструктурный анализ" data-idx="12" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">МС</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Михаил Севостьянов</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория прочности и пластичности металлических и композиционных материалов и наноматериалов (№10)</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Материаловедение, Металлургия, Порошковая металлургия, Сферические порошки +66</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 35 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="imet/sci_013.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="дмитрий просвирнин" data-areas="материаловедение металлургия биокоррозия биоматериалы металлы и сплавы обработка металлов давлением физика твердого  тела магниевые сплавы металловедение неразрушающий контроль прочность порошковая металлургия сферические порошки титановые сплавы композиты магнитные материалы рентгеноструктурный анализ внеклеточные везикулы клеточная терапия клеточный сигналинг ниша стволовых клеток регенеративная медицина фиброз керамика композиционные материалы высокотемпературные материалы высокоэнтропийные сплавы интерметаллиды интенсивная пластическая деформация нанокристаллические оксиды нанокристаллические сплавы меди биокерамика гетерогенный катализ диоксид циркония костные цементы спекание фосфаты кальция биохимия экспериментальная онкология микроскопия" data-idx="13" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">ДП</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Дмитрий Просвирнин</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория прочности и пластичности металлических и композиционных материалов и наноматериалов (№10)</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Материаловедение, Металлургия, Биокоррозия, Биоматериалы +36</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 38 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="imet/sci_014.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="сергей конушкин" data-areas="материаловедение умные материалы металлургия порошковая металлургия сферические порошки титановые сплавы pvd-покрытия металлы и сплавы физика твердого  тела механические свойства материалов обработка металлов давлением 3d-печать коррозия сплавы титан инженерия магниты монокристаллы постоянные магниты редкоземельные металлы редкоземельные элементы (рзэ) биокоррозия биоматериалы бимедицина биофизика биохимия генетика кардиология митохондрии окислительный стресс сахарный диабет интенсивная пластическая деформация наноматериалы нанотехнологии магнитные полупроводники нанокристаллическая структура наноструктуры полупроводники структурные переходы тонкие пленки фотопроводимость аналитическая химия спектроскопия кр (рамановская)" data-idx="14" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">СК</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Сергей Конушкин</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория прочности и пластичности металлических и композиционных материалов и наноматериалов (№10)</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Материаловедение, Умные материалы, Металлургия, Порошковая металлургия +39</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 15 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="imet/sci_015.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="михаил каплан" data-areas="материаловедение металлургия порошковая металлургия сферические порошки титановые сплавы умные материалы pvd-покрытия металлы и сплавы физика твердого  тела механические свойства материалов обработка металлов давлением 3d-печать коррозия сплавы титан керамика композиционные материалы инженерия магниты монокристаллы постоянные магниты редкоземельные металлы редкоземельные элементы (рзэ) бимедицина биофизика биохимия генетика кардиология митохондрии окислительный стресс сахарный диабет гидротермальный синтез неорганическая химия низкотемпературная адсорбция азота растровая электронная микроскопия рентгеновская дифракция нанозимы наноматериалы функциональные материалы химия твердого тела церий рентгеноструктурный анализ аэрогели золь-гель химия ионные жидкости ионогели композиты магнитные материалы max- фазы стеклокерамика физическая химия химия магнитные полупроводники нанокристаллическая структура наноструктуры полупроводники структурные переходы тонкие пленки фотопроводимость аналитическая химия спектроскопия кр (рамановская)" data-idx="15" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/KqjzYzKlfLUCfwl2wWeBWoS8TkdLTmlFSeKJsNi7.jpg" class="w-full h-full object-cover" alt="Михаил Каплан" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Михаил Каплан</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория прочности и пластичности металлических и композиционных материалов и наноматериалов (№10)</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Материаловедение, Металлургия, Порошковая металлургия, Сферические порошки +57</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 18 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="imet/sci_016.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="ярослава морозова" data-areas="материаловедение металлургия порошковая металлургия сферические порошки титановые сплавы умные материалы металлы и сплавы физика твердого  тела pvd-покрытия механические свойства материалов обработка металлов давлением" data-idx="16" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">ЯМ</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Ярослава Морозова</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория прочности и пластичности металлических и композиционных материалов и наноматериалов (№10)</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Материаловедение, Металлургия, Порошковая металлургия, Сферические порошки +7</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 1 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="imet/sci_017.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="тютин марат равилевич" data-areas="" data-idx="17" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">ТМ</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Тютин Марат Равилевич</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Структурная механика и физика разрушения материалов им. академика И.И. Новикова</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2"></div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 0 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="imet/sci_018.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="людмила ботвина" data-areas="" data-idx="18" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">ЛБ</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Людмила Ботвина</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Структурная механика и физика разрушения материалов им. академика И.И. Новикова</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2"></div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 0 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="imet/sci_019.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="юлия демина" data-areas="" data-idx="19" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">ЮД</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Юлия Демина</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Структурная механика и физика разрушения материалов им. академика И.И. Новикова</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2"></div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 0 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="imet/sci_020.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="виктор левин" data-areas="" data-idx="20" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">ВЛ</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Виктор Левин</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Структурная механика и физика разрушения материалов им. академика И.И. Новикова</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2"></div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 0 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="imet/sci_021.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="иван синев" data-areas="" data-idx="21" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">ИС</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Иван Синев</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Структурная механика и физика разрушения материалов им. академика И.И. Новикова</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2"></div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 0 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="imet/sci_022.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="алексей болотников" data-areas="" data-idx="22" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">АБ</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Алексей Болотников</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Структурная механика и физика разрушения материалов им. академика И.И. Новикова</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2"></div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 0 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="imet/sci_023.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="евгений белецкий" data-areas="" data-idx="23" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">ЕБ</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Евгений Белецкий</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Структурная механика и физика разрушения материалов им. академика И.И. Новикова</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2"></div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 0 публ.</span>
+            </div>
+          </div>
+        </a>
+        </div>
+        <div class="mt-4 text-center">
+          <button id="sci-more" onclick="showMore('sci-card', 'sci-more', 'sci-counter', 24, 3)" class="px-6 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-widest hover:bg-white/10 transition text-zinc-400">
+            Показать ещё 3
+          </button>
+        </div>
+      </div>
+
+      <script>
+        // Tab switching
+        function switchTab(tab) {
+          document.getElementById('panel-labs').style.display = tab === 'labs' ? '' : 'none';
+          document.getElementById('panel-sci').style.display = tab === 'sci' ? '' : 'none';
+          document.getElementById('tab-labs').style.opacity = tab === 'labs' ? '1' : '0.3';
+          document.getElementById('tab-sci').style.opacity = tab === 'sci' ? '1' : '0.3';
+        }
+        // Scientist search
+        (function() {
+          const input = document.getElementById('sci-search');
+          const grid = document.getElementById('sci-grid');
+          const counter = document.getElementById('sci-count');
+          if (!input || !grid) return;
+          const cards = grid.querySelectorAll('.sci-card');
+          input.addEventListener('input', function() {
+            const q = this.value.toLowerCase().trim();
+            let visible = 0;
+            cards.forEach(c => {
+              const name = c.dataset.name || '';
+              const areas = c.dataset.areas || '';
+              const match = !q || name.includes(q) || areas.includes(q);
+              c.classList.toggle('hidden', !match);
+              if (match) visible++;
+            });
+            counter.textContent = visible + ' учёных';
+          });
+        })();
+      </script>
+
+      <!-- ═══ CHUNK 5: Projects ═══ -->
+      <div class="section-header" id="section-projects">
+        <h2 class="section-title">💼 Проекты НИОКР (16)</h2>
+        <span class="provenance-tag tag-egisu">ЕГИСУ</span>
+      </div>
+      <section class="glass rounded-[2.5rem] overflow-hidden mb-8">
+        <div class="p-6 border-b border-white/10 flex items-center justify-between">
+          <span class="text-sm text-zinc-400" id="proj-counter">Показаны 5 из 16</span>
+          <a href="imet/projects.html" class="text-xs font-bold text-red-400 hover:text-red-300 transition uppercase">Все проекты →</a>
+        </div>
+        <div id="proj-list"><a href="imet/proj_0000.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="0">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Исследование фазо-и структорообразования в системе Ti6A14V-C (мультиграфен)в различных термодинамических условиях.</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Объектами исследования являлись: титаноматричные композиционные материалы, в виде порошков и образцо...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">титан, горячее пресование, материалы, композит, вакуумное спекание</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">14,998 тыс. ₽</span>
+          </div>
+        </a>
+<a href="imet/proj_0001.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="1">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Исследование влияние состава, технологии получения и обработки перспективных металлических и композиционных материалов н</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Разработаны технология получения стандартных стержней из композита «сплав Б83 –Ti2NbAl и Al-Bi» для ...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">механические свойства, биомедицинские материалы, триботехнические материалы, конструкционные материалы, композиционные материалы</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">40,719 тыс. ₽</span>
+          </div>
+        </a>
+<a href="imet/proj_0002.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="2">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Фундаментальные основы получения новых металлических, керамических и композиционных материалов для аддитивных технологий</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Исследован процесс электродуговой плазменной сфероидизации порошков магнитных материалов системы Nd-...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">композиционные материалы, трехмерная печать, аддитивные технологии, сфероидизация, магнитные материалы</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">24,720 тыс. ₽</span>
+          </div>
+        </a>
+<a href="imet/proj_0003.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="3">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Научные основы создания новых материалов с особыми физическими свойствами и функциональными характеристиками, в том числ</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Книга 1. Исследованы гистерезисные свойства магнитов состава Nd(Ce)-Fe(Co)-B при температурах 25-175...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">тепловая продольная прокатка, термомеханическая обработка, структура и механические свойства металлических материалов, машинное обучение, наноразмерные добавки</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">63,984 тыс. ₽</span>
+          </div>
+        </a>
+<a href="imet/proj_0004.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="4">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Исследование воздействия концентрированных потоков энергии на конструкционные и функциональные материалы</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Книга 1. Установлено, что при стационарном облучении W ионами гелия дозой          1,0·1018 ион/см2 ...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">импульсные потоки ионов, электронов и плазмы, стационарные потоки ионов, плазменный фокус, повреждаемость поверхностных слоев, платина</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">40,716 тыс. ₽</span>
+          </div>
+        </a>
+<a href="imet/proj_0005.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="5">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Разработка методов диагностики состава, структуры, свойств и технологий производства конструкционных и функциональных ме</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Книга 1. Предложен подход к определению лития и кальция в новых материалах на основе гидроксиапатито...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">керамические материалы, исследование структурных и фазовых превращений, функции распределения ориентировок (ФРО), спектральные методы анализа, легкие сплавы</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">52,351 тыс. ₽</span>
+          </div>
+        </a>
+<a href="imet/proj_0006.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="6">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Разработка новых слоистых композиционных материалов медицинского назначения на основе биоинертных титановых сплавов с ни</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>В первый год проекта были изучены физико-химические основы формирования трёхкомпонентного сплава и р...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">эндопротезы, имплантаты, сверхэластичность, модуль упругости, механические свойства</span>
+            <span class='text-[10px] text-zinc-600'>| РНФ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">6,000 тыс. ₽</span>
+          </div>
+        </a>
+<a href="imet/proj_0007.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="7">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Разработка физико-химических основ технологий плазменной металлургии</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Книга 1. Исследован процесс электродуговой плазменной сфероидизации порошков магнитных материалов си...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">ВЫСОКОЭНТРОПИЙНЫЙ СПЛАВ, ЭЛЕКТРОМЕХАНИЧЕСКАЯ ОБРАБОТКА, ПЛАЗМЕННОЕ ИСКРОВОЕ СПЕКАНИЕ, ФРИКЦИОННОЕ УПРОЧНЕНИЯ ПЛАЗМЕННЫХ СТАЛЬНЫХ ПОКРЫТИЙ, АДДИТИВНЫЕ ТЕХНОЛОГИИ</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">31,994 тыс. ₽</span>
+          </div>
+        </a>
+<a href="imet/proj_0008.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="8">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Физико-химические основы экологически безопасных комплексных технологий переработки рудного сырья и техногенных отходов</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Книга 1  Включает 4 раздела, посвященные исследованиям по разработке новых процессов переработки тит...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">рений, вольфрам, структурные свойства расплавов, экзогенные наночастицы, огнеупорная керамика</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">47,987 тыс. ₽</span>
+          </div>
+        </a>
+<a href="imet/proj_0009.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="9">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Физико-химические основы создания новых материалов медицинского назначения на основе многокомпонентных систем с матричны</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>В области разработки новых композиционных материалов для замещения костно-хрящевых дефектов с регули...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">биокерамика, композиты, фосфаты кальция, диоксид циркония, оксид алюминия</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">50,896 тыс. ₽</span>
+          </div>
+        </a>
+<a href="imet/proj_0010.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="10">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Исследование влияния методов консолидации на свойства порошковых конструкционных и функциональных материалов</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Актуальность работы обусловлена необходимостью разработки научных основ получения порошковых материа...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">прочность, пористость, магнитные свойства, структура, порошковые материалы</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">23,888 тыс. ₽</span>
+          </div>
+        </a>
+<a href="imet/proj_0011.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="11">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Разработка теоретических основ получения и исследование керамических материалов различного состава с заданными свойствам</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Книга 1. 1. Последовательной нитридизацией и карбидизацией проката титана синтезирована керамика с п...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">ОКИСЛИТЕЛЬНОЕ КОНСТРУИРОВАНИЕ, КЕРАМИКА, ОКСОНИТРИДЫ, НИТРИД КРЕМНИЯ, КАТАСТРОФИЧЕСКОЕ ОКИСЛЕНИЕ МЕДИ</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">57,543 тыс. ₽</span>
+          </div>
+        </a>
+<a href="imet/proj_0012.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="12">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Разработка низколегированных ультрамелкозернистых цинковых сплавов, перспективных для онкоортопедии (заключительный)</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Проведено исследование влияния ротационной ковки (РК) и равноканального углового прессования (РКУП) ...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">усталостная прочность, биосовместимость, цинковые сплавы, биорезорбируемые материалы, равноканальное угловое прессование (РКУП)</span>
+            <span class='text-[10px] text-zinc-600'>| РНФ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">6,000 тыс. ₽</span>
+          </div>
+        </a>
+<a href="imet/proj_0013.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="13">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Развитие физико-химических основ создания металлических конструкционных и функциональных материалов с заданными комплекс</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Книга 1. Показано влияние низких, до -196оС температур на прочность и пластичность хром-никель-марга...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">мартенсит, магнитные свойства, ударная вязкость, алюминиевые сплавы, плазменная сфероидизация</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">120,695 тыс. ₽</span>
+          </div>
+        </a>
+<a href="imet/proj_0014.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="14">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Исследование влияния ультрамелкозернистой структуры, полученной методом кручения под высоким давлением на структуру и фу</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Методом кручения под высоким давлением (КВД) при комнатной температуре и температуре 300 °С в Fe-Mn ...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">Сплавы на основе железа,, биодеградируемые имплантаты, ультрамелкозернистая структура, кручение под высоким давлением, коррозионная стойкость</span>
+            <span class='text-[10px] text-zinc-600'>| РНФ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">1,500 тыс. ₽</span>
+          </div>
+        </a>
+<a href="imet/proj_0015.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="15">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Получение, структура и свойства высокоэнтропийных сплавов системы Co-Fe-Cr-Mo-W для применения в аддитивном производстве</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Объектом исследования являются физико-механические и эксплуатационные свойства высокоэнтропийных спл...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">Высокоэнтропийные сплавы, структура, физико-механические, эксплуатационные свойства</span>
+            <span class='text-[10px] text-zinc-600'>| РНФ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">1,500 тыс. ₽</span>
+          </div>
+        </a>
+</div>
+        <div class="p-4 text-center">
+          <button id="proj-more" onclick="showMore('proj-item', 'proj-more', 'proj-counter', 16)" class="px-6 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-widest hover:bg-white/10 transition text-zinc-400">
+            Показать ещё 5
+          </button>
+        </div>
+      </section>
+
+      <!-- ═══ RID Section ═══ -->
+      <div class="section-header" id="section-rid">
+        <h2 class="section-title">🧬 Результаты интеллектуальной деятельности (12)</h2>
+        <span class="provenance-tag tag-egisu">ЕГИСУ</span>
+      </div>
+      <div class="rid-grid mb-6">
+        <div class="glass rounded-2xl p-5 text-center">
+          <div class="text-2xl mb-2">💡</div>
+          <div class="text-2xl font-black italic">11</div>
+          <div class="text-[10px] uppercase font-bold text-zinc-500 mt-1">Изобретение</div>
+        </div>
+<div class="glass rounded-2xl p-5 text-center">
+          <div class="text-2xl mb-2">📄</div>
+          <div class="text-2xl font-black italic">1</div>
+          <div class="text-[10px] uppercase font-bold text-zinc-500 mt-1">Секрет производства (ноу хау)</div>
+        </div>
+
+      </div>
+      <section class="glass rounded-[2.5rem] overflow-hidden mb-8">
+        <div class="p-6 border-b border-white/10 flex items-center justify-between">
+          <span class="text-sm text-zinc-400" id="rid-counter">Показаны 5 из 12</span>
+          <a href="imet/rid_list.html" class="text-xs font-bold text-red-400 hover:text-red-300 transition uppercase">Все РИД →</a>
+        </div>
+        <div id="rid-list"><a href="imet/rid_0000.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="0">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💡</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">Способ винтовой прошивки в четырёхвалковом стане</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Изобретение относится к области обработки металлов давлением, а именно к к винто...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Изобретение</span>
+                <span class='text-[10px] text-zinc-600'>| винтовая прошивка, четырёхвалковый стан</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="imet/rid_0001.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="1">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💡</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">Способ изготовления пористых гранул из фосфатов кальция</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Изобретение относится к области керамических материалов для медицины: травматоло...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Изобретение</span>
+                <span class='text-[10px] text-zinc-600'>| ортопедия, травматология, пористые керамические гранулы</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="imet/rid_0002.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="2">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💡</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">Способ получения композитного нанопорошка ZrB2 - SiC</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Изобретение относится к области порошковой металлургии, в частности сверхвысокот...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Изобретение</span>
+                <span class='text-[10px] text-zinc-600'>| термическая плазма, композит, карбид кремния</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="imet/rid_0003.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="3">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💡</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">Способ получения покрытий на основе MAX-фазы состава Ti2AlN на керамике из нитрида титана</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Изобретение предназначено для машиностроения, микроэлектроники, металлообрабатыв...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Изобретение</span>
+                <span class='text-[10px] text-zinc-600'>| керамика, MAX-фазы, нитридизация</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="imet/rid_0004.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="4">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💡</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">Способ переработки клинкера вельцевания пылей электродуговой плавки стали</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Изобретение относится к переработке отхода производства цинка – клинкера вельцев...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Изобретение</span>
+                <span class='text-[10px] text-zinc-600'>| клинкер вельцевания, электродуговая плавка стали, восстановительная плавка</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="imet/rid_0005.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="5">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💡</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">Сплав на основе титана с модулем упругости менее 53 ГПа</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Изобретение относится к области металлургии, а именно к созданию сплава на основ...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Изобретение</span>
+                <span class='text-[10px] text-zinc-600'>| титан, модуль упругости, циркониевый сплав</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="imet/rid_0006.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="6">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💡</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">Способ получения ультравысокотемпературной керамики заданной формы на основе карбидов переходных мет</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Изобретение предназначено для металлообрабатывающей, электротехнической, аэрокос...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Изобретение</span>
+                <span class='text-[10px] text-zinc-600'>| керамика, карбиды, подгруппа титана</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="imet/rid_0007.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="7">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💡</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">Валковый узел четырёхвалкового стана винтовой прокатки</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Изобретение относится к обработке металлов давлением и касается валковых узлов с...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Изобретение</span>
+                <span class='text-[10px] text-zinc-600'>| винтовая прокатка, прокатный валок, четврехвалковый прокатный стан</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="imet/rid_0008.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="8">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💡</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">Способ изготовления сплава TiMoNbZrAl</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Изобретение относится к области металлургии, а именно способу получения слитков ...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Изобретение</span>
+                <span class='text-[10px] text-zinc-600'>| титановый сплав, титан</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="imet/rid_0009.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="9">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💡</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">Способ получения бесшовных труб из сплавов с памятью формы на основе никелида титана</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Изобретение относится к металлургическому производству, конкретно к получению бе...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Изобретение</span>
+                <span class='text-[10px] text-zinc-600'>| винтовая прокатка, бесшовная труба, сплавы с памятью формы</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="imet/rid_0010.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="10">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💡</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">Способ модификации сиалоновой керамики</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Изобретение относится к модификации сиалоновой керамики, которая может быть испо...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Изобретение</span>
+                <span class='text-[10px] text-zinc-600'>| лютеций, спекающие добавки, сиалоны</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="imet/rid_0011.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="11">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">📄</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">Способ переработки отходов металлического вольфрама</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Способ переработки отходов металлического вольфрама, включающих их электрохимиче...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Секрет производства (ноу хау)</span>
+                <span class='text-[10px] text-zinc-600'>| вольфрам, отходы, паравольфрамат аммония</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+</div>
+        <div class="p-4 text-center">
+          <button id="rid-more" onclick="showMore('rid-item', 'rid-more', 'rid-counter', 12)" class="px-6 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-widest hover:bg-white/10 transition text-zinc-400">
+            Показать ещё 5
+          </button>
+        </div>
+      </section>
+
+      <script>
+        // Generic show-more function
+        function showMore(itemClass, btnId, counterId, total, step) {
+          step = step || 5;
+          const items = document.querySelectorAll('.' + itemClass);
+          let shown = 0;
+          items.forEach(el => {
+            if (el.style.display !== 'none') shown++;
+          });
+          items.forEach(el => {
+            const idx = parseInt(el.dataset.idx);
+            if (idx < shown + step) {
+              el.style.display = '';
+            }
+          });
+          const totalShown = Math.min(shown + step, items.length);
+          document.getElementById(counterId).textContent = 'Показаны ' + totalShown + ' из ' + total;
+          if (totalShown >= items.length) {
+            document.getElementById(btnId).style.display = 'none';
+          }
+        }
+      </script>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-20 border-t border-white/10 mt-20 bg-black/40">
+      <div class="max-w-7xl mx-auto px-6 text-center">
+        <div class="text-3xl font-black italic uppercase mb-8">МОС<span class="mos-red">НАУКА</span></div>
+        <p class="text-zinc-500 text-sm max-w-2xl mx-auto italic mb-8">Единая экосистема технологического развития площадок и заказчиков в Москве.</p>
+        <div class="flex justify-center gap-8 mb-8">
+          <div class="text-[10px] text-zinc-600 uppercase font-bold">Источник: <span class="text-emerald-500">CoLab</span> — лаборатории, учёные</div>
+          <div class="text-[10px] text-zinc-600 uppercase font-bold">Источник: <span class="text-sky-500">ЕГИСУ</span> — проекты, РИД</div>
+        </div>
+        <div class="text-white/20 text-[10px] uppercase font-bold tracking-[0.5em]">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ ОБЪЕКТА</div>
+      </div>
+    </footer>
+
+    <!-- Scroll to top button -->
+    <button onclick="window.scrollTo({top:0,behavior:'smooth'})" id="scroll-top" class="fixed bottom-8 right-8 w-12 h-12 rounded-full bg-red-500/80 text-white flex items-center justify-center shadow-lg hover:bg-red-500 transition z-50" style="display:none" title="Наверх">
+      <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg>
+    </button>
+
+    <!-- Request Modal -->
+    <div id="requestModal" style="position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem">
+      <div style="background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative">
+        <button onclick="closeModal()" style="position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer">&times;</button>
+        <div id="modalForm">
+          <h2 class="text-xl font-black mb-1">📨 Направить запрос</h2>
+          <div id="modalContext" class="text-xs text-zinc-500 mb-6">через платформу МОСНАУКА</div>
+          <label class="block text-[10px] uppercase font-black text-zinc-500 mb-1 tracking-widest">Ваше ФИО *</label>
+          <input type="text" id="reqName" placeholder="Иванов Иван Иванович" class="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-sm mb-3" style="color:white">
+          <label class="block text-[10px] uppercase font-black text-zinc-500 mb-1 tracking-widest">Организация</label>
+          <input type="text" id="reqOrg" placeholder="ООО «Компания»" class="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-sm mb-3" style="color:white">
+          <label class="block text-[10px] uppercase font-black text-zinc-500 mb-1 tracking-widest">Email *</label>
+          <input type="email" id="reqEmail" placeholder="email@example.com" class="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-sm mb-3" style="color:white">
+          <label class="block text-[10px] uppercase font-black text-zinc-500 mb-1 tracking-widest">Тип запроса</label>
+          <select id="reqType" class="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-sm mb-3" style="color:white;appearance:none">
+            <option>Запрос на НИОКР</option>
+            <option>Консультация</option>
+            <option>Сотрудничество / Партнёрство</option>
+            <option>Использование оборудования</option>
+            <option>Другое</option>
+          </select>
+          <label class="block text-[10px] uppercase font-black text-zinc-500 mb-1 tracking-widest">Сообщение *</label>
+          <textarea id="reqMsg" placeholder="Опишите ваш запрос..." class="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-sm mb-4" style="color:white;min-height:5rem;resize:vertical"></textarea>
+          <button onclick="submitRequest()" class="w-full py-3 rounded-xl bg-red-500 text-white text-[11px] font-black uppercase tracking-widest hover:bg-red-600 transition">Отправить запрос</button>
+        </div>
+        <div id="modalSuccess" style="display:none;text-align:center;padding:2rem 0">
+          <div style="font-size:3rem;margin-bottom:1rem">✅</div>
+          <h3 class="text-lg font-black mb-2">Запрос отправлен!</h3>
+          <p class="text-sm text-zinc-400">Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+          <button onclick="closeModal()" class="mt-6 w-full py-3 rounded-xl bg-white/5 border border-white/10 text-sm font-bold text-zinc-400 hover:bg-white/10 transition">Закрыть</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      window.addEventListener('scroll', function() {
+        document.getElementById('scroll-top').style.display = window.scrollY > 400 ? 'flex' : 'none';
+      });
+      function openRequestModal(context) {
+        document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+        document.getElementById('modalForm').style.display = '';
+        document.getElementById('modalSuccess').style.display = 'none';
+        document.getElementById('requestModal').style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      }
+      function closeModal() {
+        document.getElementById('requestModal').style.display = 'none';
+        document.body.style.overflow = '';
+      }
+      function submitRequest() {
+        var n = document.getElementById('reqName').value.trim();
+        var e = document.getElementById('reqEmail').value.trim();
+        var m = document.getElementById('reqMsg').value.trim();
+        if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+        document.getElementById('modalForm').style.display = 'none';
+        document.getElementById('modalSuccess').style.display = '';
+      }
+      document.getElementById('requestModal').addEventListener('click', function(e) {
+        if (e.target === this) closeModal();
+      });
+    </script>
+  </div>
+</body>
+</html>

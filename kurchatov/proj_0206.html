@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | НИЦ "Курчатовский институт"</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-kurchatov.html">НИЦ &quot;Курчатовский институт&quot;</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">ПОЛИМЕРНО-КЕРАМИЧЕСКИЕ МАТЕРИАЛЫ</span> <span class="tag">АДДИТИВНЫЕ ТЕХНОЛОГИИ</span> <span class="tag">МЕТОД ПОСЛОЙНОГО НАПЛАВЛЕНИЯ</span> <span class="tag">КЕРАМИКА</span> <span class="tag">ТЕРМОЭЛЕКТРИЧЕСКИЕ МАТЕРИАЛЫ</span> <span class="tag">ПРИБЛИЖЕНИЕ ФУНКЦИОНАЛА ПЛОТНОСТИ</span> <span class="tag">ПОЛИМЕРНЫЕ НАНОКОМПОЗИТЫ</span> <span class="tag">ПОЛИ-ПАРА-КСИЛИЛЕН</span> <span class="tag">ГРАФЕН</span> <span class="tag">ЭЛЕКТРОРЕОЛОГИЧЕСКИЕ ЖИДКОСТИ</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Основные процессы переработки полимеров и полуфабрикатов</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Неорганические полимерные соединения</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Физика наноструктур. Низкоразмерные структуры. Мезоскопические структуры</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Структура твердых тел</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Жидкости полимерные и биополимерные</span></div>
+          <h1 style="font-size:1.5rem">Фундаментальные исследования и разработки в области создания новых материалов, включая электронную компонентную базу, и развития аддитивных технологий подтема: Фундаментальные исследования, направленные на создание авиационных материалов тематика исследований: РАЗРАБОТКА СОСТАВОВ ПОЛИМЕРНО-КЕРАМИЧЕСКИХ СМЕСЕЙ С ВЫСОКИМ СОДЕРЖАНИЕМ НАПОЛНИТЕЛЯ, ПРИГОДНЫХ ДЛЯ ИЗГОТОВЛЕНИЯ ФИЛАМЕНТОВ ДЛЯ 3D-ПЕЧАТИ (промежуточный, этап 2024 г.)</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">132,896 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225021209862-3</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2024-01-01 — 2024-12-31</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№2024</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">13</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">Правительство России</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>Правительство Российской Федерации</div>
+                </div><div class="metric-box" style="text-align:left">
+                  <div class="label">Исполнитель</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">НИЦ &quot;Курчатовский институт&quot;</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>Исследования, направленные на создание авиационных материалов. Объектом настоящей работы является технология получения составов полимерно-керамических смесей с высоким содержанием наполнителя, пригодных для изготовления филаментов для 3D-печати. Цель работы – изучение тепловых характеристик прекерамических смесей и керамических изделий и разработка методики нанесения кремнийорганической смолы на углеродное волокно для дальнейшего создания композиционных керамических материалов. Работа проводилась путем комплексного исследования свойств материалов и изделий, а также оптимизации процессов, связанных с обработкой углеродного волокна для создания керамических композиционных материалов, с выдачей рекомендаций по построению 3D моделей для печати керамических изделий методом аддитивных технологий. Результатом работ стала методика нанесения кремнийорганической смолы на углеродное волокно, наработан экспериментальный образец углеродного волокна с функционализированной поверхностью. Разработаны рекомендации по построению моделей для 3D-печати изделий из прекерамических материалов. 
+Исследования, направленные на создание материалов для термоэлектрики. Объекты исследования - численно найденные термоэлектрические материалы с заданным ZT. Целью работ - создание методики прогнозных расчётов высокоэффективных среднетемпературных материалов и обоснование перспективных составов эффективных термоэлектрических материалов.
+Основными задачами являются разработка методики прогнозных расчетов термоэлектрической эффективности материалов и проведение расчетных исследований с использованием разработанной методики. В результате исследования разработана методика прогнозных расчётов высокоэффективных материалов с использование кодов VASP, BoltzTrap и Amset. Проведены поисковые расчётные исследования в рамках разработанной методики для прогнозирования термоэлектрических материалов с заданным ZT. На основе кристаллов Mg3Sb2 и SnSe рассмотрены материалы с различным уровнем легирования. Показано, что на основе этих материалов можно добиться повышения добротности до 1.5 - 2. В частности, легирование Mg3Sb2 висмутом и SnSe натрием или висмутом позволяет существенно увеличить добротность. Численно показано, что при приближении к такой высокой добротности моделирование становится крайне чувствительным к изменениям параметров системы.
+Исследования, направленные на создание компонентной базы. Объекты исследования - материалы на основе поли-п-ксилилена (ППК), и наночастиц Ag, электрореологические жидкости, наполненные частицами графен/хитозан, композиционные материалы (ПКМ) на основе ПТФЭ-матрицы и квазикристаллического наполнителя, мемристивные структуры на основе слоев ППК и полианилина, кроссбар-матрицы на основе парилена с наночастицами МоО3, магнитные нанокомпозитные (НК) структуры (CoFeB)x(LiNbO3)100−x/Si, субмонослойные магнитные германиды стехиометрии EuGe2, интегрированные с германием SiOx/subML-EuGe2/Ge. Цель работы - разработка методик синтеза и исследование функциональных свойств материалов, необходимых для создания на их основе элементов наноэлектроники, спинтроники, нейроморфных и других функциональных систем. В результате исследований синтезированы образцы НК на основе поли-хлор-п-ксилилена, исследована кинетика полимеризации. Разработаны электрореологические жидкости, наполненные композитом графена модифицированного хитозаном. Получены ПКМ на основе ПТФЭ с силанизированным квазикристалличским наполнителем Al-Cu-Fe. Изучены возможности управления характеристиками органических мемристорных устройств на основе полианилина. Изучены эффекты резистивного переключения (РП) в нанокомпозитных мемристорах на основе парилена с наночастицами МоО3. Исследованы магнитотранспортных свойств нанокомпозитных структур (CoFeB)x(LiNbO3)100−x/Si в окрестности порога перколяции. Созданы основы технологии синтеза эпитаксиальных субмонослойных магнитных гетероструктур SiOx/subML-EuGe2/Ge.</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (78)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Юкляевских Георгий Александрович</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Ерохин Виктор Васильевич</strong> <span style="color:#71717a;font-size:0.8rem">Доктор физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Инюшкин Александр Васильевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Истомина Алина Павловна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Осипов Василий Николаевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат химических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Токмачёв Андрей Михайлович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Калинин Кирилл Тимурович</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Ковалева Виктория Витальевна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Егоров Антон Сергеевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат химических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Кузнецов Никита Михайлович</strong> <span style="color:#71717a;font-size:0.8rem">Доктор физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Малахов Сергей Николаевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат химических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Малахова Юлия Николаевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат химических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Несмелов Александр Александрович</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">ОВЕШНИКОВ ЛЕОНИД НИКОЛАЕВИЧ</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Серенко Мария Вячеславовна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li></ul>
+              <p style='color:#52525b;font-size:0.8rem;margin-top:0.5rem'>...и ещё 63</p>
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | МИСиС</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-misis.html">МИСиС</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">Акватермолиз</span> <span class="tag">Растворимость</span> <span class="tag">Пропан-бутановая смесь</span> <span class="tag">Рециклинг</span> <span class="tag">Полимер</span> <span class="tag">Сверхкритический флюид</span> <span class="tag">Аэрогель</span> <span class="tag">Экстракция</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Химическая термодинамика. Термохимия. Равновесия. Физико-химический анализ, фазовые переходы</span></div>
+          <h1 style="font-size:1.5rem">Сверхкритические флюидные технологии в переработке полимеров (промежуточный, 2 этап)</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">12,069 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225012803016-8</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2024-01-01 — 2024-12-31</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№2</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">11</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">МИНОБРНАУКИ РОССИИ</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>МИНИСТЕРСТВО НАУКИ И ВЫСШЕГО ОБРАЗОВАНИЯ РОССИЙСКОЙ ФЕДЕРАЦИИ</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>В ходе выполнения НИР получены следующие основные научные результаты:
+1. Проведены исследования по импрегнации лидокаина в образцы синтетических матриксов в среде сверхкритического СО2. Для увеличения пористости полимеров проводилась первичная обработка при постоянной температуре 90 °С, давлении 30 МПа, времени статической обработки 150 минут. В работе также были проведены экспериментальные исследования по созданию полимерных имплантатов, состоящих из PLA и ГАП, с последующей их пропиткой лидокаином. Серия экспериментов, проведённых ранее, позволила определить наиболее оптимальные параметры обработки для получения пористых полимерных имплантов. Первоначальная обработка по получению пористости проводилась при постоянной температуре 90 °С, давлении 30 МПа, времени статической обработки 150 минут. Гранулы PLA помещали в формы, с последующим их нагревом до температуры плавления 180-185°С в электрической печи. Для дальнейшего исследования был отобран образец с содержанием ГАП 30 % масс., так как при таком соотношении будет наблюдаться максимальная совместимость организма человека и полимерного имплантата.
+2. Разработана методика и проведены исследования по очистке нефтеполимерной смолы пиропласта в среде сверхкритического пропан/бутана. Эксперименты проводились при давлениях до 30 МПа, и температурах до 170 С. Исследованы термодинамические основы данного процесса. Установили, что однофазное сверхкритическое флюидное состояние для системы «толуол + пропан/бутан», при Т = 403 К, имеет место при давлении примерно выше 5,1 МПа, при Т = 423 К выше 5,8 МПа и при Т = 443 К выше 6,4 МПа. Определены физико-механические показатели полученных образцов полипропилена. По итогам выполненных работ можно сказать, что в результате очистки исходной нефтеполимерной смолы сверхкритическими флюдами получается смола, обладающая хорошими свойствами, что позволяет ее использовать во многих областях промышленности. Дополнительно необходимо отметить тот факт, что кроме смолы мы получаем еще один достаточно ценный продукт: вещество по свойствам похожее на синтетическую олифу, которая очень широко применяется в лакокрасочной промышленности. 
+3. Суб- и сверхкритические жидкости, такие как вода и спирт, являются отличной реакционной средой для деполимеризации или разложения пластмасс. При использовании суб- и сверхкритических флюидов разложение полимеров происходит с высокой скоростью и селективностью.
+Проведены экспериментальные исследование влияния температуры и плотности среды в окрестности критической точки и сверхкритической области на состав газовых, жидких и твердых продуктов, полученных в процессе акватермолиза смесей полимеров в среде суб- и сверхкритической воды. А также экспериментальные исследования влияния времени переработки на состав газовых, жидких и твердых продуктов, полученных в процессе акватермолиза смесей полимеров в среде суб- и сверхкритической воды. 
+Результаты по переработке смеси полимеров полистирол общего назначения/полипропилен (ПСОН/ПП) при температуре Т=425С показывают, что смесь полимеров полностью переходит в жидкую фазу, и продуктами акватермолиза с максимальным содержанием являются Toluene (толуол) и Ethylbenzene (этилбензол). Выход этих продуктов составляет 19,53 % и 22,08 % от всего выхода продуктов акватермолиза. Изменение соотношения смеси полимеров в сторону ПСОН в процессе акватермолиза приводит к уменьшению образования толуола (до 17,087%), а этилбензол, наоборот, образуется больше (до 23,653%). При этом также увеличивается образование Benzene, (1-methylethyl)- (кумол) до 6,3316% и Naphthalene, 2-phenyl- (2 фенил нафталин) до 10,034%. Результаты переработки смеси полимеров полиэтилентерефталата/полиэтилена низкого давления (ПЭТ/ПНД) показывают, что продуктами акватермолиза являются смесь твердых частиц черного цвета (предположительно продуктов акватермолиза ПНД) и твердых, мелких частиц светлого цвета (предположительно продуктов акватермолиза ПЭТ), а также вода. Как видно из хроматограмм продуктов акватермолиза, в соотношении ПЭТ/ПНД-75/25  наибольшую высоту и площадь пиков также имеют углеводороды алканового ряда, в частности Декан и Козан, и соответствующие их изомеры. Отличие в том, что при данном соотношении наибольшая площадь составляет у Docosane со значением 70.125 мВ*с. А при соотношении ПЭТ/ПНД-50/50 площадь пика у Docosane составляет значение 129.854 мВ*с, а наивысшая площадь пика составляет у Hexadecane с значением 165.878 мВ*с.</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (25)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Сабирзянов Айдар Назимович</strong> <span style="color:#71717a;font-size:0.8rem">Доктор технических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Хасанов Азат Ильдарович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат технических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Габитов Ильгиз Радифович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат технических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Габитова Асия Радифовна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат технических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Хайрутдинов Венер Фаилевич</strong> <span style="color:#71717a;font-size:0.8rem">Доктор технических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Растегаев Егор Константинович</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Клинов Александр Вячеславович</strong> <span style="color:#71717a;font-size:0.8rem">Доктор технических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Гильмутдинов Ильфар Маликович</strong> <span style="color:#71717a;font-size:0.8rem">Доктор технических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Абдулагатов Ильмутдин Магомедович</strong> <span style="color:#71717a;font-size:0.8rem">Доктор технических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Ахметзянов Талгат Рафинатович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат технических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Анашкин Иван Петрович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат технических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Саяхов Руслан Ильмирович</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Аетов Алмаз Уралович</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Хабриев Ильнар Шамилевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат технических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Сабирова Людмила Юрьевна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li></ul>
+              <p style='color:#52525b;font-size:0.8rem;margin-top:0.5rem'>...и ещё 10</p>
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | МГУ им. М.В. Ломоносова</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-mgu.html">МГУ им. М.В. Ломоносова</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">продуктивность</span> <span class="tag">онтогенез</span> <span class="tag">биология развития растений</span> <span class="tag">апикальные меристемы</span> <span class="tag">морфогенез</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Рост и развитие растений</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Культура тканей и органов растений</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Организм и среда</span></div>
+          <h1 style="font-size:1.5rem">Изучение закономерностей морфогенеза и формирования элементов продуктивности под влиянием факторов внешней среды у высших растений</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">13,961 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225012402586-1</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2024-01-01 — 2024-12-31</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№4</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">17</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">Правительство России</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>Правительство Российской Федерации</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>Работа проводилась с целью изучения морфогенетических процессов у ряда дикорастущих, интродуцируемых и культивируемых видов растений в природе, в полевых и вегетационных опытах и в культуре тканей под влиянием экологических, ценотических, цитогистологических, агротехнических факторов, селекционного процесса, а также условий культивирования in vitro. Для решения поставленной задачи использовался разработанный в лаборатории биологии развития растений оригинальный метод морфофизиологического анализа (биологического контроля) роста и развития растений in vivo и in vitro. Также применялись современные методы экологического мониторинга за численностью и пространственным передвижением видов. Кроме того, использовался комплекс цитогистологических и молекулярно-генетических методов анализа объектов, а также биотехнологических приемов: выделение ДНК и секвенирование, в том числе высокопроизводительное, образцов растительных ДНК, первичная оценка их полиморфизма; использование молекулярных маркеров на основе повторяющихся коротких последовательностей и вариабельности интрон-экзонных участков геномов; выявление квазивидов и др.
+Получены новые данные о таксономическом и морфологическом разнообразии рода Aspidistra (Asparagaceae), для Aspidistra erecta (считавшегося эндемиком китайской провинции Гуанси) приведены новые места произрастания в двух провинциях Въетнама. Описано два новых для науки вида: A. quanii и A. tripartita. Сделаны обобщения о разнообразии морфологической группы видов Aspidistra, характеризующейся прямостоячими побегами и более или менее шаровидным цветком в виде камеры с узким входом, для Aspidistra globosa впервые описано наличие плагиотропных побегов. Обобщены представления о видовом разнообразии одной из групп родства микогетеротрофного рода Thismia (Thismiaceae). Thismia sect. Labiothismia формально нами восстановлена и представлен чеклист видов указанной секции в новом объеме. Для T. huangii обозначен лектотип. Описан новый для науки вид Thismia papillata. Дополнительно выявлены пробелы в понимании взаимодействия между внутренними листочками околоцветника и определении срастаний тычинок у Thismia. 
+Продолжено изучение таксономического разнообразия и географического распространение видов семейства Orchidaceae во Вьетнаме. Опубликованы новые сведения о 28-ми вьетнамских видов семейства, включая новые флористические находки и новые для науки виды. Для некоторых из этих видов уточнена типификация, что в ряде случаев потребовало выбора лектотипов. Обновлены представления о синонимике изученных видов. Получены новые молекулярно-филогенетические и геномные данные для рода Vietorchis (сем. Orchidaceae), установлена полная последовательность пластома одного из видов этого рода V. furcata. Опубликованы новые данные о разнообразии и таксономии азиатских представителей порядка Lamiales. Описаны новые для науки виды Cyrtandromoea sudhansui (сем. Phrymaceae), Petrocosmea albocaerulea (сем. Gesneriaceae)  
+Исследованы морфологические особенности злаков и осок на альпийских лугах Северо-Западного Кавказа, выявлены особенности конкуренции с другими видами на петроовсяницевых лугах, и влияние абиотических условий на них. Выявлена сопряженная встречаемость видов на альпийских лишайниковых пустошах. В Ороловской и Смоленской областях обследованы пруды и озера для уточнения видовой принадлежности вида рода Wolffia Horkel et Schleid. и и для поиска видов рода Elatine. Этикетирован и передан на хранение гербарий, собранный Кольцовым и Щербаковым в 2024 в Ярославской области.
+В результате продолжающихся исследований в рамках фитониринга пионов было установлено, что экстракт из корней межсекционного гибрида пиона Bartzella обладает антикоагулянтным и фибриндеполимеризационным эффектами, при действии на предобразованный нестабилизированный фибрин вызывает растворение свежеобразованных фибриновых сгустков. Описаны механизмы активирующего действия экстракта на фибринолиз плазмы вследствие ингибирования тромбина и полимеризации фибрина. Наличие гепариноподобного компонента, представляющего собой низкомолекулярный гепарин (НМГ), было выявлено в корнях пиона узколистного (Раeоnia tenuifolia L.)
+Изучена регенерационная способность 11 видов яблонь из коллекции Ботанического сада МГУ, отработаны протоколы микроклонального размножения, приемы адаптации полученных in vitro растений-регенерантов к условиям in vivo, отмечены индивидуальные реакции различных генотипов. Наиболее полная реализация органогенного потенциала первичных эксплантов, отмечена у M. сhamardabanica, M. transitoria, M. fusca, M. sikkimensis и M. sylvestris. Для двух представителей сем Elaeagnaceae (Лоховые): E. multiflora THUNB. и E. orientalis L. описана методика получения стерильной культуры, выявлено оптимальное время взятия эксплантов с материнских растений и предложен метод предварительной стерилизации. Была проверена возможность использования ядерных и хлоропластных молекулярных маркеров для идентификации и подтверждения идентичности генотипов гибридных форм рододендронов при культивировании их in vivo и in vitro, Собраны и заложены в гербарий образцы гибридной формы рододендрона из «Верескового сада» ГБС РАН.
+На основании проведенного морфолого-анатомического анализа были выявлены особенности ризогенеза сирени обыкновенной сортов «Великая Победа» и «П.П. Кончаловский», которые возникают под влиянием штаммов эндофитных бактерий Sphingomonas, Paenibacillus и Methylobacterium на средах с пониженным содержанием аммонийного азота в присутствии триптофана.
+Проведен морфолого-анатомический анализ и анализ генетического разнообразия образцов Allium atrosanguineum Shrenk из трех супопуляций, произрастающих в условиях высокогорий Тянь-Шаня, обобщены полученные результаты
+Продолжилась редподготовка с типографией МГУ рукописи книги «Биология развития растений в Московском университете» серия: История Московского университета, посвященной 270-летию Московского университета</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (7)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Криницына Анастасия Александровна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Туркова Елена Валентиновна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Нуралиев Максим Сергеевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Чурикова Ольга Альбертовна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Вислобоков Николай Александрович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Любезнова Надежда Вячеславовна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Мурашев Владимир Владимирович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li></ul>
+              
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

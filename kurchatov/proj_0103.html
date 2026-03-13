@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | НИЦ "Курчатовский институт"</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-kurchatov.html">НИЦ &quot;Курчатовский институт&quot;</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">двумерный электронный газ</span> <span class="tag">гетероструктуры AlGaN/AlN/GaN</span> <span class="tag">нитридные транзисторы с высокой подвижностью электронов</span> <span class="tag">спин-орбитальная связь</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Физика наноструктур. Низкоразмерные структуры. Мезоскопические структуры</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Электрические и магнитные измерения в физическом эксперименте</span></div>
+          <h1 style="font-size:1.5rem">Физические свойства двумерного электронного газа гетероструктур GaN/AlGaN на подложках кремния (промежуточный, этап 2023 г.)</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">1,500 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225061016534-7</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2023-01-18 — 2023-12-15</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№1</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">РНФ</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>Российский научный фонд</div>
+                </div><div class="metric-box" style="text-align:left">
+                  <div class="label">Исполнитель</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">НИЦ &quot;Курчатовский институт&quot;</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>Проект нацелен на разработку методов улучшения рабочих характеристик и расширения функциональности конечных устройств нитридной элементной базы.
+Ниже описаны результаты, полученные при достижении сформулированной цели:
+1. Проведены экспериментальные исследования HEMT структур Si/GaN/AlN/GaxAl1-xN на подложке кремния, установлены их транспортные свойства в зависимости от концентрации носителей заряда и толщины барьерного слоя Al в диапазоне температур от 2К до 300К и в магнитных полях до 14Т, получены зависимости магнетосопротивления и эффекта Холла в системе от температуры и напряженности внешнего магнитного поля. Показано, что а) холловское сопротивление и магнетосопротивление 2DEG (Rxx) демонстрируют осцилляции Шубникова-де-Гааза; б) Rxx зависит от направления протекания тока и имеет вид суперпозиции осциллирущих вкладов, амплитуды и фазы которых также зависят от направления протекания тока.
+2. Проведены DFT-расчеты электронных состояний 2DEG в нитридных гетеростуктурах на кремнии с учетом спин-орбитального взаимодействия при варьировании геометрии системы, проанализированы физические следствия понижения объемной С46v симметрии системы до C3v на интерфейсе и установлен физический механизм гексагонального искажения изоэнергетических поверхностей электронного спектра 2DEG; учет кулоновского взаимодействия электронов позволяет получить хорошее соответствие результатов расчета и данных ARPES.
+3. На основе анализа результатов магнитотранспортных измерений в геометрии холловского креста и методом Ван Дер Пау в диапазоне температур от 2К до 300К и в магнитных полях до 14Т, а также данных расчетов из первых принципов методом DFT получено убедительное экспериментальное подтверждение того факта, что наличие  потенциала конфайнмента понижает симметрию 2DEG от симметрии несимморфной пространственной группы C46v в объеме GaN до симметрии тригональной точечной группы C3v и дали его теоретическую интерпретацию в терминах физической модели гексагонального искажения электронного спектра 2DEG.
+4. На основе кинетического уравнения Больцмана для одноэлектронной матрицы плотности (уравнения Силина), полученного при помощи формализма Келдышевской теории поля, построена кинетическая теория процессов переноса заряда в двумерном электронном газе нитридных транзисторов с высокой подвижностью электронов с учетом спин-орбитальной связи и геометрических свойств блоховских состояний, рассчитана проводимость двумерного электронного газа в зависимости от температуры системы и напряженности внешнего магнитного поля. В рамках этого подхода показано, что в 2DEG нитридных HEMT отсутствует внутренний аномальный эффект Холла и рассчитана поправка к коэффициенту Холла, обусловленная наличием у электронов 2DEG орбитального магнитного момента.
+5. Исследованы квазипериодические особенности зависимости Rxx(B), обнаруженные нами как в области слабых магнитных полей и сверхнизких температур, так и наблюдаемые в высоких до 14Т магнитных полях. Проведены гальваномагнитные измерения нитридных транзисторов с высокой подвижностью электронов в интервале температур от 2 К до 300 K в магнитных полях до 14 Т на образцах с разной концентрацией носителей и различной пространственной и атомной структурой, определена концентрация и подвижность носителей заряда в 2DEG. Получены экспериментальные данные по температурной зависимости компонент тензора магнетосопротивления 2DEG нитридных НЕМТ, по этим данным и по данным ARPES определены материальные константы физической модели гексагонального искажения электронного спектра 2DEG. На основе полученных экспериментальных данных проведен анализ применимости физической модели гексагонального искажения электронного спектра 2DEG для описания процессов электронного переноса в 2DEG нитридных транзисторов с высокой подвижностью электронов; а также получен ответ на вопрос о наличии новых функциональных свойств исследуемой системы и их возможного применения.
+По результатам выполнения первого этапа проекта направлена 1 статья в журнал«Письма в ЖЭТФ»  Q1 из Белого списка</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (4)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Валеев Валерий Галимзянович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Чумаков Николай Константинович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Езубченко Иван Сергеевич</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Куликов Иван Валерьевич</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li></ul>
+              
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

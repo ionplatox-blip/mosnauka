@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | МГУ им. М.В. Ломоносова</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-mgu.html">МГУ им. М.В. Ломоносова</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">твердая фаза почв</span> <span class="tag">прогноз устойчивости почв</span> <span class="tag">конструирование почв</span> <span class="tag">микроструктура почв</span> <span class="tag">рентгеновская микротомография почв</span> <span class="tag">микробные сообщества</span> <span class="tag">мультимасштабное почвенно-ландшафтное картографирование</span> <span class="tag">гидрология почв</span> <span class="tag">структура почв</span> <span class="tag">инструментальные методы</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Физика почв</span></div>
+          <h1 style="font-size:1.5rem">Физические основы экологических функций почв: технологии мониторинга, прогноза и управления</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">24,992 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225012803042-7</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2024-01-01 — 2024-12-31</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№14</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">17</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">Правительство России</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>Правительство Российской Федерации</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>Общей целью НИР на весь период исследований является разработка теоретических и методологических основ количественного анализа и моделирования физических свойств и процессов в почвах, обеспечивающих выполнение жизненно-необходимых экологических функций и сервисов в природных и антропогенных условиях. Цель этапа 2024 г. заключается в методическом обеспечении и моделировании физических процессов для технологий оптимизации экологических функций почв и их мониторинга.
+Исследования проведены на почвенных объектах, представляющих территории РФ с различными биоклиматическими условиями, характером землепользования и антропогенным воздействием в Тверской, Московской, Кировской, Воронежской областях, Краснодарском и Алтайском краях, Ханты-Мансийском автономном округе, Минской области Республики Беларусь, Восточной Монголии и других регионах.
+Методология исследования, научные подходы и методы. 
+В НИР использовались следующие классические и современные, лабораторные и полевые методы:
+– определение плотности почвы буровым методом; гранулометрического состава почв седиментометрическими методами, методом лазерной ди-
+фракции на приборе SALD-2300 и на лазерном анализаторе размера частиц Mastersizer 3000E, Shimadzu (Япония); кислотности почв (рН), удельной электропроводности, минерализации и солености водной вытяжки измерителем комбинированным Seven Multi S-47k, Mettler-Toledo (Швейцария); основной гидрофизической характеристики (ОГХ) тензиостатическим методом; коэффициента фильтрации почв (Кф) методом Хануса и методом трубок с постоянным напором; плотности твердой фазы почв пикнометрическим методом; агрегатного состава почв методом сухого просеивания по Саввинову; водоустойчивости почвенных агрегатов методами мокрого просеивания и по Андрианову; механической устойчивости почвенных агрегатов методом конического пластометра Ребиндера; гигроскопической влажности почвы методами динамической десорбции паров воды в потоке обезвоженного газа-носителя с регистрацией выходных кривых катарометром (газовый хроматограф) или логгером DS1923 («гигрохрон») в комбинации с новым методом термодесорбции;
+– определение содержания органического углерода методом сжигания в потоке на экспресс анализаторе углерода АН–8012 и методом кулонометрического титрования в токе кислорода на экспресс анализаторе углерода АН-7525 М (Гомель, Беларусь); массовой доли нефтепродуктов в почвах с помощью концентратомера КН-2 (Сибэкоприбор, Россия); молекулярного состава и содержания алканов в почвах методом капиллярной газовой хроматографии на газовом хроматографе Кристалл 5000.1 (Хроматэк, Россия); летучих органических соединений в нативных образцах почвы методом парофазного анализа в сочетании с газовой хроматографией на хроматографе Кристалл-5000.1; общей численности гетеротрофных и нефтеокисляющих бактерий, актиномицетов и микромицетов в почвенных образцах общепринятыми в почвенной микробиологии методами;
+– измерение потоков CO2 статическим камерным методом при помощи инфракрасного газоанализатора Li-850 (Li-COR Biogeosciences, Lincoln, NE, USA); удельной поверхности почв методом низкотемпературной адсорбции азота на аналитическом комплексе определения текстурных характеристик дисперсных систем, состоящем из сорбтометров 3P Meso 222 и 3P Vapor 100 (3P Instrumental, Germany); устойчивости почвенных агрегатов методом прямого механического раздавливания агрегатов на приборе по типу пресса (модифицированная модель МП-2С) (Россия); режима почвенной влаги за определенный период времени по динамически измеренной полевой влажности почвы по датчикам с дистанционной передачей данных; влажности с помощью установленных TDR-датчиков со считывающим логгером и дистанционно передающим данные в “облачное” хранилище;
+– микроагрегатный анализ почвы методом лазерной дифракции на лазерном анализаторе размера частиц “Mastersizer3000E” (Malvern, UK);
+– исследование порового пространства почвенных монолитов методом компьютерной томографии; микростроения почв методом сканирующей
+электронной микроскопии (СЭМ) на микроскопе Quattro S (Thermo Scientific, США);
+– метод математического моделирования режима влажности почвы с разными входными данными и проверка модели на экспериментальных данных
+по полевой экспериментальной дистанционно измеряемой влажности;
+– метод ансамблевого моделирования поглощения метана автоморфными почвами и других парниковых газов на границе экосистема/атмосфера для их мониторинга;
+– применение методов анализа и синтеза результатов интеграции данных о почвах и ландшафтах, полученных ранее на основе системного подхода, современных теорий классификации и ГИС-технологий;
+– определение кадастровой стоимости земель сельскохозяйственного назначения в соответствии с Методическими рекомендациями по государственной кадастровой оценке.</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (13)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Ковалев Иван Васильевич</strong> <span style="color:#71717a;font-size:0.8rem">Доктор сельскохозяйственных наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Сапожников Петр Михайлович</strong> <span style="color:#71717a;font-size:0.8rem">Доктор сельскохозяйственных наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Шнырев Николай Андреевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Кокорева Анна Александровна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Тюгай Земфира</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Гасина Анастасия Игоревна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Ежелев Захар Сергеевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Дембовецкий Александр Владиславович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Садовникова Надежда Борисовна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Широян Мария Михайловна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Никифорова Александра Александровна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Глаголев Михаил Владимирович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Зубкова Татьяна Александровна</strong> <span style="color:#71717a;font-size:0.8rem">Доктор биологических наук</span></li></ul>
+              
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

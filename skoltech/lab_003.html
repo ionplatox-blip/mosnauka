@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Flowbat group | Сколтех</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-skoltech.html">Сколтех</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Flowbat group</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1rem"><span class="tag">Электродинамика</span> <span class="tag">Электрохимия</span> <span class="tag">Альтернативная энергетика</span></div>
+          <h1>Flowbat group</h1>
+          <p style="color:#a1a1aa;line-height:1.7;margin-top:1rem">We are the team of experts from different areas: physics, mathematics, electrochemistry, control theory, micro- and power-electronics who joined together to develop flexible tools for simulation and control of redox flow batteries. Our scope of expertise covers experimental and numerical study of redox flow batteries technologies on different levels, starting from small lab-scale prototypes going to industrial-scale systems with power of several kW. That allow us developing unique solutions for investigation of RFB systems as well as control their main parameters in order to ensure battery stable operation with high energy efficiency.</p>
+        </div>
+
+        <!-- CTA Block -->
+        <div style="background:linear-gradient(135deg,rgba(255,0,60,0.08),rgba(255,0,60,0.02));border:1px solid rgba(255,0,60,0.2);border-radius:1.5rem;padding:2rem;margin-bottom:2rem">
+          <div style="font-size:1rem;font-weight:800;margin-bottom:0.75rem">📨 Связаться с лабораторией</div>
+          
+          <div style="display:flex;flex-wrap:wrap;gap:0.75rem;margin-top:1rem">
+            <button onclick="openRequestModal('Запрос на НИОКР — Flowbat group')" style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.75rem 1.5rem;border-radius:1rem;background:#ff003c;color:white;font-size:0.75rem;font-weight:800;text-transform:uppercase;letter-spacing:0.05em;border:none;cursor:pointer">📋 Направить запрос на НИОКР</button>
+            <button onclick="openRequestModal('Запрос зав. лабораторией — Flowbat group')" style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.75rem 1.5rem;border-radius:1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:#a1a1aa;font-size:0.75rem;font-weight:800;text-transform:uppercase;cursor:pointer">✉ Написать зав. лабораторией</button>
+            <a href='https://colab.ws/labs/575' target='_blank' style='display:inline-flex;align-items:center;gap:0.5rem;padding:0.75rem 1.5rem;border-radius:1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:#a1a1aa;font-size:0.75rem;font-weight:800;text-transform:uppercase'>🔗 Профиль CoLab</a>
+          </div>
+        </div>
+
+        <div class="info-card">
+              <h2>🔬 Оборудование</h2>
+              <p>Камера климатическая LGC-5101 Потенциостат Biologic VMP 3 Проведение всего спектра электрохимических экспериментов, в том числе при отрицательных (до -40°С) температурах</p>
+            </div>
+        <div class="info-card">
+              <h2>🧪 Методы</h2>
+              <p>Спектроскопия электрохимического импеданса Математическое моделирование Гальваностатический заряд-разряд</p>
+            </div>
+        
+
+        <div class="section-header" style="margin-top:2.5rem">
+          <h2 class="section-title">👩‍🔬 Учёные (3)</h2>
+        </div>
+        <div class="cards-grid" style="grid-template-columns:repeat(auto-fill,minmax(300px,1fr))">
+          <a href="sci_013.html" class="preview-card">
+              <div class="avatar"><img src="https://colab.ws/storage/images/8GZGilni1HzSGmCONHm9q6rU0sgdSAYHcM5Z3heI.jpg" alt="Пугач Михаил Александрович" loading="lazy"></div>
+              <div style="min-width:0">
+                <h3>Пугач Михаил Александрович</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem">Заведующий лабораторией</div>
+                <div class="meta">Electrochemical energy storage, Возобновляемые источники энергии, Математическое моделирование</div>
+                <div class="meta" style="margin-top:0.25rem">📚 5 публ.</div>
+              </div>
+            </a>
+<a href="sci_014.html" class="preview-card">
+              <div class="avatar"><img src="https://colab.ws/storage/images/OGQgxCNysAUEeQEyXvgES8TQPZ2f9dOTXQXpLDil.jpg" alt="Никита Буряк" loading="lazy"></div>
+              <div style="min-width:0">
+                <h3>Никита Буряк</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem">Аспирант</div>
+                <div class="meta">Альтернативная энергетика, Зеленые технологии, Материаловедение</div>
+                <div class="meta" style="margin-top:0.25rem">📚 1 публ.</div>
+              </div>
+            </a>
+<a href="sci_015.html" class="preview-card">
+              <div class="avatar"><img src="https://colab.ws/storage/images/ZWcMbIFvk0TI97YDalJJW6J0BpGyit8OD2xgs7P6.jpg" alt="Илья Христофоров" loading="lazy"></div>
+              <div style="min-width:0">
+                <h3>Илья Христофоров</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem">Аспирант</div>
+                <div class="meta">Electrochemical energy storage, Вычислительная гидродинамика, Машинное обучение</div>
+                <div class="meta" style="margin-top:0.25rem">📚 1 публ.</div>
+              </div>
+            </a>
+
+        </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

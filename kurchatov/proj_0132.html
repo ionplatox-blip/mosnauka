@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | НИЦ "Курчатовский институт"</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-kurchatov.html">НИЦ &quot;Курчатовский институт&quot;</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">РАДИОФАРМАЦЕВТИЧЕСКИЕ ПРЕПАРАТЫ</span> <span class="tag">ЦИКЛОТРОННЫЕ РАДИОНУКЛИДЫ</span> <span class="tag">РЕАКТОРНЫЕ РАДИОНУКЛИДЫ</span> <span class="tag">ЭКСТРАКЦИОННАЯ ХРОМАТОГРАФИЯ</span> <span class="tag">БИОМОДЕЛИРОВАНИЕ</span> <span class="tag">ОПУХОЛИ</span> <span class="tag">ТЕРАНОСТИКА</span> <span class="tag">ЯДЕРНАЯ МЕДИЦИНА</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Био(нано) системы доставки лекарств. Терапевтические наночастицы</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Биомаркеры для диагностики. Мишени лекарственных средств</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Медицинская иммунология</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Биофармация</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Получение и использование радиофармацевтических препаратов</span></div>
+          <h1 style="font-size:1.5rem">Разработка отечественного инновационного тераностического препарата на основе изотопов тербия для проведения радиоиммунной терапии злокачественных новообразований различного гистологического типа</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">125,000 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225071017475-1</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2022-01-01 — 2022-12-31</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№2</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">1</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">МИНОБРНАУКИ РОССИИ</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>МИНИСТЕРСТВО НАУКИ И ВЫСШЕГО ОБРАЗОВАНИЯ РОССИЙСКОЙ ФЕДЕРАЦИИ</div>
+                </div><div class="metric-box" style="text-align:left">
+                  <div class="label">Исполнитель</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">НИЦ &quot;КУРЧАТОВСКИЙ ИНСТИТУТ&quot;-ПИЯФ</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>Ключевые слова: ЯДЕРНАЯ МЕДИЦИНА, ТЕРАНОСТИКА, ОПУХОЛИ, БИОМОДЕЛИРОВАНИЕ, ЭКСТРАКЦИОННАЯ ХРОМАТОГРАФИЯ, Отчет представляет собой результаты, полученные при выполнении исследовательской программы проекта в 2022 году (этап 2). В рамках работ по первому этапу исследования были поставлены следующие задачи:
+Получение, разработка методов выделения и очистки, организация опытного производства радионуклида йод-124 для создания новых радиофармпрепаратов;
+Обработка облученных мишеней. Наработка изотопов иода-124;
+Разработка уникальных моноклональных антител - носителей для радионуклидов, высокоселективных к элементам опухоль-ассоциированной стромы;
+Отработка аналитических и препаративных процедур для работы с исходными биомолекулами, включая in vitro систему тестирования биологической специфичности биомолекул;
+Выбор бифункциональных хелатирующих агентов в отношении хелатирующей группы;
+Синтез хелатирующего производного на основе белков-пептидной молекулы, выделение и очистка для дальнейшей характеризации;
+Определение степени модификации полученного производного (масс-спектрометрия);
+Проверка сохранности биологической специфичности полученного производного;
+Проверка способности полученного производного образовывать устойчивый комплекс с радионуклидом;
+Проверка сохранности биологической специфичности полученного радионуклидного комплекса;
+Проверка устойчивости полученного радионуклидного комплекса по отношению к трансхелатированию с биологическими (сывороточный альбумин, плазма крови) и химическими (оксалат, цитрат, ЭДТА, ДТПА) хелаторами, проверка радиохимической стабильности комплекса;
+Наработка радиофармацевтических препаратов;
+Разработка и валидация моделей (тест-систем) онкологических заболеваний, патогенез которых максимально приближен к проявлениям наиболее актуальных новообразований и экспрессирующих целевые молекулы-мишени;
+Проверка работоспособности полученного комплекса in vivo, исследование динамики распределения радионуклида у здоровых животных и на моделях целевой патологии;
+Скрининг биораспределения молекул-носителей разрабатываемого радиофармацевтического препарата и прототипов радиофармацевтического препарата и их специфической фармакологической активности / функциональной пригодности;
+Исследование фармакокинетики молекул-носителей разрабатываемого радиофармацевтического препарата и прототипов радиофармацевтического препарата;
+Исследование общетоксического действия и токсикокинетики молекул-носителей разрабатываемого радиофармацевтического препарата и прототипов радиофармацевтического препарата;
+Исследование специфических видов токсичности молекул-носителей разрабатываемого радиофармацевтического препарата и прототипов радиофармацевтического препарата;
+Исследование специфической фармакологической активности / функциональной пригодности молекул-носителей разрабатываемого радиофармацевтического препарата и прототипов радиофармацевтического препарата;
+Обобщение и анализ доклинических исследований молекул-носителей разрабатываемого радиофармацевтического препарата и прототипов радиофармацевтического препарата.
+Проведение курса лекций по методам ядерной медицины в рамках дополнительного образования;
+Модернизация существующей основный образовательной программы магистратуры по направлениям 16.04.01 Техническая физика, путем создания двух модулей: ядерная медицина, технологии создания радиофармпрепаратов с включением нового разработанного курса.
+Поставленные задачи выполнены в полном объеме.
+Были разработаны, валидированы и апробированы в ходе экспериментов in vitro и in vivo модели первичных злокачественных новообразований головного мозга, опухолей толстой кишки, крови и кроветворных органов.
+В результате проведенных цитологических исследований получены основные характеристики клеточных линий, имеющихся в банке клеточных культур ОМРБ ПИЯФ. В результате проведенных работ по апробации на линиях клеток спектра методов тестирования терапевтических молекул выбраны оптимальные клеточные модели солидных опухолей человека и лабораторных животных для оценки цитотоксического действия радиофармпрепаратов, разрабатываемых в проекте. Проведенное исследование показало принципиальную возможность использования систем in vitro для сравнительной оценки цитотоксического действия РФП в целях определения их эффективности и рационального выбора рабочих концентраций и режимов инкубации.
+В ходе реализации научной программы разработки и получения уникальных антител - транспортных молекул с таргетным механизмом действия для радионкулидов тербия был разработан дизайн и получены антигены CTLA4, Stabilin-1 и VEGFR-1.
+Созданы по 2 экспрессионных эукариотических вектора на каждое кАТ (всего 6 векторов), содержащие гены тяжелой и легкой цепей кАТ. Проведены работы по анализу качества полученных генетических конструкций. Конструкции наработаны в количестве не менее 1 мг каждого вектора для временной трансфекции и получения кАТ в культуре эукариотических клеток HEK293.
+Проведена трансфекция и препаративная наработка рекомбинантных кАТ в культуре клеточной линии HEK293 в бессывороточной среде. Проведено выделение и очистка кАТ в количестве не менее 2 мг каждого антитела. Проведен контроль качества полученных антител с помощью биохимических и иммунологических in vitro методов.
+В результате работы из антигенов CTLA-4, STABILIN-1 и VEGFR-1 были обнаружены гибридомные клоны, продуцирующие антитела только к пептидному антигену CTLA-4. Из отобранных клонов, продуцирующих антитела к CTLA-4 были получены стабильные клоны клеток гибридом, продуцирующих моноклональные антитела. Гибридомные клетки трех клонов, специфичных для пептидного антигена CTLA-4 человека использовались для получения моноклональных антител. Полученные антитела были охарактеризованы ИФА.
+Из антигенов CTLA-4, STABILIN-1 и VEGFR-1 были обнаружены гибридомные клоны, продуцирующие антитела ко всем целевым антигенам. Из отобранных клонов, продуцирующих антитела к CTLA-4,STABILIN-1 и VEGFR-1 были получены стабильные клоны клеток гибридом, продуцирующих моноклональные антитела. Гибридомные клетки 6 клонов, продуцирующие антитела специфичные к антигену VEGFR-1; 4 клонов, продуцирующие антитела специфичные к антигену CTLA4; 4 клонов, продуцирующие антитела специфичные к антигену STABILIN-1 использовали для получения моноклональных антител. Полученные антитела были охарактеризованы.
+С помощью метода биослойной интерферометрии (BLI).были изучены кинетические свойства связывания (константы ассоциации, диссоциации и аффинность) 14 антител, полученных в ходе выполнения Этапа 2 проекта (получение гибридом к рекомбинантным антигенам) с соответствующими человеческими антигенами (CTLA4, STABILIN1, VEGFR1).
+Дополнительно были изучены кинетические свойства связывания (константы ассоциации, диссоциации и аффинность) 8 антител, отобранных по результатам изучения кроссреактивности с мышиными антигенами с помощью ИФА, с мышиными антигенами (CTLA-4, STABILIN-1, VEGFR-1) и 3 контрольных антител (ипилимумаб, бексмарилимаб и икрукумаб) с мышиными и человеческими рекомбинантными антигенами.
+Используемые в эксперименте модели опухолевого роста – глиома крыс С6 и аденокарцинома толстой кишки мышей (АКАТОЛ) при эктопической субкутанной гетеротрансплантации животным обладают удовлетворительными темпами роста, достаточными для получения объективных данных по анализу влияния на развитие новообразований различных цитостатических препаратов и средств поддерживающей терапии. Развитие в организме мышей этих новообразований требует существенного ремоделирования перитуморальной области и опухолевой стромы, прежде всего за счет активации неоангиогенеза. Уровень экспрессии целевых антигенов (VEGFR1, CTLA-4 и Stabilin-1), против которых разрабатывается молекула-носитель радиофармацевтического препарата в тканях опухолей удовлетворительный.
+В рамках настоящего исследования была отработана процедура введения препарата 2фтор-2дезокси-глюкозы (18F-ФДГ) нормальным мышам и мышам с перевитой опухолью, с целью определения локализации опухолевых узлов в эксперименте in vivo. Была отработана процедура мечения антител радиоактивным изотопом 124I, проведено сравнение мечения радиоактивным изотопом 125I. Отработана процедура введения  антител 8D1, меченных радиоактивным изотопом 124I и 125I, мышам линии BALB/c с перевитой опухолью SP2.0 при внутривенном введении  и произведена оценка распределения антител в организме экспериментальных животных с целью исследовать биораспределение антител к неодетерминантам мембраносвязанного белка теплового шока 70.
+В рамках настоящего исследования была отработана процедура введения антител к VEGFR1 (7E7, 3B12), меченных радиоактивным изотопом 125I, мышам BALB/c Nude с перевитой опухолью C6 (крысиная глиома С6) и произведена оценка кинетических характеристик и биораспределения антител в организме экспериментальных животных в контрольных точках 3 часа и 24 часа.
+Результаты проведенного исследования указывают на отсутствие генотоксического действия разрабатываемого препарата «Моноклональное антитело анти-CTLA-4» в диапазоне тестируемых доз — 5 мг/кг и 50 мг/кг массы тела мышей.
+Продемонстрирован удовлетворительный профиль безопасности монотерапии глиомы С6 препаратом на основе моноклонального антитела к CTLA4 – не наблюдалось ускорения течения опухолевого процесса и/или развития системных токсических проявлений лечения. При этом эффективность монотерапии оказалась недостаточной. Прототип разрабатываемого таргетного радиофармацевтического препарата на основе моноклонального антитела против рецептора 1 типа сосудистого эндотелиального фактора —  антиVEGFR1 и радиоактивного изотопа тербий-161 обладает самостоятельной противоопухолевой фармакологической активностью в отношении первичного новообразований головного мозга крыс — глиома С6, экспрессирующего целевой рецептор-мишень VEGFR1.</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (93)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Никитина Анастасия Владимировна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Рыбакова Анна Владимировна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат ветеринарных наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Штам Татьяна Александровна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Садкова Марина Леонидовна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Путевич Елена Дмитриевна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Казенов Константин Борисович</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Алиев Рамиз Автандилович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат химических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Коневега Андрей Леонидович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Верлов Николай Александрович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Бурдаков Владимир Станиславович</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Ярошевич Татьяна Леонидовна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Гараева Луиза Абдул-Азизовна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Волницкий Андрей Васильевич</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Гарина Алина Витальевна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Трашков Александр Петрович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат медицинских наук</span></li></ul>
+              <p style='color:#52525b;font-size:0.8rem;margin-top:0.5rem'>...и ещё 78</p>
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

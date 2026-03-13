@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | ОИВТ РАН</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-oivt.html">ОИВТ РАН</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">оптическое выпрямление</span> <span class="tag">акустооптика</span> <span class="tag">абляция</span> <span class="tag">нанопленка</span> <span class="tag">терагерцевое излучение</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Нелинейные оптические свойства сред</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Воздействие лазерного излучения на вещество</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Физика тонких пленок. Поверхности и границы раздела</span></div>
+          <h1 style="font-size:1.5rem">Отчет о научно-исследовательской работе по теме «Экспериментальное исследование физических процессов и явлений, возникающих в тонких пленках металлов при воздействии субпикосекундных импульсов излучения в видимом, ближнем инфракрасном и терагерцевом спектральных диапазонах» (промежуточный, I этап) Соглашение № 24-19-00311 от 07 мая 2024 г.</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">7,000 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225021209808-1</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2024-05-07 — 2024-12-31</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№1</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">2</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">РНФ</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>Российский научный фонд</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>1. Для генерации импульсов ТГц излучения с высокой конверсионной эффективностью и сглаженным спектром при оптическом выпрямлении фемтосекундных лазерных импульсов с длиной волны излучения в ближней инфракрасной области спектра в нелинейных органических кристаллах был реализован метод, в котором в качестве нелинейного кристалла используется мозаичный комбинированный кристалл (МКК), состоящий из двух совмещенных фрагментов органических кристаллов ОН1 и DSTMS, так как спектры генерации ТГц излучения из кристаллов OH1 и DSTMS обладают хорошими взаимодополняющими характеристиками. Смешивание в фокальной плоскости импульсов, генерируемых этими кристаллами, способствует созданию ТГц источника со сглаженным спектром, в котором отсутствуют спектральные особенности, присущие отдельным кристаллам.
+2. Спектр генерации МКК демонстрирует сглаженную форму без ярко выраженных провалов в диапазоне частот 0.3–4.5 ТГц и максимумом спектральной интенсивности в области ~2 ТГц. Максимальная эффективность преобразования лазерного излучения в терагерцевое в МКК достигает ~2% при плотности энергии лазерной накачки 8–10 мДж/см^2 и выходит на насыщение при более высоких
+плотностях энергии. При этом энергия ТГц импульса увеличивается практически линейно в пределах всего диапазона плотностей энергии накачки, достигая максимального значения ~33 мкДж при накачке ~17 мДж/см^2. Пиковое значение напряженности электрического поля составляет величину ~13.5 МВ/см при фокусировке пучка диаметром ~43 мм. Профиль пространственного распределения в
+фокусе внеосевого параболического зеркала симметричен и хорошо аппроксимируется функцией Гаусса.
+3. На базе уникальной фемтосекундной хром-форстеритовой лазерной системы была спроектирована и реализована экспериментальная установка для импульсной ТГц-спектроскопии во временной области, предназначенная для измерения временных форм ТГц-импульсов, как отраженных от образца, так и прошедших сквозь него. В целях проверки работоспособности данной установки проведены испытания с
+использованием пластины монокристаллического кремния p-типа толщиной 455 мкм, концентрация основных носителей в котором составляла около 10^12 см^(-3). Показано, что показатели преломления кремния, измеренные как методом пропускания, так и методом отражения, соответствуют данным, представленным в литературе. Это убедительно доказывает правильность функционирования
+созданной экспериментальной схемы импульсной ТГц-спектроскопии и подтверждает ее пригодность для оценки оптических свойств материалов в ТГц-диапазоне.
+4. Проведена модернизация оптической экспериментальной схемы «возбуждение – зондирование», благодаря использованию методики балансного фотодетектирования измеряемого дифференциального коэффициента отражения (ΔR/R0) отношение сигнал – шум было увеличено более чем на порядок, что позволяет регистрировать динамику изменения коэффициента отражения с более высокой достоверностью и в более широком диапазоне плотностей энергии нагревающего импульса. Разработано ПО для автоматизации процесса сбора данных в экспериментальных исследованиях по схеме «возбуждение – зондирование». Выполнена настройка регенеративного усилителя фемтосекундного лазера для получения максимального пикосекундного контраста, во временном диапазоне от
+-6 до 6 пс отсутствуют пред- и постимпульсы. Исследованы режимы нагрева образцов при низкой частоте (&lt;= 500 Гц) следования нагревающих импульсов. Измеренные сигналы изменения отражения (ΔR/R0) при различных частотах следования в рассмотренном диапазоне флюенсов идентичны друг другу. Понижение частоты следования и флюенса ведет к увеличению среднеквадратичного отклонения регистрируемого сигнала.
+5. Измерения динамики коэффициента отражения (ΔR/R0) выполнены при нагреве и зондировании наноструктурированной пленки Ni толщиной ~70 нм на стекле с тыльной стороны (интерфейс стекло/Ni) в диапазоне поглощенных флюенсов 1.7–10.3 мДж/см^2. Обнаружен периодический затухающий акустооптический сигнал от акустического эха, распространяющегося в пленке Ni на частоте ~38 ГГц (со
+скоростью звука 5.6 км/с), и периодический синусоидальный неубывающий сигнал от бриллюэновского рассеяния в стеклянной подложке на частоте ~21 ГГц. Амплитуда бриллюэновских осцилляций растет линейно с увеличением флюенса нагревающих импульсов. Обнаружен акустооптический сигнал, который соответствует времени прихода акустического импульса на фронтальную сторону образца (интерфейс воздух/Ni), что может быть вызвано усилением и туннелированием электромагнитного поля на наноструктурах сквозь пленку Ni.
+6. С помощью «pump – probe» методики фемтосекундной интерференционной микроскопии исследованы особенности абляции нанопленок Ni и Ti, на стеклянных и Si подложках, при однократном воздействии фемтосекундных лазерных импульсов (ФЛИ). Для образцов Ni толщиной 125 нм (Ni_125 нм) на стеклянной и Si подложках, а также для Ni_30 нм на стекле возможно как частичное удаление
+пленки (мягкая абляция), так и полное в результате откола от подложки (жёсткая абляция) в зависимости от плотности энергии. Значение порога абляции для пленочных образцов примерно в 2 раза меньше значения порога по поглощенной плотности энергии для массива Ni. Причиной этого является интерференция волн разрежения, движущихся навстречу друг другу от свободной поверхности образца и от границы никеля с подложкой.
+7. Интерферометрическим методом измерена зависимость глубины кратеров на образце Ni_30 нм и Ni_125 нм на стеклянной и Si подложках от поглощенной плотности энергии. Образцы Ni_125 нм (на Si и стекле) демонстрируют монотонный рост глубины кратеров мягкой абляции с увеличением поглощенной энергии ФЛИ, что, вызвано увеличением глубины прогрева вещества. На образце Ni_30 нм на Si глубина кратера вблизи порога мягкой абляции составляет около 18 нм и мало меняется в широком диапазоне плотности энергии ФЛИ, вплоть до полного удаления пленки (порога жёсткой абляции).
+8. Исследование морфологии и рельефа облученной поверхности образца Ni с помощью сканирующего электронного и атомно-силового микроскопов показало наличие наноструктур сферической формы диаметром 20-40 нм, характерных для термомеханической абляции металлов. В то же время для плёнки из-за более низкого порога откольной абляции и, соответственно, меньшей глубины прогрева,
+рельеф наноструктурированной поверхности менее развит, по сравнению с массивом.</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (8)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Струлева Евгения Вячеславовна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Чефонов Олег Владимирович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Ашитков Сергей Игоревич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Ромашевский Сергей Андреевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат технических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Овчинников Михаил Андреевич</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Комаров Павел Сергеевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Ильина Инна Вячеславовна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Овчинников Андрей Владимирович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат физико-математических наук</span></li></ul>
+              
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

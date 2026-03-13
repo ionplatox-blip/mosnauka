@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | МГУ им. М.В. Ломоносова</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-mgu.html">МГУ им. М.В. Ломоносова</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">Геофизические методы исследования земной коры</span> <span class="tag">гравитацтонное аномальное поле</span> <span class="tag">магнитная съемка с использованием беспилотных летательных аппаратов</span> <span class="tag">магнитотеллурическое зондирование</span> <span class="tag">малоглубинная электроразведка</span> <span class="tag">Восточно-Европейская платформа</span> <span class="tag">тектоносфера мирового окенана</span> <span class="tag">аномалии электропроводности</span> <span class="tag">электротомография</span> <span class="tag">инженерная геофизика</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Разведочная геофизика</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Геотермика</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Внутреннее строение и происхождение Земли</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Строение земной коры и верхней мантии по геофизическим данным</span></div>
+          <h1 style="font-size:1.5rem">Геофизические исследования и разработка новых геофизических технологий при решении фундаментальных и прикладных задач геологии, геоэкологии и геоэнергетики</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">10,614 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225012803015-1</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2024-01-01 — 2024-12-31</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№4</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">10</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">Правительство России</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>Правительство Российской Федерации</div>
+                </div><div class="metric-box" style="text-align:left">
+                  <div class="label">Исполнитель</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">МОСКОВСКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ ИМЕНИ М.В.ЛОМОНОСОВА, МГУ ИМЕНИ М.В.ЛОМОНОСОВА, МОСКОВСКИЙ УНИВЕРСИТЕТ ИЛИ МГУ</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>РЕФЕРАТ
+В отчете приводятся результаты научно-исследовательских работ (НИР), выполненных на кафедре геофизических методов исследования земной коры геологического факультета МГУ имени М.В. Ломоносова в 2024 г. по теме: «Геофизические исследования и разработка новых геофизических технологий при решении фундаментальных и прикладных задач геологии, геоэкологии и геоэнергетики». Тема разрабатывается в рамках программы научных исследований факультета, утвержденной правительством РФ, по приоритетному направлению «Геологическое обеспечение минерально-сырьевой базы, безопасности хозяйственной деятельности и развития инфраструктуры России».
+Отчет состоит из пяти глав. В главах с 1 по 4 представлены результаты научных исследований лабораторий, которые составляют основную структуру кафедры: лаборатории гравиразведки, лаборатории магниторазведки, лаборатории электромагнитных методов и лаборатории малоглубинной электроразведки. В пятой главе рассмотрены некоторые аспекты создания петрофизических моделей при интерпретации данных геофизических исследований скважин (ГИС). Если говорить о научных направлениях, то исследования участников проекта связаны с совершенствованием методики наблюдений, обработки и интерпретации данных электроразведки, гравиразведки и магниторазведки, а также с комплексированием различных геолого-геофизических методов при работах, проводимых как на суше, так и на акваториях. Предложенные методики затем применяются для решения различных глубинных, структурных, нефтегазовых, инженерно-геологических, гидрогеологических, техногенных и экологических задач.
+Значительным событием этого года в деятельности сотрудников кафедры геофизических методов исследования земной коры геологического факультета МГУ стали организация и проведение съезда выпускников и юбилейной научной конференции, посвященной 80-летию создания кафедры геофизики и 50-летию образования кафедры сейсмометрии и геоакустики. В юбилейных мероприятиях приняли участие более четырехсот выпускников отделения геофизики. На научной конференции прозвучали доклады представителей профессорско-преподавательского состава отделения геофизики, руководителей различных организаций и ведомств (Роснедра и др.), а также выдающихся выпускников наших кафедр.
+В 2024 году разрабатывались следующие фундаментальные и прикладные геолого-геофизические проблемы:
+В лаборатории гравиразведки проводились исследования по двум основным направлениям:
+1.	Разработка и модернизация алгоритмов обработки и интерпретации потенциальных полей. Разработка перечня геологических и геофизических критериев и методов изучения нефтегазоносных бассейнов
+2.	Изучение глубинного строения отдельных акваторий и территорий земного шара с целью выяснения особенностей их геологического строения по комплексу геолого-геофизических данных с опорой на данные потенциальных полей.
+В лаборатории магниторазведки в 2024 году решались следующие задачи:
+1.	Интерпретация результатов морских геофизических исследований.
+2.	Развитие методики магнитной съемки в области наземной, морской и съемки на малых высотах с использованием беспилотных летательных аппаратов (БПЛА); разработка аэрогеофизических технологий.
+3.	Комплексная интерпретация геофизических данных в сложных геолого-геофизических условиях. Разработка технологии комплексного анализа гравитационных и магнитных полей для районирования территории северо-западной части Прикаспийской впадины с целью постановки сейсморазведочных работ.
+4.	Изучение влияния эндогенных и космических факторов на динамику напряженного состояния геологической среды.
+В 2024 г. научные исследования в лаборатории электромагнитных зондирований проводились по следующим направлениям:
+1.	Продолжение комплексных электроразведочных работ методами: аудиомагнитотеллурического зондирования (АМТЗ), зондирования становлением поля (ЗСБ) и вертикального электрического зондирования (ВЭЗ) по региональным профилям через р. Угра, которые направлены на поиск и изучение разновозрастных погребенных долин.
+2.	Проведение полевых работ методами МТЗ и глубинного магнитотеллурического зондирования (ГМТЗ) по профилю Псков - Старая Русса - Валдай для изучения глубинного строения Ильменский аномалии коровой электропроводности.
+3.	Разработка и опробование методики нового метода электроразведки – электромагнитной томографии.
+4.	Проведение исследований в рамках проекта НОШ (Научно-образовательных школ) МГУ № 23-Ш01-13 «Изучение внутреннего строения Луны и Марса геофизическими методами».
+5.	Выполнение исследований в рамках проекта РНФ № 24-27-00147 «Развитие методики коррекции и интерпретации магнитотеллурических данных».
+В лаборатории малоглубинной электроразведки в 2024 году выполнялись геофизические исследования по решению методических, геологических и археологических задач в Калужской области, Республике Крым, на Таманском полуострове и Якутии в рамках зимней, летней, осенней учебных и учебно-научных практик, а также опытно-методических работ, проведенных сотрудниками лаборатории в соответствии с планом НИР на 2024 г. Опубликовано 11 статей, сделано 38 докладов на конференциях, издано 1 учебное пособие «Электроразведка на морских и пресноводных акваториях», М., Полипресс, 2024. Отметим лишь некоторые направления:
+1.	Изучение геологического строения верхней части разреза Южного поля Александровского плато (Калужская область) по данным вертикального электрического зондирования (ВЭЗ) и построение сводного геоэлектрического разрез в районе урочища Аксиньино, полученного по данным электротомографии.
+2.	Дипольное электромагнитное профилирование в урочище Ильмезево. Создание общей карты кажущегося удельного сопротивления по всем участкам ДИП за последние 14 лет.
+3.	Геофизические исследования на Суковском плацдарме (около д. Суковка, Юхновский район) в 2024 г. Сравнение результатов электротомографии и георадиолокации.
+4.	Использование метода электротомографии для решения следующих задач: а) изучение грязевого вулкана (Азербайджан); б) исследования на гидротехническом сооружении в Якутии; в) изыскания под строительство моста через р. Катунь.
+Результаты научных исследований, проводимых сотрудниками кафедры геофизических методов исследования земной коры геологического факультета МГУ, внедряются в учебный процесс в виде материалов лекций, семинаров, лабораторных работ, а также позволяют предлагать студентам и аспирантам новые темы для написания научных студенческих работ.</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (5)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Марченко Михаил Николаевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Голубцова Нина Сергеевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат геолого-минералогических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Шустов Николай Львович</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Соколова Татьяна Борисовна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат геолого-минералогических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Никулин Борис Александрович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат геолого-минералогических наук</span></li></ul>
+              
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

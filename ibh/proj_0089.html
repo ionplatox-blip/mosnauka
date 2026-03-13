@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | ИБХ РАН</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-ibh.html">ИБХ РАН</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">Противоопухолевый цитокин TRAIL;</span> <span class="tag">мультимодальные гибридные белки;</span> <span class="tag">рецептор DR5;</span> <span class="tag">VEGFR2;</span> <span class="tag">FGFR1;</span> <span class="tag">антиангиогенная противоопухолевая терапия;</span> <span class="tag">таргетная терапия рака</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Белковая инженерия</span></div>
+          <h1 style="font-size:1.5rem">Комплексное воздействие на опухоли и опухолевое микроокружение с помощью мультимодальных гибридных белковых конструкций и подходы к разработке терапевтических препаратов на их основе</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">7,000 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225030612920-2</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2024-05-06 — 2024-12-31</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№1</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">1</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">РНФ</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>Российский научный фонд</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>На первом этапе работы была поставлена задача получения мультитаргетных рекомбинантных белков на основе DR5-селективного мутантного варианта противоопухолевого цитокина TRAIL DR5-B для одновременного воздействия на опухолевые клетки (DR5-опосредованный апоптоз) и на микроокружение опухоли, в частности на опухолевые фибробласты и эндотелиальные клетки для подавления ангиогенеза. Аберрантная активность рецепторов фактора роста фибробластов (FGFR) способствует развитию рака, поскольку участвует в ключевых регуляторных процессах. Между тем, есть четкие доказательства того, что чрезмерная активация FGFR стимулирует пролиферацию и миграцию опухолевых клеток, а также опухолевый неоангиогенез. Для выполнения поставленной задачи последовательности ДНК, кодирующие синтетические антагонистические пептиды к рецепторам VEGFR2 и FGFR1, были генетически слиты с последовательностью, кодирующую белок DR5-B с N- и C-конца, соответственно, в составе плазмидного вектора pET32а для экспрессии белков в штаммах E. coli. Была разработана технология экспрессии гибридных белков в штамме E. coli SHuffle B с высоким уровнем экспрессии (300-400 мг белка с 1 литра культуры). Разработанная нами методика очистки белков с помощью аффинной и ионообменной хроматографии позволила очистить около 40 мг белка из 400 мл культуры клеток с чистотой &gt;98%. Очищенные белковые препараты были высокостабильны и не теряли биологическую активность при хранении в течение по крайней мере 6-ти месяцев при +4°С.
+Исследования аффинности гибридных белков к целевым рецепторам методом иммуноферментного анализа показали, что все новые гибридные белки связывались с рецептором смерти TRAIL DR5 с константой диссоциации, сопоставимой с таковой DR5-B, одновременно проявляя сродство к рецепторам VEGFR2 и FGFR1. Анализ поверхностной экспрессии целевых рецепторов методом проточной цитометрии выявил сопоставимо высокую экспрессию рецепторов DR5 и FGFR1 в опухолевых клетках карцином желудка, молочной железы и поджелудочной железы. Экспрессия рецептора VEGFR2 также наблюдалась во всех клеточных линиях, однако ее уровень был в несколько раз ниже по сравнению с уровнями рецепторов DR5 и FGFR1.
+Аналогичные результаты были получены на нетрансформированных линях клеток мышиных фибробластов и эндотелия.
+Препараты гибридных белков не проявляли цитотоксичности по отношению к фибробластам мыши NIH-3T3 даже при высоких (&gt;100 нМ) концентрациях. Основной фактор роста фибробластов FGF-2 стимулировал рост этих клеток более чем в два раза, что эффективно подавлялось гибридными белками, содержащими пептид-антагонист к рецептору FGFR1, но не белком DR5-B.
+Все гибридные белки на 10-15% ингибировали рост эндотелиальных клеток мыши bEnd.3. Однако только гибридные белки SRH-DR5-B и SRH-DR5-B-p48 существенно подавляли VEGFA-опосредованную стимуляцию роста этих клеток, причем последний был более эффективен в обеих концентрациях (50 нМ и 500 нМ). Таким образом, можно предполагать, что белок SRH-DR5-B-p48 будет обладать наиболее выраженными противоопухолевыми свойствами при воздействии на опухолевое микроокружение, поскольку он наиболее эффективно подавлял стимуляцию роста как фибробластов, так и эндотелиальных клеток.
+В ходе выполнения проекта была разработана in vitro-модель опухолевого микроокружения, отражающая состав опухолевых ксенографтов, путем со-культивирования клеточных линий рака поджелудочной железы человека MIA PaCa-2, мышиных фибробластов NIH-3Т3 и мышиных эндотелиоцитов b.End.3. Для раздельной оценки разных клеточных субпопуляций после со-культивирования, предварительно проводили окрашивание клеточных линий флуоресцентными витальными красителями: клетки NIH-3Т3 - в зеленый цвет красителем CellTracker CFSE, клетки b.End3 –красным CellTracker Red CMTPX, опухолевые клетки MIA PaCa-2 не окрашивали. Были выбраны посевные пропорции клеток MIA PaCa-2 : b.End : NIH-3Т3 = 2:1:4. Спустя 48 часов со-культивирования клеток, ко-культура (98,5% живых клеток) разделялась на три субпопуляции: 14% - клетки b.End.3, 64,6% - NIH-3Т3 и 21,4% - MIA PaCa-2. Разработанная модель со-культивирования будет использована для оценки воздействия гибридных белков на разные субпопуляции клеток на следующем этапе проекта.
+Были подобраны условия для исследования метаболизма и ангиогенеза в опухолях с помощью методик in vitro и in vivo-анализа кислородного статуса опухолевых клеток с использованием фосфоресцентных сенсоров и фосфоресцентного имиджинга с временным разрешением, PLIM (Phosphorescence Lifetime Imaging Microscopy). Этот метод основан на экзогенном введении кислород-чувствительных сенсоров в биологические ткани и измерении их времени жизни фосфоресценции. В присутствии молекулярного кислорода происходит тушение фосфоресценции комплексов, при этом времена жизни фосфоресценции обратно пропорциональны концентрации кислорода, что позволяет проводить оценку уровня оксигенации клеток и тканей. Данная методика была адаптирована под ксенотрансплантатные мышиные модели глиобластомы U87 и рака поджелудочной железы человека MIA PaCa-2. Для визуализации кислородного статуса методом PLIM-микроскопии был использован полимерный фосфоресцентный сенсор молекулярного кислорода PIr3. При оценке кислородного статуса в нативных модельных опухолях U87 не были выявлены зоны гетерогенности по кислородному статусу в опухолях. Таким образом, исследуемые опухоли характеризуются низким содержанием кислорода, т.е. являются гипоксичными. Значение времени фосфоресценции в клетках in vitro составило 1,89 ± 0,07 мкс, что также соответствует гипоксичному состоянию. Однако, разработанная методика оказалась неэффективной для оценки кислородного статуса опухолей MIA PaCa-2.
+Одновременно проводили анализ метаболического статуса модельных опухолей U87 и MIA PaCa-2 in vivo по аутофлуоресценции метаболического кофактора НАД(Ф)Н методом FLIM (флуоресценции с временным разрешением). Были получены типичные флуоресцентные изображения опухолевых клеток в составе опухолей in vivo. В ходе обработки кривых затухания флуоресценции кофактора НАД(Ф)Н (FLIM изображений) получали значения короткой, длинной и средней компонент времен жизни (t1, t2 и tm), а также их вклады в процентном отношении (a1 и a2, a1 + a2 = 100%), которые соответствуют свободной и связанной с белками формам кофактора НАД(Ф)Н. Эти параметры отражают метаболический статус клеток (гликолиз или OXPHOS), и по их изменениям можно судить об эффектах препаратов, в частности, гибридных белков, на опухолевые клетки. Полученные времена жизни флуоресценции кофакторов и процентный вклад свободной формы HAДH были типичными и коррелировали с известными литературными данными.
+Был проведен анализ микрососудистого русла экспериментальных опухолей методами оптоакустической ангиографии (ОА) и оптической когерентной томографии с функцией микроангиографии (ОКТ-МА). Анализ ОА изображений, полученных для опухолей U87 и MIA PaСa-2, показал, что контрольные опухоли на обоих моделях характеризовались большим количеством извилистых, неравномерно распределенных сосудов различного калибра. Несколько более высокая васкуляризация наблюдалась в модели U87MG по сравнению с моделью MIA PaCa-2 со средними значениями фракций сосудов 5,2 ± 0,7% и 4,2 ± 1,0% соответственно, и недостоверными различиями между моделями. Анализ типичных ОКТ-МА изображений опухолей U87MG и MIA PaСa-2 показал, что плотность перфузируемых сосудов соответствовала плотности сосудов, визуализируемой с помощью ОА, на моделях ксенотрансплантатов U87MG и MIA PaCa-2. Опухолевые узлы модели MIA PaCa-2 содержали немного больше перфузируемых сосудов по сравнению с моделью U87MG (p&lt;0,05, по оценкам двустороннего дисперсионного анализа с использованием критерия множественных сравнений Сидака).
+Наконец, было проведено молекулярное моделирование мультимодальных гибридных белков на основе DR5-B. Проводилось построение атомистических моделей мультидоменных гибридных белков и исследование их динамики методом полноатомной молекулярной динамики. Был построен ряд моделей на основе DR5-B, соединенных с пептидами SRH и/или P48 посредством гибких линкеров. Было получено три модели тримеров гибридных белков: SRH–DR5-B–P48, P48-DR5-B и DR5-B–P48, для которых были проведены расчеты молекулярной динамики.
+Анализ динамики показал, что DR5-B домен сохраняет свою глобулярную структуру, близкую к кристаллической. Взаимодействия мономеров гибридных белков в тримере обеспечиваются остатками Y185, Q187, K224, Q244, I247 and Q271 DR5-B (формируют стабильные контакты). Пептиды и линкеры имеют неупорядоченную структуру и высокую степень подвижности. При сравнении амплитуды динамики пептида P48, присоединенного к N- или C-концу DR5-B (модели P48–DR5-B и DR5-B–P48, соответственно), было замечено, что модель P48–DR5-B обеспечивает большую подвижность пептида за счет частичной неупорядоченности N-конца DR5-B. Анализ взаимодействий доменов в молекулярной динамике показал, что пептиды формируют контакты с DR5-B доменом в подавляющем числе кадров.
+Были построены модели взаимодействия пептидов с целевыми рецепторами методом молекулярного докинга. Результаты аланинового скрининга показали, что наиболее важными для взаимодействия с рецептором VEGFR2 являются аминокислотные остатками в позициях 7 и 11 пептида SRH; наиболее важными остатками для взаимодействия с FGFR1 являются остатки 4 и 5 пептида P48. Также высокие энергетические эффекты при замене на аланин наблюдали для N-концевых остатков пептида Р48, и для пролинов, что может объясняться снижением жесткости пептидной цепи.
+Результаты проекта были представлены в виде устных докладов на XI российском форуме биотехнологии Open Bio и на VI международной научно-практической конференции «Постгеном’2024».</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (9)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Авакянц Арина Вартановна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Плотникова Екатерина Александровна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Панкратов Андрей Александрович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Долгих Дмитрий Александрович</strong> <span style="color:#71717a;font-size:0.8rem">Доктор биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Исакова Алина Алексеевна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Гаспарян Марине Эдуардовна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Куковякина Екатерина Владимировна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Шувалова Маргарита Львовна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Яголович Анна Валерьевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li></ul>
+              
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

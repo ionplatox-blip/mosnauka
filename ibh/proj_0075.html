@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | ИБХ РАН</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-ibh.html">ИБХ РАН</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">животные модели</span> <span class="tag">электрофизиология,</span> <span class="tag">структурно-функциональный анализ,</span> <span class="tag">мутагенез,</span> <span class="tag">анальгезия,</span> <span class="tag">пептиды,</span> <span class="tag">лиганд рецепторные взаимодействия,</span> <span class="tag">фармакология канала,</span> <span class="tag">кислото-чувствительные ионные каналы,</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Физиологически активные вещества</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Методы доклинического исследования и отбора лекарственных средств</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Физиология сенсорных систем</span></div>
+          <h1 style="font-size:1.5rem">Поиск, структурно-функциональная характеристика и биологическая активность пептидных лигандов кислоточувствительных ионных каналов</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">6,000 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225031013025-6</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2023-05-16 — 2024-05-15</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№2</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">2</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">РНФ</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>Российский научный фонд</div>
+                </div><div class="metric-box" style="text-align:left">
+                  <div class="label">Исполнитель</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">ИБХ РАН</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>На втором этапе выполнение проекта по поиску и характеристике пептидных лигандов кислоточувствительных ионных каналов (ASIC каналов) проводилось по нескольким направлениям. Во-первых, пептид Ms13-1, выделенный из яда морской анемоны Mеtridium sеnilе, был наработан в виде рекомбинантного аналога в количестве, достаточном для его всестороннего исследования. Так, на пороговых значениях pH стимула был продемонстрирован наиболее сильный потенцирующий эффект пептида. Наработка Ms13-1, меченного изотопами азота N15, позволила методом ЯМР-спектроскопии установить пространственную структуру и продемонстрировать, что пептид обладает новым типом укладки, не известным ранее для отдельных пептидных молекул. Данная структура представляла собой трехцепочечный антипараллельный β-лист, стабилизированный внутримолекулярными дисульфидными связями, в связи с чем было предложено назвать новый подобный тип укладки «цистеиновая лестница». Проведенный анализ совместного действия Ms13-1 с известным и хорошо изученным антагонистом ASIC1a пептидом мамбалгин-2 показал, что сайты их взаимодействия с каналом не перекрываются, что позволило исключить для Ms13-1 сайт связывания мамбалгина-2, локализованный в участке на домене «большой палец» ASIC1a канала. Данный результат также согласовывался с результатами молекулярного моделирования и молекулярного докинга, проведенных для Ms13-1 и ASIC1a канала и предсказавших, что пептид взаимодействует с крысиным каналом ASIC1a в области домена «палец», где остатки K27, R30, H32 и K33 пептида образуют связь с остатками D160, D141 и E133 канала, соответственно. В результате проведенного тестирования Ms13-1 на различных животных моделях, затрагивающих периферическую нервную систему, было показано, что данный пептид, проявляющий свойства положительного аллостерического модулятора каналов ASIC1a, способен непосредственно вызывать сильное болевое поведение у мышей.
+Во-вторых, методом TEVC на ооцитах, экспрессирующих крысиные ASIC каналы, было проведено тестирование биологической активности фракций, полученных после хроматографического разделения экстрактов ядов из пяти видов морских анемон. В результате только фракция из яда Urticina grebelnyi демонстрировала ингибирующий эффект на ASIC3 каналы. Было показано, что данная фракция содержит пептид Ugr9-1, который ранее был нами охарактеризован как селективный ингибитор ASIC3 каналов. В результате проведенного биоинформатического анализа и молекулярного докинга с ASIC1a каналом (единственный представитель ASIC каналов, для которого известна пространственная структура), было показано, что Ugr9-1 не способен образовывать контакты с внеклеточной частью канала, однако, замена определенных остатков в пептиде на остатки лизина позволяет образовывать контакты с остатками в домене «большой палец» на внеклеточной части канала. Так, с помощью сайт-направленного мутагенеза был получен мутантный пептид A23K, который с одинаковой эффективностью ингибировал как ASIC3, так и ASIC1a каналы. Проведенный мутагенез ASIC1a показал, что, действительно, эффект A23K определяется его взаимодействием с остатком D355 в домене «большой палец» канала.
+Третьим направлением было продолжение изучения структурно-функциональных взаимоотношений между продуктами эндогенного протеолиза нейропептида ноцистатина (rNS) и ASIC3 канала. Проведя более полный анализ pH зависимости активации и стационарной десенситизации канала было показано, что полноразмерный rNS способен проявлять свойства как позитивного, так и негативного модулятора канала, тогда как его фрагменты, укороченные с N-конца на 21 (rNSΔ21) и 30 (rNSΔ30) аминокислотных остатков, проявляют свойства только позитивного и только негативного модулятора, соответственно. В проведенных на животных болевых тестах было показано, что rNS дозозависимо вызывал ноцифенсивное поведение, однако в модели висцеральной боли не оказывал никакого значимого эффекта, тогда как rNSΔ21 приводил к усилению болевых стимулов. Отдельно стоит отметить, что rNSΔ30, наоборот, демонстрировал анальгетические свойства.
+Четвертая часть исследования заключалась во всестороннем изучении коротких биологически активных нейропептидов. Так, для восьмичленного пептида p489 было показано, что по структуре и механизму действия он является уникальным представителем нового класса лигандов ASIC3 каналов: пептид связывался с закрытым каналом, вызывая в ответ на сильнокислый стимул появление второй медленно десенситизирующейся компоненты тока и не действуя при этом на быстро десенситизирующуюся компоненту. В болевых тестах на животных p489 приводил к развитию механической аллодинии, что выражалось в значительном снижении порога отдергивания лапы.
+Пятая часть исследований по настоящему проекту состояла в изучении видоспецифичности действия пептидных лигандов и выявления молекулярных детерминант, ответственных за биофизические различия между человеческими и крысиными ортологами ASIC каналов. Так, проведенное исследование действия пептидов Ms13-1 и p489 на человеческих ASIC1a и ASIC3 каналах, соответственно, показало, что в первом случае величина эффекта снижалась в 2 раза, во втором – в 4 раза. Для локализации детерминант, ответственных за то, что человеческие ASIC3 каналы, в отличие от крысиных, находятся в десенситизированном состоянии при физиологическом pH 7,4, были созданы конкатамеры, состоящие из разных комбинаций человеческих и крысиных ASIC3 субъединиц. В результате проведенных тестирований было показано, что наличие на C-концевой части конкатамера всего лишь одной человеческой субъединицы приводит к значительной десенситизации канала, близкой к уровню десенситизации человеческого ASIC3 дикого типа, что указывает на расположение в данной области важных детерминант, ответственных за данный феномен.</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (3)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Калиновский Александр Павлович</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Осмаков Дмитрий Игоревич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат химических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Логашина Юлия Александровна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат химических наук</span></li></ul>
+              
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

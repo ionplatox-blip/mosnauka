@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | ИНХС РАН</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-inhs.html">ИНХС РАН</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">олигомеры</span> <span class="tag">метатезис</span> <span class="tag">гидрирование</span> <span class="tag">постмодификация</span> <span class="tag">алкил-замещенные норборнены</span> <span class="tag">низкотемпературное моторное масло</span> <span class="tag">микроструктура</span> <span class="tag">взаимосвязь структура-свойство</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Алициклические соединения</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Структура и свойства природных и синтетических высокомолекулярных соединений</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Синтез высокомолекулярных соединений. Физико-химические основы синтеза высокомолекулярных соединений</span></div>
+          <h1 style="font-size:1.5rem">Олигомеры на основе алкилзамещенных норборненов – потенциальные основы перспективных моторных масел: синтез, микроструктура и взаимосвязь структура-свойство. Отчет по этапу 2 (23-73-00126)</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">7,000 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225030412818-4</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2024-01-01 — 2024-12-31</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№2</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">РНФ</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>Российский научный фонд</div>
+                </div><div class="metric-box" style="text-align:left">
+                  <div class="label">Исполнитель</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">ИНХС РАН</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>Впервые проведено систематическое исследование процесса метатезисной олигомеризации 5-этил-2-норборнена и 5-н-гексил-2-норборнена в присутствии различных агентов передачи цепи (гексена-1, диметилмалеата и этилена) под действием катализатора Граббса первого и второго поколения при различных соотношениях исходных реагентов, концентрации катализатора, давлении, температуре и продолжительности реакции. В результате получены соответствующие метатезисные олигомеры, строение которых подтверждено данными 1Н и 13С ЯМР спектроскопии, а также двумерной гомо- и гетероядерной корреляционной спектроскопией 1Н-1Н COSY, 1H-13C HSQC (DEPT-135), 1H-13C HMBC и др. Для всех полученных олигомерных продуктов определена молекулярная масса методами ГПХ и ЯМР (по сигналам концевых двойных связей). Показано, что полученные значения коррелируют между собой. Установлено влияние условий синтеза, в том числе типа и концентрации катализатора, агента передачи цепи, давления, температуры и времени реакции, а также строения исходного мономера, в частности длины углеводородного заместителя, на выход и молекулярную массу (степень полимеризации) ненасыщенного продукта. Оптимизированы условия синтеза метатезисных олигомеров, характеризующихся молекулярной массой близкой к расчетной, под действием очень низких концентраций катализатора Граббса второго поколения. Разработаны новые методы синтеза ранее неизвестных олиго(5-этил-2-норборнена) и олиго(5-н-гексил-2-норборнена). Проведено дополнительное исследование метатезисной олигомеризации незамещенного норборнена в присутствии катализатора Граббса 1-го поколения и этилена, использованного в качестве агента передачи цепи, что позволило получить олигомерный продукт, который далее был прогидрирован в присутствии палладиевого катализатора. После олигомеризации и модификации выходы продуктов составили более 80 и 90%, соответственно. Строение олигомеров подтверждено спектроскопией 1Н и 13С ЯМР. Исследованы его термические и реологические свойства.
+Синтезированные метатезисные олигомеры 5-этил-2-норборнена и 5-н-гексил-2-норборнена разделены препаративной ГПХ на отдельные компоненты, характеризующиеся различной молекулярной массой и степенью полимеризации. Строение компонентов подтверждено данными 1Н и 13С ЯМР спектроскопии, а также двумерной гомо- и гетероядерной корреляционной спектроскопией 1Н-1Н COSY, 1H-13C HSQC (DEPT-135), 1H-13C HMBC и др. Как исходные смеси, так и их компоненты были изучены различными физико-химическими методами исследования. Определена температура стеклования по данным ДСК, показано, что чем ниже степень полимеризации, тем ниже значение данной температуры. При этом олигомеры 5-н-гексил-2-норборнена характеризуются более низкой температурой стеклования по сравнению с температурой стеклования олигомеров 5-этил-2-норборнена, что, вероятно связано с пластифицирующими свойствами более длинного углеводородного заместителя. Установлено, что температура разложения полученных олигомеров находиться в диапазоне 320-330 оС. Определена плотность полученных ненасыщенных олигомеров при различной температуре. Изучены реологические свойства как исходных смесей, так и компонентов, и вычислены для них индексы вязкости.
+Исследовано гидрирование метатезисных олигомеров 5-н-бутил-2-норборена, полученных в присутствии гексена-1 и 6-бром-1-гексена, под действием различных катализаторов гидрирования, в том числе на основе Pd и Ni, а также соединений Ru, оставшихся после этапа метатезиса в результате тандем-синтеза метатезисной олигомеризации – one pot гидрирования. Строение полученных олигомеров подтверждено данными 1Н, 13С ЯМР и ИК спектроскопии, двумерной гомо- и гетероядерной корреляционной спектроскопией 1Н-1Н COSY, 1H-13C HSQC (DEPT-135), 1H-13C HMBC и др., а также MALDI-TOF. Установлено влияние природы катализатора, давления водорода, температуры и продолжительности синтеза на выход и конверсию двойных связей. Также показано, что процесс гидрирования протекает от концов молекулы олигомеров к его середине. Разработаны новые методы синтеза гидрированных олигомеров 5-н-бутил-2-норборена, характеризующихся исчерпывающей модификацией двойных связей основной цепи. Данный продукт получен впервые.
+Гидрированный олигомер 5-н-бутил-2-норборена разделен на компоненты препаративной ГПХ. Строение компонентов подтверждено ЯМР и ИК спектроскопией, их молекулярная масса и степень полимеризации были определены по данным ГПХ. Изучены термические свойства исходной смеси и отдельных её компонентов методами ДСК и ТГА. Показано, что полученные олигомеры характеризуются только температурой стеклования, которая тем ниже, чем ниже молекулярная масса. Температура разложения составила около 320 оС. Определена плотность исходной смеси при разных температурах. Изучены реологические свойства исходной смеси и отдельных компонентов при различных температурах, а также оценены для них индексы вязкости, которые достигают значений до 276.</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (7)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Лунин Артём Олегович</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Моронцев Александр Алексеевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат химических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Садовников Кирилл Сергеевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат химических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Степанянц Всеволод Романович</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Бермешева Евгения Владимировна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат химических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Наземутдинова Валерия Рустемовна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Возняк Алена Игоревна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат химических наук</span></li></ul>
+              
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

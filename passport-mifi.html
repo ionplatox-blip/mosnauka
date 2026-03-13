@@ -1,0 +1,1939 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>МОСНАУКА — Паспорт: НИЯУ МИФИ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+      body { font-family: Inter, system-ui, sans-serif; background: #050505; color: white; }
+      .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.08); }
+      .mos-red { color: #ff003c; }
+      .mos-bg-red { background: #ff003c; }
+      .provenance-tag { font-size: 8px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.1em; padding: 2px 8px; border-radius: 4px; }
+      .tag-egisu { background: rgba(0, 120, 255, 0.1); color: #40a0ff; border: 1px solid rgba(0, 120, 255, 0.2); }
+      .tag-colab { background: rgba(255, 0, 60, 0.1); color: #ff4070; border: 1px solid rgba(255, 0, 60, 0.2); }
+      .tag-org { background: rgba(255, 255, 255, 0.05); color: #aaa; border: 1px solid rgba(255, 255, 255, 0.1); }
+
+      /* Section titles */
+      .section-header {
+        display: flex; align-items: center; justify-content: space-between;
+        padding: 0 0.5rem; margin-bottom: 1.5rem; margin-top: 3.5rem;
+      }
+      .section-title {
+        font-size: 1.5rem; font-weight: 900; text-transform: uppercase;
+        font-style: italic; letter-spacing: -0.02em;
+      }
+
+      /* Chunk 3: Lab cards */
+      .labs-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+        gap: 1.5rem;
+      }
+      /* Chunk 4: Scientists */
+      .sci-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 1rem;
+      }
+      .sci-card.hidden { display: none; }
+      .line-clamp-2 {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+      #sci-search {
+        background: rgba(255,255,255,0.04);
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 1rem;
+        padding: 0.75rem 1.25rem 0.75rem 2.75rem;
+        color: white;
+        font-size: 0.875rem;
+        width: 100%;
+        outline: none;
+        transition: border-color 0.2s;
+      }
+      #sci-search:focus {
+        border-color: rgba(255,0,60,0.5);
+      }
+      #sci-search::placeholder { color: rgba(255,255,255,0.25); }
+      /* Chunk 5: RID + Projects */
+      .rid-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 1rem;
+      }
+    </style>
+</head>
+<body>
+  <div class="min-h-screen bg-[radial-gradient(circle_at_top_left,rgba(255,0,60,0.12),transparent_25%),radial-gradient(circle_at_top_right,rgba(255,255,255,0.05),transparent_20%),linear-gradient(180deg,#050505,#0b0f16)]">
+
+    <!-- ═══ HEADER ═══ -->
+    <header class="sticky top-0 z-30 backdrop-blur-md border-b border-white/10 bg-black/40">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        <a class="text-2xl font-black italic tracking-tight uppercase hover:opacity-80 transition" href="index.html">
+          МОС<span class="mos-red">НАУКА</span>
+        </a>
+        <div class="flex items-center gap-4">
+          <span class="text-[10px] uppercase tracking-widest text-zinc-500 font-bold">Паспорт организации v2.0</span>
+          <a href="catalog.html" class="text-xs font-bold uppercase hover:text-red-500 transition">Реестр</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 py-10">
+
+      <!-- ═══ BREADCRUMBS ═══ -->
+      <div class="mb-10 flex items-center justify-between">
+        <div class="flex items-center gap-2 text-[10px] uppercase font-bold tracking-widest text-zinc-500">
+          <a href="index.html" class="hover:text-white">Главная</a>
+          <span>/</span>
+          <a href="catalog.html" class="hover:text-white">Реестр</a>
+          <span>/</span>
+          <span class="text-zinc-300">НИЯУ МИФИ</span>
+        </div>
+        <a href="catalog.html" class="px-5 py-2 border border-white/10 rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-white/5 transition">
+          ← К списку
+        </a>
+      </div>
+
+      <!-- ═══ HERO SECTION ═══ -->
+      <section class="glass rounded-[2.5rem] p-10 relative overflow-hidden mb-8">
+        <!-- Bg watermark -->
+        <div class="absolute top-0 right-0 p-8 opacity-5 pointer-events-none">
+          <img src="https://colab.ws/storage/images/kGq1dstI82YTV6ZO9CLMOuWSTx1BczCm8XX2NgII.png" class="w-64 h-64 grayscale invert" alt="">
+        </div>
+
+        <div class="relative z-10">
+          <!-- Identity -->
+          <div class="flex items-center gap-5 mb-6">
+            <div class="w-20 h-20 rounded-2xl bg-white p-2 flex items-center justify-center shrink-0">
+              <img src="https://colab.ws/storage/images/kGq1dstI82YTV6ZO9CLMOuWSTx1BczCm8XX2NgII.png" class="max-w-full max-h-full object-contain" alt="НИЯУ МИФИ logo">
+            </div>
+            <div>
+              <h1 class="text-3xl md:text-5xl font-black tracking-tight uppercase leading-tight mb-2">НИЯУ МИФИ</h1>
+              <p class="text-zinc-400 font-medium">Национальный исследовательский ядерный университет «МИФИ»</p>
+            </div>
+          </div>
+
+          <!-- Contact row -->
+          <div class="flex flex-wrap gap-6 mt-6">
+            <div class="flex items-center gap-2 text-zinc-400 text-sm">
+              <i class="ph ph-map-pin mos-red"></i>
+              <span>Москва, Каширское шоссе, 31</span>
+            </div>
+            <a href="https://mephi.ru/" target="_blank" class="flex items-center gap-2 text-zinc-300 text-sm hover:text-white transition">
+              <i class="ph ph-globe mos-red"></i>
+              <span>mephi.ru</span>
+            </a>
+          </div>
+
+          <!-- Verified badge + Contact CTA -->
+          <div class="mt-6 flex flex-wrap gap-3 items-center">
+            <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-[11px] font-bold uppercase tracking-wide">
+              <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              Верифицировано МОСНАУКОЙ
+            </span>
+          </div>
+          <div class="mt-4 p-5 rounded-2xl bg-gradient-to-r from-red-500/20 to-red-500/5 border border-red-500/30 flex flex-wrap items-center justify-between gap-4">
+            <div>
+              <div class="text-sm font-bold">📨 Заинтересованы в сотрудничестве?</div>
+              <div class="text-[11px] text-zinc-400 mt-1">Направьте запрос на НИОКР, консультацию или партнёрство</div>
+            </div>
+            <div class="flex gap-2">
+              <a href="javascript:void(0)" onclick="openRequestModal('Запрос по НИЯУ МИФИ')" class="px-6 py-3 rounded-xl bg-red-500 text-white text-[11px] font-black uppercase tracking-wide hover:bg-red-600 transition inline-flex items-center gap-2 shadow-lg">
+                <i class="ph ph-envelope-simple"></i> Направить запрос
+              </a>
+              <a href="https://mephi.ru/" target="_blank" class="px-5 py-3 rounded-xl bg-white/5 border border-white/10 text-[11px] font-bold uppercase text-zinc-400 hover:bg-white/10 transition inline-flex items-center gap-2">
+                <i class="ph ph-globe"></i> Сайт
+              </a>
+            </div>
+          </div>
+
+          <!-- ═══ METRICS ROW ═══ -->
+          <div class="grid grid-cols-2 md:grid-cols-5 gap-4 mt-10">
+            <a href="#section-labs" class="p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-white/30 transition cursor-pointer block">
+              <div class="text-[9px] uppercase font-black text-zinc-500 mb-1">Лаборатории</div>
+              <div class="text-3xl font-black italic">5</div>
+            </a>
+            <a href="#section-scientists" class="p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-white/30 transition cursor-pointer block">
+              <div class="text-[9px] uppercase font-black text-zinc-500 mb-1">Учёные</div>
+              <div class="text-3xl font-black italic">71</div>
+            </a>
+            <a href="#section-projects" class="p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-white/30 transition cursor-pointer block">
+              <div class="text-[9px] uppercase font-black text-zinc-500 mb-1">Проекты НИОКР</div>
+              <div class="text-3xl font-black italic">24</div>
+            </a>
+            <a href="#section-rid" class="p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-white/30 transition cursor-pointer block">
+              <div class="text-[9px] uppercase font-black text-zinc-500 mb-1">РИД</div>
+              <div class="text-3xl font-black italic">39</div>
+            </a>
+            <a href="#section-projects" class="p-4 rounded-2xl bg-red-500/5 border border-red-500/20 hover:border-red-500/40 transition cursor-pointer block">
+              <div class="text-[9px] uppercase font-black text-red-400/70 mb-1">Объём НИОКР</div>
+              <div class="text-3xl font-black italic mos-red">818 млн ₽</div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ CHUNK 2: About section ═══ -->
+      <section class="glass rounded-[2.5rem] p-10 mb-8">
+        <div class="flex items-center justify-between mb-6">
+          <h2 class="text-xl font-black uppercase italic tracking-tight">Об организации</h2>
+        </div>
+        <p class="text-[15px] text-zinc-300 leading-relaxed mb-6">«НИЯУ МИФИ» — ведущий научно-исследовательский центр, объединяющий 5 лабораторий и 71 учёных. Исследовательский профиль охватывает наноматериалы и двумерные структуры. Опубликовано свыше 1752 научных работ, выполнено 24 проектов НИОКТР и зарегистрировано 39 результатов интеллектуальной деятельности.</p>
+        <details class="group">
+          <summary class="cursor-pointer text-sm font-bold text-red-400 hover:text-red-300 transition select-none flex items-center gap-2">
+            <i class="ph ph-caret-right text-xs transition-transform group-open:rotate-90"></i>
+            Подробнее об исследовательской деятельности
+          </summary>
+          <div class="mt-6 pt-6 border-t border-white/10">
+            <h3 class="text-zinc-200 text-sm font-bold uppercase tracking-wide mb-3 mt-0">Исследовательский профиль</h3><p class="text-zinc-400 text-sm mb-2">Научная деятельность сосредоточена в нескольких ключевых направлениях:</p><ul class="text-zinc-400 text-sm space-y-1 ml-4 mb-6 list-disc"><li><strong class="text-zinc-300">Наноматериалы и двумерные структуры</strong> — графен, наночастицы, гетероструктуры, наноматериалы</li></ul><h3 class="text-zinc-200 text-sm font-bold uppercase tracking-wide mb-3">Ключевые компетенции (по данным ЕГИСУ)</h3><div style="display:flex;flex-wrap:wrap;gap:0.4rem;margin-bottom:1.5rem"><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">мюоны <span style="color:#52525b">(3)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">космические лучи <span style="color:#52525b">(3)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">квадрупольный фильтр масс <span style="color:#52525b">(3)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">оптически детектируемый магнитный резонанс <span style="color:#52525b">(3)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">синтетический алмаз <span style="color:#52525b">(3)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">управление <span style="color:#52525b">(3)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">фазовая диаграмма кхд <span style="color:#52525b">(2)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">высокотемпературные сверхпроводники <span style="color:#52525b">(2)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">литий <span style="color:#52525b">(2)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">лазерное излучение <span style="color:#52525b">(2)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">излучение смита-парселла <span style="color:#52525b">(2)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">зонная структура <span style="color:#52525b">(2)</span></span></div><h3 class="text-zinc-200 text-sm font-bold uppercase tracking-wide mb-3">Ведущие лаборатории</h3><ul class="text-zinc-400 text-sm space-y-1 ml-4 mb-6 list-disc"><li>Лаборатория Быстрозакаленных материалов (3 сотр.)</li><li>Лаборатория Бионанофотоники (8 сотр.)</li><li>Лаборатория теплогидравлики и физики кипения (7 сотр.)</li><li>Кафедра №9 «Физические проблемы материаловедения» (12 сотр.)</li><li>Учебно-научная лаборатория «Теоретическая физика конденсированного состояния» (3 сотр.)</li></ul><h3 class="text-zinc-200 text-sm font-bold uppercase tracking-wide mb-3">Ключевые заказчики НИОКР</h3><ul class="text-zinc-400 text-sm space-y-1 ml-4 mb-6 list-disc"><li><strong class="text-zinc-300">МИНОБРНАУКИ РОССИИ</strong> — 19 проектов</li><li><strong class="text-zinc-300">РНФ</strong> — 2 проектов</li></ul><h3 class="text-zinc-200 text-sm font-bold uppercase tracking-wide mb-3">Интеллектуальная собственность</h3><p class="text-zinc-400 text-sm mb-6">Портфель из 39 РИД: программа для эвм — 18, изобретение — 11, полезная модель — 5, база данных — 3, топология интегральных микросхем — 2.</p><h3 class="text-zinc-200 text-sm font-bold uppercase tracking-wide mb-3">Финансирование и результаты</h3><p class="text-zinc-400 text-sm">Суммарный объём финансирования: <strong class="text-white">817.6 млн руб.</strong> (24 проектов, по данным ЕГИСУ НИОКТР). По итогам проектов опубликовано 197 научных работ.</p>
+          </div>
+        </details>
+      </section>
+
+      <!-- ═══ TOP-3 FEATURED ═══ -->
+      <section class="glass rounded-[2.5rem] p-10 mb-8">
+        <h2 class="text-lg font-black uppercase italic tracking-tight mb-6">⭐ Ведущие лаборатории и учёные</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div>
+            <div class="text-[10px] uppercase font-black text-zinc-500 mb-3 tracking-widest">🏛️ Топ-3 лаборатории</div>
+            <div class="flex flex-col gap-3"><a href="mifi/lab_003.html" class="glass rounded-2xl p-5 group hover:border-red-500/30 transition flex flex-col">
+          <div class="flex flex-wrap gap-1.5 mb-3"><span class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-[8px] uppercase font-bold text-zinc-500">Физика конденсированного состояния</span> <span class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-[8px] uppercase font-bold text-zinc-500">Материаловедение</span></div>
+          <div class="text-sm font-bold group-hover:text-red-400 transition leading-snug mb-2">Кафедра №9 «Физические проблемы материаловедения»</div>
+          <div class="text-[10px] text-zinc-500 font-bold mt-auto">👥 12 учёных</div>
+        </a>
+<a href="mifi/lab_001.html" class="glass rounded-2xl p-5 group hover:border-red-500/30 transition flex flex-col">
+          <div class="flex flex-wrap gap-1.5 mb-3"><span class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-[8px] uppercase font-bold text-zinc-500">Лазерная физика</span> <span class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-[8px] uppercase font-bold text-zinc-500">Наномедицина</span></div>
+          <div class="text-sm font-bold group-hover:text-red-400 transition leading-snug mb-2">Лаборатория Бионанофотоники</div>
+          <div class="text-[10px] text-zinc-500 font-bold mt-auto">👥 8 учёных</div>
+        </a>
+<a href="mifi/lab_002.html" class="glass rounded-2xl p-5 group hover:border-red-500/30 transition flex flex-col">
+          <div class="flex flex-wrap gap-1.5 mb-3"><span class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-[8px] uppercase font-bold text-zinc-500">Теплофизика</span> <span class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-[8px] uppercase font-bold text-zinc-500">Энергетика</span></div>
+          <div class="text-sm font-bold group-hover:text-red-400 transition leading-snug mb-2">Лаборатория теплогидравлики и физики кипения</div>
+          <div class="text-[10px] text-zinc-500 font-bold mt-auto">👥 7 учёных</div>
+        </a>
+</div>
+          </div>
+          <div>
+            <div class="text-[10px] uppercase font-black text-zinc-500 mb-3 tracking-widest">🏆 Топ-3 учёных</div>
+            <div class="flex flex-col gap-3"><a href="mifi/sci_003.html" class="glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-3 items-center">
+          <img src="https://colab.ws/storage/images/AMh5fPHE2cZLX5qLzagkTkfnJUAyLqFZztSRvJfL.png" class="w-12 h-12 rounded-xl object-cover border border-white/10" loading="lazy">
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Кабашин Андрей Викторович</div>
+            <div class="text-[10px] text-zinc-500 truncate">Лаборатория Бионанофотоники</div>
+            <div class="flex items-center gap-2 mt-1">
+              <span class="text-[9px] text-zinc-600">📚 35 публ.</span> 
+            </div>
+          </div>
+        </a>
+<a href="mifi/sci_029.html" class="glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-3 items-center">
+          <img src="https://colab.ws/storage/images/l5PHfNTr00Op8A3DTLsMxcHSWLnRHbBfTj03mwSk.jpg" class="w-12 h-12 rounded-xl object-cover border border-white/10" loading="lazy">
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Красавин Андрей Валерьевич</div>
+            <div class="text-[10px] text-zinc-500 truncate">Учебно-научная лаборатория «Теоретическая физика конденсированного состояния»</div>
+            <div class="flex items-center gap-2 mt-1">
+              <span class="text-[9px] text-zinc-600">📚 27 публ.</span> 
+            </div>
+          </div>
+        </a>
+<a href="mifi/sci_000.html" class="glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-3 items-center">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white font-bold text-sm">СО</div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Севрюков Олег Николаевич</div>
+            <div class="text-[10px] text-zinc-500 truncate">Лаборатория Быстрозакаленных материалов</div>
+            <div class="flex items-center gap-2 mt-1">
+              <span class="text-[9px] text-zinc-600">📚 26 публ.</span> 
+            </div>
+          </div>
+        </a>
+</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ TABS: Labs / Scientists ═══ -->
+      <div class="glass rounded-2xl p-4 mb-4" style="border:1px solid rgba(56,189,248,0.15);background:rgba(56,189,248,0.03)">
+        <div class="flex items-center gap-2 text-[10px] text-sky-400/70 font-bold uppercase">
+          <i class="ph ph-info"></i>
+          Показаны лаборатории и учёные, зарегистрированные на платформе CoLab. Фактическое число сотрудников может быть больше.
+        </div>
+      </div>
+      <div class="section-header" id="section-labs">
+        <div class="flex items-center gap-4">
+          <button id="tab-labs" onclick="switchTab('labs')" class="section-title" style="background:none;border:none;color:white;cursor:pointer;padding:0">🔬 Лаборатории (5)</button>
+          <button id="tab-sci" onclick="switchTab('sci')" class="text-lg font-black uppercase italic tracking-tight opacity-30 hover:opacity-60 transition" style="background:none;border:none;color:white;cursor:pointer;padding:0" id="section-scientists">🎓 Учёные (32)</button>
+        </div>
+        <span class="provenance-tag tag-colab">CoLab Data</span>
+      </div>
+
+      <!-- Labs panel -->
+      <div id="panel-labs">
+        <div class="text-sm text-zinc-400 mb-3" id="lab-counter">Показаны 3 из 5</div>
+        <div class="labs-grid" id="labs-container">
+          <div class="lab-item glass rounded-[2rem] p-8 hover:border-red-500/30 transition shadow-lg flex flex-col" data-idx="0" style="">
+          <div class="flex flex-wrap gap-2 mb-4"><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Материаловедение</span></div>
+          <a href="mifi/lab_000.html" class="group">
+            <h3 class="text-lg font-bold mb-3 group-hover:text-red-400 transition leading-snug">Лаборатория Быстрозакаленных материалов</h3>
+          </a>
+          <p class="text-xs text-zinc-500 leading-relaxed mb-4 flex-1">Научные исследования в области аморфных и нанокристаллических быстрозакаленных сплавов. Высокотемпературная пайка материалов, анализ структурно-фазово...</p>
+          
+          <div class="mt-6 flex items-center justify-between pt-4 border-t border-white/5">
+            <span class="text-[10px] font-black uppercase text-zinc-500">👥 3 сотрудников</span>
+            
+          </div>
+          <div class="flex gap-2 mt-3">
+            <a href="mifi/lab_000.html" class="flex-1 text-center px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-[9px] font-bold uppercase tracking-wide text-zinc-400 hover:bg-white/10 transition">Подробнее</a>
+            <a href="javascript:void(0)" onclick="openRequestModal('Связаться с лабораторией Лаборатория Быстрозакаленных м')" class="flex-1 text-center px-3 py-2 rounded-xl bg-red-500/10 border border-red-500/30 text-[9px] font-bold uppercase tracking-wide text-red-400 hover:bg-red-500/20 transition cursor-pointer">📨 Связаться</a>
+          </div>
+        </div>
+<div class="lab-item glass rounded-[2rem] p-8 hover:border-red-500/30 transition shadow-lg flex flex-col" data-idx="1" style="">
+          <div class="flex flex-wrap gap-2 mb-4"><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Лазерная физика</span><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Наномедицина</span><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">&quot;Умные&quot; материалы</span></div>
+          <a href="mifi/lab_001.html" class="group">
+            <h3 class="text-lg font-bold mb-3 group-hover:text-red-400 transition leading-snug">Лаборатория Бионанофотоники</h3>
+          </a>
+          <p class="text-xs text-zinc-500 leading-relaxed mb-4 flex-1">Настольные сублимационные сушилки FreeZone емкостью 2,5 литра предназначены для лиофилизации небольших партий проб. Компактный дизайн идеально подходи...</p>
+          <div class="mt-4 p-3 rounded-xl bg-black/40 border border-white/5">
+              <div class="text-[9px] uppercase font-black text-zinc-500 mb-1">Оборудование</div>
+              <div class="text-[11px] text-zinc-400 leading-snug">Мощеметр PM100D (Thorlabs, США) PM100D является цифровым аналогом консоли измерения мощности PM100A. Консоль (и детектор</div>
+            </div>
+          <div class="mt-6 flex items-center justify-between pt-4 border-t border-white/5">
+            <span class="text-[10px] font-black uppercase text-zinc-500">👥 8 сотрудников</span>
+            
+          </div>
+          <div class="flex gap-2 mt-3">
+            <a href="mifi/lab_001.html" class="flex-1 text-center px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-[9px] font-bold uppercase tracking-wide text-zinc-400 hover:bg-white/10 transition">Подробнее</a>
+            <a href="javascript:void(0)" onclick="openRequestModal('Связаться с лабораторией Лаборатория Бионанофотоники')" class="flex-1 text-center px-3 py-2 rounded-xl bg-red-500/10 border border-red-500/30 text-[9px] font-bold uppercase tracking-wide text-red-400 hover:bg-red-500/20 transition cursor-pointer">📨 Связаться</a>
+          </div>
+        </div>
+<div class="lab-item glass rounded-[2rem] p-8 hover:border-red-500/30 transition shadow-lg flex flex-col" data-idx="2" style="">
+          <div class="flex flex-wrap gap-2 mb-4"><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Теплофизика</span><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Энергетика</span></div>
+          <a href="mifi/lab_002.html" class="group">
+            <h3 class="text-lg font-bold mb-3 group-hover:text-red-400 transition leading-snug">Лаборатория теплогидравлики и физики кипения</h3>
+          </a>
+          <p class="text-xs text-zinc-500 leading-relaxed mb-4 flex-1">Теплогидравлический стенд имеет два контура движения теплоносителя: основной (первый) контур циркуляции для проведения исследования гидродинамики и те...</p>
+          <div class="mt-4 p-3 rounded-xl bg-black/40 border border-white/5">
+              <div class="text-[9px] uppercase font-black text-zinc-500 mb-1">Оборудование</div>
+              <div class="text-[11px] text-zinc-400 leading-snug">Испытательные установки по исследованию парообразования в наножидкостях Установка «Импульс» для исследования процессов н</div>
+            </div>
+          <div class="mt-6 flex items-center justify-between pt-4 border-t border-white/5">
+            <span class="text-[10px] font-black uppercase text-zinc-500">👥 7 сотрудников</span>
+            
+          </div>
+          <div class="flex gap-2 mt-3">
+            <a href="mifi/lab_002.html" class="flex-1 text-center px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-[9px] font-bold uppercase tracking-wide text-zinc-400 hover:bg-white/10 transition">Подробнее</a>
+            <a href="javascript:void(0)" onclick="openRequestModal('Связаться с лабораторией Лаборатория теплогидравлики и ')" class="flex-1 text-center px-3 py-2 rounded-xl bg-red-500/10 border border-red-500/30 text-[9px] font-bold uppercase tracking-wide text-red-400 hover:bg-red-500/20 transition cursor-pointer">📨 Связаться</a>
+          </div>
+        </div>
+<div class="lab-item glass rounded-[2rem] p-8 hover:border-red-500/30 transition shadow-lg flex flex-col" data-idx="3" style="display:none">
+          <div class="flex flex-wrap gap-2 mb-4"><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Физика конденсированного состояния</span><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Материаловедение</span><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Ядерная энергетика</span></div>
+          <a href="mifi/lab_003.html" class="group">
+            <h3 class="text-lg font-bold mb-3 group-hover:text-red-400 transition leading-snug">Кафедра №9 «Физические проблемы материаловедения»</h3>
+          </a>
+          <p class="text-xs text-zinc-500 leading-relaxed mb-4 flex-1">В состав кафедры входят учебно-научные предметные лаборатории, отраслевая научно-исследовательская лаборатория ОНИЛ-709, в образовательный блок кафедр...</p>
+          
+          <div class="mt-6 flex items-center justify-between pt-4 border-t border-white/5">
+            <span class="text-[10px] font-black uppercase text-zinc-500">👥 12 сотрудников</span>
+            
+          </div>
+          <div class="flex gap-2 mt-3">
+            <a href="mifi/lab_003.html" class="flex-1 text-center px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-[9px] font-bold uppercase tracking-wide text-zinc-400 hover:bg-white/10 transition">Подробнее</a>
+            <a href="javascript:void(0)" onclick="openRequestModal('Связаться с лабораторией Кафедра №9 «Физические проблем')" class="flex-1 text-center px-3 py-2 rounded-xl bg-red-500/10 border border-red-500/30 text-[9px] font-bold uppercase tracking-wide text-red-400 hover:bg-red-500/20 transition cursor-pointer">📨 Связаться</a>
+          </div>
+        </div>
+<div class="lab-item glass rounded-[2rem] p-8 hover:border-red-500/30 transition shadow-lg flex flex-col" data-idx="4" style="display:none">
+          <div class="flex flex-wrap gap-2 mb-4"><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Физика конденсированного состояния</span></div>
+          <a href="mifi/lab_004.html" class="group">
+            <h3 class="text-lg font-bold mb-3 group-hover:text-red-400 transition leading-snug">Учебно-научная лаборатория «Теоретическая физика конденсированного состояния»</h3>
+          </a>
+          <p class="text-xs text-zinc-500 leading-relaxed mb-4 flex-1">Моделирование и изучение свойств перспективных функциональных материалов</p>
+          
+          <div class="mt-6 flex items-center justify-between pt-4 border-t border-white/5">
+            <span class="text-[10px] font-black uppercase text-zinc-500">👥 3 сотрудников</span>
+            
+          </div>
+          <div class="flex gap-2 mt-3">
+            <a href="mifi/lab_004.html" class="flex-1 text-center px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-[9px] font-bold uppercase tracking-wide text-zinc-400 hover:bg-white/10 transition">Подробнее</a>
+            <a href="javascript:void(0)" onclick="openRequestModal('Связаться с лабораторией Учебно-научная лаборатория «Те')" class="flex-1 text-center px-3 py-2 rounded-xl bg-red-500/10 border border-red-500/30 text-[9px] font-bold uppercase tracking-wide text-red-400 hover:bg-red-500/20 transition cursor-pointer">📨 Связаться</a>
+          </div>
+        </div>
+        </div>
+        <div class="mt-4 text-center">
+          <button id="lab-more" onclick="showMore('lab-item', 'lab-more', 'lab-counter', 5, 3)" class="px-6 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-widest hover:bg-white/10 transition text-zinc-400">
+            Показать ещё 3
+          </button>
+        </div>
+      </div>
+
+      <!-- Scientists panel (hidden by default) -->
+      <div id="panel-sci" style="display:none">
+        <div class="text-sm text-zinc-400 mb-3" id="sci-counter">Показаны 3 из 32</div>
+        <div class="relative mb-6">
+          <i class="ph ph-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-zinc-500"></i>
+          <input id="sci-search" type="text" placeholder="Поиск по имени или области исследования...">
+          <div id="sci-count" class="absolute right-4 top-1/2 -translate-y-1/2 text-[10px] text-zinc-500 font-bold">32 учёных</div>
+        </div>
+        <div class="sci-grid" id="sci-grid">
+          <a href="mifi/sci_000.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="севрюков олег николаевич" data-areas="3d-печать материаловедение машиностроение металлы и сплавы механика материалов умные материалы физика твердого  тела электроника высокотемпературные материалы композиционные материалы микроструктурные исследования 3d реконструкции аморфные материалы аморфные сплавы взаимодействие рентгеновского и синхротронного излучений с веществом воздействие ионизирующего излучения инновационные материалы коррозия кристаллизация магнитные сенсоры наноматериалы объемные аморфные сплавы радиационная безопасность релаксационные процессы термический анализ фазовые превращения в материалах электронная микроскопия кристаллография рентгеновские структурные методы порошковая металлургия растровая электронная микроскопия спекание" data-idx="0" style="">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">СО</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Севрюков Олег Николаевич</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория Быстрозакаленных материалов</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">3D-печать, Материаловедение, Машиностроение, Металлы и сплавы +28</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 26 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="mifi/sci_001.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="диана бачурина" data-areas="материаловедение 3d-печать машиностроение металлы и сплавы механика материалов умные материалы физика твердого  тела электроника 3d реконструкции аморфные материалы аморфные сплавы взаимодействие рентгеновского и синхротронного излучений с веществом воздействие ионизирующего излучения инновационные материалы коррозия кристаллизация магнитные сенсоры наноматериалы объемные аморфные сплавы радиационная безопасность релаксационные процессы термический анализ фазовые превращения в материалах электронная микроскопия кристаллография рентгеновские структурные методы высокотемпературные материалы композиционные материалы микроструктурные исследования зеленая химия металлоорганическая химия рентгеновская поршковая дифракция синхротронное излучение химия редких и рассеянных элементов электрохимия" data-idx="1" style="">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">ДБ</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Диана Бачурина</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория Быстрозакаленных материалов</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Материаловедение, 3D-печать, Машиностроение, Металлы и сплавы +31</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 13 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="mifi/sci_002.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="никита попов" data-areas="высокотемпературные материалы композиционные материалы материаловедение микроструктурные исследования 3d-печать машиностроение металлы и сплавы механика материалов умные материалы физика твердого  тела электроника in situ кристаллография взаимодействие рентгеновского и синхротронного излучений с веществом взаимодействие рентгеновского, синхротронного излучений и нейтронов с конденсированным веществом металлургия нейтронная дифракция рентгеновская дифракция рентгеноструктурный анализ синхротронное излучение теория функционала плотности физика металлов 3d реконструкции аморфные материалы аморфные сплавы воздействие ионизирующего излучения инновационные материалы коррозия кристаллизация магнитные сенсоры наноматериалы объемные аморфные сплавы радиационная безопасность релаксационные процессы термический анализ фазовые превращения в материалах электронная микроскопия порошковая металлургия растровая электронная микроскопия спекание" data-idx="2" style="">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/thWeyCUhjxKYpUza5BPfkl3SErkRmhk5Wfiv8Aiz.jpg" class="w-full h-full object-cover" alt="Никита Попов" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Никита Попов</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория Быстрозакаленных материалов</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Высокотемпературные материалы, Композиционные материалы, Материаловедение, Микроструктурные исследования +35</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 6 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="mifi/sci_003.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="кабашин андрей викторович" data-areas="биомедицина зеленые технологии катализ лазерная абляция наноматериалы солнечная энергетика электронная микроскопия наночастицы биосенсоры ван-дер-ваальсовы материалы двумерные материалы интегральная фотоника квантовые материалы метаповерхности нанофотоника оптические материалы оптические межсоединения оптические сенсоры плазмоника поверхностно-усиленная рамановская спектроскопия тонкие пленки ультратонкие пленки эллипсометрия colloidal nanoparticles nanomaterials for biomedicine nanomedicine импульсная лазерная абляция в жидкости наноструктуры биофизика биофотоника лазерная физика лазерное взаимодействие с веществом научное образование полупроводниковые нанокристаллы high-k диэлектрики атомно-слоевое осаждение дихалькогениды переходных металлов нейроморфные устройства оксидная резистивная память сегнетоэлектрики на основе оксида гафния механические свойства материалов.усталостные и растягивающие свойства двухфазной стали, полученной в результате контролируемого процесса прокатки и термической обработки. физика конденсированного состояния квантовые точки клеточная биология тераностика оптоэлектроника материаловедение супрамолекулярная химия углеродные материалы химическая физика фазовые переходы фазовые равновесия адресная доставка лекарств спектроскопия кр (рамановская) фотоакустика коллоидная химия кристаллография магнитные материалы нанотехнологии неорганическая химия персонализированная медицина анализ данных атомно-силовая микроскопия биомедицинское приборостроение днк микроскопия обработка сигналов оптика полимерные микро- и наноконтейнеры с контролируемыми свойствами получение и исследование биодеградируемых полиэлектролитных микрокапсул для различных биологически активных соединений проточная цитометрия синтетическая биология (syntetic biology) ферменты физика полупроводников магнетизм 1d материалы 2d материалы магнитооптика спектроскопия спиновые волны электронный магнитный резонанс компьютерное моделирование машинное обучение теория функционала плотности квантовая химия моделирование молекулярной динамики" data-idx="3" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/AMh5fPHE2cZLX5qLzagkTkfnJUAyLqFZztSRvJfL.png" class="w-full h-full object-cover" alt="Кабашин Андрей Викторович" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Кабашин Андрей Викторович</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория Бионанофотоники</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Биомедицина, Зеленые технологии, Катализ, Лазерная абляция +82</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 35 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="mifi/sci_004.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="антон попов" data-areas="биомедицина зеленые технологии катализ лазерная абляция наноматериалы солнечная энергетика электронная микроскопия наночастицы биосенсоры ван-дер-ваальсовы материалы двумерные материалы интегральная фотоника квантовые материалы метаповерхности нанофотоника оптические материалы оптические межсоединения оптические сенсоры плазмоника поверхностно-усиленная рамановская спектроскопия тонкие пленки ультратонкие пленки эллипсометрия colloidal nanoparticles nanomaterials for biomedicine nanomedicine импульсная лазерная абляция в жидкости наноструктуры биофизика биофотоника high-k диэлектрики атомно-слоевое осаждение дихалькогениды переходных металлов нейроморфные устройства оксидная резистивная память сегнетоэлектрики на основе оксида гафния механические свойства материалов.усталостные и растягивающие свойства двухфазной стали, полученной в результате контролируемого процесса прокатки и термической обработки. квантовые точки сканирующая зондовая микроскопия спектроскопия материаловедение супрамолекулярная химия углеродные материалы химическая физика адресная доставка лекарств спектроскопия кр (рамановская) фотоакустика анализ данных атомно-силовая микроскопия биомедицинское приборостроение днк микроскопия обработка сигналов оптика полимерные микро- и наноконтейнеры с контролируемыми свойствами получение и исследование биодеградируемых полиэлектролитных микрокапсул для различных биологически активных соединений проточная цитометрия синтетическая биология (syntetic biology) ферменты физика полупроводников магнетизм 1d материалы 2d материалы магнитные материалы магнитооптика спиновые волны электронный магнитный резонанс физика конденсированного состояния клеточная биология тераностика компьютерное моделирование машинное обучение теория функционала плотности квантовая химия моделирование молекулярной динамики" data-idx="4" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/4VTra7vT4rCkBkQ6LYcclSBHf2yGb9j4ZYP9LjyK.png" class="w-full h-full object-cover" alt="Антон Попов" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Антон Попов</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория Бионанофотоники</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Биомедицина, Зеленые технологии, Катализ, Лазерная абляция +71</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 12 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="mifi/sci_005.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="ангелина скрибицкая" data-areas="colloidal nanoparticles nanomaterials for biomedicine nanomedicine photothermal therapy нанокомпозиты наноматериалы нанохимия покрытия полимеры" data-idx="5" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/oqEi3B71rHoL0dI6hMfYkyIDWEsAdcFUp2N7oFn3.jpg" class="w-full h-full object-cover" alt="Ангелина Скрибицкая" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Ангелина Скрибицкая</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория Бионанофотоники</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Colloidal nanoparticles, Nanomaterials for biomedicine, Nanomedicine, Photothermal therapy +5</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 0 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="mifi/sci_006.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="павел шахов" data-areas="лазерная абляция биомедицина зеленые технологии катализ наноматериалы солнечная энергетика электронная микроскопия наночастицы colloidal nanoparticles nanomaterials for biomedicine nanomedicine импульсная лазерная абляция в жидкости наноструктуры нанофотоника полупроводники спектроскопия теория кристаллического поля физика конденсированного состояния адресная доставка лекарств днк защитные покрытия для водородсодержащих соединений инкапсулирование и высвобождение водонерастворимых компонентов коллоидная химия нанотехнологии полимерные микро- и наноконтейнеры с контролируемыми свойствами получение и исследование биодеградируемых полиэлектролитных микрокапсул для различных биологически активных соединений умные материалы ферменты клеточная биология тераностика биофизика биофотоника high-k диэлектрики атомно-слоевое осаждение двумерные материалы дихалькогениды переходных металлов нейроморфные устройства оксидная резистивная память сегнетоэлектрики на основе оксида гафния механические свойства материалов.усталостные и растягивающие свойства двухфазной стали, полученной в результате контролируемого процесса прокатки и термической обработки." data-idx="6" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/obPBbgcJefMSxrI3q5ta99P71mxV3sWev1Z6z6Ko.jpg" class="w-full h-full object-cover" alt="Павел Шахов" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Павел Шахов</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория Бионанофотоники</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Лазерная абляция, Биомедицина, Зеленые технологии, Катализ +36</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 4 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="mifi/sci_007.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="ислам созаев" data-areas="биомедицина лазерная абляция наноматериалы зеленые технологии катализ солнечная энергетика электронная микроскопия наночастицы биофизика биофотоника нанофотоника colloidal nanoparticles nanomaterials for biomedicine nanomedicine импульсная лазерная абляция в жидкости наноструктуры биосенсоры ван-дер-ваальсовы материалы двумерные материалы интегральная фотоника квантовые материалы метаповерхности оптические материалы оптические межсоединения оптические сенсоры плазмоника поверхностно-усиленная рамановская спектроскопия тонкие пленки ультратонкие пленки эллипсометрия адресная доставка лекарств днк защитные покрытия для водородсодержащих соединений инкапсулирование и высвобождение водонерастворимых компонентов коллоидная химия нанотехнологии полимерные микро- и наноконтейнеры с контролируемыми свойствами получение и исследование биодеградируемых полиэлектролитных микрокапсул для различных биологически активных соединений умные материалы ферменты" data-idx="7" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/UzWMjTNIHOLrQd9YYhdVYNCrsdWY2AZ3YNeXTa1i.jpg" class="w-full h-full object-cover" alt="Ислам Созаев" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Ислам Созаев</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория Бионанофотоники</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Биомедицина, Лазерная абляция, Наноматериалы, Зеленые технологии +36</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 2 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="mifi/sci_008.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="глеб тихоновский" data-areas="наночастицы биомедицина зеленые технологии катализ лазерная абляция наноматериалы солнечная энергетика электронная микроскопия биосенсоры ван-дер-ваальсовы материалы двумерные материалы интегральная фотоника квантовые материалы метаповерхности нанофотоника оптические материалы оптические межсоединения оптические сенсоры плазмоника поверхностно-усиленная рамановская спектроскопия тонкие пленки ультратонкие пленки эллипсометрия colloidal nanoparticles nanomaterials for biomedicine nanomedicine импульсная лазерная абляция в жидкости наноструктуры биофизика биофотоника high-k диэлектрики атомно-слоевое осаждение дихалькогениды переходных металлов нейроморфные устройства оксидная резистивная память сегнетоэлектрики на основе оксида гафния механические свойства материалов.усталостные и растягивающие свойства двухфазной стали, полученной в результате контролируемого процесса прокатки и термической обработки. квантовые точки клеточная биология тераностика материаловедение супрамолекулярная химия углеродные материалы химическая физика адресная доставка лекарств спектроскопия кр (рамановская) фотоакустика анализ данных атомно-силовая микроскопия биомедицинское приборостроение днк микроскопия обработка сигналов оптика полимерные микро- и наноконтейнеры с контролируемыми свойствами получение и исследование биодеградируемых полиэлектролитных микрокапсул для различных биологически активных соединений проточная цитометрия синтетическая биология (syntetic biology) ферменты физика полупроводников магнетизм 1d материалы 2d материалы магнитные материалы магнитооптика спектроскопия спиновые волны электронный магнитный резонанс физика конденсированного состояния гибридные перовскиты люминесцентные материалы компьютерное моделирование машинное обучение теория функционала плотности квантовая химия моделирование молекулярной динамики max- фазы полимерные композиты химическая технология" data-idx="8" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/ao8HHJCagTOQLl5OsFnLbQrbK64fAlt7h3jYIGFy.jpg" class="w-full h-full object-cover" alt="Глеб Тихоновский" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Глеб Тихоновский</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория Бионанофотоники</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Наночастицы, Биомедицина, Зеленые технологии, Катализ +75</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 8 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="mifi/sci_009.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="максим савинов" data-areas="colloidal nanoparticles nanomaterials for biomedicine nanomedicine биомедицина импульсная лазерная абляция в жидкости лазерная абляция наноматериалы наноструктуры нанофотоника наночастицы зеленые технологии катализ солнечная энергетика электронная микроскопия биофизика биофотоника лазерная физика лазерное взаимодействие с веществом научное образование полупроводниковые нанокристаллы биосенсоры ван-дер-ваальсовы материалы двумерные материалы интегральная фотоника квантовые материалы метаповерхности оптические материалы оптические межсоединения оптические сенсоры плазмоника поверхностно-усиленная рамановская спектроскопия тонкие пленки ультратонкие пленки эллипсометрия клеточная биология тераностика" data-idx="9" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/d655e5bd-bd61-4356-b6d6-56f3904d5791.jpg.200x200_q95_crop_detail_upscale.jpg" class="w-full h-full object-cover" alt="Максим Савинов" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Максим Савинов</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория Бионанофотоники</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Colloidal nanoparticles, Nanomaterials for biomedicine, Nanomedicine, Биомедицина +32</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 3 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="mifi/sci_010.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="даниил целиков" data-areas="биофизика биофотоника нанофотоника наночастицы биосенсоры ван-дер-ваальсовы материалы двумерные материалы интегральная фотоника квантовые материалы метаповерхности наноматериалы оптические материалы оптические межсоединения оптические сенсоры плазмоника поверхностно-усиленная рамановская спектроскопия тонкие пленки ультратонкие пленки эллипсометрия биомедицина зеленые технологии катализ лазерная абляция солнечная энергетика электронная микроскопия квантовые точки colloidal nanoparticles nanomaterials for biomedicine nanomedicine импульсная лазерная абляция в жидкости наноструктуры high-k диэлектрики атомно-слоевое осаждение дихалькогениды переходных металлов нейроморфные устройства оксидная резистивная память сегнетоэлектрики на основе оксида гафния механические свойства материалов.усталостные и растягивающие свойства двухфазной стали, полученной в результате контролируемого процесса прокатки и термической обработки. материаловедение супрамолекулярная химия углеродные материалы химическая физика физика конденсированного состояния компьютерное моделирование машинное обучение теория функционала плотности квантовая химия моделирование молекулярной динамики" data-idx="10" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/cW5GBtpdh31f7Chhdk39nYymmWiycbZ5JUkjtVrn.jpg" class="w-full h-full object-cover" alt="Даниил Целиков" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Даниил Целиков</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория Бионанофотоники</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Биофизика, Биофотоника, Нанофотоника, Наночастицы +44</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 2 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="mifi/sci_011.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="куценко кирилл владленович" data-areas="теплофизика" data-idx="11" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/gRsVTNvG0koK7ZGZRZiaWlPen0i16416z7vtquN5.jpg" class="w-full h-full object-cover" alt="Куценко Кирилл Владленович" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Куценко Кирилл Владленович</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория теплогидравлики и физики кипения</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Теплофизика</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 12 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="mifi/sci_012.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="алексей лаврухин" data-areas="теплофизика" data-idx="12" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">АЛ</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Алексей Лаврухин</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория теплогидравлики и физики кипения</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Теплофизика</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 10 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="mifi/sci_013.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="дмитрий кузьменков" data-areas="теплофизика" data-idx="13" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">ДК</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Дмитрий Кузьменков</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория теплогидравлики и физики кипения</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Теплофизика</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 4 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="mifi/sci_014.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="максим делов" data-areas="теплофизика" data-idx="14" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">МД</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Максим Делов</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория теплогидравлики и физики кипения</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Теплофизика</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 6 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="mifi/sci_015.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="павел стручалин" data-areas="теплофизика" data-idx="15" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">ПС</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Павел Стручалин</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория теплогидравлики и физики кипения</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Теплофизика</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 8 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="mifi/sci_016.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="александр савельев" data-areas="" data-idx="16" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">АС</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Александр Савельев</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория теплогидравлики и физики кипения</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2"></div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 0 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="mifi/sci_017.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="юлия литвинцова" data-areas="теплофизика" data-idx="17" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">ЮЛ</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Юлия Литвинцова</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория теплогидравлики и физики кипения</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Теплофизика</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 2 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="mifi/sci_018.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="алексей сучков" data-areas="материаловедение 3d-печать машиностроение металлы и сплавы механика материалов умные материалы физика твердого  тела электроника 3d реконструкции аморфные материалы аморфные сплавы взаимодействие рентгеновского и синхротронного излучений с веществом воздействие ионизирующего излучения инновационные материалы коррозия кристаллизация магнитные сенсоры наноматериалы объемные аморфные сплавы радиационная безопасность релаксационные процессы термический анализ фазовые превращения в материалах электронная микроскопия высокотемпературные материалы композиционные материалы микроструктурные исследования кристаллография рентгеновские структурные методы порошковая металлургия растровая электронная микроскопия спекание зеленая химия металлоорганическая химия рентгеновская поршковая дифракция синхротронное излучение химия редких и рассеянных элементов электрохимия" data-idx="18" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/vcuVcUirXpEukZgYxrRAGdmQyBpYKg03936z6APy.png" class="w-full h-full object-cover" alt="Алексей Сучков" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Алексей Сучков</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Кафедра №9 «Физические проблемы материаловедения»</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Материаловедение, 3D-печать, Машиностроение, Металлы и сплавы +34</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 21 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="mifi/sci_019.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="павел джумаев" data-areas="материаловедение 3d-печать машиностроение металлы и сплавы механика материалов умные материалы физика твердого  тела электроника 2d материалы джозефсоновские структуры магнетизм нанотехнологии низкотемпературные технологии сверхпроводимость сканирующая туннельная микроскопия топологические изоляторы 3d реконструкции аморфные материалы аморфные сплавы взаимодействие рентгеновского и синхротронного излучений с веществом воздействие ионизирующего излучения инновационные материалы коррозия кристаллизация магнитные сенсоры наноматериалы объемные аморфные сплавы радиационная безопасность релаксационные процессы термический анализ фазовые превращения в материалах электронная микроскопия вакуумное напыление ионная имплатация взаимодействие ионов с поверхностью кристаллография рентгеновские структурные методы topological insulator квантовая физика сверхпроводниковая электроника механические свойства материалов.усталостные и растягивающие свойства двухфазной стали, полученной в результате контролируемого процесса прокатки и термической обработки. micromagnetics numerical methods физика конденсированного состояния нанопровода механические свойства материалов рентгеноструктурный анализ физика металлов эффект близости (proximity) высокотемпературные материалы композиционные материалы микроструктурные исследования транспортные измерения магнитные материалы магнитные полупроводники магноника тонкие пленки микромагнетизм квантовая оптика квантовые вычисления графен молекулярная динамика фуллерены" data-idx="19" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/CFzVhQXGAeTwr4JHUuiPMkQzrvxadKC93FHXxWxW.jpg" class="w-full h-full object-cover" alt="Павел Джумаев" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Павел Джумаев</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Кафедра №9 «Физические проблемы материаловедения»</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Материаловедение, 3D-печать, Машиностроение, Металлы и сплавы +59</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 21 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="mifi/sci_020.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="илья козлов" data-areas="3d реконструкции аморфные материалы аморфные сплавы взаимодействие рентгеновского и синхротронного излучений с веществом воздействие ионизирующего излучения инновационные материалы коррозия кристаллизация магнитные сенсоры материаловедение наноматериалы объемные аморфные сплавы радиационная безопасность релаксационные процессы термический анализ фазовые превращения в материалах электронная микроскопия кристаллография рентгеновские структурные методы высокотемпературные материалы композиционные материалы микроструктурные исследования машинное обучение приборостроение зеленая химия металлоорганическая химия рентгеновская поршковая дифракция синхротронное излучение химия редких и рассеянных элементов электрохимия 3d-печать машиностроение металлы и сплавы механика материалов умные материалы физика твердого  тела электроника порошковая металлургия растровая электронная микроскопия спекание" data-idx="20" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/VqSa0CyHlosEafWQJkHbdntK2wxQw6wvrvzQns6d.png" class="w-full h-full object-cover" alt="Илья Козлов" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Илья Козлов</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Кафедра №9 «Физические проблемы материаловедения»</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">3D реконструкции, Аморфные материалы, Аморфные сплавы, Взаимодействие рентгеновского и синхротронного излучений с веществом +36</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 8 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="mifi/sci_021.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="олег севрюков" data-areas="3d-печать материаловедение машиностроение металлы и сплавы механика материалов умные материалы физика твердого  тела электроника высокотемпературные материалы композиционные материалы микроструктурные исследования 3d реконструкции аморфные материалы аморфные сплавы взаимодействие рентгеновского и синхротронного излучений с веществом воздействие ионизирующего излучения инновационные материалы коррозия кристаллизация магнитные сенсоры наноматериалы объемные аморфные сплавы радиационная безопасность релаксационные процессы термический анализ фазовые превращения в материалах электронная микроскопия кристаллография рентгеновские структурные методы порошковая металлургия растровая электронная микроскопия спекание" data-idx="21" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">ОС</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Олег Севрюков</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Кафедра №9 «Физические проблемы материаловедения»</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">3D-печать, Материаловедение, Машиностроение, Металлы и сплавы +28</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 26 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="mifi/sci_022.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="александр иванников" data-areas="3d-печать материаловедение машиностроение металлы и сплавы механика материалов умные материалы физика твердого  тела электроника высокотемпературные материалы композиционные материалы микроструктурные исследования in situ кристаллография взаимодействие рентгеновского и синхротронного излучений с веществом взаимодействие рентгеновского, синхротронного излучений и нейтронов с конденсированным веществом металлургия нейтронная дифракция рентгеновская дифракция рентгеноструктурный анализ синхротронное излучение теория функционала плотности физика металлов 3d реконструкции аморфные материалы аморфные сплавы воздействие ионизирующего излучения инновационные материалы коррозия кристаллизация магнитные сенсоры наноматериалы объемные аморфные сплавы радиационная безопасность релаксационные процессы термический анализ фазовые превращения в материалах электронная микроскопия" data-idx="22" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">АИ</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Александр Иванников</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Кафедра №9 «Физические проблемы материаловедения»</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">3D-печать, Материаловедение, Машиностроение, Металлы и сплавы +32</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 19 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="mifi/sci_023.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="владимир михальчик" data-areas="кристаллография рентгеновские структурные методы 3d реконструкции аморфные материалы аморфные сплавы взаимодействие рентгеновского и синхротронного излучений с веществом воздействие ионизирующего излучения инновационные материалы коррозия кристаллизация магнитные сенсоры материаловедение наноматериалы объемные аморфные сплавы радиационная безопасность релаксационные процессы термический анализ фазовые превращения в материалах электронная микроскопия" data-idx="23" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/ZoVpQabLyLGhaj5DxuX4TGDCYcH6zTMT9egWfZuF.jpg" class="w-full h-full object-cover" alt="Владимир Михальчик" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Владимир Михальчик</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Кафедра №9 «Физические проблемы материаловедения»</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Кристаллография, Рентгеновские структурные методы, 3D реконструкции, Аморфные материалы +15</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 5 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="mifi/sci_024.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="антон абрамов" data-areas="материаловедение 3d-печать машиностроение металлы и сплавы механика материалов умные материалы физика твердого  тела электроника высокотемпературные материалы композиционные материалы микроструктурные исследования" data-idx="24" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">АА</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Антон Абрамов</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Кафедра №9 «Физические проблемы материаловедения»</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Материаловедение, 3D-печать, Машиностроение, Металлы и сплавы +7</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 3 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="mifi/sci_025.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="софья терехова" data-areas="материаловедение 3d-печать машиностроение металлы и сплавы механика материалов умные материалы физика твердого  тела электроника высокотемпературные материалы композиционные материалы микроструктурные исследования 3d реконструкции аморфные материалы аморфные сплавы взаимодействие рентгеновского и синхротронного излучений с веществом воздействие ионизирующего излучения инновационные материалы коррозия кристаллизация магнитные сенсоры наноматериалы объемные аморфные сплавы радиационная безопасность релаксационные процессы термический анализ фазовые превращения в материалах электронная микроскопия" data-idx="25" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/m0QETH1jpN8f4sOhhql7Vgydo0Heui4Oe0NXdhnH.jpg" class="w-full h-full object-cover" alt="Софья Терехова" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Софья Терехова</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Кафедра №9 «Физические проблемы материаловедения»</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Материаловедение, 3D-печать, Машиностроение, Металлы и сплавы +23</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 1 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="mifi/sci_026.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="екатерина баздникина" data-areas="3d реконструкции аморфные материалы аморфные сплавы взаимодействие рентгеновского и синхротронного излучений с веществом воздействие ионизирующего излучения инновационные материалы коррозия кристаллизация магнитные сенсоры материаловедение наноматериалы объемные аморфные сплавы радиационная безопасность релаксационные процессы термический анализ фазовые превращения в материалах электронная микроскопия" data-idx="26" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">ЕБ</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Екатерина Баздникина</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Кафедра №9 «Физические проблемы материаловедения»</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">3D реконструкции, Аморфные материалы, Аморфные сплавы, Взаимодействие рентгеновского и синхротронного излучений с веществом +13</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 0 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="mifi/sci_027.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="вероника кириллова" data-areas="" data-idx="27" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">ВК</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Вероника Кириллова</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Кафедра №9 «Физические проблемы материаловедения»</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2"></div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 0 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="mifi/sci_028.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="александр баженов" data-areas="материаловедение порошковая металлургия растровая электронная микроскопия спекание высокотемпературные материалы композиционные материалы микроструктурные исследования 3d реконструкции аморфные материалы аморфные сплавы взаимодействие рентгеновского и синхротронного излучений с веществом воздействие ионизирующего излучения инновационные материалы коррозия кристаллизация магнитные сенсоры наноматериалы объемные аморфные сплавы радиационная безопасность релаксационные процессы термический анализ фазовые превращения в материалах электронная микроскопия" data-idx="28" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">АБ</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Александр Баженов</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Кафедра №9 «Физические проблемы материаловедения»</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Материаловедение, Порошковая металлургия, Растровая электронная микроскопия, Спекание +19</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 2 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="mifi/sci_029.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="красавин андрей валерьевич" data-areas="монте-карло моделирование сверхпроводимость физика конденсированного состояния 2d материалы вихревые технологии гибридные сверхпроводники топологческие сверхпроводники джозефсоновские структуры магнетизм нанотехнологии низкотемпературные технологии сканирующая туннельная микроскопия топологические изоляторы квантовый транспорт материаловедение машинное обучение мезоскопика молекулярная динамика наноматериалы неравновесная сверхпроводимость перовскиты теория функционала плотности функциональные материалы" data-idx="29" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/l5PHfNTr00Op8A3DTLsMxcHSWLnRHbBfTj03mwSk.jpg" class="w-full h-full object-cover" alt="Красавин Андрей Валерьевич" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Красавин Андрей Валерьевич</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Учебно-научная лаборатория «Теоретическая физика конденсированного состояния»</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Монте-Карло моделирование, Сверхпроводимость, Физика конденсированного состояния, 2D Материалы +19</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 27 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="mifi/sci_030.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="вячеслав неверов" data-areas="2d материалы вихревые технологии гибридные сверхпроводники сверхпроводимость монте-карло моделирование физика конденсированного состояния топологческие сверхпроводники" data-idx="30" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/NGNwxyXioIFLJwwvT6uWPyDNUYdzF3OHIuUQpliV.jpg" class="w-full h-full object-cover" alt="Вячеслав Неверов" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Вячеслав Неверов</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Учебно-научная лаборатория «Теоретическая физика конденсированного состояния»</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">2D Материалы, Вихревые технологии, Гибридные сверхпроводники, Сверхпроводимость +3</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 8 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="mifi/sci_031.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="александр калашников" data-areas="монте-карло моделирование сверхпроводимость физика конденсированного состояния 2d материалы вихревые технологии гибридные сверхпроводники" data-idx="31" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/U1PkRKaje6vXIjqN47ZOdJ6Gysm6tnMgYAXYqvd1.jpg" class="w-full h-full object-cover" alt="Александр Калашников" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Александр Калашников</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Учебно-научная лаборатория «Теоретическая физика конденсированного состояния»</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Монте-Карло моделирование, Сверхпроводимость, Физика конденсированного состояния, 2D Материалы +2</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 1 публ.</span>
+            </div>
+          </div>
+        </a>
+        </div>
+        <div class="mt-4 text-center">
+          <button id="sci-more" onclick="showMore('sci-card', 'sci-more', 'sci-counter', 32, 3)" class="px-6 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-widest hover:bg-white/10 transition text-zinc-400">
+            Показать ещё 3
+          </button>
+        </div>
+      </div>
+
+      <script>
+        // Tab switching
+        function switchTab(tab) {
+          document.getElementById('panel-labs').style.display = tab === 'labs' ? '' : 'none';
+          document.getElementById('panel-sci').style.display = tab === 'sci' ? '' : 'none';
+          document.getElementById('tab-labs').style.opacity = tab === 'labs' ? '1' : '0.3';
+          document.getElementById('tab-sci').style.opacity = tab === 'sci' ? '1' : '0.3';
+        }
+        // Scientist search
+        (function() {
+          const input = document.getElementById('sci-search');
+          const grid = document.getElementById('sci-grid');
+          const counter = document.getElementById('sci-count');
+          if (!input || !grid) return;
+          const cards = grid.querySelectorAll('.sci-card');
+          input.addEventListener('input', function() {
+            const q = this.value.toLowerCase().trim();
+            let visible = 0;
+            cards.forEach(c => {
+              const name = c.dataset.name || '';
+              const areas = c.dataset.areas || '';
+              const match = !q || name.includes(q) || areas.includes(q);
+              c.classList.toggle('hidden', !match);
+              if (match) visible++;
+            });
+            counter.textContent = visible + ' учёных';
+          });
+        })();
+      </script>
+
+      <!-- ═══ CHUNK 5: Projects ═══ -->
+      <div class="section-header" id="section-projects">
+        <h2 class="section-title">💼 Проекты НИОКР (24)</h2>
+        <span class="provenance-tag tag-egisu">ЕГИСУ</span>
+      </div>
+      <section class="glass rounded-[2.5rem] overflow-hidden mb-8">
+        <div class="p-6 border-b border-white/10 flex items-center justify-between">
+          <span class="text-sm text-zinc-400" id="proj-counter">Показаны 5 из 24</span>
+          <a href="mifi/projects.html" class="text-xs font-bold text-red-400 hover:text-red-300 transition uppercase">Все проекты →</a>
+        </div>
+        <div id="proj-list"><a href="mifi/proj_0000.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="0">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Разработка, изготовление и поставка экспериментальных образцов датчиков тока для лаборатории диагностики пучков заряженн</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Объектом изучения являются датчики тока импульсных пучков ускоренных заряженных частиц.
+Задачей НИОК...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">ПУЧКИ УСКОРЕННЫХ ЗАРЯЖЕННЫХ ЧАСТИЦ, ПИКОСЕКУНДНЫЕ СГУСТКИ ЭЛЕКТРОНОВ, ИНДУКЦИОННЫЙ ДАТЧИК ТОКА, ИНТЕГРИРУЮЩИЙ ИНДУКЦИОННЫЙ ДАТЧИК ТОКА</span>
+            
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">3,000 тыс. ₽</span>
+          </div>
+        </a>
+<a href="mifi/proj_0001.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="1">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Отчёт по научно-исследовательской работе &quot;Фундаментальные и прикладные исследования на экспериментальном комплексе класс</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Отчёт содержит 295 страниц, 209 рисунков, 27 таблиц, 130 источников, 2 приложения. Ключевые слова: Ф...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">Фазовая диаграмма КХД, Столкновения релятивистских ядер, Уравнение состояния, Кварк-глюонная материя, Спин нуклона</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">35,742 тыс. ₽</span>
+          </div>
+        </a>
+<a href="mifi/proj_0002.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="2">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">ОТЧЕТ О НАУЧНО-ИССЛЕДОВАТЕЛЬСКОЙ РАБОТЕ по теме «Многомасштабные процессы взаимодействия лазерного излучения, плазмы и р</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>В отчетный период продолжены исследования по актуальной теме, связанной с решением важнейшей проблем...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">лазерно-разрядная плазма, лазерная обработка материалов, трехмерная биопечать, синтез и функциализация наноматериалов, гибридные и композитные функциональные материалы</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">31,262 тыс. ₽</span>
+          </div>
+        </a>
+<a href="mifi/proj_0003.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="3">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Методы дистанционного контроля состава и возобновления поверхности стенок термоядерных установок (промежуточный, этап 1)</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>В ходе первого этапа была собрана и апробирована система одновременного измерения содержания водород...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">Термоядерный синтез, плазма, накопление, изотопы водорода, литий</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">34,012 тыс. ₽</span>
+          </div>
+        </a>
+<a href="mifi/proj_0004.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="4">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">НАУЧНО-ТЕХНИЧЕСКИЙ ОТЧЕТ «Лаборатория разработки компонентов изделий твердотельной аналого-цифровой СВЧ электроники дове</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Объектами исследования «Лаборатории разработки компонентов изделий твердотельной аналого-цифровой СВ...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">Считыватель, Приемопередающая СБИС, Цифровая маркировка и идентификация, Твердотельная СВЧ электроника, Базовые элементы</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">19,295 тыс. ₽</span>
+          </div>
+        </a>
+<a href="mifi/proj_0005.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="5">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Научно-технический отчет по теме «Развитие новых подходов по управлению оптическими свойствами гибридных нано- и метамат</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Работа направлена на исследование новых оптических материалов, элементов фотоники и нанофотоники, ме...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">квантовые точки, фотонный кристалл, излучение, когерентность, излучение Смита-Парселла</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">21,852 тыс. ₽</span>
+          </div>
+        </a>
+<a href="mifi/proj_0006.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="6">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Отчет о научно-исследовательской работе «Исследование форбуш-эффектов на фазе роста солнечной активности 25 солнечного ц</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Отчет 38 с., 18 рисунков, 3 таблицы, 1 приложение, 18 источников.
+КОСМИЧЕСКИЕ ЛУЧИ, МЮОНЫ, ФОРБУШ-ЭФ...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">магнитосфера, магнитосферные возмущения, гелиосфеные возмущения, магнитные бури, форбуш-эффект</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">2,248 тыс. ₽</span>
+          </div>
+        </a>
+<a href="mifi/proj_0007.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="7">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Отчет о выполнении проекта РНФ № 24-72-00150 «Излучения от резонансных димеров для высокочувствительного сенсора электро</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Проект направлен на разработку модели сенсора электронов, работа которого основана на регистрации ре...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">БЫСТРЫЕ ЭЛЕКТРОНЫ, НАНОЧАСТИЦЫ, РЕЗОНАНС, ИЗЛУЧЕНИЕ СМИТА-ПАРСЕЛЛА, ДИФРАКЦИОННОЕ ИЗЛУЧЕНИЕ</span>
+            <span class='text-[10px] text-zinc-600'>| РНФ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024–2025</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">1,500 тыс. ₽</span>
+          </div>
+        </a>
+<a href="mifi/proj_0008.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="8">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Научно-технический отчет «Лаборатория физико-химических методов анализа высокочистых фторсодержащих газов для электроник</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Объектом исследований являются методы анализа высокочистых фторсодержащих газов. Целью выполнения ра...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">ОЦЕНКА ЧИСТОТЫ ГАЗОВ, ФТОРСОДЕРЖАЩИЕ ГАЗЫ, ЭЛЕКТРОННЫЕ ГАЗЫ, ТРИФТОРИД БОРА, ГЕКСАФТОРИД ВОЛЬФРАМА</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">21,295 тыс. ₽</span>
+          </div>
+        </a>
+<a href="mifi/proj_0009.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="9">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Разработка тандемного трехквадрупольного масс-спектрометра с ионизацией методом электрораспыления (Тандемный масс-спектр</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Цель работы – разработка высокотехнологичного импортозамещающего тандемного трехквадрупольного масс-...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">ионная оптика, тандемный трехквадрупольный масс-спектрометр, электрораспыление, масс-спектрометрия, методы ионизации</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">267,442 тыс. ₽</span>
+          </div>
+        </a>
+<a href="mifi/proj_0010.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="10">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Отчет о научно-исследовательской работе «Фундаментальные и прикладные исследования космических лучей» за 2024 год 
+выпол</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Отчет 136 с., 76 рис., 4 табл., 110 источников.
+КОСМИЧЕСКИЕ ЛУЧИ, ТЕМНАЯ МАТЕРИЯ, ГЕЛИОСФЕРА, МАГНИТ...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">гелиосфера, темная материя, магнитосфера, атмосфера, нейтроны</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">20,871 тыс. ₽</span>
+          </div>
+        </a>
+<a href="mifi/proj_0011.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="11">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">РЕАЛИЗАЦИЯ РАБОТЫ УСТАНОВКИ С ДЕМОНСТРАЦИЕЙ ФУНКЦИОНИРОВАНИЯ ВСЕХ ОСНОВНЫХ СИСТЕМ, ДИАГНОСТИК И МЕТОДИЧЕСКОГО ОБЕСПЕЧЕНИ</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Объектами работы являются разработка дивертора и системы цифровизация малого сферического токамака Н...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">ТОКАМАКИ, СИСТЕМЫ СБОРА И ОБРАБОТКИ ИНФОРМАЦИИ, СИСТЕМЫ УПРАВЛЕНИЯ ПРОЦЕССАМИ</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">46,108 тыс. ₽</span>
+          </div>
+        </a>
+<a href="mifi/proj_0012.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="12">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">ОТЧЕТ О НАУЧНО-ИССЛЕДОВАТЕЛЬСКОЙ РАБОТЕ по теме: Лаборатория «Технологии проектирования нитридгаллиевой ЭКБ и функционал</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Объектом исследования являются транзисторы с высокой подвижнотью двумерного электронного газа на осн...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">СИЛОВАЯ ЭЛЕКТРОНИКА, СВЕРХВЫСОКАЯ ЧАСТОТА, ИСТОЧНИК ВТОРИЧНОГО ПИТАНИЯ, ТРАНЗИСТОР С ВЫСОКОЙ ПОДВИЖНОСТЬЮ ЭЛЕКТРОНОВ, НИТРИД ГАЛЛИЯ</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">17,295 тыс. ₽</span>
+          </div>
+        </a>
+<a href="mifi/proj_0013.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="13">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Отчет о научно-исследовательской работе «Нейтринные детекторы для дистанционного контроля ядерных реакторов и астрофизич</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Отчет 121 с., 93 рис., 12 табл., 28 источника.
+ДЕТЕКТОРЫ, АНТИНЕЙТРИНО, ЯДЕРНО-ФИЗИЧЕСКИЕ УСТАНОВКИ,...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">спектр реакторных антинейтрино, оптический модуль, астрофизические нейтрино, нейтроны, нейтрино</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">18,000 тыс. ₽</span>
+          </div>
+        </a>
+<a href="mifi/proj_0014.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="14">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Отчет о выполненных научно-исследовательских работах по проекту &quot;Многокубитные спиновые квантовые сети на основе примесн</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Отчет содержит 428 с., 258 рис., 29 табл., 232 источника, 1 прил.
+Ключевые слова: АЛМАЗ, ЦЕНТР ОКРАС...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">спин, квантовые технологии, квантовый регистр, центр окраски, алмаз</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">100,000 тыс. ₽</span>
+          </div>
+        </a>
+<a href="mifi/proj_0015.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="15">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Разработка и создание образцов литиевой КПС с барьерным защитным покрытием и разработка программы и методики их испытани</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Объектом исследования являются образцы литиевой КПС с барьерным защитным покрытием.
+Цель работы - по...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">ЛИТИЙ, КАПИЛЛЯРНО-ПОРИСТАЯ СТРУКТУРА, БАРЬЕРНОЕ ЗАЩИТНОЕ ПОКРЫТИЕ</span>
+            
+            <span class='text-[10px] text-zinc-600'>| 2025</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">12,133 тыс. ₽</span>
+          </div>
+        </a>
+<a href="mifi/proj_0016.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="16">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Отчет о научно-исследовательской работе по теме: &quot;Разработка системы охлаждения фотоэлементов в составе радиоизотопного </div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Цель работы - создание прототипа радиоизотопного источника питания на термофотовольтаическом типе пр...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">ИК спектрометр, спектр АМ0, внешний квантовый выход фотоотклика, вольт-амперная характеристика, полупроводниковые материалы АIIIBV</span>
+            
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">4,000 тыс. ₽</span>
+          </div>
+        </a>
+<a href="mifi/proj_0017.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="17">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Отчёт по научно-исследовательской работе &quot;Новые явления в физике элементарных частиц и ранней Вселенной&quot; за 2024 год вып</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Отчёт содержит 273 страницы, 118 иллюстрации, 13 таблиц, 234 использованных источника.
+Ключевые слов...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">сильновзаимодействующая материя, тяжёлые адроны, упругое когерентное рассеяние нейтрино на ядрах, полупроводниковые детекторы, фазовая диаграмма КХД</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">27,794 тыс. ₽</span>
+          </div>
+        </a>
+<a href="mifi/proj_0018.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="18">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">ОТЧЕТ О НАУЧНО-ИССЛЕДОВАТЕЛЬСКОЙ РАБОТЕ по теме: &quot;Разработка конструкции и технологии эффективных узлов ввода-вывода для</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Цель работы – разработка конструкции и технологии эффективных узлов ввода-вывода для фотонных интегр...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">ПОТЕРИ, УЗЕЛ ВВОДА И ВЫВОДА ИЗЛУЧЕНИЯ, ЛИТОГРАФИЯ, ПЛАЗМЕННОЕ ТРАВЛЕНИЕ, ГЕТЕРОСТРУКТУРА</span>
+            <span class='text-[10px] text-zinc-600'>| РНФ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024–2025</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">24,000 тыс. ₽</span>
+          </div>
+        </a>
+<a href="mifi/proj_0019.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="19">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">НАУЧНО-ТЕХНИЧЕСКИЙ ОТЧЕТ 
+Лаборатория &quot;Сверхпроводящие энергетические системы&quot;
+Код (шифр) научной темы «FSWU-2022-0013»
+</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Отчет 230 с., 1 ч., 122 рис., 5 табл., 83 источника, 3 прил.
+ВЫСОКОТЕМПЕРАТУРНЫЙ СВЕРХПРОВОДНИК, СВЕ...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">НАМАГНИЧЕННОСТЬ, ПИННИНГ, импульсы тока, переключатель, ВЫСОКОТЕМПЕРАТУРНЫЙ СВЕРХПРОВОДНИК</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">20,345 тыс. ₽</span>
+          </div>
+        </a>
+<a href="mifi/proj_0020.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="20">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Создание и испытание диагностической системы для измерения содержания водорода в стенке камеры, систем питания и системы</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Объектом работы является разработка системы для определения содержания водорода в стенке камеры посл...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">токамаки, ЭЛЕКТРОМАГНИТНАЯ СИСТЕМА, СПЕКТРОМЕТРИЯ, КОРПУСКУЛЯРНАЯ ДИАГНОСТИКА, СОБИРАЮЩИЕ ЗОНДЫ</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2021</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">24,521 тыс. ₽</span>
+          </div>
+        </a>
+<a href="mifi/proj_0021.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="21">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Отчет о научно-исследовательской работе по проекту: &quot;Лаборатория &quot;Низкотемпературные керамические технологии (LTCC) в ми</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Отчет представляет собой итоговые материалы третьего заключительного этапа работы научно-исследовате...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">силовой модуль, толстые пленки, лазерная микрообработка, радиационная стойкость, система в корпусе</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">23,294 тыс. ₽</span>
+          </div>
+        </a>
+<a href="mifi/proj_0022.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="22">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Отчет о научно-исследовательской работе «Аналитические и численные методы исследования сложных систем и нелинейных задач</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Объектом исследования при выполнении второго этапа проекта являются следующие математические модели ...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">НЕЛИНЕЙНЫЕ УРАВНЕНИЯ В ЧАСТНЫХ ПРОИЗВОДНЫХ, ОПТИЧЕСКИЕ СОЛИТОНЫ, ИЕРАРХИЯ БЮРГЕРСА, НЕЙРОННЫЕ СЕТИ, ПРОТИВООПУХОЛЕВЫЕ ВОЗДЕЙСТВИЯ</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">25,353 тыс. ₽</span>
+          </div>
+        </a>
+<a href="mifi/proj_0023.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="23">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">ЛАБОРАТОРИЯ 2D НАНОМАТЕРИАЛОВ В ЭЛЕКТРОНИКЕ, ФОТОНИКЕ И СПИНТРОНИКЕ</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Объектом исследования являются графен и структуры на его основе, а также углеродные и неуглеродные н...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">углерод, графен, зонная структура, молекулярная динамика, гетероструктуры</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">16,197 тыс. ₽</span>
+          </div>
+        </a>
+</div>
+        <div class="p-4 text-center">
+          <button id="proj-more" onclick="showMore('proj-item', 'proj-more', 'proj-counter', 24)" class="px-6 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-widest hover:bg-white/10 transition text-zinc-400">
+            Показать ещё 5
+          </button>
+        </div>
+      </section>
+
+      <!-- ═══ RID Section ═══ -->
+      <div class="section-header" id="section-rid">
+        <h2 class="section-title">🧬 Результаты интеллектуальной деятельности (39)</h2>
+        <span class="provenance-tag tag-egisu">ЕГИСУ</span>
+      </div>
+      <div class="rid-grid mb-6">
+        <div class="glass rounded-2xl p-5 text-center">
+          <div class="text-2xl mb-2">💻</div>
+          <div class="text-2xl font-black italic">18</div>
+          <div class="text-[10px] uppercase font-bold text-zinc-500 mt-1">Программа для ЭВМ</div>
+        </div>
+<div class="glass rounded-2xl p-5 text-center">
+          <div class="text-2xl mb-2">💡</div>
+          <div class="text-2xl font-black italic">11</div>
+          <div class="text-[10px] uppercase font-bold text-zinc-500 mt-1">Изобретение</div>
+        </div>
+<div class="glass rounded-2xl p-5 text-center">
+          <div class="text-2xl mb-2">⚙️</div>
+          <div class="text-2xl font-black italic">5</div>
+          <div class="text-[10px] uppercase font-bold text-zinc-500 mt-1">Полезная модель</div>
+        </div>
+<div class="glass rounded-2xl p-5 text-center">
+          <div class="text-2xl mb-2">🗄️</div>
+          <div class="text-2xl font-black italic">3</div>
+          <div class="text-[10px] uppercase font-bold text-zinc-500 mt-1">База данных</div>
+        </div>
+<div class="glass rounded-2xl p-5 text-center">
+          <div class="text-2xl mb-2">📄</div>
+          <div class="text-2xl font-black italic">2</div>
+          <div class="text-[10px] uppercase font-bold text-zinc-500 mt-1">Топология интегральных микросхем</div>
+        </div>
+
+      </div>
+      <section class="glass rounded-[2.5rem] overflow-hidden mb-8">
+        <div class="p-6 border-b border-white/10 flex items-center justify-between">
+          <span class="text-sm text-zinc-400" id="rid-counter">Показаны 5 из 39</span>
+          <a href="mifi/rid_list.html" class="text-xs font-bold text-red-400 hover:text-red-300 transition uppercase">Все РИД →</a>
+        </div>
+        <div id="rid-list"><a href="mifi/rid_0000.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="0">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💻</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">Программа расчета мощности генератора для сверхпроводящих ускоряющих резонаторов</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Программа входит в комплекс программ для моделирования высокочастотных ускоряющи...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Программа для ЭВМ</span>
+                <span class='text-[10px] text-zinc-600'>| ускоритель заряженных частиц, система СВЧ питания, сверхпроводимость</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="mifi/rid_0001.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="1">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💻</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">ПРОГРАММНОЕ ОБЕСПЕЧЕНИЕ ДЛЯ ОПРЕДЕЛЕНИЯ ОПТИМАЛЬНОГО РАЗМЕРА СВЕРХЪЯЧЕЕК ПРИ МОДЕЛИРОВАНИИ КОМПОЗИТН</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Программа предназначена для определения оптимального числа элементарных ячеек, с...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Программа для ЭВМ</span>
+                <span class='text-[10px] text-zinc-600'>| кристаллическая структуры, композитные материалы</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="mifi/rid_0002.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="2">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💡</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">УСТРОЙСТВО ДЛЯ ОСАЖДЕНИЯ МЕТАЛЛИЧЕСКИХ ПЛЕНОК</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Изобретение относится к вакуумно-плазменной технике, а именно к источникам атомо...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Изобретение</span>
+                <span class='text-[10px] text-zinc-600'>| осаждение металлических пленок, источник атомов металлов, полый катод</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="mifi/rid_0003.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="3">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">⚙️</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">Газовый сенсор</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Полезная модель относится к области микроэлектронных и микромеханических устройс...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Полезная модель</span>
+                <span class='text-[10px] text-zinc-600'>| лазерная микрофрезеровка, газовая чувствительность, селективность</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="mifi/rid_0004.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="4">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💻</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">Программа ISInCa для анализа результатов Монте-Карло моделирования взаимодействия атомов с поверхнос</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Программа «ISInCa.jar» предназначена для формирования интегральных (коэффициенты...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Программа для ЭВМ</span>
+                <span class='text-[10px] text-zinc-600'>| Монте-Карло расчеты, взаимодействие атомов с поверхностью твёрдого тела, коэффициенты прохождения атомов в твердое тело</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="mifi/rid_0005.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="5">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💻</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">Программа для работы с кубитами на NV-центрах в алмазе.</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Программный комплекс предназначен для исследования свойств центров окраски в алм...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Программа для ЭВМ</span>
+                <span class='text-[10px] text-zinc-600'>| Оптически детектируемый магнитный резонанс, Синтетический алмаз, NV-центр</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="mifi/rid_0006.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="6">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💡</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">Способ получения антифрикционного покрытия с улучшенными свойствами</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Изобретение относится к области машиностроения, а именно к способам нанесения ан...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Изобретение</span>
+                <span class='text-[10px] text-zinc-600'>| антифрикционное покрытие, реакционное импульсное лазерное осаждение, лазерная абляция</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="mifi/rid_0007.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="7">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💡</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">Способ масс-сепарации в квадрупольном фильтре масс</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Изобретение относится к технике квадрупольной масс-спектрометрии и может быть ис...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Изобретение</span>
+                <span class='text-[10px] text-zinc-600'>| квадрупольный фильтр масс, квадруполь, квадрупольное поле</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="mifi/rid_0008.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="8">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💻</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">Программный комплекс для управления функционалом фотолюминесцентного микроскопа и сбора данных об оп</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Программа представляет собой интерфейс, разработанный для гибкого и полного упра...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Программа для ЭВМ</span>
+                <span class='text-[10px] text-zinc-600'>| Центр окраски, Синтетический алмаз, Оптически детектируемый магнитный резонанс</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="mifi/rid_0009.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="9">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💡</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">Способ создания фотокатода с гетеропереходом MoSx/WSe2 для получения водорода</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Способ создания фотокатода с гетеропереходом MoSx/WSe2 для получения водорода от...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Изобретение</span>
+                <span class='text-[10px] text-zinc-600'>| фотокатод, водородная энергетика, получение водорода</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="mifi/rid_0010.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="10">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">🗄️</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">Файловое хранилище данных с импульсов токонесущей плазмы на токамаке МИФИСТ в формате HDF5/NeXuS</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Файловое хранилище предназначено для хранения и экспорта данных с базовых диагно...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">База данных</span>
+                <span class='text-[10px] text-zinc-600'>| датчики рентгеновского излучения, пояса Роговского, магнитные зонды</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="mifi/rid_0011.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="11">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💻</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">Программный комплекс расчета положения и формы границы плазмы в токамаке по магнитным измерениям</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Программный комплекс предназначен для расчета положения и формы границы плазмы в...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Программа для ЭВМ</span>
+                <span class='text-[10px] text-zinc-600'>| системы диагностик токамака, граница плазмы, магнитная система токамака</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="mifi/rid_0012.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="12">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">📄</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">Аналоговый тракт приемопередатчика прямого преобразования с рабочими частотами 860…960 МГц</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Аналоговый тракт приемопередатчика (далее – приемопередатчик) выполнен в рамках ...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Топология интегральных микросхем</span>
+                <span class='text-[10px] text-zinc-600'>| Аналоговый тракт, Приемопередатчик, КМОП технологический процесс</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="mifi/rid_0013.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="13">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💡</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">Способ наномасштабной визуализации слабых магнитных полей на основе комплекса NV-13C.</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Изобретение относится к методам измерения магнитного поля, в частности для 3D-ви...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Изобретение</span>
+                <span class='text-[10px] text-zinc-600'>| Векторная магнитометрия, NV-центр, Синтетический алмаз</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="mifi/rid_0014.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="14">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💻</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">Программа управления источником постоянного тока Agilent в режиме миллисекундных импульсов</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Программа предназначена для подачи токовых миллисекундных импульсов с помощью ис...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Программа для ЭВМ</span>
+                <span class='text-[10px] text-zinc-600'>| импульсы тока, источник тока, программа управления</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="mifi/rid_0015.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="15">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💻</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">Программа моделирования системы формирования периодической мультиспектральной последовательности выб</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Программа предназначена для демонстрирования работы реальной системы формировани...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Программа для ЭВМ</span>
+                <span class='text-[10px] text-zinc-600'>| фотонный аналого-цифровой преобразователь, выборка сигнала, лазер в режиме синхронизации мод</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="mifi/rid_0016.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="16">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💡</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">Способ создания двухразмерного квадрупольного поля с помощью цилиндрических электродов</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Изобретение связано с квадрупольными полями, в частности относится к электродной...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Изобретение</span>
+                <span class='text-[10px] text-zinc-600'>| квадрупольное поле, квадруполь, квадрупольный фильтр масс</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="mifi/rid_0017.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="17">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">⚙️</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">Импульсный генератор нейтронов</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Импульсный генератор нейтронов предназначен для генерации нейтронов при ядерном ...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Полезная модель</span>
+                <span class='text-[10px] text-zinc-600'>| нейтронный генератор, импульсные генераторы нейтронов, магнитная изоляция</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="mifi/rid_0018.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="18">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💡</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">Способ формирования транзистора на основе нитридов III группы</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Изобретение относится к приборам твердотельной электроники, и, в частности, к ко...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Изобретение</span>
+                <span class='text-[10px] text-zinc-600'>| Нитрид галлия, Силовой транзистор, транзистор, гетероструктура</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="mifi/rid_0019.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="19">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💻</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">Программа расчёта интегральной остаточной намагниченности сверхпроводящей ленты</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Программа применяется для обработки результатов физического эксперимента по изме...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Программа для ЭВМ</span>
+                <span class='text-[10px] text-zinc-600'>| сверхпроводящая лента, ВТСП, намагниченность</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="mifi/rid_0020.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="20">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💻</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">Программное обеспечение для создания композитных 2D наноматериалов, основанных на данных из файлов ф</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Программа предназначена для создания композитных 2D-наноматериалов путем объедин...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Программа для ЭВМ</span>
+                <span class='text-[10px] text-zinc-600'>| Компьютерное моделирование, Кристаллическая структура, Гетероструктуры</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="mifi/rid_0021.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="21">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💻</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">Программа для системы на основе модуля RODOS-16 DIN, обеспечивающей мониторинг климатических условий</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Программа предназначена для контроля климатических параметров внутри всепогодных...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Программа для ЭВМ</span>
+                <span class='text-[10px] text-zinc-600'>| управление, мониторинг, Программа ЭВМ</span>
+                
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="mifi/rid_0022.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="22">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">🗄️</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">База данных фонового потока тепловых нейтронов, регистрируемого детекторами на основе сцинтиллятора </div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>База данных предназначена для сбора и хранения данных с установок Эксперименталь...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">База данных</span>
+                <span class='text-[10px] text-zinc-600'>| &quot;Нейтрон&quot;, ПРИЗМА, УРАН</span>
+                
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="mifi/rid_0023.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="23">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">🗄️</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">База данных широких атмосферных ливней, зарегистрированных научной установкой НЕВОД-ШАЛ по электронн</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>База данных предназначена для сбора и хранения моделированных и экспериментальны...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">База данных</span>
+                <span class='text-[10px] text-zinc-600'>| широкие атмосферные ливни, НЕВОД-ШАЛ, База данных</span>
+                <span class='text-[10px] text-zinc-600'>| РНФ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="mifi/rid_0024.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="24">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">⚙️</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">Конверсионный динод</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Полезная модель относится к технической области устройств ионной оптики, направл...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Полезная модель</span>
+                <span class='text-[10px] text-zinc-600'>| траектория заряженных частиц, ионная оптика, Конверсионный динод</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="mifi/rid_0025.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="25">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💡</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">Методика прецизионного измерения профиля интенсивности и распределения накопленной дозы в фокальном </div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Объектами исследования являются пучки рентгеновских лазеров на свободных электро...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Изобретение</span>
+                <span class='text-[10px] text-zinc-600'>| интенсивность излучения, накопленная доза, рентгеновские лазеры на свободных электронах</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="mifi/rid_0026.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="26">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💻</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">LEIS calculator для интерпретации энергетических спектров рассеянных на твёрдом теле ионов</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Программа «LEIS calculator.exe» предназначена для элементного анализа образцов н...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Программа для ЭВМ</span>
+                <span class='text-[10px] text-zinc-600'>| элементный анализ образцов, спектроскопия рассеяния, ионно-пучковые установки анализа поверхности</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="mifi/rid_0027.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="27">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">⚙️</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">Многополостной катод для плазменного двигателя</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Многополостной катода для плазменного двигателя содержит катодную трубку из туго...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Полезная модель</span>
+                <span class='text-[10px] text-zinc-600'>| плазменный ракетный двигатель, Многополостной катод</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="mifi/rid_0028.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="28">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">⚙️</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">Газовый сенсор</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Полезная модель относится к области автоматического контроля концентрации взрыво...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Полезная модель</span>
+                <span class='text-[10px] text-zinc-600'>| лазерная микрофрезеровка, газовая чувствительность, селективность</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="mifi/rid_0029.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="29">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💻</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">Программа функционального управления криогенным температурным контроллером</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Данная программа позволяет подключать различные криогенные температурные контрол...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Программа для ЭВМ</span>
+                <span class='text-[10px] text-zinc-600'>| температурный контроллер, криогенный, управление</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="mifi/rid_0030.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="30">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💻</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">Программа расчёта транспорта водорода в твёрдом теле при лазерно-стимулированной десорбции</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Программа расчёта транспорта водорода в твёрдом теле при лазерно-стимулированной...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Программа для ЭВМ</span>
+                <span class='text-[10px] text-zinc-600'>| транспорт водорода в твёрдом теле, лазерно-стимулированная десорбция</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="mifi/rid_0031.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="31">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">📄</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">Программируемый видеоусилитель со встроенным фильтром нижних частот аналоговых трактов приёмопередаю</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Программируемый видеоусилитель со встроенным фильтром нижних частот (ФНЧ-ВУ) пре...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Топология интегральных микросхем</span>
+                <span class='text-[10px] text-zinc-600'>| КМОП технологический процесс, Фильтр нижних частот, Видеоусилитель</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="mifi/rid_0032.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="32">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💡</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">Способ азимутального сканирования атмосферы с использованием потока мюонов космических лучей</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Изобретение относится к области исследования атмосферы при помощи потока мюонов ...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Изобретение</span>
+                <span class='text-[10px] text-zinc-600'>| атмосфера, мюоны, космические лучи</span>
+                
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="mifi/rid_0033.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="33">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💡</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">Силовой транзистор на основе AlN/GaN гетероструктуры c 2D электронным газом</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Изобретение относится к приборам твердотельной электроники и, в частности, к кон...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Изобретение</span>
+                <span class='text-[10px] text-zinc-600'>| Силовой транзистор, Гетероструктура, Нитрид галлия</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="mifi/rid_0034.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="34">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💻</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">Обработчик ТДС</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>рограмма «Обработчик ТДС» предназначена для обработки экспериментальных данных т...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Программа для ЭВМ</span>
+                <span class='text-[10px] text-zinc-600'>| соосаждение пленок, скорость испарения тонких пленок в вакууме, термо-десорбционная спектроскопия</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="mifi/rid_0035.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="35">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💻</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">Программа управления источником тока CRYOTEL SMPS 1060 для сверхпроводящего магнита</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Программа предназначена для управления вводом и выводом тока из сверхпроводящего...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Программа для ЭВМ</span>
+                <span class='text-[10px] text-zinc-600'>| управление, источник тока, магнит</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="mifi/rid_0036.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="36">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💻</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">Программа для управления время-цифровыми преобразователями детектора ТРЕК</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Программа предназначена для управления регистрирующей системой координатно-треко...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Программа для ЭВМ</span>
+                <span class='text-[10px] text-zinc-600'>| ВЦП, детектор ТРЕК, Программа ЭВМ</span>
+                
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="mifi/rid_0037.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="37">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💻</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">Программа для улучшения качества восстановления изображений в цифровой голографии на основе машинног</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Программа создает архитектуру нейронной сети, которая после обучения может быть ...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Программа для ЭВМ</span>
+                <span class='text-[10px] text-zinc-600'>| Голография, Лазерное излучение, Реконструкция сцены</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="mifi/rid_0038.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="38">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💡</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">Способ получения сферических коллоидных наноразмерных частиц золота методом импульсной лазерной абля</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Способ получения стабильного высококонцентрированного коллоидного раствора лазер...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Изобретение</span>
+                <span class='text-[10px] text-zinc-600'>| биополимерные покрытия, сенсибилизация радоиотерапии, рентгеновский контраст и биовизуализация</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+</div>
+        <div class="p-4 text-center">
+          <button id="rid-more" onclick="showMore('rid-item', 'rid-more', 'rid-counter', 39)" class="px-6 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-widest hover:bg-white/10 transition text-zinc-400">
+            Показать ещё 5
+          </button>
+        </div>
+      </section>
+
+      <script>
+        // Generic show-more function
+        function showMore(itemClass, btnId, counterId, total, step) {
+          step = step || 5;
+          const items = document.querySelectorAll('.' + itemClass);
+          let shown = 0;
+          items.forEach(el => {
+            if (el.style.display !== 'none') shown++;
+          });
+          items.forEach(el => {
+            const idx = parseInt(el.dataset.idx);
+            if (idx < shown + step) {
+              el.style.display = '';
+            }
+          });
+          const totalShown = Math.min(shown + step, items.length);
+          document.getElementById(counterId).textContent = 'Показаны ' + totalShown + ' из ' + total;
+          if (totalShown >= items.length) {
+            document.getElementById(btnId).style.display = 'none';
+          }
+        }
+      </script>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-20 border-t border-white/10 mt-20 bg-black/40">
+      <div class="max-w-7xl mx-auto px-6 text-center">
+        <div class="text-3xl font-black italic uppercase mb-8">МОС<span class="mos-red">НАУКА</span></div>
+        <p class="text-zinc-500 text-sm max-w-2xl mx-auto italic mb-8">Единая экосистема технологического развития площадок и заказчиков в Москве.</p>
+        <div class="flex justify-center gap-8 mb-8">
+          <div class="text-[10px] text-zinc-600 uppercase font-bold">Источник: <span class="text-emerald-500">CoLab</span> — лаборатории, учёные</div>
+          <div class="text-[10px] text-zinc-600 uppercase font-bold">Источник: <span class="text-sky-500">ЕГИСУ</span> — проекты, РИД</div>
+        </div>
+        <div class="text-white/20 text-[10px] uppercase font-bold tracking-[0.5em]">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ ОБЪЕКТА</div>
+      </div>
+    </footer>
+
+    <!-- Scroll to top button -->
+    <button onclick="window.scrollTo({top:0,behavior:'smooth'})" id="scroll-top" class="fixed bottom-8 right-8 w-12 h-12 rounded-full bg-red-500/80 text-white flex items-center justify-center shadow-lg hover:bg-red-500 transition z-50" style="display:none" title="Наверх">
+      <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg>
+    </button>
+
+    <!-- Request Modal -->
+    <div id="requestModal" style="position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem">
+      <div style="background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative">
+        <button onclick="closeModal()" style="position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer">&times;</button>
+        <div id="modalForm">
+          <h2 class="text-xl font-black mb-1">📨 Направить запрос</h2>
+          <div id="modalContext" class="text-xs text-zinc-500 mb-6">через платформу МОСНАУКА</div>
+          <label class="block text-[10px] uppercase font-black text-zinc-500 mb-1 tracking-widest">Ваше ФИО *</label>
+          <input type="text" id="reqName" placeholder="Иванов Иван Иванович" class="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-sm mb-3" style="color:white">
+          <label class="block text-[10px] uppercase font-black text-zinc-500 mb-1 tracking-widest">Организация</label>
+          <input type="text" id="reqOrg" placeholder="ООО «Компания»" class="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-sm mb-3" style="color:white">
+          <label class="block text-[10px] uppercase font-black text-zinc-500 mb-1 tracking-widest">Email *</label>
+          <input type="email" id="reqEmail" placeholder="email@example.com" class="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-sm mb-3" style="color:white">
+          <label class="block text-[10px] uppercase font-black text-zinc-500 mb-1 tracking-widest">Тип запроса</label>
+          <select id="reqType" class="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-sm mb-3" style="color:white;appearance:none">
+            <option>Запрос на НИОКР</option>
+            <option>Консультация</option>
+            <option>Сотрудничество / Партнёрство</option>
+            <option>Использование оборудования</option>
+            <option>Другое</option>
+          </select>
+          <label class="block text-[10px] uppercase font-black text-zinc-500 mb-1 tracking-widest">Сообщение *</label>
+          <textarea id="reqMsg" placeholder="Опишите ваш запрос..." class="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-sm mb-4" style="color:white;min-height:5rem;resize:vertical"></textarea>
+          <button onclick="submitRequest()" class="w-full py-3 rounded-xl bg-red-500 text-white text-[11px] font-black uppercase tracking-widest hover:bg-red-600 transition">Отправить запрос</button>
+        </div>
+        <div id="modalSuccess" style="display:none;text-align:center;padding:2rem 0">
+          <div style="font-size:3rem;margin-bottom:1rem">✅</div>
+          <h3 class="text-lg font-black mb-2">Запрос отправлен!</h3>
+          <p class="text-sm text-zinc-400">Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+          <button onclick="closeModal()" class="mt-6 w-full py-3 rounded-xl bg-white/5 border border-white/10 text-sm font-bold text-zinc-400 hover:bg-white/10 transition">Закрыть</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      window.addEventListener('scroll', function() {
+        document.getElementById('scroll-top').style.display = window.scrollY > 400 ? 'flex' : 'none';
+      });
+      function openRequestModal(context) {
+        document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+        document.getElementById('modalForm').style.display = '';
+        document.getElementById('modalSuccess').style.display = 'none';
+        document.getElementById('requestModal').style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      }
+      function closeModal() {
+        document.getElementById('requestModal').style.display = 'none';
+        document.body.style.overflow = '';
+      }
+      function submitRequest() {
+        var n = document.getElementById('reqName').value.trim();
+        var e = document.getElementById('reqEmail').value.trim();
+        var m = document.getElementById('reqMsg').value.trim();
+        if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+        document.getElementById('modalForm').style.display = 'none';
+        document.getElementById('modalSuccess').style.display = '';
+      }
+      document.getElementById('requestModal').addEventListener('click', function(e) {
+        if (e.target === this) closeModal();
+      });
+    </script>
+  </div>
+</body>
+</html>

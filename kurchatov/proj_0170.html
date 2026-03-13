@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | НИЦ "Курчатовский институт"</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-kurchatov.html">НИЦ &quot;Курчатовский институт&quot;</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">люминофор-содержащие сополифлуорены</span> <span class="tag">углеродные квантовые точки</span> <span class="tag">полимерные щетки</span> <span class="tag">звездообразные полимеры</span> <span class="tag">термостойкие фоторезисты</span> <span class="tag">гликонаночастицы</span> <span class="tag">электролюминесценция</span> <span class="tag">электроактивные полимерные пленки</span> <span class="tag">фотовольтаическая смесь</span> <span class="tag">первапорационные мембраны</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Синтез высокомолекулярных соединений. Физико-химические основы синтеза высокомолекулярных соединений</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Структура и свойства природных и синтетических высокомолекулярных соединений</span></div>
+          <h1 style="font-size:1.5rem">Методы синтеза и структура полимеров сложного строения и архитектуры для оптоэлектроники и здоровьесбережения.</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">84,835 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225012802959-9</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2024-01-01 — 2024-12-31</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№1</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">29</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">НИЦ &quot;Курчатовский институт&quot;</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>ФЕДЕРАЛЬНОЕ ГОСУДАРСТВЕННОЕ БЮДЖЕТНОЕ УЧРЕЖДЕНИЕ &quot;НАЦИОНАЛЬНЫЙ ИССЛЕДОВАТЕЛЬСКИЙ ЦЕНТР &quot;КУРЧАТОВСКИЙ ИНСТИТУТ&quot;</div>
+                </div><div class="metric-box" style="text-align:left">
+                  <div class="label">Исполнитель</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">НИЦ &quot;КУРЧАТОВСКИЙ ИНСТИТУТ&quot;-ПИЯФ</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>Объектами исследования служили люминофор-содержащие сополифлуорены для светодиодов, хемосенсорных устройств и доставки лекарств, сополиамиды с антразолиновыми группами в основной цепи, обладающие высокими фотолюминесцентными свойствами, и сополиамиды с хинолиновыми и пиридил-хинолиновыми звеньями в основной цепи для использования в качестве первапорационных мембран, полимер/углеродные квантовые точки, электроактивные полимерные гели, содержащие восстановленный оксид графена, высокоэффективные мембраны из полигетероариленов различной структуры, а также из новых гибридных полимерных материалов, полимерные комплексы ионов лантаноидов с макромолекулами сложной архитектуры, мультикомпонентные полимеризационно-поликонденсационные сополимеры смешанной линейно-щеточной топологии, гибридные сферические и цилиндрические щетки с ядром поликонденсационного типа и привитыми гидрофильными цепями полиэтилен- и полипропилениминного типов, стеклообразные термостойкие микро- и наногетерогенные сетчатые блок-сополимеры с морфологической структурой типа «зерно-прослойка», гликонаночастицы золота для целевой доставки иммобилизированных химиотерапевтических препаратов в пораженный орган или ткань живого организма, наноструктурированных композиционных материалов на основе полианилина и полипиррола с аллотропными формами углерода. 
+Получен ряд сополифлуоренов, содержащих цианиновые красители, флуоресценция которых уменьшается в кислой области pH, молекулярные щетки на основе полифлуорена – потенциальные наноконтейнеры для доставки гидрофобных лекарств, а также люминофоры с термически активируемой замедленной флуоресценцией и их сополимеры с карбазолом – перспективные материалы для OLED-устройств нового поколения. 
+Из синтезированных антразолин-содержащих полиамидов изготовлены гомогенные мембраны для первапорации, адаптированные к процессам, связанным с переработкой нефти и регенерацией органических растворителей. Показан последовательный рост жесткости пленочных материалов, реализуемый по мере увеличения концентрации фрагментов антразолина в цепях сополиамида: рост модуля и предела пластичности. Есть основания предполагать реализацию в цепях сополиамида дополнительных межмолекулярных взаимодействий при участии антразолиновых циклов. Также можно отметить тенденцию к наблюдаемому при этом росту прочности образцов (при повышении концентрации антразолиновых звеньев с 1 до 10 % прочность пленки растет на 20 %).
+Получены нанокомпозиты полимер/углеродные квантовые точки с двумя матрицами (полиметилметакрилат и эпоксидная смола) в виде пленок, которые демонстрируют интенсивную фотолюминесценцию.
+Отработана методика получения пористых электродных материалов на основе частично восстановленного оксида графена (вГО). Проведены исследования химической структуры, морфологии и электрохимических характеристик материлов на основе восстановленного осида графена, стабилизированного водорастворимыми ионогенными и неионогенными полимерами: полиакриламидом, полиакрилатом аммония, полидиаллилдиметиламмоний хлоридом. Определены условия (соотношение ГО:полимер), в которых возможно формирование геля, устойчивого к фазовому разделению. Также был установлен оптимальный режим обработки (180 С, 4 часа) с целью достижения максимальных величин электропроводности и удельной емкости электродных материалов для использования в суперконденсаторах. Наилучшие результаты были достигнуты для электродов синтезированных на основе полиакриламида, что связано с морфологией электрода, обеспечивающей максимальную доступность поверхности графена и функциональных групп на его поверхности для накопления заряда по механизму псевдоемкости. 
+Изготовлены новые гибридные мембраны на основе сополиимида 3,3ꞌ,4,4ꞌ-бензофенонтетракарбонового диангидрида и (80% толуолдиизоцианата + 20% метилендифенилдиизоцианата) (соПИ) с включением добавок титаносиликатных минералов линтисит и натисит. Получены данные о структуре мембран, их физико-механических характеристиках и транспортных свойствах при дегидратации смеси вода-изопропанол в процессе первапорации. Оптимальной структурой, наиболее перспективной для практического использования является соПИ/натисит (20%) гибридная мембрана.
+Синтезированы гибридные тройные наносистемы Se0/графт-СП-2/фотодитазин на основе фотодитазина, наночастиц селена, полимерного стабилизатора ‒ амфифильной молекулярной щетки с целлюлозой в качестве основной цепи и гидрофильными боковыми цепями полиметакриловой кислоты (графт-СП-2), с разной очередностью введения компонентов, которые перспективны для создания на их основе фоточувствительных гибридных соединений для фотодинамической терапии в борьбе со злокачественными образованиями.
+Получены данные о взаимодействии молекулярных щеток с целлюлозной основной цепью и привитыми цепями полиметакриловой кислоты с ионами Eu(III), которые важны для расширения возможностей дальнейшего применения этих молекулярных щеток в биомедицине, связанного с исследованием механизма их взаимодействия с поврежденными клетками, органами, тканями, изучением фармакокинетики.
+Синтезированы образцы гетерофункциональных полиимидных (ПИ) макроинициаторов на основе 4,4&#x27;-(1,3-фенилен-диокси)-бисфталевого ангидрида и 4,4&#x27;-(2,2-гексафторизопропилиден)-бисфталевого ангидрида со степенью поликонденсации n = 35–65, содержащие в своей структуре ATRP-инициирующие группы в каждом звене основной цепи и алкинильные концевые группы. В контролируемом режиме ATRP синтезированы узкодисперсные образцы термо- и pH-чувствительного поли(N,N-диметиламиноэтилметакрилата), содержащие азидные концевые группы, со степенью полимеризации k в диапазоне 30–220. Синтезированы молекулярные щетки ПИ-прив-ПГЭМА и ПИ-прив-(ПММА-блок-ПГЭМА) с полиимидной основной цепью и гомо- и блок-сополимерными боковыми цепями с различным содержанием фурил-модифицированных звеньев поли(2-гидроксиэтилметакрилат)а. Синтезированные щетки будут использованы для получения на их основе сшитых полимерных систем с помощью термообратимой реакции Дильса-Альдера (ДА)/ретро-ДА. 
+Разработан подход к синтезу новых полимерных сферических щеток миктостроения. Отработаны схемы синтеза макроинициаторов и обрывателей поли-2-алкил-2-оксазолинов на основе производных каликс[8]арена с заданной молекулярной массой и полимеризуемыми концевыми группами типа стирола и малеимида. Структура сополимеров и их мономерный состав подтверждены методом 1Н ЯМР спектроскопии, а молекулярно-массовые и структурные характеристики определены методами гель-проникающей хроматографии и статического рассеяния света. 
+Осуществлен синтез двувторичных ароматических диолов (основных прекурсоров дивинилароматических соединений). Определены оптимальные условия получения этих диолов различными методами избирательного каталитического гидрирования ароматических дикетонов, включающими никель Ренея, его модификации и восстановление боргидридом натрия. Установлено, что использование боргидрида натрия даёт возможность получать чистые диолы в мягких и относительно безопасных условиях (в системах CHCl3 : PEG400 : H2O, при комнатной температуре и атмосферном давлении). Показано, что полученные диолы представляют интерес как для синтеза новых термореактивных полимеров. 
+Осуществлен синтез новых лигандов для гликонаночастиц благородных металлов, содержащих фрагменты моносахаридов (N-ацетил-D-глюкозамина, D-маннозы, D-галактозы и L-фукозы), а также перспективных биологически активных солигандов на основе производных пиразолов, пиразолинов и пиразолидинов. Проведена оценка цитотоксичности гликонаночастиц золота на культурах клеток аденокарциномы ободочной кишки человека и исследованы возможные механизмы их противоопухолевой активности. 
+Разработаны методы синтеза композитов электропроводящих полимеров (полианилин и полипиррол) с аллотропными формами наноуглерода, которые позволяют сохранять общую морфологию наноструктурированной углеродной компоненты,  прочно связывать слой электропроводящего полимера с углеродной частицей и совмещать в одном материале свойства углеродного материала со свойствами электропроводящего полимера. Разработанный метод получения полимер-углеродных композитов высоко технологичен, поскольку совмещает в одну стадию синтез электропроводящего полимера и формирование композиционного материала, а также пригоден для получения больших объемов продукта.</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (45)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Курлыкин Михаил Петрович</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Богорад Наталья Николаевна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Блохин Алексей Николаевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат химических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Подешво Ирина Владимировна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат химических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Чулкова Татьяна Геннадьевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат химических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Кукаркина Нина Васильевна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Шишов Михаил Александрович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат технических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Краснопеева Елена Леонидовна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Сапурина Ирина Юрьевна</strong> <span style="color:#71717a;font-size:0.8rem">Доктор химических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Козина Нина Дмитриевна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Зайцев Борис Александрович</strong> <span style="color:#71717a;font-size:0.8rem">Доктор химических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Клепцова Лариса Геннадьевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат химических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Меленевская Елена Юрьевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат химических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Полоцкая Галина Андреевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат химических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Валуева Светлана Валерьевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат физико-математических наук</span></li></ul>
+              <p style='color:#52525b;font-size:0.8rem;margin-top:0.5rem'>...и ещё 30</p>
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | МГУ им. М.В. Ломоносова</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-mgu.html">МГУ им. М.В. Ломоносова</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">фемтосекундные импульсы</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Воздействие лазерного излучения на вещество</span></div>
+          <h1 style="font-size:1.5rem">ОТЧЕТ О НАУЧНО-ИССЛЕДОВАТЕЛЬСКОЙ РАБОТЕ по теме: Лазерно-индуцированные экстремальные состояния вещества с использованием микро- и нанообъектов (промежуточный)</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">11,951 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225021410246-5</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2024-01-01 — 2024-12-31</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№5</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">10</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">Правительство России</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>Правительство Российской Федерации</div>
+                </div><div class="metric-box" style="text-align:left">
+                  <div class="label">Исполнитель</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">МОСКОВСКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ ИМЕНИ М.В.ЛОМОНОСОВА, МГУ ИМЕНИ М.В.ЛОМОНОСОВА, МОСКОВСКИЙ УНИВЕРСИТЕТ ИЛИ МГУ</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>Экспериментально исследованы с использованием оптических методов режимы управления процессом кластеризации этана при газодинамическом  расширении  этана в вакуум. Установлено, что при сверхзвуковом расширении этана из околокритической области (Р=40 бар, Т=295К) регистрируется процесс образования “крупных” кластеров этана с радиусом R=53±4нм и концентрацией 10^12см-3. Процесс сопровождается формированием “треугольной” вершины профиля рассеяния вследствие локализации кластеров в приосевой области струи.
+ Впервые  проведены эксперименты по воздействию на кластеры этана С2Н6 (давление исходного газа Р=36бар, начальная температура Т=298К) со средним радиусом 37±3нм релятивистскими лазерными импульсами (интенсивность I=5x10^18Вт/см2). Зарегистрирована генерация широкополосного рентгеновского излучения с температурой “горячей” (30-200 кэВ) области спектра Т=27.9±0.2кэВ.
+ Впервые проведены эксперименты и зарегистрированы ускоренные электроны в зависимости от размера кластеров этана в диапазоне давлений 20-40бар. Измерена зависимость энергии (заряда) ускоренных электронов  от давления газа над импульсным клапаном, которая проявляет  максимум при давлении Р=30бар, что отвечает границе начала  конденсации. Энергия ускоренных электронов оказывается более 2МэВ при расходимости электронного пучка около 100мрад.
+ Разработана методика оценки нелинейности двухкомпонентной приповерхностной лазерно-индуцированной среды,  формируемой в режиме квазинепрерывной абляции, возникающей под действием фемтосекундного  волоконного лазера, работающего   в режиме высокой частоты повторений генерируемых импульсов и остро сфокусированных на мишень. Установлено, что при интенсивности порядка 10^14Вт/см2 вклад изменение показателя преломления в режиме абляционного воздействия на медную мишень дает плазменная нелинейность. Определена оценка нелинейной ионизационной отрицательной добавки показателя преломления в условиях лазерно-плазменной абляционной микро-обработки мишени, которая  оказывается порядка 10^-3.
+ Осуществлена оптимизация ионного спектрометра Томсона для проведения количественных измерений спектров быстрых ионов из газо-кластерных струй, создана методика обработки экспериментальных данных с учетом геометрии электрического и магнитного полей спектрометра. В результате тестового взаимодействия фемтосекундного лазерного излучения релятивистской  интенсивности 5х10^18Вт/см2 с кластерами углекислого газа зарегистрированы ионы C1, C2, C3, O1, O2 в диапазоне до 3 МэВ, а также ионы O3 с максимальной энергией более 3.6 МэВ.
+ Проведены работы по оптимизации схемы многопроходового усилителя для повышения качества и энергии пучка тераваттного фемтосекундного лазерного комплекса на сапфире с титаном, что позволило  увеличить выходную энергию тераваттной фемтосекундной лазерной системы (до компрессии импульсов) с 150 мДж до 220 мДж.
+ Разработана схема и реализован широкодиапазонный параметрический усилитель на тройных полупроводниковых кристаллах (LGS, HGS) с накачкой мультигигаваттным фемтосекундным Cr-forsterite лазером. Экспериментально продемонстрировано, что использование неоксидных нелинейных кристаллов (LGS, HGS, BGGS) в схемах прямого оптического параметрического усиления с накачкой мультимиллиджоульным лазером на кристалле хром-форстерита позволяет генерировать перестраиваемые по частоте лазерные импульсы с мультигигаваттной (вплоть до 15 ГВт) пиковой мощностью и длительностью в несколько (вплоть до 4-х) оптических циклов поля.
+ Разработан метод высокоэнергетической генерации наносекундного 3-мкм лазера, работающего в импульсно-периодическом режиме (до 10 Гц) с высоким пространственным  качеством излучения. Показано, что использование кристалла LGT (40x6x6 мм) для модуляции добротности 3-мкм лазерного излучения позволило впервые получить лазерные импульсы с энергией 50 мДж и длительностью 100 нс напрямую из резонатора  Er:YAG лазера (активный элемент 100x4 мм) на длине волны 2,94 мкм. Полученные результаты ориентированы на развитие подхода усиления чирпированных импульсов инжекции среднего ИК диапазона (4-5 мкм) в активной среде Fe:ZnSe.</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (7)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Иванов Константин Анатольевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Волков Роман Валентинович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Аракчеев Владимир Генрихович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Кузнецов Никита Юрьевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Труханов Василий Андреевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">ПУШКИН АНДРЕЙ ВЛАДИМИРОВИЧ</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Гордиенко Вячеслав Михайлович</strong> <span style="color:#71717a;font-size:0.8rem">Доктор физико-математических наук</span></li></ul>
+              
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

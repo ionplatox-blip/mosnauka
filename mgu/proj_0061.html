@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | МГУ им. М.В. Ломоносова</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-mgu.html">МГУ им. М.В. Ломоносова</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">многолетнемерзлые грунты</span> <span class="tag">изменения климата</span> <span class="tag">береговая зона</span> <span class="tag">морской лед</span> <span class="tag">волновая энергия</span> <span class="tag">техногенные воздействия</span> <span class="tag">Российская Арктика</span> <span class="tag">устойчивое развитие</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Палеогеография</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Формирование вечно- и сезонномерзлых пород</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Грунты дна, наносы. Взвеси. Морские льды</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Климаты прошлого. Изменение климата</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Тематическое и комплексное картографирование</span></div>
+          <h1 style="font-size:1.5rem">Эволюция, современное состояние и прогноз развития береговой зоны Российской Арктики</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">19,497 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225012803431-9</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2024-01-01 — 2024-12-31</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№4</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">21</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">Правительство России</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>Правительство Российской Федерации</div>
+                </div><div class="metric-box" style="text-align:left">
+                  <div class="label">Исполнитель</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">МОСКОВСКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ ИМЕНИ М.В.ЛОМОНОСОВА, МГУ ИМЕНИ М.В.ЛОМОНОСОВА, МОСКОВСКИЙ УНИВЕРСИТЕТ ИЛИ МГУ</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>НИР выполнялись с использованием следующих методов: режимные и стационарные наблюдения за динамикой природных комплексов в естественных условиях и в условиях антропогенной нагрузки; геоморфологический анализ; структурно-генетический, криолитологический, геохимический и стратиграфический анализы и лабораторные (геохронологические, изотопные, микропалеонтологические) методы изучения отложений и ледяных образований; картографические методы с использованием БПЛА и материалов дистанционного зондирования; статистическая обработка данных, моделирование. 
+Основные результаты, полученные в рамках НИР в 2024 г.: 
+1.	Продолжены работы по изучению динамики берегов Российской Арктики: детально изучена динамика берегов 4 ключевых участков Печоро-Карского региона, берегов Обской губы и Чукотского моря. Проведена классификация и сопоставлены архивные снимки, данные БПЛА и полевых наблюдений, получены данные о линейных и объемных скоростях отступания берегов, проанализирована динамика скоростей на протяжении ХХ-начала XXI в. Проанализированы факторы уязвимости термоабразионных берегов Карского моря к размыву и выявлено наиболее быстрое отступание низких берегов севера региона с высоким содержанием подземных льдов, а также значительная роль увеличения продолжительности безледного периода. Выполнена оценка влияния опасных рельефообразующих процессов на строительство и эксплуатацию инженерных сооружений, включая оценку роли техногенного фактора в развитии береговой зоны (Байдарацкая губа, Обская губа, коса Арабатская Стрелка). Установлено, что на локальных участках заметное влияние на динамику берегов и развитие сопряженных экзогенных процессов оказывает хозяйственное освоение. Техногенные нарушения приводят к активизации опасных процессов, прежде всего, нарушению термического режима мерзлых грунтов, что, в свою очередь, оказывает прямое и косвенное влияние на процесс разрушения морских берегов в условиях криолитозоны. Значительная часть примеров резкого ускорения процесса разрушения берегов связана именно с техногенными воздействиями.
+Организована и проведена XXX Всероссийской конференции «Береговая зона морей России в XXI веке». Конференция прошла с 3 по 7 июня 2024 года на географическом факультета МГУ в рамках мероприятий, посвященных 270-летию Московского университета. Состоялось всестороннее обсуждение фундаментальных и прикладных проблем изучения морских берегов, эволюции и динамики береговой зоны, оценки ее экологического состояния в XXI веке на фоне климатических изменений и в контексте устойчивого развития. Всего научная программа включала 76 докладов, представленных как ведущими специалистами в области береговедения, так и молодыми учеными, студентами и аспирантами.
+2.	Продолжены работы по исследованию изменений уровня морей Российской Арктики: проведено сравнение обновленных данных об изменениях уровня моря в Российской Арктике, в особенности на низменных берегах, сложенных многолетнемерзлыми отложениями, с результатами численного моделирования процессов гляциоизостатической компенсации и выполнена верификация нескольких моделей. Наибольшую сходимость с натурными данными для районов вне областей позднеплейстоценового оледенения показала модель ICE7G_VM5a. Для областей распространений позднеплейстоценового покровного оледенения, в особенности, районов Белого моря и Печорского моря, выявлена значительная чувствительность результатов к исходным параметрам внутреннего строения Земли, что обусловливает необходимость тщательного подбора моделей с 3D неоднородностями структуры мантии и литосферы.
+Продолжено изучение морского льда и его влияния на дно и берега замерзающих морей. Проведено сравнение ледово-экзарационных борозд Баренцева и Карского морей и выявлен ряд отличий: 1) борозды в Баренцевом море находятся на значительно больших глубинах, при этом наблюдается полимодальное распределение борозд по глубине, 2) в Баренцевом море выше доля крупных борозд, больше их средняя глубина и средняя ширина, 3) плотность ледово-экзарационных форм на морском дне в Баренцевом море в среднем в 2 раза выше. Сходство проявляется в преобладании единичных борозд над гребенками. Установлено, что большинство борозд в обоих морях были сформированы при более низком уровне моря.
+3.	Проведена палеогеографическая реконструкция повторно-жильных льдов и вмещающего их торфяника в с. Лорино на Восточной Чукотке – самом восточном регионе Российской Арктики. Установлено: во-первых, присутствие на исследуемом участке позднеплейстоценовой генерации ледяных жил, во-вторых, глубокое протаивание во время оптимума голоцена, что существенно корректирует существовавшие ранее представления о формировании ледового комплекса здесь с раннего голоцена. Проведена систематизация полученных сведений о составе газов в воздушных включениях пластовых льдов Восточной Чукотки и их сопоставление с выдвинутыми ранее гипотезами и имеющимися представлениями о развитии палеогеографической обстановки региона за последние 100 тыс. лет. Установлено, что содержание метана во льдах может служить диагностическим признаком при определении генезиса ледяных залежей, но не решает окончательно вопрос их происхождения. Сопоставлены особенности реакций плоско-бугристых полигональных и выпукло-бугристых торфяников на антропогенное воздействие и выявлена их существенно различающаяся реакция, что требуют принятия разных защитных мер. При этом, визуально эти типы торфяников часто не различаются. Предложена методика более точной идентификации бугров уже на первых стадиях изысканий на основе распределения соотношения углерода и азота (C/N) в торфе, перекрывающем бугры. 
+4.	Выполнено исследование особенностей современного солярного климата в Арктике. На основе высокоточных астрономических эфемерид выполнены расчета облучения полярных областей Земли в широтных диапазонах 60 – 90 северной и южной широты (Арктика и Антарктика). Проведен анализ малых вариаций инсоляции в связи с периодическими изменениями характеристик орбитального движения Земли. Выполнены расчеты характеристик переноса радиационного тепла для Северного полушария: меридионального градиента инсоляции, инсоляционной контрастности, инсоляционной сезонности и межполушарного переноса радиационного тепла для периода 1900 – 2050 гг. Выполнен расчет приходящей на верхнюю границу атмосферы солнечной радиации в Арктике на различных высотных уровнях (с шагом в 10 км от земной поверхности до нижней мезосферы) в период от 1900 до 2100 гг. 
+Исследовано влияние изменения климата на криолитозону побережья Российской Арктики в части термоабразионного процесса: 1) выявлено, что рост суммарной волновой энергии в результате увеличения продолжительности безледного динамически активного периода частично компенсируется некоторым снижением ветро-волновой активности в отдельных районах Российской Арктики; 2) установлено, что термический и волновой факторы разрушения термоабразионных берегов часто работают метахронно; 3) показано, что фиксируемые в настоящее время темпы отступания берегов криолитозоны лишь в 1,3-1,5 раза выше среднемноголетних скоростей разрушения берегов в конце прошлого века и, таким образом, не смотря на заметное потепление климата и снижение ледовитости, катастрофического (многократного) увеличения скоростей разрушения термоабразионных берегов в морях Российской Арктики не произошло; 4) установлено, что на фоне современных климатических изменений некоторые береговые склоны, считавшиеся ранее термоабразионными, стали иметь все больше признаков термоденудационных склонов, а берега, ранее классифицированные как аккумулятивные, стали иметь признаки абразионных.
+5.	В рамках комплексного экономико-географического анализа приморских регионов Российской Арктики: 1) разработана методика оценки экономического ущерба для железнодорожной инфраструктуры от природных опасностей, основанная на нормативной оценке восстановительной стоимости железнодорожных линий, и проведены расчеты для приморских регионов Арктики; 2) выполнен анализ циклического движения городского населения на основе данных сотовых операторов, построена модель, выявляющая сезонные, недельные и суточные циклы, а также их дисбалансы в праздничные дни, на примере Москвы выделены хронотипы районов (премия «Гравитация» 2024), разработана методика, перспективная для применения в крупных арктических городах; 3) экономически обосновано создание системы мониторинга вечной мерзлоты, разработана методика, сравнивающая возможные ущербы от её таяния с издержками на мониторинг, апробация которой подтвердила её эффективность для защиты инфраструктуры Арктики. 
+Продолжены исследования в части инвентаризация объектов природного и культурного наследия: реконструирована история исследования и освоения самого труднодоступного участка Северного морского пути на западе Таймырского полуострова от Диксона до мыса Челюскин. На основании опубликованных и архивных (хранящиеся в РГАЭ отчеты экспедиций) источников, а также на материалах полевых работ в Арктике, выявлен целый ряд забытых экспедиций и их результаты.</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (13)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Федоров Валерий Михайлович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат географических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Романенко Федор Александрович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат географических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Белова Наталия Геннадиевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат географических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Маслаков Алексей Алексеевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат географических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Бадина Светлана Вадимовна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат географических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Мазнев Степан Валерьевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат географических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Богатова Дарья Максимовна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат геолого-минералогических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Баранская Алиса Владиславовна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат географических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Шабанова Наталья Николаевна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Васильчук Алла Константиновна</strong> <span style="color:#71717a;font-size:0.8rem">Доктор географических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Ермолов Александр Александрович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат географических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Шилова Ольга Сергеевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат географических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Огородов Станислав Анатольевич</strong> <span style="color:#71717a;font-size:0.8rem">Доктор географических наук</span></li></ul>
+              
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

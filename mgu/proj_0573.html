@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | МГУ им. М.В. Ломоносова</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-mgu.html">МГУ им. М.В. Ломоносова</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">электронный маркетинг</span> <span class="tag">«родовые поместья»</span> <span class="tag">кооперация</span> <span class="tag">устойчивое развитие сельских территорий</span> <span class="tag">эффективность цифровизации</span> <span class="tag">сельская местность</span> <span class="tag">органическое сельское хозяйство</span> <span class="tag">цифровое сельское хозяйство</span> <span class="tag">цифровые технологии</span> <span class="tag">импортозамещение</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Экономика агропромышленного комплекса в целом</span></div>
+          <h1 style="font-size:1.5rem">Отчет о научно-исследовательской работе за 2024 год по теме «Государственное регулирование агропродовольственных рынков и развитие сельского хозяйства в условиях цифровизации экономики»</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">2,662 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225020408357-6</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2024-01-01 — 2024-12-31</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№6</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">5</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">Правительство России</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>Правительство Российской Федерации</div>
+                </div><div class="metric-box" style="text-align:left">
+                  <div class="label">Исполнитель</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">МОСКОВСКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ ИМЕНИ М.В.ЛОМОНОСОВА, МГУ ИМЕНИ М.В.ЛОМОНОСОВА, МОСКОВСКИЙ УНИВЕРСИТЕТ ИЛИ МГУ</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>Ключевые слова: агропромышленный комплекс, продовольственная безопасность, импортозамещение, критерии и индикаторы, органическое сельское хозяйство, сбыт, электронный маркетинг, кооперация, «родовые поместья», сельская местность, устойчивое развитие сельских территорий, цифровое сельское хозяйство, цифровое поселение, цифровые технологии, эффективность цифровизации, государственная поддержка сельского хозяйства.
+
+Объектом исследования является агропромышленный комплекс России.
+Предмет исследования – структурные изменения и механизм его функционирования на современном этапе и на ближайшую перспективу с учетом действия санкций в агропродовольственной сфере и цифровизации экономики.
+Цель работы - обосновать структурные изменения и предложения по совершенствованию инструментов регулирования функционирования АПК, повышению эффективности его отраслей на основе использования цифровых технологий.
+При работе по теме применялись абстрактно-логический, аналитический, исторический, монографический, метод экспертных оценок, расчётно-конструктивный, графический, сравнений, системного анализа, статистические и другие методы.
+Экономическую эффективность государственной поддержки сельского хозяйства целесообразно оценивать с учетом ее влияния на динамику совокупной факторной продуктивности в отрасли. Поэтому продолжалось исследование и уточнение методики расчета темпов роста/убыли совокупной факторной продуктивности в сельском хозяйстве России в региональном разрезе. Наряду с исследованием региональных особенностей СФП в Центральном и Южном федеральных округах в последние годы изучались особенности государствееннной поддержки и ее влияние на СФП в других регионах. Подтвердилось положение, что определяющее влияние на рост СФП оказывает уровень используемых технологий. Поэтому активизация процесса внедрения новых современных технологий становится существенно важным для дальнейшего развития и роста эффективности сельскохозяйственного и всего агропромышленного производства. Недостаточный уровень внедрении крупных инноваций не позволяет нарастить СФП.
+В ходе проведенной работы выявлено, что на эффективность государственной поддержки влияет не только ее структура по видам, но и особенности ее распределения среди товаропроизводителей. На примере Красноярского края показано, что в 2022 году 30 крупнейших субъектов агропромышленного комплекса (АПК), получая 46,3% от общего объема поддержки, дают 58,3% от налоговых поступлений в АПК, а их выручка составляет 28,6% от объема продукции сельского хозяйства региона. Уровень концентрации поддержки в Красноярском крае высокий: в 2022 году достигает 0,46, хотя и показывая снижение за 2018-2022 годы. Рассчитан и другой показатель – индекс равномерности распределения поддержки: чем он выше, тем больший объем выручки и налоговых поступлений генерируют получатели бюджетных средств. В Красноярском крае он демонстрирует позитивную динамику, свидетельствуя как о наращивании выручки и налоговых поступлений среди получателей поддержки, так и о расширении доступа субъектов АПК к поддержке.
+Актуализируется необходимость привязки нормативов субсидирования к эффективности производства, внедрению инновационных и экологически безопасных технологий. Необходимо увеличение субсидий в ресурсопроизводящие отрасли отечественного АПК, расширение финансирования отечественной селекционной науки, семеноводства.
+ 
+Увязка субсидирования производителей с их вкладом в общеотраслевую валовую прибыль и налоговые поступления позволяет выявлять экономическую отдачу от субсидий. Поэтому важно больше поддерживать производителей, у которых наблюдается рост продуктивности. За счет субсидирования целесообразно усиливать переход к инновационным и экологически безопасным технологиям.
+Обоснована рентабельность проекта по искусственному выращиванию осетровых в бассейне Волги для целей воспроизводства популяции и популяризации методов органического выращивания продукции на аквапонике. Поэтому увеличение субсидирования этого направления рыбоводства будет способствовать общему повышению эффективности бюджетного субсидирования и росту общей эффективности государственной поддержки агропромышленного комплекса России.
+Обоснованы преимущества алюминия перед сталью и стеклопластиком при изготовлении и использовании погрузочных роботов в АПК и совершенствовании сельскохозяйственной логистики. По эксплуатационным расходам роботы из стеклопластика могут выигрывать за счет более низкой плотности материала. Но по экологическому критерию стеклопластик проигрывает, поскольку содержит формальдегид и с трудом поддается вторичной переработке. Это важно учитывать при выделении государственной поддержки.
+Развитие производства органической сельскохозяйственной продукции будет зависеть от роста внутреннего платежеспособного спроса населения и экспортных возможностей. Перспективы расширения экспорта органической продукции из России связаны с развитием рынков КНР и Азии в целом, Турции, стран СНГ.
+Сохранение и развитие хозяйств населения требует определенной корректировки государственной поддержки. Важную роль могло бы сыграть создание сбытовых кооперативов, что может позволить существенно улучшить условия ведения хозяйств населения. Важно создать условия для интеграции малых производителей с крупным сельскохозяйственным бизнесом.
+Подтверждены сравнительные преимущества и возможности по наращиванию экспорта конкурентных на международном рынке видов зерна и растительного масла. Наращивание государственной поддержки экспорта конкурентоспособной рыбной продукции может создавать риски для обеспечения продовольственной безопасности. Увеличение экспорта возможно компенсировать ростом импорта, возможно, менее дорогой рыбной продукции. С минимальными рисками для продовольственной безопасности Россия может нарастить экспорт сахара, яиц, мяса птицы и свинины, по экспорту которых нам только предстоит обзавестись конкурентными преимуществами.
+Возможно дальнейшее снижение асимметрии информации на продовольственных рынках за счет внедрения цифровых технологий и раскрытия информации потребителям о ценах, по которой товар был продан производителем.
+Оценено влияние среднемесячной заработной платы, количества предприятий и организаций, а также уровня безработицы на занятость в неформальном секторе России в 2009-2021 годах. В целом, рост уровня безработицы может говорить о сложностях трудоустройства в формальном секторе, снижение и низкий уровень безработицы свидетельствуют о высоком спросе на рабочую силу, существенно превышающем ее предложение.
+Перспективным для дальнейшего изучения и адаптации является опыт проведения аграрной политика Японией в области повышения производительности, повышения занятости в сельском хозяйстве, смещения спроса в сторону традиционных продуктов питания и открытия новых рынков. В особенности выделяются меры по увеличению спроса на продукты местного производства; развитию рынков японских продуктов питания за рубежом, повышению производительности за счет использования новых технологий, Интернета вещей, улучшения логистики и других; содействию деурбанизации.</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (4)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Белугин Алексей Юрьевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат экономических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Емельянова Олеся Николаевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат экономических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Сеитов Санат</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат экономических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Хожаинов Николай Тихонович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат экономических наук</span></li></ul>
+              
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

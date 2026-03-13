@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | ИОХ РАН</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-ioh.html">ИОХ РАН</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">органические соединения и органический синтез,</span> <span class="tag">гетероциклы,</span> <span class="tag">“зеленая химия”,</span> <span class="tag">биологически активные вещества,</span> <span class="tag">асимметрический органокатализ,</span> <span class="tag">УФ-облучение,</span> <span class="tag">новые материалы,</span> <span class="tag">катализаторы,</span> <span class="tag">красители,</span> <span class="tag">OLEDы</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Физиологически активные вещества</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Вопросы строения и стереохимия</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Органическая химия</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Общие синтетические методы</span></div>
+          <h1 style="font-size:1.5rem">Разработка и совершенствование экологически безопасных селективных методов синтеза органических соединений (включая высокомолекулярные) с целью создания на их основе перспективных материалов (в том числе наноматериалов) с высокими эксплуатационными параметрами для использования в биологии, медицине, сельском хозяйстве и различных отраслях техники.</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">166,513 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225013004682-9</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2024-01-01 — 2024-12-31</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№3</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">84</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">МИНОБРНАУКИ РОССИИ</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>МИНИСТЕРСТВО НАУКИ И ВЫСШЕГО ОБРАЗОВАНИЯ РОССИЙСКОЙ ФЕДЕРАЦИИ</div>
+                </div><div class="metric-box" style="text-align:left">
+                  <div class="label">Исполнитель</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">ИОХ РАН</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>Цель работы — разработка и совершенствование экологически безопасных селективных методов синтеза органических соединений (включая высокомолекулярные) с целью создания на их основе перспективных материалов (в том числе наноматериалов) с высокими эксплуатационными параметрами для использования в биологии, медицине, сельском хозяйстве и различных отраслях техники.
+Проведённые работы позволили с помощью современных экспериментальных и расчетных методов провести исследование строения, реакционной способности, механизмов и интермедиатов реакций важнейших классов органических и элементоорганических соединений, разработать с использованием полученных знаний новые подходы к синтезу азот-кислородных органических систем для получения потенциальных компонентов высокоэнергетических материалов и соединений двойного назначения (физиологически активных веществ, мономеров и реагентов), создать новые методы синтеза органических соединений, выявить материалы с ценными свойствами для различных сфер применения.
+Впервые предложен метод восстановительного дифторметилирования алкенов с использованием 2-(дифторметилтио)бензотиазола. Найдена реакция радикального присоединения алкильной группы к альдегидам при использовании алкилтрифторборатов калия; реакция включает генерацию алкилдифторбората, который образует комплекс с карбонильной группой с последующей цепной радикальной реакцией. Открыто сo-катализируемое пероксидирование циклических β-дикарбонильных соединений (циклических 1,3-дикетонов, 4-гидрокси-2(5H)-фуранонов и кислот Мельдрума) трет-бутилгидропероксидом. Открыто радикальное оксиимидирование циклобутанолов и циклопропанолов с раскрытием цикла с образованием ω-функционализированных кетонов. На основе коммерчески доступных 3-нитро-2-хлорпиридинов разработан эффективный метод синтеза изоксазоло[4,5-b]пиридинов с использованием внутримолекулярного нуклеофильного замещения нитрогруппы в качестве ключевой стадии. Предложенный метод позволяет получать широкий круг изоксазоло[4,5-b]пиридинов с высокими выходами. Была обнаружена ранее неизвестная промотируемая основанием перегруппировка Боултона-Катрицкого арилгидразонов изоксазоло[4,5-b]пиридин-3-карбальдегида в 3-гидрокси-2-(2-арил[1,2,3]триазол-4-ил)пиридины.
+Предложен метод получения ароматических индийорганических реагентов из солей диазония и бромида индия (I); процесс включает промежуточное образование арильных радикалов, которые взаимодействуют с солью индия. Разработан метод одностадийной трансформации алифатических карбоновых кислот в тиолы. Впервые показано, что диарилетены с атомом брома при реакционном центре под действием УФ-излучения или солнечного света катализируют двойное присоединение индолов к альдегидам и изатинам по Фриделю-Крафтсу с образованием соответствующих триарилметанов и 3,3&#x27;-диарилиндолин-2-онов. Впервые получены спин-меченые 2-гетарил-3-ацилхромоны, несущие парамагнитные группы с локализованной и делокализованной спиновой плотностью. Разработан фотохимический подход, позволяющий получить набор неизвестных ранее бензо[a]пирано[3,2-c]феназин-4-онов. Предложены эффективные методы синтеза новых производных фосфорсодержащих аминокислот и их аналогов на основе легкодоступных алкиловых и триметилсилиловых эфиров фосфорноватистой, фосфористой и функционализированных фосфонистых кислот. Разработан удобный метод асимметрического синтеза производных γ-оксомасляной и янтарной кислот, основанный на энантиоселективной (до 99 % ee) реакции сопряженного присоединения алломальтола к халконам или производным бис-(арилиден)ацетона в присутствии доступного С2-симметричного бифункционального катализатора, содержащего фрагменты хирального амина и амида квадратной кислоты. Открыта асимметрическая домино реакция, включающая стадии энантиоселективного циклоприсоединения 2-(2-гидроксибензилиденамино)малонатов к 4-арилиден-2-фенилоксазол-5(4H)-онам и последующую внутримолекулярную перегруппировку циклоаддуктов, впервые проведена в среде суб- или сверхкритического диоксида углерода; трициклические продукты реакции – (3R,3aS,9bR)-3-арил-3a-бензамидо-4-оксо-1,3a,4,9b-тетрагидрохромено[4,3-b]пирро-2,2(3H)-дикарбоксилаты, образуются при этом в одну экспериментальную стадию с высоким выходом и энантиомерной чистотой до 99% ee.
+Реализовано электрохимическое гидрокарбоксилирование енолацетатов с использованием диоксида углерода, при этом образуются β-ацетоксикарбоновые кислоты с выходом 25–66%. Предложен электрохимический синтез β-кетосульфонов из енолацетатов и сульфинатов натрия. Разработан экологически безопасный электрохимический метод синтеза 1,2,3-триазол-1-иминов – крайне мало изученного подкласса мезоионных гетероциклических систем. Реализован электрохимический синтез дироданпроизводных азопиразолов (выход 51‒70%) диафрагменным электролизом субстратов в ацетонитрильном растворе NaSCN в присутствие ZnCl2 (катализатор электрофильного замещения).
+Предложен новый подход к активации арил-замещённых донорно-акцепторных циклопропанов (ДАЦ). В отличие от известного способа активации ДАЦ при действии кислот Льюиса, в данном случае реакция проводится без использования металлов в осно́вных условиях за счет генерирования электронообогащённого фенолят-аниона. На его основе предложенного подхода разработана методика для гомо-реакции Михаэля 2 (п силоксиарил)циклопропан-1,1-дикарбоксилатов с различными CH-кислотами: нитросоединениями, малонатами, 1,3-дикетонами, ацетоацетатами и малононитрилом. Полученные нитроалкилмалоновые эфиры являются предшественниками производных δ-аминовалериановой кислоты, являющихся аналогами важного нейромедиатора, γ-аминомасляной кислоты и препаратов типа баклофена.
+Получен новый фторкремниевый реагент, содержащий изотиоцианатную группу. Найдены новые органокатализаторы на основе производных биспидинов. Впервые осуществлен синтез хирального металл-органического 1D координационного полимера, {Cu[bdc-(N-MePro)H2O]·0.25H2O}n (bdc = benzene-1,4-dicarboxylate) на основе неизвестного ранее производного L-пролина. Получены композиты монолитного силикатного аэрогеля различной морфологии и текстуры с иммобилизованными в нем частицами графитоподобного нитрида углерода (gC3N4); показано, что полученные полупрозрачные композиты обладают значительно более высокой каталитической активностью в реакции фотоокисления алкиларилсульфидов молекулярным кислородом при облучении видимым светом в среде скСО2, чем gC3N4 в свободном виде, что позволяет практически на порядок сократить расход катализатора.
+Разработан метод синтеза нафто[2,1-b]фуранов - перспективных флуоресцентных структур для органической электроники. Разработан метод синтеза дибромпроизводного 1,2,5-селенадиазоло[3,4-d]пиридазина в качестве электроноакцепторного блока для донорно-акцепторных красителей, достигающих яркой фосфоресценции при комнатной температуре в ближней инфракрасной области спектра.
+Разработан синтез металлоорганических производных нитронилнитроксила, способных вступать в реакцию кросс-сочетания с арил- и гетарилгалогенидами. Получен ряд уникальных высокоспиновых молекул, в том числе первый стабильный при обычных условиях тетрарадикал с основным квинтетным состоянием. Проведено изучение путей функционализации три-пентафторфенилметана, получены и выделены в свободном виде первые парамагнитные производные фторированных триарилметанов.
+Разработаны модифицированные методы получения дихлорангидрида 2,5-фурандикарбоновой кислоты и изучено его взаимодействие с монофторбензолом с целью синтеза полиэфирэфиркетонов. Получен биодеградируемый сополимер, состоящий из блоков пропиленкарбоната, L-лактида и триметиленкарбоната (ТМК). 
+Впервые разработана новая серии аналогов изокриптолепина и проведена оценка их антипролиферативной и антиэстрогенной активности на клетках рака молочной железы. Открыта катализируемая простейшей аминокислотой пролином энантиоселективная реакция Манниха карбонильных соединений с альдиминами, полученными из природной койевой кислоты, разработан удобный и эффективный метод асимметричного синтеза γ-гидрокси- или γ-кето α-аминокислот и их производных; разработанная стратегия была применена для энантиоселективного получения аминокислоты (S)-γ-оксонорвалина, римантадин-содержащего трипептида и обоих энантиомеров природного γ-лактона амиколатолида А. Разработан одностадийный метод синтеза 2,3,6-триметилгепта-4,6-диен-1-илацетата, являющегося непосредственным предшественником лазиола – основного компонента секрета мандибулярных гланд самцов муравья Lasius meridionalis, основанный на реакции Виттига (металлилилиден)трифенилфосфорана с эритро-4-ацетокси-2,3-диметилбутаналем. Разработан метод получения новых 1,2-оксазинов; выявлено соединение-лидер (3-((4-(4-хлоро-2-фторфенил)пиперазин-1-ил)метил)-4-фенил-4,4a,5,6,7,7a-гексагидроциклопента[e]-1,2-оксазин), проявляющее высокую активность в отношении рака молочной железы. 
+Разработаны методы синтеза селено- и тиоселеногликольурилов на основе селенирования тио(семитио)гликольурилов, состоящего из S-метилирования исходных субстратов до соответствующих изотиоурониевых солей с их последующим взаимодействием с NaHSe, генерируемым in situ реакцией Se с NaBH4; полученные соединения проявляют высокую фунгицидную активность против фитопатагенов возбудителей парши яблонь (Venturia inaequalis (V.i.)), ризоктониоза Rhizoctonia solani (R.s.), фузариозов (Fusarium oxysporum (F.o.), Fusarium maniliforme (F.m.)), корневых гнилей (Bipolaris sorokiniana (B.s.)) и белых гнилей (Sclerotinia sclerotiorum (S.s.)) в сравнении с известным препаратом триадимефон. Получены биспиридиниевые соли на основе двух фрагментов пиридина и пентаэритрита и одного фрагмента фурана; установлено, что полученные соединения могут быть эффективно использованы для борьбы с различными штаммами S. aureus, E. сoli, K. pneumoniae, P. aeruginosa и C. albicans.</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (174)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Лесников Владислав Константинович</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Мулина Ольга Михайловна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат химических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Веселовский Владимир Всеволодович</strong> <span style="color:#71717a;font-size:0.8rem">Доктор химических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Белякова Юлия Юрьевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат химических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Ларин Александр Александрович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат химических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Фрумкин Александр Ефимович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат химических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Баранов Владимир Владимирович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат химических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Казакова Марина Михайловна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Карцева Алена Сергеевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Заякин Игорь Алексеевич</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Чечулина Александра Сергеевна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Поляков Михаил Владимирович</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Иванова Виктория Валерьевна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Далингер Игорь Львович</strong> <span style="color:#71717a;font-size:0.8rem">Доктор химических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Пименов Владимир Григорьевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат химических наук</span></li></ul>
+              <p style='color:#52525b;font-size:0.8rem;margin-top:0.5rem'>...и ещё 159</p>
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

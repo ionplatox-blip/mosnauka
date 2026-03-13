@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | ФИЦ Биотехнологии РАН</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-fic_biotech.html">ФИЦ Биотехнологии РАН</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">МОЛЕКУЛЯРНОЕ МОДЕЛИРОВАНИЕ</span> <span class="tag">МАЛОУГЛОВОЕ РЕНТГЕНОВСКОЕ РАССЕЯНИЕ</span> <span class="tag">ЭЛЕКТРОННАЯ МИКРОСКОПИЯ И ТОМОГРАФИЯ</span> <span class="tag">БЕЛОК H-NS</span> <span class="tag">БЕЛОК DPS</span> <span class="tag">НУКЛЕОИД-СВЯЗЫВАЮЩИЕ БЕЛКИ</span> <span class="tag">БИОКРИСТАЛИЗАЦИЯ БАКТЕРИАЛЬНОЙ ДНК</span> <span class="tag">ВЫЖИВАНИЕ БАКТЕРИЙ ПОСЛЕ МНОЖЕСТВЕННОГО СТРЕССА</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Цитоэкология. Реакция клетки на внешние воздействия</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Рост и культивирование микроорганизмов</span></div>
+          <h1 style="font-size:1.5rem">Множественный бактериальный стресс: роль нуклеоид-ассоциированных белков DpS и Н-NS в выживании бактерий</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">3,000 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225041014685-0</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2023-01-12 — 2024-12-31</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№1</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">7</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">РНФ</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>Российский научный фонд</div>
+                </div><div class="metric-box" style="text-align:left">
+                  <div class="label">Исполнитель</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">ФИЦ БИОТЕХНОЛОГИИ РАН</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>Данная научно-исследовательская работа была направлена на решение актуальной проблемы выживания бактерий после множественных стрессов. 
+В работе решались две масштабные задачи: 1) исследование различных аспектов процессов выживания бактериальных клеток после множественных стрессов: высушивания и перекрестного действия химических и физических факторов; 2) расшифровка механизма структурирования бактериальной ДНК с нуклеоидными белками, позволяющего бактериям выживать после множественных стрессов. К решению поставленных задач был применен комплексный подход, привлекающий методы из разных областей науки: микробиологические, биохимические, биофизические, а также методы электронной микроскопии и томографии, малоуглового рентгеновского рассеяния, макромолекулярной и мультикристальной рентгеновской кристаллографии и молекулярного моделирования. Также в данной работе был использован широкий круг объектов исследования, как бактериальных штаммов (типовых, и мутантных, позволяющих варьировать содержание белка DpS в клетке), так и моделей in vitro (макромолекулярных комплексов и кристаллов белок-ДНК) и in silico компьютерные модели.
+В ходе выполнения проекта были получены следующие результаты:
+1) В экспериментах с бактериями разных видов были получены приоритетные данные о влиянии множественного стресса высушивания на жизнеспособность бактерий.  Оказалось, что на процесс выживания клеток при дегидратации существенно влияет каждый из параметров: видовая принадлежность, среда и температура роста и высушивания, длительность процесса и даже адгезивные характеристики поверхности, на которую осаждаются клетки при дегидратации. Была изучена роль белков Dps и H-NS в изучаемых процессах. В работе были подобраны условия, при которых удавалось восстановить жизнеспособность 27 -79% клеточной популяции изучаемых видов бактерий после полной дегидратации клеток или, наоборот, полностью уничтожить 100% клеток. 
+2) С помощью электронномикроскопических методов и метода малоуглового рассеяния было изучено изменением структуры бактериальных клеток, подвергающихся стрессу обезвоживания.  Полученные результаты позволили сделать выводы о механизмах устойчивости бактериальной ДНК стрессированных высушиванием клеток. На основе полученных данных были разработаны практические рекомендации по хранению бактериальных клеток в лабораторных условиях в виде сухих препаратов. 
+ 3) Исследование действия другого множественного стресса – от перекрестного воздействия химических (антибиотики или биоциды) и физических (термошок, УФ) факторов на жизнеспособность бактерий разных видов позволило получить данные, имеющие важное практическое значение, а именно разработать схемы  воздействия, приводящие к полному быстрому уничтожению бактериальных клеток или, наоборот, их предадаптации к стрессу. В ходе работы были разработаны эффективные схемы стерилизации оборудования или поверхностей, основанные на показанном синергетическом эффекте, которые могут быть использованы в медицине, пищевых и биотехнологических производствах. 
+4) Были изучены условия комплексообразования ДНК и белка Dps in vitro,  получены и исследованы кристаллы ДНК-Dps, решена их структура, провалидирована и задепонирована в Protein Data Bank с присвоением идентификационного номера 8OUC (https://doi.org/10.2210/pdb8OUC/pdb). Особенностью данной структуры стало наличие ранее нерасшифрованных высокоподвижных N-концевых остатков белка. Была изучена динамика влияния ионов двухвалентных металлов (Zn2+ и Mg2+) на целостность кристаллических комплексов ДНК-Dps in vitro. Была рассчитана структура внутриклеточного кристалла ДНК-Dps, построенная из тримеров, и определены параметры внутриклеточного кристалла ДНК-Dps.
+5) В результате расчётов методом классической молекулярной динамики были получены данные по конформационным изменениям нанокристаллов Dps-ДНК и свободной ДНК в растворе, изучено влияние обезвоживания на динамику ДНК и кристаллов Dps-ДНК, проведены исследования структур белков, гомологичных белку Dps бактерии E. сoli, получены полноатомные модели белков как грамположительных бактерий: MrgA и Dps B. subtilis, Dps1 и Dps2 M. smegmatis, MrgA S. aureus, так и грамотрицательных бактерий: Dps S. typhimurium, Dps P. aeruginosa, а также изучена их  ДНК-связывающая способность. 
+Результаты проекта имеют важное значение для формирования новых научных знаний в области адаптации микроорганизмов к различным видам стрессов, а также объяснении механизмов их выживания в неблагоприятных условиях. В практическом плане данные, полученные в ходе проекта могут быть использованы для создания новых эффективных бактериальных препаратов, а также создания новых эффективных методов стерилизации оборудования и различных поверхностей. Результаты проекта будут востребованы на производствах, требующих септических условий, где остро стоит проблема стерилизации оборудования и помещений, а также в медицинских учреждениях и коллекционной практике.</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (4)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Терешкина Ксения Борисовна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Потокина Виктория Вячеславовна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Лойко Наталия Геннадиевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Коваленко Владислав Владимирович</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li></ul>
+              
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

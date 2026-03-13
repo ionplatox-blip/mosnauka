@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | МГУ им. М.В. Ломоносова</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-mgu.html">МГУ им. М.В. Ломоносова</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">пыльцевое зерно</span> <span class="tag">фотосинтез</span> <span class="tag">ионная токсичность</span> <span class="tag">культура клеток растений</span> <span class="tag">клеточная стенка</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Дыхание и обмен веществ в растениях</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Действие физических факторов на растения</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Рост и развитие растений</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Культура тканей и органов растений</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Фотосинтез</span></div>
+          <h1 style="font-size:1.5rem">Организация физиологических процессов и их интеграция как основа продуктивности и устойчивости растений</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">21,020 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225012904025-8</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2024-01-01 — 2024-12-31</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№4</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">29</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">Правительство России</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>Правительство Российской Федерации</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>1.1. Целью настоящей работы является фитохимическое изучение культур клеток важных лекарственных растений Gynostemma pentaphyllum и Panax japonicus и интактных растений тиса Валлиха. Фитохимический анализ проводили разными методами жидкостной хроматографии (ТСХ, хромато-масс-спектрометрия). В результате было показано отсутствие тритерпеновых гликозидов в культуре клеток G. pentaphyllum. Установлено, что химическая природа углеводов в среде выращивания может оказывать существенное влияние на качественный и количественный состав гинзенозидов в культуре клеток P. japonicus. Кроме того, установлено, что в интактных растениях T. wallichiana 14-гидроксилированные таксоиды преимущественно накаливаются в гетеротрофных органах, а 13-гидроксилированные таксоиды присутствуют во всех органах/частях этого растения. Полученные результаты могут быть востребованы в развитии биотехнологии растений.
+
+\\
+
+2.1. Объект: 9-дневные растения ячменя (Hordeum vulgare L.), выращенные на красном (660 нм, КС) и синем (450 нм, СС) узкополосном свету, а также при освещении белым светом люминесцентных ламп (БС, контроль).
+Цель работы: Исследование влияния света различного спектрального состава на скорость потока электронов в выделенных тилакоидах при освещении их узкополосным красным и синим светом.
+Методы: Выделение хлоропластов (тилакоидов); измерение скорости потока электронов в выделенных тилакоидах в реакции Хилла с феррицанидом калия по выделению кислорода, анализируемого полярографическим методом с использованием закрытого электрода Кларка. 
+Результаты: При обоих видах узкополосного освещения (красном и синем светодиодном) скорости потока электронов в тилакоидах КС-растений во всех изученных видах транспорта (базальном, сопряжённом и разобщённом) были ниже, а в тилакоидах СС-растений — выше, чем в контроле (WL-растения).
+Рекомендации по внедрению: полученные данные имеют фундаментальное значение для фотобиологии растений и внесут вклад в формирование теоретических основ светокультуры растений.
+Область применения: фотобиология растений, физиология растений, светокультура растений.
+Сокращения: БС – белый свет, КС – красный свет, СС – синий свет, ФСА – фотосинтетический аппарат, ЭТЦ – электрон-транспортная цепь.
+
+\\
+
+
+2.2. Целью настоящей работы является детальная характеристика спектрального состава света под водой в меромиктических водоемах, отделяющихся от Белого моря и его сопоставление с составом фототрофов водоемов, их пигментными системами и способностью использовать данный свет для фотохимических реакций. Объектами исследования являются сообщества фототрофных организмов 8 водоемов Карельского берега Белого моря, находящихся в окрестностях ББС МГУ, а также чистые культуры аноксигенных фототрофных бактерий (АФБ): зеленых серных бактерий Chlorobium phaeovibrioides зеленоокрашенной формы (далее – зеленоокрашенных ЗСБ) и коричневоокрашенной формы (коричневоокрашенных ЗСБ). Для характеристики условий обитания фототрофов получали вертикальные профили ряда физико-химических параметров: температуры, солености, конентрации кислорода, редокс-потенциала. При помощи погружного люксметра измеряли интегральную освещенность на разных глубинах, спектральный состав света определяли с помощью спектрометра QE65Pro (USA) с погружным волоконно-оптическим зондом. Для характеристики пигментного состава фототрофов использовали абсорбционную спектрофотометрию. Для оценки эффективности работы фотосинтетического аппарата (ФСА) использовали флуориметр AquaPen-C AP 100-C. Для характеристики диапазонов используемого света чистых культур бактерий получали спектры возбуждения флуоресценции зелено- и коричневоокрашенных ЗСБ при помощи спектрофлуориметра Fluoromax 4P при регистрации на длине волны 767 нм. Были охарактеризованы спектральные ниши на разных глубинах исследуемых водоемов. Распределение фитопланктона и доминирующих АФБ по большей части соответствует доступному на разных глубинах свету. Показано, что коричневоокрашенные ЗСБ усваивают свет в сине-зеленой и красной частях спектра, тогда как зеленоокрашенные эффективнее передают на пигмент РЦ свет оранжево-красной части спектра. Это соответствует преобладающим спектральным диапазонам в слоях водоемов, где доминируют соответствующие ЗСБ.
+
+\\
+
+3.1. 
+Объектами исследования являлись растения вики посевной (Vicia sativa L.), вики нарбонской (Vicia narbonensis L.) и подсолнечника (Helianthus annuus L.), а также клеточные стенки, изолированные из корней и побегов этих растений. Цель работы состояла в: 1) изучении вклада клеточных стенок (КС) в накопление меди растениями вики посевной при обработке растворами CuCl2 10-100 мкМ, а также состава корневых экссудатов, выделяемых растениями в этих условиях; 2) оценке ионообменных свойств КС, изолированных из корней и побегов растений вики нарбонской, и в установлении влияния 24-часовой обработки растений ионами Cu2+ на эти свойства; 3) определении накопление ионов меди в клеточных стенках, изолированных из корней и побегов растений подсолнечника, а также в интактных растениях данного вида при разной концентрации меди в среде. По итогам выполнения этапа установлено, что высокое накопление меди в корнях вики посевной является результатом высокой Cu-связывающей способности КС этого органа. При высокой концентрации металла в среде (100 мкМ) наблюдалось снижение катионообменной способности КС корня и выделение корнем в раствор вторичных метаболитов - сапонинов (преимущественно соясапонина I). Данные явления могут представлять собой механизмы защиты против избытка Cu в среде. Показано, что КС корней и побегов близкого вида - вики нарбонской - содержат три типа катионообменных групп. Установлено, что в клеточных стенках побегов содержание карбоксильных групп, принадлежащих полигалактуроновой кислоте и гидроксикоричным кислотам, а также фенольных ОН-групп выше, чем в клеточных стенках корней. В ответ на обработку ионами Cu2+ ионообменная способность клеточных стенок как корней, так и побегов практически не изменяется, но на 38% увеличивается содержание фенольных ОН-групп в корнях. Установлено, что КС как корней, так и побегов растений подсолнечника обладают высокой Cu-связывающей способностью, при этом она возрастает в корнях после 24 ч обработки 50 мкМ Cu за счет увеличения доли КС в сухой массе корня по сравнению с контрольными растениями. Растения подсолнечника обладают низкой устойчивостью к Cu: уже при 50 мкМ появляются визуальные симптомы некроза корней. Решение поставленных в работе задач позволило получить новые знания, имеющие важное значение для моделирования процессов взаимодействия растений с почвенным раствором в условиях загрязнения тяжелыми металлами среды их обитания.
+
+\\
+
+
+4.1. Мы впервые обнаружили АФК в опылительных каплях, они присутствуют в детектируемых количествах у всех исследованных хвойных растений, представителей трех семейств. При этом соотношение двух основных АФК отличалось от такового и у цветковых растений, и у различных хвойных растений между собой. В исследование разнообразия АФК-регуляции прорастания были включены представители семейств Бромелиевые и Орхидные, а также гиацинт (семейство Спаржевые). Для орхидей характерен весьма низкий уровень генерации АФК, представителям Бромелиевых свойственен высокий уровень АФК, причем супероксид также присутствует в значительном количестве, подобно тому, как это было у лилии.
+
+\\
+
+
+4.2. Целью нашей работы является исследование механизма ответа корней растений на асимметричное освещение. Объектами наших исследований являются корни арабидопсиса, риса, амаранта, огурца, помидора и бадьяна. Исследуется морфология корней, освещенных асимметрично. На 2 этапе нашего исследования нашей задачей является спектральная характеристика светозависимой инициации боковых корней в главном корне Arabidopsis thaliana. Мы показали, что свет может влиять не только на количество боковых корней (что было известно ранее), но и на полярность их расположения на оси главного корня. Мы также показали, что на полярность инициации боковых корней влияет как красный, так и синий свет, при этом их влияние имеет противоположную направленность. Результаты нашей работы могут быть использованы для формирования заданной формы корневой системы у различных сельскохозяйственных растений.</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (12)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Клименко Екатерина Сергеевна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Кушунина Мария Александровна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Бибикова Татьяна Николаевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Быкова Екатерина Алексеевна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Никушин Олег Витальевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Брейгина Мария Александровна</strong> <span style="color:#71717a;font-size:0.8rem">Доктор биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Власова Татьяна Анатольевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Глаголева Елена Сергеевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Мейчик Наталия Робертовна</strong> <span style="color:#71717a;font-size:0.8rem">Доктор биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Николаева Юлия Игоревна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Лилиенберг Антонина Ильинична</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Кочетова Галина Владимировна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li></ul>
+              
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

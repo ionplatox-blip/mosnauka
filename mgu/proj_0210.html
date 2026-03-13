@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | МГУ им. М.В. Ломоносова</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-mgu.html">МГУ им. М.В. Ломоносова</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">неорганическая пирофосфатаза</span> <span class="tag">молекулярные основы патологии</span> <span class="tag">структура белка</span> <span class="tag">митохондрия</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Пептиды, белки</span></div>
+          <h1 style="font-size:1.5rem">Характеристика митохондриальной пирофосфатазы и ее мутантных вариантов, вызывающих митохондриальные патологии человека</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">3,000 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225051215701-3</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2023-01-13 — 2024-12-31</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№1</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">2</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">РНФ</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>Российский научный фонд</div>
+                </div><div class="metric-box" style="text-align:left">
+                  <div class="label">Исполнитель</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">МОСКОВСКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ ИМЕНИ М.В.ЛОМОНОСОВА, МГУ ИМЕНИ М.В.ЛОМОНОСОВА, МОСКОВСКИЙ УНИВЕРСИТЕТ ИЛИ МГУ</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>Объектом настоящего исследования является митохондриальная неорганическая пирофосфатаза – фермент, катализирующий реакцию гидролиза неорганического пирофосфата с образованием фосфат-ионов. В результате мутаций в гене ppa2 человека, кодирующем этот фермент, значительно нарушается функционирование митохондрий и аэробный метаболизм в целом, что приводит к летальным кардиопатологиям. Непосредственные причины возникновения митохондриальных нарушений пока непонятны, поскольку фермент и его биологическая роль недостаточно охарактеризован. Целью настоящей работы является выяснение роли, которую митохондриальная РРаза играет в клеточном метаболизме, и понимание молекулярных причин, связывающих мутации в гене ppa2 с функциональными дефектами митохондрий.
+В данном проекте использованы методы генной инженерии, белковой химии, структурной биологии и расчетные эксперименты.  Одним из основных направлений проекта являлось получение и сравнительная характеристика митохондриальной РРазы человека hPPA2 и ее мутантных вариантов, аналогичных природным патогенным вариантам. В работе был получен белок hPPA2 и проведена его функциональная характеристика с фокусом на поиск возможных путей регуляции этого фермента в клетке. Среди клеточных метаболитов были найдены активаторы и ингибиторы hPPA2. Было обнаружено, что активность фермента зависит от состояния SH-групп (или группы): окисление или модификация остатков цистеина инактивировала белок, а обработка восстановленными тиолами, наоборот, активировала фермент. На основании полученных данных были высказаны предположения о возможных путях регуляции hPPA2 в клетке и его вовлечении в метаболические пути.
+Для характеристики влияния мутаций на структуру и функцию митРРазы в работе были получены и охарактеризованы мутантные варианты hPPA2 с заменами Ser61Phe, Met94Val, Met106Ile, Arg127Leu, Pro167Leu, Glu172Lys и Gln294Pro, аналогичные природным патогенным вариантам, приводящим к митохондриальным дисфункциям. РРазная активность вариантов Met94Val, Met106Ile, Glu172Lys, Gln294Pro была значительно снижена по сравнению с ферментом дикого типа, а варианты Arg127Leu и Pro167Leu оказались практически неактивны. Вариант Ser61Phe подвергался протеолизу в процессе экспрессии. Вариант Met94Val был наиболее глубоко охарактеризован: для него были определены каталитические параметры, параметры рН-зависимости и параметры взаимодействия с кофактором (ионом магния) и ингибитором (фторид-ионом). Было установлено, что основной причиной снижения каталитической активности у этого мутанта является нарушение стадии образования атакующего нуклеофила.
+Была проведена работа по характеристике ассоциации нативной РРазы из митохондрий тканей быка с митохондриальными белковыми комплексами. С использованием нативного гель-электрофореза в варианте Blue Native PAGE было показано, что РРазная активность ассоциирована с двумя белковыми зонами, которые соответствуют респираторному комплексу III и респираторным суперкомплексам. Полученные результаты подтверждают, что часть РРА2 в митохондриях может быть ассоциирована с мембранными митохондриальными комплексами, однако пока что полученные данные не позволяют сказать определенно, что это специфическое и значимое для клетки явление.
+В рамках проекта планировалось получение пространственной структуры митохондриальной пирофосфатазы на примере белка из термотолерантных дрожжей Hansenula polymorpha (известных также как Ogataea parapolymorpha), ОрРРА2. Была получена клеточная культура для экспрессии 15N,2H-ОрРРА2 для ЯМР- спектроскопии, она была использована для концентрирования меченного белка и дальнейшего измерения спектров 1H-ЯМР для полученных образцов. Однако вследствие чрезвычайной термостабильности молекулы митРРазы OpPPA2 обмен амидных протонов, необходимый для снятия двумерных спектров ЯМР типа 15N-1H TROSY HSQC, не проходит и данный белок непригоден для решения структуры таким методом.
+Вместо планируемой ЯМР-структуры ОрРРА2 в рамках проекта была решена кристаллическая структура ОрРРА2 в холоформе, которая, в частности, была использована для моделирования холоформы белка человека. На базе модельной структуры hPPA2 был проведен сравнительный анализ, а также расчетные эксперименты – молекулярный докинг найденных клеточных эффекторов и симуляция молекулярной динамики. Была обнаружена основная структурная детерминанта, отличающая митохондриальные РРазы РРА2 животных: это омега-петля, включающая остатки 71-90 hPPA2. Ее позиция соответствует положению петли в РРазах из ацидокальцисом патогенных эукариот родов Trypanosoma и Leishmania, где данная петля участвует в связывании органических анионов и в межсубъединичных контактах. В структурах цитоплазматических РРаз подобная петля отсутствует.
+Молекулярный докинг найденных клеточных эффекторов в структуру hPPA2 позволял обнаружить их потенциальные сайты связывания в структуре белка. Первый центр расположен в межсубъединичном интерфейсе, в него преимущественно докируются NADH и глутатион. Второй центр связывания располагается на поверхности белка у основания омега-петли. Для малых органических анионов, например, цитрата и сукцината, этот центр является преимущественным местом связывания. Третий центр связывания лигандов расположен непосредственно у входа в активный центр РРазы. Сюда докируются органические анионы и тиолы, например, цитрат и глутатион, с умеренными значениями заселенности и оценочной функции.
+Методом симуляции молекулярной динамики (МД) характеризовали конформационную динамику смоделированной структуры холоформы hPPA2 и ряда ее мутантных вариантов, кристаллическую структуру ОрРРА2, а также кристаллическую структуру цитоплазматической РРазы человека hPPA1. Проведенный анализ позволил обнаружить ранее неизвестные особенности структурного поведения димерных РРаз. В частности, динамика структуры индуцировала асимметрию субъединиц, которые в исходной структуре были идентичны. Различие между субъединицами проявляется, в частности, в координации иона металла-кофактора М1 и в позиции петель вокруг активного центра, которые определяют его «открытое» или «закрытое» состояние. Обе субъединицы соответствуют «открытому» состоянию активного центра, при этом в субъединице В оно более выражено, чем в А. В субъединице В был также найден сформировавшийся в результате динамики центр связывания анионных лигандов, в котором в симуляции связываются ионы Cl- и который совпадает с позицией пирофосфата в фермент-субстратном комплексе РРазы. Аналогичный кластер обнаруживается и в структурах hPPA1 и ОрРРА2 (тоже в одной из субъединиц), а также в некоторых мутантных вариантах. Это явление может отражать изменения, происходящие в ходе катализа РРазами.
+Направления наиболее заметных конформационных изменений в белке были охарактеризованы с использованием методов РСА (Principal Component Analysis) для всех атомов, а также NMA (Normal Mode Analysis) для C(альфа)-остова. Было установлено, что основным направлением движения атомов hPPA2 является «качание» субъединиц друг относительно друга. Это движение также наблюдается и для других димерных РРаз. 
+Был охарактеризован эффект патогенных мутаций Ser61Phe, Met94Val, Met106Ile и Gln294Pro на конформационную динамику hPPA2. Согласно полученным данным, мутации приводят к заметным различиям в конформационной динамике, причем наблюдаемые изменения специфичны и различаются для всех мутантных вариантов. Их можно разделить на три основные группы: (а) изменение подвижности цепи или ее участков, (б) изменение характера связывания ионов металлов и (3) изменение карты контактов между остатками. В ряде случаев наблюдаемые изменения могут объяснить каталитическую несостоятельность мутантных вариантов, обнаруженную нами в экспериментальной части работы.
+Результаты, полученные в данном исследовании, значительно продвинули наше понимание молекулярных основ метаболической дисфункции митохондрий, вызванной патогенными мутациями в гене рра2. Полученные данные и сформулированные предположения о метаболической роли РРА2 могут быть использованы для разработки препаратов для компенсации метаболических дисфункций, вызванных данным заболеванием. Кроме того, получены новые данные о функционировании пирофосфатаз в целом, которые обогащают общий пул знаний об этих важных с медицинской и технологической точки зрения ферментах.</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (2)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Курилова Светлана Анатольевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат химических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Родина Елена Валерьевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат химических наук</span></li></ul>
+              
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

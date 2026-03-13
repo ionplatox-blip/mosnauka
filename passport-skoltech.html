@@ -1,0 +1,1417 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>МОСНАУКА — Паспорт: Сколтех</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+      body { font-family: Inter, system-ui, sans-serif; background: #050505; color: white; }
+      .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.08); }
+      .mos-red { color: #ff003c; }
+      .mos-bg-red { background: #ff003c; }
+      .provenance-tag { font-size: 8px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.1em; padding: 2px 8px; border-radius: 4px; }
+      .tag-egisu { background: rgba(0, 120, 255, 0.1); color: #40a0ff; border: 1px solid rgba(0, 120, 255, 0.2); }
+      .tag-colab { background: rgba(255, 0, 60, 0.1); color: #ff4070; border: 1px solid rgba(255, 0, 60, 0.2); }
+      .tag-org { background: rgba(255, 255, 255, 0.05); color: #aaa; border: 1px solid rgba(255, 255, 255, 0.1); }
+
+      /* Section titles */
+      .section-header {
+        display: flex; align-items: center; justify-content: space-between;
+        padding: 0 0.5rem; margin-bottom: 1.5rem; margin-top: 3.5rem;
+      }
+      .section-title {
+        font-size: 1.5rem; font-weight: 900; text-transform: uppercase;
+        font-style: italic; letter-spacing: -0.02em;
+      }
+
+      /* Chunk 3: Lab cards */
+      .labs-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+        gap: 1.5rem;
+      }
+      /* Chunk 4: Scientists */
+      .sci-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 1rem;
+      }
+      .sci-card.hidden { display: none; }
+      .line-clamp-2 {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+      #sci-search {
+        background: rgba(255,255,255,0.04);
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 1rem;
+        padding: 0.75rem 1.25rem 0.75rem 2.75rem;
+        color: white;
+        font-size: 0.875rem;
+        width: 100%;
+        outline: none;
+        transition: border-color 0.2s;
+      }
+      #sci-search:focus {
+        border-color: rgba(255,0,60,0.5);
+      }
+      #sci-search::placeholder { color: rgba(255,255,255,0.25); }
+      /* Chunk 5: RID + Projects */
+      .rid-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 1rem;
+      }
+    </style>
+</head>
+<body>
+  <div class="min-h-screen bg-[radial-gradient(circle_at_top_left,rgba(255,0,60,0.12),transparent_25%),radial-gradient(circle_at_top_right,rgba(255,255,255,0.05),transparent_20%),linear-gradient(180deg,#050505,#0b0f16)]">
+
+    <!-- ═══ HEADER ═══ -->
+    <header class="sticky top-0 z-30 backdrop-blur-md border-b border-white/10 bg-black/40">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        <a class="text-2xl font-black italic tracking-tight uppercase hover:opacity-80 transition" href="index.html">
+          МОС<span class="mos-red">НАУКА</span>
+        </a>
+        <div class="flex items-center gap-4">
+          <span class="text-[10px] uppercase tracking-widest text-zinc-500 font-bold">Паспорт организации v2.0</span>
+          <a href="catalog.html" class="text-xs font-bold uppercase hover:text-red-500 transition">Реестр</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 py-10">
+
+      <!-- ═══ BREADCRUMBS ═══ -->
+      <div class="mb-10 flex items-center justify-between">
+        <div class="flex items-center gap-2 text-[10px] uppercase font-bold tracking-widest text-zinc-500">
+          <a href="index.html" class="hover:text-white">Главная</a>
+          <span>/</span>
+          <a href="catalog.html" class="hover:text-white">Реестр</a>
+          <span>/</span>
+          <span class="text-zinc-300">Сколтех</span>
+        </div>
+        <a href="catalog.html" class="px-5 py-2 border border-white/10 rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-white/5 transition">
+          ← К списку
+        </a>
+      </div>
+
+      <!-- ═══ HERO SECTION ═══ -->
+      <section class="glass rounded-[2.5rem] p-10 relative overflow-hidden mb-8">
+        <!-- Bg watermark -->
+        <div class="absolute top-0 right-0 p-8 opacity-5 pointer-events-none">
+          <img src="https://colab.ws/storage/images/LqUPG0Ipu7ZHhte9r4gFTTptxQfmb37QHBQlKGJe.jpg" class="w-64 h-64 grayscale invert" alt="">
+        </div>
+
+        <div class="relative z-10">
+          <!-- Identity -->
+          <div class="flex items-center gap-5 mb-6">
+            <div class="w-20 h-20 rounded-2xl bg-white p-2 flex items-center justify-center shrink-0">
+              <img src="https://colab.ws/storage/images/LqUPG0Ipu7ZHhte9r4gFTTptxQfmb37QHBQlKGJe.jpg" class="max-w-full max-h-full object-contain" alt="Сколтех logo">
+            </div>
+            <div>
+              <h1 class="text-3xl md:text-5xl font-black tracking-tight uppercase leading-tight mb-2">Сколтех</h1>
+              <p class="text-zinc-400 font-medium">Сколковский институт науки и технологий</p>
+            </div>
+          </div>
+
+          <!-- Contact row -->
+          <div class="flex flex-wrap gap-6 mt-6">
+            <div class="flex items-center gap-2 text-zinc-400 text-sm">
+              <i class="ph ph-map-pin mos-red"></i>
+              <span>Москва, Большой бульвар, 30, стр. 1</span>
+            </div>
+            <a href="https://www.skoltech.ru/" target="_blank" class="flex items-center gap-2 text-zinc-300 text-sm hover:text-white transition">
+              <i class="ph ph-globe mos-red"></i>
+              <span>www.skoltech.ru</span>
+            </a>
+          </div>
+
+          <!-- Verified badge + Contact CTA -->
+          <div class="mt-6 flex flex-wrap gap-3 items-center">
+            <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-[11px] font-bold uppercase tracking-wide">
+              <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              Верифицировано МОСНАУКОЙ
+            </span>
+          </div>
+          <div class="mt-4 p-5 rounded-2xl bg-gradient-to-r from-red-500/20 to-red-500/5 border border-red-500/30 flex flex-wrap items-center justify-between gap-4">
+            <div>
+              <div class="text-sm font-bold">📨 Заинтересованы в сотрудничестве?</div>
+              <div class="text-[11px] text-zinc-400 mt-1">Направьте запрос на НИОКР, консультацию или партнёрство</div>
+            </div>
+            <div class="flex gap-2">
+              <a href="javascript:void(0)" onclick="openRequestModal('Запрос по Сколтех')" class="px-6 py-3 rounded-xl bg-red-500 text-white text-[11px] font-black uppercase tracking-wide hover:bg-red-600 transition inline-flex items-center gap-2 shadow-lg">
+                <i class="ph ph-envelope-simple"></i> Направить запрос
+              </a>
+              <a href="https://www.skoltech.ru/" target="_blank" class="px-5 py-3 rounded-xl bg-white/5 border border-white/10 text-[11px] font-bold uppercase text-zinc-400 hover:bg-white/10 transition inline-flex items-center gap-2">
+                <i class="ph ph-globe"></i> Сайт
+              </a>
+            </div>
+          </div>
+
+          <!-- ═══ METRICS ROW ═══ -->
+          <div class="grid grid-cols-2 md:grid-cols-5 gap-4 mt-10">
+            <a href="#section-labs" class="p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-white/30 transition cursor-pointer block">
+              <div class="text-[9px] uppercase font-black text-zinc-500 mb-1">Лаборатории</div>
+              <div class="text-3xl font-black italic">10</div>
+            </a>
+            <a href="#section-scientists" class="p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-white/30 transition cursor-pointer block">
+              <div class="text-[9px] uppercase font-black text-zinc-500 mb-1">Учёные</div>
+              <div class="text-3xl font-black italic">69</div>
+            </a>
+            <a href="#section-projects" class="p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-white/30 transition cursor-pointer block">
+              <div class="text-[9px] uppercase font-black text-zinc-500 mb-1">Проекты НИОКР</div>
+              <div class="text-3xl font-black italic">11</div>
+            </a>
+            <a href="#section-rid" class="p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-white/30 transition cursor-pointer block">
+              <div class="text-[9px] uppercase font-black text-zinc-500 mb-1">РИД</div>
+              <div class="text-3xl font-black italic">3</div>
+            </a>
+            <a href="#section-projects" class="p-4 rounded-2xl bg-red-500/5 border border-red-500/20 hover:border-red-500/40 transition cursor-pointer block">
+              <div class="text-[9px] uppercase font-black text-red-400/70 mb-1">Объём НИОКР</div>
+              <div class="text-3xl font-black italic mos-red">229 млн ₽</div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ CHUNK 2: About section ═══ -->
+      <section class="glass rounded-[2.5rem] p-10 mb-8">
+        <div class="flex items-center justify-between mb-6">
+          <h2 class="text-xl font-black uppercase italic tracking-tight">Об организации</h2>
+        </div>
+        <p class="text-[15px] text-zinc-300 leading-relaxed mb-6">«Сколтех» — ведущий научно-исследовательский центр, объединяющий 10 лабораторий и 69 учёных. Исследовательский профиль охватывает малые космические аппараты, фотонные интегральные схемы, топология оптической сети мка, оптоволоконная система бортовой сенсорики, оптоволоконная система бортовой коммуникации. Опубликовано свыше 220 научных работ, выполнено 11 проектов НИОКТР и зарегистрировано 3 результатов интеллектуальной деятельности.</p>
+        <details class="group">
+          <summary class="cursor-pointer text-sm font-bold text-red-400 hover:text-red-300 transition select-none flex items-center gap-2">
+            <i class="ph ph-caret-right text-xs transition-transform group-open:rotate-90"></i>
+            Подробнее об исследовательской деятельности
+          </summary>
+          <div class="mt-6 pt-6 border-t border-white/10">
+            <h3 class="text-zinc-200 text-sm font-bold uppercase tracking-wide mb-3">Ключевые компетенции (по данным ЕГИСУ)</h3><div style="display:flex;flex-wrap:wrap;gap:0.4rem;margin-bottom:1.5rem"><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">малые космические аппараты <span style="color:#52525b">(2)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">фотонные интегральные схемы <span style="color:#52525b">(2)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">топология оптической сети мка <span style="color:#52525b">(2)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">оптоволоконная система бортовой сенсорики <span style="color:#52525b">(2)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">оптоволоконная система бортовой коммуникации <span style="color:#52525b">(2)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">генеративные алгоритмы <span style="color:#52525b">(2)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">искусственный интеллект <span style="color:#52525b">(2)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">повышение эквивалентного разрешения <span style="color:#52525b">(2)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">распознавание объектов <span style="color:#52525b">(2)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">геоинформационные системы <span style="color:#52525b">(2)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">интеллектуальный анализ данных <span style="color:#52525b">(2)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">пластиковые стенты <span style="color:#52525b">(2)</span></span></div><h3 class="text-zinc-200 text-sm font-bold uppercase tracking-wide mb-3">Ведущие лаборатории</h3><ul class="text-zinc-400 text-sm space-y-1 ml-4 mb-6 list-disc"><li>Industry-Oriented Computational Discovery (6 сотр.)</li><li>Moscow High-Pressure Collaboration (MHPC) (3 сотр.)</li><li>Лаборатория Дизайна Материалов (4 сотр.)</li><li>Flowbat group (3 сотр.)</li><li>Storion lab (2 сотр.)</li><li>Лаборатория молекулярной нейробиологии (2 сотр.)</li><li class="text-zinc-600">...и ещё 4 лабораторий</li></ul><h3 class="text-zinc-200 text-sm font-bold uppercase tracking-wide mb-3">Ключевые заказчики НИОКР</h3><ul class="text-zinc-400 text-sm space-y-1 ml-4 mb-6 list-disc"><li><strong class="text-zinc-300">МФТИ, ФИЗТЕХ</strong> — 5 проектов</li><li><strong class="text-zinc-300">МИНОБРНАУКИ РОССИИ</strong> — 3 проектов</li><li><strong class="text-zinc-300">АНО &quot;МОСКОВСКИЙ ЦЕНТР ИННОВАЦИОННЫХ ТЕХНОЛОГИЙ В ЗДРАВООХРАНЕНИИ&quot;</strong> — 2 проектов</li></ul><h3 class="text-zinc-200 text-sm font-bold uppercase tracking-wide mb-3">Интеллектуальная собственность</h3><p class="text-zinc-400 text-sm mb-6">Портфель из 3 РИД: база данных — 1, изобретение — 1, программа для эвм — 1.</p><h3 class="text-zinc-200 text-sm font-bold uppercase tracking-wide mb-3">Финансирование и результаты</h3><p class="text-zinc-400 text-sm">Суммарный объём финансирования: <strong class="text-white">229.0 млн руб.</strong> (11 проектов, по данным ЕГИСУ НИОКТР). По итогам проектов опубликовано 22 научных работ.</p>
+          </div>
+        </details>
+      </section>
+
+      <!-- ═══ TOP-3 FEATURED ═══ -->
+      <section class="glass rounded-[2.5rem] p-10 mb-8">
+        <h2 class="text-lg font-black uppercase italic tracking-tight mb-6">⭐ Ведущие лаборатории и учёные</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div>
+            <div class="text-[10px] uppercase font-black text-zinc-500 mb-3 tracking-widest">🏛️ Топ-3 лаборатории</div>
+            <div class="flex flex-col gap-3"><a href="skoltech/lab_009.html" class="glass rounded-2xl p-5 group hover:border-red-500/30 transition flex flex-col">
+          <div class="flex flex-wrap gap-1.5 mb-3"><span class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-[8px] uppercase font-bold text-zinc-500">Физическая химия</span> <span class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-[8px] uppercase font-bold text-zinc-500">Электрохимия</span></div>
+          <div class="text-sm font-bold group-hover:text-red-400 transition leading-snug mb-2">Электрохимические процессы для зелёной энергетики</div>
+          <div class="text-[10px] text-zinc-500 font-bold mt-auto">👥 14 учёных</div>
+        </a>
+<a href="skoltech/lab_000.html" class="glass rounded-2xl p-5 group hover:border-red-500/30 transition flex flex-col">
+          <div class="flex flex-wrap gap-1.5 mb-3"><span class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-[8px] uppercase font-bold text-zinc-500">Материаловедение</span> <span class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-[8px] uppercase font-bold text-zinc-500">Машинное обучение</span></div>
+          <div class="text-sm font-bold group-hover:text-red-400 transition leading-snug mb-2">Industry-Oriented Computational Discovery</div>
+          <div class="text-[10px] text-zinc-500 font-bold mt-auto">👥 6 учёных</div>
+        </a>
+<a href="skoltech/lab_002.html" class="glass rounded-2xl p-5 group hover:border-red-500/30 transition flex flex-col">
+          <div class="flex flex-wrap gap-1.5 mb-3"><span class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-[8px] uppercase font-bold text-zinc-500">Кристаллография</span> <span class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-[8px] uppercase font-bold text-zinc-500">Материаловедение</span></div>
+          <div class="text-sm font-bold group-hover:text-red-400 transition leading-snug mb-2">Лаборатория Дизайна Материалов</div>
+          <div class="text-[10px] text-zinc-500 font-bold mt-auto">👥 4 учёных</div>
+        </a>
+</div>
+          </div>
+          <div>
+            <div class="text-[10px] uppercase font-black text-zinc-500 mb-3 tracking-widest">🏆 Топ-3 учёных</div>
+            <div class="flex flex-col gap-3"><a href="skoltech/sci_020.html" class="glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-3 items-center">
+          <img src="https://colab.ws/storage/images/7Zco9Qr4Bf5i5V44nVqJ00km2R0xGPvvgMTfEwNb.jpg" class="w-12 h-12 rounded-xl object-cover border border-white/10" loading="lazy">
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Насибулин Альберт Галийевич</div>
+            <div class="text-[10px] text-zinc-500 truncate">Лаборатория Наноматериалов</div>
+            <div class="flex items-center gap-2 mt-1">
+              <span class="text-[9px] text-zinc-600">📚 151 публ.</span> 
+            </div>
+          </div>
+        </a>
+<a href="skoltech/sci_009.html" class="glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-3 items-center">
+          <img src="https://colab.ws/storage/images/JAHKkMGBjJ61vql7Ivb3YSQcx1ZjHkHTlRrLW2wT.jpg" class="w-12 h-12 rounded-xl object-cover border border-white/10" loading="lazy">
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Оганов Артем Р.</div>
+            <div class="text-[10px] text-zinc-500 truncate">Лаборатория Дизайна Материалов</div>
+            <div class="flex items-center gap-2 mt-1">
+              <span class="text-[9px] text-zinc-600">📚 93 публ.</span> 
+            </div>
+          </div>
+        </a>
+<a href="skoltech/sci_010.html" class="glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-3 items-center">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white font-bold text-sm">КН</div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Карло Нерви</div>
+            <div class="text-[10px] text-zinc-500 truncate">Лаборатория Дизайна Материалов</div>
+            <div class="flex items-center gap-2 mt-1">
+              <span class="text-[9px] text-zinc-600">📚 59 публ.</span> 
+            </div>
+          </div>
+        </a>
+</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ TABS: Labs / Scientists ═══ -->
+      <div class="glass rounded-2xl p-4 mb-4" style="border:1px solid rgba(56,189,248,0.15);background:rgba(56,189,248,0.03)">
+        <div class="flex items-center gap-2 text-[10px] text-sky-400/70 font-bold uppercase">
+          <i class="ph ph-info"></i>
+          Показаны лаборатории и учёные, зарегистрированные на платформе CoLab. Фактическое число сотрудников может быть больше.
+        </div>
+      </div>
+      <div class="section-header" id="section-labs">
+        <div class="flex items-center gap-4">
+          <button id="tab-labs" onclick="switchTab('labs')" class="section-title" style="background:none;border:none;color:white;cursor:pointer;padding:0">🔬 Лаборатории (10)</button>
+          <button id="tab-sci" onclick="switchTab('sci')" class="text-lg font-black uppercase italic tracking-tight opacity-30 hover:opacity-60 transition" style="background:none;border:none;color:white;cursor:pointer;padding:0" id="section-scientists">🎓 Учёные (37)</button>
+        </div>
+        <span class="provenance-tag tag-colab">CoLab Data</span>
+      </div>
+
+      <!-- Labs panel -->
+      <div id="panel-labs">
+        <div class="text-sm text-zinc-400 mb-3" id="lab-counter">Показаны 3 из 10</div>
+        <div class="labs-grid" id="labs-container">
+          <div class="lab-item glass rounded-[2rem] p-8 hover:border-red-500/30 transition shadow-lg flex flex-col" data-idx="0" style="">
+          <div class="flex flex-wrap gap-2 mb-4"><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Материаловедение</span><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Машинное обучение</span><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">&quot;Умные&quot; материалы</span></div>
+          <a href="skoltech/lab_000.html" class="group">
+            <h3 class="text-lg font-bold mb-3 group-hover:text-red-400 transition leading-snug">Industry-Oriented Computational Discovery</h3>
+          </a>
+          <p class="text-xs text-zinc-500 leading-relaxed mb-4 flex-1">Лаборатория занимается проведением компьютерного поиска новых материалов, направленных на дальнейшее использование в индустрии. Основными направлениям...</p>
+          
+          <div class="mt-6 flex items-center justify-between pt-4 border-t border-white/5">
+            <span class="text-[10px] font-black uppercase text-zinc-500">👥 6 сотрудников</span>
+            
+          </div>
+          <div class="flex gap-2 mt-3">
+            <a href="skoltech/lab_000.html" class="flex-1 text-center px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-[9px] font-bold uppercase tracking-wide text-zinc-400 hover:bg-white/10 transition">Подробнее</a>
+            <a href="javascript:void(0)" onclick="openRequestModal('Связаться с лабораторией Industry-Oriented Computationa')" class="flex-1 text-center px-3 py-2 rounded-xl bg-red-500/10 border border-red-500/30 text-[9px] font-bold uppercase tracking-wide text-red-400 hover:bg-red-500/20 transition cursor-pointer">📨 Связаться</a>
+          </div>
+        </div>
+<div class="lab-item glass rounded-[2rem] p-8 hover:border-red-500/30 transition shadow-lg flex flex-col" data-idx="1" style="">
+          <div class="flex flex-wrap gap-2 mb-4"><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Физика конденсированного состояния</span><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Материаловедение</span></div>
+          <a href="skoltech/lab_001.html" class="group">
+            <h3 class="text-lg font-bold mb-3 group-hover:text-red-400 transition leading-snug">Moscow High-Pressure Collaboration (MHPC)</h3>
+          </a>
+          <p class="text-xs text-zinc-500 leading-relaxed mb-4 flex-1">The search for high-temperature superconductivity is one of the most challenging tasks of condensed matter physics and material science. An appealing ...</p>
+          <div class="mt-4 p-3 rounded-xl bg-black/40 border border-white/5">
+              <div class="text-[9px] uppercase font-black text-zinc-500 mb-1">Оборудование</div>
+              <div class="text-[11px] text-zinc-400 leading-snug">Рамановский спектрометр Horiba LabRam Ev LabRAM HR используется как для микро-, так и для макро-измерений. Конфокальная </div>
+            </div>
+          <div class="mt-6 flex items-center justify-between pt-4 border-t border-white/5">
+            <span class="text-[10px] font-black uppercase text-zinc-500">👥 3 сотрудников</span>
+            <span class="text-[10px] text-emerald-400 font-bold">✉ dmitrii.semenok@skoltech.ru</span>
+          </div>
+          <div class="flex gap-2 mt-3">
+            <a href="skoltech/lab_001.html" class="flex-1 text-center px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-[9px] font-bold uppercase tracking-wide text-zinc-400 hover:bg-white/10 transition">Подробнее</a>
+            <a href="javascript:void(0)" onclick="openRequestModal('Связаться с лабораторией Moscow High-Pressure Collabora')" class="flex-1 text-center px-3 py-2 rounded-xl bg-red-500/10 border border-red-500/30 text-[9px] font-bold uppercase tracking-wide text-red-400 hover:bg-red-500/20 transition cursor-pointer">📨 Связаться</a>
+          </div>
+        </div>
+<div class="lab-item glass rounded-[2rem] p-8 hover:border-red-500/30 transition shadow-lg flex flex-col" data-idx="2" style="">
+          <div class="flex flex-wrap gap-2 mb-4"><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Кристаллография</span><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Материаловедение</span><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Химия высоких давлений</span></div>
+          <a href="skoltech/lab_002.html" class="group">
+            <h3 class="text-lg font-bold mb-3 group-hover:text-red-400 transition leading-snug">Лаборатория Дизайна Материалов</h3>
+          </a>
+          <p class="text-xs text-zinc-500 leading-relaxed mb-4 flex-1"></p>
+          
+          <div class="mt-6 flex items-center justify-between pt-4 border-t border-white/5">
+            <span class="text-[10px] font-black uppercase text-zinc-500">👥 4 сотрудников</span>
+            
+          </div>
+          <div class="flex gap-2 mt-3">
+            <a href="skoltech/lab_002.html" class="flex-1 text-center px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-[9px] font-bold uppercase tracking-wide text-zinc-400 hover:bg-white/10 transition">Подробнее</a>
+            <a href="javascript:void(0)" onclick="openRequestModal('Связаться с лабораторией Лаборатория Дизайна Материалов')" class="flex-1 text-center px-3 py-2 rounded-xl bg-red-500/10 border border-red-500/30 text-[9px] font-bold uppercase tracking-wide text-red-400 hover:bg-red-500/20 transition cursor-pointer">📨 Связаться</a>
+          </div>
+        </div>
+<div class="lab-item glass rounded-[2rem] p-8 hover:border-red-500/30 transition shadow-lg flex flex-col" data-idx="3" style="display:none">
+          <div class="flex flex-wrap gap-2 mb-4"><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Электродинамика</span><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Электрохимия</span><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Альтернативная энергетика</span></div>
+          <a href="skoltech/lab_003.html" class="group">
+            <h3 class="text-lg font-bold mb-3 group-hover:text-red-400 transition leading-snug">Flowbat group</h3>
+          </a>
+          <p class="text-xs text-zinc-500 leading-relaxed mb-4 flex-1">We are the team of experts from different areas: physics, mathematics, electrochemistry, control theory, micro- and power-electronics who joined toget...</p>
+          <div class="mt-4 p-3 rounded-xl bg-black/40 border border-white/5">
+              <div class="text-[9px] uppercase font-black text-zinc-500 mb-1">Оборудование</div>
+              <div class="text-[11px] text-zinc-400 leading-snug">Камера климатическая LGC-5101 Потенциостат Biologic VMP 3 Проведение всего спектра электрохимических экспериментов, в то</div>
+            </div>
+          <div class="mt-6 flex items-center justify-between pt-4 border-t border-white/5">
+            <span class="text-[10px] font-black uppercase text-zinc-500">👥 3 сотрудников</span>
+            
+          </div>
+          <div class="flex gap-2 mt-3">
+            <a href="skoltech/lab_003.html" class="flex-1 text-center px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-[9px] font-bold uppercase tracking-wide text-zinc-400 hover:bg-white/10 transition">Подробнее</a>
+            <a href="javascript:void(0)" onclick="openRequestModal('Связаться с лабораторией Flowbat group')" class="flex-1 text-center px-3 py-2 rounded-xl bg-red-500/10 border border-red-500/30 text-[9px] font-bold uppercase tracking-wide text-red-400 hover:bg-red-500/20 transition cursor-pointer">📨 Связаться</a>
+          </div>
+        </div>
+<div class="lab-item glass rounded-[2rem] p-8 hover:border-red-500/30 transition shadow-lg flex flex-col" data-idx="4" style="display:none">
+          <div class="flex flex-wrap gap-2 mb-4"><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Молекулярное моделирование</span><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Электрохимия</span><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Материаловедение</span></div>
+          <a href="skoltech/lab_004.html" class="group">
+            <h3 class="text-lg font-bold mb-3 group-hover:text-red-400 transition leading-snug">Storion lab</h3>
+          </a>
+          <p class="text-xs text-zinc-500 leading-relaxed mb-4 flex-1">Overarched by the development of new energy storage technology our lab consists of three research groups, which are complementary to each other. Catho...</p>
+          <div class="mt-4 p-3 rounded-xl bg-black/40 border border-white/5">
+              <div class="text-[9px] uppercase font-black text-zinc-500 mb-1">Оборудование</div>
+              <div class="text-[11px] text-zinc-400 leading-snug">Сканирующий электронный микроскоп Quattro S Микроскоп электронный сканирующий Quattro S предназначен для измерений линей</div>
+            </div>
+          <div class="mt-6 flex items-center justify-between pt-4 border-t border-white/5">
+            <span class="text-[10px] font-black uppercase text-zinc-500">👥 2 сотрудников</span>
+            
+          </div>
+          <div class="flex gap-2 mt-3">
+            <a href="skoltech/lab_004.html" class="flex-1 text-center px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-[9px] font-bold uppercase tracking-wide text-zinc-400 hover:bg-white/10 transition">Подробнее</a>
+            <a href="javascript:void(0)" onclick="openRequestModal('Связаться с лабораторией Storion lab')" class="flex-1 text-center px-3 py-2 rounded-xl bg-red-500/10 border border-red-500/30 text-[9px] font-bold uppercase tracking-wide text-red-400 hover:bg-red-500/20 transition cursor-pointer">📨 Связаться</a>
+          </div>
+        </div>
+<div class="lab-item glass rounded-[2rem] p-8 hover:border-red-500/30 transition shadow-lg flex flex-col" data-idx="5" style="display:none">
+          <div class="flex flex-wrap gap-2 mb-4"><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Биоинформатика</span><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Нейробиология</span><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Молекулярная биология</span></div>
+          <a href="skoltech/lab_005.html" class="group">
+            <h3 class="text-lg font-bold mb-3 group-hover:text-red-400 transition leading-snug">Лаборатория молекулярной нейробиологии</h3>
+          </a>
+          <p class="text-xs text-zinc-500 leading-relaxed mb-4 flex-1">Построение липидомных и транскриптомных карт мозга здорового человека, пациентов с шизофренией и депрессией на основе данных RNA-seq, single-cell RNA-...</p>
+          
+          <div class="mt-6 flex items-center justify-between pt-4 border-t border-white/5">
+            <span class="text-[10px] font-black uppercase text-zinc-500">👥 2 сотрудников</span>
+            
+          </div>
+          <div class="flex gap-2 mt-3">
+            <a href="skoltech/lab_005.html" class="flex-1 text-center px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-[9px] font-bold uppercase tracking-wide text-zinc-400 hover:bg-white/10 transition">Подробнее</a>
+            <a href="javascript:void(0)" onclick="openRequestModal('Связаться с лабораторией Лаборатория молекулярной нейро')" class="flex-1 text-center px-3 py-2 rounded-xl bg-red-500/10 border border-red-500/30 text-[9px] font-bold uppercase tracking-wide text-red-400 hover:bg-red-500/20 transition cursor-pointer">📨 Связаться</a>
+          </div>
+        </div>
+<div class="lab-item glass rounded-[2rem] p-8 hover:border-red-500/30 transition shadow-lg flex flex-col" data-idx="6" style="display:none">
+          <div class="flex flex-wrap gap-2 mb-4"><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Материаловедение</span><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Нанотехнологии</span><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Фотоника</span></div>
+          <a href="skoltech/lab_006.html" class="group">
+            <h3 class="text-lg font-bold mb-3 group-hover:text-red-400 transition leading-snug">Лаборатория Наноматериалов</h3>
+          </a>
+          <p class="text-xs text-zinc-500 leading-relaxed mb-4 flex-1">The Laboratory of NanoMaterials of Skolkovo Institute of Science and Technology, led by Prof. Albert G. Nasibulin, is among the top technology laborat...</p>
+          
+          <div class="mt-6 flex items-center justify-between pt-4 border-t border-white/5">
+            <span class="text-[10px] font-black uppercase text-zinc-500">👥 1 сотрудников</span>
+            
+          </div>
+          <div class="flex gap-2 mt-3">
+            <a href="skoltech/lab_006.html" class="flex-1 text-center px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-[9px] font-bold uppercase tracking-wide text-zinc-400 hover:bg-white/10 transition">Подробнее</a>
+            <a href="javascript:void(0)" onclick="openRequestModal('Связаться с лабораторией Лаборатория Наноматериалов')" class="flex-1 text-center px-3 py-2 rounded-xl bg-red-500/10 border border-red-500/30 text-[9px] font-bold uppercase tracking-wide text-red-400 hover:bg-red-500/20 transition cursor-pointer">📨 Связаться</a>
+          </div>
+        </div>
+<div class="lab-item glass rounded-[2rem] p-8 hover:border-red-500/30 transition shadow-lg flex flex-col" data-idx="7" style="display:none">
+          <div class="flex flex-wrap gap-2 mb-4"><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Лазерная физика</span><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Материаловедение</span><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Механика</span></div>
+          <a href="skoltech/lab_007.html" class="group">
+            <h3 class="text-lg font-bold mb-3 group-hover:text-red-400 transition leading-snug">Лаборатория аддитивного производства</h3>
+          </a>
+          <p class="text-xs text-zinc-500 leading-relaxed mb-4 flex-1">Additive manufacturing laboratory aims to: - Provide and apply Skoltech led R&amp;D effort, education and training in additive manufacturing technologies....</p>
+          
+          <div class="mt-6 flex items-center justify-between pt-4 border-t border-white/5">
+            <span class="text-[10px] font-black uppercase text-zinc-500">👥 1 сотрудников</span>
+            
+          </div>
+          <div class="flex gap-2 mt-3">
+            <a href="skoltech/lab_007.html" class="flex-1 text-center px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-[9px] font-bold uppercase tracking-wide text-zinc-400 hover:bg-white/10 transition">Подробнее</a>
+            <a href="javascript:void(0)" onclick="openRequestModal('Связаться с лабораторией Лаборатория аддитивного произв')" class="flex-1 text-center px-3 py-2 rounded-xl bg-red-500/10 border border-red-500/30 text-[9px] font-bold uppercase tracking-wide text-red-400 hover:bg-red-500/20 transition cursor-pointer">📨 Связаться</a>
+          </div>
+        </div>
+<div class="lab-item glass rounded-[2rem] p-8 hover:border-red-500/30 transition shadow-lg flex flex-col" data-idx="8" style="display:none">
+          <div class="flex flex-wrap gap-2 mb-4"><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Микробиология</span><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Молекулярная биология</span><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Биоинформатика</span></div>
+          <a href="skoltech/lab_008.html" class="group">
+            <h3 class="text-lg font-bold mb-3 group-hover:text-red-400 transition leading-snug">Лаборатория Анализа Метагеномов</h3>
+          </a>
+          <p class="text-xs text-zinc-500 leading-relaxed mb-4 flex-1">Лаборатория занимается изучением разнообразия и молекулярных механизмов функционирования защитных систем прокариот, анти-иммунных систем бактериофагов...</p>
+          
+          <div class="mt-6 flex items-center justify-between pt-4 border-t border-white/5">
+            <span class="text-[10px] font-black uppercase text-zinc-500">👥 1 сотрудников</span>
+            
+          </div>
+          <div class="flex gap-2 mt-3">
+            <a href="skoltech/lab_008.html" class="flex-1 text-center px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-[9px] font-bold uppercase tracking-wide text-zinc-400 hover:bg-white/10 transition">Подробнее</a>
+            <a href="javascript:void(0)" onclick="openRequestModal('Связаться с лабораторией Лаборатория Анализа Метагеномо')" class="flex-1 text-center px-3 py-2 rounded-xl bg-red-500/10 border border-red-500/30 text-[9px] font-bold uppercase tracking-wide text-red-400 hover:bg-red-500/20 transition cursor-pointer">📨 Связаться</a>
+          </div>
+        </div>
+<div class="lab-item glass rounded-[2rem] p-8 hover:border-red-500/30 transition shadow-lg flex flex-col" data-idx="9" style="display:none">
+          <div class="flex flex-wrap gap-2 mb-4"><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Физическая химия</span><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Электрохимия</span><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Материаловедение</span></div>
+          <a href="skoltech/lab_009.html" class="group">
+            <h3 class="text-lg font-bold mb-3 group-hover:text-red-400 transition leading-snug">Электрохимические процессы для зелёной энергетики</h3>
+          </a>
+          <p class="text-xs text-zinc-500 leading-relaxed mb-4 flex-1">Группа специализируется на изучении механизмов накопления и преобразования электрохимической энергии, которые помогут перейти от экономики, основанной...</p>
+          
+          <div class="mt-6 flex items-center justify-between pt-4 border-t border-white/5">
+            <span class="text-[10px] font-black uppercase text-zinc-500">👥 14 сотрудников</span>
+            
+          </div>
+          <div class="flex gap-2 mt-3">
+            <a href="skoltech/lab_009.html" class="flex-1 text-center px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-[9px] font-bold uppercase tracking-wide text-zinc-400 hover:bg-white/10 transition">Подробнее</a>
+            <a href="javascript:void(0)" onclick="openRequestModal('Связаться с лабораторией Электрохимические процессы для')" class="flex-1 text-center px-3 py-2 rounded-xl bg-red-500/10 border border-red-500/30 text-[9px] font-bold uppercase tracking-wide text-red-400 hover:bg-red-500/20 transition cursor-pointer">📨 Связаться</a>
+          </div>
+        </div>
+        </div>
+        <div class="mt-4 text-center">
+          <button id="lab-more" onclick="showMore('lab-item', 'lab-more', 'lab-counter', 10, 3)" class="px-6 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-widest hover:bg-white/10 transition text-zinc-400">
+            Показать ещё 3
+          </button>
+        </div>
+      </div>
+
+      <!-- Scientists panel (hidden by default) -->
+      <div id="panel-sci" style="display:none">
+        <div class="text-sm text-zinc-400 mb-3" id="sci-counter">Показаны 3 из 37</div>
+        <div class="relative mb-6">
+          <i class="ph ph-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-zinc-500"></i>
+          <input id="sci-search" type="text" placeholder="Поиск по имени или области исследования...">
+          <div id="sci-count" class="absolute right-4 top-1/2 -translate-y-1/2 text-[10px] text-zinc-500 font-bold">37 учёных</div>
+        </div>
+        <div class="sci-grid" id="sci-grid">
+          <a href="skoltech/sci_000.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="квашнин александр геннадьевич" data-areas="высокоэнтропийные сплавы катализ материаловедение машинное обучение наночастицы сверхпрочные материалы сокращение выбросов co2 умные материалы функциональные композиционные материалы кристаллография кристаллохимия металлы и сплавы минералогия физика твердого  тела 2d материалы ab initio nanomaterials for biomedicine thin solid films вычислительная химия квантовая химия магнитные материалы наноматериалы нековалентные взаимодействия теория функционала плотности тонкие пленки физика конденсированного состояния биотехнология гетероструктуры механика материалов нанотехнологии сенсорика стрейнтроника твистроника физическая химия фотоника сверхпроводимость компьютерное моделирование computational materials science высокотемпературные сверхпроводники гидриды безвакуумный плазменный синтез бориды высокоэнтропийные материалы карбиды плазменная утилизация отходов углеродные материалы электродуговой синтез ab initio md вычислительная физика квантовая физика магнитно-структурные корреляции магнитные гетероструктуры математическая физика методы монте-карло монте-карло моделирование электронные свойства керамические материалы композиционные материалы механические свойства материалов плазмохимия рентгеноструктурный анализ электронная микроскопия болометры квантовые вычисления одиночные фотоны планарная фотоника ультратонкие пленки водоочистка доставка лекарств наноструктуры теоретическая химия графен спинтроника нанопровода углеродные нанотрубки магнетизм асимметрический металлокомплексный катализ металлоорганическая химия фотохимия структурная химия керамика рентгеновская дифракция физика плазмы 3d-печать аддитивные технологии металлические сплавы астрофизика высоких энергий звёздная астрофизика data science глубокое обучение искусственный интеллект прикладная математика электрокатализ электрохимия data driven materials моделирование наноструктур" data-idx="0" style="">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/hHNKbXdDf5Qx8Koyf81u7J6saNld9xyR9JeHJdNX.png" class="w-full h-full object-cover" alt="Квашнин Александр Геннадьевич" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Квашнин Александр Геннадьевич</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Industry-Oriented Computational Discovery</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Высокоэнтропийные сплавы, Катализ, Материаловедение, Машинное обучение +92</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 47 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="skoltech/sci_001.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="илья чепкасов" data-areas="высокоэнтропийные сплавы катализ материаловедение машинное обучение наночастицы сверхпрочные материалы сокращение выбросов co2 умные материалы функциональные композиционные материалы кристаллография кристаллохимия металлы и сплавы минералогия физика твердого  тела 2d материалы биотехнология гетероструктуры квантовая химия механика материалов нанотехнологии сенсорика стрейнтроника твистроника физическая химия фотоника computational materials science наноматериалы теория функционала плотности ab initio nanomaterials for biomedicine thin solid films вычислительная химия магнитные материалы нековалентные взаимодействия тонкие пленки физика конденсированного состояния нанопровода углеродные нанотрубки сверхпроводимость химия компьютерное моделирование молекулярная динамика мультиферроики полимеры безвакуумный плазменный синтез бориды высокоэнтропийные материалы карбиды плазменная утилизация отходов углеродные материалы электродуговой синтез керамические материалы композиционные материалы механические свойства материалов плазмохимия рентгеноструктурный анализ электронная микроскопия электрокатализ электрохимия" data-idx="1" style="">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/wq7ahQjkhtJL1Jokd1xQ0pnPbSn4OJdlArvX5Dre.png" class="w-full h-full object-cover" alt="Илья Чепкасов" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Илья Чепкасов</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Industry-Oriented Computational Discovery</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Высокоэнтропийные сплавы, Катализ, Материаловедение, Машинное обучение +55</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 12 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="skoltech/sci_002.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="виктор байдышев" data-areas="высокоэнтропийные сплавы катализ материаловедение машинное обучение наночастицы сверхпрочные материалы сокращение выбросов co2 умные материалы функциональные композиционные материалы computational materials science наноматериалы теория функционала плотности 2d материалы биотехнология гетероструктуры квантовая химия механика материалов нанотехнологии сенсорика стрейнтроника твистроника физическая химия фотоника безвакуумный плазменный синтез бориды высокоэнтропийные материалы карбиды плазменная утилизация отходов углеродные материалы электродуговой синтез нанопровода углеродные нанотрубки структурная химия электронная микроскопия керамические материалы композиционные материалы механические свойства материалов плазмохимия рентгеноструктурный анализ" data-idx="2" style="">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">ВБ</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Виктор Байдышев</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Industry-Oriented Computational Discovery</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Высокоэнтропийные сплавы, Катализ, Материаловедение, Машинное обучение +35</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 9 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="skoltech/sci_003.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="фаридун джалолов" data-areas="машинное обучение сверхпрочные материалы высокоэнтропийные сплавы катализ материаловедение наночастицы сокращение выбросов co2 умные материалы функциональные композиционные материалы кристаллография кристаллохимия металлы и сплавы минералогия физика твердого  тела гидротермальный синтез неорганическая химия низкотемпературная адсорбция азота растровая электронная микроскопия редкоземельные элементы (рзэ) рентгеновская дифракция 2d материалы ab initio nanomaterials for biomedicine thin solid films вычислительная химия квантовая химия магнитные материалы наноматериалы нековалентные взаимодействия теория функционала плотности тонкие пленки физика конденсированного состояния биотехнология гетероструктуры механика материалов нанотехнологии сенсорика стрейнтроника твистроника физическая химия фотоника" data-idx="3" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">ФД</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Фаридун Джалолов</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Industry-Oriented Computational Discovery</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Машинное обучение, Сверхпрочные материалы, Высокоэнтропийные сплавы, Катализ +37</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 2 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="skoltech/sci_004.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="александра радина" data-areas="" data-idx="4" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">АР</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Александра Радина</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Industry-Oriented Computational Discovery</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2"></div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 0 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="skoltech/sci_005.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="ольга пучкова" data-areas="data science катализ машинное обучение полупроводниковое материаловедение" data-idx="5" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/nwH7M0Q0bVF3P6zagtQurN5C9ua0rob8jH0veliO.png" class="w-full h-full object-cover" alt="Ольга Пучкова" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Ольга Пучкова</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Industry-Oriented Computational Discovery</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Data Science, Катализ, Машинное обучение, Полупроводниковое материаловедение</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 0 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="skoltech/sci_006.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="семенок дмитрий владимирович" data-areas="сверхпроводимость кристаллография кристаллохимия материаловедение металлы и сплавы минералогия физика твердого  тела высокоэнтропийные сплавы катализ машинное обучение наночастицы сверхпрочные материалы сокращение выбросов co2 умные материалы функциональные композиционные материалы компьютерное моделирование теория функционала плотности физика конденсированного состояния высокотемпературные сверхпроводники гидриды 2d материалы ab initio ab initio md вычислительная физика квантовая физика магнитно-структурные корреляции магнитные гетероструктуры магнитные материалы математическая физика методы монте-карло монте-карло моделирование электронные свойства асимметрический металлокомплексный катализ металлоорганическая химия фотохимия химия" data-idx="6" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/kvqJwlaEaFFBIcuj5TplYa2duCnqYGCUjOwjplvI.jpg" class="w-full h-full object-cover" alt="Семенок Дмитрий Владимирович" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Семенок Дмитрий Владимирович</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Moscow High-Pressure Collaboration (MHPC)</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Сверхпроводимость, Кристаллография, Кристаллохимия, Материаловедение +32</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 15 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="skoltech/sci_007.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="андрей садаков" data-areas="высокотемпературные сверхпроводники гидриды сверхпроводимость высокоэнтропийные сплавы катализ материаловедение машинное обучение наночастицы сверхпрочные материалы сокращение выбросов co2 умные материалы функциональные композиционные материалы кристаллография кристаллохимия металлы и сплавы минералогия физика твердого  тела магнетизм механохимия рентгеновские структурные методы электронная микроскопия компьютерное моделирование теория функционала плотности физика конденсированного состояния 2d материалы джозефсоновские структуры нанотехнологии низкотемпературные технологии сканирующая туннельная микроскопия топологические изоляторы arpes xps атомно-силовая микроскопия молекулярно-пучковая эпитаксия наноматериалы наноуглерод спинтроника тонкие пленки физическая химия асимметрический металлокомплексный катализ металлоорганическая химия фотохимия графен фотолюминесценция" data-idx="7" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/829X7jd6Zt8UEAmAxMfcD9hggYnIKEhZHrghX5TE.jpg" class="w-full h-full object-cover" alt="Андрей Садаков" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Андрей Садаков</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Moscow High-Pressure Collaboration (MHPC)</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Высокотемпературные сверхпроводники, Гидриды, Сверхпроводимость, Высокоэнтропийные сплавы +40</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 15 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="skoltech/sci_008.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="иван троян" data-areas="сверхпроводимость высокие давления кристаллография магнитные материалы нанокомпозиты наноматериалы наноструктуры кристаллохимия материаловедение металлы и сплавы минералогия физика твердого  тела высокотемпературные сверхпроводники гидриды геология оптика спектроскопия физика высокоэнтропийные сплавы катализ машинное обучение наночастицы сверхпрочные материалы сокращение выбросов co2 умные материалы функциональные композиционные материалы механические свойства материалов.усталостные и растягивающие свойства двухфазной стали, полученной в результате контролируемого процесса прокатки и термической обработки. магнетизм нанотехнологии компьютерное моделирование теория функционала плотности физика конденсированного состояния chemical engineering industrial engineering manufacturing engineering materials chemistry неорганическая химия асимметрический металлокомплексный катализ металлоорганическая химия фотохимия химия горение кинетика полиморфизм сокристаллы термический анализ функциональные материалы энергетические материалы взаимодействие рентгеновского и синхротронного излучений с веществом рентгеновская дифракция рентгеновская микроскопия рентгеновская оптика рентгеновское излучение синхротронное излучение" data-idx="8" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">ИТ</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Иван Троян</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Moscow High-Pressure Collaboration (MHPC)</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Сверхпроводимость, Высокие давления, Кристаллография, Магнитные материалы +50</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 33 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="skoltech/sci_009.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="оганов артем р." data-areas="кристаллография кристаллохимия материаловедение металлы и сплавы минералогия физика твердого  тела высокоэнтропийные сплавы катализ машинное обучение наночастицы сверхпрочные материалы сокращение выбросов co2 умные материалы функциональные композиционные материалы компьютерное моделирование теория функционала плотности физика конденсированного состояния сверхпроводимость магнетизм сильно коррелированные электронные системы фазовые переходы электриды 2d материалы биотехнология гетероструктуры квантовая химия механика материалов нанотехнологии сенсорика стрейнтроника твистроника физическая химия фотоника высокотемпературные сверхпроводники гидриды базы данных химия зеленая химия иерархически пористые материалы композиционные материалы костные цементы нанокомпозиты огнеупорные материалы полимерные композиты растровая электронная микроскопия рентгеновская дифракция синхротронное излучение электронная микроскопия computational materials science наноматериалы ab initio ab initio md вычислительная физика квантовая физика магнитно-структурные корреляции магнитные гетероструктуры магнитные материалы математическая физика методы монте-карло монте-карло моделирование электронные свойства биосенсоры ван-дер-ваальсовы материалы двумерные материалы интегральная фотоника квантовые материалы метаповерхности нанофотоника оптические материалы оптические межсоединения оптические сенсоры плазмоника поверхностно-усиленная рамановская спектроскопия тонкие пленки ультратонкие пленки эллипсометрия первопринципное моделирование атомистическое моделирование перовскиты полиморфизм полупроводниковое материаловедение солнечная энергетика теория симметрии кристаллов болометры квантовые вычисления одиночные фотоны планарная фотоника" data-idx="9" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/JAHKkMGBjJ61vql7Ivb3YSQcx1ZjHkHTlRrLW2wT.jpg" class="w-full h-full object-cover" alt="Оганов Артем Р." loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Оганов Артем Р.</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория Дизайна Материалов</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Кристаллография, Кристаллохимия, Материаловедение, Металлы и сплавы +83</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 93 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="skoltech/sci_010.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="карло нерви" data-areas="базы данных материаловедение" data-idx="10" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">КН</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Карло Нерви</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория Дизайна Материалов</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Базы данных, Материаловедение</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 59 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="skoltech/sci_011.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="дмитрий рыбковский" data-areas="графен фотолюминесценция кристаллография кристаллохимия материаловедение металлы и сплавы минералогия физика твердого  тела высокоэнтропийные сплавы катализ машинное обучение наночастицы сверхпрочные материалы сокращение выбросов co2 умные материалы функциональные композиционные материалы 1d материалы 2d материалы магнитные материалы магнитооптика нанофотоника спектроскопия спиновые волны электронный магнитный резонанс наноматериалы нанопровода углеродные нанотрубки инфракрасная спектроскопия терагерцовая спектроскопия мультиферроики наноструктуры оптика сверхпроводимость сегнетоэлектричество углеродные материалы физика конденсированного состояния физика полупроводников структурная химия электронная микроскопия атомистическое моделирование неорганическая химия теоретическая химия физическая химия фуллерены наноуглерод безвакуумный плазменный синтез бориды высокоэнтропийные материалы карбиды плазменная утилизация отходов электродуговой синтез" data-idx="11" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">ДР</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Дмитрий Рыбковский</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория Дизайна Материалов</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Графен, Фотолюминесценция, Кристаллография, Кристаллохимия +47</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 13 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="skoltech/sci_012.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="даниил полетаев" data-areas="computational materials prediction interatomic potentials ангармонические колебания атомистическое моделирование взаимодействие рентгеновского, синхротронного излучений и нейтронов с конденсированным веществом магнитные материалы машинное обучение молекулярная динамика сверхпроводимость теория функционала плотности компьютерное моделирование литий-ионные аккумуляторы материаловедение" data-idx="12" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/7dsZL1qKVJRFFT1TJ8JB7UwN3owv4kO3fPUVMgYG.jpg" class="w-full h-full object-cover" alt="Даниил Полетаев" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Даниил Полетаев</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория Дизайна Материалов</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Computational Materials Prediction, Interatomic potentials, Ангармонические колебания, Атомистическое моделирование +9</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 11 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="skoltech/sci_013.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="пугач михаил александрович" data-areas="electrochemical energy storage возобновляемые источники энергии математическое моделирование электрохимия альтернативная энергетика зеленые технологии материаловедение электроэнергетика энергетика энергетические материалы data science вычислительная химия машинное обучение хемоинформатика биоинформатика биохимия наноматериалы нанопровода углеродные нанотрубки биофотоника фотоника квантовая физика лазерная физика медицинская физика вычислительная гидродинамика проточные аккумуляторы" data-idx="13" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/8GZGilni1HzSGmCONHm9q6rU0sgdSAYHcM5Z3heI.jpg" class="w-full h-full object-cover" alt="Пугач Михаил Александрович" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Пугач Михаил Александрович</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Flowbat group</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Electrochemical energy storage, Возобновляемые источники энергии, Математическое моделирование, Электрохимия +22</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 5 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="skoltech/sci_014.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="никита буряк" data-areas="альтернативная энергетика зеленые технологии материаловедение электроэнергетика энергетика энергетические материалы electrochemical energy storage вычислительная гидродинамика машинное обучение проточные аккумуляторы data science вычислительная химия хемоинформатика биоинформатика биохимия наноматериалы нанопровода углеродные нанотрубки биофотоника фотоника гетерогенный катализ литий-ионные аккумуляторы натрий-ионные аккумуляторы физическая химия фотоэлектрохимия электролиз воды электрохимия квантовая физика лазерная физика медицинская физика" data-idx="14" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/OGQgxCNysAUEeQEyXvgES8TQPZ2f9dOTXQXpLDil.jpg" class="w-full h-full object-cover" alt="Никита Буряк" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Никита Буряк</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Flowbat group</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Альтернативная энергетика, Зеленые технологии, Материаловедение, Электроэнергетика +26</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 1 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="skoltech/sci_015.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="илья христофоров" data-areas="electrochemical energy storage вычислительная гидродинамика машинное обучение проточные аккумуляторы энергетика альтернативная энергетика зеленые технологии материаловедение электроэнергетика энергетические материалы" data-idx="15" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/ZWcMbIFvk0TI97YDalJJW6J0BpGyit8OD2xgs7P6.jpg" class="w-full h-full object-cover" alt="Илья Христофоров" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Илья Христофоров</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Flowbat group</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Electrochemical energy storage, Вычислительная гидродинамика, Машинное обучение, Проточные аккумуляторы +6</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 1 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="skoltech/sci_016.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="федотов станислав с" data-areas="гетерогенный катализ литий-ионные аккумуляторы материаловедение натрий-ионные аккумуляторы физическая химия фотоэлектрохимия электролиз воды электрохимия катодные материалы кристаллография химия твердого тела электронная микроскопия компьютерное моделирование теория функционала плотности наноматериалы оптические материалы стеклокерамика анализ данных магнетизм мессбауэровская спектроскопия неорганическая химия синхротронное излучение спиновые волны батарейки базы данных диффузия машинное обучение углеродные материалы физика твердого  тела физико-химическое материаловедение люминесцентные материалы редкоземельные элементы (рзэ) нанопровода углеродные нанотрубки астрохимия фотохимия кристаллохимия рентгеноструктурный анализ" data-idx="16" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">ФС</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Федотов Станислав С</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Storion lab</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Гетерогенный катализ, Литий-ионные аккумуляторы, Материаловедение, Натрий-ионные аккумуляторы +34</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 18 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="skoltech/sci_017.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="дмитрий аксенов" data-areas="компьютерное моделирование литий-ионные аккумуляторы материаловедение теория функционала плотности гетерогенный катализ натрий-ионные аккумуляторы физическая химия фотоэлектрохимия электролиз воды электрохимия катодные материалы кристаллография химия твердого тела электронная микроскопия computational materials prediction interatomic potentials ангармонические колебания атомистическое моделирование взаимодействие рентгеновского, синхротронного излучений и нейтронов с конденсированным веществом магнитные материалы машинное обучение молекулярная динамика сверхпроводимость анализ данных магнетизм мессбауэровская спектроскопия неорганическая химия синхротронное излучение спиновые волны батарейки сплавы electrochemical energy storage низкотемпературная адсорбция азота углеродные материалы лантаноиды металлоорганическая химия радиохимия батарея астрохимия фотохимия математическое моделирование металл-ионные аккумуляторы" data-idx="17" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/CaCKtQfQQNQfAUeTsn51taXbApFs3kz06vPz1TkR.jpg" class="w-full h-full object-cover" alt="Дмитрий Аксенов" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Дмитрий Аксенов</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Storion lab</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Компьютерное моделирование, Литий-ионные аккумуляторы, Материаловедение, Теория функционала плотности +38</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 24 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="skoltech/sci_018.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="хайтович филипп ефимович" data-areas="" data-idx="18" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">ХФ</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Хайтович Филипп Ефимович</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория молекулярной нейробиологии</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2"></div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 0 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="skoltech/sci_019.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="василия абдуллина" data-areas="биоинформатика молекулярная биология нейробиология нейрохимия психогенетика эволюция когнитивных способностей химия полимеров высокомолекулярные соединения доставка лекарств синтез амфифильных биодеградируемых сополимеров фотодинамическая терапия (фдт) химически индуцированная фотодинамическая терамия" data-idx="19" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/Rx7KHK7F7j7eo3aHEmEIuTrDMJml09rQiMoSzffd.jpg" class="w-full h-full object-cover" alt="Василия Абдуллина" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Василия Абдуллина</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория молекулярной нейробиологии</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Биоинформатика, Молекулярная биология, Нейробиология, Нейрохимия +8</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 1 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="skoltech/sci_020.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="насибулин альберт галийевич" data-areas="наноматериалы нанопровода углеродные нанотрубки графен фотолюминесценция зеленые технологии метаповерхности нанотехнологии нелинейная оптика оптика перовскиты светодиоды фотовольтаика фотодетекторы фотоника 1d материалы 2d материалы магнитные материалы магнитооптика нанофотоника спектроскопия спиновые волны электронный магнитный резонанс инфракрасная спектроскопия терагерцовая спектроскопия волоконная оптика наноуглерод физика конденсированного состояния ab initio nanomaterials for biomedicine thin solid films вычислительная химия квантовая химия материаловедение машинное обучение металлы и сплавы нековалентные взаимодействия теория функционала плотности тонкие пленки физика твердого  тела мультиферроики наноструктуры сверхпроводимость сегнетоэлектричество углеродные материалы физика полупроводников иерархические структуры печатные технологии слоистые гидроксиды суперконденсаторы альтернативная энергетика высокотемпературные материалы сенсорика синтез наноматериалов электроника биосенсоры ван-дер-ваальсовы материалы двумерные материалы интегральная фотоника квантовые материалы оптические материалы оптические межсоединения оптические сенсоры плазмоника поверхностно-усиленная рамановская спектроскопия ультратонкие пленки эллипсометрия микроэлектроника метеоритология растровая электронная микроскопия электронная микроскопия квантовая физика лазерная физика медицинская физика высокомолекулярные соединения зеленая химия кремнийорганическая химия умные материалы спинтроника топологические изоляторы наночастицы laser-induced graphene взаимодействие лазера с веществом лазерные технологии спектроскопия кр (рамановская) gas sensors swcnt selectecitivity enhancement though pattern recognition sensor drift биофотоника gan hemt gas recognition micro- and nanoelectronics газовые сенсоры гетероструктуры мультисенсорные системы computational materials science митохондрии атомно-силовая микроскопия полупроводники аддитивные технологии неорганическая химия оксидные пленки молекулярная динамика сингулярная оптика лазерная обработка материалов лазерное взаимодействие с веществом оптоэлектроника электроэнергетика энергетика энергетические материалы data science хемоинформатика биоинформатика биохимия аналитическая химия солнечная энергетика термодинамика топливные элементы химия твердого тела электрохимия аэрогели золь-гель химия ионные жидкости ионогели водоочистка доставка лекарств теоретическая химия биотехнология механика материалов стрейнтроника твистроника физическая химия высокоэнтропийные сплавы катализ сверхпрочные материалы сокращение выбросов co2 функциональные композиционные материалы джозефсоновские структуры магнетизм низкотемпературные технологии сканирующая туннельная микроскопия circular dichroism адресная доставка лекарств биофизика фотоакустика компьютерное моделирование масс-спектрометрия коллоидная химия кристаллография персонализированная медицина супрамолекулярная химия химическая физика днк защитные покрытия для водородсодержащих соединений инкапсулирование и высвобождение водонерастворимых компонентов полимерные микро- и наноконтейнеры с контролируемыми свойствами получение и исследование биодеградируемых полиэлектролитных микрокапсул для различных биологически активных соединений ферменты голография интерферометрия катодные материалы литий-ионные аккумуляторы композиты рентгеноструктурный анализ гибридные перовскиты перовскитные солнечные элементы 3d-печать композиционные материалы сорбенты лантаноиды люминесцентные материалы люминесценция физико-химическое материаловедение chemical engineering химия полимеров инфракрасный диапазон лазеры просветляющие микроструктуры твердотельные лазеры фемтосекундные лазеры устойчивость атомно-слоевое осаждение металл-ионные аккумуляторы ортопедические имплантаты твердотельные аккумуляторы твёрдые электролиты цинк-воздушные аккумуляторы дисковые лазеры квантовые точки просвечивающая электронная микроскопия физика наноструктур" data-idx="20" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/7Zco9Qr4Bf5i5V44nVqJ00km2R0xGPvvgMTfEwNb.jpg" class="w-full h-full object-cover" alt="Насибулин Альберт Галийевич" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Насибулин Альберт Галийевич</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория Наноматериалов</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Наноматериалы, Нанопровода, Углеродные нанотрубки, Графен +188</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 151 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="skoltech/sci_021.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="шишковский игорь в" data-areas="4d-печать аддитивное производство лазерные технологии 0d материалы d0 ferromagnetism высокотемпературные сверхпроводники наночастицы оксиды сверхпроводимость 3d-печать аддитивные технологии высокоэнтропийные сплавы материаловедение металлические сплавы металлы и сплавы физика твердого  тела взаимодействие рентгеновского, синхротронного излучений и нейтронов с конденсированным веществом нейтронная томография магнетизм" data-idx="21" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/2OX506dvzCVjshlmI6ctjeVqaJoCLffA6Vn9Vc1c.jpg" class="w-full h-full object-cover" alt="Шишковский Игорь В" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Шишковский Игорь В</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория аддитивного производства</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">4D-печать, Аддитивное производство, Лазерные технологии, 0D Материалы +15</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 31 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="skoltech/sci_022.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="исаев артем борисович" data-areas="биоинформатика метагеномика микробиология молекулярная биология топоизомеразы арктика морские грибы фитопланктон cryo-em вирусы ионные каналы структура белков структурная биология хроматин" data-idx="22" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">ИА</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Исаев Артем Борисович</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория Анализа Метагеномов</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Биоинформатика, Метагеномика, Микробиология, Молекулярная биология +10</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 4 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="skoltech/sci_023.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="никитина виктория андреевна" data-areas="гетерогенный катализ литий-ионные аккумуляторы материаловедение натрий-ионные аккумуляторы физическая химия фотоэлектрохимия электролиз воды электрохимия катодные материалы кристаллография химия твердого тела электронная микроскопия компьютерное моделирование теория функционала плотности альтернативная энергетика зеленые технологии электроэнергетика энергетика энергетические материалы electrochemical energy storage низкотемпературная адсорбция азота углеродные материалы анализ данных магнетизм мессбауэровская спектроскопия неорганическая химия синхротронное излучение спиновые волны хемометрика химия полимеров батарея астрохимия фотохимия 2d материалы газовые сенсоры графен квантовая химия лазерно-индуцированный графен лазерное взаимодействие с веществом молекулярная динамика наноуглерод перенос электрона умные материалы электрокатализ" data-idx="23" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/FnP0FqglMdjQdNubRQ525RSG7z3kD49P9nGJHmbB.jpg" class="w-full h-full object-cover" alt="Никитина Виктория Андреевна" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Никитина Виктория Андреевна</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Электрохимические процессы для зелёной энергетики</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Гетерогенный катализ, Литий-ионные аккумуляторы, Материаловедение, Натрий-ионные аккумуляторы +40</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 20 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="skoltech/sci_024.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="эдуард левин" data-areas="гетерогенный катализ литий-ионные аккумуляторы материаловедение натрий-ионные аккумуляторы физическая химия фотоэлектрохимия электролиз воды электрохимия нанопровода радиохимия ядерная медицина 2d материалы джозефсоновские структуры магнетизм нанотехнологии низкотемпературные технологии сверхпроводимость сканирующая туннельная микроскопия топологические изоляторы наноалмазы тритий альтернативная энергетика зеленые технологии электроэнергетика энергетика энергетические материалы electrochemical energy storage низкотемпературная адсорбция азота углеродные материалы наука о полимерах теория и компьютерное моделирование мягких сред гидротермальный синтез неорганическая химия растровая электронная микроскопия редкоземельные элементы (рзэ) рентгеновская дифракция environmental science synthetic organic chemistry астрохимия биоорганическая химия дезинфекция воды масс-спектрометрия органическая химия пептиды химия окружающей среды экология аморфные сплавы chemical engineering industrial engineering manufacturing engineering materials chemistry shape memory alloys металлы и сплавы наноматериалы физика конденсированного состояния физика твердого  тела upd глубокие эвтектические смеси зондовая микроскопия ионные жидкости монокристаллы наночастицы редкоземельные элементы электроосаждение электросорбция калий-ионные аккумуляторы (potassium-ion batteries) металл-ионные аккумуляторы первичные источники тока (primary batteries) химические источники тока" data-idx="24" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/8PngQrjWAAmwTycYtCBzi34GNJEf9FkKUED6SkEw.jpg" class="w-full h-full object-cover" alt="Эдуард Левин" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Эдуард Левин</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Электрохимические процессы для зелёной энергетики</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Гетерогенный катализ, Литий-ионные аккумуляторы, Материаловедение, Натрий-ионные аккумуляторы +65</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 14 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="skoltech/sci_025.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="сергей порохин" data-areas="гетерогенный катализ литий-ионные аккумуляторы материаловедение натрий-ионные аккумуляторы физическая химия фотоэлектрохимия электролиз воды электрохимия наноматериалы нанопровода углеродные нанотрубки высокоэнтропийные сплавы катализ машинное обучение наночастицы сверхпрочные материалы сокращение выбросов co2 умные материалы функциональные композиционные материалы" data-idx="25" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">СП</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Сергей Порохин</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Электрохимические процессы для зелёной энергетики</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Гетерогенный катализ, Литий-ионные аккумуляторы, Материаловедение, Натрий-ионные аккумуляторы +15</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 1 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="skoltech/sci_026.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="руслан файзуллин" data-areas="каталитическое восстановление электрохимическое восстановление co2" data-idx="26" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/35x3DbsEojTerg50KLSU5zTvwCR6u1s5EaUkPU6b.jpg" class="w-full h-full object-cover" alt="Руслан Файзуллин" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Руслан Файзуллин</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Электрохимические процессы для зелёной энергетики</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Каталитическое восстановление, Электрохимическое восстановление CO2</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 0 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="skoltech/sci_027.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="алёна комайко" data-areas="гетерогенный катализ литий-ионные аккумуляторы материаловедение натрий-ионные аккумуляторы физическая химия фотоэлектрохимия электролиз воды электрохимия оксиды полупроводники сенсоры data science вычислительная химия катализ хемоинформатика электролиты батарея катодные материалы кристаллография химия твердого тела электронная микроскопия" data-idx="27" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">АК</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Алёна Комайко</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Электрохимические процессы для зелёной энергетики</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Гетерогенный катализ, Литий-ионные аккумуляторы, Материаловедение, Натрий-ионные аккумуляторы +17</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 4 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="skoltech/sci_028.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="маргарита белокозенко" data-areas="нанопровода электрохимия electrochemical energy storage литий-ионные аккумуляторы натрий-ионные аккумуляторы низкотемпературная адсорбция азота углеродные материалы гетерогенный катализ зеленая химия машинное обучение неорганическая химия редкоземельные элементы (рзэ) слоистые гидроксиды умные материалы материаловедение физическая химия фотоэлектрохимия электролиз воды керамика синтез спекание фосфаты кальция биоматериалы гумус металлы в компонентах природной среды природные полифенолы разработка ресурсосберегающих технологий комплексной переработки сырья животного и растительного происхождения уголь" data-idx="28" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/GYWq4J3jcMGMLNUrJb4EQHSM9et33RSW1f4VQ5kp.jpg" class="w-full h-full object-cover" alt="Маргарита Белокозенко" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Маргарита Белокозенко</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Электрохимические процессы для зелёной энергетики</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Нанопровода, Электрохимия, Electrochemical energy storage, Литий-ионные аккумуляторы +24</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 3 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="skoltech/sci_029.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="александр кокин" data-areas="электрокатализ электрохимия" data-idx="29" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/z18HnbcLCV01OdzqJQqnL4QsCHhL48kKZV194LAA.jpg" class="w-full h-full object-cover" alt="Александр Кокин" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Александр Кокин</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Электрохимические процессы для зелёной энергетики</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Электрокатализ, Электрохимия</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 0 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="skoltech/sci_030.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="павел синицын" data-areas="электрокатализ электролиз воды электронная микроскопия электрохимия" data-idx="30" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/Ep5yiS4tpWxD8S2ov26YCYxnROPxtyANvXj1N5mi.jpg" class="w-full h-full object-cover" alt="Павел Синицын" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Павел Синицын</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Электрохимические процессы для зелёной энергетики</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Электрокатализ, Электролиз воды, Электронная микроскопия, Электрохимия</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 0 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="skoltech/sci_031.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="максим абакумов" data-areas="" data-idx="31" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/dn2PwKGI3G91T52Bv9x0qOFiBKC1EFQQF9eikj91.png" class="w-full h-full object-cover" alt="Максим Абакумов" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Максим Абакумов</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Электрохимические процессы для зелёной энергетики</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2"></div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 1 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="skoltech/sci_032.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="дмитрий морозов" data-areas="" data-idx="32" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/R4vEBIg-wSNNshb0-OieR_KdQI8ZjBAJhurwAZwNTMY.jpg" class="w-full h-full object-cover" alt="Дмитрий Морозов" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Дмитрий Морозов</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Электрохимические процессы для зелёной энергетики</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2"></div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 0 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="skoltech/sci_033.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="эдита атоян" data-areas="" data-idx="33" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/iWDhAimD5IyH41oF9q2tyBJrGxcBjRtkzvYxYC7k.jpg" class="w-full h-full object-cover" alt="Эдита Атоян" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Эдита Атоян</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Электрохимические процессы для зелёной энергетики</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2"></div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 1 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="skoltech/sci_034.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="виктория черткова" data-areas="" data-idx="34" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">ВЧ</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Виктория Черткова</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Электрохимические процессы для зелёной энергетики</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2"></div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 0 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="skoltech/sci_035.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="владислав маев" data-areas="" data-idx="35" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/SjAm0qniDMSkuWznP1uXa3AdHPuuO2tqOzUyVhbY.jpg" class="w-full h-full object-cover" alt="Владислав Маев" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Владислав Маев</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Электрохимические процессы для зелёной энергетики</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2"></div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 0 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="skoltech/sci_036.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="андрей дьяконов" data-areas="машинное обучение электрохимия ямр-спектроскопия" data-idx="36" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">АД</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Андрей Дьяконов</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Электрохимические процессы для зелёной энергетики</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Машинное обучение, Электрохимия, ЯМР-спектроскопия</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 0 публ.</span>
+            </div>
+          </div>
+        </a>
+        </div>
+        <div class="mt-4 text-center">
+          <button id="sci-more" onclick="showMore('sci-card', 'sci-more', 'sci-counter', 37, 3)" class="px-6 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-widest hover:bg-white/10 transition text-zinc-400">
+            Показать ещё 3
+          </button>
+        </div>
+      </div>
+
+      <script>
+        // Tab switching
+        function switchTab(tab) {
+          document.getElementById('panel-labs').style.display = tab === 'labs' ? '' : 'none';
+          document.getElementById('panel-sci').style.display = tab === 'sci' ? '' : 'none';
+          document.getElementById('tab-labs').style.opacity = tab === 'labs' ? '1' : '0.3';
+          document.getElementById('tab-sci').style.opacity = tab === 'sci' ? '1' : '0.3';
+        }
+        // Scientist search
+        (function() {
+          const input = document.getElementById('sci-search');
+          const grid = document.getElementById('sci-grid');
+          const counter = document.getElementById('sci-count');
+          if (!input || !grid) return;
+          const cards = grid.querySelectorAll('.sci-card');
+          input.addEventListener('input', function() {
+            const q = this.value.toLowerCase().trim();
+            let visible = 0;
+            cards.forEach(c => {
+              const name = c.dataset.name || '';
+              const areas = c.dataset.areas || '';
+              const match = !q || name.includes(q) || areas.includes(q);
+              c.classList.toggle('hidden', !match);
+              if (match) visible++;
+            });
+            counter.textContent = visible + ' учёных';
+          });
+        })();
+      </script>
+
+      <!-- ═══ CHUNK 5: Projects ═══ -->
+      <div class="section-header" id="section-projects">
+        <h2 class="section-title">💼 Проекты НИОКР (11)</h2>
+        <span class="provenance-tag tag-egisu">ЕГИСУ</span>
+      </div>
+      <section class="glass rounded-[2.5rem] overflow-hidden mb-8">
+        <div class="p-6 border-b border-white/10 flex items-center justify-between">
+          <span class="text-sm text-zinc-400" id="proj-counter">Показаны 5 из 11</span>
+          <a href="skoltech/projects.html" class="text-xs font-bold text-red-400 hover:text-red-300 transition uppercase">Все проекты →</a>
+        </div>
+        <div id="proj-list"><a href="skoltech/proj_0000.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="0">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Отчет о научно-исследовательской работе «Разработка компонентов интегрированной оптоволоконной системы бортовой коммуник</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Настоящий отчет разработан «Сколковским институтом науки и технологий» в рамках НИР «Разработка комп...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">МАЛЫЕ КОСМИЧЕСКИЕ АППАРАТЫ, ФОТОННЫЕ ИНТЕГРАЛЬНЫЕ СХЕМЫ, ТОПОЛОГИЯ ОПТИЧЕСКОЙ СЕТИ МКА, ОПТОВОЛОКОННАЯ СИСТЕМА БОРТОВОЙ СЕНСОРИКИ, ОПТОВОЛОКОННАЯ СИСТЕМА БОРТОВОЙ КОММУНИКАЦИИ</span>
+            <span class='text-[10px] text-zinc-600'>| МФТИ, ФИЗТЕХ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">9,125 тыс. ₽</span>
+          </div>
+        </a>
+<a href="skoltech/proj_0001.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="1">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Анализ открытых источников литературы на
+ предмет возможных уязвимостей в компонентах разрабатываемого программного обес</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Исследование посвящено компонентам программного обеспечения, используемым для автоматической обработ...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">защита информации, атаки на компоненты, уязвимости, брокер событий, модели искусственного интеллекта</span>
+            
+            <span class='text-[10px] text-zinc-600'>| 2025</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">4,000 тыс. ₽</span>
+          </div>
+        </a>
+<a href="skoltech/proj_0002.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="2">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Приложение № 1
+К ОТЧЕТУ О РЕАЛИЗАЦИИ ПРОГРАММЫ СОЗДАНИЯ И РАЗВИТИЯ ЦЕНТРА
+ПО СОГЛАШЕНИЮ № 075-10-2022-011 от 20.04.2022 </div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Быстрое исчерпание традиционных ресурсов и прогнозируемое уже на ближайшее десятилетие сокращение об...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">месторождения углеводородов, петрофизика, геохимия, геомеханика, математическое моделирование разработки месторождений</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">77,074 тыс. ₽</span>
+          </div>
+        </a>
+<a href="skoltech/proj_0003.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="3">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Разработка компонентов бортовой системы синхронизации и сличения для малых космических аппаратов</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Настоящий НТО разработан Сколковским институтом науки и технологий в соответствии с требованиями тех...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">ГАЗОВАЯ ЯЧЕЙКА, ДВОЙНОЙ РАДИООПТИЧЕСКИЙ РЕЗОНАНС, МИКРОВОЛНОВЫЙ СТАНДАРТ ЧАСТОТЫ, БОРТОВОЕ СИНХРОНИЗИРУЮЩЕЕ УСТРОЙСТВО, БОРТОВАЯ СИСТЕМА СИНХРОНИЗАЦИИ И СЛИЧЕНИЯ</span>
+            <span class='text-[10px] text-zinc-600'>| МФТИ, ФИЗТЕХ</span>
+            <span class='text-[10px] text-zinc-600'>| 2025</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">24,500 тыс. ₽</span>
+          </div>
+        </a>
+<a href="skoltech/proj_0004.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="4">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">РАЗРАБОТКА ОПЫТНОГО ОБРАЗЦА МОДУЛЬНОГО ПРОГРАММНОГО ОБЕСПЕЧЕНИЯ ПО ВЫБОРУ ТЕРРИТОРИИ ИНТЕРЕСА, ОБРАБОТКЕ СПУТНИКОВЫХ СНИ</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Объектом исследования работ является создание Макетных образцов для обеспечения перехода от высокого...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">ДЗЗ, ГЕНЕРАТИВНЫЕ АЛГОРИТМЫ, Искусственный интеллект, Повышение эквивалентного разрешения, Распознавание объектов</span>
+            <span class='text-[10px] text-zinc-600'>| МФТИ, ФИЗТЕХ</span>
+            <span class='text-[10px] text-zinc-600'>| 2025</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">6,344 тыс. ₽</span>
+          </div>
+        </a>
+<a href="skoltech/proj_0005.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="5">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">О МЕХАНИЧЕСКИХ И АДГЕЗИОННЫХ СВОЙСТВАХ ПОКРЫТИЯ ПРИ РАЗЛИЧНЫХ НАГРУЗКАХ</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Объектами исследования являются конформные полимерные покрытия, созданные на поверхности пластиковых...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">НАПЫЛЕНИЕ ПОКРЫТИЙ, БИОРАЗЛАГАЕМЫЕ ПОЛИМЕРЫ, АДГЕЗИЯ, ПЛАСТИКОВЫЕ СТЕНТЫ, ПОЛИМЕРНЫЕ ПОКРЫТИЯ</span>
+            <span class='text-[10px] text-zinc-600'>| АНО &quot;МОСКОВСКИЙ ЦЕНТР ИННОВАЦИОННЫХ ТЕХНОЛОГИЙ В ЗДРАВООХРАНЕНИИ&quot;</span>
+            <span class='text-[10px] text-zinc-600'>| 2025</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">7,250 тыс. ₽</span>
+          </div>
+        </a>
+<a href="skoltech/proj_0006.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="6">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">ОТЧЁТ
+О НАУЧНО-ИССЛЕДОВАТЕЛЬСКОЙ РАБОТЕ
+в рамках Соглашения 075-10-2022-119 с Министерством науки и высшего образования </div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Разработка легкодоступных и физически интерпретируемых дескрипторов является ключевой и сложной зада...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">МЕТАЛЛООРГАНИЧЕСКИЕ КАРКАСЫ, ТЕОРИЯ ФУНКЦИОНАЛА ПЛОТНОСТИ, ЭЛЕКТРОННАЯ СТРУКТУРА, ЭНЕРГИЯ АДСОРБЦИИ, ДОБАВОЧНЫЙ ПОТЕНЦИАЛ</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2023</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">4,443 тыс. ₽</span>
+          </div>
+        </a>
+<a href="skoltech/proj_0007.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="7">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">РАЗРАБОТКА ОПЫТНОГО ОБРАЗЦА МОДУЛЬНОГО ПРОГРАММНОГО ОБЕСПЕЧЕНИЯ ПО ВЫБОРУ ТЕРРИТОРИИ ИНТЕРЕСА, ОБРАБОТКЕ СПУТНИКОВЫХ СНИ</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Объектом исследования на Этапе №1 реализуемого проекта является создание Макетных образцов для обесп...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">интеллектуальный анализ данных, геоинформационные системы, Распознавание объектов, Повышение эквивалентного разрешения, Искусственный интеллект</span>
+            <span class='text-[10px] text-zinc-600'>| МФТИ, ФИЗТЕХ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024–2025</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">41,166 тыс. ₽</span>
+          </div>
+        </a>
+<a href="skoltech/proj_0008.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="8">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">РАЗРАБОТКА ПРОТОТИПОВ БИЛИАРНОГО И ПАНКРЕАТИЧЕСКОГО ПЛАСТИКОВЫХ СТЕНТОВ С ЛЕКАРСТВЕННЫМ ПОКРЫТИЕМ НА ОСНОВЕ КОМПОЗИТА ПО</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Объектами исследования являются тип полимерной матрицы и способ ее нанесения и фиксации на поверхнос...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">НАПЫЛЯЕМЫЕ ПОКРЫТИЯ, ПЛАСТИКОВЫЕ СТЕНТЫ, ЛЕКАРСТВЕННЫЕ ПОКРЫТИЯ, СПОСОБЫ НАНЕСЕНИЯ, ПОЛИМЕРНЫЕ ПОКРЫТИЯ</span>
+            <span class='text-[10px] text-zinc-600'>| АНО &quot;МОСКОВСКИЙ ЦЕНТР ИННОВАЦИОННЫХ ТЕХНОЛОГИЙ В ЗДРАВООХРАНЕНИИ&quot;</span>
+            <span class='text-[10px] text-zinc-600'>| 2025</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">7,250 тыс. ₽</span>
+          </div>
+        </a>
+<a href="skoltech/proj_0009.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="9">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Отчёт о научно-исследовательской и опытно-конструкторской работе: &quot;Разработка компонентов интегрированной оптоволоконной</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Настоящий отчет разработан «Сколковским институтом науки и технологий» в рамках работ 2-го этапа НИО...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">ОПТОВОЛОКОННАЯ СИСТЕМА БОРТОВОЙ КОММУНИКАЦИИ, ОПТОВОЛОКОННАЯ СИСТЕМА БОРТОВОЙ СЕНСОРИКИ, ТОПОЛОГИЯ ОПТИЧЕСКОЙ СЕТИ МКА, ФОТОННЫЕ ИНТЕГРАЛЬНЫЕ СХЕМЫ, МАЛЫЕ КОСМИЧЕСКИЕ АППАРАТЫ</span>
+            <span class='text-[10px] text-zinc-600'>| МФТИ, ФИЗТЕХ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024–2025</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">38,375 тыс. ₽</span>
+          </div>
+        </a>
+<a href="skoltech/proj_0010.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="10">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Вторичная структура РНК как регулятор альтернативного сплайсинга и лекарственная мишень</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Основанием для проведения настоящего НИР, является соглашение о предоставлении субсидии №075-10-2021...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">конформационное секвенирование, биоинформатика, альтернативный сплайсинг, структура РНК</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2023</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">9,500 тыс. ₽</span>
+          </div>
+        </a>
+</div>
+        <div class="p-4 text-center">
+          <button id="proj-more" onclick="showMore('proj-item', 'proj-more', 'proj-counter', 11)" class="px-6 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-widest hover:bg-white/10 transition text-zinc-400">
+            Показать ещё 5
+          </button>
+        </div>
+      </section>
+
+      <!-- ═══ RID Section ═══ -->
+      <div class="section-header" id="section-rid">
+        <h2 class="section-title">🧬 Результаты интеллектуальной деятельности (3)</h2>
+        <span class="provenance-tag tag-egisu">ЕГИСУ</span>
+      </div>
+      <div class="rid-grid mb-6">
+        <div class="glass rounded-2xl p-5 text-center">
+          <div class="text-2xl mb-2">🗄️</div>
+          <div class="text-2xl font-black italic">1</div>
+          <div class="text-[10px] uppercase font-bold text-zinc-500 mt-1">База данных</div>
+        </div>
+<div class="glass rounded-2xl p-5 text-center">
+          <div class="text-2xl mb-2">💡</div>
+          <div class="text-2xl font-black italic">1</div>
+          <div class="text-[10px] uppercase font-bold text-zinc-500 mt-1">Изобретение</div>
+        </div>
+<div class="glass rounded-2xl p-5 text-center">
+          <div class="text-2xl mb-2">💻</div>
+          <div class="text-2xl font-black italic">1</div>
+          <div class="text-[10px] uppercase font-bold text-zinc-500 mt-1">Программа для ЭВМ</div>
+        </div>
+
+      </div>
+      <section class="glass rounded-[2.5rem] overflow-hidden mb-8">
+        <div class="p-6 border-b border-white/10 flex items-center justify-between">
+          <span class="text-sm text-zinc-400" id="rid-counter">Показаны 5 из 3</span>
+          <a href="skoltech/rid_list.html" class="text-xs font-bold text-red-400 hover:text-red-300 transition uppercase">Все РИД →</a>
+        </div>
+        <div id="rid-list"><a href="skoltech/rid_0000.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="0">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">🗄️</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">База данных физико-механических свойств полимерных композиционных материалов для проектирования сетч</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>База данных разработана для эффективного хранения данных о результатах физико-ме...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">База данных</span>
+                <span class='text-[10px] text-zinc-600'>| Полимерные композиционные материалы, БАС, Технология намотки</span>
+                <span class='text-[10px] text-zinc-600'>| ФОНД НТИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="skoltech/rid_0001.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="1">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💡</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">Способ дезагрегации сигнала совокупного энергопотребления</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Изобретение относится к области
+вычислительной техники. Техническим
+результатом ...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Изобретение</span>
+                <span class='text-[10px] text-zinc-600'>| Способ дезагрегации сигнала совокупного энергопотребления</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="skoltech/rid_0002.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="2">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💻</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">Программа расчёта и оптимизации суточного профиля электропотребления пригорода с электромобилями.</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Программа предназначена для расчёта и оптимизации суточного графика зарядки элек...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Программа для ЭВМ</span>
+                <span class='text-[10px] text-zinc-600'>| расчёт и оптимизации суточного профиля электропотребления пригорода с электромобилями</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+</div>
+        <div class="p-4 text-center">
+          <button id="rid-more" onclick="showMore('rid-item', 'rid-more', 'rid-counter', 3)" class="px-6 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-widest hover:bg-white/10 transition text-zinc-400">
+            Показать ещё 5
+          </button>
+        </div>
+      </section>
+
+      <script>
+        // Generic show-more function
+        function showMore(itemClass, btnId, counterId, total, step) {
+          step = step || 5;
+          const items = document.querySelectorAll('.' + itemClass);
+          let shown = 0;
+          items.forEach(el => {
+            if (el.style.display !== 'none') shown++;
+          });
+          items.forEach(el => {
+            const idx = parseInt(el.dataset.idx);
+            if (idx < shown + step) {
+              el.style.display = '';
+            }
+          });
+          const totalShown = Math.min(shown + step, items.length);
+          document.getElementById(counterId).textContent = 'Показаны ' + totalShown + ' из ' + total;
+          if (totalShown >= items.length) {
+            document.getElementById(btnId).style.display = 'none';
+          }
+        }
+      </script>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-20 border-t border-white/10 mt-20 bg-black/40">
+      <div class="max-w-7xl mx-auto px-6 text-center">
+        <div class="text-3xl font-black italic uppercase mb-8">МОС<span class="mos-red">НАУКА</span></div>
+        <p class="text-zinc-500 text-sm max-w-2xl mx-auto italic mb-8">Единая экосистема технологического развития площадок и заказчиков в Москве.</p>
+        <div class="flex justify-center gap-8 mb-8">
+          <div class="text-[10px] text-zinc-600 uppercase font-bold">Источник: <span class="text-emerald-500">CoLab</span> — лаборатории, учёные</div>
+          <div class="text-[10px] text-zinc-600 uppercase font-bold">Источник: <span class="text-sky-500">ЕГИСУ</span> — проекты, РИД</div>
+        </div>
+        <div class="text-white/20 text-[10px] uppercase font-bold tracking-[0.5em]">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ ОБЪЕКТА</div>
+      </div>
+    </footer>
+
+    <!-- Scroll to top button -->
+    <button onclick="window.scrollTo({top:0,behavior:'smooth'})" id="scroll-top" class="fixed bottom-8 right-8 w-12 h-12 rounded-full bg-red-500/80 text-white flex items-center justify-center shadow-lg hover:bg-red-500 transition z-50" style="display:none" title="Наверх">
+      <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg>
+    </button>
+
+    <!-- Request Modal -->
+    <div id="requestModal" style="position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem">
+      <div style="background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative">
+        <button onclick="closeModal()" style="position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer">&times;</button>
+        <div id="modalForm">
+          <h2 class="text-xl font-black mb-1">📨 Направить запрос</h2>
+          <div id="modalContext" class="text-xs text-zinc-500 mb-6">через платформу МОСНАУКА</div>
+          <label class="block text-[10px] uppercase font-black text-zinc-500 mb-1 tracking-widest">Ваше ФИО *</label>
+          <input type="text" id="reqName" placeholder="Иванов Иван Иванович" class="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-sm mb-3" style="color:white">
+          <label class="block text-[10px] uppercase font-black text-zinc-500 mb-1 tracking-widest">Организация</label>
+          <input type="text" id="reqOrg" placeholder="ООО «Компания»" class="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-sm mb-3" style="color:white">
+          <label class="block text-[10px] uppercase font-black text-zinc-500 mb-1 tracking-widest">Email *</label>
+          <input type="email" id="reqEmail" placeholder="email@example.com" class="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-sm mb-3" style="color:white">
+          <label class="block text-[10px] uppercase font-black text-zinc-500 mb-1 tracking-widest">Тип запроса</label>
+          <select id="reqType" class="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-sm mb-3" style="color:white;appearance:none">
+            <option>Запрос на НИОКР</option>
+            <option>Консультация</option>
+            <option>Сотрудничество / Партнёрство</option>
+            <option>Использование оборудования</option>
+            <option>Другое</option>
+          </select>
+          <label class="block text-[10px] uppercase font-black text-zinc-500 mb-1 tracking-widest">Сообщение *</label>
+          <textarea id="reqMsg" placeholder="Опишите ваш запрос..." class="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-sm mb-4" style="color:white;min-height:5rem;resize:vertical"></textarea>
+          <button onclick="submitRequest()" class="w-full py-3 rounded-xl bg-red-500 text-white text-[11px] font-black uppercase tracking-widest hover:bg-red-600 transition">Отправить запрос</button>
+        </div>
+        <div id="modalSuccess" style="display:none;text-align:center;padding:2rem 0">
+          <div style="font-size:3rem;margin-bottom:1rem">✅</div>
+          <h3 class="text-lg font-black mb-2">Запрос отправлен!</h3>
+          <p class="text-sm text-zinc-400">Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+          <button onclick="closeModal()" class="mt-6 w-full py-3 rounded-xl bg-white/5 border border-white/10 text-sm font-bold text-zinc-400 hover:bg-white/10 transition">Закрыть</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      window.addEventListener('scroll', function() {
+        document.getElementById('scroll-top').style.display = window.scrollY > 400 ? 'flex' : 'none';
+      });
+      function openRequestModal(context) {
+        document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+        document.getElementById('modalForm').style.display = '';
+        document.getElementById('modalSuccess').style.display = 'none';
+        document.getElementById('requestModal').style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      }
+      function closeModal() {
+        document.getElementById('requestModal').style.display = 'none';
+        document.body.style.overflow = '';
+      }
+      function submitRequest() {
+        var n = document.getElementById('reqName').value.trim();
+        var e = document.getElementById('reqEmail').value.trim();
+        var m = document.getElementById('reqMsg').value.trim();
+        if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+        document.getElementById('modalForm').style.display = 'none';
+        document.getElementById('modalSuccess').style.display = '';
+      }
+      document.getElementById('requestModal').addEventListener('click', function(e) {
+        if (e.target === this) closeModal();
+      });
+    </script>
+  </div>
+</body>
+</html>

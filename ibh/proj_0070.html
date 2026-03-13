@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | ИБХ РАН</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-ibh.html">ИБХ РАН</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">иммунизация</span> <span class="tag">Brucella melitensis,</span> <span class="tag">саРНК,</span> <span class="tag">альфавирус,</span> <span class="tag">миникольца,</span> <span class="tag">вакцина,</span> <span class="tag">ДНК,</span> <span class="tag">профилактика,</span> <span class="tag">бруцеллез,</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Ветеринарная фармакология</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Генетическая инженерия</span></div>
+          <h1 style="font-size:1.5rem">Создание и тестирование эффективности ДНК вакцины профилактики бруцеллеза</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">10,000 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">325030612969-0</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2023-08-11 — 2023-12-31</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№1</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">МИНИСТЕРСТВО НАУКИ И ВЫСШЕГО ОБРАЗОВАНИЯ РОССИЙСКОЙ ФЕДЕРАЦИИ</div>
+                  
+                </div><div class="metric-box" style="text-align:left">
+                  <div class="label">Исполнитель</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">ИБХ РАН</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>Настоящий проект  выполняется в соответствии с Соглашением о предоставлении из федерального бюджета грантов в форме субсидий от 11.08.2023 г. № 075-15-2023-589 между ИБХ РАН и Минобрнауки России, в том числе - с Планом работ научного исследования, включая Требования к выполняемым работам. Проект выполняется совместно ИБХ РАН и Иностранным партнёром - Центральной лабораторией оценки ветеринарных биопрепаратов Центра Сельскохозяйственных Исследований Арабской республики Египет (CLEVB), взаимодействующими на основании Соглашения № 1.2023 о научно-техническом сотрудничестве в области разработки ДНК-вакцин для профилактики бруцеллеза между ИБХ РАН и CLEVB (2023 г.). 
+Проект реализуется в рамках подпрограммы 4 «Формирование и реализация комплексных научно-технических программ по приоритетам Стратегии научно-технологического развития Российской Федерации, а также научное, технологическое и инновационное развитие по широкому спектру направлений» государственной программы Российской Федерации «Научно-технологическое развитие Российской Федерации». Тематика проекта соответствует двум приоритетам научно-технологического развития РФ (20в и 20г): разрабатываемая вакцина предназначена для использования и в ветеринарии, и в медицине (после прохождения соответствующих доклинических и клинических испытаний).   
+Проект посвящён разработке и испытаниям оригинальной вакцины против бруцеллёза - зоонозной инфекции, передающейся от больных животных человеку (в том числе при личном контакте, а также через продукты животного происхождения), характеризующейся множественным поражением органов и систем организма человека. Основной опасностью бруцеллёза является развитие множественных патологий, которые вызывает возбудитель, включая тяжёлые заболевания центральной нервной системы. У людей перенесенная болезнь достаточно часто заканчивается инвалидностью. В сельском хозяйстве распространённой практикой является обязательная вакцинация скота против бруцеллёза. При этом существующие вакцины обеспечивают лишь временный иммунитет. В настоящее время существует потребность в создании эффективной и безопасной вакцины против бруцеллёза как для ветеринарного, так и для медицинского применения.
+Целью проекта является создание экспериментального образца ДНК-вакцины, эффективно защищающей человека и животных от развития заболевания, вызванного Brucella melitensis.
+Основные задачи, которые должны быть решены в ходе проекта: 
+1) Создание различных вариантов генно-инженерных конструкций, кодирующих выбранные для создания вакцины белки Brucella melitensis. 
+2) Оптимизация методики получения и наработка необходимых для дальнейших испытаний партий ДНК. 
+3) Отработка метода доставки ДНК в клетки млекопитающих. 
+4) Определение параметров иммунного ответа после введения разработанных вариантов ДНК-вакцин и контрольной вакцины REV-1 животным.
+5) Определение протективной активности разработанных вариантов ДНК-вакцин при заражении экспериментальных животных Brucella melitensis. Сравнение полученных результатов с контрольной вакцинацией вакциной REV-1.
+Задачи 1-3 решаются российским партнёром, задачи 4-5 – египетским. 
+Целями этапа являются: 
+1) проведение теоретических исследований в предметной области проекта: российским партнером в его начале выполняются аналитический обзор информационных источников и патентные исследования;
+2) создание двух из запланированных вариантов вакцины – в виде плазмиды и миникольца, в том числе получение генетических конструкций и соответствующих штаммов-продуцентов, разработка либо адаптирование необходимых методик, в том числе - отработка оптимальных условий трансфекции на культурах клеток. 
+3) иммунизация групп животных различными ДНК-вакцинами и получение данных о сравнительной эффективности вакцинации в обеих формах с учетом места инъекции и способа доставки ДНК (выполняется египетским партнером).
+Отчетный этап является начальным в выполнении проекта и имеет высокое значение для его реализации в целом, совмещая необходимые теоретические работы, создание рабочего инструментария и отработку методик, а затем – создание и тестирование двух вариантов вакцины из запланированных. 
+Конкретные задачи этапа 1:
+1) Выполнение аналитического обзора информационных источников по теме проекта.
+2) Проведение патентных исследований в соответствии с ГОСТ Р 15.011-2022.
+3) Разработка дизайна последовательностей ДНК-плазмид, необходимых для создания вариантов вакцины, и контрольных плазмид.
+4) Создание ДНК-плазмиды для получения миникольца, кодирующего белки бруцеллы. Получение бактериального штамма, содержащего целевую плазмиду.
+5) Оптимизация методики выделения и очистки миникольца.
+6) Наработка миникольца в препаративных количествах.
+7) Подбор оптимальных условий трансфекции миникольца на культурах клеток. Получение ЭО ДНК-вакцины на основе миникольца.
+8) Иммунизация групп животных ДНК-вакциной на основе миникольца и стандартной плазмидой (выполняется иностранным партнером).  
+9) Сравнение эффективности однократной вакцинации в зависимости от места инъекции и способа доставки ДНК (чистая ДНК, ДНК с полиэтиленимином или с липидами) (выполняется иностранным партнером).
+10) Сравнение эффективности однократной вакцинации миникольцом и стандартными плазмидами (выполняется иностранным партнером).</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (7)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Акимов Михаил Геннадьевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат химических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Ходарович Юрий Михайлович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Бабкова Юлия Сергеевна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Филимонова Виктория Павловна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Деев Сергей Михайлович</strong> <span style="color:#71717a;font-size:0.8rem">Доктор биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Согомонян Анна Самвеловна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Ковальчук Сергей Игоревич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат химических наук</span></li></ul>
+              
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

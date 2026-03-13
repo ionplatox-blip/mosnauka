@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | ИНЭОС РАН</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-ineos.html">ИНЭОС РАН</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">акридин</span> <span class="tag">клозо-додекаборат</span> <span class="tag">бис(дикарболлид) кобальта/железа</span> <span class="tag">полиэдрические гидриды бора</span> <span class="tag">ДНК-интеркаляторы</span> <span class="tag">биологическая активность</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Нуклеиновые кислоты и их компоненты</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Общие синтетические методы</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Элементоорганические соединения</span></div>
+          <h1 style="font-size:1.5rem">Борсодержащие ДНК-интеркаляторы на основе акридина - потенциальные препараты для бор-нейтронозахватной терапии рака</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">1,500 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225031313319-3</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2023-07-01 — 2024-06-30</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№2</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">РНФ</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>Российский научный фонд</div>
+                </div><div class="metric-box" style="text-align:left">
+                  <div class="label">Исполнитель</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">ИНЭОС РАН</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>Во второй год реализации проекта получены йодированные производные бис(дикарболлида) кобальта с акридином для потенциального использования их в качестве перспективных агентов для бор-нейтронозахватной терапии (БНЗТ) рака. Исследование антипролиферативной активности полученных конъюгатов бис(дикарболлида) кобальта в первый год исследования показало, что они являются цитотоксическими и использование их в качестве потенциальных БНЗТ-агентов в дальнейших биологических исследований затруднительно. Поэтому для того чтобы уменьшить цитотоксичность борсодержащих производных акридина во второй год исследования получены ди-замещенные производные бис(дикарболлида) кобальта с акридином, а именно, йодированные конъюгаты, содержащие триазольный фрагмент в спейсере. Поскольку известно, что наличие атома иода в молекуле [3,3’-Co(1,2-C2B9H11)2]- позволяет «заморозить» вращение дикарболлидных лигандов, вследствие образования внутримолекулярных водородных связей C-H•••I между CH-группами одного дикарболлидного лиганда и атомом галогена другого лиганда, что приводит к минимизации дипольного момента металлакарборанового момента. Это облегчает проникновение через липидные мембраны и уменьшает возможность его неспецифических взаимодействий с различными структурными компонентами клетки. 
+Для этого было использовано два эффективных подходов получения йодированных производных 3,3’-Co(1,2-C2B9H11)2]- – нуклеофильное раскрытие йодониевого производного [8,8’-μ-I-3,3’-Co(1,2-C2B9H10)2], в котором два дикарболлидных лиганда связаны через атом йода, а также прямое йодирование конъюгатов бис(дикарболлида) кобальта с акридином. 
+Так, было показано, что нуклеофильное раскрытие йодониевого производного [8,8’-μ-I-3,3’-Co(1,2-C2B9H10)2] 2-пропин-1-олом и 3-бутин-1-олом, что приводит к борсодержащим йодированным ацетиленам [8-OCH2C≡CH-8′-I-3,3′-Co(1,2-C2B9H10)2]Cs и [8-O(CH2)2C≡CH-8′-I-3,3′-Co(1,2-C2B9H10)2]Cs, которые в дальнейшем по “клик”-реакции с 9-азидоакридином  в присутствии DIPEA и CuI при кипячении в этаноле в течение 1 часа дают целевые йодированные конъюгаты с укороченным соединяющим звеном. Для получения йодсодержащих конъюгатов бис(дикарболлида) кобальта и акридином с удлиненным спейсером было проведено прямое йодирование 1,2,3-триазолов металлическим I2 при кипячении в MeOH в течение одного часа, что привело к образованию новых йодсодержащих борированных производных акридина с выходами свыше 81%.
+Исследования антипролиферативной активности показали, что йодированные производные бис(дикарболлида) с акридином с длинным спейсером являются нетоксичными для диплоидных клеток фибробластов человека WI38 и для клеточной линии рака легкого A549 и могут быть использованы для дальнейших исследований в качестве потенциальных БНЗТ-агентов. Йодированные производные бис(дикарболлида) кобальта на основе акридина с укороченным спейсером оказались нетоксичными в отношении клеточной линии рака легкого A549. Однако в отношении других раковых клеток (HCT116, MCF7) и незлокачественных клеток (WI38) эти соединения проявили активность в среднем микромолярном диапазоне, что затрудняет использование этих соединений в качестве потенциальных агентов для БНЗТ. 
+Таким образом, в ходе отчетного периода создана библиотека йодированных производных бис(дикарболлид) кобальта с акридином, также предложена схема получения йодсодержащих акридинов с различным строением и длиной соединяющего звена.  Варьирование размера и заряда борного кластера, а также длины и гидрофильности/липофильности спейсера между борным остовом и функциональной частью молекулы было использовано для создания библиотеки борсодержащих акридинов различного строения. Некоторые исследуемые соединения оказались токсичными в отношении раковых и незлокачественных клеток в среднем микромолярном диапазоне, что затрудняет использование полученных соединений в качестве новых агентов для БНЗТ. Йодированные же производные бис(дикарболлида) с акридином с длинным спейсером оказались нетоксичными для диплоидных клеток фибробластов человека WI38 и для клеточной линии рака легкого A549 и могут быть использованы для дальнейших исследований в качестве потенциальных БНЗТ-агентов. Следует отметить, что предварительные результаты, достигнутые в ходе выполнения проекта, указывают на некоторый потенциал, предполагающий дальнейшее исследование. Представленные в этой работе борсодержащие акридины содержат новые, неисследованные структурные особенности, актуальность которых в данной области заслуживает изучения с целью получения еще лучших нетоксичных БНЗТ-агентов, способных связываться с ДНК.</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (1)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Друзина Анна Александровна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат химических наук</span></li></ul>
+              
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

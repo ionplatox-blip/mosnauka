@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | ФИАН</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-fian.html">ФИАН</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">АТОМНО-СИЛОВАЯ МИКРОСКОПИЯ</span> <span class="tag">КОМБИНАЦИОННОЕ РАССЕЯНИЕ СВЕТА</span> <span class="tag">РЕНТГЕНОСТРУКТУРНЫЙ АНАЛИЗ</span> <span class="tag">МОЛЕКУЛЯРНО-ЛУЧЕВАЯ ЭПИТАКСИЯ</span> <span class="tag">ДЕТЕКТОРЫ СРЕДНЕГО ИК-ДИАПАЗОНА</span> <span class="tag">ПОЛУПРОВОДНИКИ А3В5</span> <span class="tag">СВЕРХРЕШЁТКИ ВТОРОГО РОДА</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Физика наноструктур. Низкоразмерные структуры. Мезоскопические структуры</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Полупроводники</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Электронная структура твердых тел</span></div>
+          <h1 style="font-size:1.5rem">Лаборатория новых материалов для ИК фотоники</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">17,900 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225020608697-1</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2024-01-01 — 2024-08-15</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№3</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">8</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">МИНОБРНАУКИ РОССИИ</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>МИНИСТЕРСТВО НАУКИ И ВЫСШЕГО ОБРАЗОВАНИЯ РОССИЙСКОЙ ФЕДЕРАЦИИ</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>Цель проекта – разработка фоточувствительных материалов на основе низкоразмерных гетероструктур, включая короткопериодные сверхрешетки. 
+Методология проведения работы – в рамках выполнения данной тематики Государственного задания проводились как экспериментальные, так и теоретические исследования. Рост слоёв производился с помощью молекулярно-лучевой эпитаксии. Методом дифракции быстрых электронов in situ производился контроль поверхности образцов. Полученные структуры были исследованы методами комбинационного рассеяния света и рентгеновской дифракции. Качество поверхности полученных образцов дополнительно контролировалось с помощью атомно-силовой микроскопии. Локальная проводимость сколов гетероструктур анализировалась методом микроскопии растекания тока. Оптический свойства сверхрешеток определялись методом ИК Фурье спектроскопии пропускания и отражения света. Нанесение омических контактов проводилось методом физического осаждения из газовой фазы. 
+Результаты работы:
+1.	Разработана методика оптимальной предростовой подготовки подложки InSb для последующего эпитаксиального роста гомо- и гетероструктур. Эффективность удаления оксидов с поверхности подложки определялась по морфологии поверхности (с помощью атомно-силового микроскопа) и по структурному совершенству буферного слоя InSb, выращенного на подложках, прошедших различную предварительную обработку (с помощью рентгено-структурного анализа). Первая стадия подготовки заключается в травлении InSb-пластины в растворе изопропилового спирта и соляной кислоты (37%) в соотношении 5 к 1 в течение 16 минут. Вторая стадия представляет отжиг подложки при температуре 300 °С в течение 1 часа в условиях высокого вакуума. Во избежание контакта с атмосферным кислородом, обработка подложки и ее загрузка в установку молекулярно-лучевой эпитаксии должна проводиться в инертной атмосфере.
+2.	Проведен выбор оптимальной температуры роста и соотношения потоков материалов для гомоэпитаксиального роста буферных слоев InSb на предварительно подготовленных подложках. Получены образцы со среднеквадратичной шероховатостью поверхности 0,13-0,3 нм. Высокое структурное совершенство и пространственная однородность буферных слоев подтверждались по дифракции рентгеновских лучей и комбинационному рассеянию света.
+3.	Отработана технология роста барьерных слоев AlInSb\InSb и бариодных структур на основе InSb. Показана возможность эпитаксиального роста структуру с барьером Al0,2In0,8Sb без пластических релаксаций и с сохранением плоского фронта кристаллизации (среднеквадратичную шероховатость поверхности 0,24 нм)
+4.	Освоены методики легирования A3B5 соединений донорными примесями, нанесения контактов и жидкостного травления. Для получения n-типа проводимости в работе использовалась ячейка GaTe, для p-типа — ячейка Be. Отработана технология формирования омических контактов к n-InSb при помощи системы металлизации Ti/Au. Для формирования омических контактов к низколегированным короткопериодным сверхрешеткам использовалась Ge/Au/Ni/Au металлизация. Показано низкое удельное контактное сопротивление этих контактов.
+5.	Выращены короткоперодные сверхрешетки II-типа на основе InAs/GaSb (T2SL) с оптической щелью в области 10 мкм (период 7,4 нм, соотношение толщины слоёв InAs к GaSb как ~1,5 к 1). Показано их высокое структурное качество. Проведены их всесторонние спектроскопические исследования: исследованы спектры пропускания и отражения, как при комнатной температуре, так и при температуре жидкого азота в широком спектральном диапазоне (0.3–200 мкм).
+6.	Отработана методика роста твердых растворов InAsSb и барьерных слоев AlSb, согласованных по постоянной решетки с подложками GaSb, а также на метабуфере InAsSb.
+7.	Изготовлены барьерно-диодные и p-i-n-гетероструктуры, применимые для создания фотоприемников среднего ИК-диапазона на основе твердых растворов InAsSb и короткопериодных сверхрешеток GaSb/InAs. Проведены исследования их фотоэлектрических характеристик, которые показали чувствительность в диапазоное 
+2-5 мкм до 1.3 А/Вт.
+
+За отчетный период подготовлено 12 публикаций в рецензируемых журналах индексируемых в системах WoS, Scopus или РИНЦ.</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (14)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">ЧЕНЦОВ СЕМЕН ИГОРЕВИЧ</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">УСМАНОВ ИЛЬШАТ ИЛЬДАРОВИЧ</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">ЗАЗЫМКИНА ДАРЬЯ АЛЕКСАНДРОВНА</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">ЕРОШЕНКО ГРИГОРИЙ НИКОЛАЕВИЧ</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">ГОНЧАРОВ АНДРЕЙ ЕВГЕНЬЕВИЧ</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">САВИН КОНСТАНТИН АНТОНОВИЧ</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">КЛЕКОВКИН АЛЕКСЕЙ ВЛАДИМИРОВИЧ</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">КРИВОБОК ВЛАДИМИР СВЯТОСЛАВОВИЧ</strong> <span style="color:#71717a;font-size:0.8rem">Доктор физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Дубовая Анастасия Романовна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">НИКОЛАЕВ СЕРГЕЙ НИКОЛАЕВИЧ</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Захаренковс Андрейс</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">ПАШКЕЕВ ДМИТРИЙ АЛЕКСАНДРОВИЧ</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">ЧЕРНОПИЦСКИЙ МАКСИМ АЛЕКСАНДРОВИЧ</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">МИНАЕВ ИЛЬЯ ИВАНОВИЧ</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li></ul>
+              
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

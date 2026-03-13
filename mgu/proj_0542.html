@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | МГУ им. М.В. Ломоносова</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-mgu.html">МГУ им. М.В. Ломоносова</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">тепло-массобмен, экзотермические реакции в невесомости, капиллярные силы, течение жидкости, гравитация</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Газовая динамика</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Вязкая жидкость</span></div>
+          <h1 style="font-size:1.5rem">ОТЧЕТ
+О НАУЧНО-ИССЛЕДОВАТЕЛЬСКОЙ РАБОТЕ
+по теме:
+Исследование гидро-газодинамических процессов и тепло-массообмена в
+условиях переменной гравитации
+(заключительный)</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">1,581 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225012803152-3</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2024-01-08 — 2024-12-31</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№3</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">2</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">Правительство России</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>Правительство Российской Федерации</div>
+                </div><div class="metric-box" style="text-align:left">
+                  <div class="label">Исполнитель</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">МОСКОВСКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ ИМЕНИ М.В.ЛОМОНОСОВА, МГУ ИМЕНИ М.В.ЛОМОНОСОВА, МОСКОВСКИЙ УНИВЕРСИТЕТ ИЛИ МГУ</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>Исследование многофазных течений в условиях микрогравитации представляет интерес как для задач освоения Космоса так и для земных технологий и приложений. На космических станциях многофазные течения флюидов в тонких каналах наблюдаются в гидропонных системах выращивания растений, тепловых трубках для терморегуляции, подача топлива и любой другой жидкости из резервуара в условиях отсутствия гравитации возможна только за счёт капиллярной силы по тонкому каналу. Кроме того, капиллярная пропитка пористой среды может наблюдаться в перспективных камерах сгорания для двигательных установок: стенка камеры сгорания состоит из пористого материала через который производится дополнительная подач топлива и охлаждение стенки за счёт его испарения При наблюдении за движением жидкости на Земле многие эффекты оказываются «замаскированы» силой тяжести (но всё равно присутствуют), в условиях же микрогравитации их можно наблюдать в чистом виде, что позволит детальнее рассмотреть эти эффекты (например капиллярная пропитка [1-4]) и лучше понять процессы происходящие при земной гравитации. Например, при нефтедобыче наблюдается одновременное просачивание нескольких жидкостей сквозь пористую среду [5,6], при этом существенное влияние на процесс могут оказывать именно капиллярные эффекты, которые гораздо продуктивней исследовать в условиях микрогравитации. 
+
+В работах [14,15] описаны эксперименты по просачиванию жидкости в пористую среду сотоящую из относительно крупных частиц (насыпка стеклянных бусин) и соответственно формирующих достаточно крупные поры и каналы для капиллярного течения жидкости. Течение в такой среде легко визуализируется (рис.1), можно наблюдать за происходящим внутри экспериментальной установки и анализировать процесс течения. В условиях земной такая капиллярная пропитка возможна только в очень мелких порах, но такое течение сложно визуализировать. Дело в том, что соотношение движущих капиллярных сил и сил гравитации характеризуется безразмерным параметром подобия - числом Бонда. Таким образом, мы можем увеличить размер пор, уменьшив при этом уровень гравитации, таким образом, что безразмерный параметр Bo останется неизменным и процессы будут подобны.
+Другой вид экспериментов во время параболических полётов – течение в ячейке Хеле-Шоу [16]. Ячейка Хеле-Шоу представляет собой две параллельные стеклянные пластины, между которыми наблюдается течение жидкости. Существует также множество работ по течению жидкости в ячейке Хеле-Шоу в условиях нормальной гравитации [17-20]. Двухфазные течения в каналах с шероховатыми стенками рассмотрены в работе [21]. Работы [22,23] посвящены влиянию гармонического изменения расхода жидкости на стабильность границы раздела. В работе [24] рассматривается как реологические свойства поверхности раздела фаз влияют на стабильность.
+В работе [16] рассматривается течение в ячейке Хеле-Шоу во время параболических полётов. Представлен пример результатов экспериментов. Фронт вытеснения неустойчив: изначально плоская граница раздела искривляется, «вязкие пальцы» вытесняющей (менее вязкой) жидкости прорываются сквозь слой вытесняемой (более вязкой). Это явление называется неустойчивостью Саффмана-Тейлора и возникает при вытеснении вязкой жидкости посредством менее вязкой [25].
+Безразмерный критерий Vg=μu/(ρgδ^2 )=Fr/Re равный отношению сил вязкости и силы тяжести характеризует течение в ячейке Хеле-Шоу. Чтобы наблюдать аналогичные процессы при различных уровнях гравитации необходимо менять зазор ячейки δ (расстояние между пластинами) таким образом, чтобы критерий Vg сохранял своё значение. Таким образом ячейка Хеле-Шоу позволяет имитировать микрогравитационные течения в лаборатории на Земле.
+Эксперименты в условиях земной гравитации проводились в радиальной ячейке Хеле-Шоу. Жидкости были слабо смешивающимися: подкрашенный глицерин и вода. В случае вытеснения воды глицерином вытеснение устойчиво, граница раздела сохраняла форму круга. В случае, когда глицерин вытеснялся водой наблюдалось развитие неустойчивости Саффмана-Тейлора.
+В случае, когда зазор ячейки маленький в эксперименте фронт движется быстрее, чем было предсказано теорией, в случае, если зазор увеличивается теоретическая скорость фронт больше, чем в эксперименте(рис.7). Аналогичный результат был получен для несмешивающихся жидкостей.
+Расхождение теоретических и экспериментальных данных можно объяснить тем, что уравнения модели Хеле-Шоу получаются осреднением уравнений Навье-Стокса по зазору ячейки для стационарного течения одной жидкости. В рассматриваемой задаче течение нестационарное, а также многофазное. Этим можно объяснить расхождение экспериментальных данных и аналитического решения.
+В данной работе предлагается модифицировать модель Хеле-Шоу добавлением коэффициента сопротивления α, который зависит от некоторой безразмерной конфигурации различных параметров задачи.
+То, что этот коэффициент зависит от величины зазора ячейки было показано. Также он может зависеть от перепада давления, динамической вязкости жидкости и других параметров. В рамках данного исследования будет рассматривать зависимость коэффициента α от отношения размера зазора ячейки ко внутреннему радиусу ячейки. Для случая устойчивого вытеснения добавление коррекционного множителя значительно улучшает соответветствие экспериментальных данных и предсказанного на основе модифицированной математической модели движения границы раздела жидкостей.
+
+Список литературы.
+ 1)	Smirnova M.N., Nikitin V.F., Skryleva E.I., Weisman Yu. G., Capillary driven fluid flows in microgravity, Acta Astronautica, 2022, v. 204, pp. 892-900, DOI: 10.1016/j.actaastro.2022.10.037
+2)	V.F. Nikitin, E.I. Skryleva, Yu G. Weisman, Control of capillary driven fluid flows for safe operation of spacecraft fluid supply systems using artificial porous media, Acta Astronautica, 2022, https://doi.org/10.1016/j.actaastro.2021.12.009. v. 194, pp. 544-548
+3)	Nikitin V.F., Skryleva E.I., Manakhova A.N., Accounting for the instability of a liquid flow front through a porous medium under conditions of low gravity and in the presence of chemical interactions between the phases, Acta Astronautica, 2023, v.213, pp. 197-203, DOI: 10.1016/j.actaastro.2023.09.015
+4)	Skryleva E.I., Nikitin V.F., Dushin V.R., Microgravity investigation of seepage flows in porous media,      First IAA/AAS SciTech Forum on SPACE FLIGHT MECHANICS AND SPACE STRUCTURES AND MATERIALS, Advances in the Astronautical Sciences Series, 2020, v 170, pp. 729-739 
+5)	Skryleva E.I., Numerical simulation of multiphase flow in a porous medium in the presence of heat and mass transfer between phases, Heat Transfer Research, 2022, v. 54, № 2, pp. 1-10, DOI:10.1615/HeatTransRes.2022044787
+6)	Smirnov N.N., Nikitin V.F., Kolenkina E.I., Gazizova D.R., Evolution of a Phase Interface in the Displacement of Viscous Fluids from a Porous Medium, Fluid Dynamics, 2021, v. 56, № 1, pp. 79-92   DOI: 10.1134/S0015462821010122
+7)	P.J. Canfield, P.M. Bronowicki, Y. Chen, L. Kiewidt, A. Grah, J. Klatte, R. Jenson, W. Blackmore, M.M. Weislogel, M.E. Dreyer, The capillary channel flow experiments on the international space station: experiment set-up and first results, Exp. Fluid, 2013, 54.1519, 1–14. 
+8)	P. Bronowicki, P. Canfield, A. Grah, M.E. Dreyer, Free surfaces in open capillary channels - parallel plates, Phys. Fluids, 2015, v.27, №1, DOI: 10.1063/1.4906154
+9)	Kamal S. Bisht, Michael E. Dreyer, Phase separation in porous media integrated capillary channels, Microgravity Sci. Technol., 2020, v.32, pp. 1001–1018. 
+10)	S. Mahmood Mousavi, JikLee Bok, Investigation of bubble structure in a microchannel under microgravity conditions: effects of discontinuous wettability with dynamic contact angle, 201, Acta Astronautica,2022, 394–400. 
+11)	Xuan Li, Kevin Worrall, Aditya Vedanthu, Andrew Scott-George, Patrick Harkness, The pulse-elevator: a pump for granular materials, Acta Astronautica,2022,  pp.33–41
+12)	Smirnov, N.N., Pushkin, V.N., Dushin, V.R., Kulchitsky, A.V. Microgravity investigation of laminar flame propagation in monodisperse gas-droplet mixtures  Acta Astronautica, 2007, v.61 (7-8), pp. 626-636.
+13)	Obinna Uyanna, Hamidreza Najafi, Thermal protection systems for space vehicles: a review on technology development, current challenges and future prospects, Acta Astronautica, 2020, v.176 pp. 341–356
+14)	Smirnov, N.N., Legros, J.C., Nikitin, V.F., Istasse, E., Schramm, L., Wassmuth, F., Hart, D.A. Filtration in artificial porous media and natural sands under microgravity conditions Microgravity Science and Technology, 2003, v.14 (2), pp. 3-28.
+15)	Dushin V.R., Smirnov N.N., Nikitin V.F., Skryleva E.I., Weisman Y.G., Multiple capillary-driven imbibition of a porous medium under microgravity conditions: Experimental investigation and mathematical modeling, Acta Astronautica, 2022, v.193, pp. 572-578
+16)	Smirnov N.N., Nikitin V.F., Ivashnyov O.E., Maximenko A., Thiercelin M. Vedernikov A., Scheid B., Legros J.C. Microgravity Investigations of Instability and Mixing Flux in Frontal Displacement of Fluids, Microgravity Science and Technology, 2004, v.15(2), pp.35-51
+17)	O.A. Logvinov, E.I. Skryleva, Displacement of a viscous fluid from a Hele-Shaw cell with a sink, Moscow Univ. Mech. Bull.,2016, v.71 (4), pp. 77–81 DOI: https://doi.org/ 10.3103/S0027133016040014.
+18)	Meiburg, E.. Homsy, G.M. Nonlinear unstable viscous fingers in Hele-Shaw flows. II. Numerical simulation, Phys. Fluids,1988, v.31(3)
+19)	Guan X., Pitchumani R. Viscous fingering in a Hele-Shaw cell with finite viscosity ratio and interfacial tension, ASME Journal of Fluids Engineering , 2003, v. 125, №2, pp. 354-364
+20)	Luciano dos Reis, Jos&#x27;e A. Miranda, Controlling fingering instabilities in nonflat Hele-Shaw geometriesб PHYSICAL REVIEW, 2011, E 84 –– 066313 
+21)	A.A. Alturki • B. B. Maini • I. D., Gates The effect of wall roughness on two-phase flow in a rough-walled Hele-Shaw cell, J Petrol Explor Prod Technol (2014) 4:397–426
+22)	Ivan E Karpunin et al 2021 J. Phys.: Conf. Ser. 1809 012020
+23)	Majid Ahmadlouydarab, Mohammad Kangari, Naser Asadzadeh et al. Effects of transient injection-suction on interfacial dynamics in immiscible Newtonian fluid-fluid radial displacement in Hele-Shaw cell, 2022, PREPRINT (Version 1) available at Research Square https://doi.org/10.21203/rs.3.rs-1730992/v1
+24)	Írio Coutinho, José A Miranda, Role of interfacial rheology on fingering instabilities in lifting Hele-Shaw flows, 2023, PHYSICAL REVIEW E 108, 025104 
+25)	Saffman, P.G., Taylor, G.J. The penetration of a fluid into a porous medium of Hele-Shaw cell containing a more viscous fluid, Proc. R. Foc. Zond., 1958, A 245,312</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (3)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Тюренкова Вероника Валерьевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Скрылева Евгения Игоревна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Смирнов Николай Николаевич</strong> <span style="color:#71717a;font-size:0.8rem">Доктор физико-математических наук</span></li></ul>
+              
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

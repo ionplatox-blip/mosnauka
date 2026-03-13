@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Лаборатория по разработке хелаторов и их конъюгатов с молекулами-векторами для получения радиофармпрепаратов | ИНЭОС РАН</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-ineos.html">ИНЭОС РАН</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Лаборатория по разработке хелаторов и их конъюгато</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1rem"><span class="tag">Органическая химия</span> <span class="tag">Радиохимия</span> <span class="tag">Химия координационных соединений</span></div>
+          <h1>Лаборатория по разработке хелаторов и их конъюгатов с молекулами-векторами для получения радиофармпрепаратов</h1>
+          <p style="color:#a1a1aa;line-height:1.7;margin-top:1rem">Лаборатория №135 занимается синтезом хелаторов макроциклического и ациклического строения, а также всесторонним исследованием их комплексообразующих свойств по отношению к катионам металлов медицинского назначения с целью создания диагностических и терапевтических радиофармпрепаратов на их основе. Для адресной доставки радионуклидного комплекса в пораженную область разрабатываются бифункциональные хелатирующие агенты и их конъюгаты с векторными молекулами, такими как пептиды, антитела и наночастицы. Наши исследования предполагают комплексный подход к решению поставленной задачи, начиная от дизайна структуры хелаторов, разработки методов их синтеза и заканчивая полным анализом их комплексообразующих характеристик. Для этого мы используем методы ВЭЖХ, масс-спектрометрии, ЯМР-спектроскопии, рентгеноструктурного анализа, квантовохимических расчетов, потенциометрического и спектрофотометрического титрования, а также проводим радионуклидное мечение и анализы устойчивости in vitro и in vivo. В ходе исследований мы определяем преимущества и недостатки новых лигандов и выявляем закономерности, оказывающие влияние на их способность к связыванию того или иного катиона металла. Полученные результаты позволяют расширить круг возможных новых радиофармпрепаратов для диагностики и лечения онкологических заболеваний, что в настоящее время является крайне актуальным.</p>
+        </div>
+
+        <!-- CTA Block -->
+        <div style="background:linear-gradient(135deg,rgba(255,0,60,0.08),rgba(255,0,60,0.02));border:1px solid rgba(255,0,60,0.2);border-radius:1.5rem;padding:2rem;margin-bottom:2rem">
+          <div style="font-size:1rem;font-weight:800;margin-bottom:0.75rem">📨 Связаться с лабораторией</div>
+          
+          <div style="display:flex;flex-wrap:wrap;gap:0.75rem;margin-top:1rem">
+            <button onclick="openRequestModal('Запрос на НИОКР — Лаборатория по разработке хелаторов и их')" style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.75rem 1.5rem;border-radius:1rem;background:#ff003c;color:white;font-size:0.75rem;font-weight:800;text-transform:uppercase;letter-spacing:0.05em;border:none;cursor:pointer">📋 Направить запрос на НИОКР</button>
+            <button onclick="openRequestModal('Запрос зав. лабораторией — Лаборатория по разработке хела')" style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.75rem 1.5rem;border-radius:1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:#a1a1aa;font-size:0.75rem;font-weight:800;text-transform:uppercase;cursor:pointer">✉ Написать зав. лабораторией</button>
+            <a href='https://colab.ws/labs/1025' target='_blank' style='display:inline-flex;align-items:center;gap:0.5rem;padding:0.75rem 1.5rem;border-radius:1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:#a1a1aa;font-size:0.75rem;font-weight:800;text-transform:uppercase'>🔗 Профиль CoLab</a>
+          </div>
+        </div>
+
+        
+        <div class="info-card">
+              <h2>🧪 Методы</h2>
+              <p>MALDI масс-спектроскопия Высоко-эффективная жидкостная хроматография (ВЭЖХ) Масс-спектрометрия Потенциометрия Рентгеноструктурный анализ Спектрофотометрия ЯМР-спектроскопия CHNS-элементный анализ</p>
+            </div>
+        
+
+        <div class="section-header" style="margin-top:2.5rem">
+          <h2 class="section-title">👩‍🔬 Учёные (11)</h2>
+        </div>
+        <div class="cards-grid" style="grid-template-columns:repeat(auto-fill,minmax(300px,1fr))">
+          <a href="sci_061.html" class="preview-card">
+              <div class="avatar"><div class="initials">ЗА</div></div>
+              <div style="min-width:0">
+                <h3>Зубенко Анастасия Д</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem">Заведующий лабораторией</div>
+                <div class="meta">Искусственный интеллект, Квантовая химия, Материаловедение</div>
+                <div class="meta" style="margin-top:0.25rem">📚 5 публ.</div>
+              </div>
+            </a>
+<a href="sci_062.html" class="preview-card">
+              <div class="avatar"><div class="initials">ЮФ</div></div>
+              <div style="min-width:0">
+                <h3>Юрий Федоров</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem">Ведущий научный сотрудник</div>
+                <div class="meta">Супрамолекулярная химия, Люминесценция, Нанокомпозиты</div>
+                <div class="meta" style="margin-top:0.25rem">📚 74 публ.</div>
+              </div>
+            </a>
+<a href="sci_063.html" class="preview-card">
+              <div class="avatar"><div class="initials">СТ</div></div>
+              <div style="min-width:0">
+                <h3>Сергей Токарев</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem">Старший научный сотрудник</div>
+                <div class="meta">Люминесценция, Нанокомпозиты, Оптические материалы</div>
+                <div class="meta" style="margin-top:0.25rem">📚 8 публ.</div>
+              </div>
+            </a>
+<a href="sci_064.html" class="preview-card">
+              <div class="avatar"><div class="initials">БЕ</div></div>
+              <div style="min-width:0">
+                <h3>Байирта Егорова</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem">Старший научный сотрудник</div>
+                <div class="meta">Искусственный интеллект, Квантовая химия, Материаловедение</div>
+                <div class="meta" style="margin-top:0.25rem">📚 5 публ.</div>
+              </div>
+            </a>
+<a href="sci_065.html" class="preview-card">
+              <div class="avatar"><img src="https://colab.ws/storage/images/320UdExM87XhwlZoXcvZmfSqyKVcpnnvSiZq3kz0.jpg" alt="Анна Пашанова" loading="lazy"></div>
+              <div style="min-width:0">
+                <h3>Анна Пашанова</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem">Младший научный сотрудник</div>
+                <div class="meta">Органическая химия, Радионуклиды, Радиофармацевтика</div>
+                <div class="meta" style="margin-top:0.25rem">📚 3 публ.</div>
+              </div>
+            </a>
+<a href="sci_066.html" class="preview-card">
+              <div class="avatar"><div class="initials">АЩ</div></div>
+              <div style="min-width:0">
+                <h3>Анна Щукина</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem">Младший научный сотрудник</div>
+                <div class="meta">Магнитные материалы, Искусственный интеллект, Квантовая химия</div>
+                <div class="meta" style="margin-top:0.25rem">📚 3 публ.</div>
+              </div>
+            </a>
+<a href="sci_067.html" class="preview-card">
+              <div class="avatar"><div class="initials">ОТ</div></div>
+              <div style="min-width:0">
+                <h3>Оксана Тарасенко</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem">Инженер-исследователь</div>
+                <div class="meta"></div>
+                <div class="meta" style="margin-top:0.25rem">📚 0 публ.</div>
+              </div>
+            </a>
+<a href="sci_068.html" class="preview-card">
+              <div class="avatar"><div class="initials">АБ</div></div>
+              <div style="min-width:0">
+                <h3>Анатолий Ботезату</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem">Младший научный сотрудник</div>
+                <div class="meta"></div>
+                <div class="meta" style="margin-top:0.25rem">📚 0 публ.</div>
+              </div>
+            </a>
+<a href="sci_069.html" class="preview-card">
+              <div class="avatar"><div class="initials">ММ</div></div>
+              <div style="min-width:0">
+                <h3>Михаил Меньшиков-Тонян</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem">Младший научный сотрудник</div>
+                <div class="meta">Магнитные материалы</div>
+                <div class="meta" style="margin-top:0.25rem">📚 1 публ.</div>
+              </div>
+            </a>
+<a href="sci_070.html" class="preview-card">
+              <div class="avatar"><div class="initials">ДХ</div></div>
+              <div style="min-width:0">
+                <h3>Дарья Харьковская</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem">Старший лаборант</div>
+                <div class="meta"></div>
+                <div class="meta" style="margin-top:0.25rem">📚 0 публ.</div>
+              </div>
+            </a>
+<a href="sci_071.html" class="preview-card">
+              <div class="avatar"><div class="initials">СМ</div></div>
+              <div style="min-width:0">
+                <h3>Софья Мосалева</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem">Лаборант-исследователь</div>
+                <div class="meta"></div>
+                <div class="meta" style="margin-top:0.25rem">📚 0 публ.</div>
+              </div>
+            </a>
+
+        </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

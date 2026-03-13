@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | НИЦ "Курчатовский институт"</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-kurchatov.html">НИЦ &quot;Курчатовский институт&quot;</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">органосиликатные композиции, органосиликатные покрытия,</span> <span class="tag">гибридные многоматричные композиции, оксиды металлов, сложные оксиды металлов,</span> <span class="tag">комплесные соединения металлов, полисилоксаны, химическое осаждение, совместная кристаллизация,</span> <span class="tag">механоактивация, синтез в микрореакторах, природные цеолиты,</span> <span class="tag">ксерогели, суспензии, нанопорошки, защитные покрытия, биоциды</span> <span class="tag">электродные материалы, керамика, натурные испытания</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Химические процессы</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Химия коллоидов. Дисперсные системы</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Керамика</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Полимерные материалы, используемые в производстве лакокрасочных материалов и покрытий</span></div>
+          <h1 style="font-size:1.5rem">Физико-химические основы неорганического синтеза микро- и наноструктурированных неорганических, органо-неорганических и керамических материалов и покрытий для био-, энерго- и ресурсосберегающих технологий.</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">41,937 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225020306945-8</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2024-01-01 — 2024-12-31</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№1</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">11</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">НИЦ &quot;Курчатовский институт&quot;</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>ФЕДЕРАЛЬНОЕ ГОСУДАРСТВЕННОЕ БЮДЖЕТНОЕ УЧРЕЖДЕНИЕ &quot;НАЦИОНАЛЬНЫЙ ИССЛЕДОВАТЕЛЬСКИЙ ЦЕНТР &quot;КУРЧАТОВСКИЙ ИНСТИТУТ&quot;</div>
+                </div><div class="metric-box" style="text-align:left">
+                  <div class="label">Исполнитель</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">НИЦ &quot;КУРЧАТОВСКИЙ ИНСТИТУТ&quot;-ПИЯФ</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>Объектом исследования являются технически ценные органо-неорганические, композитные и керамические материалы и органосиликатные и многоматричные гибридные покрытия, а также соединения и системы, являющиеся прекурсорами для их синтеза: органосиликатные и лакокрасочные композиции, суспензии и их компоненты, в том числе, специально синтезированные биоцидные добавки, нанодисперсные и высокодисперсные порошки оксидов металлов и минералов. Основными методами синтеза являются ресурсосберегающие технологии – химическое осаждение из водных и водно-спиртовых растворов солей, совместная кристаллизация, в т.ч. с проведением процессов в микрореакторе, что интенсифицирует процессы и сокращает их длительность, а также традиционные керамическая, лакокрасочная технологии и механоактивация порошков ударно-истирающего типа. Основной задачей исследований является установление корреляционных связей «условия синтеза – состав – структура – свойства», чтобы обеспечить направленный, контролируемый синтез материалов и покрытий с заданными и воспроизводимыми целевыми свойствами, оптимизировать технологические процессы, выработать рекомендации по внедрению в производство. Для проведения исследований использовался целый ряд современных взаимодополняющих методов исследования: рентгенофазовый анализ; метод малоуглового рентгеновского рассеяния; ИК, спектрофотометрия; микрорентгеноспектралный анализ; микроскопия (оптическая, СЭМ); термический анализ; низкотемпературная адсорбция азота; pH-метрия; определение величины угла смачивания, вольтамперометрия; импедансометрия; физико-химические и электрофизические методы опрделения свойств покрытий согласно ГОСТ и ISO (адгезия, прочность на удар, твердость, удельное объемное и поперечное сопротивление), методы исследования керамических материалов (гидростатическое взвешивание, определение микротвердости и модуля упругости). Использовались также лабораторные методы определения биологической активности получаемых материалов и покрытий – грибостойкость, биоцидная (фунги- и цитостатическая) активность и натурные климатические испытания защитно-декоративных покрытий в условиях двух климатических зон с тропическим климатов и в условиях очень холодного климата.
+В рамках выполнения работы были получены новые фундаментальные данные и практические результаты, связанные:
+- с разработкой новых составов органосиликатных защитных атмосферостойких, влагостойких, термо- и радиационностойких и электроизоляционных термостойких покрытий, защитных лакокрасочных многоматричных гибридных термостойких защитных покрытий и биоактивных доавок; - с изучением физико-химических процессов, лежащих в основе получения вышеуказанных материалов и покрытий; научно-обоснованным выбором компонентов органосиликатных и лакокрасочных композиций: связующих, наполнителей, пигментов, биоцидных добавок, влияющих на целевые свойства покрытий; выработкой рекомендаций по составам и по оптимизации методик их получения, в т. ч., для внедрения в производственные процессы на предприятиях, изготавливающих оборудование для АЭС и для судостроения.
+Разработанные покрытия и экологически безопасные биоцидные добавки могут найти применение для окраски оборудования АЭС и оснастки, находящихся под воздействием высоких температур и радиации, а также для защиты изделий и конструкций от биодеструкции. Приведены результаты атмосферных натурных испытаний органосиликатных защитных покрытий в Совместном росийско-вьетнамском тропическом научно-исследовательским и технологическом центре и на климатической станции ФТИПС им. В.П. Ларионова СО РАН. В процессе выполнения НИР была выпущена актуализированная версия технических условий ТУ 725-84-2024 «Композиции органосиликатные» взамен устаревшей версии ТУ 725-84-78 «Композиции органосиликатные». Новая версия ТУ внедрена на ряде предприятий атомной отрасли, изготавливающих оборудование для АЭС и на заводах изготовителях органосиликатных композиций, а также принята на учет в проектных институтах ГК «Росатом».
+Методами жидкофазного синтеза, в т.ч. с использование микрореактора, осуществлены синтезы наночастиц ряда технически ценных оксидов. Разработаны новые методики получения нанопорошков заданных составов. Проанализированы результаты исследования фазового состава, текстурных характеристик, а также специальных целевых свойств порошков и суспензий на их основе. Выбраны наилучшие методики синтеза и концентрационные соотношения исходных компонентов. Разработанные материалы (порошки и суспензии) успешно показали себя в агротехнологиях в качестве иммуномодуляторов и стимуляторов роста растений, а также как прекурсоры для получения керамики. Сделан очередной вклад в создание материалов для современных устройств хранения энергии. Методом синтеза из водно-спиртовых растворов получен новый высокодисперсный материал для электродов псевдоконденсатора, который проявил высокую электрохимическую стабильность. Продолжены работы по расширению состава и совершенствованию технологии получения ксерогелей и нанопорошков для циркониевой керамики для газовых сенсоров. Нанопорошки сложных оксидов также получены с использованием микрореатора, что делает перспективным процессы их масштабирования. Продолжены исследованы по использованию приемов механоактивации для диспергрования и модификации органическими и неорганическими реагентами природных цеолитов – клиноптилолитов для получения на их основе сорбентов и материалов для альтернатиной энергетики.</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (30)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Власов Дмитрий Юрьевич</strong> <span style="color:#71717a;font-size:0.8rem">Доктор биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Шилова Ольга Алексеевна</strong> <span style="color:#71717a;font-size:0.8rem">Доктор химических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Николаев Антон Михайлович</strong> <span style="color:#71717a;font-size:0.8rem">Доктор геолого-минералогических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Цветкова Ирина Николаевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат химических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Красильникова Лариса Николаевна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Соколов Георгий Сергеевич</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Краснопеева Елена Леонидовна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Копица Геннадий Петрович</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Белоусова Ольга Леонидовна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Коваленко Анастасия Сергеевна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Загребельный Олег Анатольевич</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Комендантов Александр Юрьевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Дабижа Ольга Николаевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат химических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Селиванов Станислав Иванович</strong> <span style="color:#71717a;font-size:0.8rem">Доктор химических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Ефимова Лариса Николаевна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li></ul>
+              <p style='color:#52525b;font-size:0.8rem;margin-top:0.5rem'>...и ещё 15</p>
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

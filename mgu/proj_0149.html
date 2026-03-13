@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | МГУ им. М.В. Ломоносова</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-mgu.html">МГУ им. М.В. Ломоносова</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">гипомагнитные и радиационные условия</span> <span class="tag">ядерные реакции</span> <span class="tag">механизмы ядерной реакции</span> <span class="tag">оптическая модель</span> <span class="tag">радиофармпрепараты</span> <span class="tag">деление</span> <span class="tag">дозы облучения</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Теория структуры ядра</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Основные характеристики и свойства ядер</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Ядерные реакции</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Прохождение ядерных частиц и гамма-квантов через вещество</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Методика и техника ядерно-физического эксперимента</span></div>
+          <h1 style="font-size:1.5rem">Фундаментальные и прикладные проблемы физики ядерных реакций</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">35,072 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225012904393-8</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2024-01-01 — 2024-12-31</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№3</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">3</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">Правительство России</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>Правительство Российской Федерации</div>
+                </div><div class="metric-box" style="text-align:left">
+                  <div class="label">Исполнитель</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">МОСКОВСКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ ИМЕНИ М.В.ЛОМОНОСОВА, МГУ ИМЕНИ М.В.ЛОМОНОСОВА, МОСКОВСКИЙ УНИВЕРСИТЕТ ИЛИ МГУ</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>развитие новых теоретических и экспериментальных подходов к изуче-
+нию механизмов ядерных реакций и свойств образующихся в реакциях ядер-
+ных систем в области низких и средних энергий, а также новых подходов к
+решению прикладных задач, включая анализ свойств новых материалов и
+ядерную медицину.
+\paragraph{\it Содержание.}
+\begin{description} \item[Реферат] — стр 4, \item[Введение] — стр 8,
+\item[Основная часть] — стр 12, \item[Заключение] — стр 15, \item[Список
+использованных источников] — стр 18, \item[Приложение А] — Таблица 1A,
+%\item[Приложение В] — pdf файл с иллюстрациями, \item[Приложение С]
+— pdf файл с версией отчёта \end{description}
+\paragraph{\it Основные задачи} десятого этапа НИР.
+В рамках продолжения исследований {\bf фундаментальных проблем фи-
+зики ядерных реакций} предполагалось проведение следующих работ:
+\begin{itemize}
+\item % Беспалова
+Провести анализ в рамках ДОМ магических свойств, оценку радиусов
+нейтронных орбит и галоподобной структуры в ядрах $Са$. Исследовать
+эволюцию магических свойств чисел N = 14, 16 в изотонах. Исследовать
+зависимость разности энергий нейтронных и протонных состояний в зер-
+кальных ядрах вблизи $^{48}Ni$
+\item % Гончаров
+Продолжить работы по систематизации данных экспериментальных и
+теоретических исследований экзотических ИАС легких ядер, а также про-
+ведение исследований ИАС ядер с A = 6 и 12 на основе теоретического ана-
+лиза новых экспериментальных данных по упругому рассеянию и реакци-
+ям передачи нуклонов с использованием различных моделей формфактора
+реакций, позволяющих получить информацию о распределении материи и
+радиусах ядер в исследуемых состояниях.
+\item % Лебедев&amp;K
+Продолжить исследования ориентационных характеристик возбужден-
+ных состояний легких ядер с целью исследования структуры малонуклон-
+ных систем, путём анализа экспериментальных данных, измеренных в наи-
+более полных кинематических условиях на ускорителе У-120 НИИЯФ МГУ.
+\item
+Совместно с лабораторией атомного ядра ИЯИ РАН (в рамках соответ-
+ствующего Договора о научном сотрудничестве) продолжить изучение про-
+ИСТИНА 4
+тон – протонных корреляций в реакции $d + {^1H} → n + p + p$ на цикло-
+троне У-120 при энергии дейтронов 15 МэВ.
+\end{itemize}
+В рамках продолжения исследований {\bf прикладных задач} предпола-
+галось проведение следующих работ:
+\begin{itemize} \item
+Продолжить исследования в рамках «Договора о научно-методическом
+сотрудничестве между НИЯФ МГУ и ГНЦ РФ – ИМБП РАН», связанные с
+радиационной и гипомагнитной безопасностью дальних и длительных кос-
+мических полетов.
+\item
+Продолжить исследования по синтезу и биологическим испытаниям РФП
+211-At, который является перспективным кандидатом для замены приме-
+няемых в настоящее время в радионуклидной йодотерапии РФП на основе
+131-I
+\item
+Продолжить исследования возможности получения медицинских ради-
+онуклидов фотоядерным методом в количестве, достаточном для медицин-
+ского применения.
+\end{itemize} \paragraph{\it Основные полученные результаты } десято-
+го этапа НИР.
+В области исследований {\bf фундаментальных проблем физики ядерных
+реакций} были решены следующие задачи:
+\begin{itemize}
+\item % Беспалова
+В рамках дисперсионной оптической модели выполнены расчеты эволю-
+ции нейтронных одночастичных спектров изотонов с числом нейтронов N
+= 32 и 34 в области $16 \le Z \le 32$. Показано, что в магических изотонах
+с N = 32 и 34 достигается минимум отличия энергии Ферми от полусуммы
+расчетных энергий последнего преимущественно заполненного и первого
+преимущественно свободного состояний. Эта особенность может служить
+маркером для кандидатов в новые магические ядра. Вычисленный средне-
+квадратичный радиус нейтронного галоподобного состояния $2p_{3/2}$ в
+дважды магическом ядре $^{52}Ca$ превысил радиус нижележащего со-
+стояния $1f_{7/2}$ на 0.8 Фм, что согласуется с недавними эксперимен-
+тальными данными и теоретическими предсказаниями. Вычислены одноча-
+стичные энергии нейтронно – и протонно – избыточных изотонов с новыми
+магическими числами N = 14, 16 и зеркальных ядер вблизи $^{48}Ni$ в
+дисперсионной оптической модели. Прослежена эволюция в предсказани-
+ях магических свойств чисел N = 14, 16. Исследована зависимость разности
+энергий нейтронных и протонных состояний в зеркальных ядрах от орби-
+тального момента. Результаты опубликованы.
+\item % Гончаров
+Продолжена работа по систематизации и анализу данных эксперимен-
+тальных и теоретических исследований экзотических изобар – аналоговых
+состояниях (ИАС) легких ядер с $A = 6, 12, 13, 14, 20 $ на основе единой кон-
+цепции изотопической инвариантности. Подтверждено существование ней-
+тронного гало в состоянии $(1/2)^+$ с энергией 3,09 МэВ ядра $^{13}C$
+и имеется существенное указание на наличие протонного гало в состоянии
+2.37 МэВ ядра $^{13}N$. Сделан вывод, что ядра $^{12}B$, $^{12}C$ и
+ИСТИНА 5
+$^{12}N$ в ИАС $1^−$ с энергией 2.62, 17.23 и 1.80 МэВ, соответственно,
+обладают однонуклонной (нейтронной или протонной) структурой гало, а
+ИАС $2^−$ с энергией 1.67, 16.57 и 1.19 МэВ для $^{12}B$, $^{12}C$ и
+$^{12}N$, соответственно, могут рассматриваться как кандидаты в состо-
+яния с однонуклонным гало. Нейтронное гало подтверждено для состояния
+6.09 МэВ ядра $^{14}C$. Показаны признаки протонного гало в состоянии
+8.06 МэВ ядра $^{14}N$. Получено, что для состояний полосы $K=0_1^+$
+среднеквадратичный радиус увеличен на $\sim 20 \% $ по сравнению с ос-
+новным состоянием. Эти результаты подтверждают, что явление гало про-
+является не только в основных состояниях экзотических ядер, но и в воз-
+бужденных состояниях обычных легких ядер. Результаты опубликованы.
+\item % Лебедев&amp;K
+Продолжено исследование ориентационных характеристик возбужден-
+ных состояний легких ядер в реакциях $ A ( \alpha, y ) ^{16}O(3^-) $ на
+основе измеренных экспериментально на ускорителе У-120 НИИЯФ МГУ
+функций угловых $y\gamma - $ корреляций в различных плоскостях вылета
+$\gamma -$ квантов. Проведен анализ экспериментальных результатов по
+исследованию структуры малонуклонных систем, полученных в наиболее
+полных кинематических условиях.
+Исследована угловая зависимость выстроенностей ядра $^{16}O(3^-,
+6.13 МэВ)$, образованного в реакциях $^{16}O(\alpha,\alpha)^{16}O(3^-)$
+и $^{15}N(\alpha, t)^{16}O(3^-)$ при энергии $\alpha$– частиц 30.3 МэВ.
+Установлено, что механизмы образования ядра $ ^{16}O(3^-) $ существен-
+но влияют на его ориентационные характеристики. Максимальные по ам-
+плитуде выстроенности ядра $ ^{16}O(3^-) $ в обеих реакциях наблюдают-
+ся в той области углов вылета конечных частиц, в которой основной вклад
+вносят прямые механизмы. При этих углах рассчитанные выстроенности
+удовлетворительно согласуются с экспериментальными.
+Проведен анализ пространственной конфигурация ядра $ ^{20} O(g.
+s.) $ при последовательном заполнении ядра $^{16}O$ нейтронами 1d-
+оболочки. С этой целью рассмотрена реакция $^{18}O(t, p)^{20}O(g. s.)$
+с использованием механизмов передачи динейтрона и последовательной
+передачи двух нейтронов с образованием в промежуточном состоянии яд-
+ра $^{19}O(5/2^+)$. Для учета этих механизмов рассчитаны необходимые
+спектроскопические амплитуды реакции в оболочечной модели с учетом
+деформации (схема Нильссона), что позволило определить структуру ней-
+тронной периферии ядра $^{20}O(g. s.)$. Результаты опубликованы.
+\item Продолжены работы по исследованию структуры малонуклонных
+систем в реакциях, вызываемых заряженными частицами. Эксперименты
+выполнены на ускорителе У-120 в НИИЯФ МГУ для реакции $d + ^{1}H \to
+p + p + n$ при энергии дейтронов 15,3 МэВ. Рассмотрен метод определения
+энергии синглетного квазисвязанного $pp$- состояния и получено предва-
+рительное значение энергии виртуального $pp$– синглета: $E_{pp} \approx
+400 \pm 90$ кэВ. Результаты опубликованы.
+\end{itemize}
+В области исследований {\bf прикладных вопросов физики ядерных ре-
+акций} были решены следующие задачи:
+\begin{itemize} \item % Лебедев&amp;K
+Выполнены работы в рамках «Договора о научно-методическом сотруд-
+ничестве между НИИЯФ МГУ и ГНЦ РФ-ИМБП РАН», связанные с радиаци-
+ИСТИНА 6
+онной и гипомагнитной безопасностью дальних и длительных космических
+полетов.
+Изучены биологические эффекты, индуцированные воздействием гипо-
+магнитного условий (ГМУ), на модели микроорганизмов рода Bacillus. По-
+казано влияние ГМУ на характер роста бактериальной популяции и морфо-
+логическую структуру прокариотических клеток
+Исследовано влияние ГМУ на жизнеспособность и характеристики ро-
+ста микроскопических грибов. Полученные результаты указывают на от-
+сутствии значимых эффектов на жизнеспособность грибов при воздействии
+ГМУ до 45 нТл. В то же время интенсивность роста микромицетов в ряде
+случаев заметно стимулировалась на поверхности образцов материалов в
+ГМУ. Возможно, развитие грибов на будущих лунных объектах может повы-
+сить вероятность технических и медицинских рисков. Результаты опубли-
+кованы.
+\item % Дроздов&amp;K Исследовалось влияние диеты на тропность щитовид-
+ной железы к РФП 211-At. Обнаружено, что концентрация 211-At во всех
+критических органах (печень, почки, легкие, желудок, мозг и т. д.), кро-
+ме щитовидной железы, практически не зависит от диеты. А вот для щи-
+товидной железы безйодовая диета повышает концентрацию радионуклида
+$^{211}At$ в несколько раз. Результаты опубликованы.
+\item % Приселкова&amp;K Исследована возможность получения медицин-
+ского радионуклида $ ^{166}Ho $ фотоядерным методом. Выход образо-
+вания $ ^{166}Ho $ составил в условиях эксперимента $ 3,6·10^4 $ $
+Bq/(μA∙h∙g/cm^2) $. Также определены выходы других радиоизотопов голь-
+мия и эрбия. Показано, что фотоядерный метод может быть применен для
+получения $ ^{166}Ho $ в количестве, достаточном для медицинского при-
+менения.
+\end{itemize}
+\paragraph{\it Определения, обозначения} и сокращения.
+В настоящем отчете о НИР применяют следующие термины с соот-
+ветствующими определениями, сокращениями: \begin{itemize} %\item[ ВФ]
+— волновые функции, \item[ ДОМ] — дисперсионная оптическая модель,
+%\item[ СП] — среднее поле, %\item[ МДМ] — модифицированная дифракци-
+онная модель \item[ ИАС] — изобар - аналоговые состояния ядер. \item[ Rm]
+— среднеквадратичный радиус ядра \item[ ГМУ] — гипомагнитные условия
+%\item[ РФП] — радиофармпрепарат</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (11)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Лебедев Виктор Михайлович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Спасский Андрей Васильевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Приселкова Анна Борисовна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Климочкина Анна Александровна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Зеленская Наталья Семеновна</strong> <span style="color:#71717a;font-size:0.8rem">Доктор физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Галанина Лидия Ивановна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Дроздов Вадим Александрович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Юминов Олег Аркадьевич</strong> <span style="color:#71717a;font-size:0.8rem">Доктор физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Платонов Сергей Юрьевич</strong> <span style="color:#71717a;font-size:0.8rem">Доктор физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Ткаченко Никита Владимирович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат технических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Беспалова Ольга Викторовна</strong> <span style="color:#71717a;font-size:0.8rem">Доктор физико-математических наук</span></li></ul>
+              
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | МГУ им. М.В. Ломоносова</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-mgu.html">МГУ им. М.В. Ломоносова</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">фотодинамическая терапия</span> <span class="tag">контролируемое высвобождение</span> <span class="tag">фотоактивация</span> <span class="tag">пролекарство</span> <span class="tag">Цисплатин</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Элементоорганические соединения</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Комплексные соединения</span></div>
+          <h1 style="font-size:1.5rem">Фотоактивируемые пролекарства Pt(IV) для терапии злокачественных новообразований</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">20,000 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225092318983-2</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2022-05-13 — 2024-12-31</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№1</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">5</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">РНФ</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>Российский научный фонд</div>
+                </div><div class="metric-box" style="text-align:left">
+                  <div class="label">Исполнитель</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">МОСКОВСКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ ИМЕНИ М.В.ЛОМОНОСОВА, МГУ ИМЕНИ М.В.ЛОМОНОСОВА, МОСКОВСКИЙ УНИВЕРСИТЕТ ИЛИ МГУ</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>Проект посвящен разработке пролекарств Pt(IV), содержащих в качестве аксиальных лигандов фотопоглотители, способные при облучении катализировать восстановление пролекарств Pt(IV) в Pt(II) с высвобждением цитотоксического агента (цисплатина). В задачи проекта входили дизайн, синтез, физико-химическое, биологическое и исследования терапевтического действия in vivo фотоактивируемых пролекарств Pt(IV) с лигандами—фотопоглотителями на основе рибофлавина (витамина B2), производных борон-дипиррометенов (Bodipy), и цианиновых красителей, в том числе обладающих ФДТ активностью; исследование механизма фотоиндуцированного высвобождения цисплатина, определение структурных факторов, влияющих на стабильность и эффективность пролекарств. В ходе выполнения проекта впервые предложены дизайн и синтез пролекарств, содержащих в качестве аксиального лиганда Рибофлавин, витамин В2. Было получено 4 пролекарства Pt(IV) с рибофлавином в аксиальном положении. Коньюгат цисплатина с Рибофлавином, названный Рибоплатин, был выбран для подробного изучения механизма фотовосстановления и биологического действия. Изучение механизма фотовысвобождения цисплатина из пролекарства показало участие триплетного состояния в фотопереносе, и образование флавосемтхинонового радикала в качетве индемедиата. Показано, что Рибоплатин является агентом фотоактивируемой химиотерапии и фотодинамической терапии, обладает высокой фоточувствительностью, оказывая контролируемый цитотоксический эффект при световой дозе 0.12 Дж/см2, что является инновационным результатом, аналогов которому не описано среди разработанных к настоящему моменту светочувствительных пролекарств Pt(IV). Также, было предложено вводить в аксиальное положение Рибоплатина дополнительные фармакофоры, для повышения устойчивости пролекарств, увеличения их светового отклика и придания дополнительной к химиотерапевтической биологической активности. В ходе выполнения проекта решались синтетические задачи по поиску подходов получению производных ранее не описанных BODIPY, содержащих чувствительные к гипоксии фрагменты 2-нитроимидазола и аза-ароматические фрагменты, и пролекарств Pt(IV) на их основе, получению пролекарств Pt(IV) с конденсированными ВОDIPY в аксиальном положении, а также разработке синтетических подходов к получению пролекарств Pt(IV) на основе цианиновых красителей и BODIPY, содержащие тяжелые атомы брома. Было впервые предложено использование Click реакцию в условиях, не затрагивающей легко восстанавливающийся центр Pt(IV, что открыло путь к синтезу фотоактивируемых пролекарств Pt(IV)-BODIPY, обладающие ФДТ активностью, содержащие тяжелые атомы брома в положениях 2,6 BODIPY. Были разработаны пролекарства Pt(IV) с флуороформами BODIPY в аксиальном положении, поглощающие в синей, зеленой и красной областях спектра; подробно исследован механизма фотовысвобождения цитотоксических агентов из пролекарст; установлены структурные факторы, определяющие скорость и механизм фотовосстановления прлекарств. Доказано, что все разработанные пролекарства являются стабильными в отсутствии облучения; отсутствие возможности прямого переноса электрона из состояния S1 на центра Pt(IV) было подтверждено DFT-расчетами, что подтверждает фотостабильность пролекарств и их перспективность. Все разработанные в ходе выполнения проекта пролекарства показали дозозависимую фототоксичность;. полученные индексы фототоксичности сравнимы с литературными аналогами. Для лигадов и пролекарств, содержащих тяжелые атомы брома, показана значительная ФДТ-активность в дополнение к химиотерапевтическому действию. Отдельно стоит отметить чрезвычайно высокую ФДТ-активность разработанных в проекте активируемых зеленым светом лигадов BODIPY и прлекарств Pt(IV) на их основе, которые продемонстрировали световой отклик &gt;1300 и наномолярную эффективность в условиях мягкого облучения (1 Дж/см2), что является одним из самых индексов фототоксичности высоких для ФДТ-агентов на основе BODIPY. Разработанное активируемое зеленым светом пролекарство Pt(IV) является третьим среди описанных по величине светового отклика . Важнейшим результатом выполнения проекта стала разработка фотоактивируемых наночастиц на основе пролекарств Pt(IV), способных к контролируемому фотовысвобождению цисплатина, а также показавших значительную фототермальную эффективность in vitro и in vivo. Впервые было показано фотовысвобождение цисплатина из разработанных наночастиц на основе фотоактивируемых пролекарств Pt(IV) под действием красного света; Исследование фототермальной эффективности in vitro показало фототермальную эффективность 42%. Также, разработанные наночастицы показали способность действовать как ФДТ-агенты Типа I. Исследование фототермальной эффективности in vivo на животных моделях с привитыми опухолями СT-26 продемонстрировало разогрев опухоли до 49°С после внутриопухолевого введения наночастиц, а также способность наночастиц к фототермальной и фототермической визуализации опухолей после внутривенного введения вследствие высокого накопления наночастиц в опухолевой ткани и длительной циркуляции в кровотоке. Важнейшей частью проекта было исследование терапевтической эффективности и биораспределения in vivo разработанных пролекарств. Исследования максимально переносимой дозы разработанный на первом этапе выполнения проекта препарат Рибоплатина показали хорошую переносимость Рибоплатина и отсутствие токсичности вплоть до 32 мг/кг. При внутривенном введении Рибоплатин способен накапливаться в опухолях EMT-6 и SK-BR-3, что было подтвержждено флуоресцентной визуализацией и ICP-MS оценкой уровня платины в тканях опухоли. Исследование на мышах с ксенографтной опухолью SK-BR-3 показало, что Рибоплатин активно накапливается в опухоли, но не в лёгких и сердце мышей BALB/C nude, и таким образом превосходит ранее опубликованные пролекарства Pt(IV). Предварительное исследование терапевтической эффективности Рибоплатина показало схожую эффективность по сравнению с цисплатином; так, Рибоплатин показал торможение роста опухолей наравне с цисплатином при выживаемости группы 100%, в то время как в группе цисплатина при терапии той же дозой пали три из шести мышей. Сравнение потери массы тела дозы 7.5 мг/кг цисплатина и Рибоплатина показало потери в массах 17% у цисплатина и 8% у Рибоплатина, что свидетельствует о значительно меньшей токсичности Рибоплатина по сравнению с цисплатином, что подтверждает релевантность создания пролекарств Pt(IV) как более безопасных аналогов клинически используемой химиотерапии. В ходе проекта выполнены работы от дизайна коньюгатов, синтеза и исследования механизма фотовысвобождения до испытания их терапевтической эффективности in vivo. Результатом выполнения проекта стала разработка высокоэффективных фотоактивируемых пролекарств поглощающий в разной области спектра, способных к фотоактивируемому высвобождению цисплатина, обладающих ФДТ активностью и являющихся более эффективными и безопасными аналогами клинически применяемого цисплатина. Полученные результаты являются перспективными для медицинской химии и онкологии.</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (1)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Красновская Ольга Олеговна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат химических наук</span></li></ul>
+              
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

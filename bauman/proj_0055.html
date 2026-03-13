@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | МГТУ им. Баумана</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-bauman.html">МГТУ им. Баумана</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">горячие трещины</span> <span class="tag">граничные условия</span> <span class="tag">кристаллизатор</span> <span class="tag">метод конечных элементов</span> <span class="tag">уравнения ползучести</span> <span class="tag">термомеханическое состояние</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Структура и свойства цветных металлов и сплавов и композиционных материалов на их основе</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Специальные способы литья</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Промышленная теплоэнергетика и теплотехника</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Оборудование для транспортировки, хранения и разливки чугуна, стали и цветных металлов</span></div>
+          <h1 style="font-size:1.5rem">Улучшение качества поверхности, структуры и выхода годных непрерывно литых заготовок в кристаллизаторе с испарительно – конденсационной системой охлаждения</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">1,500 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225071417647-8</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2023-12-29 — 2024-12-31</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№1</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">5</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">РНФ</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>Российский научный фонд</div>
+                </div><div class="metric-box" style="text-align:left">
+                  <div class="label">Исполнитель</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">МГТУ ИМ. Н.Э. БАУМАНА</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>1. Разработан и изготовлен цилиндрический стальной кристаллизатора № 2 с существующей системой охлаждения холодной водой. Кристаллизатор № 2 подготовлен к разливке алюминиевого сплава с существующей системой охлаждения холодной водой (установлены термопары для измерения температуры стенок, воды, расплава, подключенные к системе автоматического контроля параметров процесса), а также выполнена разливка расплава из обогреваемой разливочной емкости в кристаллизатор № 2 без механизма качания с контролем всех параметров процесса. Извлечена и исследована полученная цилиндрическая заготовка диаметром 65 мм. Кристаллизатор крепится на стенде одновременно с обогреваемой разливочной емкостью со стопором, что позволяет начинать и прекращать разливку расплава в нужный момент времени. В отличие от кристаллизатора с замкнутым контуром циркуляции пароводяной смеси, настоящий кристаллизатор перед разливкой расплава не прогревается. Работа кристаллизатора  на приведенном рисунке  осуществляется следующим образом. Предварительно в нижнюю часть кристаллизатора вставляется металлическая затравка, предотвращающая выливание расплава и служащая для извлечения заготовки, а также устанавливается по всей высоте стенки трубы 1 медная тонкостенная вставка. Включается подача воды через патрубок 6 в водяную камеру 4, которая заполняется, и вода подается через щелевой зазор между трубой 1 и 2. После щелевого зазора вода заполняет водяную камеру 3 и выходит из кристаллизатора через патрубок 5. Далее из разливочной емкости в кристаллизатор подается расплав, который ударяется в затравку и поднимается вдоль поверхности трубы 1 с формированием корочки заготовки. После заполнения кристаллизатора расплавом и его затвердевания заготовка извлекается. Расход охлаждающей воды в кристаллизатор был заведомо выбран заниженным с целью исследования влияния течения воды в щелевом зазоре между внутренней и наружной стенками на качество получаемой заготовки из алюминиевого сплава. Длина полученной заготовки с учётом затравки составляет 380 мм. Сверху и снизу камеры высотой Н, равной 50 мм; внутренний диаметр dвн и наружный диаметр dнар стенки соответственно равны 74 мм и 80 мм; щелевой зазор dэ составляет от 2,5 до 3 мм; общая высота кристаллизатора Н равна 0,4 м; диаметр получаемой заготовки dз равен 66 мм; толщина внутренней стенки δ равна 0,004 м. Расход воды: V = 2 ∙ 1010-3 м3/мин = 33,3 ∙ 10-6 м3/с. Массовый секундный расход воды m ̇ = 33,2 ∙ 10-3 кг/с. Начальная температура воды tв1= 15 °С; максимальное значение температуры охлаждающей воды tв2=100 °С; среднее значение температуры воды t͞в = 58 °С, максимальный перепад температуры воды ∆tв = 85 °C.
+2. Подготовлен к разливке сплава кристаллизатор № 1 с испарительно -конденсационной системой охлаждения (двухконтурная система охлаждения) без механизма качания кристаллизатора (установлены термопары для измерения температуры стенок, воды, расплава, подключенные к сис-теме автоматического контроля параметров процесса). Поставленные цели: 
+1) Исследовать работу кристаллизатора с замкнутым испарительно-конденсационным контуром при разливке алюминиевого сплава и получения цилиндрической заготовки диаметром 62 мм; 
+2) Исследовать влияние термического сопротивления металлической вставки в кристаллизаторе на передачу теплового потока в двух режимах; 
+3) Исследовать влияние подвода расплава в кристаллизатор на качество поверхности цилиндрической заготовки.
+3. Выполнены расчеты затвердевания стали в существующем медном цилиндрическом кристаллизаторе диаметром 150 мм, охлаждаемом холодной водой, и в никелевом кристаллизаторе диаметром 150 мм с испарительно – конденсационной системой охлаждения в Ansys. Исследование затвердевания стального слитка выполнено в медном и никелевом кристаллизаторах с идеальным профилем. В расчете не учитывается тепловое расширение кристаллизаторов, т.к. их коэффициент линейного расширения был принят равным нулю, а также не учитывается влияние трения между корочкой слитка и поверхностью кристаллизатора. Выполнены расчеты перепадов температур и напряжений в металле заготовок № 1 и № 2 в начале процесса формирования корочки с учетом параметров процесса.
+Рассматривается расчет в Ansys затвердевания стали Ст.3 в цилиндрических кристаллизаторах № 1 (водоохлаждаемого, существующей конструкции с медной стенкой, Cu) и № 2 (с двухконтурной сис-темой охлаждения пароводяной смесью и никелевой стенкой, Ni) c идеальным профилем поверхности: диаметр получаемых заготовок d_з=0,15 м, температура заливки стали t_0=1520 ℃, температура ликвидус стали t_L  = 1509 ℃, температура солидус стали t_s  = 1509 ℃, скрытая теплота фазового перехода r =272 кДж/кг, удельная теплоемкость стали С = 762 Дж/(кг∙К), коэффициент теплопроводности стали λ= 35 Вт/(м∙К), перегрев стали ∆t_0= 11 ℃.
+4. Выполнен анализ напряжений в стальной корочке заготовки на основании метода анализа размерностей входящих величин (алгебраический метод Рэлея) и установлен критерий оценки механизма формирования корочки заготовки с учетом параметров процесса, получены  численные значения критерия при разливке металла в кристаллизатор № 1 и № 2. Выполнен анализ  критерия и его число-вых значений. Выполнен расчет напряжений в корочке алюминиевой заготовки по выражению, полученному с использованием алгебраического метода Рэлея.
+Рассматриваются напряжения, возникающие в корочке заготовки в начальный момент τ = 0..1 с затвердевания в цилиндрическом кристаллизаторе заливаемого расплава алюминия .  При анализе процесса принимаются следующие допущения: 
+1) усилие вытягивания заготовки не оказывает влияния на напряжения в верхней части корочки по причине отсутствия плотного контакта металла со стенкой кристаллизатора; 
+2) рассматривается корочка заготовки только в самой верхней части кристаллизатора; 
+3) толщина корочки ξ&lt;3 мм; 
+4) принимаем, что на корочку, в первую очередь, действует сила поверхностного натяжения расплава.
+Под коэффициентом поверхностного натяжения расплава на границе с корочкой металла понимается работа изотермического образования единицы площади поверхности. В случае ограничения поверхности расплава периметром смачивания величина поверхностного натяжения равна силе F, действующей на единицу периметра смачивания и направленной перпендикулярно к ней. При этом сила лежит в плоскости, касательной к свободной поверхности расплава. Свободная поверхность рас-плава, искривленная около стенок кристаллизатора, является мениском. Периметром смачивания является линия, по которой мениск пересекается со стенкой. Появление мениска связано с тем, что молекулы расплава взаимодействуют как друг с другом, так и с частицами твердого тела (корочкой). В случае выпуклого мениска (при краевом угле более π ∕2) расплав не смачивает стенку кристаллизатора, и результирующая сила F будет направлена в сторону расплава.
+Выполнен анализ основных параметров процесса, влияющих на напряжения в корочке заготовки, и установление их взаимосвязи для прогнозирования возникающих в корочке металла напряжений.
+Для установления взаимосвязи основных параметров процесса применяется алгебраический метод Рэлея (метод анализа размерностей). Выполнен анализ размерностей на примере задачи о напряжении в корочке заготовки. При этом успех зависит от правильности определения физических величин, влияющих на процесс. Напряжение в корочке металла σ, зависит от действующей силы (поверхностного натяжения), плотности металла, удельной теплоты кристаллизации металла, температуры t, удельной теплоемкости металла. В результате получается n = 5 различных размерных параметров, описывающих процесс.
+5. Выполнен расчет распределения температур в рабочей стенке кристаллизатора № 1 с двухконтурной системой охлаждения  для смеси и конденсата в программе NX FloEFD при установленной средней плотности теплового потока 0,5 МВт/м2. FLOEFD позволяет учитывать водяной пар среди текучих сред. Включение в состав  компонента Пар (Steam) позволяет моделировать процесс равновесной объемной конденсации водяного пара, находящегося  практически в чистом виде. Расчет выполняется как для развернутой плоской стенки с паропроводами и конденсатопроводом, так и для цилиндрической.
+Программа, основанная на методе конечных объёмов, позволяет проводить трёхмерные вычисления в области гидродинамики и анализировать показатели теплопередачи при стационарном и нестационарном процессах в сжимаемых и несжимаемых жидкостях с числами Маха меньше трех, исследовать течение водяного пара с конденсацией. Решение осуществляется относительно уравнений неразрывности среды, движения континуума и сохранения энергии.</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (4)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Стулов Вячеслав Викторович</strong> <span style="color:#71717a;font-size:0.8rem">Доктор технических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Иванов Андрей Владимирович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат технических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Шафиев Олег Михайлович</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Недобуга Павел Юрьевич</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li></ul>
+              
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

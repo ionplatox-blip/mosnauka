@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | МГТУ им. Баумана</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-bauman.html">МГТУ им. Баумана</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">Температура</span> <span class="tag">Теплообмен</span> <span class="tag">Биологические ткани</span> <span class="tag">Локальная криотерапия</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Медицинские комплексы, системы, приборы и аппараты терапевтического назначения</span></div>
+          <h1 style="font-size:1.5rem">Теплофизические основы индивидуализации локальной криотерапии для повышения эффективности восстановления биологических тканей</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">6,000 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225090218662-3</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2024-08-09 — 2025-06-30</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№1</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">2</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">РНФ</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>Российский научный фонд</div>
+                </div><div class="metric-box" style="text-align:left">
+                  <div class="label">Исполнитель</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">МГТУ ИМ. Н.Э. БАУМАНА</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>Локальная криотерапия (ЛКТ) - один из методов физиотерапевтического лечения и реабилитации, который основан на охлаждении участка биоткани с целью достижения эффектов обезболивания, уменьшения воспаления, отека при болезнях костно-мышечной системы, в травматологии, дерматологии и других областях.  На текущий момент, несмотря на применение на практике ЛКТ, медицинские работники действуют на основе своего опыта – нет единых протоколов и осознанного выбора и понимания финального результата лечения. С точки зрения теплообмена ЛКТ – это отвод теплоты от локального участка биоткани с последующим подводом из-за чего происходит процесс изменения температуры. Температуру возможно использовать как один из удобных показателей процесса лечения, контролируя который медицинский работник может осознанно понять и привязать тот или иной эффект. В рамках проекта решается задача создания и последующей валидации программы моделирования температурных полей в локальном участке биоткани с учетом особенностей самой биоткани, технических средств воздействия, что потенциально позволит получить достоверные знания и определить теплофизические основы индивидуализации локальной криотерапии.
+В рамках первого этапа выполнены запланированные работы и получены научные результаты:
+1) Актуализация анализа публикаций по тематике локального криотерапевтического воздействия на биоткани показала актуальность решаемой в рамках данного проекта задачи по созданию и последующей валидации программы моделирования температурных полей в локальном участке биоткани с учетом особенностей самой биоткани, технических средств воздействия, что потенциально позволит получить достоверные знания и определить теплофизические основы индивидуализации локальной криотерапии.
+2) Разработана обобщенная физико-математическая модель расчета температурных полей в целевой области биоткани при локальном криотерапевтическом воздействии. Отличие и особенность данной модели состоит в использовании геометрической трехмерной модели целевого локального участника биоткани – коленного сустава (на данном этапе), спроектированной на основе открытой базы данных, и ее доработка для возможности проведения численного моделирования с оптимизацией разбивки на конечные элементы, сопряжения элементов и т.д. и в возможности учета разных реальных режимов локального криотерапевтического воздействия, как для контактных, так и бесконтактных способов воздействия – разные технические средства воздействия.
+3) Определены характеристики технических средств воздействия (режимы) -значения базовых характеристик способов ЛКТ, которые возможно использовать в вычислительных исследованиях путем задания в виде граничных условий.   В случае контактных способов ЛКТ проанализированы имеющиеся данные, как собственных более ранних исследований, так и сторонних источников для воздействия криопакетами с различными рабочими средами, компрессионного охлаждения и средствами на основе эффекта Пельтье и выявлены значения температурного распределения на поверхности инструментов контактного воздействия. В случае бесконтактных способов ЛКТ аналогично был проведен анализ данных воздействия охлаждения парами азота, воздухом, спреями, гипербарическим распылением углекислого газа. Проведена серия физических экспериментов на подготовленном экспериментальном образце установки для воздушной локальной криотерапии и получены данные по значениям температур на выходе из насадки, расходу рабочей среды и других параметров. 
+4) Выявлены наиболее часто используемые целевые области для локальной криотерапии: коленный, тазобедренный, голеностопный, плечевой, локтевой суставы, область кисти. В рамках 1 этапа проекта было решено выбрать для исследований целевую область коленного сустава, как одну из самых актуальных по результатам актуализации анализа источников и консультаций с профильными практикующими врачами, а также на основе собственного опыта исполнителей проекта. Первоначальная база по геометрической форме и размерам для наиболее близкого воспроизведения взята из базы данных со свободным доступом и далее осуществлена доработка путем разработки ряда итераций модели для адаптации модели к программе моделирования.
+5) Разработана программа моделирования и проведена первая очередь вычислительных расчетных исследований по контактным и бесконтактным способам локального криотерапевтического воздействия на выбранную целевую область биоткани – коленный сустав. Расчеты ставились в той же постановке, как и модельные физические эксперименты, которые также были проведены в рамках данного этапа работы. Получены результаты в виде значений температур в контрольных точках целевой области (точки, в которых фиксировалась температура при проведении физических экспериментов), а также в виде изменения температурных полей по всей целевой области биоткани. Проведена работа по обработке экспериментальных и расчетных данных и далее сравнение по температурам в контрольных точках на коленном суставе.  Среднее абсолютное отклонение температуры не превышало 1,7 и 1,91 град. С, для контактного и бесконтактного способа соответственно. Результаты показывают работоспособность разработанной программы моделирования, но также показывают необходимость дальнейшей доработки для повышения точности расчетов. 
+6) Опубликованы результаты работы в сборнике статей по итогам международной конференции «2025 7th International Youth Conference on Radio Electronics, Electrical and Power Engineering (REEPE)», Moscow, Russian Federation (Scopus и др.), выполнено очное выступление в рамках данной конференции и принята к печати статья в журнале «Казанский медицинский журнал» (Scopus, RSCI и др.).</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (3)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Жидков Дмитрий Алексеевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат технических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Пушкарев Александр Васильевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат технических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Саакян Наталия Юрьевна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li></ul>
+              
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

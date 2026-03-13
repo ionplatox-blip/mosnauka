@@ -1,0 +1,1427 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>МОСНАУКА — Паспорт: Сеченовский Университет</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+      body { font-family: Inter, system-ui, sans-serif; background: #050505; color: white; }
+      .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.08); }
+      .mos-red { color: #ff003c; }
+      .mos-bg-red { background: #ff003c; }
+      .provenance-tag { font-size: 8px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.1em; padding: 2px 8px; border-radius: 4px; }
+      .tag-egisu { background: rgba(0, 120, 255, 0.1); color: #40a0ff; border: 1px solid rgba(0, 120, 255, 0.2); }
+      .tag-colab { background: rgba(255, 0, 60, 0.1); color: #ff4070; border: 1px solid rgba(255, 0, 60, 0.2); }
+      .tag-org { background: rgba(255, 255, 255, 0.05); color: #aaa; border: 1px solid rgba(255, 255, 255, 0.1); }
+
+      /* Section titles */
+      .section-header {
+        display: flex; align-items: center; justify-content: space-between;
+        padding: 0 0.5rem; margin-bottom: 1.5rem; margin-top: 3.5rem;
+      }
+      .section-title {
+        font-size: 1.5rem; font-weight: 900; text-transform: uppercase;
+        font-style: italic; letter-spacing: -0.02em;
+      }
+
+      /* Chunk 3: Lab cards */
+      .labs-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+        gap: 1.5rem;
+      }
+      /* Chunk 4: Scientists */
+      .sci-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 1rem;
+      }
+      .sci-card.hidden { display: none; }
+      .line-clamp-2 {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+      #sci-search {
+        background: rgba(255,255,255,0.04);
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 1rem;
+        padding: 0.75rem 1.25rem 0.75rem 2.75rem;
+        color: white;
+        font-size: 0.875rem;
+        width: 100%;
+        outline: none;
+        transition: border-color 0.2s;
+      }
+      #sci-search:focus {
+        border-color: rgba(255,0,60,0.5);
+      }
+      #sci-search::placeholder { color: rgba(255,255,255,0.25); }
+      /* Chunk 5: RID + Projects */
+      .rid-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 1rem;
+      }
+    </style>
+</head>
+<body>
+  <div class="min-h-screen bg-[radial-gradient(circle_at_top_left,rgba(255,0,60,0.12),transparent_25%),radial-gradient(circle_at_top_right,rgba(255,255,255,0.05),transparent_20%),linear-gradient(180deg,#050505,#0b0f16)]">
+
+    <!-- ═══ HEADER ═══ -->
+    <header class="sticky top-0 z-30 backdrop-blur-md border-b border-white/10 bg-black/40">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        <a class="text-2xl font-black italic tracking-tight uppercase hover:opacity-80 transition" href="index.html">
+          МОС<span class="mos-red">НАУКА</span>
+        </a>
+        <div class="flex items-center gap-4">
+          <span class="text-[10px] uppercase tracking-widest text-zinc-500 font-bold">Паспорт организации v2.0</span>
+          <a href="catalog.html" class="text-xs font-bold uppercase hover:text-red-500 transition">Реестр</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 py-10">
+
+      <!-- ═══ BREADCRUMBS ═══ -->
+      <div class="mb-10 flex items-center justify-between">
+        <div class="flex items-center gap-2 text-[10px] uppercase font-bold tracking-widest text-zinc-500">
+          <a href="index.html" class="hover:text-white">Главная</a>
+          <span>/</span>
+          <a href="catalog.html" class="hover:text-white">Реестр</a>
+          <span>/</span>
+          <span class="text-zinc-300">Сеченовский Университет</span>
+        </div>
+        <a href="catalog.html" class="px-5 py-2 border border-white/10 rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-white/5 transition">
+          ← К списку
+        </a>
+      </div>
+
+      <!-- ═══ HERO SECTION ═══ -->
+      <section class="glass rounded-[2.5rem] p-10 relative overflow-hidden mb-8">
+        <!-- Bg watermark -->
+        <div class="absolute top-0 right-0 p-8 opacity-5 pointer-events-none">
+          <img src="https://colab.ws/storage/images/gcPlnuNDpkAstH5zZDXWctBVlqRD7uiMrFY39E3I.png" class="w-64 h-64 grayscale invert" alt="">
+        </div>
+
+        <div class="relative z-10">
+          <!-- Identity -->
+          <div class="flex items-center gap-5 mb-6">
+            <div class="w-20 h-20 rounded-2xl bg-white p-2 flex items-center justify-center shrink-0">
+              <img src="https://colab.ws/storage/images/gcPlnuNDpkAstH5zZDXWctBVlqRD7uiMrFY39E3I.png" class="max-w-full max-h-full object-contain" alt="Сеченовский Университет logo">
+            </div>
+            <div>
+              <h1 class="text-3xl md:text-5xl font-black tracking-tight uppercase leading-tight mb-2">Сеченовский Университет</h1>
+              <p class="text-zinc-400 font-medium">Первый Московский государственный медицинский университет имени И. М. Сеченова</p>
+            </div>
+          </div>
+
+          <!-- Contact row -->
+          <div class="flex flex-wrap gap-6 mt-6">
+            <div class="flex items-center gap-2 text-zinc-400 text-sm">
+              <i class="ph ph-map-pin mos-red"></i>
+              <span>ул. Трубецкая, д.8, стр.2</span>
+            </div>
+            <a href="https://www.sechenov.ru/" target="_blank" class="flex items-center gap-2 text-zinc-300 text-sm hover:text-white transition">
+              <i class="ph ph-globe mos-red"></i>
+              <span>www.sechenov.ru</span>
+            </a>
+          </div>
+
+          <!-- Verified badge + Contact CTA -->
+          <div class="mt-6 flex flex-wrap gap-3 items-center">
+            <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-[11px] font-bold uppercase tracking-wide">
+              <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              Верифицировано МОСНАУКОЙ
+            </span>
+          </div>
+          <div class="mt-4 p-5 rounded-2xl bg-gradient-to-r from-red-500/20 to-red-500/5 border border-red-500/30 flex flex-wrap items-center justify-between gap-4">
+            <div>
+              <div class="text-sm font-bold">📨 Заинтересованы в сотрудничестве?</div>
+              <div class="text-[11px] text-zinc-400 mt-1">Направьте запрос на НИОКР, консультацию или партнёрство</div>
+            </div>
+            <div class="flex gap-2">
+              <a href="javascript:void(0)" onclick="openRequestModal('Запрос по Сеченовский Университет')" class="px-6 py-3 rounded-xl bg-red-500 text-white text-[11px] font-black uppercase tracking-wide hover:bg-red-600 transition inline-flex items-center gap-2 shadow-lg">
+                <i class="ph ph-envelope-simple"></i> Направить запрос
+              </a>
+              <a href="https://www.sechenov.ru/" target="_blank" class="px-5 py-3 rounded-xl bg-white/5 border border-white/10 text-[11px] font-bold uppercase text-zinc-400 hover:bg-white/10 transition inline-flex items-center gap-2">
+                <i class="ph ph-globe"></i> Сайт
+              </a>
+            </div>
+          </div>
+
+          <!-- ═══ METRICS ROW ═══ -->
+          <div class="grid grid-cols-2 md:grid-cols-5 gap-4 mt-10">
+            <a href="#section-labs" class="p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-white/30 transition cursor-pointer block">
+              <div class="text-[9px] uppercase font-black text-zinc-500 mb-1">Лаборатории</div>
+              <div class="text-3xl font-black italic">3</div>
+            </a>
+            <a href="#section-scientists" class="p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-white/30 transition cursor-pointer block">
+              <div class="text-[9px] uppercase font-black text-zinc-500 mb-1">Учёные</div>
+              <div class="text-3xl font-black italic">55</div>
+            </a>
+            <a href="#section-projects" class="p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-white/30 transition cursor-pointer block">
+              <div class="text-[9px] uppercase font-black text-zinc-500 mb-1">Проекты НИОКР</div>
+              <div class="text-3xl font-black italic">47</div>
+            </a>
+            <a href="#section-rid" class="p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-white/30 transition cursor-pointer block">
+              <div class="text-[9px] uppercase font-black text-zinc-500 mb-1">РИД</div>
+              <div class="text-3xl font-black italic">23</div>
+            </a>
+            <a href="#section-projects" class="p-4 rounded-2xl bg-red-500/5 border border-red-500/20 hover:border-red-500/40 transition cursor-pointer block">
+              <div class="text-[9px] uppercase font-black text-red-400/70 mb-1">Объём НИОКР</div>
+              <div class="text-3xl font-black italic mos-red">911 млн ₽</div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ CHUNK 2: About section ═══ -->
+      <section class="glass rounded-[2.5rem] p-10 mb-8">
+        <div class="flex items-center justify-between mb-6">
+          <h2 class="text-xl font-black uppercase italic tracking-tight">Об организации</h2>
+        </div>
+        <p class="text-[15px] text-zinc-300 leading-relaxed mb-6">«Сеченовский Университет» — ведущий научно-исследовательский центр, объединяющий 3 лабораторий и 55 учёных. Исследовательский профиль охватывает искусственный интеллект и вычислительное моделирование. Опубликовано свыше 660 научных работ, выполнено 47 проектов НИОКТР и зарегистрировано 23 результатов интеллектуальной деятельности.</p>
+        <details class="group">
+          <summary class="cursor-pointer text-sm font-bold text-red-400 hover:text-red-300 transition select-none flex items-center gap-2">
+            <i class="ph ph-caret-right text-xs transition-transform group-open:rotate-90"></i>
+            Подробнее об исследовательской деятельности
+          </summary>
+          <div class="mt-6 pt-6 border-t border-white/10">
+            <h3 class="text-zinc-200 text-sm font-bold uppercase tracking-wide mb-3 mt-0">Исследовательский профиль</h3><p class="text-zinc-400 text-sm mb-2">Научная деятельность сосредоточена в нескольких ключевых направлениях:</p><ul class="text-zinc-400 text-sm space-y-1 ml-4 mb-6 list-disc"><li><strong class="text-zinc-300">Искусственный интеллект и вычислительное моделирование</strong> — машинное обучение, искусственный интеллект</li></ul><h3 class="text-zinc-200 text-sm font-bold uppercase tracking-wide mb-3">Ключевые компетенции (по данным ЕГИСУ)</h3><div style="display:flex;flex-wrap:wrap;gap:0.4rem;margin-bottom:1.5rem"><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">кардиология <span style="color:#52525b">(9)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">база данных <span style="color:#52525b">(6)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">машинное обучение <span style="color:#52525b">(3)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">масс-спектрометрия <span style="color:#52525b">(3)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">лекарственные препараты, посттравматическое стрессовое расстройство, молекулярное моделирование, количественный анализ, экстракция, растительное сырье, контролируемые вещества, химический синтез <span style="color:#52525b">(2)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">доклинические исследования <span style="color:#52525b">(2)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">компьютерная томография <span style="color:#52525b">(2)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">системы поддержки принятия врачебных решений <span style="color:#52525b">(2)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">онкология <span style="color:#52525b">(2)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">искусственный интеллект <span style="color:#52525b">(2)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">ишемическая болезнь сердца <span style="color:#52525b">(2)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">зебрафиш <span style="color:#52525b">(2)</span></span></div><h3 class="text-zinc-200 text-sm font-bold uppercase tracking-wide mb-3">Ведущие лаборатории</h3><ul class="text-zinc-400 text-sm space-y-1 ml-4 mb-6 list-disc"><li>Группа природных полифенолов (5 сотр.)</li><li>Центр биофармацевтического анализа и метаболомных исследований (5 сотр.)</li><li>Лаборатория генетических технологий (4 сотр.)</li></ul><h3 class="text-zinc-200 text-sm font-bold uppercase tracking-wide mb-3">Ключевые заказчики НИОКР</h3><ul class="text-zinc-400 text-sm space-y-1 ml-4 mb-6 list-disc"><li><strong class="text-zinc-300">МИНОБРНАУКИ РОССИИ</strong> — 26 проектов</li><li><strong class="text-zinc-300">МИНЗДРАВ РОССИИ</strong> — 18 проектов</li></ul><h3 class="text-zinc-200 text-sm font-bold uppercase tracking-wide mb-3">Интеллектуальная собственность</h3><p class="text-zinc-400 text-sm mb-6">Портфель из 23 РИД: база данных — 18, программа для эвм — 2, полезная модель — 2, изобретение — 1.</p><h3 class="text-zinc-200 text-sm font-bold uppercase tracking-wide mb-3">Финансирование и результаты</h3><p class="text-zinc-400 text-sm">Суммарный объём финансирования: <strong class="text-white">910.7 млн руб.</strong> (47 проектов, по данным ЕГИСУ НИОКТР). По итогам проектов опубликовано 272 научных работ.</p>
+          </div>
+        </details>
+      </section>
+
+      <!-- ═══ TOP-3 FEATURED ═══ -->
+      <section class="glass rounded-[2.5rem] p-10 mb-8">
+        <h2 class="text-lg font-black uppercase italic tracking-tight mb-6">⭐ Ведущие лаборатории и учёные</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div>
+            <div class="text-[10px] uppercase font-black text-zinc-500 mb-3 tracking-widest">🏛️ Топ-3 лаборатории</div>
+            <div class="flex flex-col gap-3"><a href="sechenov/lab_000.html" class="glass rounded-2xl p-5 group hover:border-red-500/30 transition flex flex-col">
+          <div class="flex flex-wrap gap-1.5 mb-3"><span class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-[8px] uppercase font-bold text-zinc-500">Спектроскопия</span> <span class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-[8px] uppercase font-bold text-zinc-500">Хроматография</span></div>
+          <div class="text-sm font-bold group-hover:text-red-400 transition leading-snug mb-2">Группа природных полифенолов</div>
+          <div class="text-[10px] text-zinc-500 font-bold mt-auto">👥 5 учёных</div>
+        </a>
+<a href="sechenov/lab_001.html" class="glass rounded-2xl p-5 group hover:border-red-500/30 transition flex flex-col">
+          <div class="flex flex-wrap gap-1.5 mb-3"><span class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-[8px] uppercase font-bold text-zinc-500">Машинное обучение</span> <span class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-[8px] uppercase font-bold text-zinc-500">Метаболомика</span></div>
+          <div class="text-sm font-bold group-hover:text-red-400 transition leading-snug mb-2">Центр биофармацевтического анализа и метаболомных исследований</div>
+          <div class="text-[10px] text-zinc-500 font-bold mt-auto">👥 5 учёных</div>
+        </a>
+<a href="sechenov/lab_002.html" class="glass rounded-2xl p-5 group hover:border-red-500/30 transition flex flex-col">
+          <div class="flex flex-wrap gap-1.5 mb-3"><span class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-[8px] uppercase font-bold text-zinc-500">Биомедицина</span> <span class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-[8px] uppercase font-bold text-zinc-500">Вирусология</span></div>
+          <div class="text-sm font-bold group-hover:text-red-400 transition leading-snug mb-2">Лаборатория генетических технологий</div>
+          <div class="text-[10px] text-zinc-500 font-bold mt-auto">👥 4 учёных</div>
+        </a>
+</div>
+          </div>
+          <div>
+            <div class="text-[10px] uppercase font-black text-zinc-500 mb-3 tracking-widest">🏆 Топ-3 учёных</div>
+            <div class="flex flex-col gap-3"><a href="sechenov/sci_010.html" class="glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-3 items-center">
+          <img src="https://colab.ws/storage/images/NXtN2G6ZgBsJgba4HSCJk7557Nimo6eKle5IXYRt.jpg" class="w-12 h-12 rounded-xl object-cover border border-white/10" loading="lazy">
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Костюшев Дмитрий Сергеевич</div>
+            <div class="text-[10px] text-zinc-500 truncate">Лаборатория генетических технологий</div>
+            <div class="flex items-center gap-2 mt-1">
+              <span class="text-[9px] text-zinc-600">📚 20 публ.</span> 
+            </div>
+          </div>
+        </a>
+<a href="sechenov/sci_005.html" class="glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-3 items-center">
+          <img src="https://colab.ws/storage/images/OBIr49XHl4cVdDgmDJ7LLaOgHp1cB1DSJmsPkQnq.jpg" class="w-12 h-12 rounded-xl object-cover border border-white/10" loading="lazy">
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Апполонова Светлана Александровна</div>
+            <div class="text-[10px] text-zinc-500 truncate">Центр биофармацевтического анализа и метаболомных исследований</div>
+            <div class="flex items-center gap-2 mt-1">
+              <span class="text-[9px] text-zinc-600">📚 18 публ.</span> 
+            </div>
+          </div>
+        </a>
+<a href="sechenov/sci_007.html" class="glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-3 items-center">
+          <img src="https://colab.ws/storage/images/7XlzRZYyk04I93okmLE61CfIZ2dqLUAm3ENdWiZo.jpg" class="w-12 h-12 rounded-xl object-cover border border-white/10" loading="lazy">
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Наталья Москалева</div>
+            <div class="text-[10px] text-zinc-500 truncate">Центр биофармацевтического анализа и метаболомных исследований</div>
+            <div class="flex items-center gap-2 mt-1">
+              <span class="text-[9px] text-zinc-600">📚 18 публ.</span> 
+            </div>
+          </div>
+        </a>
+</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ TABS: Labs / Scientists ═══ -->
+      <div class="glass rounded-2xl p-4 mb-4" style="border:1px solid rgba(56,189,248,0.15);background:rgba(56,189,248,0.03)">
+        <div class="flex items-center gap-2 text-[10px] text-sky-400/70 font-bold uppercase">
+          <i class="ph ph-info"></i>
+          Показаны лаборатории и учёные, зарегистрированные на платформе CoLab. Фактическое число сотрудников может быть больше.
+        </div>
+      </div>
+      <div class="section-header" id="section-labs">
+        <div class="flex items-center gap-4">
+          <button id="tab-labs" onclick="switchTab('labs')" class="section-title" style="background:none;border:none;color:white;cursor:pointer;padding:0">🔬 Лаборатории (3)</button>
+          <button id="tab-sci" onclick="switchTab('sci')" class="text-lg font-black uppercase italic tracking-tight opacity-30 hover:opacity-60 transition" style="background:none;border:none;color:white;cursor:pointer;padding:0" id="section-scientists">🎓 Учёные (14)</button>
+        </div>
+        <span class="provenance-tag tag-colab">CoLab Data</span>
+      </div>
+
+      <!-- Labs panel -->
+      <div id="panel-labs">
+        <div class="text-sm text-zinc-400 mb-3" id="lab-counter">Показаны 3 из 3</div>
+        <div class="labs-grid" id="labs-container">
+          <div class="lab-item glass rounded-[2rem] p-8 hover:border-red-500/30 transition shadow-lg flex flex-col" data-idx="0" style="">
+          <div class="flex flex-wrap gap-2 mb-4"><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Спектроскопия</span><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Хроматография</span><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Фармация</span></div>
+          <a href="sechenov/lab_000.html" class="group">
+            <h3 class="text-lg font-bold mb-3 group-hover:text-red-400 transition leading-snug">Группа природных полифенолов</h3>
+          </a>
+          <p class="text-xs text-zinc-500 leading-relaxed mb-4 flex-1">Наша группа исследует природные полифенолы с целью разработки природных полифенолов. Комплексное изучение включает спектральные, хроматографические, б...</p>
+          <div class="mt-4 p-3 rounded-xl bg-black/40 border border-white/5">
+              <div class="text-[9px] uppercase font-black text-zinc-500 mb-1">Оборудование</div>
+              <div class="text-[11px] text-zinc-400 leading-snug">Лиофильная сушилка Biobase BK-FD12P Напольная сублимационная сушилка, широко используемая для концентрирования под вакуу</div>
+            </div>
+          <div class="mt-6 flex items-center justify-between pt-4 border-t border-white/5">
+            <span class="text-[10px] font-black uppercase text-zinc-500">👥 5 сотрудников</span>
+            
+          </div>
+          <div class="flex gap-2 mt-3">
+            <a href="sechenov/lab_000.html" class="flex-1 text-center px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-[9px] font-bold uppercase tracking-wide text-zinc-400 hover:bg-white/10 transition">Подробнее</a>
+            <a href="javascript:void(0)" onclick="openRequestModal('Связаться с лабораторией Группа природных полифенолов')" class="flex-1 text-center px-3 py-2 rounded-xl bg-red-500/10 border border-red-500/30 text-[9px] font-bold uppercase tracking-wide text-red-400 hover:bg-red-500/20 transition cursor-pointer">📨 Связаться</a>
+          </div>
+        </div>
+<div class="lab-item glass rounded-[2rem] p-8 hover:border-red-500/30 transition shadow-lg flex flex-col" data-idx="1" style="">
+          <div class="flex flex-wrap gap-2 mb-4"><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Машинное обучение</span><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Метаболомика</span><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Масс-спектрометрия</span></div>
+          <a href="sechenov/lab_001.html" class="group">
+            <h3 class="text-lg font-bold mb-3 group-hover:text-red-400 transition leading-snug">Центр биофармацевтического анализа и метаболомных исследований</h3>
+          </a>
+          <p class="text-xs text-zinc-500 leading-relaxed mb-4 flex-1">Фармакокинетика, таргетные метаболомные исследования, изучение метаболизма</p>
+          <div class="mt-4 p-3 rounded-xl bg-black/40 border border-white/5">
+              <div class="text-[9px] uppercase font-black text-zinc-500 mb-1">Оборудование</div>
+              <div class="text-[11px] text-zinc-400 leading-snug">Масс-спектрометр AmaZon SL (Bruker) в комплекте с ВЭЖХ (Thermo Scientific)</div>
+            </div>
+          <div class="mt-6 flex items-center justify-between pt-4 border-t border-white/5">
+            <span class="text-[10px] font-black uppercase text-zinc-500">👥 5 сотрудников</span>
+            
+          </div>
+          <div class="flex gap-2 mt-3">
+            <a href="sechenov/lab_001.html" class="flex-1 text-center px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-[9px] font-bold uppercase tracking-wide text-zinc-400 hover:bg-white/10 transition">Подробнее</a>
+            <a href="javascript:void(0)" onclick="openRequestModal('Связаться с лабораторией Центр биофармацевтического ана')" class="flex-1 text-center px-3 py-2 rounded-xl bg-red-500/10 border border-red-500/30 text-[9px] font-bold uppercase tracking-wide text-red-400 hover:bg-red-500/20 transition cursor-pointer">📨 Связаться</a>
+          </div>
+        </div>
+<div class="lab-item glass rounded-[2rem] p-8 hover:border-red-500/30 transition shadow-lg flex flex-col" data-idx="2" style="">
+          <div class="flex flex-wrap gap-2 mb-4"><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Биомедицина</span><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Вирусология</span><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Молекулярная биология</span></div>
+          <a href="sechenov/lab_002.html" class="group">
+            <h3 class="text-lg font-bold mb-3 group-hover:text-red-400 transition leading-snug">Лаборатория генетических технологий</h3>
+          </a>
+          <p class="text-xs text-zinc-500 leading-relaxed mb-4 flex-1">Генетическое редактирование, вирусные гепатиты, доставка лекарств, внутриклеточный иммунитет, эпитранскриптомика</p>
+          
+          <div class="mt-6 flex items-center justify-between pt-4 border-t border-white/5">
+            <span class="text-[10px] font-black uppercase text-zinc-500">👥 4 сотрудников</span>
+            
+          </div>
+          <div class="flex gap-2 mt-3">
+            <a href="sechenov/lab_002.html" class="flex-1 text-center px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-[9px] font-bold uppercase tracking-wide text-zinc-400 hover:bg-white/10 transition">Подробнее</a>
+            <a href="javascript:void(0)" onclick="openRequestModal('Связаться с лабораторией Лаборатория генетических техно')" class="flex-1 text-center px-3 py-2 rounded-xl bg-red-500/10 border border-red-500/30 text-[9px] font-bold uppercase tracking-wide text-red-400 hover:bg-red-500/20 transition cursor-pointer">📨 Связаться</a>
+          </div>
+        </div>
+        </div>
+        <div class="mt-4 text-center">
+          <button id="lab-more" onclick="showMore('lab-item', 'lab-more', 'lab-counter', 3, 3)" class="px-6 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-widest hover:bg-white/10 transition text-zinc-400">
+            Показать ещё 3
+          </button>
+        </div>
+      </div>
+
+      <!-- Scientists panel (hidden by default) -->
+      <div id="panel-sci" style="display:none">
+        <div class="text-sm text-zinc-400 mb-3" id="sci-counter">Показаны 3 из 14</div>
+        <div class="relative mb-6">
+          <i class="ph ph-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-zinc-500"></i>
+          <input id="sci-search" type="text" placeholder="Поиск по имени или области исследования...">
+          <div id="sci-count" class="absolute right-4 top-1/2 -translate-y-1/2 text-[10px] text-zinc-500 font-bold">14 учёных</div>
+        </div>
+        <div class="sci-grid" id="sci-grid">
+          <a href="sechenov/sci_000.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="селиванова ирина анатольевна" data-areas="полиморфизм природные полифенолы фармацевтическая химия органическая химия окислительный стресс drug discovery r&amp;d биотехнология медицинская химия супрамолекулярная химия antimicrobial resistance nanomaterials for biomedicine зеленая химия органический синтез квантово-механические расчеты рентгеноструктурный анализ" data-idx="0" style="">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/21gX38N7UiCbwZo2qsg2NgnPBGFMJqQxMucnG033.png" class="w-full h-full object-cover" alt="Селиванова Ирина Анатольевна" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Селиванова Ирина Анатольевна</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Группа природных полифенолов</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Полиморфизм, Природные полифенолы, Фармацевтическая химия, Органическая химия +12</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 10 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="sechenov/sci_001.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="роман терехов" data-areas="полиморфизм природные полифенолы фармацевтическая химия органическая химия drug discovery r&amp;d биотехнология медицинская химия окислительный стресс antimicrobial resistance nanomaterials for biomedicine зеленая химия органический синтез квантово-механические расчеты рентгеноструктурный анализ" data-idx="1" style="">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/veGfxkuURvKca5xEYNvXma1RkT44fqhcvMOAqMMQ.jpg" class="w-full h-full object-cover" alt="Роман Терехов" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Роман Терехов</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Группа природных полифенолов</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Полиморфизм, Природные полифенолы, Фармацевтическая химия, Органическая химия +11</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 7 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="sechenov/sci_002.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="артём свотин" data-areas="drug discovery r&amp;d биотехнология медицинская химия органическая химия фармацевтическая химия полиморфизм природные полифенолы вакцина вирусы клеточная биология промышленная биотехнология окислительный стресс" data-idx="2" style="">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/ul7HThkzuvdIGtWmyKUBYlbQO4cIuLdo668O5MJz.jpg" class="w-full h-full object-cover" alt="Артём Свотин" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Артём Свотин</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Группа природных полифенолов</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Drug discovery, R&amp;D, Биотехнология, Медицинская химия +9</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 1 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="sechenov/sci_003.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="денис панков" data-areas="органическая химия фармацевтическая химия полиморфизм природные полифенолы drug discovery r&amp;d биотехнология медицинская химия antimicrobial resistance nanomaterials for biomedicine зеленая химия органический синтез окислительный стресс квантово-механические расчеты рентгеноструктурный анализ" data-idx="3" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/i7wxTaRAEAy0LSef5yDdC9CMbcx299HIIQwynxXd.jpg" class="w-full h-full object-cover" alt="Денис Панков" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Денис Панков</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Группа природных полифенолов</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Органическая химия, Фармацевтическая химия, Полиморфизм, Природные полифенолы +11</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 3 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="sechenov/sci_004.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="вера оличева" data-areas="антиоксиданты медицинская химия полимеры окислительный стресс" data-idx="4" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/56IEt05MjwGbioLWKMMAE8NI42r0d37FLVgTaAWg.jpg" class="w-full h-full object-cover" alt="Вера Оличева" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Вера Оличева</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Группа природных полифенолов</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Антиоксиданты, Медицинская химия, Полимеры, Окислительный стресс</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 1 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="sechenov/sci_005.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="апполонова светлана александровна" data-areas="метаболизм метаболомика фармакокинетика биостатистика ветеринария доклинические исследования микробиология нефрология фелинология car-t клеточная терапия car-t терапия car-t-клетки covid-19 electrospinning mesenchymal stromal cells биопринтинг воспаление иммунотерапия интерактомика протеоформ клетки car-nk клеточная терапия онкоматрикс персонализированная медицина рак регенеративная медицина старение тканевая инженерия функционально градиентные скаффолды" data-idx="5" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/OBIr49XHl4cVdDgmDJ7LLaOgHp1cB1DSJmsPkQnq.jpg" class="w-full h-full object-cover" alt="Апполонова Светлана Александровна" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Апполонова Светлана Александровна</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Центр биофармацевтического анализа и метаболомных исследований</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Метаболизм, Метаболомика, Фармакокинетика, Биостатистика +24</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 18 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="sechenov/sci_006.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="павел маркин" data-areas="метаболомика метаболизм фармакокинетика биостатистика ветеринария доклинические исследования микробиология нефрология фелинология" data-idx="6" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/FLXxMeFOZgMp1dAveGmWpV0iNALYHcldCHMMKWRa.jpg" class="w-full h-full object-cover" alt="Павел Маркин" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Павел Маркин</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Центр биофармацевтического анализа и метаболомных исследований</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Метаболомика, Метаболизм, Фармакокинетика, Биостатистика +5</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 9 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="sechenov/sci_007.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="наталья москалева" data-areas="метаболизм метаболомика фармакокинетика биостатистика ветеринария доклинические исследования микробиология нефрология фелинология" data-idx="7" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/7XlzRZYyk04I93okmLE61CfIZ2dqLUAm3ENdWiZo.jpg" class="w-full h-full object-cover" alt="Наталья Москалева" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Наталья Москалева</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Центр биофармацевтического анализа и метаболомных исследований</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Метаболизм, Метаболомика, Фармакокинетика, Биостатистика +5</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 18 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="sechenov/sci_008.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="марк савицкий" data-areas="метаболомика фармакокинетика метаболизм биостатистика ветеринария доклинические исследования микробиология нефрология фелинология" data-idx="8" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">МС</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Марк Савицкий</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Центр биофармацевтического анализа и метаболомных исследований</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Метаболомика, Фармакокинетика, Метаболизм, Биостатистика +5</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 3 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="sechenov/sci_009.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="сабина басханова" data-areas="" data-idx="9" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/sav1IeJcCcp2NSRiVvyqUfvgVMLOZ54eniIz46qN.jpg" class="w-full h-full object-cover" alt="Сабина Басханова" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Сабина Басханова</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Центр биофармацевтического анализа и метаболомных исследований</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2"></div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 0 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="sechenov/sci_010.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="костюшев дмитрий сергеевич" data-areas="доставка лекарств инфекционные заболевания малые молекулы редактирование генов стволовые клетки экзосомы вирусология молекулярная биология молекулярная вирусология животные модели биохимия фармакология экспериментальная онкология активные формы кислорода вич адресная доставка лекарств генная терапия клеточная биология клеточная терапия молекулярная генетика редактирование генома 3d cell culture биоматериалы биотехнология биофотоника наноматериалы коллоидная химия кристаллография магнитные материалы нанотехнологии неорганическая химия персонализированная медицина супрамолекулярная химия химическая физика днк защитные покрытия для водородсодержащих соединений инкапсулирование и высвобождение водонерастворимых компонентов полимерные микро- и наноконтейнеры с контролируемыми свойствами получение и исследование биодеградируемых полиэлектролитных микрокапсул для различных биологически активных соединений умные материалы ферменты зеленые технологии метаповерхности нелинейная оптика оптика перовскиты светодиоды фотовольтаика фотодетекторы фотоника клеточное репрограммирование трансгенные и нокаутные животные магнитные наночастицы" data-idx="10" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/NXtN2G6ZgBsJgba4HSCJk7557Nimo6eKle5IXYRt.jpg" class="w-full h-full object-cover" alt="Костюшев Дмитрий Сергеевич" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Костюшев Дмитрий Сергеевич</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория генетических технологий</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Доставка лекарств, Инфекционные заболевания, Малые молекулы, Редактирование генов +49</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 20 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="sechenov/sci_011.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="анастасия костюшева" data-areas="вирусология молекулярная биология доставка лекарств инфекционные заболевания малые молекулы редактирование генов стволовые клетки экзосомы молекулярная вирусология животные модели биохимия фармакология экспериментальная онкология активные формы кислорода вич адресная доставка лекарств генная терапия клеточная биология клеточная терапия молекулярная генетика редактирование генома 3d cell culture биоматериалы биотехнология биофотоника наноматериалы зеленые технологии метаповерхности нанотехнологии нелинейная оптика оптика перовскиты светодиоды фотовольтаика фотодетекторы фотоника коллоидная химия кристаллография магнитные материалы неорганическая химия персонализированная медицина супрамолекулярная химия химическая физика днк защитные покрытия для водородсодержащих соединений инкапсулирование и высвобождение водонерастворимых компонентов полимерные микро- и наноконтейнеры с контролируемыми свойствами получение и исследование биодеградируемых полиэлектролитных микрокапсул для различных биологически активных соединений умные материалы ферменты клеточное репрограммирование трансгенные и нокаутные животные" data-idx="11" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/KvcAuXqUHxN7ftsZga4Bgwza4EqwyXGhMiG87L3l.jpg" class="w-full h-full object-cover" alt="Анастасия Костюшева" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Анастасия Костюшева</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория генетических технологий</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Вирусология, Молекулярная биология, Доставка лекарств, Инфекционные заболевания +48</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 13 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="sechenov/sci_012.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="сергей брезгин" data-areas="экзосомы доставка лекарств инфекционные заболевания малые молекулы редактирование генов стволовые клетки вирусология молекулярная биология молекулярная вирусология животные модели биохимия фармакология экспериментальная онкология активные формы кислорода вич адресная доставка лекарств генная терапия клеточная биология клеточная терапия молекулярная генетика редактирование генома 3d cell culture биоматериалы биотехнология биофотоника наноматериалы зеленые технологии метаповерхности нанотехнологии нелинейная оптика оптика перовскиты светодиоды фотовольтаика фотодетекторы фотоника коллоидная химия кристаллография магнитные материалы неорганическая химия персонализированная медицина супрамолекулярная химия химическая физика днк защитные покрытия для водородсодержащих соединений инкапсулирование и высвобождение водонерастворимых компонентов полимерные микро- и наноконтейнеры с контролируемыми свойствами получение и исследование биодеградируемых полиэлектролитных микрокапсул для различных биологически активных соединений умные материалы ферменты" data-idx="12" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/geLE8pyGQrw88FfgxVQ2tAv5XhWuJqQsBv4ZTkyc.jpg" class="w-full h-full object-cover" alt="Сергей Брезгин" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Сергей Брезгин</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория генетических технологий</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Экзосомы, Доставка лекарств, Инфекционные заболевания, Малые молекулы +46</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 14 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="sechenov/sci_013.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="андрей тихонов" data-areas="адресная доставка лекарств биохимия вирусология генная терапия клеточная биология клеточная терапия молекулярная биология молекулярная генетика редактирование генома доставка лекарств инфекционные заболевания малые молекулы редактирование генов стволовые клетки экзосомы фармакология экспериментальная онкология молекулярная вирусология животные модели" data-idx="13" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/47q8682MnHeT6WQlgVwtDmya1LwJqvmK8ja384JY.jpg" class="w-full h-full object-cover" alt="Андрей Тихонов" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Андрей Тихонов</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория генетических технологий</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Адресная доставка лекарств, Биохимия, Вирусология, Генная терапия +15</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 1 публ.</span>
+            </div>
+          </div>
+        </a>
+        </div>
+        <div class="mt-4 text-center">
+          <button id="sci-more" onclick="showMore('sci-card', 'sci-more', 'sci-counter', 14, 3)" class="px-6 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-widest hover:bg-white/10 transition text-zinc-400">
+            Показать ещё 3
+          </button>
+        </div>
+      </div>
+
+      <script>
+        // Tab switching
+        function switchTab(tab) {
+          document.getElementById('panel-labs').style.display = tab === 'labs' ? '' : 'none';
+          document.getElementById('panel-sci').style.display = tab === 'sci' ? '' : 'none';
+          document.getElementById('tab-labs').style.opacity = tab === 'labs' ? '1' : '0.3';
+          document.getElementById('tab-sci').style.opacity = tab === 'sci' ? '1' : '0.3';
+        }
+        // Scientist search
+        (function() {
+          const input = document.getElementById('sci-search');
+          const grid = document.getElementById('sci-grid');
+          const counter = document.getElementById('sci-count');
+          if (!input || !grid) return;
+          const cards = grid.querySelectorAll('.sci-card');
+          input.addEventListener('input', function() {
+            const q = this.value.toLowerCase().trim();
+            let visible = 0;
+            cards.forEach(c => {
+              const name = c.dataset.name || '';
+              const areas = c.dataset.areas || '';
+              const match = !q || name.includes(q) || areas.includes(q);
+              c.classList.toggle('hidden', !match);
+              if (match) visible++;
+            });
+            counter.textContent = visible + ' учёных';
+          });
+        })();
+      </script>
+
+      <!-- ═══ CHUNK 5: Projects ═══ -->
+      <div class="section-header" id="section-projects">
+        <h2 class="section-title">💼 Проекты НИОКР (47)</h2>
+        <span class="provenance-tag tag-egisu">ЕГИСУ</span>
+      </div>
+      <section class="glass rounded-[2.5rem] overflow-hidden mb-8">
+        <div class="p-6 border-b border-white/10 flex items-center justify-between">
+          <span class="text-sm text-zinc-400" id="proj-counter">Показаны 5 из 47</span>
+          <a href="sechenov/projects.html" class="text-xs font-bold text-red-400 hover:text-red-300 transition uppercase">Все проекты →</a>
+        </div>
+        <div id="proj-list"><a href="sechenov/proj_0000.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="0">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Создание методологической системы мониторинга и паспорта нормальной микробиоты населения средней полосы России и регионо</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Основные этапы исследования:
+1.	Экстракция ДНК
+2.	Подготовка библиотеки: фрагментация ДНК, добавлени...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">МИКРОБИОМ, МИКРОБИОТА, ЦИРРОЗ, ВЫСОКОПРОИЗВОДИТЕЛЬНОЕ СЕКВЕНИРОВАНИЕ, БИОИНФОРМАТИКА</span>
+            <span class='text-[10px] text-zinc-600'>| МИНЗДРАВ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">6,889 тыс. ₽</span>
+          </div>
+        </a>
+<a href="sechenov/proj_0001.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="1">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Разработка лекарственного препарата для лечения раневых и воспалительных процессов на основе биоразлагаемых полимерных к</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Объектом исследования является лекарственное средство на основе биодеградируемого модифицированного ...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">ЛЕКАРСТВЕННЫЙ ПРЕПАРАТ, ЛЕЧЕНИЕ РАНЕВЫХ И ВОСПАЛИТЕЛЬНЫХ ПРОЦЕССОВ, САНАЦИЯ РАНЕВОГО КАНАЛА, РЕГЕНЕРАЦИЯ ТКАНЕЙ, ПОЛИСАХАРИДНАЯ БИОРАЗЛАГАЕМАЯ ОСНОВА</span>
+            <span class='text-[10px] text-zinc-600'>| МИНЗДРАВ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">6,614 тыс. ₽</span>
+          </div>
+        </a>
+<a href="sechenov/proj_0002.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="2">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Разработка и внедрение отечественного технологического решения на основе искусственного интеллекта в качестве инструмент</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Во многих экономически развитых странах мира рак легкого (РЛ) является самым распространенным онколо...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">РАК, КАРЦИНОМА, ЗЛОКАЧЕСТВЕННАЯ ОПУХОЛЬ, ИСКУССТВЕННЫЙ ИНТЕЛЛЕКТ, МАШИННОЕ ОБУЧЕНИЕ, ВИЗУАЛИЗАЦИОННЫЕ ИССЛЕДОВАНИЯ, ТЕХНОЛОГИЧЕСКАЯ ПЛАТФОРМА</span>
+            <span class='text-[10px] text-zinc-600'>| МИНЗДРАВ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">14,179 тыс. ₽</span>
+          </div>
+        </a>
+<a href="sechenov/proj_0003.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="3">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">&quot;Средства доставки препаратов&quot; наименование НИОКТР: &quot;Разработка средств доставки генотерапевтических препаратов и генети</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Были получены секретируемые биологические наночастицы (экзосомы), и проведено сравнение их характери...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">прогностические биомаркеры, наночастицы, химиопрепараты, crispr/cas, Гепатит</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2023</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">35,134 тыс. ₽</span>
+          </div>
+        </a>
+<a href="sechenov/proj_0004.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="4">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Микробиота и метаболом человека как регулируемые индикаторы здоровья, долголетия и практики персонализированной медицины</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Объект исследования – пациенты с декомпенсированным циррозом печени.
+Целью данной научно-исследовате...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">ЦИРРОЗ ПЕЧЕНИ, ПРОБИОТИКИ, ПРОГНОЗ, КАЧЕСТВО ЖИЗНИ, ОСЬ КИШКА-ПЕЧЕНЬ</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2023</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">4,553 тыс. ₽</span>
+          </div>
+        </a>
+<a href="sechenov/proj_0005.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="5">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Азотосодержащие гетероциклы в основе инновационной молекулярно-направленной терапии неоплазий: от молекулы к кандидату в</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Объектом исследования являлись азотосодержащие гетероциклических соединения, синтезированные в ОАО В...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">ПРОТИВООПУХОЛЕВАЯ АКТИВНОСТЬ, ОСТРАЯ ТОКСИЧНОСТЬ, ОРГАНОИДЫ, ЛХТ-123, ЛХТ-17-19</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2023</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">2,960 тыс. ₽</span>
+          </div>
+        </a>
+<a href="sechenov/proj_0006.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="6">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Профилактическое и терапевтическое использование экзосом регуляторных Т-клеток на модели рассеянного склероза и псориаза</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Объектом исследования являются экзосомы регуляторных Т-клеток и мультипотентных мезенхимных стромаль...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">МУЛЬТИПОТЕНТНЫЕ МЕЗЕНХИМНЫЕ СТРОМАЛЬНЫЕ КЛЕТКИ, РЕГУЛЯТОРНЫЕ Т-КЛЕТКИ, ЭКЗОСОМЫ, АУТОИММУННЫЙ ЭНЦЕФАЛОМИЕЛИТ, АУТОИММУННЫЙ ПСОРИАЗ</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2023</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">10,000 тыс. ₽</span>
+          </div>
+        </a>
+<a href="sechenov/proj_0007.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="7">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Лаборатория молекулярного моделирования и химии природных соединений. (заключительный) этап 2</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Целью данного проекта является разработка эффективного лекарственного средства для лечения посттравм...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">Лекарственные препараты, посттравматическое стрессовое расстройство, молекулярное моделирование, количественный анализ, экстракция, растительное сырье, контролируемые вещества, химический синтез</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">41,833 тыс. ₽</span>
+          </div>
+        </a>
+<a href="sechenov/proj_0008.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="8">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Стратегические направления развития респираторной медицины</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Исследование состоит из 4 основных направлений по наиболее актуальным проблемам современной респират...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">ЛЕГОЧНАЯ ГИПЕРТЕНЗИЯ, БРОНХИАЛЬНАЯ АСТМА, ИНТЕРСТИЦИАЛЬНЫЕ ЗАБОЛЕВАНИЯ ЛЕГКИХ, ХРОНИЧЕСКАЯ ОБСТРУКТИВНАЯ БОЛЕЗНЬ ЛЕГКИХ, ПРИБОР</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2023</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">5,243 тыс. ₽</span>
+          </div>
+        </a>
+<a href="sechenov/proj_0009.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="9">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Разработка модели для высокопроизводительного скрининга препаратов против лейшманиоза на основе трансгенных лейшманий. (</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Лейшманиоз – заболевание, вызываемое простейшими паразитами рода Leishmania. Заболевание передается ...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">LEISHMANIA MEXICANA LEISHMANIA DONOVANI, LEISHMANIA MAJOR, КУЛЬТИВИРОВАНИЕ, ЭЛЕКТРОПОРАЦИЯ, СКРИНИНГ</span>
+            <span class='text-[10px] text-zinc-600'>| МИНЗДРАВ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">7,669 тыс. ₽</span>
+          </div>
+        </a>
+<a href="sechenov/proj_0010.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="10">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">ОТЧЕТ О НАУЧНО-ИССЛЕДОВАТЕЛЬСКОЙ РАБОТЕ МАКРОМОЛЕКУЛЯРНЫЙ ДИЗАЙН ПОЛИМЕРНЫХ МАТЕРИАЛОВ МЕДИЦИНСКОГО И ТЕХНИЧЕСКОГО НАЗНА</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Объектами исследования являются дизайн и синтез агентов обратимой передачи цепи (ОПЦ-агенты), катион...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">п-МЕТОКСИСТИРОЛ, DFT РАСЧЕТЫ, ТРАНСФОРМАЦИЯ МЕХАНИЗМА, БЛОК-СОПОЛИМЕРИЗАЦИЯ, КОНТРОЛИРУЕМАЯ ПОЛИМЕРИЗАЦИЯ</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">100,000 тыс. ₽</span>
+          </div>
+        </a>
+<a href="sechenov/proj_0011.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="11">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Применение масс-спектрометрии и эмиссионной спектрометрии выдыхаемого воздуха для стратификации риска сердечно-сосудисты</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Настоящая научно-исследовательская работа направлена на развитие методов неинвазивного исследования ...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">ВЫДЫХАЕМЫЙ ВОЗДУХ, СЕРДЕЧНО-СОСУДИСТЫЕ ЗАБОЛЕВАНИЯ, ВОЛАТОМ, МАСС-СПЕКТРОМЕТРИЯ, PROTON TRANSFER REACTION, TOF</span>
+            <span class='text-[10px] text-zinc-600'>| МИНЗДРАВ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">6,529 тыс. ₽</span>
+          </div>
+        </a>
+<a href="sechenov/proj_0012.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="12">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Научная школа по выявлению новых молекулярных мишеней и созданию первых в классе лекарственных средств</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Лекарственные препараты, относящиеся к первым в классе, являются наиболее высокотехнологичными проду...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">ИНГИБИТОР, КАТЕПСИН, ПРОТЕИНАЗА, СИГНАЛЬНЫЙ ПУТЬ, МОЛЕКУЛЯРНАЯ МИШЕНЬ</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2023</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">3,808 тыс. ₽</span>
+          </div>
+        </a>
+<a href="sechenov/proj_0013.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="13">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Отчет о научно исследовательской работе Научная школа витилиго (промежуточный). Программа стратегического академического</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Витилиго представляет собой депигментирующее состояние кожи, характеризующееся истощением специфичес...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">ИММУНОСУПРЕССИВНАЯ ТЕРАПИЯ ВИТИЛИГО, МИКРОНИДЛИНГ, АЗАТИОПРИН, МЕТОТРЕКСАТ, ВИТИЛИГО</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2023</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">3,344 тыс. ₽</span>
+          </div>
+        </a>
+<a href="sechenov/proj_0014.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="14">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Разработка лекарственного средства для комбустиологии на основе продуцируемых стволовыми клетками нановезикул. (Промежут</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Объектом исследования являются мультипотентные мезенхимные стволовые/стромальные клетки (МСК) челове...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">СТВОЛОВЫЕ КЛЕТКИ, МУЛЬТИПОТЕНТНЫЕ МЕЗЕНХИМНЫЕ СТВОЛОВЫЕ/СТРОМАЛЬНЫЕ КЛЕТКИ, ВНЕКЛЕТОЧНЫЕ ВЕЗИКУЛЫ, НАНОВЕЗИКУЛЫ, СЕКРЕТОМ, ОЖОГИ, ЗАЖИВЛЕНИЕ</span>
+            <span class='text-[10px] text-zinc-600'>| МИНЗДРАВ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">6,889 тыс. ₽</span>
+          </div>
+        </a>
+<a href="sechenov/proj_0015.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="15">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Научная школа улучшения качества жизни пациента путем имплементации инновационных имплантационных технологий в хирургиче</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Патологические состояния височно-нижнечелюстного сустава (ВНЧС), требующие реконструктивного лечения...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">ВИСОЧНО-НИЖНЕЧЕЛЮСТНОЙ СУСТАВ, ЭНДОПРОТЕЗИРОВАНИЕ ВИСОЧНО-НИЖНЕЧЕЛЮСТНОГО СУСТАВА, 3D-ВИРТУАЛЬНОЕ ПЛАНИРОВАНИЕ ОПЕРАЦИЙ, 3D-ПРОТОТИПИРОВАНИЕ, 3D-ПЕЧАТЬ</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2023</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">2,300 тыс. ₽</span>
+          </div>
+        </a>
+<a href="sechenov/proj_0016.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="16">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">ИЗУЧЕНИЕ ПРОЦЕССА (СО)ПОЛИМЕРИЗАЦИИ С УЧАСТИЕМ ОПЦ-АГЕНТОВ ВИНИЛГЛИЦИДИЛОВЫХ ЭФИРОВ ЭТИЛЕНГЛИКОЛЯ</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Отчет 92 стр., 144 рис., 1 табл., 26 источников.
+Цель работы - оценка реакционной способности винило...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">КВАНТОВО-ХИМИЧЕСКИЕ РАСЧЕТЫ, ЭЛЕКТРОНОДОНОРНЫЕ РАСТВОРИТЕЛИ, АГЕНТЫ ОБРАТИМОЙ ПЕРЕДАЧИ ЦЕПИ, РАДИКАЛЬНАЯ ПОЛИМЕРИЗАЦИЯ, КАТИОННАЯ ПОЛИМЕРИЗАЦИЯ</span>
+            
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">2,000 тыс. ₽</span>
+          </div>
+        </a>
+<a href="sechenov/proj_0017.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="17">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Системная органопротекция оксидом азота с использованием отечественного аппарата «ТИАНОКС» при анестезиологическом обесп</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Объект исследования - применение ингаляционного оксида азота в качестве органопротективной терапии п...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">ОКСИД АЗОТА, ТИАНОКС, ЭХО-КГ, ТРОПОНИН,  ОРГАНОПРОТЕКЦИЯ</span>
+            <span class='text-[10px] text-zinc-600'>| МИНЗДРАВ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">8,203 тыс. ₽</span>
+          </div>
+        </a>
+<a href="sechenov/proj_0018.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="18">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Отчет по соглашению № 075-15-2023-377 (Приоритет-2030) на тему: &quot;Разработка технологической платформы для получения Т-ли</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Цель работы – разработка технологии дизайна Т-клеточных рецепторов (TCR) человека, специфичных проти...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">TCR-T-КЛЕТКИ, ЛЕНТИВИРУСНЫЕ ВЕКТОРЫ, ТРАНСДУКЦИЯ, КСЕНОГРАФТНЫЕ МОДЕЛИ, ОПУХОЛЕВЫЙ РОСТ</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2023</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">12,996 тыс. ₽</span>
+          </div>
+        </a>
+<a href="sechenov/proj_0019.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="19">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Удаленный цифровой мониторинг пациентов с сердечной недостаточностью различной этиологии на основе прогнозирования течен</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Объект исследования – пациенты, страдающие хронической сердечной недостаточностью различной этиологи...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">ПЕРСОНАЛЬНЫЙ МЕССЕНДЖЕР, ПОЛНОЭКЗОМНОЕ СЕКВЕНИРОВАНИЕ, МИОКАРДИТ, УДАЛЕННЫЙ МОНИТОРИНГ, СЕРДЕЧНАЯ НЕДОСТАТОЧНОСТЬ</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2023</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">1,585 тыс. ₽</span>
+          </div>
+        </a>
+<a href="sechenov/proj_0020.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="20">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Разработка композитных мембран на основе коллагена для направленной регенерации тканей в стоматологии. (Промежуточный).</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Объектом исследования являются композитные мембраны на основе коллагена и лактоферрина, предназначен...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">РЕГЕНЕРАТИВНАЯ МЕДИЦИНА, КОЛЛАГЕН, ТКАНЕВАЯ ИНЖЕНЕРИЯ, БАРЬЕРНАЯ МЕМБРАНА, СТОМАТОЛОГИЯ, ЛАКТОФЕРРИН, НАПРАВЛЕННАЯ РЕГЕНЕРАЦИЯ, ЭЛЕКТРОФОРЕТИЧЕСКОЕ ОСАЖДЕНИЕ</span>
+            <span class='text-[10px] text-zinc-600'>| МИНЗДРАВ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">11,008 тыс. ₽</span>
+          </div>
+        </a>
+<a href="sechenov/proj_0021.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="21">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Разработка гибких биоэлектронных систем для сенсорики и стимуляции в медицине. (Промежуточный).</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Объект исследования – разработка методик и способов изготовления матрицы электродов на основе гибких...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">БИОСЕНСОРИКА, БИОЭЛЕКТРОНИКА, ГИБКАЯ ЭЛЕКТРОНИКА, БИОСОВМЕСТИМЫЙ ИМПЛАНТАТ, СТИМУЛЯЦИЯ МОЗГА, МУЛЬТИЭЛЕКТРОДНАЯ СТРУКТУРА</span>
+            <span class='text-[10px] text-zinc-600'>| МИНЗДРАВ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">6,147 тыс. ₽</span>
+          </div>
+        </a>
+<a href="sechenov/proj_0022.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="22">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Отчет по соглашению № 075-15-2023-377  (Приоритет-2030)  на тему: «Математическое моделирование для оптимизации программ</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>В данном проекте создаются и разрабатываются новые методы и подходы математического моделирования дл...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">МАТЕМАТИЧЕСКОЕ МОДЕЛИРОВАНИЕ, ФАРМАКОМЕТРИКА, АНАЛИЗ ДАННЫХ, ФАРМАКОКИНЕТИКА, ФАРМАКОДИНАМИКА</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2023</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">3,118 тыс. ₽</span>
+          </div>
+        </a>
+<a href="sechenov/proj_0023.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="23">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">&quot;Разработка методов биофотоники для решения задач клинической диагностики в области ортопедии и стоматологии наименовани</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Цель работы - разрабтка методов диагностики патологического состояния тканей человека с использовани...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">диагностический метод, спектроскопия, диффузное отражение, стоматология, Ортопедия</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2023</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">31,567 тыс. ₽</span>
+          </div>
+        </a>
+<a href="sechenov/proj_0024.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="24">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Гидрогелевые биоэквиваленты для тканевой инженерии мягких тканей. (Промежуточный).</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Объектом исследования является являются гидрогели с настраиваемыми механическими свойствами и порист...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">РЕГЕНЕРАТИВНАЯ МЕДИЦИНА, ТКАНЕВАЯ ИНЖЕНЕРИЯ, ГИДРОГЕЛЬ, БИОМАТЕРИАЛЫ, МЕХАНИЧЕСКИЕ СВОЙСТВА, МЯГКИЕ ТКАНИ</span>
+            <span class='text-[10px] text-zinc-600'>| МИНЗДРАВ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">6,529 тыс. ₽</span>
+          </div>
+        </a>
+<a href="sechenov/proj_0025.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="25">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Формирование тканеинженерных биоэквивалентов печени методом трехмерного биопринтинга. (Заключительный).</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Объектом исследования являются конструкты, полученные методом экструзионной биопечати и состоящие из...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">ТКАНЕВАЯ ИНЖЕНЕРИЯ, БИОПРИНТИНГ, ПЕЧЕНЬ, ТКАНЕВОЙ ЭКВИВАЛЕНТ, ГЕПАТОЦИТЫ, ПЕЧЕНОЧНАЯ НЕДОСТАТОЧНОСТЬ</span>
+            <span class='text-[10px] text-zinc-600'>| МИНЗДРАВ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">6,529 тыс. ₽</span>
+          </div>
+        </a>
+<a href="sechenov/proj_0026.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="26">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Разработка системы мониторинга активности пациентов с двигательной дисфункцией (промежуточный).</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Объект исследования – система мониторинга активности пациентов с двигательной дисфункцией.
+Цель рабо...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">БИОМЕДИЦИНСКИЕ ДАТЧИКИ, ПЕРСОНАЛИЗИРОВАННОЕ ЗДРАВООХРАНЕНИЕ, БИОМЕДИЦИНСКИЕ НАНОТЕХНОЛОГИИ, СЕНСОРЫ ДЛЯ МЕДИЦИНЫ, МОНИТОРИНГ ФИЗИЧЕСКОЙ АКТИВНОСТИ, 3D ПРИНТИНГ БИОСОВМЕСТИМЫХ МАТЕРИАЛОВ, УГЛЕРОДНЫЕ ТЕНЗОЧУВСТВИТЕЛЬНЫЕ МАТЕРИАЛЫ, БИОЭЛЕКТРОНИКА</span>
+            <span class='text-[10px] text-zinc-600'>| МИНЗДРАВ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">6,147 тыс. ₽</span>
+          </div>
+        </a>
+<a href="sechenov/proj_0027.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="27">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Разработка системы жидкостной биопсии для мониторинга ответа на терапию и прогрессии рака легкого. (Промежуточный).</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Рак легкого (РЛ) - распространенное онкологическое заболевание (в России на РЛ приходится около 10% ...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">РАК ЛЕГКОГО, ЖИДКОСТНАЯ БИОПСИЯ, ПОЛНОЭКЗОМНОЕ ПРОФИЛИРОВАНИЕ, ГЕНЕТИЧЕСКИЕ ТЕХНОЛОГИИ, ПЕРСОНАЛИЗИРОВАННАЯ МЕДИЦИНА</span>
+            <span class='text-[10px] text-zinc-600'>| МИНЗДРАВ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">8,012 тыс. ₽</span>
+          </div>
+        </a>
+<a href="sechenov/proj_0028.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="28">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Научная школа молекулярной аллергологии и иммунологии</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Цель проекта - получение и описание аллергокомпонетов эпидермальных аллергенов, а также биомаркеров ...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">АЛЛЕРГИЧЕСКИЕ ЗАБОЛЕВАНИЯ, АЛЛЕРГЕН, АЛЛЕРГОЧИП, МОЛЕКУЛЯРНАЯ АЛЛЕРГОДИАГНОСТИКА, АЛЛЕРГОКОМПОНЕНТЫ</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2023</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">2,520 тыс. ₽</span>
+          </div>
+        </a>
+<a href="sechenov/proj_0029.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="29">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Научная школа Института урологии и репродуктивного здоровья человека</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Объектом исследования данной разработки являются пациенты с опухолевым поражением почек как злокачес...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">ИНТЕЛЛЕКТУАЛЬНЫЙ АНАЛИЗ, 3D ТЕХНОЛОГИИ, РАК ПОЧКИ, КОМПЬЮТЕРНАЯ ТОМОГРАФИЯ, 5П-МЕДИЦИНА</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2023</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">3,399 тыс. ₽</span>
+          </div>
+        </a>
+</div>
+        <div class="p-4 text-center">
+          <button id="proj-more" onclick="showMore('proj-item', 'proj-more', 'proj-counter', 47)" class="px-6 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-widest hover:bg-white/10 transition text-zinc-400">
+            Показать ещё 5
+          </button>
+        </div>
+      </section>
+
+      <!-- ═══ RID Section ═══ -->
+      <div class="section-header" id="section-rid">
+        <h2 class="section-title">🧬 Результаты интеллектуальной деятельности (23)</h2>
+        <span class="provenance-tag tag-egisu">ЕГИСУ</span>
+      </div>
+      <div class="rid-grid mb-6">
+        <div class="glass rounded-2xl p-5 text-center">
+          <div class="text-2xl mb-2">🗄️</div>
+          <div class="text-2xl font-black italic">18</div>
+          <div class="text-[10px] uppercase font-bold text-zinc-500 mt-1">База данных</div>
+        </div>
+<div class="glass rounded-2xl p-5 text-center">
+          <div class="text-2xl mb-2">💻</div>
+          <div class="text-2xl font-black italic">2</div>
+          <div class="text-[10px] uppercase font-bold text-zinc-500 mt-1">Программа для ЭВМ</div>
+        </div>
+<div class="glass rounded-2xl p-5 text-center">
+          <div class="text-2xl mb-2">⚙️</div>
+          <div class="text-2xl font-black italic">2</div>
+          <div class="text-[10px] uppercase font-bold text-zinc-500 mt-1">Полезная модель</div>
+        </div>
+<div class="glass rounded-2xl p-5 text-center">
+          <div class="text-2xl mb-2">💡</div>
+          <div class="text-2xl font-black italic">1</div>
+          <div class="text-[10px] uppercase font-bold text-zinc-500 mt-1">Изобретение</div>
+        </div>
+
+      </div>
+      <section class="glass rounded-[2.5rem] overflow-hidden mb-8">
+        <div class="p-6 border-b border-white/10 flex items-center justify-between">
+          <span class="text-sm text-zinc-400" id="rid-counter">Показаны 5 из 23</span>
+          <a href="sechenov/rid_list.html" class="text-xs font-bold text-red-400 hover:text-red-300 transition uppercase">Все РИД →</a>
+        </div>
+        <div id="rid-list"><a href="sechenov/rid_0000.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="0">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💻</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">Программное обеспечение для повышения диагностической точности стресс электрокардиографического тест</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Разработанное программное обеспечение предназначено для повышения диагностическо...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Программа для ЭВМ</span>
+                <span class='text-[10px] text-zinc-600'>| летучие органические соединения, ишемическая болезнь сердца, масс-спектрометрия</span>
+                <span class='text-[10px] text-zinc-600'>| МИНЗДРАВ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="sechenov/rid_0001.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="1">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">🗄️</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">База данных результатов анализа уровней циркулирующих регуляторных РНК у пациентов с атеросклерозом </div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>База данных результатов анализа уровней циркулирующих регуляторных РНК у пациент...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">База данных</span>
+                <span class='text-[10px] text-zinc-600'>| кардиология, атеросклероз</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="sechenov/rid_0002.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="2">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">🗄️</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">База данных волатома пациентов без индуцируемой ишемии миокарда, согласно результатам компьютерной т</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>База данных представлена данными 44 пациентов европеоидной расы без индуцируемог...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">База данных</span>
+                <span class='text-[10px] text-zinc-600'>| Волатом, отсутствие индуцируемой ишемии миокарда, масс-спектрометрия,  отсутствие дефекта перфузии миокарда, база данных</span>
+                <span class='text-[10px] text-zinc-600'>| МИНЗДРАВ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="sechenov/rid_0003.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="3">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">🗄️</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">База данных, содержащая психолого-психиатрические стандартизированные опросники и шкалы, показывающи</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>База данных, содержащая психолого-психиатрические стандартизированные опросники ...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">База данных</span>
+                <span class='text-[10px] text-zinc-600'>| кардиология, соматопсихические акцентуации, база данных</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="sechenov/rid_0004.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="4">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">🗄️</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">База данных результатов фотоплетизмографии и электрокардиографии, выполненной в I стандартном отведе</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>База данных результатов фотоплетизмографии и электрокардиографии, выполненной в ...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">База данных</span>
+                <span class='text-[10px] text-zinc-600'>| электрокардиостимулятор, портативный ЭКГ-регистратор, кардиология</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="sechenov/rid_0005.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="5">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">🗄️</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">База данных для определения кардиотоксичности с помощью метаболомных биомаркеров различных лекарстве</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>База данных содержит данные об исследованиях кардиотоксичности различных лекарст...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">База данных</span>
+                <span class='text-[10px] text-zinc-600'>| метаболомика, доклинические исследования, Зебрафиш</span>
+                <span class='text-[10px] text-zinc-600'>| МИНЗДРАВ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="sechenov/rid_0006.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="6">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">🗄️</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">База цифровых фотографий глазного дна пациентов, страдающих артериальной гипертензией, полученная бе</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>База цифровых фотографий глазного дна пациентов, страдающих артериальной гиперте...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">База данных</span>
+                <span class='text-[10px] text-zinc-600'>| сердечно-сосудистые заболевания, артериальная гипертензия, глазное дно</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="sechenov/rid_0007.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="7">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">🗄️</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">SECHENOV ATLAS OF TISSUE IMAGES –VASCULARITY OF LUNG ADENOCARCINOMA (SATI-LAV)</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>База данных цифровых изображений тканей с диагнозом аденокарцинома легких</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">База данных</span>
+                <span class='text-[10px] text-zinc-600'>| онкология, ADENOCARCINOMA</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="sechenov/rid_0008.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="8">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">🗄️</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">База данных пациентов с разными формами фибрилляции предсердий с определенной анкетной и фармакокине</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>База данных пациентов с разными формами фибрилляции предсердий с определенной ан...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">База данных</span>
+                <span class='text-[10px] text-zinc-600'>| фибрилляция предсердий, атикоагулянтная терапия, кардиология</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="sechenov/rid_0009.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="9">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">🗄️</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">SECHENOV ATLAS OF TISSUE IMAGES – LYMPHOVASCULAR INVASION IN LUNG ADENOCARCINOMA (SATVI-LALVI)</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>База данных цифровых изображений тканей (АДЕНОКАРЦИНОМА)</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">База данных</span>
+                <span class='text-[10px] text-zinc-600'>| LYMPHOVASCULAR INVASION, ADENOCARCINOMA</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="sechenov/rid_0010.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="10">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">🗄️</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">База данных для определения нейротоксичности с помощью поведенческих показателей у модельных организ</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>База данных содержит в себе информацию об исследованиях нейротоксичности различн...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">База данных</span>
+                <span class='text-[10px] text-zinc-600'>| База данных, нейротоксичность, Danio rerio</span>
+                <span class='text-[10px] text-zinc-600'>| МИНЗДРАВ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="sechenov/rid_0011.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="11">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">🗄️</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">База данных результатов инструментального обследования пациентов с различной сердечно-сосудистой пат</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>База данных результатов инструментального обследования пациентов с различной сер...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">База данных</span>
+                <span class='text-[10px] text-zinc-600'>| COVID-19, база данных, сердечнососудистая патология</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="sechenov/rid_0012.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="12">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">🗄️</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">База данных коморбидных пациентов с фибрилляцией предсердий, содержащая информацию о комплаенсе к пр</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>База данных коморбидных пациентов с фибрилляцией предсердий, содержащая информац...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">База данных</span>
+                <span class='text-[10px] text-zinc-600'>| антикоагулянтная терапия, сердечно-сосудистые заболевания, кардиология</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="sechenov/rid_0013.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="13">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">🗄️</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">База данных медицинских изображений органов грудной клетки пациентов с раком легкого.</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>База данных медицинских изображений органов грудной клетки пациентов с раком лег...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">База данных</span>
+                <span class='text-[10px] text-zinc-600'>| база данных, органы грудной клетки, рак легкого</span>
+                <span class='text-[10px] text-zinc-600'>| МИНЗДРАВ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="sechenov/rid_0014.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="14">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">🗄️</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">База данных волатома пациентов с индуцируемой ишемией миокарда, подтвержденной результатами компьюте</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>База данных представляет собой таблицу Excel, содержащую следующую информацию о ...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">База данных</span>
+                <span class='text-[10px] text-zinc-600'>| масс-спектрометрия, волатом индуцируемая ишемия миокарда, стресс-перфузионные исследования</span>
+                <span class='text-[10px] text-zinc-600'>| МИНЗДРАВ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="sechenov/rid_0015.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="15">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">🗄️</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">База данных результатов масс-спектрометрии выдыхаемого воздуха пациентов, имеющих комбинированный ди</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>База данных результатов масс-спектрометрии выдыхаемого воздуха пациентов, имеющи...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">База данных</span>
+                <span class='text-[10px] text-zinc-600'>| кардиология, ишемическая болезнь сердца, масс-спектрометрия</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="sechenov/rid_0016.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="16">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">⚙️</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">Противопролежневый матрас на базе гибких актуаторов</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Разработан противопролежневый матрас на базе гибких актуаторов, обеспечивающий б...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Полезная модель</span>
+                <span class='text-[10px] text-zinc-600'>| реабилитационная медицина, гибкая робототехника</span>
+                
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="sechenov/rid_0017.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="17">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">🗄️</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">SECHENOV ATLAS OF TISSUE IMAGES – PARODONTITIS IN IMMUNOCOMPROMISED RABBITS (SATI-PIIR)</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>База данных содержит 3125 аннотированных структур пародонта, включая пародонталь...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">База данных</span>
+                <span class='text-[10px] text-zinc-600'>| Биоинженерия, биоэквиваленты, биопечать, дизайн биоматериалов, анализ изображений, искусственный интеллект</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="sechenov/rid_0018.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="18">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">🗄️</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">База данных пациентов, которым осуществлялись некоронарные эндоваскулярные вмешательства с использов</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>База данных пациентов, которым осуществлялись некоронарные эндоваскулярные вмеша...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">База данных</span>
+                <span class='text-[10px] text-zinc-600'>| кардиология</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="sechenov/rid_0019.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="19">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">⚙️</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">Роботизированная перчатка для нервномышечной реабилитации.</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Полезная модель представляет собой роботизированную перчатку для нервно-мышечной...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Полезная модель</span>
+                <span class='text-[10px] text-zinc-600'>| Роботизированная перчатка, ортез, пневматические актуаторы, спастика, артрит</span>
+                <span class='text-[10px] text-zinc-600'>| МИНЗДРАВ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="sechenov/rid_0020.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="20">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">🗄️</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">База данных (библиотека) биочернил.</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>База данных «База данных (библиотека) биочернил» содержит данные о параметрах би...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">База данных</span>
+                <span class='text-[10px] text-zinc-600'>| Биочернила, биопечать, биоматериалы, База данных, библиотека</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="sechenov/rid_0021.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="21">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💻</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">Система поддержки принятия врачебных решений при ведении пациентов с нарушениями липидного обмена</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Система поддержки принятия врачебных решений при ведении пациентов с нарушениями...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Программа для ЭВМ</span>
+                <span class='text-[10px] text-zinc-600'>| программа ЭВМ, кардиология, СППВР</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="sechenov/rid_0022.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="22">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💡</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">Тканеинженерный биореактор для растяжения биоэквивалентов.</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Изобретение относится к устройству для выращивания клеток, биоэквивалентов и тка...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Изобретение</span>
+                <span class='text-[10px] text-zinc-600'>| Биореактор, механическая стимуляция, растяжение, биоэквиваленты, созревание</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+</div>
+        <div class="p-4 text-center">
+          <button id="rid-more" onclick="showMore('rid-item', 'rid-more', 'rid-counter', 23)" class="px-6 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-widest hover:bg-white/10 transition text-zinc-400">
+            Показать ещё 5
+          </button>
+        </div>
+      </section>
+
+      <script>
+        // Generic show-more function
+        function showMore(itemClass, btnId, counterId, total, step) {
+          step = step || 5;
+          const items = document.querySelectorAll('.' + itemClass);
+          let shown = 0;
+          items.forEach(el => {
+            if (el.style.display !== 'none') shown++;
+          });
+          items.forEach(el => {
+            const idx = parseInt(el.dataset.idx);
+            if (idx < shown + step) {
+              el.style.display = '';
+            }
+          });
+          const totalShown = Math.min(shown + step, items.length);
+          document.getElementById(counterId).textContent = 'Показаны ' + totalShown + ' из ' + total;
+          if (totalShown >= items.length) {
+            document.getElementById(btnId).style.display = 'none';
+          }
+        }
+      </script>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-20 border-t border-white/10 mt-20 bg-black/40">
+      <div class="max-w-7xl mx-auto px-6 text-center">
+        <div class="text-3xl font-black italic uppercase mb-8">МОС<span class="mos-red">НАУКА</span></div>
+        <p class="text-zinc-500 text-sm max-w-2xl mx-auto italic mb-8">Единая экосистема технологического развития площадок и заказчиков в Москве.</p>
+        <div class="flex justify-center gap-8 mb-8">
+          <div class="text-[10px] text-zinc-600 uppercase font-bold">Источник: <span class="text-emerald-500">CoLab</span> — лаборатории, учёные</div>
+          <div class="text-[10px] text-zinc-600 uppercase font-bold">Источник: <span class="text-sky-500">ЕГИСУ</span> — проекты, РИД</div>
+        </div>
+        <div class="text-white/20 text-[10px] uppercase font-bold tracking-[0.5em]">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ ОБЪЕКТА</div>
+      </div>
+    </footer>
+
+    <!-- Scroll to top button -->
+    <button onclick="window.scrollTo({top:0,behavior:'smooth'})" id="scroll-top" class="fixed bottom-8 right-8 w-12 h-12 rounded-full bg-red-500/80 text-white flex items-center justify-center shadow-lg hover:bg-red-500 transition z-50" style="display:none" title="Наверх">
+      <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg>
+    </button>
+
+    <!-- Request Modal -->
+    <div id="requestModal" style="position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem">
+      <div style="background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative">
+        <button onclick="closeModal()" style="position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer">&times;</button>
+        <div id="modalForm">
+          <h2 class="text-xl font-black mb-1">📨 Направить запрос</h2>
+          <div id="modalContext" class="text-xs text-zinc-500 mb-6">через платформу МОСНАУКА</div>
+          <label class="block text-[10px] uppercase font-black text-zinc-500 mb-1 tracking-widest">Ваше ФИО *</label>
+          <input type="text" id="reqName" placeholder="Иванов Иван Иванович" class="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-sm mb-3" style="color:white">
+          <label class="block text-[10px] uppercase font-black text-zinc-500 mb-1 tracking-widest">Организация</label>
+          <input type="text" id="reqOrg" placeholder="ООО «Компания»" class="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-sm mb-3" style="color:white">
+          <label class="block text-[10px] uppercase font-black text-zinc-500 mb-1 tracking-widest">Email *</label>
+          <input type="email" id="reqEmail" placeholder="email@example.com" class="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-sm mb-3" style="color:white">
+          <label class="block text-[10px] uppercase font-black text-zinc-500 mb-1 tracking-widest">Тип запроса</label>
+          <select id="reqType" class="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-sm mb-3" style="color:white;appearance:none">
+            <option>Запрос на НИОКР</option>
+            <option>Консультация</option>
+            <option>Сотрудничество / Партнёрство</option>
+            <option>Использование оборудования</option>
+            <option>Другое</option>
+          </select>
+          <label class="block text-[10px] uppercase font-black text-zinc-500 mb-1 tracking-widest">Сообщение *</label>
+          <textarea id="reqMsg" placeholder="Опишите ваш запрос..." class="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-sm mb-4" style="color:white;min-height:5rem;resize:vertical"></textarea>
+          <button onclick="submitRequest()" class="w-full py-3 rounded-xl bg-red-500 text-white text-[11px] font-black uppercase tracking-widest hover:bg-red-600 transition">Отправить запрос</button>
+        </div>
+        <div id="modalSuccess" style="display:none;text-align:center;padding:2rem 0">
+          <div style="font-size:3rem;margin-bottom:1rem">✅</div>
+          <h3 class="text-lg font-black mb-2">Запрос отправлен!</h3>
+          <p class="text-sm text-zinc-400">Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+          <button onclick="closeModal()" class="mt-6 w-full py-3 rounded-xl bg-white/5 border border-white/10 text-sm font-bold text-zinc-400 hover:bg-white/10 transition">Закрыть</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      window.addEventListener('scroll', function() {
+        document.getElementById('scroll-top').style.display = window.scrollY > 400 ? 'flex' : 'none';
+      });
+      function openRequestModal(context) {
+        document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+        document.getElementById('modalForm').style.display = '';
+        document.getElementById('modalSuccess').style.display = 'none';
+        document.getElementById('requestModal').style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      }
+      function closeModal() {
+        document.getElementById('requestModal').style.display = 'none';
+        document.body.style.overflow = '';
+      }
+      function submitRequest() {
+        var n = document.getElementById('reqName').value.trim();
+        var e = document.getElementById('reqEmail').value.trim();
+        var m = document.getElementById('reqMsg').value.trim();
+        if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+        document.getElementById('modalForm').style.display = 'none';
+        document.getElementById('modalSuccess').style.display = '';
+      }
+      document.getElementById('requestModal').addEventListener('click', function(e) {
+        if (e.target === this) closeModal();
+      });
+    </script>
+  </div>
+</body>
+</html>

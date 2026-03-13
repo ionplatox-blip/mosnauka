@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | РХТУ им. Д. И. Менделеева</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-rhtu.html">РХТУ им. Д. И. Менделеева</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">тераностика</span> <span class="tag">фармацевтические наночастицы</span> <span class="tag">гиалуроновая кислота</span> <span class="tag">протамин</span> <span class="tag">полимерные мицеллы</span> <span class="tag">полиэлектролитные комплексы</span> <span class="tag">суперпарамагнитные железные наночастицы</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Структура и свойства природных и синтетических высокомолекулярных соединений</span></div>
+          <h1 style="font-size:1.5rem">Органо-неорганические многофункциональные наноразмерные структуры на основе гиалуроновой кислоты для новых тераностиков</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">3,000 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225062416930-0</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2023-01-12 — 2024-12-31</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№2</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">3</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">РНФ</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>Российский научный фонд</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>Объект исследования – низкомолекулярная гиалуроновая кислота, конъюгированная с олеиновой кислотой (олеилгиалуронан).
+Цель работы. Разработка технологических подходов для создания мицеллярных структур на основе олеилгиалуронана, пригодных для конструирования на их основе тераностиков. 
+Используемые методы: Мицеллярные органо-неорганичнские структуры получали методом тонкой пленки и методом УЗ-гомогенизации, использовали синтетические подходы (органический синтез).  Для изучения из свойств использовали: метод динамического лазерного светорассеяния, метод микроэлектрофореза, трансмиссионной электронной микроскопии, атомно-силовой микроскопии, конфокальной лазерной оптической микроскопии, магнитно-резонансная томография. Методы количественного определения: спектроскопия, ВЭЖХ, капиллярный электрофорез, спектрофлуориметрия, кондуктометрическое титрование и др.
+Результаты:
+1.	Оптимизированы технологические подходы для получения мицеллярных структур на основе низкомолекулярного олеилгиалуронана (ГКС18), которые можно использовать для конструирования новых тераностиков для онкологии. Мицеллы загружали этопозидом (ЭТП), суперпарамагнитными наночастицами оксида железа (кобальтоферрит) (SPION) или флуоресцентным красителем Сy5. Установлено, что мицеллы полидисперсны по размерам и представляют собой мицеллярные ассоциаты, гидродинамические диаметры которых в среднем составляют от 200 до 500 нм, структуры коллоидно стабильны, основная размерная фракция по объему имеет размер 20 – 30 нм. Установили, что мицеллы стабилизируются загрузкой гидрофобных активных компонентов в ядро. Наибольшую стабильность показали мицеллы, загруженные SPION. Электронная просвечивающая микроскопия (ПЭМ) показала, что во всех случаях мицеллы имеют структуры ядро/оболочка и их форма сферическая. Мицеллярные структуры стабильны в течение времени и при разбавлении, однако, они не сохраняют своих размеров в присутствии в растворе человеческого сывороточного альбумина, поэтому необходима их стабилизация. 
+2.	Синтезирован флуоресцентный конъюгат Cy5 с ГКС18 (ГКC18-Cy5-conj), из которого получали мицеллы, имеющие близкие с неконъюгированным олеилгиалуронаном мицеллярные свойства. Флуоресцентный конъюгат использовали для изучения интернализации мицелл клетками.
+3.	Для стабилизации мицеллярных форм существлены два подхода, основанные на перекрестной сшивке. 1) Модификация ГКС18 сульфгидрильными группами, которая позволяет стабилизировать мицеллы дисульфидными связями. В этом случае получали конъюгат ГКС18 с гидразидом 3-меркаптопропионовой кислоты (ГКC18-HTP). 2) Стандартный подход, основанный на перекрестной сшивке мицеллярных структур глутаровым альдегидом (ГА). В этом случае получали структуры ГКС18-ГА. Показано, что в обоих случаях получали полидисперсные структуры со средними размерами 400 – 500 нм.  ПЭМ загруженных SPION частиц показала, что морфология двух типов частиц различна.  В случае ГКС18-ГА/SPION сохраняется структура ядро-оболочка, которая схожа со структурой мицелл ГКС18/SPION. ГКС18-НТР/SPION образуют торообразные структуры, SPION загружены во внутреннюю окружность.  
+4.	В качестве альтернативного подходы для стабилизации мицелл использовали полиэлектролитное комплексообразование (ПЭК) олеилгиалуронана с протамином (ПТ). Установлены необходимые массовые соотношения ГКС 18 : ПР: незагруженные мицеллы (3:1), мицеллы, загруженные ЭТПкбз (2:1) или SPION (7:1).  Показано, что структуры коллоидно стабильны и не характеризуются ККМ. Средние размеры ГКС18/ПТ уменьшаются по сравнению с мицеллами ГКС18 (от 447,8 ± 11,5 до 172,6 ± 1,1 нм), однако, частицы остаются полидисперсными. 
+5.	Сравнение магнитных свойств мицеллярных и стабилизированных структур выполняли, снимая кривые намагниченности и определяя МРТ-контрастность на фантомах. Данные, полученные при исследовании времени Т2 релаксации на фантомах показали, что наибольшую Т2-релаксивность имеют два образца: мицеллярный (не стабилизированный) и стабилизированный ГА (132 и 128 мМ-1с-1, соответственно). 
+6.	Оценка цитотоксической активности мицелл ГКС18/ЭТП и ГКС18/ЭТПкбз 2-х моделях рака молочной железы: MDA-MB-231 с высокой экспрессией CD44 и MCF-7 с низкой экспрессией CD44 показали, что мицеллярные структуры вызывали дозозависимое снижение выживаемости клеток опухолевых линий и не уступали фармацевтическим субстанциям. Однако, статистически значимых различий между формой на основе ГК и субстанциями не обнаружено. 
+7.	Эффективность интернализации изучали на мицеллярных структурах, физически нагруженных флуоресцентным красителем (ГКС18/Cy5), и конъюгированных с Cy (ГКС18-Cy5-conj). Показано, что мицеллы активно поглощаются клетками и могут доставлять терапевтическую нагрузку к потенциальным внутриклеточным мишеням.</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (3)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Бейгуленко Дмитрий Владимирович</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Антонова Мария Михайловна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Ермоленко Юлия Валерьевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат химических наук</span></li></ul>
+              
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

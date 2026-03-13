@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | МИСиС</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-misis.html">МИСиС</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">АЛЮМИНИЙ</span> <span class="tag">КОМПОЗИЦИОННЫЕ МАТЕРИАЛЫ</span> <span class="tag">НАНОМАТЕРИАЛЫ</span> <span class="tag">ТВЕРДОСТЬ</span> <span class="tag">ПРОЧНОСТЬ</span> <span class="tag">ДИСПЕРСНОЕ И ДИСПЕРСИОННОЕ УПРОЧНЕНИЕ</span> <span class="tag">ТЕОРЕТИЧЕСКОЕ МОДЕЛИРОВАНИЕ</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Порошковая металлургия цветных металлов и их сплавов</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Структура и свойства цветных металлов и сплавов и композиционных материалов на их основе</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Фазовые и структурные превращения в металлах и сплавах</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Физика наноструктур. Низкоразмерные структуры. Мезоскопические структуры</span></div>
+          <h1 style="font-size:1.5rem">РАЗРАБОТКА ТЕОРЕТИЧЕСКИХ И ЭКСПЕРИМЕНТАЛЬНЫХ ОСНОВ ПОЛУЧЕНИЯ МЕТАЛЛОМАТРИЧНЫХ КОМПОЗИЦИОННЫХ МАТЕРИАЛОВ, УПРОЧНЕННЫХ НАНОСТРУКТУРАМИ (промежуточный, этап 2)</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">2,388 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225013004762-8</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2024-01-01 — 2024-12-31</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№2</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">3</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">МИНОБРНАУКИ РОССИИ</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>МИНИСТЕРСТВО НАУКИ И ВЫСШЕГО ОБРАЗОВАНИЯ РОССИЙСКОЙ ФЕДЕРАЦИИ</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>Целью проекта является разработка теоретических и экспериментальных основ моделирования и дизайна металломатричных композиционных материалов (ММКМ), упрочненных различными наноструктурами, для повышения их механических свойств и расширения температурного диапазона их эксплуатации. В 2024 году было изучено формирование аморфно-нанокристаллических фаз в системах на основе алюминия с переходными металлами (Fe, Ni, Co, Cu) и редкоземельными металлами (Y, La) при высокоэнергетическом шаровом размоле. Установлено, что для получения аморфно-нанокристаллических фаз в системах Al85Fe10Y5, Al86Ni8Y6, Al85(FeNiCu)10Y5 и Al86(NiCo)8(YLa)6 необходимо использовать размол в толуоле в течение 15 ч при использовании размольных материалов из стали. Эти фазы состоят из алюминия, переходного металла (Fe, Ni, или твердого раствора этих металлов в алюминии), оксидной фазы (оксид алюминия и алюминаты железа или никеля) и содержат большое количество аморфного углерода. Установлено, что образование углерода является важным фактором для формирования аморфной фазы. Изучено образование бинарных (Ni-Co) и тройных (Fe-Ni-Cu) наночастиц при полиольном синтезе. При использовании этиленгликоля в качестве восстановителя (100 оС) образуются сферические субмикронные частицы со средним размером 290 нм и узким фракционным составом. Аморфные (NiCo) и частично аморфизированные (Fe3NiCu2) наночастицы размером 5-10 нм получаются при восстановлении солей с помощью NaBH4 в этиленгликоле при комнатной температуре. Синтезированы композиты на основе аморфно-нанокристаллических фаз Al85Fe10Y5, Al86Ni8Y6, Al85(FeNiCu)10Y5 и Al86(NiCo)8(YLa)6 используя различные режимы консолидации. Полученные материалы обладают низкой прочностью, что связано с выделением углерода на поверхности аморфно-нанокристаллических частиц. Дополнительно синтезированы композиционные материалы на основе алюминия с использованием полученных аморфно-нанокристаллических фаз Al85Fe10Y5, Al86Ni8Y6, Al85(FeNiCu)10Y5 и Al86(NiCo)8(YLa)6 в качестве дисперсной упрочняющей фазы и изучены их прочность на сжатие и растяжение при 25 оС и 500 оС. Наибольшую прочность проявили КМ, упрочненные фазой Al86Ni8Y6: прочность на растяжение 143 МПа (при 25 оС) и 106 МПа (при 500 оС) и на сжатие 199 МПа (при 25 оС) и 177 МПа (при 500 оС). Изготовлены Al-КМ, упрочненные нановискерами, полученными на поверхности микронных частиц алюминия, при использовании LiNO3 и Na2SiO3 в качестве реакционных оксидов. КМ с нановискерами алюмосиликата показали при 500 оС предел прочности на разрыв 140 МПа (при ε=45 %) и на сжатие 243 МПа (при ε=30 %). Золь-гель методом получены наночастицы высокоэнтропийных оксидов (ВЭО) (Cr0.23Mn0.22Fe0.22Co0.19Ni0.13)3O4 со структурой шпинели со средним размером 50 нм. Изготовлены Al-КМ с содержанием наночастиц ВЭО 0, 1, 2, 3 и 5 масс. % и изучены их термомеханические свойства при 25 оС и 500 оС, а также трибологические свойства. Обнаружено, что в процессе ИПС проходит алюмотермическая реакция, приводящая к частичному восстановлению частиц ВЭО и образованию вторичных упрочняющих фаз: наночастиц Al2O3 и интерметаллидных наночастиц. Образец с 3 масс. % ВЭО показал наилучшие термомеханические свойства при 500 ℃: предел прочности на растяжение – 258 МПа при критической деформации 6,9 % и предел прочности на сжатие - 410 МПа при критической деформации 12,5 %. При добавлении наночастиц ВЭО коэффициент трения уменьшается с 0,7 до 0,2 (при 3 масс. % ВЭО), а динамический износ снижается примерно в 6 раз (при 3 масс. % ВЭО) и примерно в 11-14 раз (при 5 масс. % ВЭО) в зависимости от приложенной нагрузки. Разработан межатомный потенциал машинного обучения (МО) для прогнозирования поведения сложных высокоэнтропийных сплавов (ВЭС), содержащих Al, Cr, Fe, Co, Ni и Cu. Полученный потенциал МО позволяет проводить обширные моделирования методом молекулярной динамики. Потенциал МО точно предсказывает ключевые параметры системы, такие как постоянные решетки и модули упругости, и описывает поведение материала под действием напряжений и деформаций. Разработанные теоретические методы и вычислительные алгоритмы позволяют предсказывать фазовый состав и микроструктуру с целевым уровнем механических характеристик. По результатам работы опубликовано 3 статьи в журналах 1 квартиля: https://doi.org/10.1016/j.apsusc.2024.160223;  https://doi.org/10.1016/j.jallcom.2024.177329; https://doi.org/10.1021/acs.jpcc.4c04734. Полученные результаты представлены в виде 5 молодежных докладов на XI Международной молодежной научной конференции, посвященной 75-летию основания Физико-технологического института, XXII Менделеевском съезде по общей и прикладной химии и XXI Российской ежегодной конференции молодых научных сотрудников и аспирантов «Физико-химия и технология неорганических материалов». По результатам работы оформлено ноу-хау на «Способ получения наночастиц высокоэнтропийных оксидов (CrMnFeCoNi)3O4», зарегистрировано в Депозитарии ноу-хау НИТУ МИСИС №13–774–2024 ОИС от 15 октября 2024 года. Разработана и зарегистрирована Технологическая инструкция ТИ 63-11301236-2024 на «Процесс получения заготовок для композиционных поршневых колец на основе алюминия, упрочненных наночастицами высокоэнтропийных оксидов». Разработана методика «Гомогенизация и механоактивация порошков методом высокоэнергетического шарового размола», которая внедрена и используется в научно-исследовательской деятельности ООО «Фопро-М». Использование методики способствует эффективному перемешиванию компонентов и позволяет получать однородные смеси с образованием плотного контакта между частицами порошков. В ООО «Фопро-М» проведены испытания композиционных материалов при температурах 25 и 500 °С, предназначенных для изготовления днища поршней и поршневых колец ДВГ. Испытания проводили в соответствии с ГОСТ 56656–2015 на аттестованном оборудовании. Результаты испытаний показали, что образцы обладают более высокими значениями прочности на растяжение и на сжатие при температурах 25 и 500 °С, чем сплав AlSi18CuMgNi, используемый для изготовления днищ поршней и поршневых колец двигателей внутреннего сгорания (ДВС).</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (21)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Штанский Дмитрий Владимирович</strong> <span style="color:#71717a;font-size:0.8rem">Доктор физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Пермякова Елизавета Сергеевна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Герштейн Анастасия Сергеевна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Барилюк Данил Валерьевич</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Ковальский Андрей Михайлович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат геолого-минералогических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Капланская Людмила Юрьевна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Кокина Ксения Андреевна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Гусев Святослав Андреевич</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Матвеев Андрей Трофимович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Бондарев Андрей Владимирович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат технических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Кутжанов Магжан Кайыржанович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат технических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Варламова Любовь Александровна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Котякова Кристина Юрьевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат технических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Сорокин Павел Борисович</strong> <span style="color:#71717a;font-size:0.8rem">Доктор физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Нарзуллоев Умеджон Умаралиевич</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li></ul>
+              <p style='color:#52525b;font-size:0.8rem;margin-top:0.5rem'>...и ещё 6</p>
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

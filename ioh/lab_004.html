@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Группа теоретической химии ИОХ РАН | ИОХ РАН</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-ioh.html">ИОХ РАН</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Группа теоретической химии ИОХ РАН</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1rem"><span class="tag">Квантовая химия</span> <span class="tag">Молекулярное моделирование</span> <span class="tag">Машинное обучение</span></div>
+          <h1>Группа теоретической химии ИОХ РАН</h1>
+          <p style="color:#a1a1aa;line-height:1.7;margin-top:1rem">https://github.com/TheorChemGroup TheorChem GitHub - GitHub аккаунт нашей Группы, на котором доступны разработанные нами открытые программные продукты, а также используемый в наших публикациях код.</p>
+        </div>
+
+        <!-- CTA Block -->
+        <div style="background:linear-gradient(135deg,rgba(255,0,60,0.08),rgba(255,0,60,0.02));border:1px solid rgba(255,0,60,0.2);border-radius:1.5rem;padding:2rem;margin-bottom:2rem">
+          <div style="font-size:1rem;font-weight:800;margin-bottom:0.75rem">📨 Связаться с лабораторией</div>
+          
+          <div style="display:flex;flex-wrap:wrap;gap:0.75rem;margin-top:1rem">
+            <button onclick="openRequestModal('Запрос на НИОКР — Группа теоретической химии ИОХ РАН')" style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.75rem 1.5rem;border-radius:1rem;background:#ff003c;color:white;font-size:0.75rem;font-weight:800;text-transform:uppercase;letter-spacing:0.05em;border:none;cursor:pointer">📋 Направить запрос на НИОКР</button>
+            <button onclick="openRequestModal('Запрос зав. лабораторией — Группа теоретической химии ИОХ')" style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.75rem 1.5rem;border-radius:1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:#a1a1aa;font-size:0.75rem;font-weight:800;text-transform:uppercase;cursor:pointer">✉ Написать зав. лабораторией</button>
+            <a href='https://colab.ws/labs/705' target='_blank' style='display:inline-flex;align-items:center;gap:0.5rem;padding:0.75rem 1.5rem;border-radius:1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:#a1a1aa;font-size:0.75rem;font-weight:800;text-transform:uppercase'>🔗 Профиль CoLab</a>
+          </div>
+        </div>
+
+        
+        <div class="info-card">
+              <h2>🧪 Методы</h2>
+              <p>DFT расчеты Машинное обучение Молекулярная динамика и квантово-химические расчеты</p>
+            </div>
+        
+
+        <div class="section-header" style="margin-top:2.5rem">
+          <h2 class="section-title">👩‍🔬 Учёные (10)</h2>
+        </div>
+        <div class="cards-grid" style="grid-template-columns:repeat(auto-fill,minmax(300px,1fr))">
+          <a href="sci_078.html" class="preview-card">
+              <div class="avatar"><img src="https://colab.ws/storage/images/6RYB89Fjvp69Qj9sBOVv0vNQ6UgSwUb70fCdgrWN.jpg" alt="Медведев Михаил Геннадьевич" loading="lazy"></div>
+              <div style="min-width:0">
+                <h3>Медведев Михаил Геннадьевич</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem">Заведующий лабораторией</div>
+                <div class="meta">Asymmetric catalysis, Органическая химия, Супрамолекулярная химия</div>
+                <div class="meta" style="margin-top:0.25rem">📚 27 публ.</div>
+              </div>
+            </a>
+<a href="sci_079.html" class="preview-card">
+              <div class="avatar"><img src="https://colab.ws/storage/images/b7dsASJtimz7fUyjYmIb50KWBflW3rWBIjEmgBwf.jpg" alt="Василий Чалый" loading="lazy"></div>
+              <div style="min-width:0">
+                <h3>Василий Чалый</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem">Инженер-исследователь</div>
+                <div class="meta">Молекулярное моделирование, Теория функционала плотности, Искусственный интеллект</div>
+                <div class="meta" style="margin-top:0.25rem">📚 1 публ.</div>
+              </div>
+            </a>
+<a href="sci_080.html" class="preview-card">
+              <div class="avatar"><img src="https://colab.ws/storage/images/GkvDlTbtc9ig1RzK3elMaiC1HnK9fv123lZdEX4F.jpg" alt="Руслан Халыков" loading="lazy"></div>
+              <div style="min-width:0">
+                <h3>Руслан Халыков</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem">Инженер-исследователь</div>
+                <div class="meta">Вычислительная химия, Квантовая химия, Металлоорганическая химия</div>
+                <div class="meta" style="margin-top:0.25rem">📚 0 публ.</div>
+              </div>
+            </a>
+<a href="sci_081.html" class="preview-card">
+              <div class="avatar"><img src="https://colab.ws/storage/images/c6cb95qDw48J5UXPBjKynhcevxxmnNgAM5QyXwhq.jpg" alt="Даниил Артамонов" loading="lazy"></div>
+              <div style="min-width:0">
+                <h3>Даниил Артамонов</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem">Лаборант-исследователь</div>
+                <div class="meta">Машинное обучение, Нейробиология, Нейроморфные системы</div>
+                <div class="meta" style="margin-top:0.25rem">📚 0 публ.</div>
+              </div>
+            </a>
+<a href="sci_082.html" class="preview-card">
+              <div class="avatar"><div class="initials">ИП</div></div>
+              <div style="min-width:0">
+                <h3>Илья Проломов</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem">Лаборант-исследователь</div>
+                <div class="meta">Органическая химия, Active methylene compounds, Biological activity</div>
+                <div class="meta" style="margin-top:0.25rem">📚 1 публ.</div>
+              </div>
+            </a>
+<a href="sci_083.html" class="preview-card">
+              <div class="avatar"><div class="initials">МШ</div></div>
+              <div style="min-width:0">
+                <h3>Марк Шнайдер</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem"></div>
+                <div class="meta">Вычислительная химия, Искусственные нейронные сети, Искусственный интеллект</div>
+                <div class="meta" style="margin-top:0.25rem">📚 0 публ.</div>
+              </div>
+            </a>
+<a href="sci_084.html" class="preview-card">
+              <div class="avatar"><img src="https://colab.ws/storage/images/54l6KT2ArbrfDblIcsZHk3dnMYG67iJCVUSkVwIN.jpg" alt="Данила Ермолин" loading="lazy"></div>
+              <div style="min-width:0">
+                <h3>Данила Ермолин</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem"></div>
+                <div class="meta">Вычислительная химия, Квантовая химия, Машинное обучение</div>
+                <div class="meta" style="margin-top:0.25rem">📚 1 публ.</div>
+              </div>
+            </a>
+<a href="sci_085.html" class="preview-card">
+              <div class="avatar"><img src="https://colab.ws/storage/images/WZCSsKuJC6AukLpEWME03Na1MCX0i7qhcSUWwIT8.png" alt="Алексей Бондарев" loading="lazy"></div>
+              <div style="min-width:0">
+                <h3>Алексей Бондарев</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem"></div>
+                <div class="meta">Вычислительная химия, Металлоорганическая химия, Органическая химия</div>
+                <div class="meta" style="margin-top:0.25rem">📚 0 публ.</div>
+              </div>
+            </a>
+<a href="sci_086.html" class="preview-card">
+              <div class="avatar"><img src="https://colab.ws/storage/images/pQmUH8dYn0MNYvEQpM5zoJe6pyQDO0BAXNB6TaZ8.jpg" alt="Артём Бетехтин" loading="lazy"></div>
+              <div style="min-width:0">
+                <h3>Артём Бетехтин</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem"></div>
+                <div class="meta">Вычислительная химия, Материаловедение, Физика твердого  тела</div>
+                <div class="meta" style="margin-top:0.25rem">📚 0 публ.</div>
+              </div>
+            </a>
+<a href="sci_087.html" class="preview-card">
+              <div class="avatar"><img src="https://colab.ws/storage/images/IDVHWtSP3nYlo7ji4CMTybhe7BGNLKEdGCeSSu8U.jpg" alt="Александр Захаров" loading="lazy"></div>
+              <div style="min-width:0">
+                <h3>Александр Захаров</h3>
+                <div class="meta" style="color:#a1a1aa;margin-bottom:0.25rem"></div>
+                <div class="meta">Астрофизика, Гравитационное линзирование, Черные дыры</div>
+                <div class="meta" style="margin-top:0.25rem">📚 54 публ.</div>
+              </div>
+            </a>
+
+        </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

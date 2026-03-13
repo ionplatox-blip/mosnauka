@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | ИФХЭ РАН</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-ifhe.html">ИФХЭ РАН</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">ИДЕНТИФИКАЦИЯ</span> <span class="tag">ХЕМОИНФОРМАТИКА</span> <span class="tag">АНАЛИТИЧЕСКАЯ ХИМИЯ</span> <span class="tag">НЕЦЕЛЕВОЙ АНАЛИЗ</span> <span class="tag">МАШИННОЕ ОБУЧЕНИЕ</span> <span class="tag">ИСКУССТВЕННЫЙ ИНТЕЛЛЕКТ</span> <span class="tag">МАСС-СПЕКТРОМЕТРИЯ</span> <span class="tag">ХРОМАТОГРАФИЯ</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Нейронные сети</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Анализ органических веществ</span></div>
+          <h1 style="font-size:1.5rem">Искусственный интеллект для de novo расшифровки структур низкомолекулярных соединений с помощью хромато-масс-спектрометрии: разработка методологических основ и программного обеспечения (Лаборатория &quot;умных&quot; методов химического анализа)</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">17,003 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225011700901-4</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2024-04-17 — 2024-12-31</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№1</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">11</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">МИНОБРНАУКИ РОССИИ</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>МИНИСТЕРСТВО НАУКИ И ВЫСШЕГО ОБРАЗОВАНИЯ РОССИЙСКОЙ ФЕДЕРАЦИИ</div>
+                </div><div class="metric-box" style="text-align:left">
+                  <div class="label">Исполнитель</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">ИФХЭ РАН</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>Объектом исследования являются сложные смеси органических соединений различного происхождения; низкомолекулярные органические соединения (в том числе экотоксиканты), структура которых не известна; хроматографические и хромато-масс-спектрометрические системы, неподвижные фазы в газовой и жидкостной хроматографии.
+Цель работы: изучение хроматографического поведения различных неподвижных фаз, создание новых моделей для предсказания хроматографического удерживания, оценка надежности имеющихся баз данных, создание и сравнение алгоритмов для масс-спектрального поиска и обработки данных хромато-масс-спектрометрии, новые способы оценки надежности моделей машинного обучения в рамках работы по созданию комплексного подхода к определению структуры и идентификации неизвестных низкомолекулярных органических соединений с помощью сочетания хромато-масс-спектрометрии и методов искусственного интеллекта. Данный комплексный подход позволит предварительно устанавливать структуры неизвестных соединений без препаративного выделения непосредственно из хромато-масс-спектрометрических данных. Сочетание различных методов (газовая и жидкостная хроматография, несколько неподвижных фаз, различные источники ионов) может позволить установить структуру молекулы de novo при использовании их совместно с методами искусственного интеллекта. Такой подход может быть использован при анализе объектов окружающей среды, в промышленности и биомедицинских исследованиях. Важными задачами при этом являются, в том числе, изучение хроматографического поведения и предсказание удерживания, оценка надежности баз данных и моделей машинного обучения, совершенствование различных алгоритмов (масс-спектральный поиск, обработка хроматограмм).
+Метод или методология проведения работы: использовались газовый хромато-масс-спектрометр с ионизацией электронами и квадрупольным масс-анализатором и хромато-масс-спектрометр (высокоэффективная жидкостная хроматография), включающий в себя источник ионов, основанный на электрораспылении и времяпролетный масс-анализатор; для нестандартных неподвижных фаз применялись «двухстадийные» модели: индексы удерживания для стандартных неподвижных фаз, предсказанные с помощью глубокого обучения, использовались (наряду с другими молекулярными дескрипторами) в качестве входных переменных. Наряду с экспериментальными данными, полученными в рамках данного проекта, использовалось автоматическое извлечение данных из популярной хромато-масс-спектрометрической базы данных NIST. Для выполнения всех работ было использовано разработанное исполнителями проекта программное обеспечение на языках программирования Java и Python. Для предсказания различных характеристик использовались метод опорных векторов, градиентный бустинг и нейронные сети различной архитектуры: графовые нейронные сети, свёрточные нейронные сети и др. Для оценки надежности предсказания свойств молекул, сделанных с помощью машинного обучения, использовались ансамбли моделей, различные метрики молекулярного подобия и классификация молекул. 
+Результаты работы и их новизна: 
+- впервые разработаны простые и точные готовые к использованию уравнения для предсказания газохроматографических индексов удерживания для неподвижных фаз на основе 50%-цианопропилфенил-полиметилсилоксана и 35%-фенил-полиметилсилоксана. Эти фазы широко используются в исследованиях, однако методы предсказания индексов удерживания для них отсутствовали. В качестве молекулярных дескрипторов были использованы индексы удерживания, предсказанные с помощью глубокого обучения, для стандартных неподвижных фаз (двухстадийные модели). Разработанные модели наиболее полезны при анализе растительного сырья;
+- впервые показана дегидратация ароматических спиртов в условиях газовой хромато-масс-спектрометрии при использовании в качестве неподвижной фазы ионной жидкости на основе катионов пиридиния. Каталитическую активность неподвижных фаз, приводящую к внутриколоночному разложению аналитов, необходимо учитывать при синтезе неподвижных фаз. Новые неподвижные фазы при исследованиях необходимо тестировать с использованием разнообразного набора соединений, а не ограничиваться очень небольшим числом веществ, как делают многие исследователи;
+- получены новые данные по хроматографическому поведению различных аналитов и неподвижных фаз в условиях газовой и жидкостной хроматографии;
+- впервые получены универсальные (разработанные для веществ различных классов) модели машинного обучения для оценки зависимости величины индекса удерживания от скорости нагрева в режиме программирования температуры (газовая хроматография); 
+- впервые проведено статистическое исследование этого вопроса с использованием большого набора данных. В подавляющем большинстве случаев современные модели для предсказания индексов удерживания игнорируют влияние температурной программы. Данная работа открывает возможность для более точного предсказания индексов удерживания с учетом этого фактора;
+- проведена критическая оценка точности индексов удерживания в популярной базе данных NIST. Показано, что для целого ряда соединений (полихлорфенолы и другие производные фенола, производные пиразола и триазола, имидазол) база данных содержит совершенно неверные значения. Для ряда молекул (в том числе важных экотоксикантов) уточнены значения индексов удерживания. Впервые показано, что наличие целого ряда значений в базе данных NIST, претендующих на то, что они являются независимыми, не является гарантией того, что эти значения являются точными. Выявлены причины, приводящие к попаданию ошибочных значений в базу данных;
+- изучена работа популярного алгоритма Identity, используемого в программном обеспечении MS Search, NIST, США. Несмотря на то, что данное программное обеспечение широко используется химиками-аналитиками, соответствующее действительности описание его работы в открытой печати до работ исполнителей отчета отсутствовало. Также выполнены работы по оптимизации алгоритмов обработки масс-хроматограмм, библиотечного поиска, предсказания масс-спектров и визуализации масс-спектральных данных;
+- разработан комплексный подход к оценке надежности предсказания свойств молекул по их структуре с помощью машинного обучения, учитывающий одновременно ряд факторов.
+Область применения (рекомендации по внедрению): разработанные модели, теоретические подходы и полученные экспериментальные данные будут входить в состав комплексного подхода, на основе которого будет разработано полностью автоматизированное программное обеспечение и экспериментальная методика для установления структуры «малых» молекул на основе хромато-масс-спектрометрических данных без препаративного выделения. Этот подход найдет применение в метаболомике, анализе объектов окружающей среды, анализе промышленных объектов, в криминалистике, в изучении каталитических процессов.</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (9)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Шолохова Анастасия Юрьевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат химических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Строева Екатерина Николаевна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Самохин Андрей Сергеевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат химических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Буров Иван Александрович</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Хрисанфов Михаил Дмитриевич</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Боровикова Светлана Александровна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат химических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Байгильдиев Тимур Муратович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат химических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Карнаева Анастасия Евгеньевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат химических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Гриневич Оксана Игоревна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li></ul>
+              
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | МГУ им. М.В. Ломоносова</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-mgu.html">МГУ им. М.В. Ломоносова</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">палеонтология</span> <span class="tag">филогения</span> <span class="tag">видообразование</span> <span class="tag">микроэволюция</span> <span class="tag">эпигенетика</span> <span class="tag">онтогенез</span> <span class="tag">полиморфизм</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Эволюционное учение</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Эмбриональное развитие</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Популяция и среда</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Биоценозы. Экосистемы</span></div>
+          <h1 style="font-size:1.5rem">Анализ закономерностей микро- и макроэволюции</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">18,812 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225012402583-0</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2024-01-01 — 2024-12-31</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№4</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">19</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">Правительство России</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>Правительство Российской Федерации</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>Работа кафедры биологической эволюции по теме Госзадания ч.2 «Анализ закономерностей микро- и макроэволюции» ведется по нескольким направлениям: эволюционная биология развития, экспериментальное изучение эволюции, эволюционная экология, макроэволюция (филогения и палеонтология). Для решения основной задачи подобран ряд модельных объектов, которые позволяют изучать основные направления эволюционных процессов, дополняя и взаимно проверяя результаты каждого направления. С этого года на кафедре положено начало исследований на новых модельных объектах, это – форониды, брахиоподы, аннелиды, хетогнаты.
+В 2024 году исследованы ранние этапы эволюции нервной системы Nematostella vectensis (Cnidaria, Anthozoa), изучена роль белков, связывающихся с микротрубочками и контролирующих структуру тубулинового цитоскелета, в формировании нервных клеток и книдоцитов (стрекательных клеток) книдарий, представителей базальных многоклеточных животных. Идентифицированы ортологи микротрубочко-связывающего белка даблкортин-подобной киназы (NvDclk1). Этот ген экспрессируется преимущественно в нейронах и в книдоцитах, которые, как считается, произошли от нервных клеток. Проведены эксперименты по созданию в лаборатории условий для выведения половозрелых медуз родов Aurelia, Cyanea, Cassiopea и Nausithoë для изучения онтогенеза книдарий.
+В рамках долгосрочного эволюционного эксперимента по изучению адаптации Drosophila melanogaster на разном виде корма (стандартном, с повышенным содержанием соли или крахмала) изучена изменчивость морфологии анального органа, этот признак подвержен генетической ассимиляции за несколько десятков поколений.
+В 2024 году начато новое направление работ, связанное с экспериментальным изучением дивергенции мух Drosophila на ряде видов из природы и линиях, ранее поддерживаемых на кафедре. Особенность тематики – стрессовое экспериментальное воздействие на популяцию с целью дестабилизации онтогенеза, которое потенциально может приводить к расширению существующей изменчивости по ряду компонент приспособленности и морфологическим признакам. Изучена конкуренция двух видов – D. melanogaster и D. hydei на преимагинальных стадиях развития.
+Продолжено изучение адаптаций у нескольких модельных видов амфибий (остромордой, травяной и озерной лягушек, серой жабы), позволяющих им осваивать урбанизированную среду и среду с экстремальными условиями в краевых участках их ареалов или в местообитаниях интродуцированных популяций, за пределами их ареалов. У озерных лягушек из нескольких популяций Камчатки исследованы демографические и морфологические характеристики. Проведено скелетохронологическое исследование ранее собранных выборок из камчатских популяций озерных лягушек. Продолжено гельминтологическое исследование двух модельных видов из различных локалитетов их ареалов: травяной лягушки из популяции Звенигородской биологической станции МГУ (ЗБС), Московская обл., Одинцовский район, озерной лягушки из популяций Камчатки.
+Показано отсутствие связи адаптации травяной лягушки к необычным условиям обитания на Камчатке с полиморфизмом в регуляторной области рецептора к тиреоидному гормону. Популяции травяной лягушки Камчатки демонстрируют наличие репродуктивной изоляции по четырем локусам микросателлитов из семи проанализированных. По регуляторной области рецептора к тиреоидному гормону обе популяции демонстрируют мономорфизм, что резко отличает их от популяций Швеции, для которых показан связь такого полиморфизма с широтой, на которой обитает популяция. 
+Продолжено изучение бесхвостых амфибий и вариабельности их развития и адаптации к антропогенному загрязнению окружающей среды. Обработан собранный в черте Москвы материал, показано, что раннее эмбриональное и личиночное развитие проходит более вариабельно, чем в условиях водоемов, удаленных от мегаполиса. Экспериментальные данные по искусственному загрязнению воды и постадийному анализу изменчивости показывают, что развитие более вариабельно в воде из нативного водоема. 
+Продолжены популяционно-экологические исследования мухоловки-пеструшки (Ficedula hypoleuca) в целях выявления механизмов поддержания изменчивости в окраске брачного наряда самцов, что является актуальным с точки зрения теории адаптивного полиморфизма и теории симпатрического видообразования, т.к. начальные стадии симпатрического видообразования проходят через формирование внутривидового полиморфизма.
+Показано наличие некоторой степени репродуктивной изоляции между популяцией кряквы, гнездящейся в Москве, и популяцией кряквы из Владимирской области. В отличие от результатов предыдущей работы по выяснению уровня репродуктивной изоляции популяции кряквы, гнездящейся на прудах Московского зоопарка, кряквы из популяций, гнездящихся на других водоемах Москвы, демонстрируют меньшую генетическую дистанцию от природных популяций.
+Завершена работа по изучению изменчивости генеративной сфера крапивы двудомной в богатой однодомными побегами популяции на Звенигородской биостанции МГУ. Изучены адаптации насекомых-фитофагов к новым кормовым ресурсам (инвазивным растениям). Исследования трофического фракционирования стабильных изотопов углерода и азота выявили значительное варьирование показателей даже у близкородственных видов, что подчеркивает сложность взаимодействий между растениями и насекомыми. Результаты транскриптомного анализа показали, что химический состав кормовых растений оказывает прямое влияние на экспрессию генов жуков, формируя уникальный ответ на стрессы, связанные с питанием. Это подтверждает гипотезу о том, что фенотипическая пластичность играет ключевую роль в способности насекомых переходить на питание новыми кормовыми растениями. Эксперименты по пищевым предпочтениям и оценке приспособленности насекомых-фитофагов при выращивании на разных кормовых растениях выявили значительные различия в приспособленности фитофагов, предпочтения не всегда соответствуют приспособленности, что может приводить к эволюционной ловушке. Оценка химического состава растений подтвердила, что инвазивные виды характеризуются более низкой питательной ценностью, что сказывается на их привлекательности и пригодности для фитофагов. Разработанная математическая модель продемонстрировала ключевые факторы, влияющие на успешную адаптацию насекомых к инвазивным растениям. Эти исследования углубили понимание механизмов взаимодействия между фитофагами и растениями, включая химические и физиологические аспекты адаптации, данные имеют прикладное значение для разработки методов биологического контроля инвазивных видов и управления экосистемами, подвергшимися их воздействию.
+Завершен этологический эксперимент по изучению передачи навыков у муравьев Monomorium pharaonis. 
+На основе данных из базы данных Anage проанализированы признаки, способствующие долголетию в различных кладах амфибий и рептилий, рассмотрены математические показатели, применяемые для оценки предрасположенности к долголетию у разных видов. Защитные фенотипы и особые стратегии жизненного цикла дополнительно объясняют макроэволюционные закономерности старения. 
+Проведено сравнение экспрессии генов вителогенина, важного белка, участвующего в формировании запаса питательных веществ в яйцах насекомых и в регуляции их физиологических проявлений, у рыжего лесного муравья Formica rufa в популяции ЗБС. Показана физиологическая роль белка вителлогенина у рыжего лесного муравья, несводимая к формированию яиц. 
+В рамках исследования микроэволюции одноклеточных методами биоинформатики проанализированы сведения о молекулярно-генетическом разнообразии криптофитовых водорослей рода Proteomonas в доступных электронных базах данных. Обнаружено, что в пределах рода в Мировом океане присутствует несколько криптических видов, имеющих, по-видимому, глобальное распространение.
+В рамках исследований ископаемых мирмекофаун показана биогеографическая связь между Североамериканским континентом и Европейским в середине эоцена по находкам представителей современного рода Oecophylla. Описан новый вымерший примитивный род современной трибы Oecophyllini (муравьи-ткачи). Начат подробный анализ изменений мирмекофаун в миоценовом периоде на территории Палеарктики. Собран материал из миоценовых отложений Крыма, начата его обработка. Продолжена работа по анализу меловой (возраст ок. 100 млн лет) фауны муравьев из бирманского янтаря. Обрабатывается уникальная находка с инклюзами муравьев Sphecomyrminae и термита-солдата. 
+В синской свите (нижний кембрий, возраст ок. 513 млн лет) на территории Республики Саха найдены древнейшие настоящие обыкновенные губки (Demospongiae), изучена морфология спикул и их онтогенез. На западе Северной Америки выявлены последние раннекембрийские рифы, построенные археоциатами. Из нижнекембрийского лагерштетта Чэнцзян (Китай, возраст 518 млн лет) собрана большая коллекция проблематичных скелетных ископаемых, их изучение позволило доказать, что конические скелеты с порами, принадлежали археоциатам.
+Продолжены исследования микроэволюции на мезозойских остракодах из Среднерусского моря (в юрском периоде располагавшегося на Европейской части России). Пересмотрены эволюционные связи представителей рода Lophocythere. Изучен уникальный материал из отложений Огайо (США) конца каменноугольного периода: карапакс циклиды со следами повреждений и ядро остракоды, найденное под ним. Предложена гипотеза, что это возможные следы некрофагии остракод. 
+Опубликована книга «Как живые: Двуногие змеи, акулы-зомби и другие исчезнувшие животные», где описаны особенности эволюции разных групп позвоночных, морфология скелета, «мягких тканей», приводятся примеры сообществ и особенности окружающей среды, в которой они обитали. Книга может использоваться как новейшее учебное пособие по палеонтологии позвоночных животных.</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (10)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Скобеева Виктория Александровна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Путятина Татьяна Сергеевна</strong> <span style="color:#71717a;font-size:0.8rem">Доктор биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Ляпков Сергей Марленович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Гриньков Владимир Григорьевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Шурупова Яна Андреевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Перфильева Ксения Сергеевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Сухопутова Алёна Валентиновна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Краус Юлия Александровна</strong> <span style="color:#71717a;font-size:0.8rem">Доктор биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Лысенков Сергей Николаевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Северцова Елена Алексеевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li></ul>
+              
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

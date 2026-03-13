@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | МГУ им. М.В. Ломоносова</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-mgu.html">МГУ им. М.В. Ломоносова</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">белковый комплекс</span> <span class="tag">cbs-домен</span> <span class="tag">фитопатоген</span> <span class="tag">ингибитор протеиназ</span> <span class="tag">трансгенные растения</span> <span class="tag">неорганическая пирофосфатаза</span> <span class="tag">фруктозо-1, 5-кето-4-уронатизомераза</span> <span class="tag">протеиназа</span> <span class="tag">6-бисфосфатальдолаза</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Биохимия растений</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Структура и функции биополимеров</span></div>
+          <h1 style="font-size:1.5rem">Структура, механизм, роль и биоинженерия гидролитических ферментовнерия гидролитических ферментов.</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">15,730 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225012904411-9</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2024-01-01 — 2024-12-31</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№7</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">6</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">Правительство России</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>Правительство Российской Федерации</div>
+                </div><div class="metric-box" style="text-align:left">
+                  <div class="label">Исполнитель</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">МОСКОВСКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ ИМЕНИ М.В.ЛОМОНОСОВА, МГУ ИМЕНИ М.В.ЛОМОНОСОВА, МОСКОВСКИЙ УНИВЕРСИТЕТ ИЛИ МГУ</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>Целью работы является изучение двух групп ферментов – пирофосфатаз микроорганизмов  и пептидаз фитопатогенов и насекомых-вредителей для разработки новых подходов для повышения устойчивости растений к разнообразным факторам внешней среды и возможного использования этих ферментов в медицинской практике. Объектами исследования были пирофосфатазы микроорганизмов, а такж гомологи кислой эндопротеазы (EPR) в геномах аскомицетных и базидиальных видов грибов и пищеварительные пептидазы жука - вредителя запасов зерновых культур Tenebrio molitor. 
+	Работа по изучению пирофосфатаз микроорганизмов была направлена на отработку тестовой системы для анализа методом pulldown состава митохондриальных комплексов с участием РРазы РРА2. Были отработаны протоколы выделения митохондрий из дрожжей S. cerevisiae и из сердца быка. В качестве «наживки» в методе pulldown с дрожжевым митохондриальным лизатом предполагалось использовать выделенный ранее белок РРА2 дрожжей, тагированный шестью остатками His по N-концу. Однако было обнаружено, что, хотя этот белок и связывался с Ni-NTA-агарозой, он необратимо агрегировал после пропускания через него лизата клеток. Поэтому последующие эксперименты pulldown было решено проводить с митохондриями животных. С использованием имеющейся плазмиды для выделения митохондриальной РРазы человека hPPA2 были получены генетические конструкции на основе плазмиды pET28a для экспрессии 6-His-тагированной формы hPPA2. Тагированный по N-концу вариант белка не связывался с NiNTA-агарозой, но такое связывание было обнаружено для варианта 6-His-тагированием по С-концу. Это дает возможность использовать его для экспериментов pulldown. Используя стандартные подходы генетической инженерии, был получен вариант CBS-пирофосфатазы с делецией домена DRTGGв регуляторной части. При этом белок сохранил гомотетрамерную структуру, но потерял примерно 10% активности. Была также осуществлена вставка в регуляторную часть из трех доменов (2 CBS + DRTGG) в изначально каноническую нерегулируемую пирофосфатазу. В результате белок из гомодимера превратился в гомотетрамер (эта структура характерна для регулируемой пирофосфатазы) и стал менее активным.
+Проведен биоинформатический анализ гомологов пролин-специфичной кислой эндопептидазы в геномах базидиальных и аскомицетных грибов. Кислая эндопептидаза относится к семейству сериновых пептидаз S28 по  базе данных MEROPS.  Все выявленные гомологи кислой эндопептидазы грибов имели одинаковую доменную структуру и содержали единственный домен суперсемейства Abhydrolase, включающем консервативную триаду аминокислотных остатков сериновых пептидаз (серин, аспарагиновая кислота и гистидин). Большинство гомологов содержат на N-конце сигнальный пептид, однако у 23 гомологов сигнального пептида не обнаружено, а у кислых эндопептидаз грибов Coccidioides immitis и Tilletia indica вместо сигнального пептида выявляется трансмембранный домен. Кислая эндопептидаза представлена большим числом копий у фито- и энтомопатогенов, чем у микоризообразователей и сапротрофов (у последних чаще 1-2 копии). В то же время  консервативные домены у всех гомологов одинаковые.  
+Продолжено изучение очищенного рекомбинантного препарата пептидазы SerP38 с неканонической структурой субстрат-связывающего сайта (GGA) из кишечника личинок Tenebrio molitor. Детальное исследование энзиматических свойств пептидазы показало, что фермент способен гидролизовать только субстраты химотрипсина Suc-AAPF-pNA и Ac-Y-pNA. Были изучены физико-химические свойства пептидазы (рН-оптимум активности, рН и температурная стабильность), проведен ингибиторный анализ. Отметим, что короткий жизненный цикл насекомого и секреция множества пептидаз в средней кишке личинок T. molitor с высокой каталитической активностью и стабильностью могут сделать это насекомое отличным альтернативным источником промышленно важных ферментов для использования в качестве добавок в различных биопрепаратах (например, пятновыводителях, моющих средствах и т.п.).
+Подробно проанализирована экспрессия генов сериновых пептидаз на разных стадиях онтогенеза жука T. molitor. Максимальное количество генов активных пептидаз, 61 ген, экспрессировалось практически только на питающихся стадиях личинки и взрослой особи, причем они демонстрировали максимальные уровни экспрессии и не имели регуляторных доменов в составе пропептида. На этих же стадиях экспрессировалось также 95 генов предположительно неактивных гомологов сериновых пептидаз, тоже без регуляторных доменов. На стадиях развития и метаморфоза – яйца и куколки – экспрессировалось значительно меньшее количество генов пептидаз и их гомологов. И также небольшая, но важная группа генов пептидаз и их гомологов экспрессировалась на всех или большинстве стадий развития T. molitor. Большая часть из них имела регуляторные домены в составе пропептида и предположительно принимает участие в таких важных физиологических процессах как иммунная защита, адгезия, регуляция развития и метаболизма.</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (8)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Воробьева Наталия Николаевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат химических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Анашкин Виктор Андреевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат химических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Белозерский Михаил Андреевич</strong> <span style="color:#71717a;font-size:0.8rem">Доктор биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Дунаевский Яков Ефимович</strong> <span style="color:#71717a;font-size:0.8rem">Доктор биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Элпидина Елена Николаевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Серебрякова Марина Васильевна</strong> <span style="color:#71717a;font-size:0.8rem">Доктор химических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Кирсанов Роман Сергеевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат химических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Курилова Светлана Анатольевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат химических наук</span></li></ul>
+              
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

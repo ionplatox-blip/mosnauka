@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | МГУ им. М.В. Ломоносова</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-mgu.html">МГУ им. М.В. Ломоносова</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">2-оксоглутаратдегидрогеназа</span> <span class="tag">карбоксипептидаза т</span> <span class="tag">транскетолаза</span> <span class="tag">глицеральдегид-3-фосфатдегидрогеназа</span> <span class="tag">толл-подобные рецепторы</span> <span class="tag">лактатдегидрогеназа а</span> <span class="tag">апоптоз нейтрофилов</span> <span class="tag">пенициллинацилаза</span> <span class="tag">амилоидные белки</span> <span class="tag">полиферментные системы</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Пептиды, белки</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Пространственная структура и свойства биополимеров</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Биохимия животных</span></div>
+          <h1 style="font-size:1.5rem">Поиск регуляторов биологических процессов, воздействующих на белки, ферменты, полиферментные комплексы и рецепторные системы</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">43,817 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225012702735-0</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2024-01-01 — 2024-12-31</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№6</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">21</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">Правительство России</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>Правительство Российской Федерации</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>Исследование механизмов функционирования биологических систем: белков, ферментов, полиферментных комплексов и рецепторов, а также поиск подходящих соединений для модуляции их функциональных свойств является чрезвычайно важным для современной биологии и медицины как с фундаментальной, так и с практической точки зрения. В 2024 году были продолжены исследования путей регуляции биологических систем разного уровня организации. Определен профиль оксилипинов и получена оценка возможности их направленного изменения как in vitro экспериментах (активация Толл-подобного рецептора 3 TLR3 в клеточной модели нейровоспаления), так и in vivo моделях аутоиммунного увеита и инсульта. Понимание ключевых элементов сигнальных каскадов и ферментативных превращений биосинтеза оксилипинов при различных внешних воздействиях на клетку или организм должно помочь установить возможные терапевтические мишени для направленного воздействия. Изучено координированное поведение нейтрофилов в процессе роения, регулируемого различными медиаторами и межклеточными взаимодействиями, влияние синтезируемого нейтрофилами лейкотриена В4 – сильнейшего хемоаттрактанта, участвующего в привлечении дополнительного количества нейтрофилов к месту инфекции. Целью исследований было понять механизмы регуляции синтеза лейкотриенов под действием бактерий и различных молекулярных структур, ассоциированных с патогенами. Исследованы возможности регуляции метаболизма ингибиторами тиаминового транспорта и тиаминдифосфат(ТДФ)-зависимых ферментов. Риск развития диабета и кардиометаболических расстройств связан с повышенным содержанием альфа-аминоадипиновой кислоты и нарушением метаболизма аминокислот с разветвленной цепью. В то же время побочные эффекты широко используемого противодиабетического препарата метформина включают нарушение деградации аминокислот с разветвленной цепью и угнетение внутриклеточного транспорта тиамина. Эти эффекты могут быть взаимосвязаны, поскольку дефицит тиамина ухудшает функционирование ТДФ-зависимых полиферментных комплексов дегидрогеназ 2-оксокислот, участвующих в деградации аминокислот, в то время как диабет часто связан с нарушением тиаминового статуса. В отчетном году было показано, что тиамин или его фармакологические формы улучшают клинические показатели у пациентов с невропатией Шарко–Мари–Тута (ШМТ), пероральный прием высоких доз тиамина может быть рекомендован в качестве поддерживающей терапии при неизлечимой в настоящее время невропатии ШМТ. В результате проведенного пилотного исследования выявлены ранее неизвестные биохимические маркеры изменений в ТДФ-зависимом метаболизме при ШМТ, что открывает путь к дальнейшему полномасштабному исследованию клинических улучшений у пациентов с ШМТ при приеме витамина В1 и его производных. Изучена роль посттрансляционных модификаций, в частности нитрозилирования, окисления и гликирования, в регуляции каталитической активности глицеральдегид3-фосфатдегидогеназы, а также в развитии патологических процессов. Проведен поиск новых комплексов ферментов с РНК и изучение влияния нуклеиновых кислот на каталитические и регуляторные свойства ферментов. Проведено сравнение влияния разных типов вирусных шаперонинов на патологическую трансформацию альфа-синуклеина и прионного белка. Изучены структурные особенности амилоидных структур, образующихся при трансформации амилоидных белков в разных условиях, с помощью методов крио-микроскопии и малоуглового рентгеновского рассеяния. Оценена эффективность использования синтетических и природных полимеров в качестве средств направленной доставки лекарственных соединений. Проведено молекулярное моделирование влияния мутаций ATM протеинкиназы на способность фермента фосфорилировать целевые белки на основе биоинформатического анализа суперсемейства белков, определены консервативные и специфические позиции в структуре белка, получена трехмерная модель структуры функционального FATKIN домена ATM протеинкиназы, проведен анализ конформационных изменений. Разработаны и апробировны новые подходы генерации библиотек соединений для поиска ингибиторов,
+усовершенствована методология структурной фильтрации и отбора соединений в процессе компьютерного скрининга, проведено экспериментальное
+тестирование ряда идентифицированных ингибиторов. Протестированы алгоритмы генерации библиотек низкомолекулярных соединений и подготовки их трехмерных структур для компьютерного скрининга (ACD/Labs, RDKit, OpenBabel и др.), а также собственные разработанные подходы с фиксацией трехмерной структуры основной части молекулы и генерацией заместителей в выбранных положениях. Подобраны оптимальные условия для компьютерной генерации и скрининга ингибиторов на примере двух белковых
+мишеней - нейраминидазы вируса гриппа и поли(АДФ-рибозо)полимеразы человека (мишень для терапии сердечно-сосудистых, онкологических и других заболеваний), что поможет в дальнейшем при выявлении новых лекарственных кандидатов. Проведена оптимизация алгоритма разрабатываемой программы vsFilt (https://biokinet.belozersky.msu.ru/vsfilt), предназначенной для структурной фильтрации соединений в процессе компьютерного скрининга: существенно увеличена скорость обработки больших библиотек соединений (более 10 тысяч молекул). Экспериментально подтверждено цитопротекторное действие 8-гидрокси-7-метилгуанина - ингибитора поли(АДФрибозо)полимеразы, обнаруженного с помощью разработанной методики компьютерного скрининга. По результатам исследований в 2024 году опубликованы 22 статьи, защищена 1 докторская, 1 кандидатская диссертация, 2 дипломные работы.</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (25)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Баринова Ксения Вячеславовна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Стройлова Юлия Юрьевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Муронец Владимир Израилевич</strong> <span style="color:#71717a;font-size:0.8rem">Доктор биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Артюхов Артем Викторович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Соловьева Ольга Николаевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Голенкина Екатерина Александровна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Нилов Дмитрий Константинович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат химических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Астахова Алина Анатольевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Поздышев Денис Валерьевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Курочкина Лидия Петровна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат химических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Швядас Витаутас-Юозапас Каятоно</strong> <span style="color:#71717a;font-size:0.8rem">Доктор химических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Панин Николай Владимирович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат химических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Севостьянова Ирина Александровна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Буник-Фаренвальд Виктория-Лариса Ивановна</strong> <span style="color:#71717a;font-size:0.8rem">Доктор химических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Чергинцев Денис Александрович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li></ul>
+              <p style='color:#52525b;font-size:0.8rem;margin-top:0.5rem'>...и ещё 10</p>
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

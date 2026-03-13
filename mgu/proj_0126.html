@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | МГУ им. М.В. Ломоносова</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-mgu.html">МГУ им. М.В. Ломоносова</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">арктические и бореальные экосистемы</span> <span class="tag">антропогенные факторы</span> <span class="tag">углеродный баланс</span> <span class="tag">землепользование</span> <span class="tag">климат</span> <span class="tag">популяционное здоровье</span> <span class="tag">здоровье окружающей среды</span> <span class="tag">моделирование</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Антропогенные воздействия на экосистемы</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Биоценозы. Экосистемы</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Популяция и среда</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Общие вопросы</span></div>
+          <h1 style="font-size:1.5rem">Построение концептуальных и математических моделей зональных типов наземных экосистем</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">7,960 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225012803124-0</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2024-01-01 — 2024-12-31</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№4</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">8</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">Правительство России</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>Правительство Российской Федерации</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>Представлены результаты исследований сезонной динамики углекислотного газообмена и фотосинтетической продуктивности подроста ели европейской (Picea abies L.), произрастающего на экспериментальном полигоне «Таёжный лог» Валдайского филиала ГГИ (национальный парк «Валдайский» в Новгородской области), в полуденные часы в апреле-октябре 2024 г. Дана оценка влияния подроста ели на углеродный баланс таежных лесов Валдая.
+Установлено, что основными факторами, обусловливающими скорость ассимиляции СО2 у хвои, являются температура воздуха и освещенность (ФАР). Процесс фотосинтеза хвои начинался в апреле при среднемесячной дневной температуре воздуха +11,0°С. Максимальная скорость ассимиляции СО2 у хвои отмечена в мае при оптимальных значениях температуры воздуха и ФАР, минимальная – в октябре в условиях осенней перестройки фотосинтетического аппарата и перехода растений к состоянию покоя. Зависимость скорости полуденного поглощения СО2 от температуры воздуха имела форму экспоненты (R2=0,407), от ФАР – логарифмической кривой (R2=0,710). В течение сезона в полуденные часы регистрировали положительный углекислотный газообмен хвои.
+Показано, что изменение величины фотосинтетической продуктивности хвои подроста ели в течение сезона, соответствовало сезонному ходу ассимиляции СО2: максимальная и минимальная величины продуктивности отмечены в мае и октябре. Суммарное поглощение углекислого газа хвоей в полуденные часы за год составило 0,53 т СО2 га-1год-1. Величина чистой первичной продукции хвои подроста ели, равная 0,08 т С га-1год-1, подтвердила, что еловый подрост имел важное значение в поглощении углерода таежными лесами Валдая.
+Полученные электронно-микроскопические фотографии позволили выявить различия в ультраструктуре фотосинтетического аппараты хвои ели европейской, произрастающей на естественной и антропогенно-нарушенной территориях.
+В рамках темы мониторинга парниковых газов, был разработан и смонтирован портативный газоанализатор на основе ИК детектора углекислого газа KIT MT8057S. Проведено исследование по сравнению работы прибора на основе детектора углекислого газа KIT MT8057S и инфракрасного СО2-газоанализатора AZ 7752. Продолжена работа по оценке постпирогенной эмиссии диоксида углерода для биотопов, в разной степени подвергшихся воздействию огня. Были отобраны пробы грунта для определения вклада микобиоты в постпирогенную эмиссию. Данные находятся в стадии обработки.
+Для уточнения оценки пулов почвенного углерода продолжена работа по уточнению средних запасов почвенного углерода категорий «нелесных» земель для северных территорий России. Для основных категорий - болот, вырубок, гарей, тундр, лугов, степей, пастбищ, пашен, садов - рассчитаны средние величины в дифференциации по зонально-провинциальным регионам России (зоны тундр и северной тайги и четырех регионов: Европейская часть, Западная Сибирь, Восточная Сибирь, Дальний Восток) и слоям почвы (0-30, 0-50, 0-100 см). 
+По обновленной БД «Почвенные характеристики Северной Евразии» были рассчитаны запасы горизонта подстилки, выделены мощность и запасы именно подстилочного горизонта, а также слоя почвы 0-30 см. Рассчитанные данные были использованы в моделировании запасов органического углерода почв в пилотных регионах - Республики Карелия и Коми, Московская и Новосибирская области. Мощность и запасы подстилки в выбранных регионах были использованы в качестве предикторов для оценки запасов в подстилочном горизонте выделенных территорий. 
+В продолжение работы по изучению вклада природных и антропогенных факторов в формирование популяционного здоровья населения России рассматриваются связи между демографическими характеристиками популяционного здоровья (индексом демографического старения, коэффициентом жизненности, заболеваемостью социально значимыми болезнями) и уровнем инновационного развития экономики в 85 субъектах Российской Федерации. В качестве источника информации о популяционном здоровье населения использовали сборники Росстата. Источником информации для оценки уровня инновационного развития экономики служили данные Ассоциации инновационных регионов России. Для оценки связи между исследуемыми показателями применяли корреляционный и непараметрический дисперсионный анализы. Выявлена статистически значимая связь между Индексом инновационного развития экономики (ИИРЭ) и демографическим индексом старения (R = 0,560; p &lt; 0,05), коэффициентом жизненности (R = –0,306;  p &lt; 0,05) и численностью пациентов, находящихся на диспансерном учете со злокачественными новообразованиями (R = 0,475;  p &lt; 0,05). Анализ связи между уровнем инновационного развития экономики в регионах России и характеристиками популяционного здоровья населения показал, что в российских регионах с более высоким уровнем инновационного развития экономики проживает более пожилое население и показатели смертности превышают показатели рождаемости. Выявлена значимая положительная связь между уровнем инновационного развития экономики и численностью пациентов, находящихся на диспансерном учете по поводу злокачественных новообразований. С заболеваемостью по остальным классам болезней значимые корреляционные связи не выявлены.
+Проведено сравнение демографических характеристик популяционного здоровья (общая рождаемость, общая смертность, индекс демографического старения, коэффициент жизненности) жителей 174 городов России в зависимости от биоклиматических характеристик городов (среднегодовая температура, индекс суровости климата).   Выявлено статистически значимое различие по общему коэффициенту рождаемости (различие значимо на уровне 0,033), общему коэффициенту смертности (различие значимо на уровне 0,009) и индексу демографического старения (различие значимо на уровне 0,0001) для групп городов с различной среднегодовой температурой. По индексу суровости климата (индексу Бодмана) значимое различие между группами городов наблюдалось по показателям смертности (различие значимо на уровне 0,0001), индексу демографического старения (различие значимо на уровне 0,001) и коэффициенту жизненности (различие значимо на уровне 0,001).</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (5)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Малицкий Сергей Валентинович</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Честных Ольга Владиславовна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Будилова Елена Вениаминовна</strong> <span style="color:#71717a;font-size:0.8rem">Доктор биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Ростовцева Елена Леонидовна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Попов Сергей Юрьевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li></ul>
+              
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

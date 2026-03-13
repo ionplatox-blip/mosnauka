@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | МГУ им. М.В. Ломоносова</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-mgu.html">МГУ им. М.В. Ломоносова</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">МИКРОРНК</span> <span class="tag">ВНЕКЛЕТОЧНЫЕ ВЕЗИКУЛЫ</span> <span class="tag">МЕЗЕНХИМНЫЕ СТРОМАЛЬНЫЕ КЛЕТКИ</span> <span class="tag">ВНЕКЛЕТОЧНЫЙ МАТРИКС</span> <span class="tag">ФИБРОТИЧЕСКИЙ ФОКУС</span> <span class="tag">РЕПАРАТИВНАЯ РЕГЕНЕРАЦИЯ</span> <span class="tag">ИНВАЗИЯ</span> <span class="tag">МИОФИБРОБЛАСТЫ</span> <span class="tag">БЕЛОК АКТИВАЦИИ ФИБРОБЛАСТОВ АЛЬФА (FAPΑ)</span> <span class="tag">ПРОГРЕССИРУЮЩИЙ ФИБРОЗ</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Медицинская цитология</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Биофармация</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Реабилитация</span></div>
+          <h1 style="font-size:1.5rem">Управление фиброзом тканей через регуляцию активации стромальных клеток-предшественников миофибробластов</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">6,500 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225031113089-7</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2024-01-01 — 2024-12-31</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№2</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">2</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">РНФ</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>Российский научный фонд</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>Объект исследований или разработки: 	
+Объектом исследования являются активированные предшественники миофибробластов, экспрессирующие белок активации фибробластов альфа (FAPα, fibroblast activation protein alpha). Этот маркер описан для фибробластов, ассоциированных с опухолью (CAF, cancer associated fibroblasts), однако если в канцерогенезе роль CAF изучена довольно хорошо, крайне мало известно о роли FAPα+ фибробластов в развитии фиброза, и исследование этого вопроса находится в фокусе проекта. Актуальной задачей современной биомедицины является выяснение механизмов появления активированных фибробластов, в том числе, на границе инвазивного фронта фибротического фокуса и дальнейшей их дифференцировки в миофибробласты с целью нахождения возможных терапевтических мишеней для остановки и обращения процессов фиброза. 
+Цель работы:
+Целью НИР является установление механизмов активации и дифференцировки клеток-предшественников миофибробластов как основного драйвера прогрессирующего фиброза и роли их возможного маркера FAPα в прогрессии фиброза.
+Задачи НИР: 
+На втором году исследования с использованием результатов, полученных в ходе решения задач первого этапа проекта, и отработанных подходов по модулированию экспрессии/активности FAPa будут проанализированы механизмы участия FAPa-экспрессирующих стромальных клеток, в процессах, важных для патогенеза фиброза. Будут изучены клеточно-молекулярные механизмы дифференцировки этих клеток в миофибробласты, взаимодействия с белками внеклеточного матрикса и клетками иммунной системы, влияния на ангиогенез при развитии фиброза, а также возможная гетерогенность популяции FAPa+ клеток в фибротических условиях.
+1. Установление роли FAPa в трансдифференцировке стромальных клеток и формировании миофибробластического ядра фибробластического фокуса. С использованием полученных на первом этапе генетических конструкций и линий фибробластов человека с подавлением или гиперэкспрессией FAPа будет продолжено изучение роли FAPa в активации стромальных клеток и их трансдифференцировке в миофибробласты. Использование специфического химического ингибитора FAPа позволит уточнить роль ферментативной активности FAPа в регуляции фенотипа и функций стромальных клеток. Планируется также оценить взаимодействие FAPа+ стромальных клеток с иммунными клетками, играющими важную роль в прогрессировании фиброза. Учитывая вклад FAPa в активацию стромальных клеток, на втором году выполнения проекта мы планируем уточнить роль FAPa в формировании и стабилизации новообразованных сосудов. 
+2. Выделение из лёгких мышей с блеомицин-индуцированным фиброзом различных субпопуляций FAPa+ стромальных клеток и их анализ.
+3. Поиск микроРНК в составе секретома МСК, которые потенциально связываются с FAPa.
+
+Основные результаты НИР:
+Наиболее частым исходом репаративной регенерации у млекопитающих является развитие фиброза, что в случаях обширного или хронического повреждения приводит к замещению функциональной ткани соединительной и является причиной серьезных заболеваний, обуславливающих почти 50% смертности в развитых странах. Поэтому важнейшей задачей биомедицины является изучение процессов развития фиброза с целью поиска эффективных способов его предотвращения и, возможно, полного или частичного разрешения с восстановлением функции поврежденных тканей. Основными эффекторными клетками фиброза считаются миофибробласты, которые формируют фибротические фокусы (fibrotic foci) – морфофункциональные единицы патологического фиброза, представляющие собой плотные отложения внеклеточного матрикса (ВКМ), в котором находятся синтетически активные миофибробласты. При этом пролиферативная и миграторная активность клеток выражена по периферии фокуса, образуя инвазивный фронт, обеспечивающий прогрессию фиброза, что во многом напоминает рост и инвазию злокачественных опухолей. Нерешенной актуальной задачей является выяснение механизмов появления активированных стромальных клеток на границе инвазивного фронта фибротического фокуса и дальнейшей их дифференцировки в миофибробласты. Известно, что активация различных клеточных типов, вносящих вклад в пул миофибробластов, сопровождается появлением экспрессии белка активации фибробластов альфа (FAPа). Этот же маркер описан для фибробластов, ассоциированных с опухолью (CAF), роль которых хорошо изучена в канцерогенезе, однако крайне мало известно о роли FAPа+ фибробластов в развитии фиброза. FAPа является мембранной протеазой, демонстрирующей экзо- и эндопептидазную активность, которая участвует в протеолизе ВКМ, облегчая инвазию клеток. С другой стороны, FAPа+ клетки способны к секреции ключевых белков профибротического ВКМ. Роль FAPа+ клеток в прогрессии фиброза на данный момент представляется весьма противоречивой. Ранее мы показали, что повреждение тканей легкого сопровождается появлением и накоплением FAPа+ клеток, что положительно коррелирует со степенью тяжести фиброза. Однако точный вклад FAPа+ клеток в ремоделирование фибротических фокусов и прогрессию или реверсию патологического фиброза остаётся неопределённым.
+В данном проекте впервые в фокусе внимания являются активированные стромальные клетки-предшественники миофиброластов (FAPа+ клетки) и получены новые данные об их роли в развитии прогрессирующего фиброза. На втором этапе проекта мы исследовали клеточно-молекулярные механизмы дифференцировки этих клеток в миофибробласты, взаимодействия с белками ВКМ и клетками иммунной системы, влияния на ангиогенез, а также гетерогенность популяции FAPa+ клеток при фиброзе. С помощью иммунопреципитации и протеомного анализа мы установили несколько вероятных белков-партнеров FAPa и проследили динамику экспрессии некоторых из них в фибробластах, дифференцирующихся под воздействием TGFb. Применение специфического химического ингибитора FAPа позволило уточнить роль ферментативной активности FAPа в регуляции фенотипа и функций стромальных клеток. С использованием полученных нами генетически модифицированных линий фибробластов человека с подавлением или гиперэкспрессией FAPа была подробно изучена возможная роль этого белка в активации стромальных клеток и их дифференцировке в миофибробласты. Используя различные клеточные модели, мы подтвердили критическую роль FAPa в активации стромальных клеток, проявляющейся в повышении пролиферативной, миграторной и инвазивной активности. Можно предполагать активное участие FAPа-позитивных стромальных клеток в ремоделировании матриксного ядра фибротического фокуса. FAPa необходим для полноценной дифференцировки фибробластов в миофибробласты, но выраженность этого эффекта может быть донор-специфичным. Мы также сделали вывод о наличии тканеспецифичных различий влияния FAPа на функциональные свойства стромальных клеток.
+Были получены новые данные о взаимодействии FAPа+ стромальных клеток с иммунными клетками моноцитарно/макрофагального ряда. Макрофаги, поляризованные в М1- и М2а-направлениях, способствуют активации стромальных клеток, но не дифференцировке в миофибробласты. Паракринные сигналы от активированных стромальных клеток стимулируют экспрессию генов М2-макрофагов, а также снижают экспрессию некоторых генов М1-макрофагов, однако без значимой связи с уровнем FAPa. Нами установлен вклад FAPа в формирование и стабилизацию новообразованных капилляров на модели формирования капилляроподобных структур эндотелиальными клетками на клеточных пластах из стромальных клеток с модулируемой экспрессией FAPa. 
+Важной задачей проекта было проследить динамику развития морфофункциональных единиц фиброза тканей - фибротического фокуса - в животной модели фиброза легких in vivo у мышей и установить роль FAPа+ клеток в формировании, росте и ремоделировании фокуса. Мы показали, что FAPa+ клетки появляются уже на ранних стадиях повреждения ткани и начинают дифференцироваться в aSMA+ миофибробласты. Это приводит к утолщению стенок альвеол как за счет пролиферативной активности FAPa+ клеток, так и за счёт их дифференцировки в миофибробласты и формированию фибротических фокусов. На сроках разрешения фиброза примерно к 4 месяцу наблюдается формирование новых структур, представляющих собой образования с высокой представленностью CD90+ клеток, которые мы назвали “фокусы ремоделирования”, а также много CD90+FAPa+ клеток. Поскольку такие зоны в основном окружают сохранившиеся aSMA+ участки, можно предположить, что именно эти клетки вносят существенный вклад в ремоделирование соединительной ткани. Таким образом, мы доказали, что FAPа+ клетки вносят существенный вклад как в инициацию фиброза, формирование фибротических фокусов, так и в ремоделирование фибротической ткани. Нами были выделены и проанализированы субпопуляции FAPa+ стромальных клеток (FAPa+CD90+ и FAPa+CD90-) из легких мышей с фиброзом легких, однако согласно данным гистологического анализа дизайн этой экспериментальной задачи будет оптимизирован на заключительном этапе проекта. 
+Кроме того, с помощью биоинформатического анализа и дальнейшей валидации методом иммуноблотинга мы установили несколько микроРНК, потенциально связывающихся с мишенью мРНК FAPa и способные регулировать его экспрессию.
+Таким образом, нами получены оригинальные данные о роли FAPа+ клеток в формировании и прогрессии фиброза, что в дальнейшем позволит сформулировать концепцию участия этих клеток в патогенезе фибропролиферативных заболеваний.</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (7)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Монакова Анна Олеговна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Кулебякина Мария Александровна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Григорьева Ольга Александровна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Дьячкова Ульяна Денисовна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Ефименко Анастасия Юрьевна</strong> <span style="color:#71717a;font-size:0.8rem">Доктор биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Толстолужинская Анастасия Евгеньевна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Басалова Наталия Андреевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li></ul>
+              
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

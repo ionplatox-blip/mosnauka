@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | НИЦ "Курчатовский институт"</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-kurchatov.html">НИЦ &quot;Курчатовский институт&quot;</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">Tripartite motif (TRIM)14</span> <span class="tag">Pseudomonas aeruginosa</span> <span class="tag">трансгенные мыши</span> <span class="tag">клеточные линии А549</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Инфекционная иммунология</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Регуляция иммунного ответа</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Молекулярная иммунология</span></div>
+          <h1 style="font-size:1.5rem">Исследование роли TRIM14 в антибактериальном ответе на моделях in vivo и in vitro (заключительный)</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">1,500 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225041414779-2</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2023-12-16 — 2024-12-15</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№2</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">1</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">РНФ</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>Российский научный фонд</div>
+                </div><div class="metric-box" style="text-align:left">
+                  <div class="label">Исполнитель</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">НИЦ &quot;Курчатовский институт&quot;</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>Объект исследования – мыши двух трансгенных линий Tg1 и Tg4 и контрольной линии C57BLxCBA; клеточные линии А549 с повышенной и пониженной экспрессией гена TRIM14.
+Цель работы – поиск новых молекулярных механизмов участия системы врожденного иммунитета в антибактериальной защите.
+Методология работы – анализ выживания мышей и клеточных линий А549 при заражении P. aeruginosa, количественная ОТ-ПЦР в реальном времени, вестерн-блот-гибридизация.
+В работе по данному проекту в этом году мы исследовали влияние повышенной экспрессии гена TRIM14 человека на заражение P. aeruginosa на модели трансгенных мышей (с гиперэкспрессией гена TRIM14) [1].
+За отчетный период были получены следующие результаты. 
+1)	Было обнаружено, что выживаемость трансгенных животных линии Tg1 и Tg4 после инфицирования P. aeruginosa была сильно ниже по сравнению с гибридной линии мышей (контрольная группа). 
+2)	Было обнаружено, что выживаемость клеток снижается при повышенной экспрессии гена TRIM14 и растет при подавлении экспрессии гена, что согласуется с данными для трансгенных мышей.
+3)	В легких инфицированных P. aeruginosa групп мышей контрольной и трансгенных линий обнаружены различия в экспрессии ряда генов, кодирующих белки врожденного иммунитета (IFNA, NOS2, TNFA, SOCS3, TLR3, TBK1, IFNAR1, STAT1, STAT3, NFkB1, RELA, Bcl2). 
+4)	В лимфоузлах мышей трансгенных линий на фоне снижения экспрессии большинства исследованных генов после инфицирования РА как у контрольной, так и у трансгенных линий, наблюдается более высокий уровень экспрессии ряда генов (IFNA, IFNB, SOCS3, TLR2 и IL10). 
+5)	В селезенке после инфицирования РА экспрессия генов, кодирующих интерфероны первого типа, и провоспалительные гены TNFa и IL-1b сильнее у трансгенных мышей, чем у контрольных.
+6)	На клеточных линиях А549 человека в результате инфекции наблюдался рост экспрессии генов TNFa, IL-1b, IL-6, CXCL1, CXCL2, CXCL8 во всех исследуемых культурах. При этом TNFa сильнее активировался в клетках с повышенной экспрессией TRIM14 и снижался в клетках с подавленной экспрессией гена по сравнению с контрольной линией, что отличается от данных, полученных на модели трансгенных мышей. Экспрессия гена TLR4 росла в линии повышенной экспрессией TRIM14 при заражении РА активнее, чем в контрольной линии, что также не стыкуется с данными, полученными на мышах. При этом в линиях G1 и G3 TLR4 экспрессировался на низком уровне и практически не активировался в ходе инфекции.
+7)	После инфицирования РА у трансгенных мышей происходила транслокация активной субъединицы транскрипционного фактора NFkB1 (50 kDa) из цитоплазмы в ядро клеток. Увеличение количества NFkB1 (50 kDa) происходило и в лимфоузлах трансгенных мышей и в клеточной линии А549 с повышенной экспрессией гена TRIM14 после заражения РА. 
+8)	Было обнаружено, что уровень субъединицы NFkB2 был выше в цитоплазматической фракции у трансгенных неинфицированных мышей по сравнению с контрольными, однако практически не детектировался после инфицирования. Уровень белка RelВ был выше в цитоплазме у всех трех линий после инфекции РА, но в ядерной фракции при инфекции РА достоверное увеличение наблюдалось только у контрольной линии мышей. В лимфоузлах мышей контрольной и трансгенных линий уровень RelВ после инфекции был также сильно повышен. 
+9)	Было показано, что в легких мышей контрольной и трансгенных линий, уровень фосфорилированного белка p-STAT3 (Y705) падает после инфекции РА во все трех линиях в цитоплазме и растет в ядре в большей степени у трансгенных мышей, что позволяет предположить у них усиленную транслокацию p-STAT3 в ядро. Уровень активированного p-STAT3 повышался после инфекции РА у трансгенных мышей также в лимфоузлах и в селезенке. Мы предполагаем, что именно этот фактор является ключевым в наблюдаемых нами изменениях в экспрессии генов у трансгенных мышей. Однако в анализируемых нами линиях клеток мы практически не обнаружили экспрессию p-STAT3 (Y705). По-видимому, в этих клетках p-STAT3 (Y705) не играет особой роли, что говорит в пользу существования различных механизмов влияния TRIM14 на инфекцию РА на модели мышей и клеточной линии человека.
+Таким образом, полученные результаты позволяют предположить возможные механизмы работы TRIM14 при заражении РА. Однако следует отметить, что эти механизмы, по-видимому, отличаются в легких мышей и в клетках линии легочной аденокарциномы А549 человека, хотя и приводят, в целом, к одному результату – повышение экспрессии гена TRIM14 снижает выживаемость как трансгенных мышей, так и клеточной линии человека.</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (2)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Ненашева Валентина Валерьевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Степаненко Екатерина Антоновна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li></ul>
+              
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

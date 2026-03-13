@@ -1,0 +1,1225 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>МОСНАУКА — Паспорт: НИЦ «Курчатовский институт» — ВИАМ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+      body { font-family: Inter, system-ui, sans-serif; background: #050505; color: white; }
+      .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.08); }
+      .mos-red { color: #ff003c; }
+      .mos-bg-red { background: #ff003c; }
+      .provenance-tag { font-size: 8px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.1em; padding: 2px 8px; border-radius: 4px; }
+      .tag-egisu { background: rgba(0, 120, 255, 0.1); color: #40a0ff; border: 1px solid rgba(0, 120, 255, 0.2); }
+      .tag-colab { background: rgba(255, 0, 60, 0.1); color: #ff4070; border: 1px solid rgba(255, 0, 60, 0.2); }
+      .tag-org { background: rgba(255, 255, 255, 0.05); color: #aaa; border: 1px solid rgba(255, 255, 255, 0.1); }
+
+      /* Section titles */
+      .section-header {
+        display: flex; align-items: center; justify-content: space-between;
+        padding: 0 0.5rem; margin-bottom: 1.5rem; margin-top: 3.5rem;
+      }
+      .section-title {
+        font-size: 1.5rem; font-weight: 900; text-transform: uppercase;
+        font-style: italic; letter-spacing: -0.02em;
+      }
+
+      /* Chunk 3: Lab cards */
+      .labs-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+        gap: 1.5rem;
+      }
+      /* Chunk 4: Scientists */
+      .sci-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 1rem;
+      }
+      .sci-card.hidden { display: none; }
+      .line-clamp-2 {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+      #sci-search {
+        background: rgba(255,255,255,0.04);
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 1rem;
+        padding: 0.75rem 1.25rem 0.75rem 2.75rem;
+        color: white;
+        font-size: 0.875rem;
+        width: 100%;
+        outline: none;
+        transition: border-color 0.2s;
+      }
+      #sci-search:focus {
+        border-color: rgba(255,0,60,0.5);
+      }
+      #sci-search::placeholder { color: rgba(255,255,255,0.25); }
+      /* Chunk 5: RID + Projects */
+      .rid-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 1rem;
+      }
+    </style>
+</head>
+<body>
+  <div class="min-h-screen bg-[radial-gradient(circle_at_top_left,rgba(255,0,60,0.12),transparent_25%),radial-gradient(circle_at_top_right,rgba(255,255,255,0.05),transparent_20%),linear-gradient(180deg,#050505,#0b0f16)]">
+
+    <!-- ═══ HEADER ═══ -->
+    <header class="sticky top-0 z-30 backdrop-blur-md border-b border-white/10 bg-black/40">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        <a class="text-2xl font-black italic tracking-tight uppercase hover:opacity-80 transition" href="index.html">
+          МОС<span class="mos-red">НАУКА</span>
+        </a>
+        <div class="flex items-center gap-4">
+          <span class="text-[10px] uppercase tracking-widest text-zinc-500 font-bold">Паспорт организации v2.0</span>
+          <a href="catalog.html" class="text-xs font-bold uppercase hover:text-red-500 transition">Реестр</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 py-10">
+
+      <!-- ═══ BREADCRUMBS ═══ -->
+      <div class="mb-10 flex items-center justify-between">
+        <div class="flex items-center gap-2 text-[10px] uppercase font-bold tracking-widest text-zinc-500">
+          <a href="index.html" class="hover:text-white">Главная</a>
+          <span>/</span>
+          <a href="catalog.html" class="hover:text-white">Реестр</a>
+          <span>/</span>
+          <span class="text-zinc-300">НИЦ «Курчатовский институт» — ВИАМ</span>
+        </div>
+        <a href="catalog.html" class="px-5 py-2 border border-white/10 rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-white/5 transition">
+          ← К списку
+        </a>
+      </div>
+
+      <!-- ═══ HERO SECTION ═══ -->
+      <section class="glass rounded-[2.5rem] p-10 relative overflow-hidden mb-8">
+        <!-- Bg watermark -->
+        <div class="absolute top-0 right-0 p-8 opacity-5 pointer-events-none">
+          <img src="https://colab.ws/storage/images/8OTb4eARN6Z00e2I1l1xc9bSiC5iAkuLB1HSu5bl.png" class="w-64 h-64 grayscale invert" alt="">
+        </div>
+
+        <div class="relative z-10">
+          <!-- Identity -->
+          <div class="flex items-center gap-5 mb-6">
+            <div class="w-20 h-20 rounded-2xl bg-white p-2 flex items-center justify-center shrink-0">
+              <img src="https://colab.ws/storage/images/8OTb4eARN6Z00e2I1l1xc9bSiC5iAkuLB1HSu5bl.png" class="max-w-full max-h-full object-contain" alt="НИЦ «Курчатовский институт» — ВИАМ logo">
+            </div>
+            <div>
+              <h1 class="text-3xl md:text-5xl font-black tracking-tight uppercase leading-tight mb-2">НИЦ «Курчатовский институт» — ВИАМ</h1>
+              <p class="text-zinc-400 font-medium">Всероссийский научно-исследовательский институт авиационных материалов</p>
+            </div>
+          </div>
+
+          <!-- Contact row -->
+          <div class="flex flex-wrap gap-6 mt-6">
+            <div class="flex items-center gap-2 text-zinc-400 text-sm">
+              <i class="ph ph-map-pin mos-red"></i>
+              <span>Москва, ул. Радио, д. 17</span>
+            </div>
+            <a href="https://viam.ru/" target="_blank" class="flex items-center gap-2 text-zinc-300 text-sm hover:text-white transition">
+              <i class="ph ph-globe mos-red"></i>
+              <span>viam.ru</span>
+            </a>
+          </div>
+
+          <!-- Verified badge + Contact CTA -->
+          <div class="mt-6 flex flex-wrap gap-3 items-center">
+            <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-[11px] font-bold uppercase tracking-wide">
+              <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              Верифицировано МОСНАУКОЙ
+            </span>
+          </div>
+          <div class="mt-4 p-5 rounded-2xl bg-gradient-to-r from-red-500/20 to-red-500/5 border border-red-500/30 flex flex-wrap items-center justify-between gap-4">
+            <div>
+              <div class="text-sm font-bold">📨 Заинтересованы в сотрудничестве?</div>
+              <div class="text-[11px] text-zinc-400 mt-1">Направьте запрос на НИОКР, консультацию или партнёрство</div>
+            </div>
+            <div class="flex gap-2">
+              <a href="javascript:void(0)" onclick="openRequestModal('Запрос по НИЦ «Курчатовский институт» — ВИАМ')" class="px-6 py-3 rounded-xl bg-red-500 text-white text-[11px] font-black uppercase tracking-wide hover:bg-red-600 transition inline-flex items-center gap-2 shadow-lg">
+                <i class="ph ph-envelope-simple"></i> Направить запрос
+              </a>
+              <a href="https://viam.ru/" target="_blank" class="px-5 py-3 rounded-xl bg-white/5 border border-white/10 text-[11px] font-bold uppercase text-zinc-400 hover:bg-white/10 transition inline-flex items-center gap-2">
+                <i class="ph ph-globe"></i> Сайт
+              </a>
+            </div>
+          </div>
+
+          <!-- ═══ METRICS ROW ═══ -->
+          <div class="grid grid-cols-2 md:grid-cols-5 gap-4 mt-10">
+            <a href="#section-labs" class="p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-white/30 transition cursor-pointer block">
+              <div class="text-[9px] uppercase font-black text-zinc-500 mb-1">Лаборатории</div>
+              <div class="text-3xl font-black italic">0</div>
+            </a>
+            <a href="#section-scientists" class="p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-white/30 transition cursor-pointer block">
+              <div class="text-[9px] uppercase font-black text-zinc-500 mb-1">Учёные</div>
+              <div class="text-3xl font-black italic">4</div>
+            </a>
+            <a href="#section-projects" class="p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-white/30 transition cursor-pointer block">
+              <div class="text-[9px] uppercase font-black text-zinc-500 mb-1">Проекты НИОКР</div>
+              <div class="text-3xl font-black italic">25</div>
+            </a>
+            <a href="#section-rid" class="p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-white/30 transition cursor-pointer block">
+              <div class="text-[9px] uppercase font-black text-zinc-500 mb-1">РИД</div>
+              <div class="text-3xl font-black italic">35</div>
+            </a>
+            <a href="#section-projects" class="p-4 rounded-2xl bg-red-500/5 border border-red-500/20 hover:border-red-500/40 transition cursor-pointer block">
+              <div class="text-[9px] uppercase font-black text-red-400/70 mb-1">Объём НИОКР</div>
+              <div class="text-3xl font-black italic mos-red">2.0 млрд ₽</div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ CHUNK 2: About section ═══ -->
+      <section class="glass rounded-[2.5rem] p-10 mb-8">
+        <div class="flex items-center justify-between mb-6">
+          <h2 class="text-xl font-black uppercase italic tracking-tight">Об организации</h2>
+        </div>
+        <p class="text-[15px] text-zinc-300 leading-relaxed mb-6">«НИЦ «Курчатовский институт» — ВИАМ» — ведущий научно-исследовательский центр, объединяющий 0 лабораторий и 4 учёных. Исследовательский профиль охватывает препрег, лакокрасочные материалы, холодное газодинамическое напыление, полимерные композиционные материалы, защита от коррозии. Опубликовано свыше 255 научных работ, выполнено 25 проектов НИОКТР и зарегистрировано 35 результатов интеллектуальной деятельности.</p>
+        <details class="group">
+          <summary class="cursor-pointer text-sm font-bold text-red-400 hover:text-red-300 transition select-none flex items-center gap-2">
+            <i class="ph ph-caret-right text-xs transition-transform group-open:rotate-90"></i>
+            Подробнее об исследовательской деятельности
+          </summary>
+          <div class="mt-6 pt-6 border-t border-white/10">
+            <h3 class="text-zinc-200 text-sm font-bold uppercase tracking-wide mb-3">Ключевые компетенции (по данным ЕГИСУ)</h3><div style="display:flex;flex-wrap:wrap;gap:0.4rem;margin-bottom:1.5rem"><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">препрег <span style="color:#52525b">(9)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">лакокрасочные материалы <span style="color:#52525b">(6)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">холодное газодинамическое напыление <span style="color:#52525b">(6)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">полимерные композиционные материалы <span style="color:#52525b">(5)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">защита от коррозии <span style="color:#52525b">(5)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">жаропрочный сплав <span style="color:#52525b">(4)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">сфероидизация <span style="color:#52525b">(4)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">селективное лазерное сплавление <span style="color:#52525b">(4)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">нейтронное излучение <span style="color:#52525b">(4)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">синхротронное излучение <span style="color:#52525b">(4)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">полимерный композиционный материал <span style="color:#52525b">(4)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">высокотемпературный углепластик <span style="color:#52525b">(4)</span></span></div><h3 class="text-zinc-200 text-sm font-bold uppercase tracking-wide mb-3">Ключевые заказчики НИОКР</h3><ul class="text-zinc-400 text-sm space-y-1 ml-4 mb-6 list-disc"><li><strong class="text-zinc-300">МИНПРОМТОРГ РОССИИ</strong> — 12 проектов</li><li><strong class="text-zinc-300">МИНОБРНАУКИ РОССИИ</strong> — 11 проектов</li></ul><h3 class="text-zinc-200 text-sm font-bold uppercase tracking-wide mb-3">Интеллектуальная собственность</h3><p class="text-zinc-400 text-sm mb-6">Портфель из 35 РИД: секрет производства (ноу хау) — 27, изобретение — 8.</p><h3 class="text-zinc-200 text-sm font-bold uppercase tracking-wide mb-3">Финансирование и результаты</h3><p class="text-zinc-400 text-sm">Суммарный объём финансирования: <strong class="text-white">2,045.5 млн руб.</strong> (25 проектов, по данным ЕГИСУ НИОКТР). По итогам проектов опубликовано 24 научных работ.</p>
+          </div>
+        </details>
+      </section>
+
+      <!-- ═══ TOP-3 FEATURED ═══ -->
+      <section class="glass rounded-[2.5rem] p-10 mb-8">
+        <h2 class="text-lg font-black uppercase italic tracking-tight mb-6">⭐ Ведущие лаборатории и учёные</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div>
+            <div class="text-[10px] uppercase font-black text-zinc-500 mb-3 tracking-widest">🏛️ Топ-3 лаборатории</div>
+            <div class="flex flex-col gap-3"></div>
+          </div>
+          <div>
+            <div class="text-[10px] uppercase font-black text-zinc-500 mb-3 tracking-widest">🏆 Топ-3 учёных</div>
+            <div class="flex flex-col gap-3"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ TABS: Labs / Scientists ═══ -->
+      <div class="glass rounded-2xl p-4 mb-4" style="border:1px solid rgba(56,189,248,0.15);background:rgba(56,189,248,0.03)">
+        <div class="flex items-center gap-2 text-[10px] text-sky-400/70 font-bold uppercase">
+          <i class="ph ph-info"></i>
+          Показаны лаборатории и учёные, зарегистрированные на платформе CoLab. Фактическое число сотрудников может быть больше.
+        </div>
+      </div>
+      <div class="section-header" id="section-labs">
+        <div class="flex items-center gap-4">
+          <button id="tab-labs" onclick="switchTab('labs')" class="section-title" style="background:none;border:none;color:white;cursor:pointer;padding:0">🔬 Лаборатории (0)</button>
+          <button id="tab-sci" onclick="switchTab('sci')" class="text-lg font-black uppercase italic tracking-tight opacity-30 hover:opacity-60 transition" style="background:none;border:none;color:white;cursor:pointer;padding:0" id="section-scientists">🎓 Учёные (0)</button>
+        </div>
+        <span class="provenance-tag tag-colab">CoLab Data</span>
+      </div>
+
+      <!-- Labs panel -->
+      <div id="panel-labs">
+        <div class="text-sm text-zinc-400 mb-3" id="lab-counter">Показаны 3 из 0</div>
+        <div class="labs-grid" id="labs-container">
+          <p class="text-sm text-zinc-500 italic">Нет данных о лабораториях</p>
+        </div>
+        <div class="mt-4 text-center">
+          <button id="lab-more" onclick="showMore('lab-item', 'lab-more', 'lab-counter', 0, 3)" class="px-6 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-widest hover:bg-white/10 transition text-zinc-400">
+            Показать ещё 3
+          </button>
+        </div>
+      </div>
+
+      <!-- Scientists panel (hidden by default) -->
+      <div id="panel-sci" style="display:none">
+        <div class="text-sm text-zinc-400 mb-3" id="sci-counter">Показаны 3 из 0</div>
+        <div class="relative mb-6">
+          <i class="ph ph-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-zinc-500"></i>
+          <input id="sci-search" type="text" placeholder="Поиск по имени или области исследования...">
+          <div id="sci-count" class="absolute right-4 top-1/2 -translate-y-1/2 text-[10px] text-zinc-500 font-bold">0 учёных</div>
+        </div>
+        <div class="sci-grid" id="sci-grid">
+          <p class="text-sm text-zinc-500 italic">Нет данных об учёных</p>
+        </div>
+        <div class="mt-4 text-center">
+          <button id="sci-more" onclick="showMore('sci-card', 'sci-more', 'sci-counter', 0, 3)" class="px-6 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-widest hover:bg-white/10 transition text-zinc-400">
+            Показать ещё 3
+          </button>
+        </div>
+      </div>
+
+      <script>
+        // Tab switching
+        function switchTab(tab) {
+          document.getElementById('panel-labs').style.display = tab === 'labs' ? '' : 'none';
+          document.getElementById('panel-sci').style.display = tab === 'sci' ? '' : 'none';
+          document.getElementById('tab-labs').style.opacity = tab === 'labs' ? '1' : '0.3';
+          document.getElementById('tab-sci').style.opacity = tab === 'sci' ? '1' : '0.3';
+        }
+        // Scientist search
+        (function() {
+          const input = document.getElementById('sci-search');
+          const grid = document.getElementById('sci-grid');
+          const counter = document.getElementById('sci-count');
+          if (!input || !grid) return;
+          const cards = grid.querySelectorAll('.sci-card');
+          input.addEventListener('input', function() {
+            const q = this.value.toLowerCase().trim();
+            let visible = 0;
+            cards.forEach(c => {
+              const name = c.dataset.name || '';
+              const areas = c.dataset.areas || '';
+              const match = !q || name.includes(q) || areas.includes(q);
+              c.classList.toggle('hidden', !match);
+              if (match) visible++;
+            });
+            counter.textContent = visible + ' учёных';
+          });
+        })();
+      </script>
+
+      <!-- ═══ CHUNK 5: Projects ═══ -->
+      <div class="section-header" id="section-projects">
+        <h2 class="section-title">💼 Проекты НИОКР (25)</h2>
+        <span class="provenance-tag tag-egisu">ЕГИСУ</span>
+      </div>
+      <section class="glass rounded-[2.5rem] overflow-hidden mb-8">
+        <div class="p-6 border-b border-white/10 flex items-center justify-between">
+          <span class="text-sm text-zinc-400" id="proj-counter">Показаны 5 из 25</span>
+          <a href="viam/projects.html" class="text-xs font-bold text-red-400 hover:text-red-300 transition uppercase">Все проекты →</a>
+        </div>
+        <div id="proj-list"><a href="viam/proj_0000.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="0">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Аннотированный отчет № НТУ/9-2024 по этапу 5 (01 ноября 2023 г. – 15 ноября 2024 г.) Государственного контракта № 23411.</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Разработаны: технологии изготовления трубной заготовки и тонкостенных труб диаметром 12,0 мм, 22,0 м...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">тонкостенные трубы, огнестойкий углепластик, заготовки элемента тяги системы управления, стекло препреги заполнитель-сферопластик, заготовки капота мотогондолы</span>
+            <span class='text-[10px] text-zinc-600'>| МИНПРОМТОРГ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2023–2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">98,397 тыс. ₽</span>
+          </div>
+        </a>
+<a href="viam/proj_0001.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="1">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Аннотированный отчет № НТУ/10-2025 по этапу 1 Государственного контракта № 25411.472В171910.18.004 от 31.03.2025 г. на Н</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Проведен анализ научно-технической информации в области разработки полимерных композиционных материа...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">Листы и ленты из коррозионностойкой стали, Самоклеящийся материал, Металл-ионные аккумуляторы, Сварка и ремонт синтезированных материалов, Математическая модель</span>
+            <span class='text-[10px] text-zinc-600'>| МИНПРОМТОРГ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2025</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">35,000 тыс. ₽</span>
+          </div>
+        </a>
+<a href="viam/proj_0002.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="2">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Отчет о выполненных работах по реализации исследовательской программы (проекта) по теме: «Создание научных и методологич</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>По результатам анализа научно-технической литературы в области металлокерамических композиционных гр...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">Жаропрочный сплав, Сфероидизация, Селективное лазерное сплавление, Алюмоматричный композиционный матерал, Нейтронное излучение</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2021</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">93,500 тыс. ₽</span>
+          </div>
+        </a>
+<a href="viam/proj_0003.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="3">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Промежуточный отчет о реализации проекта № КНТП-4/12-2024-2026/2024 по этапу № 1:
+«Разработка состава и технологии изгот</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Проведён анализ научно-технической информации в области пожаробезопасных тканепленочных материалов и...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">негорючий, армированный, пожаробезопасный, Системы кондиционирования, Трубопровод</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">140,549 тыс. ₽</span>
+          </div>
+        </a>
+<a href="viam/proj_0004.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="4">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Аннотированный отчет № НТУ/4-2025 по этапу 7 (01 ноября 2024 г. – 31 августа 2025 г.) Государственного контракта № 23411</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Разработаны технические условия на тонкостенные трубы из стали ВНС72-Ш. 
+Проведена общая квалификаци...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">тонкостенные трубы, Металломатричный КМ, огнестойкий углепластик, заготовки элемента тяги системы управления, стекло препреги заполнитель-сферопластик</span>
+            <span class='text-[10px] text-zinc-600'>| МИНПРОМТОРГ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024–2025</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">73,110 тыс. ₽</span>
+          </div>
+        </a>
+<a href="viam/proj_0005.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="5">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Аннотированный отчет № НТУ/1-2025 по этапу 6 (01 ноября 2024 г. – 31 мая 2025 г.) Государственного контракта № 23411.473</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Совместно с АО «КУМЗ» изготовлены длинномерные листы размером (длиной до 12000 мм, толщиной от 6 до ...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">Теплозвукоизоляционный материал, Гальванические покрытия, Защита от коррозии, Кремнийорганический компаунд, Универсальная шпатлевка</span>
+            <span class='text-[10px] text-zinc-600'>| МИНПРОМТОРГ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024–2025</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">45,318 тыс. ₽</span>
+          </div>
+        </a>
+<a href="viam/proj_0006.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="6">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Аннотированный отчет № НТУ/3-2025 по этапу 6 (01 ноября 2024 г. − 31 мая 2025 г.) Государственного контракта № 23411.473</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Изготовлена опытная партия сплава марки ВЖЛ125, выплавленного с применением до 
+100 % кондиционных о...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">Жаропрочные сплавы, Металлокерамический материал, Полимерные композиционные материалы, Переработка отходов, Герметизирующий жгутовой материал</span>
+            <span class='text-[10px] text-zinc-600'>| МИНПРОМТОРГ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024–2025</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">79,485 тыс. ₽</span>
+          </div>
+        </a>
+<a href="viam/proj_0007.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="7">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Отчет о реализации проекта № КНТП-3/19-2023-2025/2024 по теме: &quot;Разработка технологий изготовления препрега и высокотемп</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Проведены патентные исследования, на основе которых выявлены тенденции развития в области высокотемп...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">ПОЛИМЕРНЫЙ КОМПОЗИЦИОННЫЙ МАТЕРИАЛ, ПРЕПРЕГ, ВЫСОКОТЕМПЕРАТУРНЫЙ УГЛЕПЛАСТИК, ПОЛИИМИДНОЕ СВЯЗУЮЩЕЕ, УГЛЕРОДНАЯ ТКАНЬ</span>
+            
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">156,350 тыс. ₽</span>
+          </div>
+        </a>
+<a href="viam/proj_0008.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="8">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Аннотированный отчет от 24.10.2025 г. № НТУ/12-2025 по этапу 1 Государственного контракта № 25411.472В171910.18.006 от 1</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Проведен анализ научно-технической информации в области создания сферопластиков-заполнителей и термо...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">Сварка синтезированных материалов, Гранулируемый жаропрочный сплав, Резиновая смесь, Термомеханическая обработка штамповок, Конструкционные и функциональные материалы</span>
+            <span class='text-[10px] text-zinc-600'>| МИНПРОМТОРГ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2025</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">28,000 тыс. ₽</span>
+          </div>
+        </a>
+<a href="viam/proj_0009.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="9">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">ОТЧЕТ № КНТП-5/14-2024-2026/2024 о научно-исследовательской работе по теме: «Разработка технологий изготовления связующе</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Проведён анализ научно-технической литературы, выявлены тенденции развития и определены основные нап...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">полимерный композиционный материал, углепрепрег, стеклопрепрег, расплавное эпоксидное связующее, углепластик</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">82,597 тыс. ₽</span>
+          </div>
+        </a>
+<a href="viam/proj_0010.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="10">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Аннотированный отчет № НТУ/6-2025 по этапу 7 (01 ноября 2024 г. − 31 августа 2025 г.) Государственного контракта № 23411</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Проведены предварительные испытания опытной партии ионно-плазменных покрытий (ВСДП-3+ВСДП-16), (СДП-...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">Жаропрочные сплавы, Металлокерамический материал, Полимерные композиционные материалы, Переработка отходов, Герметизирующий жгутовой материал</span>
+            <span class='text-[10px] text-zinc-600'>| МИНПРОМТОРГ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024–2025</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">113,550 тыс. ₽</span>
+          </div>
+        </a>
+<a href="viam/proj_0011.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="11">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Аннотированный отчет № НТУ/2-2025 по этапу 6 (01 ноября 2024 г. – 31 мая 2025 г.) Государственного контракта № 23411.473</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Проведено исследование микроструктуры и механических свойств образцов из тонкостенных труб стали ВНС...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">термодиффузионное защитное покрытие, электропроводящая грунтовка, лакокрасочные материалы, ремонт  элементов конструкций из ПКМ, заготовки капота мотогондолы</span>
+            <span class='text-[10px] text-zinc-600'>| МИНПРОМТОРГ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024–2025</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">51,177 тыс. ₽</span>
+          </div>
+        </a>
+<a href="viam/proj_0012.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="12">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Отчет о выполненных работах по реализации исследовательской программы (проекта) по теме: «Создание научных и методологич</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Отработаны технологические параметры высокотемпературной плазменной сфероидизации для получения мета...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">Синхротронное излучение, Нейтронное излучение, Алюмоматричный композиционный материал, Селективное лазерное сплавление, Сфероидизация</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2022</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">125,710 тыс. ₽</span>
+          </div>
+        </a>
+<a href="viam/proj_0013.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="13">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Промежуточный отчет о реализации проекта № КНТП-3/19-2023-2025/2023 по этапу №1: &quot;Исследование технологических режимов и</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Проведен анализ научно-технической литературы, выявлены тенденции развития и определены основные нап...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">полимерный композиционный материал, препрег, высокотемпературный углепластик, полиимидное связующее, углеродная ткань</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2023</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">20,400 тыс. ₽</span>
+          </div>
+        </a>
+<a href="viam/proj_0014.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="14">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Аннотированный отчет № НТУ/5-2025 по этапу 7 (01 ноября 2024 г. – 31 августа 2025 г.) Государственного контракта № 23411</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Продолжается общая квалификация (паспортизация, стадия 2) длинномерных листов (длиной до 12000 мм, т...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">Теплозвукоизоляционный материал, Гальванические покрытия, Защита от коррозии, Кремнийорганический компаунд, Универсальная шпатлевка</span>
+            <span class='text-[10px] text-zinc-600'>| МИНПРОМТОРГ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024–2025</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">64,740 тыс. ₽</span>
+          </div>
+        </a>
+<a href="viam/proj_0015.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="15">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Аннотированный отчет № НТУ/11-2025 по этапу 1 Государственного контракта № 25411.472В171910.18.007 от 18.04.2025 г. на Н</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Проведены патентные исследования на уровень техники и определены тенденции развития в области создан...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">Полимерные композиционные материалы, Защитные покрытия, Тонкие листы из алюминиевых сплавов, Флуоресцентный лак, Высокопрочная коррозионная сталь</span>
+            <span class='text-[10px] text-zinc-600'>| МИНПРОМТОРГ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2025</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">27,000 тыс. ₽</span>
+          </div>
+        </a>
+<a href="viam/proj_0016.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="16">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Промежуточный отчет о реализации проекта № КНТП-2/18-2023-2025/2024 по этапу № 2: «Разработка технических условий на пол</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Проведены испытания образцов полимерного синтактного заполнителя холодного отверждения после 1, 3 и ...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">заполнение технологических пустот, для местного упрочнения сотовых панелей, Двухкомпонентный полимерный заполнитель, Полимерный заполнитель-сферопластик, легкий заполнитель</span>
+            
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">90,299 тыс. ₽</span>
+          </div>
+        </a>
+<a href="viam/proj_0017.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="17">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Отчет о выполненных работах по реализации исследовательской программы (проекта) по теме: «Создание научных и методологич</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Проведен анализ научно-технической литературы в области создания металлокерамических композиционных ...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">Синхротронное излучение, Нейтронное излучение, Алюмоматричный композиционный материал, Селективное лазерное сплавление, Жаропрочный сплав</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">126,500 тыс. ₽</span>
+          </div>
+        </a>
+<a href="viam/proj_0018.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="18">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Промежуточный отчет о реализации проекта № КНТП-2/18-2023-2025/2023 но этапу № 1: «Разработка технологии изготовления по</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>В работе на этапе 1 получены следующие результаты: 
+Проведен анализ научно-технической информации в ...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">заполнение технологических пустот, для местного упрочнения сотовых панелей, Двухкомпонентный полимерный заполнитель, Полимерный заполнитель-сферопластик, легкий заполнитель</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2023</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">29,700 тыс. ₽</span>
+          </div>
+        </a>
+<a href="viam/proj_0019.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="19">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Аннотированный отчет № НТУ/8-2024 по этапу 5 (01 ноября 2023 г. − 15 ноября 2024 г.) Государственного контракта № 23411.</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Разработаны: ресурсосберегающая технология переработки до 100 % кондиционных отходов импортозамещающ...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">Жаропрочные сплавы, Металлокерамический материал, Полимерные композиционные материалы, Переработка отходов, Герметизирующий жгутовой материал</span>
+            <span class='text-[10px] text-zinc-600'>| МИНПРОМТОРГ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2023–2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">162,825 тыс. ₽</span>
+          </div>
+        </a>
+<a href="viam/proj_0020.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="20">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">ИССЛЕДОВАНИЕ ПОВЕДЕНИЯ ОГНЕУПОРНЫХ МАТЕРИАЛОВ ДЛЯ ФУТЕРОВКИ ВЫСОКОТЕМПЕРАТУРНЫХ ПЕЧЕЙ ПРИ ТЕРМОУДАРЕ, ВЫЗВАННЫМ ВОЗДЕЙСТ</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Объекты исследования – высокотемпературные керамические материалы на основе РЗМ и огнеупорные волокн...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">ТЕРМОУДАР, БОЛЬШАЯ СОЛНЕЧНАЯ ПЕЧЬ, ОГНЕУПОРНЫЕ КЕРАМИЧЕСКИЕ МАТЕРИАЛЫ</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2021</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">5,000 тыс. ₽</span>
+          </div>
+        </a>
+<a href="viam/proj_0021.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="21">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Промежуточный отчет о реализации проекта № КНТП-1/19-2023-2025/2023 по этапу №1: &quot;Разработка клеевых препрегов на основе</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>1) Проведен анализ научно-технической информации в области разработки пожаробезопасных материалов ис...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">углеволокно, стеклоровинг, стеклянная ткань, углеволокно, стеклопластик</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2023</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">34,200 тыс. ₽</span>
+          </div>
+        </a>
+<a href="viam/proj_0022.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="22">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Отчет о выполненных работах по реализации исследовательской программы (проекта) по теме: «Создание научных и методологич</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Проведена отработка технологических параметров высокотемпературной плазменной сфериодизации для полу...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">Жаропрочный сплав, Сфероидизация, Селективное лазерное сплавление, Алюмоматричный композиционный материал, Нейтронное излучение</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2023</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">129,185 тыс. ₽</span>
+          </div>
+        </a>
+<a href="viam/proj_0023.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="23">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Аннотированный отчет № НТУ/7-2024 по этапу 5 (01 ноября 2023 г. – 15 ноября 2024 г.) Государственного контракта № 23411.</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Совместно с ПАО «КУМЗ» разработаны технические условия на длинномерные листы из сплавов В95очТ2 и 11...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">Теплозвукоизоляционный материал, Гальванические покрытия, Защита от коррозии, Кремнийорганический компаунд, Универсальная шпатлевка</span>
+            <span class='text-[10px] text-zinc-600'>| МИНПРОМТОРГ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2023–2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">104,598 тыс. ₽</span>
+          </div>
+        </a>
+<a href="viam/proj_0024.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="24">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Промежуточный отчет о реализации проекта № КНТП-1/16-2023-2025/2023 по этапу № 2: «Разработка технологии получения конст</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>1)	Изготовлены экспериментальные партии препрегов стеклопластиков и образцов стеклопластиков, препре...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">ЗПП, углеволокно, стекловолкно, препрег, связующее</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">128,275 тыс. ₽</span>
+          </div>
+        </a>
+</div>
+        <div class="p-4 text-center">
+          <button id="proj-more" onclick="showMore('proj-item', 'proj-more', 'proj-counter', 25)" class="px-6 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-widest hover:bg-white/10 transition text-zinc-400">
+            Показать ещё 5
+          </button>
+        </div>
+      </section>
+
+      <!-- ═══ RID Section ═══ -->
+      <div class="section-header" id="section-rid">
+        <h2 class="section-title">🧬 Результаты интеллектуальной деятельности (35)</h2>
+        <span class="provenance-tag tag-egisu">ЕГИСУ</span>
+      </div>
+      <div class="rid-grid mb-6">
+        <div class="glass rounded-2xl p-5 text-center">
+          <div class="text-2xl mb-2">📄</div>
+          <div class="text-2xl font-black italic">27</div>
+          <div class="text-[10px] uppercase font-bold text-zinc-500 mt-1">Секрет производства (ноу хау)</div>
+        </div>
+<div class="glass rounded-2xl p-5 text-center">
+          <div class="text-2xl mb-2">💡</div>
+          <div class="text-2xl font-black italic">8</div>
+          <div class="text-[10px] uppercase font-bold text-zinc-500 mt-1">Изобретение</div>
+        </div>
+
+      </div>
+      <section class="glass rounded-[2.5rem] overflow-hidden mb-8">
+        <div class="p-6 border-b border-white/10 flex items-center justify-between">
+          <span class="text-sm text-zinc-400" id="rid-counter">Показаны 5 из 35</span>
+          <a href="viam/rid_list.html" class="text-xs font-bold text-red-400 hover:text-red-300 transition uppercase">Все РИД →</a>
+        </div>
+        <div id="rid-list"><a href="viam/rid_0000.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="0">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">📄</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">ТЕХНОЛОГИЧЕСКИЙ ПРОЦЕСС НАНЕСЕНИЯ ГАЛЬВАНИЧЕСКОГО ПОКРЫТИЯ ЦИНК-НИКЕЛЬ НА ДЕТАЛИ ИЗ КОРРОЗИОННОСТОЙК</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>ТЕХНОЛОГИЧЕСКАЯ РЕКОМЕНДАЦИЯ ЯВЛЯЕТСЯ РУКОВОДСТВОМ ПО НАНЕСЕНИЮ ПОКРЫТИЯ СПЛАВОМ...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Секрет производства (ноу хау)</span>
+                <span class='text-[10px] text-zinc-600'>| ЭЛЕКТРОЛИТИЧЕСКИЙ СПЛАВ, ЭЛЕКТРООСАЖДЕНИЕ, 08Х18Н10</span>
+                <span class='text-[10px] text-zinc-600'>| МИНПРОМТОРГ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="viam/rid_0001.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="1">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">📄</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">ТЕХНОЛОГИЧЕСКИЙ ПРОЦЕСС ИЗГОТОВЛЕНИЯ ОТЛИВОК ИЗ ТИТАНОВОГО СПЛАВА МАРКИ ВТ46Л</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Настоящая технологическая инструкция является руководством по изготовлению отлив...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Секрет производства (ноу хау)</span>
+                <span class='text-[10px] text-zinc-600'>| режим термической обработки, режим горячего изостатического прессования, вакуумно-индукционная плавка</span>
+                <span class='text-[10px] text-zinc-600'>| МИНПРОМТОРГ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="viam/rid_0002.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="2">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">📄</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">ТЕХНОЛОГИЧЕСКИЙ ПРОЦЕСС ИЗГОТОВЛЕНИЯ ТРЕХСЛОЙНОЙ СОТОВОЙ КОНСТРУКЦИИ С ПРИМЕНЕНИЕМ АЛЮМИНИЕВЫХ СОТ  </div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>ТЕХНОЛОГИЧЕСКАЯ РЕКОМЕНДАЦИЯ ЯВЛЯЕТСЯ РУКОВОДСТВОМ ПО ИЗГОТОВЛЕНИЮ ТРЕХСЛОЙНОЙ К...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Секрет производства (ноу хау)</span>
+                <span class='text-[10px] text-zinc-600'>| ПКМ, ВАКУУМ-ПЕЧНОЕ ФОРМОВАНИЕ, АЛЮМИНИЕВЫЕ СОТЫ</span>
+                <span class='text-[10px] text-zinc-600'>| МИНПРОМТОРГ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="viam/rid_0003.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="3">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">📄</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">РЕЖИМЫ РЕМОНТА ДЕФЕКТОВ ЛИТЬЯ АРГОНОДУГОВОЙ СВАРКОЙ ЛИТЫХ ЗАГОТОВОК ДЕТАЛЕЙ ИЗ СПЛАВА ВЖЛ718</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Технологическая рекомендация является руководством по ремонту литых не термообра...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Секрет производства (ноу хау)</span>
+                <span class='text-[10px] text-zinc-600'>| Заготовки деталей, СвВЖ183, Ремонт</span>
+                <span class='text-[10px] text-zinc-600'>| МИНПРОМТОРГ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="viam/rid_0004.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="4">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">📄</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">РЕЖИМЫ СКЛЕИВАНИЯ ЭЛЕМЕНТОВ КОНСТРУКЦИЙ ИЗ ПКМ НА ОСНОВЕ КЛЕЕВЫХ ПРЕПРЕГОВ МАРОК КМКС-2М.120.Т10 И К</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>ТЕХНОЛОГИЧЕСКАЯ РЕКОМЕНДАЦИЯ ЯВЛЯЕТСЯ РУКОВОДСТВОМ ПО СКЛЕИВАНИЮ ЭЛЕМЕНТОВ КОНСТ...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Секрет производства (ноу хау)</span>
+                <span class='text-[10px] text-zinc-600'>| КЛЕЕВЫЕ ПРЕПРЕГИ, ПЛАЗМА АТМОСФЕРНОГО ДАВЛЕНИЯ, ВК-36Р</span>
+                <span class='text-[10px] text-zinc-600'>| МИНПРОМТОРГ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="viam/rid_0005.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="5">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💡</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">ПОРОШКОВАЯ КОМПОЗИЦИЯ ДЛЯ ГАЗОДИНАМИЧЕСКОГО НАПЫЛЕНИЯ НА ИЗДЕЛИЯ ИЗ АЛЮМИНИЕВЫХ СПЛАВОВ</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>ПОРОШКОВЫЕ КОМПОЗИЦИИ (ПК) МАРОК ВПХ-А1 (НА ОСНОВЕ СИСТЕМЫ AL-SI-MG), ВПХ-А2 (НА...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Изобретение</span>
+                <span class='text-[10px] text-zinc-600'>| технология изготовления порошковых композиций, газовая атомизация, аэродинамическая сепарация</span>
+                <span class='text-[10px] text-zinc-600'>| МИНПРОМТОРГ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="viam/rid_0006.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="6">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">📄</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">РЕЖИМЫ ИЗГОТОВЛЕНИЯ ЗАГОТОВОК ПАНЕЛЕЙ ПОЛА САЛОНА САМОЛЕТА</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Разработана технология заготовок панелей пола солона самолета в подкресельной зо...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Секрет производства (ноу хау)</span>
+                <span class='text-[10px] text-zinc-600'>| препрег, соты, Заготовки панелей пола</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="viam/rid_0007.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="7">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">📄</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">РЕЖИМЫ ИЗГОТОВЛЕНИЯ СЛИТКОВ ДЛЯ ПОРОШКОВЫХ КОМПОЗИЦИЙ, ПРЕДНАЗНАЧЕННЫХ ДЛЯ ГАЗОДИНАМИЧЕСКОГО НАПЫЛЕН</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>НАСТОЯЩАЯ ТЕХНОЛОГИЧЕСКАЯ РЕКОМЕНДАЦИЯ ЯВЛЯЕТСЯ РУКОВОДСТВОМ ПО ИЗГОТОВЛЕНИЮ ПОР...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Секрет производства (ноу хау)</span>
+                <span class='text-[10px] text-zinc-600'>| Порошковые композиции для холодного газодинамического напыления, холодное газодинамическое напыление, выплавка и изготовление порошковых композиций</span>
+                <span class='text-[10px] text-zinc-600'>| МИНПРОМТОРГ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="viam/rid_0008.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="8">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">📄</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">КОНСТРУКЦИЯ КАПСУЛЫ, СХЕМА АРМИРОВАНИЯ И ТЕХНОЛОГИЧЕСКИЕ РЕЖИМЫ ИЗГОТОВЛЕНИЯ ЗАГОТОВКИ ПРОТОТИПА ТАН</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>ТЕХНОЛОГИЧЕСКАЯ РЕКОМЕНДАЦИЯ ЯВЛЯЕТСЯ РУКОВОДСТВОМ ПО ИЗГОТОВЛЕНИЮ ЗАГОТОВКИ ПРО...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Секрет производства (ноу хау)</span>
+                <span class='text-[10px] text-zinc-600'>| ПРОТОТИП, ЗАГОТОВКА ТАНДЕМНОЙ СТУПЕНИ, ВТИ-4</span>
+                <span class='text-[10px] text-zinc-600'>| МИНПРОМТОРГ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="viam/rid_0009.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="9">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">📄</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">РЕЖИМЫ ИСПРАВЛЕНИЯ ЛИТЕЙНЫХ ДЕФЕКТОВ МЕТОДОМ ГАЗОДИНАМИЧЕСКОГО НАПЫЛЕНИЯ ПОРОШКОВЫХ КОМПОЗИЦИЙ НА ОТ</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>ТЕХНОЛОГИЧЕСКАЯ РЕКОМЕНДАЦИЯ ЯВЛЯЕТСЯ РУКОВОДСТВОМ ПО ИСПРАВЛЕНИЮ ЛИТЕЙНЫХ ДЕФЕК...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Секрет производства (ноу хау)</span>
+                <span class='text-[10px] text-zinc-600'>| исправление дефектов, холодное газодинамическое напыление, режимы холодного газодинамического напыления</span>
+                <span class='text-[10px] text-zinc-600'>| МИНПРОМТОРГ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="viam/rid_0010.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="10">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">📄</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">ТЕХНОЛОГИЧЕСКИЙ ПРОЦЕСС ИЗГОТОВЛЕНИЯ ПОЛИЭТИЛЕНОКСИДА ВЫСОКОМОЛЕКУЛЯРНОГО МАРКИ ВМПЭО-СД</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>ЛАБОРАТОРНЫЙ РЕГЛАМЕНТ ЯВЛЯЕТСЯ РУКОВОДСТВОМ ПО ИЗГОТОВЛЕНИЮ ПОЛИЭТИЛЕНОКСИДА ВЫ...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Секрет производства (ноу хау)</span>
+                <span class='text-[10px] text-zinc-600'>| Закалка, Водно-полимерная среда, Амид кальция модифицированный</span>
+                <span class='text-[10px] text-zinc-600'>| МИНПРОМТОРГ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="viam/rid_0011.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="11">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💡</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">ПОРОШКОВАЯ КОМПОЗИЦИЯ ДЛЯ ГАЗОДИНАМИЧЕСКОГО НАПЫЛЕНИЯ НА ИЗДЕЛИЯ ИЗ МАГНИЕВЫХ СПЛАВОВ</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>ПОРОШКОВЫЕ КОМПОЗИЦИИ (ПК) МАРОК ВПХ-М1 (НА ОСНОВЕ СИСТЕМЫ AL-MG-SI), ВПХ-М2 (НА...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Изобретение</span>
+                <span class='text-[10px] text-zinc-600'>| технология изготовления порошковых композиций, газовая атомизация, аэродинамическая сепарация</span>
+                <span class='text-[10px] text-zinc-600'>| МИНПРОМТОРГ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="viam/rid_0012.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="12">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">📄</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">ТЕХНОЛОГИЧЕСКИЙ ПРОЦЕСС ИЗГОТОВЛЕНИЯ ПОЖАРОБЕЗОПАСНОГО ТКАНЕПЛЕНОЧНОГО МАТЕРИАЛА</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Разработана технология изготовления пожаробезопасного тканеплёночного материала....</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Секрет производства (ноу хау)</span>
+                <span class='text-[10px] text-zinc-600'>| пожаробезопасный, гибкие, материал</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="viam/rid_0013.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="13">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">📄</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">ТЕХНОЛОГИЧЕСКИЙ ПРОЦЕСС ВЫПЛАВКИ ЛИТЕЙНОГО ЖАРОПРОЧНОГО НИКЕЛЕВОГО СПЛАВА МАРКИ ВЖМ200 С ПРИМЕНЕНИЕМ</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>ТЕХНОЛОГИЧЕСКАЯ ИНСТРУКЦИЯ ЯВЛЯЕТСЯ РУКОВОДСТВОМ ПО ВЫПЛАВКЕ ЛИТЕЙНОГО ЖАРОПРОЧН...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Секрет производства (ноу хау)</span>
+                <span class='text-[10px] text-zinc-600'>| ПРИМЕСИ, ВАКУУМНАЯ ИНДУКЦИОННАЯ ПЛАВКА, КОНДИЦИОННЫЕ ОТХОДЫ</span>
+                <span class='text-[10px] text-zinc-600'>| МИНПРОМТОРГ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="viam/rid_0014.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="14">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">📄</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">ТЕХНОЛОГИЧЕСКИЙ ПРОЦЕСС ИЗГОТОВЛЕНИЯ СВЯЗУЮЩЕГО ЭПОКСИДНОГО МАРКИ ВСЭ-80</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>ТЕХНОЛОГИЧЕСКАЯ ИНСТРУКЦИЯ ЯВЛЯЕТСЯ РУКОВОДСТВОМ ПО ИЗГОТОВЛЕНИЮ ЭПОКСИДНОГО СВЯ...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Секрет производства (ноу хау)</span>
+                <span class='text-[10px] text-zinc-600'>| ЭПОКСИДНОЕ СВЯЗУЮЩЕЕ, РАСПЛАВНОЕ СВЯЗУЮЩЕЕ, ОТВЕРЖДАЮЩАЯ СИСТЕМА</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="viam/rid_0015.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="15">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">📄</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">РЕЖИМ ФОРМОВАНИЯ И СОВМЕЩЕНИЯ ПРЕПРЕГОВ УГЛЕПЛАСТИКОВ С МОЛНИЕЗАЩИТНЫМ ПОКРЫТИЕМ ВМЗП-1</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>ТЕХНОЛОГИЧЕСКАЯ РЕКОМЕНДАЦИЯ ЯВЛЯЕТСЯ РУКОВОДСТВОМ ПО СОВМЕЩЕНИЮ МОЛНИЕЗАЩИТНОГО...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Секрет производства (ноу хау)</span>
+                <span class='text-[10px] text-zinc-600'>| МОЛНИЕЗАЩИТНОЕ ПОКРЫТИЕ, ВМЗП-1, ПРЕПРЕГ</span>
+                <span class='text-[10px] text-zinc-600'>| МИНПРОМТОРГ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="viam/rid_0016.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="16">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">📄</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">ТЕХНОЛОГИЧЕСКИЙ ПРОЦЕСС ИЗГОТОВЛЕНИЯ ДЕФОРМИРОВАННЫХ ПОЛУФАБРИКАТОВ (ПРЕССОВАННЫХ ПРУТКОВ) ИЗ МЕТАЛЛ</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>ТЕХНОЛОГИЧЕСКАЯ РЕКОМЕНДАЦИЯ СОДЕРЖАЩАЯ СЕКРЕТ ПРОИЗВОДСТВА И ЯВЛЯЕТСЯ РУКОВОДСТ...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Секрет производства (ноу хау)</span>
+                <span class='text-[10px] text-zinc-600'>| ПРЕССОВАННЫЙ ПРУТОК, ДЕФОРМИРОВАННЫЙ ПОЛУФАБРИКАТ, МАТЕРИАЛ НА ОСНОВЕ</span>
+                <span class='text-[10px] text-zinc-600'>| МИНПРОМТОРГ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="viam/rid_0017.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="17">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">📄</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">РЕЖИМЫ ИСПРАВЛЕНИЯ ЛИТЕЙНЫХ ДЕФЕКТОВ МЕТОДОМ ГАЗОДИНАМИЧЕСКОГО НАПЫЛЕНИЯ НА ОТЛИВКАХ И ДЕТАЛЯХ ИЗ ЛИ</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>ТЕХНОЛОГИЧЕСКАЯ РЕКОМЕНДАЦИЯ ЯВЛЯЕТСЯ РУКОВОДСТВОМ ПО ИСПРАВЛЕНИЮ ДЕФЕКТОВ НА ОТ...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Секрет производства (ноу хау)</span>
+                <span class='text-[10px] text-zinc-600'>| холодное газодинамическое напыление, технология исправления дефектов, порошковые композиции</span>
+                <span class='text-[10px] text-zinc-600'>| МИНПРОМТОРГ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="viam/rid_0018.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="18">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">📄</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">РЕЖИМЫ ИЗГОТОВЛЕНИЯ СЛИТКОВ ДЛЯ ПОРОШКОВЫХ КОМПОЗИЦИЙ, ПРЕДНАЗНАЧЕННЫХ ДЛЯ ГАЗОДИНАМИЧЕСКОГО НАПЫЛЕН</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>ТЕХНОЛОГИЧЕСКАЯ РЕКОМЕНДАЦИЯ ЯВЛЯЕТСЯ РУКОВОДСТВОМ ПО ИЗГОТОВЛЕНИЮ ПОРОШКОВЫХ КО...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Секрет производства (ноу хау)</span>
+                <span class='text-[10px] text-zinc-600'>| технология изготовления порошковых композиций, газовая атомизация, аэродинамическая сепарация</span>
+                <span class='text-[10px] text-zinc-600'>| МИНПРОМТОРГ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="viam/rid_0019.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="19">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💡</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">ГЕРМЕТИЗИРУЮЩИЙ ЖГУТОВОЙ МАТЕРИАЛ</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>ИЗОБРЕТЕНИЕ ОТНОСИТСЯ К СОСТАВАМ ДЛЯ ГЕРМЕТИЗАЦИИ ВАКУУМНЫХ МЕШКОВ ПРИ АВТОКЛАВН...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Изобретение</span>
+                <span class='text-[10px] text-zinc-600'>| КОМПОЗИЦИОННЫЕ МАТЕРИАЛЫ, АВТОКЛАВ, ГЕРМЕТИК</span>
+                <span class='text-[10px] text-zinc-600'>| МИНПРОМТОРГ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="viam/rid_0020.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="20">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">📄</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">ТЕХНОЛОГИЧЕСКИЙ ПРОЦЕСС ФОРМИРОВАНИЯ И ФОРМОВАНИЯ ЗАПЛАТЫ И НАКЛАДКИ ДЛЯ РЕМОНТА ЭЛЕМЕНТОВ КОНСТРУКЦ</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Описаны процессы подготовки и формирования заплаты и накладки для ремонта элемен...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Секрет производства (ноу хау)</span>
+                <span class='text-[10px] text-zinc-600'>| РЕМОНТ КОНСТРУКЦИИ ИЗ ПКМ, КЛЕЕВОЕ СОЕДИНЕНИЕ, КЛЕЕВОЙ ПРЕПРЕГ</span>
+                <span class='text-[10px] text-zinc-600'>| МИНПРОМТОРГ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="viam/rid_0021.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="21">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">📄</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">ТЕХНОЛОГИЧЕСКИЙ ПРОЦЕСС ТЕРМОДИФФУЗИОННОГО НАНЕСЕНИЯ ЗАЩИТНОГО ПОКРЫТИЯ</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>ТЕХНОЛОГИЧЕСКАЯ РЕКОМЕНДАЦИЯ ЯВЛЯЕТСЯ РУКОВОДСТВОМ ПО ТЕРМОДИФФУЗИОННОМУ НАНЕСЕН...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Секрет производства (ноу хау)</span>
+                <span class='text-[10px] text-zinc-600'>| ПОРОШКОВАЯ СМЕСЬ, ЗАЩИТНОЕ ПОКРЫТИЕ, ТЕРМОДИФФУЗИОННОЕ НАНЕСЕНИЕ</span>
+                <span class='text-[10px] text-zinc-600'>| МИНПРОМТОРГ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="viam/rid_0022.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="22">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">📄</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">РЕЖИМЫ ИЗГОТОВЛЕНИЯ МЕТОДОМ ВАКУУМНОЙ ИНФУЗИИ ЗАГОТОВКИ КАПОТА МОТОГОНДОЛЫ СИЛОВОЙ УСТАНОВКИ ВЕРТОЛЁ</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>ТЕХНОЛОГИЧЕСКАЯ РЕКОМЕНДАЦИЯ ЯВЛЯЕТСЯ РУКОВОДСТВОМ ПО ИЗГОТОВЛЕНИЮ ЗАГОТОВОК КАП...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Секрет производства (ноу хау)</span>
+                <span class='text-[10px] text-zinc-600'>| ВСТ-1210, огнестойкостойкий и огненепроницаемый материал, Капот мотогондолы вертолета</span>
+                <span class='text-[10px] text-zinc-600'>| МИНПРОМТОРГ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="viam/rid_0023.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="23">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">📄</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">ТЕХНОЛОГИЧЕСКИЙ ПРОЦЕСС ИЗГОТОВЛЕНИЯ ПРЕПРЕГА ВЫСОКОТЕМПЕРАТУРНОГО УГЛЕПЛАСТИКА МАРКИ ВКУ-61/ВТКУ-5</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>ТЕХНОЛОГИЧЕСКАЯ ИНСТРУКЦИЯ ЯВЛЯЕТСЯ РУКОВОДСТВОМ ПО ИЗГОТОВЛЕНИЮ ПРЕПРЕГА ВЫСОКО...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Секрет производства (ноу хау)</span>
+                <span class='text-[10px] text-zinc-600'>| ВКУ-61/ ВТКУ-5, ПОЛИИМИДНОЕ СВЯЗУЮЩЕЕ, ПРЕПРЕГ</span>
+                
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="viam/rid_0024.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="24">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💡</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">ЭПОКСИДНОЕ СВЯЗУЮЩЕЕ ПОНИЖЕННОЙ ГОРЮЧЕСТИ, ПРЕПРЕГ, СТЕКЛОПЛАСТИК, СФЕРОПЛАСТИК И ВЫПОЛНЕННОЕ ИЗ НИХ</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Изобретение относится к области расплавных эпоксидных связующих с пониженной гор...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Изобретение</span>
+                <span class='text-[10px] text-zinc-600'>| Пожаробезопасность, Сотовая панель, Стеклопластик</span>
+                <span class='text-[10px] text-zinc-600'>| МИНПРОМТОРГ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="viam/rid_0025.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="25">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💡</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">Способ получения металлокерамического композиционного материала методом селективного лазерного сплав</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Изобретение относится к порошковой металлургии. Предложен способ получения метал...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Изобретение</span>
+                <span class='text-[10px] text-zinc-600'>| Аддитивное производство, Металлический композиционный порошок</span>
+                <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="viam/rid_0026.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="26">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">📄</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">РЕЖИМЫ ИЗГОТОВЛЕНИЯ ТРЁХСЛОЙНОЙ ПАНЕЛИ ИЗ ПРЕПРЕГОВ СТЕКЛОПЛАСТИКОВ МАРОК ВПС-76, ВПС-76/Т-15(П), ВП</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>ТЕХНОЛОГИЧЕСКАЯ РЕКОМЕНДАЦИЯ ЯВЛЯЕТСЯ РУКОВОДСТВОМ ПО ИЗГОТОВЛЕНИЮ ТРЕХСЛОЙНЫХ С...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Секрет производства (ноу хау)</span>
+                <span class='text-[10px] text-zinc-600'>| ПРЕПРЕГИ, ВПС-76, ВПС-76/Т-15(П)</span>
+                <span class='text-[10px] text-zinc-600'>| МИНПРОМТОРГ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="viam/rid_0027.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="27">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💡</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">САМОКЛЕЯЩИЙСЯ ОГНЕЗАЩИТНЫЙ МАТЕРИАЛ</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>ТЕХНОЛОГИЧЕСКАЯ ИНСТРУКЦИЯ ЯВЛЯЕТСЯ РУКОВОДСТВОМ ПО ИЗГОТОВЛЕНИЮ САМОКЛЕЯЩЕГОСЯ ...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Изобретение</span>
+                <span class='text-[10px] text-zinc-600'>| ОГНЕЗАЩИТНЫЕ МАТЕРИАЛЫ, САМОКЛЕЯЩИЙСЯ МАТЕРИАЛ, ОГНЕЗАЩИТНОЕ ПОКРЫТИЕ</span>
+                <span class='text-[10px] text-zinc-600'>| МИНПРОМТОРГ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="viam/rid_0028.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="28">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💡</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">МЕТАЛЛОМАТРИЧНЫЙ КОМПОЗИЦИОННЫЙ МАТЕРИАЛ НА ОСНОВЕ МАГНИЯ И СПОСОБ ЕГО ПОЛУЧЕНИЯ</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>ИЗОБРЕТЕНИЕ ОТНОСИТСЯ К ПОЛУЧЕНИЮ ЭКСТРУДИРОВАННОГО МЕТАЛЛОМАТРИЧНОГО КОМПОЗИЦИО...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Изобретение</span>
+                <span class='text-[10px] text-zinc-600'>| МЕТАЛЛОМАТРИЧНЫЙ КОМПОЗИЦИОННЫЙ МАТЕРИАЛ НА ОСНОВЕ МАГНИЯ, ДЕФОРМИРОВАННЫЙ ПОЛУФАБРИКАТ, МАТЕРИАЛ НА ОСНОВЕ МАГНИЯ</span>
+                <span class='text-[10px] text-zinc-600'>| МИНПРОМТОРГ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="viam/rid_0029.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="29">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">📄</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">ТЕХНОЛОГИЧЕСКИЙ ПРОЦЕСС ЗАКАЛКИ С ОХЛАЖДЕНИЕМ В ПОЛИМЕРНУЮ СРЕДУ ЛИСТОВЫХ ДЕТАЛЕЙ И ПОЛУФАБРИКАТОВ И</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>ТЕХНОЛОГИЧЕСКАЯ РЕКОМЕНДАЦИЯ ЯВЛЯЕТСЯ РУКОВОДСТВОМ ПО МАЛОДЕФОРМАЦИОННОЙ ЗАКАЛКЕ...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Секрет производства (ноу хау)</span>
+                <span class='text-[10px] text-zinc-600'>| Двухкомпонентная водно-полимерная закалочная среда, Малодеформационная закалка, Листовые детали и полуфабрикаты</span>
+                <span class='text-[10px] text-zinc-600'>| МИНПРОМТОРГ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="viam/rid_0030.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="30">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">📄</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">ТЕХНОЛОГИЧЕСКИЙ ПРОЦЕСС РЕМОНТА ЖАРОСТОЙКОГО СТЕКЛОКЕРАМИЧЕСКОГО ПОКРЫТИЯ МАРКИ ВЭС-104М НА ХРОМОНИК</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Настоящая технологическая рекомендация распространяется на ремонт жаростойкого с...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Секрет производства (ноу хау)</span>
+                <span class='text-[10px] text-zinc-600'>| Ремонтное покрытие, Технология ремонта, Никелевые сплавы</span>
+                <span class='text-[10px] text-zinc-600'>| МИНПРОМТОРГ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="viam/rid_0031.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="31">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">💡</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">ПРИСАДОЧНЫЙ МАТЕРИАЛ НА ОСНОВЕ НИКЕЛЯ И СПОСОБ ЕГО ПРОИЗВОДСТВА</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Разработанные присадочный материал и технологии ремонта дефектов литья аргонодуг...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Изобретение</span>
+                <span class='text-[10px] text-zinc-600'>| Литые элементы ГТД, Сплав ВЖЛ718, Сплав ВЖЛ220</span>
+                <span class='text-[10px] text-zinc-600'>| МИНПРОМТОРГ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="viam/rid_0032.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="32">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">📄</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">РЕЖИМЫ ПРИМЕНЕНИЯ ПОЛИМЕРНОГО СИНТАКТНОГО ЗАПОЛНИТЕЛЯ-СФЕРОПЛАСТИКА МАРКИ ВПЗ-25</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>ТЕХНОЛОГИЧЕСКАЯ РЕКОМЕНДАЦИЯ ЯВЛЯЕТСЯ РУКОВОДСТВОМ ПО ПРИМЕНЕНИЮ ПОЛИМЕРНОГО СИН...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Секрет производства (ноу хау)</span>
+                <span class='text-[10px] text-zinc-600'>| СИНТАКТНЫЙ ПОЛИМЕРНЫЙ ЗАПОЛНИТЕЛЬ, ЗАДЕЛКА ТОРЦЕВЫХ УЧАСТКОВ, ПОЛИМЕРНАЯ ПАСТА</span>
+                
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="viam/rid_0033.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="33">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">📄</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">ТЕХНОЛОГИЧЕСКИЙ ПРОЦЕСС ИЗГОТОВЛЕНИЯ ВЫСОКОТЕМПЕРАТУРНОГО УГЛЕПЛАСТИКА МАРКИ ВКУ-61/ВТКУ-5</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>ТЕХНОЛОГИЧЕСКАЯ РЕКОМЕНДАЦИЯ ЯВЛЯЕТСЯ РУКОВОДСТВОМ ПО ИЗГОТОВЛЕНИЮ ВЫСОКОТЕМПЕРА...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Секрет производства (ноу хау)</span>
+                <span class='text-[10px] text-zinc-600'>| ВКУ-61/ ВТКУ-5, УГЛЕРОДНАЯ РАВНОПРОЧНАЯ ТКАНЬ, ПОЛИИМИДНОЕ СВЯЗУЮЩЕЕ</span>
+                
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="viam/rid_0034.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="34">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">📄</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">РЕЖИМЫ РЕМОНТА ДЕФЕКТОВ ЛИТЬЯ АРГОНОДУГОВОЙ СВАРКОЙ ЛИТЫХ ЗАГОТОВОК ДЕТАЛЕЙ ИЗ СПЛАВА ВЖЛ220</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Технологическая рекомендация является руководством по ремонту литых не термообра...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Секрет производства (ноу хау)</span>
+                <span class='text-[10px] text-zinc-600'>| Заготовки деталей, СвВЖ183, Ремонт</span>
+                <span class='text-[10px] text-zinc-600'>| МИНПРОМТОРГ РОССИИ</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+</div>
+        <div class="p-4 text-center">
+          <button id="rid-more" onclick="showMore('rid-item', 'rid-more', 'rid-counter', 35)" class="px-6 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-widest hover:bg-white/10 transition text-zinc-400">
+            Показать ещё 5
+          </button>
+        </div>
+      </section>
+
+      <script>
+        // Generic show-more function
+        function showMore(itemClass, btnId, counterId, total, step) {
+          step = step || 5;
+          const items = document.querySelectorAll('.' + itemClass);
+          let shown = 0;
+          items.forEach(el => {
+            if (el.style.display !== 'none') shown++;
+          });
+          items.forEach(el => {
+            const idx = parseInt(el.dataset.idx);
+            if (idx < shown + step) {
+              el.style.display = '';
+            }
+          });
+          const totalShown = Math.min(shown + step, items.length);
+          document.getElementById(counterId).textContent = 'Показаны ' + totalShown + ' из ' + total;
+          if (totalShown >= items.length) {
+            document.getElementById(btnId).style.display = 'none';
+          }
+        }
+      </script>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-20 border-t border-white/10 mt-20 bg-black/40">
+      <div class="max-w-7xl mx-auto px-6 text-center">
+        <div class="text-3xl font-black italic uppercase mb-8">МОС<span class="mos-red">НАУКА</span></div>
+        <p class="text-zinc-500 text-sm max-w-2xl mx-auto italic mb-8">Единая экосистема технологического развития площадок и заказчиков в Москве.</p>
+        <div class="flex justify-center gap-8 mb-8">
+          <div class="text-[10px] text-zinc-600 uppercase font-bold">Источник: <span class="text-emerald-500">CoLab</span> — лаборатории, учёные</div>
+          <div class="text-[10px] text-zinc-600 uppercase font-bold">Источник: <span class="text-sky-500">ЕГИСУ</span> — проекты, РИД</div>
+        </div>
+        <div class="text-white/20 text-[10px] uppercase font-bold tracking-[0.5em]">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ ОБЪЕКТА</div>
+      </div>
+    </footer>
+
+    <!-- Scroll to top button -->
+    <button onclick="window.scrollTo({top:0,behavior:'smooth'})" id="scroll-top" class="fixed bottom-8 right-8 w-12 h-12 rounded-full bg-red-500/80 text-white flex items-center justify-center shadow-lg hover:bg-red-500 transition z-50" style="display:none" title="Наверх">
+      <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg>
+    </button>
+
+    <!-- Request Modal -->
+    <div id="requestModal" style="position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem">
+      <div style="background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative">
+        <button onclick="closeModal()" style="position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer">&times;</button>
+        <div id="modalForm">
+          <h2 class="text-xl font-black mb-1">📨 Направить запрос</h2>
+          <div id="modalContext" class="text-xs text-zinc-500 mb-6">через платформу МОСНАУКА</div>
+          <label class="block text-[10px] uppercase font-black text-zinc-500 mb-1 tracking-widest">Ваше ФИО *</label>
+          <input type="text" id="reqName" placeholder="Иванов Иван Иванович" class="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-sm mb-3" style="color:white">
+          <label class="block text-[10px] uppercase font-black text-zinc-500 mb-1 tracking-widest">Организация</label>
+          <input type="text" id="reqOrg" placeholder="ООО «Компания»" class="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-sm mb-3" style="color:white">
+          <label class="block text-[10px] uppercase font-black text-zinc-500 mb-1 tracking-widest">Email *</label>
+          <input type="email" id="reqEmail" placeholder="email@example.com" class="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-sm mb-3" style="color:white">
+          <label class="block text-[10px] uppercase font-black text-zinc-500 mb-1 tracking-widest">Тип запроса</label>
+          <select id="reqType" class="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-sm mb-3" style="color:white;appearance:none">
+            <option>Запрос на НИОКР</option>
+            <option>Консультация</option>
+            <option>Сотрудничество / Партнёрство</option>
+            <option>Использование оборудования</option>
+            <option>Другое</option>
+          </select>
+          <label class="block text-[10px] uppercase font-black text-zinc-500 mb-1 tracking-widest">Сообщение *</label>
+          <textarea id="reqMsg" placeholder="Опишите ваш запрос..." class="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-sm mb-4" style="color:white;min-height:5rem;resize:vertical"></textarea>
+          <button onclick="submitRequest()" class="w-full py-3 rounded-xl bg-red-500 text-white text-[11px] font-black uppercase tracking-widest hover:bg-red-600 transition">Отправить запрос</button>
+        </div>
+        <div id="modalSuccess" style="display:none;text-align:center;padding:2rem 0">
+          <div style="font-size:3rem;margin-bottom:1rem">✅</div>
+          <h3 class="text-lg font-black mb-2">Запрос отправлен!</h3>
+          <p class="text-sm text-zinc-400">Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+          <button onclick="closeModal()" class="mt-6 w-full py-3 rounded-xl bg-white/5 border border-white/10 text-sm font-bold text-zinc-400 hover:bg-white/10 transition">Закрыть</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      window.addEventListener('scroll', function() {
+        document.getElementById('scroll-top').style.display = window.scrollY > 400 ? 'flex' : 'none';
+      });
+      function openRequestModal(context) {
+        document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+        document.getElementById('modalForm').style.display = '';
+        document.getElementById('modalSuccess').style.display = 'none';
+        document.getElementById('requestModal').style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      }
+      function closeModal() {
+        document.getElementById('requestModal').style.display = 'none';
+        document.body.style.overflow = '';
+      }
+      function submitRequest() {
+        var n = document.getElementById('reqName').value.trim();
+        var e = document.getElementById('reqEmail').value.trim();
+        var m = document.getElementById('reqMsg').value.trim();
+        if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+        document.getElementById('modalForm').style.display = 'none';
+        document.getElementById('modalSuccess').style.display = '';
+      }
+      document.getElementById('requestModal').addEventListener('click', function(e) {
+        if (e.target === this) closeModal();
+      });
+    </script>
+  </div>
+</body>
+</html>

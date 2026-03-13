@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | МГУ им. М.В. Ломоносова</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-mgu.html">МГУ им. М.В. Ломоносова</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">оценка эффекта воздействия</span> <span class="tag">доказательная политика</span> <span class="tag">инновации</span> <span class="tag">сделки экономической концентрации</span> <span class="tag">платформы</span> <span class="tag">цифровые экосистемы</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Экономическая политика. Государственное регулирование экономики</span></div>
+          <h1 style="font-size:1.5rem">Отчет по теме «Эффекты сделок экономической концентрации цифровых экосистем на инновации в России»</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">1,500 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225090918776-0</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2024-07-31 — 2025-06-30</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№1</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">РНФ</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>Российский научный фонд</div>
+                </div><div class="metric-box" style="text-align:left">
+                  <div class="label">Исполнитель</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">МОСКОВСКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ ИМЕНИ М.В.ЛОМОНОСОВА, МГУ ИМЕНИ М.В.ЛОМОНОСОВА, МОСКОВСКИЙ УНИВЕРСИТЕТ ИЛИ МГУ</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>В рамках первого года выполнения проекта был реализован первый этап исследования, посвященный количественной оценке эффектов сделок экономической концентрации, совершаемых цифровыми экосистемами, на параметры рынка венчурного финансирования. В рамках реализации первого этапа были собраны и систематизированы данные по сделкам экономической концентрации в России, обобщены эффекты сделок цифровых экосистем и изменения антимонопольного регулирования слияний и поглощений, а также проведена эмпирическая проверка гипотез, связанных с последствиями сделок цифровых экосистем и изменения антимонопольного регулирования. В первой части исследования мы проводим критический обзор современной эмпирической и теоретической литературы, в которой рассматриваются последствия сделок экономической концентрации с участием цифровых экосистем. Мы выявили, что для таких сделок проявляются разнонаправленные эффекты: с одной стороны, такие сделки могут снижать инвестиционную активность и вытеснять радикальные инновации (Cunningham, Ederer, Ma, 2021; Barsy, Gautier, 2024), с другой — стимулировать формирование комплементарных продуктов и приводить к росту привлекательности отрасли (Bryan, Hovenkamp, 2020; Dijk et al., 2024). Это противоречие легло в основу ключевого вопроса, который мы исследуем: как сделки цифровых экосистем влияют на количество и стоимость сделок на рынке корпоративного контроля. Для ответа на этот вопрос мы используем данные портала Mergers.ru, включающие информацию л более 10 400 сделок, совершенных в России в период с января 2001 года по настоящее время. База охватывает ключевые параметры сделок экономической концентрации: цену сделки, тип контроля, отраслевую принадлежность, направление сделки (горизонтальное, вертикальное и др.), национальность, а также тип (рыночная, приватизационная и пр.). Обновление базы происходит ежедневно, что гарантирует актуальность и высокую репрезентативность данных, кроме того, количество сделок в базе сопоставимо с количеством ходатайств, рассматриваемых антимонопольной службой, что позволяет говорить о ее качестве. На основе исследования (Stavniychuk, Markova, 2023) и экспертных материалов Московской школы управления «Сколково» были идентифицированы ключевые цифровые экосистемы России: Сбер, Яндекс, VK и МТС (группа ВСЯМ). Каждая сделка в базе данных была сопоставлена с принадлежностью к одной из этих экосистем. Данные были агрегированы до уровня &quot;отрасль-месяц&quot;, что позволило сформировать панельный массив данных, пригодный для оценки причинно-следственных связей. Были разработаны индикаторы воздействия — бинарные переменные, фиксирующие наличие сделок с ЦЭС в конкретной отрасли и месяце. Для оценки влияния сделок цифровых экосистем на параметры рынка слияний и поглощений мы используем два типа моделей: (1) панельные регрессии с двунаправленными фиксированными эффектами (отрасль и время) и (2) модель динамической разности-разностей с панельным мэтчингом. С одной стороны, такая стратегия позволяет оценить накопленные эффекты, а с другой, построить причинно-следственные связи между событиями (сделками с цифровыми экосистемами) и последствиями (другими сделками в рассматриваемых отраслях). Результаты показали, что после заключения сделки цифровой экосистемой в определенной отрасли наблюдается статистически значимый рост числа сделок в этой отрасли. Это подтверждается как базовой моделью с двунаправленными фиксированными эффектами, так и панельным мэтчингом. В то же время выявлен тренд на снижение средней цены сделок, что может свидетельствовать о снижении объема инвестиций. Такой эффект может трактоваться как вытеснение радикальных инвестиций в пользу комплементарных и постепенных. Реакцией на рост рыночной власти цифровых экосистем в том числе в результате множества сделок экономической концентрации стало изменение в антимонопольном законодательстве с 1 сентября 2023 г., которое включало появление ценового порога (7 млрд руб.) в критерии обязательного согласования сделки. Мы отдельно оцениваем эффекты этого изменения. В качестве эмпирической стратегии мы используем тест на сдвиг в распределении цен сделок относительно порогового значения. Мы выявили, что наблюдается значительное накопление сделок около этого порога, что интерпретируется как вероятное манипулирование ценой сделки для избежания регулирования. Это может привести к снижению эффективности антимонопольного надзора. На основе полученных оценок мы предлагаем конкретные рекомендации по совершенствованию антимонопольного регулирования: (1) введение выборочной проверки сделок, находящихся &quot;под порогом&quot;, в рамках института антимонопольной экспертизы; (2) использование данных ФНС для перекрестной проверки условий сделок; (3) более тщательную оценку последствий сделок цифровых экосистем в отраслях с высокой долей инноваций, где влияние изменения паттернов финансирования на венчурную активность наиболее чувствительно. Результаты реализации проекта были представлены на 4 международных научных конференциях и одном мероприятии с участием органов госвласти: «Ломоносовские чтения» (МГУ, апрель 2025), АСОПП (Москва, октябрь 2024), META2024 (ВШЭ – Нижний Новгород, октябрь 2024), конференция по антимонопольному регулированию (СПб, январь 2025).</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (2)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Ставнийчук Анна Юрьевна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Маркова Ольга Анатольевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат экономических наук</span></li></ul>
+              
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

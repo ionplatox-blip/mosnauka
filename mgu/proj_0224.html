@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | МГУ им. М.В. Ломоносова</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-mgu.html">МГУ им. М.В. Ломоносова</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">ИШЕМИЯ МОЗГА</span> <span class="tag">ИШЕМИЯ СЕРДЦА</span> <span class="tag">УБИХИНОН</span> <span class="tag">АНТИОКСИДАНТЫ</span> <span class="tag">УБИХИНОЛ</span> <span class="tag">ЛЕГОЧНАЯ ГИПЕРТЕНЗИЯ</span> <span class="tag">МИКРОБИОТА</span> <span class="tag">ВОДОРОД</span> <span class="tag">МЕТАН</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Медицинская биохимия</span></div>
+          <h1 style="font-size:1.5rem">Фармакологическая модуляция функции микробиоты в профилактике неинфекционных заболеваний</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">5,391 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225012302214-4</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2024-01-09 — 2024-12-31</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№2</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">4</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">Правительство России</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>Правительство Российской Федерации</div>
+                </div><div class="metric-box" style="text-align:left">
+                  <div class="label">Исполнитель</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">МОСКОВСКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ ИМЕНИ М.В.ЛОМОНОСОВА, МГУ ИМЕНИ М.В.ЛОМОНОСОВА, МОСКОВСКИЙ УНИВЕРСИТЕТ ИЛИ МГУ</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>Согласно данным Всемирной Организации Здравоохранения несмотря на все проводимые профилактические и терапевтические мероприятия сердечно-сосудистые заболевания (ССЗ) сохраняют лидирующие позиции в рейтинге причин смертности населения мира. При этом инфаркт миокарда и инсульт остаются основными причинами сердечно-сосудистой смертности [1]. Несмотря на достигнутые в последние десятилетия успехи в профилактической медицине в виде выявления факторов риска и предупреждения развития сердечно-сосудистых заболеваний, остается остаточный риск сердечно-сосудистых событий, связанный с дополнительными факторами риска [2;3]. Одним из таких факторов является микробиота кишечника, выполняющая роль «часового» на границе внешней и внутренней среды организма человека, обрабатывающая входящие извне сигналы в виде особенностей питания и преобразующая их в измененный риск развития сердечно-сосудистых заболеваний [4;5;6;7]. Считается, что как и в случае с другими сердечно-сосудистыми заболеваниями, микробиом кишечника играет важную патофизиологическую роль в развитии заболеваний бронхолегочной системы, в частности, легочной гипертезии (ЛГ), что в научной литературе получило название «ось микробиом кишечника – легкие» [8].
+Метаболиты как результат продукции микробиоты кишечника, а также совместного метаболизма хозяина и микрофлоры, участвуют в передаче сигнала между кишечником и периферическим тканями, модулируют риск развития сердечно-сосудистых заболеваний [9;10;11]. Метаболиты могут рассматриваться в качестве потенциальных целей для профилактики и лечения сердечно-сосудистых заболеваний [12].
+В настоящее время экспериментально и клинически доказано влияние на сердечно-сосудистую систему метаболитов микробиоты кишечника, как то, триметиламин (ТМА), триметиламин-N-оксид (ТМАО – результат совместного метаболизма микрофлоры кишечника и человека), короткоцепочечные жирные кислоты (КЦЖК), газы в виде молекулярного водорода (Н2) и метана (СН4) [11].
+Одним из продуктов жизнедеятельности микробиоты кишечника является молекулярный водород. Он представляет собой легкий газ без цвета и запаха, легко диффундирующий из кишечника в клетки организма человека, не синтезирующие молекулярный водород, и включающийся в различные биохимические реакции внутриклеточного метаболизма [13]. Эффективность молекулярного водорода в качестве нейропротектора и кардиопротектора обусловлена его антиоксидантным, антиапоптотическим и противовоспалительным действием [14]. Молекулярный водород рассматривается в качестве диагностического маркера функционирования микробиоты кишечника [15;16], а также в качестве терапевтического агента при различных патологических состояниях и заболеваниях, включая сердечно-сосудистые заболевания, легочную гипертензию, метаболические нарушения при сахарном диабете 2 типа, в патогенезе которых важнейшую роль играет окислительный стресс [17;18].
+Другим газообразным метаболитом микробиоты кишечника является метан, физиологическая функция которого в настоящее время активно изучается. С одной стороны, метан является продуктом жизнедеятельности микробиоты кишечника, преимущественной архей. Его уровень в выдыхаемом воздухе напрямую связан с метаболическими нарушениями в организме, выраженностью синдрома избыточного бактериального роста в кишечнике (СИБР), ухудшающего течение ССЗ [19]. С другой стороны, появляются все больше экспериментальных данных о положительных для организма свойствах метана [20;21;22;23]. В рамках заявленной на 2024 год темы, как продолжение исследований 2023 года, была поставлена цель: изучить диагностический и терапевтический потенциал значимости молекулярного водорода в диагностике и терапии неинфекционных заболеваний.
+В рамках поставленной задачи были проведены экспериментальные и клинические исследования. Одно из исследований на животных было направлено на изучение терапевтического потенциала молекулярного водорода в оценке функции микробиоты кишечника крыс с монокроталин-индуцированнй легочной гипертензией (МКТ-ЛГ). Второе исследование, являясь продолжением первого исследования, состояло в поведении экспериментов ex vivo: на изолированных органах (кольца нисходящей аорты), взятых у крыс контрольной группы и крыс с легочной гипертензией (ЛГ). В ходе эксперимента была дана оценка влияния молекулярного водорода на тонус сосудов на фоне лекарственный веществ, повышающих тонус сосудов.
+Одно из клинических исследований на пациентах низкого и умеренного риска сердечно–сосудистых осложнений было направлено на выявление возможных взаимосвязей между ферментативной активностью микробиоты с одной стороны и показателями гемодинамики, артериальной жесткостью и аффективными расстройствами у данной группы лиц с другой стороны. 
+В настоящий момент продолжается клиническое исследование у пациентов с сахарным диабетом 2 типа с оценкой диагностического и терапевтического (пролонгированный ежедневный прием воды, обогащенной водородом) потенциала молекулярного водорода в диагностике и коррекции метаболических нарушений при СД2. Данное исследование находится на стадии набора пациентов и сбора дыхательных проб и биологического материала (пробы крови (биохимический анализ), пробы кала (оценка таксономического состава методом секвенирования).
+В ходе проведенных исследований были получены следующие результаты: 
+1.	Влияния ингаляций 4 % водорода у животных с монокроталин-индуцированной легочной гипертензией (МКТ-ЛГ) на основные сердечно-сосудистые симптомы легочной гипертензии (ЛГ) не выявлено, однако показано положительное влияние на состояние соединительной ткани легких у животных с ЛГ. Отмечалось уменьшение реакции тучных клеток (ТК) как количественно, так и функционально. Наблюдалось снижение экспрессии триптазы ТК с преобладанием форм без признаков дегрануляции. Секреция TGF-β (трансформирующий фактор роста β) была значительно уменьшена и визуализировалась иммунопозитивными клетками в альвеолярных ячеистых структурах и стенках сосудов. Таким образом, было установлено, что ингаляции 4%-го водорода способствуют снижению воспаления и фиброзирования легочной ткани при развитии МКТ-ЛГ.
+2.	В ходе исследования ex vivo было выявлено дозозависимое повышение тонуса сегментов аорты на фоне фенилэфрина (Ph). При этом эффект на Ph в группе МКТ-ЛГ с ингаляцией Н2 был достоверно ниже (р&lt;0,05), чем в группе МКТ-ЛГ (Emax — 46,38±3,07% и 35,05±3,24%, ЕС50 — 4•10–6 и 7•10–5 соответственно). Ацетилхолин (ACh) и натрия нитропруссид (SNP) вызывали дозозависимое снижение тонуса колец аорты. Таким образом, в ходе исследования было выявлено, что Н2 не влияет на эндотелий-зависимую (ACh) и эндотелий-независимую (SNP) релаксацию колец аорты, но снижает реакцию колец аорты крыс с МКТ-ЛГ на введение вазоконстриктора (Ph). Снижение чувствительности к вазоконстрикторам может быть полезным терапевтическим подходом для борьбы с ЛГ.
+3.	В клиническом исследовании с участием пациентов низкого и умеренного риска ССО (сердечно-сосудистых осложнений) (n=22) у 7 пациентов была выявлена СН4 - продуцирующая микрофлора, у 15 – Н2 – продуцирующая. Была выявлена отрицательная корреляция между САД и уровнем СН4 (r=−0,530 p=0,008). По данным многофакторного регрессионного анализа AUC СН4 показал себя независимым от возраста предиктором повышения САД (β=−0,49, р=0,03). Была выявлена отрицательная корреляция между уровнем тревоги и Н2 (r=−0,44, p=0,05) и соотношением Н2/CH4 (г=−0,53, р=0,02). Уровень Н2 показал себя независимым от возраста, уровня САД, ДАД, ЧСС отрицательным предиктором тревоги (β=−0,64, р&lt;0,01). Выявлена отрицательная корреляция между показателем артериальной жесткости CAVI и количеством выдыхаемого Н2 (r=−0,41, p&lt;0,05).
+4.	Проведено пилотное исследование на здоровых добровольцах и экспериментальных животных (крысы) аппаратно-программного комплекса, состоящего из многоканального перестраиваемого диодного лазерного спектрометра высокого разрешения для измерения содержания газов 12СО2, 13СО2, СН4, NH3, H2S и H2O, а также сенсоров водорода и кислорода для проведений on-line измерений выдыхаемых газов. Данный комплекс позволяет непрерывно (каждую секунду) неинвазивно измерять состав биомаркеров микробиоты кишечника как в опытах на лабораторных животных, так и в клинических исследованиях на человеке. Первые опыты показали возможность применения прибора для изучения как выдыхаемого воздуха, так и кишечного газа. Важным преимуществом разработанного нового метода регистрации газов является непрерывность измерения состава газов, а также многоканальность по регистрируемым компонентам, позволяющая оценить особенности ферментативной активности микробиоты кишечника и косвенно судить о ее таксономическом составе
+5.	За отчетный период были опубликованы обзоры по темам: «Современные взгляды на функциональную роль водорода и его кинетику в человеческом организме»; «Prospects of Intravenous Coenzyme Q10 Administration in Emergency Ischemic Conditions» (Life, Q1).</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (5)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Артемьева Марина Михайловна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Оболенская Ольга Николаевна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Медведев Олег Стефанович</strong> <span style="color:#71717a;font-size:0.8rem">Доктор медицинских наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Поварова Оксана Викторовна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат медицинских наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Шашурин Денис Александрович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат медицинских наук</span></li></ul>
+              
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

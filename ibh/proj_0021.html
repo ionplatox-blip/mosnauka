@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | ИБХ РАН</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-ibh.html">ИБХ РАН</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">гены-мишени</span> <span class="tag">транскриптом,</span> <span class="tag">картофель,</span> <span class="tag">фузариум,</span> <span class="tag">фитофтора,</span> <span class="tag">вирусы растений,</span> <span class="tag">двуцепочечная РНК (дцРНК),</span> <span class="tag">РНК интерференция,</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Генетическая инженерия растений</span></div>
+          <h1 style="font-size:1.5rem">Генетические РНК-технологии: новый ресурс для развития биологии и биотехнологии растений</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">28,000 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225031813696-0</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2024-01-08 — 2024-12-31</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№2</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">5</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">РНФ</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>Российский научный фонд</div>
+                </div><div class="metric-box" style="text-align:left">
+                  <div class="label">Исполнитель</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">ИБХ РАН</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>Сельскохозяйственные растения постоянно и одновременно подвержены различным биотическим и абиотическим стрессам, которые влияют на их рост и развитие и ведут к потерям урожая и снижению качества продукции. Настоящий проект посвящен разработке подходов к защите растений от стрессов и улучшению хозяйственно-ценных свойств сельскохозяйственных растений, основанных на механизме дцРНК-направленной РНК интерференции, с целью расширение арсенала геномных технологий в биологии растений и растениеводстве Диверсификация систем геномного редактирования в растениеводстве весьма актуальна, направлена на применение инновационных и ресурсосберегающих технологий и снижает риски, связанные с рядом технических и регуляторных ограничений. 
+В отчетном периоде для экзогенного применения полученных на основании данных 2023 г. препаратов дцРНК, амиРНК и атасиРНК были определены следующие параметры: концентрация, стадия развития растений, длительность эффекта и способ применения. Эффективность действия полученных препаратов РНК определялась методом RT-qPCR по уровню экспрессии соответствующих генов, кодирующих фибрилларин, коилин, StCEN и ZEP, в обработанных препаратами растениях по сравнению с уровнем экспрессии в контрольных растениях. Экзогенное применение препаратов показало, что использование дцРНК (по сравнению с амиРНК и атасиРНК) является предпочтительным при экзогенной обработке растений.
+Проведен биоинформатический анализ транскриптома растений картофеля, подвергнутых биотическому стрессу (заражение Y вирусом картофеля, PVY) в присутствии или в отсутствии специфической (дцРНКpvy) или неспецифической (дцРНКpvs) дцРНК.  Проведено предсказание некодирующих РНК (нкРНК) в геномe картофеля, в том числе альтернативно сплайсированных нкРНК.  Проведена аннотация 26938 генов в образцах растений картофеля, инфицированных PVY в присутствии или в отсутствии дцРНК. Выявлены дифференциально экспрессируемые транскрипты, которые, как показано, в основном ассоциированы с образцами растений, обработанных как специфической, так и неспецифической дцРНК, что предполагает их участие в защитных противовирусных ответах растений, основанных как на РНК интерференции, так и на общей защитной реакции растения – иммунитете, индуцированном молекулярными паттернами (pattern triggered immunity, PTI). 
+Проведено предсказание и анализ коротких открытых рамок считывания на днкРНК, потенциально кодирующих функциональные пептиды у картофеля. 21 ОРС рамка найденa в 20 днкРНК, относящихся к 20 генам. 2 из 20 этих генов (Soltu.DM.08G005630, Soltu.DM.01G021070) дифференциально экспрессируются в вариантах - обработка только дцРНКpvs против обработка дцРНКpvs и заражение PVY (экспрессия повышается в условиях инфекции PVY).
+Анализ малых РНК во всех двадцати полученных библиотекax выявил 235 малых РНК. Из них 19 являются известными малыми РНК картофеля, которые описаны в базе данных miRBase. При этом самыми распространёнными микроРНК в наших образцах являются st-miR408b, st-miR6024, st-miR482а. Дальнейший анализ показал, что 89 дифференциально экспрессируемых микроРНК продемонстрировали комплементарность к 13124-м потенциальным уникальным целевым последовательностям. Предсказано, что все микроРНК в парах миРНК-мишени нацелены на несколько транскриптов в диапазоне от 15 до 180. Эти пары миРНК-мишени предполагают многофункциональность этих микроРНК.  Среди РНК-мишеней были выявлены транскрипты, ассоциированные с разнообразными биологическими функциями, включая деградацию РНК, биосинтез вторичных метаболитов, эндоцитоз, передачy сигнала растительных гормонов, сигнальный путь MAPK, сплайсинг мРНК, метаболизм липидов, транспорт, транскрипцию, сверхчувствительную защитную реакцию растения и сигнальный путь этилена. Особый интерес вызывают мишени, потенциально связанные с устойчивостью растения к вирусной инфекции: а именно, с деградацией клеточной стенки, экспрессией генов, связанных с патогенезом и устойчивостью, опосредованной эффектором.
+Собран полный геном патогенного гриба Fusarium coffeatum; общая длина составила 40 Mb, N50 - около 7 Mb. Описана организация кластеров, отвечающих за синтез токсинов у F. coffeatum.  Показано, что основной трихиоценовый кластер включает в себя 12 генов; еще 2 гена (TRI1 и TRI16) были расположены в других локусах. Структура фузаринового кластера F. coffeatum полностью соответствовала типичной, и включала в себя 9 генов.  Гомологи генов, ответственных за синтез фумонизина В1, были расположены разрозненно. Гены LaeA, Ve1 и FUM13, были отобраны для дальнейшей работы по дизайну дцРНК для проведения экспериментов по РНК интерференции.
+Собран полный геном российского штамма Phytophthora infestans VZR ViR21a. Для дальнейших экспериментов были выбраны, синтезированы и клонированы консервативные кДНК фрагменты генов поли(ADP-рибоза) полимеразы -  PiPARP1 CDS длиной 662 пн. (нт 1594–2255) и PiPARP2 CDS длиной 813 пн. (нт 1225–2037) и гена поли(ADP-рибоза) гликогидролаз PiPARG CDS длиной 698 пн. (нт 1–680). 
+Получены препараты дцРНК для подавления экспрессии всех вышеперечисленных генов Fusarium и Phytophthora. Bыбраны оптимальные условия применения дцРНК на культурах Fusarium и Phytophthora с точки зрения эффекта, выражаемого в подавлении роста гриба и оомицета и снижении уровней микотоксинов в среде. 
+Составлен перечень всех вирусов, поражавших растения картофеля в поле в 17 регионах Европейской части Российской Федерации за 2023 и 2024 гг. и построена общая карта их распространения. Составлен перечень всех штаммов Y вируса картофеля (наиболее распространенный и опасный вирус картофеля) и построена общая карта их распространения. Сравнительный анализ популяционного состава основных вирусов картофеля позволил определить перечень последовательностей дцРНК для мультиплексного набора, покрывающего весь спектр вирусов и штаммов, обнаруженных на сегодняшний день в растениях картофеля в различных зонах РФ.
+В результате проведенных исследований все пункты календарного плана 2024 г. успешно выполнены. В международных и российских журналах, опубликованы 7 статей в том числе 5 статей в изданиях, входящих в первый квартиль Q1, сделаны доклады (устные и постерные сообщения) на всероссийских конференциях, в том числе с международным участием (всего 12 докладов).</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (4)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Калинина Наталья Олеговна</strong> <span style="color:#71717a;font-size:0.8rem">Доктор биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Комарова Татьяна Валерьевна</strong> <span style="color:#71717a;font-size:0.8rem">Доктор биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Тальянский Михаил Эммануилович</strong> <span style="color:#71717a;font-size:0.8rem">Доктор биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Стахеев Александр Александрович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li></ul>
+              
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | ОИВТ РАН</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-oivt.html">ОИВТ РАН</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">эмбрион</span> <span class="tag">бластоциста</span> <span class="tag">блестящая оболочка</span> <span class="tag">вспомогательный лазерный хетчинг</span> <span class="tag">фемтосекундные лазерные импульсы</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Распознавание образов. Обработка изображений</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Воздействие лазерного излучения на вещество</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Эмбриональное развитие</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Методы и аппаратура в эмбриологии</span></div>
+          <h1 style="font-size:1.5rem">Разработка безопасного метода микрохирургии эмбрионов на основе машинного обучения в рамках вспомогательных репродуктивных технологий с использованием импульсов лазерного излучения фемтосекундной длительности (промежуточный, этап 1)</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">7,000 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225021410297-7</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2023-05-15 — 2023-12-15</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№1</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">4</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">РНФ</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>Российский научный фонд</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>Лазерная микрохирургия эмбрионов осуществлялась с использованием установки «Фемтосекундный лазерный скальпель», разработанной в ОИВТ РАН. Лазерный источник генерировал импульсы со следующими параметрами: длительность импульса τ=280 фс, энергия Е=330 мкДж, длина волны излучения λ=514/1028 нм, частота следования импульсов f=2,5 кГц. Для проведения исследований использовали мышей гибридов первого поколения CBA х C57Bl/6J. Эксперименты проводили на стадии бластоцисты.
+
+1. Была дана оценка уровня экспрессии белков теплового шока (БТШ) в клетках эмбриона, прилегающих к блестящей оболочке, при реализации процедуры вспомогательного лазерного хетчинга (ВЛХ) фемтосекундными (фс) импульсами видимого диапазона спектра (λ=514 нм). Энергия лазерных импульсов в эксперименте составляла E=35 нДж, скорость луча υ=0,01 мм/с, частота следования импульсов f=2,5 кГц, длина волны излучения λ=514 нм. Было показано, что уровни экспрессии генов Hsp90aa1 и Hspa5 в группах контроля К- и К+ имеют достоверные различия, однако различия между Э группой и группой К-, а также между Э группой и группой К+ в величине уровня экспрессии обоих генов недостоверны. Исходя из этого, было сделан вывод, что лазерная микрохирургия эмбриона фемтосекундными лазерными импульсами видимого диапазона спектра (λ=514 нм) в рамках процедуры ВЛХ может вызывать незначительное повышение уровня экспрессии генов БТШ в бластоцистах мыши.
+
+2.	Была дана оценка уровня активных форм кислорода (АФК) в клетках эмбриона, прилегающих к блестящей оболочке, при реализации ВЛХ фс-импульсами видимого диапазона спектра (λ=514 нм). Определение уровня АФК в эмбрионах мыши было проведено с использованием индикатора CM-H2DCFDA. Параметры лазерных импульсов в эксперименте: E=35 нДж, υ=0,01 мм/с, f=2,5 кГц, λ=514 нм. Было показано, что процедура ВЛХ фс-импульсами видимого диапазона спектра не приводит к увеличению уровня АФК в эмбрионах мыши.
+
+3.	Была дана оценка точности выполнения ВЛХ при реализации процедуры фс-импульсами инфракрасного диапазона спектра (λ=1028 нм) на эмбрионах мыши. Диапазон значений энергии инфракрасных лазерных импульсов для микрохирургии оболочки в рамках ВЛХ составил E=134–190 нДж. Были получены зависимости ширины надреза D от энергии лазерных импульсов D(E) при различных значениях скорости лазерного луча υ, а также зависимость D(υ) при заданных E, позволившие построить функционал D(E,υ), границы применимости которого задаются неравенствами 0.25≤υ≤ мкм/с и 115≤E≤190 нДж для всех D(E,υ)&gt;0.7мкм. Было показано, что применение инфракрасных фемтосекундных лазерных импульсов для микрохирургии блестящей оболочки эмбриона не только возможно, но и позволяет получить надрез, ширина которого меньше размера перетяжки r0=1,55 мкм лазерного пучка (например, ширина надреза D~0.8 мкм).
+
+4.	Оценка показателя хетчинга эмбрионов при реализации ВЛХ фс-импульсами инфракрасного диапазона спектра на эмбрионах мыши продемонстрировала увеличение коэффициента хетчинга после процедуры ВЛХ в экспериментальной группе эмбрионов, по сравнению с контрольной группой.
+
+5.	Оценка уровня экспрессии белков теплового шока в клетках эмбриона, прилегающих к блестящей оболочке, при реализации ВЛХ фс-импульсами инфракрасного диапазона спектра (λ=1028 нм). Алгоритм проведения исследований уровня белков теплового шока в клетках эмбриона после процедуры ВЛХ был аналогичен тому, что изложен в результате №1. Было показано, что уровни экспрессии генов Hsp90aa1 и Hspa5 в группах отрицательного и положительного контроля имеют достоверные различия. Также обнаружены достоверные различия между экспериментальной группой и группой положительного контроля при исследовании экспрессии обоих генов. Был сделан вывод, что лазерная микрохирургия эмбриона фемтосекундными лазерными импульсами инфракрасного диапазона спектра (λ=1028 нм) в рамках процедуры ВЛХ не вызывает повышения уровня экспрессии генов белков теплового шока в бластоцистах мыши несмотря на большие энергии лазерных импульсов по сравнению с импульсами видимого диапазона.
+
+6.	Была дана оценка уровня активных форм кислорода в клетках эмбриона, прилегающих к блестящей оболочке, при реализации ВЛХ фс-импульсами инфракрасного диапазона спектра (λ=1028 нм). После окрашивания на одном из эмбрионов экспериментальной группы было зафиксировано локальное воздействие лазерного излучения в виде
+яркого свечения красителя CM-H2DCFDA. В остальных клетках яркость свечения эмбрионов экспериментальной группы не отличалось контрольных. Было показано, что уровень АФК может увеличиться только в единичных клетках, в непосредственной близости к лазерному лучу, в то время как в остальных клетках эмбриона уровень АФК остается низким.
+
+7.	Для решения задач автоматизации центрирования эмбриона в кадре, компенсации дрифта эмбриона в реальном времени и отслеживания положения эмбриона в фокусе был подготовлен входной набор данных — фотографии эмбрионов на стадии бластоцисты в количестве 156 шт. (формат TIFF, разрешение 1600×1200 пикс). Для решения задачи отслеживания эмбриона в фокусе для каждого эмбриона была сделана серия кадров как с оптимальной фокусировкой, так с изменением его положения вдоль оси z (6 вариантов расфокусировки). Для увеличения выборки данных каждое изображение эмбриона было размножено в 4 раза путем поворота на угол 90°, а затем дополнительно отзеркалено по вертикали и горизонтали.
+
+8.	Были отработаны подходы к решению задач компенсация дрифта эмбриона в кадре и отслеживание положения эмбриона в фокусе в реальном масштабе времени. Для поиска объекта в кадре были рассмотрены математические методы и дана оценка их быстродействия: метод поиска по шаблону с различными метриками, а также методы определения границ (сегментации и Canny Edge Detector). Время, затрачиваемое на решение задачи поиска эмбриона в кадре, составляло от 2 до 12 мс. Оба метода определения границ (в отличие от метода поиска по шаблону) продемонстрировали хорошее качество определения границ эмбриона при его нестандартной форме — форме эллипса.
+
+
+9. Были отработаны подходы с использованием нейросети для задач определения положения эмбриона в кадре и автофокусировки изображения. Продемонстрирована возможность решения задачи определения положения эмбриона в кадре и классификации изображения по степени его расфокусировки с использованием нейросети сверточного типа. Время решения первой задачи нейросетью составило 7 мс. При решении сразу обеих задач время увеличилось до 12  мс и было сопоставимо с временем при использовании классических математических методов, изложенных выше. Сделан вывод, что для улучшения качества работы с использованием нейросетей необходим переход к масочным  сетям с указанием области, в которой требуется проведение анализа: оболочка, ВКМ, полость.</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (6)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Ситников Дмитрий Сергеевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Кубекина Марина Владиславовна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Пронкин Александр Артурович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат технических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Ромашевский Сергей Андреевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат технических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Филатов Максим Алексеевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Силаева Юлия Юрьевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li></ul>
+              
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

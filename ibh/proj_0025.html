@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | ИБХ РАН</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-ibh.html">ИБХ РАН</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">рибосомный профайлинг</span> <span class="tag">пептидомика,</span> <span class="tag">микробелки,</span> <span class="tag">кОРС,</span> <span class="tag">Короткие открытые рамки считывания,</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Молекулярная биология гена</span></div>
+          <h1 style="font-size:1.5rem">Системaтический анализ трансляции коротких Открытых Рамок Считывания (кОРC) и исследование свойств их пептидных продуктов</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">7,000 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225030612925-7</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2024-01-01 — 2024-12-31</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№5</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">2</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">РНФ</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>Российский научный фонд</div>
+                </div><div class="metric-box" style="text-align:left">
+                  <div class="label">Исполнитель</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">ИБХ РАН</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>В результате выполнения работ за отчетный период год получены следующие основные результаты: 
+
+1) Проведен поиск высоко консервативных участков в 5’НТО мРНК млекопитающих, которые содержат кОРС. Для дальнейшего изучения была выбрана мРНК CNOT1. Показано, что в 5’НТО данной мРНК существует эволюционно консервативная кОРС, которая перекрывается со стартовым AUG кодоном CNOT1. Установлено, что наличие данной кОРС обуславливает трансляцию со следующего AUG кодона, расположенного в той же рамке считывания. В результате трансляции мРНК CNOT1 происходит синтез как известного варианта белка, так и укороченного с N конца варианта белка dN-CNOT1. Данный укороченный белок не может связывать две субьединицы комплекса CCR4-NOT, что приводит к образованию нового комплекса с измененным субьединичным составом. Показано, что соотношение трансляции двух протеоформ CNOT1 меняется при инактивации eIF2;
+2) Изучена регуляция трансляции MRTFA. Ранее было известно, что трансляция MRTFA начинается с GUG кодона, при этом трансляции с нижерасположенного AUG кодона не наблюдается. Нами показано, что между GUG и AUG находится эволюционно консервативная шпилечная структура и перекрывающаяся с ней эволюционно консервативная кОРС, имеющая пять AUG кодонов. Установлено, что инактивация как шпилечной структуры, так и кОРС значительно снижает трансляцию с GUG, и приводит к появлению инициации на AUG. При этом одновременное удаление и шпилечной структуры, и кОРС, полностью подавляет трансляцию с GUG и перенаправляет трансляцию на AUG. Установлено, что кОРС усиливает трансляцию с вышерасположенного GUG кодона. Таким образом, показано, что эффективность узнавания некоторых стартовых кодонов может регулироваться нижерасположенными кОРС. Предсказано существование нового класса регуляторных кОРС, которые расположены не в 5’НТО, а внутри кодирующей последовательности мРНК вблизи от стартового кодона;
+3) Разработан биоинформатический подход для изучения механизмов регуляции кОРС с использованием данных рибосомного профайлинга сканирующих рибосомных комплексов (TCP-seq). Подход основан на изучении соотношении сигналов TCP-seq перед кОРС, внутри кОРС, и после кОРС. С помощью данного анализа продемонстрированы различные механизмы действия кОРС, такие как проскальзывающее сканирование через стартовый кодон кОРС и реинициация после трансляции кОРС. Кроме того, предложен новый способ регуляции трансляции при помощи кОРС, связанный с накоплением сканирующих рибосомных комплексов внутри кОРС. Данный механизм получил название замедленное сканирование;
+4) Оптимизирован метод рибосомного профайлинга. Показано, что при проведении экспериментов рибосомного профайлинга происходит значительная потеря информации. При центрифугировании лизатов некоторые мРНК, кодирующие белки цитоскелета, попадают в дебрис и теряются. Некоторые такие мРНК имеют транслирующиеся кОРС. Предложена модификация метода, при которой обработка рибонуклеазами осуществляется без стадии центрифугирования. Ожидается, что данная модификация метода будет весьма востребована учеными, использующими рибосомный профайлинг;
+5) Получены новые данные о микробелках и пептидах в плазме крови человека. На образцах пептидов и микробелков плазмы крови исследована природная протеолитическая активность плазмы крови и механизмы формирования пептидома. Показано, что основными активными протеолитическими ферментами плазмы крови являются экзопептидазы, однако их специфичность не соответствует наблюдаемому пептидому. Предложена гипотеза формирования пептидома вне кровотока за счет ферментов периферических органов и тканей. Также предложена гипотеза ограниченной специфической емкости белков-переносчиков плазмы крови, что позволяет оптимизировать ранее разработанные методики выделения низкопредставленного пептидома и продуктов кОРС.</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (4)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Зиганшин Рустам Хусманович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат химических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Ковальчук Сергей Игоревич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат химических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Зайцева Елизавета Ивановна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Андреев Дмитрий Евгеньевич</strong> <span style="color:#71717a;font-size:0.8rem">Доктор химических наук</span></li></ul>
+              
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

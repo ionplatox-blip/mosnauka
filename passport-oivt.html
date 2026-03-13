@@ -1,0 +1,1074 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>МОСНАУКА — Паспорт: ОИВТ РАН</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+      body { font-family: Inter, system-ui, sans-serif; background: #050505; color: white; }
+      .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.08); }
+      .mos-red { color: #ff003c; }
+      .mos-bg-red { background: #ff003c; }
+      .provenance-tag { font-size: 8px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.1em; padding: 2px 8px; border-radius: 4px; }
+      .tag-egisu { background: rgba(0, 120, 255, 0.1); color: #40a0ff; border: 1px solid rgba(0, 120, 255, 0.2); }
+      .tag-colab { background: rgba(255, 0, 60, 0.1); color: #ff4070; border: 1px solid rgba(255, 0, 60, 0.2); }
+      .tag-org { background: rgba(255, 255, 255, 0.05); color: #aaa; border: 1px solid rgba(255, 255, 255, 0.1); }
+
+      /* Section titles */
+      .section-header {
+        display: flex; align-items: center; justify-content: space-between;
+        padding: 0 0.5rem; margin-bottom: 1.5rem; margin-top: 3.5rem;
+      }
+      .section-title {
+        font-size: 1.5rem; font-weight: 900; text-transform: uppercase;
+        font-style: italic; letter-spacing: -0.02em;
+      }
+
+      /* Chunk 3: Lab cards */
+      .labs-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+        gap: 1.5rem;
+      }
+      /* Chunk 4: Scientists */
+      .sci-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 1rem;
+      }
+      .sci-card.hidden { display: none; }
+      .line-clamp-2 {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+      #sci-search {
+        background: rgba(255,255,255,0.04);
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 1rem;
+        padding: 0.75rem 1.25rem 0.75rem 2.75rem;
+        color: white;
+        font-size: 0.875rem;
+        width: 100%;
+        outline: none;
+        transition: border-color 0.2s;
+      }
+      #sci-search:focus {
+        border-color: rgba(255,0,60,0.5);
+      }
+      #sci-search::placeholder { color: rgba(255,255,255,0.25); }
+      /* Chunk 5: RID + Projects */
+      .rid-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 1rem;
+      }
+    </style>
+</head>
+<body>
+  <div class="min-h-screen bg-[radial-gradient(circle_at_top_left,rgba(255,0,60,0.12),transparent_25%),radial-gradient(circle_at_top_right,rgba(255,255,255,0.05),transparent_20%),linear-gradient(180deg,#050505,#0b0f16)]">
+
+    <!-- ═══ HEADER ═══ -->
+    <header class="sticky top-0 z-30 backdrop-blur-md border-b border-white/10 bg-black/40">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        <a class="text-2xl font-black italic tracking-tight uppercase hover:opacity-80 transition" href="index.html">
+          МОС<span class="mos-red">НАУКА</span>
+        </a>
+        <div class="flex items-center gap-4">
+          <span class="text-[10px] uppercase tracking-widest text-zinc-500 font-bold">Паспорт организации v2.0</span>
+          <a href="catalog.html" class="text-xs font-bold uppercase hover:text-red-500 transition">Реестр</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 py-10">
+
+      <!-- ═══ BREADCRUMBS ═══ -->
+      <div class="mb-10 flex items-center justify-between">
+        <div class="flex items-center gap-2 text-[10px] uppercase font-bold tracking-widest text-zinc-500">
+          <a href="index.html" class="hover:text-white">Главная</a>
+          <span>/</span>
+          <a href="catalog.html" class="hover:text-white">Реестр</a>
+          <span>/</span>
+          <span class="text-zinc-300">ОИВТ РАН</span>
+        </div>
+        <a href="catalog.html" class="px-5 py-2 border border-white/10 rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-white/5 transition">
+          ← К списку
+        </a>
+      </div>
+
+      <!-- ═══ HERO SECTION ═══ -->
+      <section class="glass rounded-[2.5rem] p-10 relative overflow-hidden mb-8">
+        <!-- Bg watermark -->
+        <div class="absolute top-0 right-0 p-8 opacity-5 pointer-events-none">
+          <img src="https://colab.ws/storage/images/nyfeLsrzF8GHSFivzyZ7OBoKrCDRvfKPDGwDVCJX.png" class="w-64 h-64 grayscale invert" alt="">
+        </div>
+
+        <div class="relative z-10">
+          <!-- Identity -->
+          <div class="flex items-center gap-5 mb-6">
+            <div class="w-20 h-20 rounded-2xl bg-white p-2 flex items-center justify-center shrink-0">
+              <img src="https://colab.ws/storage/images/nyfeLsrzF8GHSFivzyZ7OBoKrCDRvfKPDGwDVCJX.png" class="max-w-full max-h-full object-contain" alt="ОИВТ РАН logo">
+            </div>
+            <div>
+              <h1 class="text-3xl md:text-5xl font-black tracking-tight uppercase leading-tight mb-2">ОИВТ РАН</h1>
+              <p class="text-zinc-400 font-medium">Объединенный институт высоких температур РАН</p>
+            </div>
+          </div>
+
+          <!-- Contact row -->
+          <div class="flex flex-wrap gap-6 mt-6">
+            <div class="flex items-center gap-2 text-zinc-400 text-sm">
+              <i class="ph ph-map-pin mos-red"></i>
+              <span>Москва, Ижорская ул., д. 13, стр. 2</span>
+            </div>
+            <a href="https://jiht.ru/" target="_blank" class="flex items-center gap-2 text-zinc-300 text-sm hover:text-white transition">
+              <i class="ph ph-globe mos-red"></i>
+              <span>jiht.ru</span>
+            </a>
+          </div>
+
+          <!-- Verified badge + Contact CTA -->
+          <div class="mt-6 flex flex-wrap gap-3 items-center">
+            <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-[11px] font-bold uppercase tracking-wide">
+              <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              Верифицировано МОСНАУКОЙ
+            </span>
+          </div>
+          <div class="mt-4 p-5 rounded-2xl bg-gradient-to-r from-red-500/20 to-red-500/5 border border-red-500/30 flex flex-wrap items-center justify-between gap-4">
+            <div>
+              <div class="text-sm font-bold">📨 Заинтересованы в сотрудничестве?</div>
+              <div class="text-[11px] text-zinc-400 mt-1">Направьте запрос на НИОКР, консультацию или партнёрство</div>
+            </div>
+            <div class="flex gap-2">
+              <a href="javascript:void(0)" onclick="openRequestModal('Запрос по ОИВТ РАН')" class="px-6 py-3 rounded-xl bg-red-500 text-white text-[11px] font-black uppercase tracking-wide hover:bg-red-600 transition inline-flex items-center gap-2 shadow-lg">
+                <i class="ph ph-envelope-simple"></i> Направить запрос
+              </a>
+              <a href="https://jiht.ru/" target="_blank" class="px-5 py-3 rounded-xl bg-white/5 border border-white/10 text-[11px] font-bold uppercase text-zinc-400 hover:bg-white/10 transition inline-flex items-center gap-2">
+                <i class="ph ph-globe"></i> Сайт
+              </a>
+            </div>
+          </div>
+
+          <!-- ═══ METRICS ROW ═══ -->
+          <div class="grid grid-cols-2 md:grid-cols-5 gap-4 mt-10">
+            <a href="#section-labs" class="p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-white/30 transition cursor-pointer block">
+              <div class="text-[9px] uppercase font-black text-zinc-500 mb-1">Лаборатории</div>
+              <div class="text-3xl font-black italic">3</div>
+            </a>
+            <a href="#section-scientists" class="p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-white/30 transition cursor-pointer block">
+              <div class="text-[9px] uppercase font-black text-zinc-500 mb-1">Учёные</div>
+              <div class="text-3xl font-black italic">27</div>
+            </a>
+            <a href="#section-projects" class="p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-white/30 transition cursor-pointer block">
+              <div class="text-[9px] uppercase font-black text-zinc-500 mb-1">Проекты НИОКР</div>
+              <div class="text-3xl font-black italic">41</div>
+            </a>
+            <a href="#section-rid" class="p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-white/30 transition cursor-pointer block">
+              <div class="text-[9px] uppercase font-black text-zinc-500 mb-1">РИД</div>
+              <div class="text-3xl font-black italic">3</div>
+            </a>
+            <a href="#section-projects" class="p-4 rounded-2xl bg-red-500/5 border border-red-500/20 hover:border-red-500/40 transition cursor-pointer block">
+              <div class="text-[9px] uppercase font-black text-red-400/70 mb-1">Объём НИОКР</div>
+              <div class="text-3xl font-black italic mos-red">1.1 млрд ₽</div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ CHUNK 2: About section ═══ -->
+      <section class="glass rounded-[2.5rem] p-10 mb-8">
+        <div class="flex items-center justify-between mb-6">
+          <h2 class="text-xl font-black uppercase italic tracking-tight">Об организации</h2>
+        </div>
+        <p class="text-[15px] text-zinc-300 leading-relaxed mb-6">«ОИВТ РАН» — ведущий научно-исследовательский центр, объединяющий 3 лабораторий и 27 учёных. Исследовательский профиль охватывает модельное вещество, ионизация, испарение, плазменная сепарация, ударные волны. Опубликовано свыше 931 научных работ, выполнено 41 проектов НИОКТР и зарегистрировано 3 результатов интеллектуальной деятельности.</p>
+        <details class="group">
+          <summary class="cursor-pointer text-sm font-bold text-red-400 hover:text-red-300 transition select-none flex items-center gap-2">
+            <i class="ph ph-caret-right text-xs transition-transform group-open:rotate-90"></i>
+            Подробнее об исследовательской деятельности
+          </summary>
+          <div class="mt-6 pt-6 border-t border-white/10">
+            <h3 class="text-zinc-200 text-sm font-bold uppercase tracking-wide mb-3">Ключевые компетенции (по данным ЕГИСУ)</h3><div style="display:flex;flex-wrap:wrap;gap:0.4rem;margin-bottom:1.5rem"><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">модельное вещество <span style="color:#52525b">(5)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">ионизация <span style="color:#52525b">(5)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">испарение <span style="color:#52525b">(5)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">плазменная сепарация <span style="color:#52525b">(5)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">ударные волны <span style="color:#52525b">(5)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">метод квантовой молекулярной динамики <span style="color:#52525b">(4)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">3d-модель <span style="color:#52525b">(3)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">переработка оят <span style="color:#52525b">(3)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">ударная адиабата <span style="color:#52525b">(3)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">пиролиз <span style="color:#52525b">(3)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">теплофизические свойства <span style="color:#52525b">(3)</span></span><span style="padding:0.25rem 0.6rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;font-size:0.75rem;color:#a1a1aa">оптическое выпрямление <span style="color:#52525b">(2)</span></span></div><h3 class="text-zinc-200 text-sm font-bold uppercase tracking-wide mb-3">Ведущие лаборатории</h3><ul class="text-zinc-400 text-sm space-y-1 ml-4 mb-6 list-disc"><li>Лаборатория экстремальных энергетических воздействий (2 сотр.)</li><li>Лаборатория электрохимической энергетики (5 сотр.)</li><li>Лаборатория моделирования свойств материалов (3 сотр.)</li></ul><h3 class="text-zinc-200 text-sm font-bold uppercase tracking-wide mb-3">Ключевые заказчики НИОКР</h3><ul class="text-zinc-400 text-sm space-y-1 ml-4 mb-6 list-disc"><li><strong class="text-zinc-300">МИНОБРНАУКИ РОССИИ</strong> — 20 проектов</li><li><strong class="text-zinc-300">РНФ</strong> — 12 проектов</li><li><strong class="text-zinc-300">ФГУП &quot;РФЯЦ - ВНИИЭФ&quot;</strong> — 2 проектов</li><li><strong class="text-zinc-300">АО &quot;ГНЦ РФ ТРИНИТИ&quot;</strong> — 2 проектов</li><li><strong class="text-zinc-300">ГОСКОРПОРАЦИЯ &quot;РОСАТОМ&quot;</strong> — 1 проектов</li></ul><h3 class="text-zinc-200 text-sm font-bold uppercase tracking-wide mb-3">Интеллектуальная собственность</h3><p class="text-zinc-400 text-sm mb-6">Портфель из 3 РИД: объект авторского права — 3.</p><h3 class="text-zinc-200 text-sm font-bold uppercase tracking-wide mb-3">Финансирование и результаты</h3><p class="text-zinc-400 text-sm">Суммарный объём финансирования: <strong class="text-white">1,141.1 млн руб.</strong> (41 проектов, по данным ЕГИСУ НИОКТР). По итогам проектов опубликовано 296 научных работ.</p>
+          </div>
+        </details>
+      </section>
+
+      <!-- ═══ TOP-3 FEATURED ═══ -->
+      <section class="glass rounded-[2.5rem] p-10 mb-8">
+        <h2 class="text-lg font-black uppercase italic tracking-tight mb-6">⭐ Ведущие лаборатории и учёные</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div>
+            <div class="text-[10px] uppercase font-black text-zinc-500 mb-3 tracking-widest">🏛️ Топ-3 лаборатории</div>
+            <div class="flex flex-col gap-3"><a href="oivt/lab_001.html" class="glass rounded-2xl p-5 group hover:border-red-500/30 transition flex flex-col">
+          <div class="flex flex-wrap gap-1.5 mb-3"><span class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-[8px] uppercase font-bold text-zinc-500">Альтернативная энергетика</span> <span class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-[8px] uppercase font-bold text-zinc-500">Электрохимия</span></div>
+          <div class="text-sm font-bold group-hover:text-red-400 transition leading-snug mb-2">Лаборатория электрохимической энергетики</div>
+          <div class="text-[10px] text-zinc-500 font-bold mt-auto">👥 5 учёных</div>
+        </a>
+<a href="oivt/lab_002.html" class="glass rounded-2xl p-5 group hover:border-red-500/30 transition flex flex-col">
+          <div class="flex flex-wrap gap-1.5 mb-3"><span class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-[8px] uppercase font-bold text-zinc-500">Теплофизика</span> <span class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-[8px] uppercase font-bold text-zinc-500">Физика конденсированного состояния</span></div>
+          <div class="text-sm font-bold group-hover:text-red-400 transition leading-snug mb-2">Лаборатория моделирования свойств материалов</div>
+          <div class="text-[10px] text-zinc-500 font-bold mt-auto">👥 3 учёных</div>
+        </a>
+<a href="oivt/lab_000.html" class="glass rounded-2xl p-5 group hover:border-red-500/30 transition flex flex-col">
+          <div class="flex flex-wrap gap-1.5 mb-3"><span class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-[8px] uppercase font-bold text-zinc-500">Высокотемпературные материалы</span> <span class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-[8px] uppercase font-bold text-zinc-500">Теплофизика</span></div>
+          <div class="text-sm font-bold group-hover:text-red-400 transition leading-snug mb-2">Лаборатория экстремальных энергетических воздействий</div>
+          <div class="text-[10px] text-zinc-500 font-bold mt-auto">👥 2 учёных</div>
+        </a>
+</div>
+          </div>
+          <div>
+            <div class="text-[10px] uppercase font-black text-zinc-500 mb-3 tracking-widest">🏆 Топ-3 учёных</div>
+            <div class="flex flex-col gap-3"><a href="oivt/sci_007.html" class="glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-3 items-center">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white font-bold text-sm">ЛП</div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Левашов Павел Ремирович</div>
+            <div class="text-[10px] text-zinc-500 truncate">Лаборатория моделирования свойств материалов</div>
+            <div class="flex items-center gap-2 mt-1">
+              <span class="text-[9px] text-zinc-600">📚 72 публ.</span> 
+            </div>
+          </div>
+        </a>
+<a href="oivt/sci_002.html" class="glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-3 items-center">
+          <img src="https://colab.ws/storage/images/fWMGjGkf5x9CgpHBm0fqG7PLNpDKvqLgxHPhBbRf.jpg" class="w-12 h-12 rounded-xl object-cover border border-white/10" loading="lazy">
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Кисленко Сергей Александрович</div>
+            <div class="text-[10px] text-zinc-500 truncate">Лаборатория электрохимической энергетики</div>
+            <div class="flex items-center gap-2 mt-1">
+              <span class="text-[9px] text-zinc-600">📚 26 публ.</span> 
+            </div>
+          </div>
+        </a>
+<a href="oivt/sci_008.html" class="glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-3 items-center">
+          <img src="https://colab.ws/storage/images/1iv97tqr3ac8PfjzFyvnao0TzPjbRFmcLPlFt7nn.jpg" class="w-12 h-12 rounded-xl object-cover border border-white/10" loading="lazy">
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Дмитрий Минаков</div>
+            <div class="text-[10px] text-zinc-500 truncate">Лаборатория моделирования свойств материалов</div>
+            <div class="flex items-center gap-2 mt-1">
+              <span class="text-[9px] text-zinc-600">📚 21 публ.</span> 
+            </div>
+          </div>
+        </a>
+</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ TABS: Labs / Scientists ═══ -->
+      <div class="glass rounded-2xl p-4 mb-4" style="border:1px solid rgba(56,189,248,0.15);background:rgba(56,189,248,0.03)">
+        <div class="flex items-center gap-2 text-[10px] text-sky-400/70 font-bold uppercase">
+          <i class="ph ph-info"></i>
+          Показаны лаборатории и учёные, зарегистрированные на платформе CoLab. Фактическое число сотрудников может быть больше.
+        </div>
+      </div>
+      <div class="section-header" id="section-labs">
+        <div class="flex items-center gap-4">
+          <button id="tab-labs" onclick="switchTab('labs')" class="section-title" style="background:none;border:none;color:white;cursor:pointer;padding:0">🔬 Лаборатории (3)</button>
+          <button id="tab-sci" onclick="switchTab('sci')" class="text-lg font-black uppercase italic tracking-tight opacity-30 hover:opacity-60 transition" style="background:none;border:none;color:white;cursor:pointer;padding:0" id="section-scientists">🎓 Учёные (10)</button>
+        </div>
+        <span class="provenance-tag tag-colab">CoLab Data</span>
+      </div>
+
+      <!-- Labs panel -->
+      <div id="panel-labs">
+        <div class="text-sm text-zinc-400 mb-3" id="lab-counter">Показаны 3 из 3</div>
+        <div class="labs-grid" id="labs-container">
+          <div class="lab-item glass rounded-[2rem] p-8 hover:border-red-500/30 transition shadow-lg flex flex-col" data-idx="0" style="">
+          <div class="flex flex-wrap gap-2 mb-4"><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Высокотемпературные материалы</span><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Теплофизика</span><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Материаловедение</span></div>
+          <a href="oivt/lab_000.html" class="group">
+            <h3 class="text-lg font-bold mb-3 group-hover:text-red-400 transition leading-snug">Лаборатория экстремальных энергетических воздействий</h3>
+          </a>
+          <p class="text-xs text-zinc-500 leading-relaxed mb-4 flex-1">Основным направление деятельности лаборатории является экспериментальное исследование высокотемпературного поведения тугоплавких и сверхтугоплавких ма...</p>
+          <div class="mt-4 p-3 rounded-xl bg-black/40 border border-white/5">
+              <div class="text-[9px] uppercase font-black text-zinc-500 mb-1">Оборудование</div>
+              <div class="text-[11px] text-zinc-400 leading-snug">Лазер Trumpf Trudisk 5003 Лазер технологического класса с рабочим телом из Yb:YAG в форме диска. Используется для нагрев</div>
+            </div>
+          <div class="mt-6 flex items-center justify-between pt-4 border-t border-white/5">
+            <span class="text-[10px] font-black uppercase text-zinc-500">👥 2 сотрудников</span>
+            
+          </div>
+          <div class="flex gap-2 mt-3">
+            <a href="oivt/lab_000.html" class="flex-1 text-center px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-[9px] font-bold uppercase tracking-wide text-zinc-400 hover:bg-white/10 transition">Подробнее</a>
+            <a href="javascript:void(0)" onclick="openRequestModal('Связаться с лабораторией Лаборатория экстремальных энер')" class="flex-1 text-center px-3 py-2 rounded-xl bg-red-500/10 border border-red-500/30 text-[9px] font-bold uppercase tracking-wide text-red-400 hover:bg-red-500/20 transition cursor-pointer">📨 Связаться</a>
+          </div>
+        </div>
+<div class="lab-item glass rounded-[2rem] p-8 hover:border-red-500/30 transition shadow-lg flex flex-col" data-idx="1" style="">
+          <div class="flex flex-wrap gap-2 mb-4"><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Альтернативная энергетика</span><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Электрохимия</span><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">&quot;Умные&quot; материалы</span></div>
+          <a href="oivt/lab_001.html" class="group">
+            <h3 class="text-lg font-bold mb-3 group-hover:text-red-400 transition leading-snug">Лаборатория электрохимической энергетики</h3>
+          </a>
+          <p class="text-xs text-zinc-500 leading-relaxed mb-4 flex-1">Наши научные интересы связаны с компьютерным моделированием гетерогенных систем и процессов на атомном (молекулярном) уровне. Такие методы как классич...</p>
+          
+          <div class="mt-6 flex items-center justify-between pt-4 border-t border-white/5">
+            <span class="text-[10px] font-black uppercase text-zinc-500">👥 5 сотрудников</span>
+            
+          </div>
+          <div class="flex gap-2 mt-3">
+            <a href="oivt/lab_001.html" class="flex-1 text-center px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-[9px] font-bold uppercase tracking-wide text-zinc-400 hover:bg-white/10 transition">Подробнее</a>
+            <a href="javascript:void(0)" onclick="openRequestModal('Связаться с лабораторией Лаборатория электрохимической ')" class="flex-1 text-center px-3 py-2 rounded-xl bg-red-500/10 border border-red-500/30 text-[9px] font-bold uppercase tracking-wide text-red-400 hover:bg-red-500/20 transition cursor-pointer">📨 Связаться</a>
+          </div>
+        </div>
+<div class="lab-item glass rounded-[2rem] p-8 hover:border-red-500/30 transition shadow-lg flex flex-col" data-idx="2" style="">
+          <div class="flex flex-wrap gap-2 mb-4"><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Теплофизика</span><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Физика конденсированного состояния</span><span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] uppercase font-bold text-zinc-400">Вычислительная физика</span></div>
+          <a href="oivt/lab_002.html" class="group">
+            <h3 class="text-lg font-bold mb-3 group-hover:text-red-400 transition leading-snug">Лаборатория моделирования свойств материалов</h3>
+          </a>
+          <p class="text-xs text-zinc-500 leading-relaxed mb-4 flex-1">Моделирование механических, структурных, термодинамических, переносных и оптических свойств веществ методами классической и квантовой статистической ф...</p>
+          
+          <div class="mt-6 flex items-center justify-between pt-4 border-t border-white/5">
+            <span class="text-[10px] font-black uppercase text-zinc-500">👥 3 сотрудников</span>
+            
+          </div>
+          <div class="flex gap-2 mt-3">
+            <a href="oivt/lab_002.html" class="flex-1 text-center px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-[9px] font-bold uppercase tracking-wide text-zinc-400 hover:bg-white/10 transition">Подробнее</a>
+            <a href="javascript:void(0)" onclick="openRequestModal('Связаться с лабораторией Лаборатория моделирования свой')" class="flex-1 text-center px-3 py-2 rounded-xl bg-red-500/10 border border-red-500/30 text-[9px] font-bold uppercase tracking-wide text-red-400 hover:bg-red-500/20 transition cursor-pointer">📨 Связаться</a>
+          </div>
+        </div>
+        </div>
+        <div class="mt-4 text-center">
+          <button id="lab-more" onclick="showMore('lab-item', 'lab-more', 'lab-counter', 3, 3)" class="px-6 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-widest hover:bg-white/10 transition text-zinc-400">
+            Показать ещё 3
+          </button>
+        </div>
+      </div>
+
+      <!-- Scientists panel (hidden by default) -->
+      <div id="panel-sci" style="display:none">
+        <div class="text-sm text-zinc-400 mb-3" id="sci-counter">Показаны 3 из 10</div>
+        <div class="relative mb-6">
+          <i class="ph ph-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-zinc-500"></i>
+          <input id="sci-search" type="text" placeholder="Поиск по имени или области исследования...">
+          <div id="sci-count" class="absolute right-4 top-1/2 -translate-y-1/2 text-[10px] text-zinc-500 font-bold">10 учёных</div>
+        </div>
+        <div class="sci-grid" id="sci-grid">
+          <a href="oivt/sci_000.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="шейндлин михаил александрович" data-areas="ab initio computational materials science квантовая молекулярная динамика термодинамика квантовая механика физика базы данных статистическая физика физика высоких температур физика плазмы бориды высокотемпературные материалы карбиды материаловедение химическая термодинамика" data-idx="0" style="">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">ШМ</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Шейндлин Михаил Александрович</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория экстремальных энергетических воздействий</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Ab initio, Computational Materials Science, Квантовая молекулярная динамика, Термодинамика +11</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 16 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="oivt/sci_001.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="александр фролов" data-areas="" data-idx="1" style="">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">АФ</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Александр Фролов</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория экстремальных энергетических воздействий</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2"></div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 1 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="oivt/sci_002.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="кисленко сергей александрович" data-areas="2d материалы газовые сенсоры графен квантовая химия лазерно-индуцированный графен лазерное взаимодействие с веществом молекулярная динамика наноуглерод перенос электрона теория функционала плотности углеродные материалы умные материалы электрокатализ электрохимия гетерогенный катализ литий-ионные аккумуляторы материаловедение натрий-ионные аккумуляторы физическая химия фотоэлектрохимия электролиз воды 1d материалы colloidal nanoparticles electrorheology fluids gas sensors stimuli-responsive materials биоматериалы биосенсоры зеленая химия реология углеродные нанотрубки python вычислительная химия физика твердого  тела физико-химическое материаловедение химия природных соединений композиционные материалы оксид графена электропроводность атомно-силовая микроскопия синхротронное излучение спектроскопия взаимодействие рентгеновского, синхротронного излучений и нейтронов с конденсированным веществом оптика фуллерен полимерные композиты эми" data-idx="2" style="">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/fWMGjGkf5x9CgpHBm0fqG7PLNpDKvqLgxHPhBbRf.jpg" class="w-full h-full object-cover" alt="Кисленко Сергей Александрович" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Кисленко Сергей Александрович</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория электрохимической энергетики</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">2D Материалы, Газовые сенсоры, Графен, Квантовая химия +43</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 26 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="oivt/sci_003.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="сергей павлов" data-areas="2d материалы газовые сенсоры графен квантовая химия лазерно-индуцированный графен лазерное взаимодействие с веществом молекулярная динамика наноуглерод перенос электрона теория функционала плотности углеродные материалы умные материалы электрокатализ электрохимия 1d материалы colloidal nanoparticles electrorheology fluids gas sensors stimuli-responsive materials биоматериалы биосенсоры зеленая химия реология углеродные нанотрубки физическая химия python вычислительная химия физика твердого  тела физико-химическое материаловедение химия природных соединений композиционные материалы оксид графена электропроводность атомно-силовая микроскопия синхротронное излучение спектроскопия гетерогенный катализ литий-ионные аккумуляторы материаловедение натрий-ионные аккумуляторы фотоэлектрохимия электролиз воды взаимодействие рентгеновского, синхротронного излучений и нейтронов с конденсированным веществом оптика фуллерен полимерные композиты эми" data-idx="3" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/6DtOoFQWULipr1jD4GRCyiMToLyxzIVUdPfNtnR8.jpg" class="w-full h-full object-cover" alt="Сергей Павлов" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Сергей Павлов</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория электрохимической энергетики</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">2D Материалы, Газовые сенсоры, Графен, Квантовая химия +43</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 13 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="oivt/sci_004.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="вячеслав сиваков" data-areas="" data-idx="4" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">ВС</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Вячеслав Сиваков</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория электрохимической энергетики</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2"></div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 0 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="oivt/sci_005.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="петр чекушкин" data-areas="" data-idx="5" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">ПЧ</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Петр Чекушкин</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория электрохимической энергетики</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2"></div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 0 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="oivt/sci_006.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="виталий кисленко" data-areas="2d материалы газовые сенсоры графен квантовая химия лазерно-индуцированный графен лазерное взаимодействие с веществом молекулярная динамика наноуглерод перенос электрона теория функционала плотности углеродные материалы умные материалы электрокатализ электрохимия 1d материалы colloidal nanoparticles electrorheology fluids gas sensors stimuli-responsive materials биоматериалы биосенсоры зеленая химия реология углеродные нанотрубки физическая химия python вычислительная химия физика твердого  тела физико-химическое материаловедение химия природных соединений гетерогенный катализ литий-ионные аккумуляторы материаловедение натрий-ионные аккумуляторы фотоэлектрохимия электролиз воды композиционные материалы оксид графена электропроводность атомно-силовая микроскопия синхротронное излучение спектроскопия взаимодействие рентгеновского, синхротронного излучений и нейтронов с конденсированным веществом оптика фуллерен полимерные композиты эми" data-idx="6" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/add56afa-89fd-4c0c-ae6e-9ad24a377844.png.200x200_q95_crop_detail_upscale.png" class="w-full h-full object-cover" alt="Виталий Кисленко" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Виталий Кисленко</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория электрохимической энергетики</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">2D Материалы, Газовые сенсоры, Графен, Квантовая химия +43</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 9 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="oivt/sci_007.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="левашов павел ремирович" data-areas="базы данных статистическая физика термодинамика физика высоких температур физика плазмы ab initio computational materials science квантовая молекулярная динамика квантовая механика физика механизмы упрочнения нанокристаллическая структура наноматериалы стали и сплавы твердое тело электронно-ионно-плазменные методы обработки механические свойства материалов.усталостные и растягивающие свойства двухфазной стали, полученной в результате контролируемого процесса прокатки и термической обработки. законы подобия в статфизике интегральные уравнения теории жидкостей методы монте-карло неидеальная плазма низкотемпературная плазма численное моделирование" data-idx="7" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">ЛП</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Левашов Павел Ремирович</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория моделирования свойств материалов</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Базы данных, Статистическая физика, Термодинамика, Физика высоких температур +19</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 72 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="oivt/sci_008.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="дмитрий минаков" data-areas="ab initio computational materials science квантовая молекулярная динамика термодинамика базы данных статистическая физика физика высоких температур физика плазмы квантовая механика физика" data-idx="8" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><img src="https://colab.ws/storage/images/1iv97tqr3ac8PfjzFyvnao0TzPjbRFmcLPlFt7nn.jpg" class="w-full h-full object-cover" alt="Дмитрий Минаков" loading="lazy"></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Дмитрий Минаков</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория моделирования свойств материалов</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Ab initio, Computational Materials Science, Квантовая молекулярная динамика, Термодинамика +6</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 21 публ.</span>
+            </div>
+          </div>
+        </a>
+<a href="oivt/sci_009.html" target="_blank"
+          class="sci-card glass rounded-2xl p-5 group hover:border-red-500/30 transition flex gap-4 items-start"
+          data-name="георгий демьянов" data-areas="ab initio квантовая механика физика базы данных статистическая физика термодинамика физика высоких температур физика плазмы computational materials science квантовая молекулярная динамика" data-idx="9" style="display:none">
+          <div class="relative shrink-0">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border border-white/10"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900 text-white text-lg font-black">ГД</div></div>
+            
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="text-sm font-bold group-hover:text-red-400 transition truncate">Георгий Демьянов</div>
+            <div class="text-[10px] text-zinc-500 font-semibold mt-0.5 truncate">Лаборатория моделирования свойств материалов</div>
+            <div class="text-[11px] text-zinc-400 mt-2 leading-snug line-clamp-2">Ab initio, Квантовая механика, Физика, Базы данных +6</div>
+            <div class="flex items-center gap-3 mt-2">
+              <span class="text-[9px] text-zinc-600">📚 4 публ.</span>
+            </div>
+          </div>
+        </a>
+        </div>
+        <div class="mt-4 text-center">
+          <button id="sci-more" onclick="showMore('sci-card', 'sci-more', 'sci-counter', 10, 3)" class="px-6 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-widest hover:bg-white/10 transition text-zinc-400">
+            Показать ещё 3
+          </button>
+        </div>
+      </div>
+
+      <script>
+        // Tab switching
+        function switchTab(tab) {
+          document.getElementById('panel-labs').style.display = tab === 'labs' ? '' : 'none';
+          document.getElementById('panel-sci').style.display = tab === 'sci' ? '' : 'none';
+          document.getElementById('tab-labs').style.opacity = tab === 'labs' ? '1' : '0.3';
+          document.getElementById('tab-sci').style.opacity = tab === 'sci' ? '1' : '0.3';
+        }
+        // Scientist search
+        (function() {
+          const input = document.getElementById('sci-search');
+          const grid = document.getElementById('sci-grid');
+          const counter = document.getElementById('sci-count');
+          if (!input || !grid) return;
+          const cards = grid.querySelectorAll('.sci-card');
+          input.addEventListener('input', function() {
+            const q = this.value.toLowerCase().trim();
+            let visible = 0;
+            cards.forEach(c => {
+              const name = c.dataset.name || '';
+              const areas = c.dataset.areas || '';
+              const match = !q || name.includes(q) || areas.includes(q);
+              c.classList.toggle('hidden', !match);
+              if (match) visible++;
+            });
+            counter.textContent = visible + ' учёных';
+          });
+        })();
+      </script>
+
+      <!-- ═══ CHUNK 5: Projects ═══ -->
+      <div class="section-header" id="section-projects">
+        <h2 class="section-title">💼 Проекты НИОКР (41)</h2>
+        <span class="provenance-tag tag-egisu">ЕГИСУ</span>
+      </div>
+      <section class="glass rounded-[2.5rem] overflow-hidden mb-8">
+        <div class="p-6 border-b border-white/10 flex items-center justify-between">
+          <span class="text-sm text-zinc-400" id="proj-counter">Показаны 5 из 41</span>
+          <a href="oivt/projects.html" class="text-xs font-bold text-red-400 hover:text-red-300 transition uppercase">Все проекты →</a>
+        </div>
+        <div id="proj-list"><a href="oivt/proj_0000.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="0">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">«Разработка технологий и оборудования для плазменной переработки ОЯТ реакторов на быстрых нейтронах. Этап 2025 года» ЭТА</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Объектом исследования является технология плазменной переработки ОЯТ.
+Цель работы − экспериментально...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">3D-МОДЕЛЬ, МОДЕЛЬНОЕ ВЕЩЕСТВО, ИОНИЗАЦИЯ, ИСПАРЕНИЕ, ПЕРЕРАБОТКА ОЯТ</span>
+            <span class='text-[10px] text-zinc-600'>| ГОСКОРПОРАЦИЯ &quot;РОСАТОМ&quot;</span>
+            <span class='text-[10px] text-zinc-600'>| 2025</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">21,040 тыс. ₽</span>
+          </div>
+        </a>
+<a href="oivt/proj_0001.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="1">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Разработка методов и проведение экспериментальных исследований свойств материалов, прозрачных в терагерцевом спектрально</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Объект исследований – образец кристалла теллурида цинка ZnTe и кремния с n-типом легирования; нелине...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">плазменная частота, нелинейное пропускание, оптическое выпрямление, терагерцевое излучение, фемтосекундный лазерный импульс</span>
+            <span class='text-[10px] text-zinc-600'>| НАЦИОНАЛЬНЫЙ ИССЛЕДОВАТЕЛЬСКИЙ НИЖЕГОРОДСКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ ИМ. Н.И. ЛОБАЧЕВСКОГО, НИЖЕГОРОДСКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ ИМ. Н.И. ЛОБАЧЕВСКОГО, ННГУ ИМ. Н.И. ЛОБАЧЕВСКОГО, УНИВЕРСИТЕТ ЛОБАЧЕВСКОГО, ННГУ</span>
+            <span class='text-[10px] text-zinc-600'>| 2025</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">3,000 тыс. ₽</span>
+          </div>
+        </a>
+<a href="oivt/proj_0002.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="2">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">«РАСЧЕТЫ ТЕПЛОФИЗИЧЕСКИХ, ЭЛЕКТРОФИЗИЧЕСКИХ И ТЕРМОДИНАМИЧЕСКИХ СВОЙСТВ НЕИДЕАЛЬНОЙ ПЛАЗМЫ СЖАТЫХ  ГАЗОВ. ПЕРВОПРИНЦИПНО</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Объектами исследования являются плотная плазма азота, дейтерия и аргона,
+а также кинетика ионизации ...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">ОПТИЧЕСКИЕ СВОЙСТВА, ЭЛЕКТРОПРОВОДНОСТЬ, АРГОН, КИНЕТИКА ИОНИЗАЦИИ, МЕТОД МОЛЕКУЛЯРНОЙ ДИНАМИКИ С ВОЛНОВЫМИ ПАКЕТАМИ</span>
+            <span class='text-[10px] text-zinc-600'>| ФГУП &quot;РФЯЦ - ВНИИЭФ&quot;</span>
+            <span class='text-[10px] text-zinc-600'>| 2025</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">10,115 тыс. ₽</span>
+          </div>
+        </a>
+<a href="oivt/proj_0003.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="3">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Экспериментальные и теоретические исследования теплофизических свойств веществ в экстремальных состояниях, включая разви</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Отчет 307 с., 1 кн., 130 рис., 18 табл., 401 источн.
+
+ЭКСТРЕМАЛЬНЫЕ СОСТОЯНИЯ, ТЕПЛОФИЗИЧЕСКИЕ СВОЙС...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">ЭКСТРЕМАЛЬНЫЕ СОСТОЯНИЯ, ТЕПЛОФИЗИЧЕСКИЕ СВОЙСТВА ВЕЩЕСТВ, УРАВНЕНИЕ СОСТОЯНИЯ, ФАЗОВЫЕ ПЕРЕХОДЫ, УДАРНЫЕ ВОЛНЫ</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">130,465 тыс. ₽</span>
+          </div>
+        </a>
+<a href="oivt/proj_0004.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="4">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Разработка научно-технических основ создания гибридных энергокомплексов, включающих в себя установки солнечной, ветровой</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Отчет 213 с., 1 кн., 86 рис., 25 табл., 400 источн.
+
+СОЛНЕЧНАЯ ЭНЕРГИЯ, ФОТОЭЛЕКТРИЧЕСКИЙ МОДУЛЬ, ТЕ...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">ГИБРИДНЫЙ ЭНЕРГОКОМПЛЕКС, БАЗА КЛИМАТИЧЕСКИХ ДАННЫХ, ВЫРАБОТКА, МАТЕМАТИЧЕСКАЯ МОДЕЛЬ, ТЕМПЕРАТУРА МОДУЛЯ</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">23,888 тыс. ₽</span>
+          </div>
+        </a>
+<a href="oivt/proj_0005.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="5">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Изучение свойств и процессов в сильнонеидеальной, в том числе коллоидной, плазме</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Отчет 245 с., 1 кн., 82 рис., 4 табл., 399 источн.
+
+ПЫЛЕВАЯ ПЛАЗМА, ПЛАЗМЕННО-ПЫЛЕВЫЕ ВОЛНЫ, АЛГОРИТ...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">СЕЛЕКТИВНОЕ ОТРАЖЕНИЕ, НАНОКОМПОЗИТЫ, РИДБЕРГОВСКОЕ ВЕЩЕСТВО, КВАРК-ГЛЮОННАЯ ПЛАЗМА, ЖИДКИЕ МЕМБРАНЫ</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">78,035 тыс. ₽</span>
+          </div>
+        </a>
+<a href="oivt/proj_0006.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="6">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Разработка фундаментальных основ физического и химического управления процессами газодинамики, горения и детонации</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Отчет 116 с., 1 кн., 78 рис., 5 табл., 98 источн.
+
+ГОРЕНИЕ,  ВОДОРОД,  АЦЕТИЛЕН,  ДЕТОНАЦИЯ,  АРАС, ...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">ГОРЕНИЕ, ВОДОРОД, АЦЕТИЛЕН, ДЕТОНАЦИЯ, АРАС</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">43,795 тыс. ₽</span>
+          </div>
+        </a>
+<a href="oivt/proj_0007.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="7">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">«Развитие инженерно-физических основ и создание элементов технологии плазменной переработки отработавшего ядерного топли</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Объектом исследования является плазменное разделение элементов.
+Цель работы − формирование инженерно...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">МОДЕЛЬНОЕ ВЕЩЕСТВО, ИНЖЕКЦИЯ ПЛАЗМЫ, ИОНИЗАЦИЯ, ИСПАРЕНИЕ, ПЛАЗМЕННАЯ СЕПАРАЦИЯ</span>
+            <span class='text-[10px] text-zinc-600'>| АО &quot;ПРОРЫВ&quot;</span>
+            <span class='text-[10px] text-zinc-600'>| 2025</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">2,000 тыс. ₽</span>
+          </div>
+        </a>
+<a href="oivt/proj_0008.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="8">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Экспериментальные и теоретические исследования сильнонеравновесных процессов, в том числе в активных кулоновских система</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Отчет 147 с., 1 кн., 56 рис., 22 табл., 247 источн.
+
+ЭЛЕКТРОННО-ПУЧКОВАЯ ПЛАЗМА, ГАЗОРАЗРЯДНАЯ ПЛАЗМ...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">ЭЛЕКТРОННО-ПУЧКОВАЯ ПЛАЗМА, ГАЗОРАЗРЯДНАЯ ПЛАЗМА, ПЛАЗМЕННЫЕ СИСТЕМЫ, ПЛАЗМЕННЫЕ ТЕХНОЛОГИИ, ТЛЕЮЩИЙ РАЗРЯД ПОСТОЯННОГО ТОКА</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">37,942 тыс. ₽</span>
+          </div>
+        </a>
+<a href="oivt/proj_0009.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="9">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">«РАСЧЕТЫ ТЕПЛОФИЗИЧЕСКИХ, ЭЛЕКТРОФИЗИЧЕСКИХ И  ТЕРМОДИНАМИЧЕСКИХ СВОЙСТВ НЕИДЕАЛЬНОЙ ПЛАЗМЫ СЖАТЫХ  ГАЗОВ. ПЕРВОПРИНЦИПН</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Объектами исследования являются уравнение состояния плотной плазмы азота, дейтерия и аргона, а также...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">АЗОТ, ДЕЙТЕРИЙ, АРГОН, МЕТОД КВАНТОВОЙ МОЛЕКУЛЯРНОЙ ДИНАМИКИ, МЕТОД МОЛЕКУЛЯРНОЙ ДИНАМИКИ С ВОЛНОВЫМИ ПАКЕТАМИ</span>
+            <span class='text-[10px] text-zinc-600'>| ФГУП &quot;РФЯЦ - ВНИИЭФ&quot;</span>
+            <span class='text-[10px] text-zinc-600'>| 2025</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">4,335 тыс. ₽</span>
+          </div>
+        </a>
+<a href="oivt/proj_0010.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="10">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">«ИССЛЕДОВАНИЕ ФИЗИКО-ХИМИЧЕСКИХ ПРОЦЕССОВ В МЕХАНОАКТИВИРОВАННЫХ ВЫСОКОПЛОТНЫХ РЕАКТИВНЫХ МАТЕРИАЛАХ: ЭКСПЕРИМЕНТ И АТОМ</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Моделирование распространения ударной волны по инертному пористому веществу (Ni, Al). Проведение рас...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">ударные волны, квантовый молекулярно-динамический расчёт</span>
+            <span class='text-[10px] text-zinc-600'>| РНФ</span>
+            <span class='text-[10px] text-zinc-600'>| 2025</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">7,000 тыс. ₽</span>
+          </div>
+        </a>
+<a href="oivt/proj_0011.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="11">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Экспериментальные и расчетно-теоретические исследования процессов термохимической конверсии биомассы в энергетическое то</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Отчёт 264 с., 1 кн., 84 рис., 35 табл., 190 источн.
+
+БИОМАССА, ПИРОЛИЗ, СИНТЕЗ-ГАЗ, МЕТАНОЛ, ОСАДОК ...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">ВИЭ, ВОДОРОД, УГЛЕРОДНЫЙ КОМПОЗИТ, МАТЕМАТИЧЕСКОЕ МОДЕЛИРОВАНИЕ, ТОРРЕФИКАЦИЯ</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">32,647 тыс. ₽</span>
+          </div>
+        </a>
+<a href="oivt/proj_0012.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="12">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Разработка безопасного метода микрохирургии эмбрионов на основе машинного обучения в рамках вспомогательных репродуктивн</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Лазерная микрохирургия эмбрионов осуществлялась с использованием установки «Фемтосекундный лазерный ...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">эмбрион, бластоциста, блестящая оболочка, вспомогательный лазерный хетчинг, фемтосекундные лазерные импульсы</span>
+            <span class='text-[10px] text-zinc-600'>| РНФ</span>
+            <span class='text-[10px] text-zinc-600'>| 2023</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">7,000 тыс. ₽</span>
+          </div>
+        </a>
+<a href="oivt/proj_0013.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="13">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Исследование процессов теплообмена при высоких тепловых нагрузках в интересах создания систем охлаждения ядерных энергоу</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Отчет 119 с., 1 кн., 75 рис., 2 табл., 80 источн.
+
+СМЕШАННАЯ КОНВЕКЦИЯ, ТУРБУЛЕНТНОЕ ТЕЧЕНИЕ, ОБЪЕМН...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">КИПЕНИЕ, РАСПЛАВЫ СОЛЕЙ, ЗАКАЛКА, ЖИДКИЕ МЕТАЛЛЫ, ОБЪЕМНОЕ ТЕПЛОВЫДЕЛЕНИЕ</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">23,888 тыс. ₽</span>
+          </div>
+        </a>
+<a href="oivt/proj_0014.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="14">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">ОТЧЁТ О НАУЧНО-ИССЛЕДОВАТЕЛЬСКОЙ РАБОТЕ по теме: &quot;Фундаментальные принципы холодной многофазной неравновесной плазмы и т</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Разработан прототип экспериментального комплекса по исследованию комбинированных (гибридных) разрядо...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">плазменные технологии, фундаментальные принципы, плазмохимическая конверсия, математическое моделирование, кинетика</span>
+            <span class='text-[10px] text-zinc-600'>| РНФ</span>
+            <span class='text-[10px] text-zinc-600'>| 2021–2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">129,500 тыс. ₽</span>
+          </div>
+        </a>
+<a href="oivt/proj_0015.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="15">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Физико-технические и физико-химические проблемы альтернативной энергетики</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Отчет 103 с., 1 кн., 51 рис., 14 табл., 90 источн. 
+
+МЕТАЛЛИЧЕСКИЕ ЭНЕРГОНОСИТЕЛИ, ВОДОРОД ГЕНЕРИРУЮ...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">МЕТАЛЛИЧЕСКИЕ ЭНЕРГОНОСИТЕЛИ, ПОЛУЧЕНИЕ ВОДОРОДА, МЕТАЛЛ-ВОЗДУШНЫЕ БАТАРЕИ, ГАЗОДИФФУЗИОННЫЕ ЭЛЕКТРОДЫ, ПИРОЛИЗ</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">43,795 тыс. ₽</span>
+          </div>
+        </a>
+<a href="oivt/proj_0016.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="16">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Разработка и исследования генераторов экстремальных импульсов тока и электромагнитного излучения нано-, микросекундной д</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Отчет 186 с., 1 кн., 119 рис., 16  табл., 88 источн.
+СВЕРХШИРОКОПОЛОСНОЕ ЭЛЕКТРОМАГНИТНОЕ ИЗЛУЧЕНИЕ,...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">СВЕРХШИРОКОПОЛОСНОЕ ЭЛЕКТРОМАГНИТНОЕ ИЗЛУЧЕНИЕ, МОЩНЫЕ ПОЛУПРОВОДНИКОВЫЕ ГЕНЕРАТОРЫ, СВЕРХКОРОТКИЕ ИМПУЛЬСЫ, АКТИВНЫЕ АНТЕННЫЕ РЕШЕТКИ, ВОЗДЕЙСТВИЕ ЭЛЕКТРОМАГНИТНЫХ ИМПУЛЬСОВ</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">49,288 тыс. ₽</span>
+          </div>
+        </a>
+<a href="oivt/proj_0017.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="17">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">«Вязкость и теплопроводность жидких металлических теплоносителей из первопринципных расчетов». Этап 1</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>1.	рассчитанные методом КМД зависимости плотности жидкого свинца вдоль изобар нормального давления в...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">натрий, свинец, вязкость, теплопроводность, транспортные свойства</span>
+            <span class='text-[10px] text-zinc-600'>| РНФ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024–2025</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">1,500 тыс. ₽</span>
+          </div>
+        </a>
+<a href="oivt/proj_0018.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="18">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Физические основы плазменных технологий разделения веществ и синтеза материалов</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Отчет 62 с., 1 кн., 39 рис., 6 табл., 34 источн.
+
+ПЛАЗМОХИМИЯ, ПИРОЛИЗ, ПЛАЗМОТРОН ПОСТОЯННОГО ТОКА,...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">ПРОБОЙ ДУГОВОГО РАЗРЯДА, ВАКУУМНАЯ ДУГА, ГЕЛИКОННЫЙ РАЗРЯД, ГРАФЕН, ГАЗОФАЗНЫЕ КОМПОНЕНТЫ</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">28,268 тыс. ₽</span>
+          </div>
+        </a>
+<a href="oivt/proj_0019.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="19">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Разработка кода атомно-кинетических расчетов плотной плазмы с учетом радиационной накачки и экзотических ионных состояни</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Создан пользовательский код атомно-кинетических расчетов плотной плазмы с учетом радиационной накачк...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">ТОРМОЗНОЕ ИЗЛУЧЕНИЕ, ЛАЗЕРНОЕ УСКОРЕНИЕ ЭЛЕКТРОНОВ, КОМБИНИРОВАННЫЕ МИШЕНИ С ОКОЛОКРИТИЧЕСКОЙ ПЛОТНОСТЬЮ ЭЛЕКТРОНОВ, СУБПИКО/ФЕМТОСЕКУНДНЫЕ ЛАЗЕРНЫЕ ИМПУЛЬСЫ, СКОРОСТЬ ПЛАСТИЧЕСКОЙ ДЕФОРМАЦИИ</span>
+            <span class='text-[10px] text-zinc-600'>| АО &quot;ГНЦ РФ ТРИНИТИ&quot;</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">23,660 тыс. ₽</span>
+          </div>
+        </a>
+<a href="oivt/proj_0020.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="20">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">«ИССЛЕДОВАНИЕ ВЫСОКОТЕМПЕРАТУРНЫХ СВОЙСТВ МАТЕРИАЛОВ АТОМНОЙ ЭНЕРГЕТИКИ В ЖИДКОМ И ОКОЛОКРИТИЧЕСКОМ СОСТОЯНИЯХ: ПЕРВОПРИ</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>В рамках проекта проведены комплексные теоретические и экспериментальные исследования теплофизически...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">гафний, первопринципный расчёт, критическая точка, теплофизические свойства, транспортные свойства</span>
+            <span class='text-[10px] text-zinc-600'>| РНФ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024–2025</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">6,000 тыс. ₽</span>
+          </div>
+        </a>
+<a href="oivt/proj_0021.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="21">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Физическое моделирование стадий самопроизвольного триггеринга и тонкой фрагментации расплава при паровом взрыве</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Разработана и апробирована оригинальная методика экспериментального исследования распространения фро...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">паровой взрыв, недогретая вода, расплавленная соль, олово, распад струи</span>
+            <span class='text-[10px] text-zinc-600'>| РНФ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024–2025</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">1,500 тыс. ₽</span>
+          </div>
+        </a>
+<a href="oivt/proj_0022.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="22">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Отчет о научно-исследовательской работе по теме «Экспериментальное исследование физических процессов и явлений, возникаю</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>1. Для генерации импульсов ТГц излучения с высокой конверсионной эффективностью и сглаженным спектро...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">оптическое выпрямление, акустооптика, абляция, нанопленка, терагерцевое излучение</span>
+            <span class='text-[10px] text-zinc-600'>| РНФ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">7,000 тыс. ₽</span>
+          </div>
+        </a>
+<a href="oivt/proj_0023.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="23">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Разработка элементов ВТСП 2-го поколения и исследование сильноточных ВТСП устройств и их применения в электроэнергетике </div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Отчёт 109 с., 1 кн., 45 рис., 12 табл., 57 источн.
+
+КРИОТОКОВВОДЫ, УРАВНЕНИЕ ТЕПЛОВОГО БАЛАНСА, ВТСП...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">КРИОТОКОВВОДЫ, УРАВНЕНИЕ ТЕПЛОВОГО БАЛАНСА, ВТСП ЛЕНТЫ 2-ГО ПОКОЛЕНИЯ, ФЛЮЭНС, ИСКУСТВЕННЫЕ ЦЕНТРЫ ПИННИНГА</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">23,888 тыс. ₽</span>
+          </div>
+        </a>
+<a href="oivt/proj_0024.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="24">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">«ИССЛЕДОВАНИЕ ФИЗИКО-ХИМИЧЕСКИХ ПРОЦЕССОВ В
+МЕХАНОАКТИВИРОВАННЫХ ВЫСОКОПЛОТНЫХ РЕАКТИВНЫХ
+МАТЕРИАЛАХ: ЭКСПЕРИМЕНТ И АТОМ</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>1.	 Проведена верификация компьютерного кода PyMPS, реализующего технологию «движущегося окна». Техн...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">ударные волны, наноникель, наноалюминий, квантовый молекулярно-динамический расчёт</span>
+            <span class='text-[10px] text-zinc-600'>| РНФ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">7,000 тыс. ₽</span>
+          </div>
+        </a>
+<a href="oivt/proj_0025.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="25">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Отчет о патентных исследованиях
+РАЗРАБОТКА КОДА АТОМНО-КИНЕТИЧЕСКИХ РАСЧЕТОВ ПЛОТНОЙ ПЛАЗМЫ С УЧЕТОМ РАДИАЦИОННОЙ НАКАЧК</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Эксперименты с плоскими ударными волнами предоставляют уникальную возможность изучения динамической ...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">лазерная интерферометрия, скорость свободной поверхности, динамическая прочность, откольная прочность, ударные волны</span>
+            <span class='text-[10px] text-zinc-600'>| АО &quot;ГНЦ РФ ТРИНИТИ&quot;</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">23,660 тыс. ₽</span>
+          </div>
+        </a>
+<a href="oivt/proj_0026.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="26">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Отчёт о научно-исследовательской работе по теме: &quot; Исследование испарения двухкомпонентных карбидных систем при температ</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Отчёт содержит сведения о результатах экспериментального исследования испарения карбидных систем ZrC...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">лазерный нагрев, сверхтугоплавкие керамики, лазерно-индуцированное испарение, времяпролетная масс-спектрометрия</span>
+            <span class='text-[10px] text-zinc-600'>| РНФ</span>
+            <span class='text-[10px] text-zinc-600'>| 2023–2025</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">3,000 тыс. ₽</span>
+          </div>
+        </a>
+<a href="oivt/proj_0027.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="27">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Исследование определяющих факторов и основных закономерностей физико-химических процессов в конденсированных веществах и</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Отчет 112 с., 1 кн., 53 рис., 3 табл., 106 источн.
+УДАРНЫЕ ВОЛНЫ, РЕЛАКСАЦИОННЫЕ ПРОЦЕССЫ, ВЫСОКОСКО...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">УДАРНЫЕ ВОЛНЫ, РЕЛАКСАЦИОННЫЕ ПРОЦЕССЫ, ВЫСОКОСКОРОСТНАЯ ДЕФОРМАЦИЯ, ФАЗОВЫЕ ПРЕВРАЩЕНИЯ, ХИМИЧЕСКИЕ РЕАКЦИИ</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">39,017 тыс. ₽</span>
+          </div>
+        </a>
+<a href="oivt/proj_0028.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="28">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Исследования процессов и разработка научно-технических основ высокоинтенсивного теплообмена и гидродинамики в перспектив</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Отчет 137 с., 1 кн., 86 рис., 4 табл., 148 источн.
+
+ТЕПЛООБМЕН, КИПЕНИЕ, МЕТАСТАБИЛЬНОСТЬ, ТУРБУЛЕНТ...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">ТЕПЛООБМЕН, КИПЕНИЕ, МЕТАСТАБИЛЬНОСТЬ, ТУРБУЛЕНТНОЕ ТЕЧЕНИЕ, ГИДРОЛЮМИНИСЦЕНЦИЯ</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">43,795 тыс. ₽</span>
+          </div>
+        </a>
+<a href="oivt/proj_0029.html" class="proj-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:none" data-idx="29">
+          <div class="text-sm font-semibold group-hover:text-red-400 transition">Разработка научно-технических основ создания технологического оборудования для экологически чистых автономных систем эне</div>
+          <div class='text-[11px] text-zinc-500 mt-1 line-clamp-2'>Отчет 204 с., 1 кн., 99 рис., 30 табл., 78 источн., 1 прил.
+МИКРОТУРБИННЫЕ УСТАНОВКИ, ГАЗОТУРБИННЫЙ ...</div>
+          <div class="flex items-center gap-3 mt-2 flex-wrap">
+            <span class="text-[10px] text-zinc-500">МОНИТОРИНГ, ЭКОЛОГИЯ, ФТОРИД ЛИТИЯ, ДИОКСИД УГЛЕРОДА, ЭНЕРГОЭФФЕКТИВНОСТЬ</span>
+            <span class='text-[10px] text-zinc-600'>| МИНОБРНАУКИ РОССИИ</span>
+            <span class='text-[10px] text-zinc-600'>| 2024</span>
+            <span class="text-[10px] text-zinc-600 ml-auto">23,888 тыс. ₽</span>
+          </div>
+        </a>
+</div>
+        <div class="p-4 text-center">
+          <button id="proj-more" onclick="showMore('proj-item', 'proj-more', 'proj-counter', 41)" class="px-6 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-widest hover:bg-white/10 transition text-zinc-400">
+            Показать ещё 5
+          </button>
+        </div>
+      </section>
+
+      <!-- ═══ RID Section ═══ -->
+      <div class="section-header" id="section-rid">
+        <h2 class="section-title">🧬 Результаты интеллектуальной деятельности (3)</h2>
+        <span class="provenance-tag tag-egisu">ЕГИСУ</span>
+      </div>
+      <div class="rid-grid mb-6">
+        <div class="glass rounded-2xl p-5 text-center">
+          <div class="text-2xl mb-2">📄</div>
+          <div class="text-2xl font-black italic">3</div>
+          <div class="text-[10px] uppercase font-bold text-zinc-500 mt-1">Объект авторского права</div>
+        </div>
+
+      </div>
+      <section class="glass rounded-[2.5rem] overflow-hidden mb-8">
+        <div class="p-6 border-b border-white/10 flex items-center justify-between">
+          <span class="text-sm text-zinc-400" id="rid-counter">Показаны 5 из 3</span>
+          <a href="oivt/rid_list.html" class="text-xs font-bold text-red-400 hover:text-red-300 transition uppercase">Все РИД →</a>
+        </div>
+        <div id="rid-list"><a href="oivt/rid_0000.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="0">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">📄</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">&quot;Отчет о научно-исследовательской и опытно-конструкторской работе «Разработка технологий и оборудова</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Объектом исследования является технология плазменной переработки ОЯТ.
+Цель работ...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Объект авторского права</span>
+                <span class='text-[10px] text-zinc-600'>| 3D-МОДЕЛЬ, МОДЕЛЬНОЕ ВЕЩЕСТВО, ИОНИЗАЦИЯ</span>
+                <span class='text-[10px] text-zinc-600'>| ГОСКОРПОРАЦИЯ &quot;РОСАТОМ&quot;</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="oivt/rid_0001.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="1">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">📄</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">«РАЗРАБОТКА ТЕХНОЛОГИЙ И ОБОРУДОВАНИЯ ДЛЯ ПЛАЗМЕННОЙ ПЕРЕРАБОТКИ ОЯТ РЕАКТОРОВ НА БЫСТРЫХ НЕЙТРОНАХ.</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Объектом исследования является технология плазменной переработки ОЯТ.
+Цель работ...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Объект авторского права</span>
+                <span class='text-[10px] text-zinc-600'>| 3D-МОДЕЛЬ, МОДЕЛЬНОЕ ВЕЩЕСТВО, ИОНИЗАЦИЯ</span>
+                <span class='text-[10px] text-zinc-600'>| ГОСКОРПОРАЦИЯ &quot;РОСАТОМ&quot;</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+<a href="oivt/rid_0002.html" class="rid-item block p-4 border-b border-white/5 hover:bg-white/5 transition group" style="display:block" data-idx="2">
+          <div class="flex items-start gap-3">
+            <span class="text-lg mt-0.5">📄</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-sm font-semibold group-hover:text-red-400 transition">&quot;Равитие инженерно-физических основ и создание элементов технологии плазменной переработки отработав</div>
+              <div class='text-[11px] text-zinc-500 mt-1 line-clamp-1'>Объектом исследования является плазменное разделение элементов.
+Цель работы − фо...</div>
+              <div class="flex items-center gap-3 mt-1.5 flex-wrap">
+                <span class="text-[10px] text-zinc-600">Объект авторского права</span>
+                <span class='text-[10px] text-zinc-600'>| МОДЕЛЬНОЕ ВЕЩЕСТВО, ИНЖЕКЦИЯ ПЛАЗМЫ, ИОНИЗАЦИЯ</span>
+                <span class='text-[10px] text-zinc-600'>| АО &quot;ПРОРЫВ&quot;</span>
+                <span class='text-[10px] text-zinc-700 ml-auto'>2025</span>
+              </div>
+            </div>
+          </div>
+        </a>
+</div>
+        <div class="p-4 text-center">
+          <button id="rid-more" onclick="showMore('rid-item', 'rid-more', 'rid-counter', 3)" class="px-6 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-widest hover:bg-white/10 transition text-zinc-400">
+            Показать ещё 5
+          </button>
+        </div>
+      </section>
+
+      <script>
+        // Generic show-more function
+        function showMore(itemClass, btnId, counterId, total, step) {
+          step = step || 5;
+          const items = document.querySelectorAll('.' + itemClass);
+          let shown = 0;
+          items.forEach(el => {
+            if (el.style.display !== 'none') shown++;
+          });
+          items.forEach(el => {
+            const idx = parseInt(el.dataset.idx);
+            if (idx < shown + step) {
+              el.style.display = '';
+            }
+          });
+          const totalShown = Math.min(shown + step, items.length);
+          document.getElementById(counterId).textContent = 'Показаны ' + totalShown + ' из ' + total;
+          if (totalShown >= items.length) {
+            document.getElementById(btnId).style.display = 'none';
+          }
+        }
+      </script>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-20 border-t border-white/10 mt-20 bg-black/40">
+      <div class="max-w-7xl mx-auto px-6 text-center">
+        <div class="text-3xl font-black italic uppercase mb-8">МОС<span class="mos-red">НАУКА</span></div>
+        <p class="text-zinc-500 text-sm max-w-2xl mx-auto italic mb-8">Единая экосистема технологического развития площадок и заказчиков в Москве.</p>
+        <div class="flex justify-center gap-8 mb-8">
+          <div class="text-[10px] text-zinc-600 uppercase font-bold">Источник: <span class="text-emerald-500">CoLab</span> — лаборатории, учёные</div>
+          <div class="text-[10px] text-zinc-600 uppercase font-bold">Источник: <span class="text-sky-500">ЕГИСУ</span> — проекты, РИД</div>
+        </div>
+        <div class="text-white/20 text-[10px] uppercase font-bold tracking-[0.5em]">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ ОБЪЕКТА</div>
+      </div>
+    </footer>
+
+    <!-- Scroll to top button -->
+    <button onclick="window.scrollTo({top:0,behavior:'smooth'})" id="scroll-top" class="fixed bottom-8 right-8 w-12 h-12 rounded-full bg-red-500/80 text-white flex items-center justify-center shadow-lg hover:bg-red-500 transition z-50" style="display:none" title="Наверх">
+      <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg>
+    </button>
+
+    <!-- Request Modal -->
+    <div id="requestModal" style="position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem">
+      <div style="background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative">
+        <button onclick="closeModal()" style="position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer">&times;</button>
+        <div id="modalForm">
+          <h2 class="text-xl font-black mb-1">📨 Направить запрос</h2>
+          <div id="modalContext" class="text-xs text-zinc-500 mb-6">через платформу МОСНАУКА</div>
+          <label class="block text-[10px] uppercase font-black text-zinc-500 mb-1 tracking-widest">Ваше ФИО *</label>
+          <input type="text" id="reqName" placeholder="Иванов Иван Иванович" class="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-sm mb-3" style="color:white">
+          <label class="block text-[10px] uppercase font-black text-zinc-500 mb-1 tracking-widest">Организация</label>
+          <input type="text" id="reqOrg" placeholder="ООО «Компания»" class="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-sm mb-3" style="color:white">
+          <label class="block text-[10px] uppercase font-black text-zinc-500 mb-1 tracking-widest">Email *</label>
+          <input type="email" id="reqEmail" placeholder="email@example.com" class="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-sm mb-3" style="color:white">
+          <label class="block text-[10px] uppercase font-black text-zinc-500 mb-1 tracking-widest">Тип запроса</label>
+          <select id="reqType" class="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-sm mb-3" style="color:white;appearance:none">
+            <option>Запрос на НИОКР</option>
+            <option>Консультация</option>
+            <option>Сотрудничество / Партнёрство</option>
+            <option>Использование оборудования</option>
+            <option>Другое</option>
+          </select>
+          <label class="block text-[10px] uppercase font-black text-zinc-500 mb-1 tracking-widest">Сообщение *</label>
+          <textarea id="reqMsg" placeholder="Опишите ваш запрос..." class="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-sm mb-4" style="color:white;min-height:5rem;resize:vertical"></textarea>
+          <button onclick="submitRequest()" class="w-full py-3 rounded-xl bg-red-500 text-white text-[11px] font-black uppercase tracking-widest hover:bg-red-600 transition">Отправить запрос</button>
+        </div>
+        <div id="modalSuccess" style="display:none;text-align:center;padding:2rem 0">
+          <div style="font-size:3rem;margin-bottom:1rem">✅</div>
+          <h3 class="text-lg font-black mb-2">Запрос отправлен!</h3>
+          <p class="text-sm text-zinc-400">Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+          <button onclick="closeModal()" class="mt-6 w-full py-3 rounded-xl bg-white/5 border border-white/10 text-sm font-bold text-zinc-400 hover:bg-white/10 transition">Закрыть</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      window.addEventListener('scroll', function() {
+        document.getElementById('scroll-top').style.display = window.scrollY > 400 ? 'flex' : 'none';
+      });
+      function openRequestModal(context) {
+        document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+        document.getElementById('modalForm').style.display = '';
+        document.getElementById('modalSuccess').style.display = 'none';
+        document.getElementById('requestModal').style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      }
+      function closeModal() {
+        document.getElementById('requestModal').style.display = 'none';
+        document.body.style.overflow = '';
+      }
+      function submitRequest() {
+        var n = document.getElementById('reqName').value.trim();
+        var e = document.getElementById('reqEmail').value.trim();
+        var m = document.getElementById('reqMsg').value.trim();
+        if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+        document.getElementById('modalForm').style.display = 'none';
+        document.getElementById('modalSuccess').style.display = '';
+      }
+      document.getElementById('requestModal').addEventListener('click', function(e) {
+        if (e.target === this) closeModal();
+      });
+    </script>
+  </div>
+</body>
+</html>

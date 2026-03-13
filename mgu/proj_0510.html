@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | МГУ им. М.В. Ломоносова</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-mgu.html">МГУ им. М.В. Ломоносова</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">полярность тела</span> <span class="tag">онтогенез</span> <span class="tag">биология развития</span> <span class="tag">экспрессия генов</span> <span class="tag">сравнительная анатомия</span> <span class="tag">план строения</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Частная цитология</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Эмбриональное развитие</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Зоология беспозвоночных</span></div>
+          <h1 style="font-size:1.5rem">Онтогенез Brachiozoa: ключ к пониманию происхождения плана строения Phoronida и Brachiopoda</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">7,000 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225020307396-7</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2023-05-15 — 2023-12-31</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№1</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">РНФ</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>Российский научный фонд</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>В ходе экспериментов по инициации нереста и метаморфоза у представителей двух отрядов ринхонеллиформных брахиопод – Coptothyris grayi (Terebratulida) и Hemithiris psittacea (Rhynchonellida) - получены и зафиксированы последовательные стадии дробления, личиночного развития и метаморфоза обоих видов для последующего изучения методами трансмиссионной и сканирующей электронной микроскопии, иммуноцитохимии, конфокальной лазерной сканирующей микроскопии и компьютерной микротомографии. Составлены таблицы нормального развития обоих видов по часам. При помощи комплекса методов световой, сканирующей и трансмиссионной электронной микроскопии, иммуноцитохимии в сочетании с конфокальной лазерной сканирующей микроскопией впервые определены и поисаны 10 последовательных ключевых стадий онтогенеза у Coptothyris grayi и Hemithiris psittacea: стадии дробления, бластула, раняя гаструла, поздняя гаструла, раняя трехлопастная личинка, компетентная личинка, острый метаморфоз, стадия формирования протегулюма, стадия формирования брефической раковины, стадия формиирования взрослой раковины. Проведено исследование пролиферативной активности клеток мантии C. grayi и H. psittacea при использовании метода клик-химии на последовательных стадиях развития личинок, метаморфоза и формирования ювенильных особей. Показано, что у компетентных личинок происходит равномерный рост апикальной, мантийной и ножной лопастей. Однако после оседания, максимальная пролиферативная активность наблюдается в лофофоре, который в этот период формируется из апикальной лопасти личинки и активно растет. Кроме того, на стадиях формирования протегулума и брефической раковины выявлена пролиферативная активность клеток мантии. Важно отметить, что деление клеток мантии происходит только в краевой зоне и ни разу не было отмечено деление клеток в центральной части мантии. Таким образом, наши данные подтверждают гипотезу о наличии генеративной зоны, расположенной по краю мантии у брахиопод, что определяет направление морфологических исследований именно этой структуры у брахиопод на последующих этапах проекта. Проведены экспериментальные работы по выявлению зон пролиферации и апоптоза у интактных особей двух видов форонид Phoronis embryolabi и Phoronopsis harmeri с использование EdU и TUNEL На интактных червях установлено, что в норме пролиферация характерна для всего покровного эпителия и выявляется в покровном эпителии тела, основания лофофра и щупалец в виде отдельных редко разбросанных делящихся клеток. У Phoronopsis harmeri зоны повышенной пролиферации располагаются в основания щупалец и, вероятно, ответственны за обновление щупальцевого эпителия. Активная пролиферация наблюдается в области закладки новых щупалец, а так же в эпителии тела вблизи гигантского нервного волокна. У Phoronis embryolabi наиболее ярко выражена пролиферативная активность в щупальцах анальной стороны – в области зоны роста, где формируются новые щупальца. В этих щупальцах пролиферативная активность проявляется не только в клетках покровного эпителия, но и в клетках целомической выстилки щупальцевого целома. Очаги пролиферации выявляются в основании щупалец между ними, однако они менее выражены, чем у P. harmeri. Отдельные пролиферирующие клетки обнаруживаются в эпителии основания лофофора, области анального бугра и восходящей ветви кишечника. В заднем туловищном участке зарегистрирована повышенная пролиферативная активность, но очаги пролиферации связаны не с телом взрослого животного, а с развивающимися здесь эмбрионами и молодыми личинками. Апоптотическая активность была изучена в экспериментах с набором реактивов Tunnel. Для обоих видов показано отсутствие оформленных очагов апоптоза. наиболее активно апоптоз идет в клетках эпителия лофофора и щупалец, что, вероятно, объясняется и повышенной здесь пролиферацией. Апоптоз затрагивает не только клетки покровного эпителия (их большинство), но и клетки целомической выстилки, и эритроциты. Отлажены методики фиксации материала и выделения тотальных РНК и ДНК для различных стадий онтогенеза форониды Phoronopsis harmeri и брахиоподы Hemithiris psittacea.</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (4)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Борисанова Анастасия Олеговна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Русин Леонид Юрьевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Пландин Федор Александрович</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Кузьмина Татьяна Валерьевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li></ul>
+              
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

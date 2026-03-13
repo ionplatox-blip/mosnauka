@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | Сколтех</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-skoltech.html">Сколтех</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">месторождения углеводородов</span> <span class="tag">петрофизика</span> <span class="tag">геохимия</span> <span class="tag">геомеханика</span> <span class="tag">математическое моделирование разработки месторождений</span> <span class="tag">методы увеличения нефтеотдачи</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Методы повышения отдачи нефтяных и газовых пластов</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Разработка нефтяных, газовых и газоконденсатных месторождений</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Исследование нефтяных и газовых пластов и скважин</span></div>
+          <h1 style="font-size:1.5rem">Приложение № 1
+К ОТЧЕТУ О РЕАЛИЗАЦИИ ПРОГРАММЫ СОЗДАНИЯ И РАЗВИТИЯ ЦЕНТРА
+ПО СОГЛАШЕНИЮ № 075-10-2022-011 от 20.04.2022 г.
+О предоставлении гранта в форме субсидий из федерального бюджета на осуществление государственной поддержки создания и развития научных центров мирового уровня, выполняющих исследования и разработки по приоритетам научно-технологического
+развития</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">77,074 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225021209960-6</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2024-01-01 — 2024-12-31</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№3</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">18</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">МИНОБРНАУКИ РОССИИ</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>МИНИСТЕРСТВО НАУКИ И ВЫСШЕГО ОБРАЗОВАНИЯ РОССИЙСКОЙ ФЕДЕРАЦИИ</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>Быстрое исчерпание традиционных ресурсов и прогнозируемое уже на ближайшее десятилетие сокращение объемов добычи углеводородов в РФ требует от нефтегазовой индустрии повышения эффективности добычи на разрабатываемых месторождениях, ввода в разработку трудноизвлекаемых и нетрадиционных запасов, а также поиска и разведки новых месторождений в труднодоступных регионах. Российская нефтегазовая индустрия располагает технологиями, необходимыми для разведки и добычи традиционных месторождений нефти и газа. Данные технологии базируются на десятилетиях исследований и разработок, которые проводились еще во времена СССР. Что касается технологий поиска, разведки и добычи трудноизвлекаемых и нетрадиционных запасов углеводородов, а также поиска и разведки запасов в труднодоступных регионах, то в этой области российская нефтегазовая индустрия испытывает проблемы в связи с недостатком необходимых технических компетенций. В условиях, когда привлечение зарубежных технологий невозможно в связи с отраслевыми санкциями, это может в период 15–20 лет привести к существенному сокращению добычи углеводородов (на 40-50% текущей добычи нефти или 200 миллионов тонн в год), и еще большему ухудшению структуры запасов углеводородов.
+Таким образом, в настоящее время перед российской нефтегазовой индустрией стоит проблема срочного наращивания технических компетенций в области повышения эффективности разработки запасов истощенных месторождений, поиска, разведки и добычи углеводородов низкопроницаемых, сланцевых, карбонатных коллекторов, запасов высоковязкой нефти, месторождений углеводородов в труднодоступных регионах и других запасов, являющиеся стратегическим резервом РФ на период более 50 лет. Разработка новых технологий должна опираться на экспериментальное изучение и математическое моделирование пластовых процессов, а также на инновационные инженерные решения, которые позволят имплементировать полученные знания в технологии, кратно повышающие эффективность технологических операций. Исследования и разработки должны отвечать мировому уровню развития науки и технологий, обладать научной новизной и способностью к правовой охране интеллектуальной собственности. Новые технологические решения должны обеспечить создание резервов извлекаемых запасов жидких УВ в новых регионах, увеличение КИН на гигантских и крупных месторождениях, создание новых методов увеличения нефтеотдачи (химические, газовые, термические) необходимых для повышения извлекаемых запасов на традиционных месторождениях и вовлечения в эффективную разработку трудноизвлекаемых запасов углеводородов.
+Отчет обобщает результаты проведенных фундаментальных, поисковых и прикладных исследований в области геологии, геохимии и разработки залежей нефти, проведенных с использованием современных физико-химических методов, математического моделирования пластовых и технологических процессов, применения сквозных технологий, направленных на создание экологичных, энергоэффективных и экономичных технологий прогнозирования, разведки и жидких углеводородов (УВ). Работы выполнялись по следующим направлениям (Мероприятиям 1–3) Программы, предусматривающих решение следующих задач.
+По Мероприятию 1:
+1.1. Разработка спутниковых технологий изучения структуры земной коры и оценки зрелости нефтематеринских толщ, геотермохронология – реконструкция термической истории бассейнов, хронологизация процессов нефтегазообразования, бассейновое моделирование на основе уникальной экспертизы в области изучения тепловых свойств пород, оценки тепловых потоков, анализ углеродной изотопной кривой, реконструкция баланса углерода в истории планеты и седиментационных бассейнов, прогнозирование запасов УВ в различных бассейнах, оценка их доступности для освоения в том числе на слабо исследованных территориях на суше и на шельфе (Восточная Сибирь, Арктический шельф, Сахалин, Охотское и Берингово моря).
+По Мероприятию 2:
+2.1. Разработка методов, алгоритмов и технологий оцифровки и переобработки имеющихся данных на «старых» месторождениях и месторождениях-гигантах с использованием элементов сквозных технологий (большие данные, нейротехнологии и искусственный интеллект); создания детальных геологических моделей месторождений на основе фациальных и секвенс-стратиграфических построений с использованием данных изучения керна, ГИС и сейсмических данных; развитие технологии «псевдокерна»; технологии цифрового керна; инновационные технологии изучения керна; создание технологий исследований свойств флюидов и керна на основе микрофлюидных исследований, в том числе внутрискважинных устройств,
+2.2. Создание и развитие новой парадигмы разработки месторождений-гигантов на поздней стадии с использованием новейших геофизических, биогеохимических технологий и детальной реконструкции резервуаров, создание конкретных схем разработки месторождений-гигантов с учетом особенностей их строения и истории эксплуатации;
+2.3. Разработка экологичных и экономичных технологий бурения вертикальных и горизонтальных скважин; развитие технологий геонавигации с измерением свойств пласта перед долотом; развитие технологий геомеханического моделирования, разработки дизайнов ГРП, создания сети трещин и стимулированного объема, в том числе – на безводной основе с использованием инструментов сквозных технологий; инновационные конструкции скважин и скважинное оборудование для эффективной разработки залежей нефти.
+По Мероприятию 3:
+3.1. Разработка базовых механизмов вытеснения нефти для гидрофобных карбонатных коллекторов в осложненных условиях (высокая минерализация пластовых вод, высокая температура пласта) и создание на их основе эффективных методов увеличения нефтеотдачи с применением иономодифицированной воды, ПАВ, полимерных, гелевых, микробиологических систем, а также математических алгоритмов предсказания их эффективности с использованием технологии «цифрового керна» и микрофильтрационного моделирования. 
+3.2. Разработка базовых механизмов вытеснения нефти для гидрофобных карбонатных коллекторов в осложненных условиях (высокая минерализация пластовых вод, высокая температура пласта) и создание на их основе эффективных методов увеличения нефтеотдачи с применением иономодифицированной воды, ПАВ, полимерных, гелевых, микробиологических систем, а также математических алгоритмов предсказания их эффективности с использованием технологии «цифрового керна» и микрофильтрационного моделирования.
+3.3. Разработка методов добычи высоковязкой нефти, газоконденсата и нефти (в т. ч. плотных пород) с использованием тепловых методов, основанных на применении нефтерастворимых и наноразмерных каталитических систем для подземного облагораживания и термогазохимического воздействия на пласт с применением бинарных смесей, направленных на снижение затрат и повышения эффективности нефтеотдачи.
+3.4. Разработка дешевых и экспрессных методов и подходов к быстрой оценке свойства и состава нефти и нефтепродуктов, а также методик, которые позволят проводить быстрый мониторинг и контроль разработки месторождений по анализу свойств и состава нефтяных дисперсных систем после различных видов воздействия.</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (36)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Плешаков Андрей Михайлович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат химических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Шилов Евгений Дмитриевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат технических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Юнусов Тимур Ильдарович</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Антонов Сергей Владимирович</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Волосков Дмитрий Сергеевич</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Перепонов Дмитрий Ильич</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Торшина Людмила Сергеевна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Пешков Георгий Александрович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат технических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Киани Наталья Евгеньевна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Стукачев Владимир Ильич</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Белло Айомикун Сандей</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Карамов Радмир Ильгизович</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Доржи Десмонд Батса</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Мухаметдинова Алия Захрафовна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат геолого-минералогических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Аскарова Айсылу Габдельгафаровна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат геолого-минералогических наук</span></li></ul>
+              <p style='color:#52525b;font-size:0.8rem;margin-top:0.5rem'>...и ещё 21</p>
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

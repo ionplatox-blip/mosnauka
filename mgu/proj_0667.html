@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | МГУ им. М.В. Ломоносова</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-mgu.html">МГУ им. М.В. Ломоносова</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">фурфурол</span> <span class="tag">пористые алюмосиликаты</span> <span class="tag">метоксифенолы</span> <span class="tag">гидродеоксигенация</span> <span class="tag">наночастицы переходных и благородных металлов</span> <span class="tag">мезопористый оксид циркония</span> <span class="tag">гетерогенный катализ</span> <span class="tag">гидропроцессы</span> <span class="tag">алкилирование</span> <span class="tag">лигноцеллюлозная биомасса</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Топохимия. Гетерогенный катализ</span></div>
+          <h1 style="font-size:1.5rem">Разработка катализаторов на основе мезопористых носителей для получения компонентов биотоплив из продуктов переработки лигноцеллюлозной биомассы</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">3,000 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225110719797-1</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2022-07-21 — 2024-06-30</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№1</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">4</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">РНФ</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>Российский научный фонд</div>
+                </div><div class="metric-box" style="text-align:left">
+                  <div class="label">Исполнитель</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">МОСКОВСКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ ИМЕНИ М.В.ЛОМОНОСОВА, МГУ ИМЕНИ М.В.ЛОМОНОСОВА, МОСКОВСКИЙ УНИВЕРСИТЕТ ИЛИ МГУ</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>Предложены методы получения и исследованы закономерности формирования активного компонента новых катализаторов, содержащего наночастицы переходных или благородных металлов, и структуры носителя на основе мезопористых оксидов циркония и алюмосиликатов. Установлены физико-химические характеристики носителей и катализаторов (поверхностные характеристики, структура, кислотность, локализация и размер частиц активной фазы и т.д.). Проведено систематическое исследование особенностей гидродеоксигенации замещенных метоксифенолов и фурфурола с использованием разработанных катализаторов при варьировании параметров процесса и состава катализаторов, изучено их влияние на конверсию и селективность по целевым продуктам – компонентам биотоплив и ценным химическим соединениям. Определены оптимальные условия процессов и состав катализаторов, обеспечивающие заданную конверсию и селективность по целевым продуктам. В гидродеоксигенации 2-метоксифенола в водной среде среди Ru, Pd, Pt, Ni, Cu-содержащих катализаторов на основе мезопористого алюмосиликата Al-HMS (Si/Al=10) наибольшая конверсия субстрата и суммарная селективность по полностью гидрированным и/или деоксигенированным продуктам (циклогексану и бензолу) получены при использовании рутениевого катализатора (250°С, 6 МПа Н2). Среди рутениевых катализаторов на основе исследуемых мезопористых материалов (ZrO2-Al2O3, ZrO2-WO3, ZrO2-SiO2, Al-HMS) наибольшая конверсия 2-метоксифенола достигнута в присутствии образца на основе ZrO2-Al2O3, наибольшая степень деоксигенации (селективность по циклогексану и бензолу) - при использовании катализатора на основе Al-HMS(10). Конверсия 2-метоксифенола и селективность по циклогексану снижались при увеличении соотношения Si/Al в Al-HMS. В присутствии рутениевого катализатора на основе оксида алюминия достигнута более высокая конверсия 2-метоксифенола по сравнению с Al-HMS, однако основным продуктом реакции являлся метоксициклогексанол. Ru-катализаторы на основе Al-HMS и композита, содержащего Al-HMS и Аl2O3, продемонстрировали сравнимые показатели гидродеоксигенации 2-метоксифенола, основным продуктом реакции являлся циклогексан. При увеличении содержания металла в Ru/Al-HMS в продуктах реакции снижалась селективность по циклогексану и увеличивалась доля циклогексанола при сравнимой величине конверсии 2-метоксифенола. В жестких условиях гидрирования фурфурола в водной среде (200°С, 4 МПа Н2, невысокое соотношение субстрат/катализатор) в присутствии катализаторов на основе мезопористого алюмосиликата достигнута высокая конверсия субстрата, при этом образовывалась многокомпонентная смесь продуктов, содержащая метилтетрагидрофуран, фурфуриловый и тетрагидрофурфуриловый спирты, 1,4-пентандиол, циклопентанол, циклопентанон, бутанолы, пентанолы, соответствующие им кетоны и альдегиды и др. Природа активной фазы влияла на состав продуктов гидрирования фурфурола. Для Ru-содержащего катализатора характерно образование пентанолов, бутанолов и пентандиола, для Pd-содержащего – метилтетрагидрофурана и тетрагидрофурфурилового спирта, для Pt-содержащего – циклопентанона и гидроксипентанона. В гидрировании фурфурола в мягких условиях (100°С, 3 МПа) Pd/Al-HMS более активен по сравнению с Pt- и Ru-содержащими образцами. Основным продуктом реакции являлся фурфуриловый спирт. Согласно полученным результатам для гидропревращения продуктов переработки лигноцеллюлозной биомассы, содержащих фенольный фрагмент, в присутствии исследуемых катализаторов, с высокими степенями конверсии необходимы температуры не менее 200°С. Для получения полностью гидрированных и деоксигенированных продуктов, циклогексанов, предпочтительны высокие давление водорода (более 5 МПа) и температура (не менее 250°С), более селективное получение циклогексанолов протекает при температуре ~ 200°С. При низких давлениях водорода (до 4 МПа) и высоких температурах (более 250°С) в гидродеоксигенации продуктов переработки лигноцеллюлозной биомассы, содержащих фенольный фрагмент, преимущественно образуются ароматические соединения (бензолы и фенолы), однако степень превращения субстратов невысока. Для гидрирования фурфурола в присутствии исследуемых каталитических систем в мягких условиях характерно образование фурфурилового спирта (при повышении давления, времени реакции, загрузки катализатора – в продуктах реакции растет содержание тетрагидрофурфурилового спирта). При ужесточении условий (повышении температуры до 150-200°С, количества катализатора) селективность процесса снижается – образуется смесь продуктов. Активность исследуемых материалов (ZrO2-SiO2, ZrO2-Al2O3, ZrO2-WO3, Al-HMS, Al-HMS-A) оценена в реакциях алкилирования и алкилирования-гидродеоксигенации с участием соединений, образующихся в гидроконверсии продуктов переработки лигноцеллюлозной биомассы, при изменении состава катализатора и условий процесса. Наибольшую активность в реакции алкилирования фенола с участием циклогексанола продемонстрировал образец Al-HMS (Si/Al=10). Повышение давления азота или его замена на водород практически не влияли на показатели алкилирования. В присутствии Al-HMS превращение фенола наблюдалось при 250°С, при 300°С в продуктах реакции снижалось соотношение 2-циклогексифенол/4-циклогексилфенол. При уменьшении содержания алкилирующего агента снижалась конверсия фенола и возрастало суммарное содержание 2-циклогексилфенола и 4-циклогексилфенола. Фенолы, содержащие метоксильную или метильную группу, менее активно участвовали в реакциях алкилирования и алкилирования-гидродеоксигенации по сравнению с фенолом.</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (1)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Ролдугина Екатерина Алексеевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат химических наук</span></li></ul>
+              
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

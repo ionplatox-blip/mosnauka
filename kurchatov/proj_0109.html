@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | НИЦ "Курчатовский институт"</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-kurchatov.html">НИЦ &quot;Курчатовский институт&quot;</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">цитостатики</span> <span class="tag">системы доставки лекарств</span> <span class="tag">модификация</span> <span class="tag">наночастицы</span> <span class="tag">амфифильные сополимеры</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Структура и свойства природных и синтетических высокомолекулярных соединений</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Материалы для биомедицинского применения</span></div>
+          <h1 style="font-size:1.5rem">Самоорганизующиеся полимерные системы адресной доставки цитостатиков и миРНК для комбинированной терапии рака</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">6,000 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225030312570-2</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2022-01-01 — 2022-12-31</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№2</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">2</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">РНФ</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>Российский научный фонд</div>
+                </div><div class="metric-box" style="text-align:left">
+                  <div class="label">Исполнитель</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">НИЦ &quot;КУРЧАТОВСКИЙ ИНСТИТУТ&quot;-ПИЯФ</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>Разработка систем доставки лекарств является одним из ключевых подходов, направленных на повышение эффективности противоопухолевой терапии за счет улучшения биодоступности лекарства и снижения системной токсичности. Проект направлен на разработку новых полимерных систем доставки для комбинированной терапии онкологических заболеваний. 
+На этапе 2022 года методами контролируемой радикальной полимеризации с обратимой передачей цепи, полимеризацией с раскрытием цикла и пост-полимеризационной модификации был синтезирован ряд новых амфифильных сополимеров, на основе которых были сформированы и охарактеризованы наночастицы. В частности, была синтезирована и охарактеризована серия амфифильных сополимеров поли(N-винилсукцинамовая кислота-со-O-холестерил(мет)акрилат), содержащих от 97 до 45 мол% звеньев гидрофильного мономера и от 3 до 55% звеньев гидрофобного мономера. Полученные сополимеры были способны формировать сферические наночастицы с гидродинамическим диаметром от 50 до 400 нм в зависимости от состава сополимера. Изучение биологических свойств, полученных систем in vitro показало низкую цитотоксичность в отношении нормальных клеток (HEK 293) и низкую скорость захвата макрофагами. 
+Вторая серия сополимеров включала амфифильные сополимеры аминокислот различной структуры. Так, были синтезированы и охарактеризованы линейные сополимеры лизина/глутаминовой кислоты с триптофаном, содержащие от 78 до 50 мол% звеньев гидрофильной аминокислоты и от 22 до 50 мол% звеньев гидрофобной аминокислоты. Вследствие самосборки в водной среде полученные сополимеры формировали наночастицы с гидродинамическим диаметром от 112 до 250 нм. Также путем модификации полилизина аргинином/гистидином и различными гидрофобными аминокислотами (валин, изолейцин, тирозин, фенилаланин, триптофан) была получена серия амфифильных сополимеров, содержащая от 30 до 35 мол% аргинина/гистидина и от 15 до 20 мол% гидрофобной аминокислоты. Полученные сополимеры формировали рыхлые сферические частицы с гидродинамическим диаметром от 270 до 600 нм в зависимости от гидрофобной аминокислоты. Катионные амфифильные сополимеры на основе полиаминокислот демонстрировали способность связывать и удерживать модель миРНК (двуцепочечный олигонуклеотид, 23 п.н.) при массовых соотношениях сополимер:олигонуклеотид от 12:1 до 20:1 в зависимости от состава сополимера. Установлено, что в комплексе с олигонуклеотидом гидродинамический диаметр наночастиц уменьшался до 88-320 нм в зависимости от гидрофобной аминокислоты в составе сополимера. Изучена возможность высвобождения олигонуклеотидного дуплекса из полимерного комплекса в присутствии конкурентного полианиона (гепарин), взятого в различных концентрациях. Показано, что эти же сополимеры были способны эффективно инкапсулировать гидрофобный цитостатик паклитаксел, что также сопровождалось компактизацией наночастиц, однако не такой значительной, как при загрузке олигонуклеотидного дуплекса.
+На основе амфифильных сополимеров, синтезированных путем модификации поли(глутаминовой кислоты) различными заместителями, а именно гистидином, глюкозамином, аргинином/орнитином и гидрофобной аминокислотой (изолейцин/фенилаланин/триптофан) были получены системы доставки паклитаксела с гидродинамическим диаметром в пределах 200-270 нм. Для всех протестированных систем значения IC50 на клетках аденокарциномы легкого человека (А549) лежали пределах 1.5-7.5 нг/мл, что было близко к активности свободного цитостатика (2 нг/мл). Данный результат в 3-5 раз превосходит результаты, полученные на этапе 2021 года для систем доставки паклитаксела, полученных на основе блок-сополимера поли(винилсукцинамовой кислоты) и поли(О-холестрилметакрилата), и блок-сополимера поли(2-деоксиметакриламидо-D-глюкозы) и поли(О-холестрилметакрилата). 
+На основе блок-сополимеров поли(этиленгликоля) с поли(молочной кислотой)/поли(-капролактоном) (ПЭГ-б-ПМК/ПКЛ), синтезированных на этапе 2021 года были оптимизированы условия получения инкапсулированных форм диоксадэта с увеличенной загрузкой цитостатика. Полученные наноформуляции оказались стабильными в условиях хранения в воде в течение как минимум 3-х недель. На данном этапе было проведено изучение высвобождения диоксадэта в модельных физиологических условиях. Высвобождение характеризовалось наличием стадии взрывного высвобождения и последующей стадии медленного высвобождения. Как и ожидалось, высвобождение лекарства из наночастиц ПЭГ-б-ПМК протекало интенсивнее. Анализ профилей высвобождения с помощью набора математических моделей показал, что как диффузия, так и релаксация цепей полимера являются важными факторами, влияющими на процесс высвобождения диоксадэта из наночастиц на основе ПЭГ-б-ПМК/ПКЛ. Полученные наночастицы не обладали цитостатическим действием как для нормальных (CHO-K1), так и для раковых клеток (A2780 и SK-OV-3). При этом обе инкапсулированные формы диоксадэта демонстрировали эффективную гибель раковых клеток. Изучение клеточного цикла нормальных и раковых клеток показало, что свободный диоксадэт был токсичен в одинаковой степени как для раковых, так и для нормальных клеток. В то же время, обе наноформуляции диоксадэта на основе ПЭГ-б-ПМК и ПЭГ-б-ПКЛ были менее токсичны для нормальных клеток по сравнению со свободным цитостатиком, и более токсичны для раковых клеток.</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (4)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Синицына Екатерина Сергеевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат химических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Левит Мария Леонидовна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат химических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Коржикова-Влах Евгения Георгиевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат химических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Коржиков-Влах Виктор Александрович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат химических наук</span></li></ul>
+              
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

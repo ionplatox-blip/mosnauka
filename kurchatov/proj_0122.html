@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | НИЦ "Курчатовский институт"</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-kurchatov.html">НИЦ &quot;Курчатовский институт&quot;</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">ФУНКЦИОНАЛЬНАЯ ВЕРИФИКАЦИЯ, МАШИННОЕ ОБУЧЕНИЕ, ГРАДИЕНТНЫЙ БУСТИНГ</span> <span class="tag">ГЕНЕРАТОР СЛУЧАЙНЫХ ЧИСЕЛ, МНОГОЯДЕРНЫЙ МИКРОПРОЦЕССОР, ПАРАЛЛЕЛЬНОЕ ПРОГРАММИРОВАНИЕ</span> <span class="tag">ТЕХНОЛОГИЯ OPENCL, ОПЕРАЦИИ БЫСТРОГО ПРЕОБРАЗОВАНИЯ ФУРЬЕ, ТЕХНОЛОГИЯ ПЕРЕВЕРНУТОГО КРИСТАЛЛА, МНОГОКРИСТАЛЬНЫЙ МОДУЛЬ</span> <span class="tag">ТОПОЛОГИЧЕСКОЕ ПРОЕКТИРОВАНИЕ, ОПТИМИЗАЦИЯ, СБОЕУСТОЙЧИВОСТЬ</span> <span class="tag">ТРОЙНОЕ МОДУЛЬНОЕ РЕЗЕРВИРОВАНИЕ, СИСТЕМА НА КРИСТАЛЛЕ</span> <span class="tag">АЛГЕБРА ГАЛУА, СИСТЕМА ОСТАТОЧНЫХ КЛАССОВ</span> <span class="tag">ГРАФИЧЕСКАЯ СИСТЕМА, ВСТРАИВАЕМЫЕ СИСТЕМЫ</span> <span class="tag">КРЕМНИЕВЫЙ GAA НАНОТРАНЗИСТОР</span> <span class="tag">ФЛУКТУАЦИЯ	ЛЕГИРУЮЩЕЙ	ПРИМЕСИ, ПЕРЕОТРАЖЕННЫЙ РАДИОСИГНАЛ, ПОДСТИЛАЮЩАЯ ПОВЕРХНОСТЬ</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Теория и моделирование вычислительных сред, систем, комплексов и сетей</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Системное программное обеспечение</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Архитектура, структура и общие принципы функционирования электронных вычислительных машин (ЭВМ) и ВК</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Микропроцессоры</span></div>
+          <h1 style="font-size:1.5rem">Методы разработки аппаратно-программных платформ на основе защищенных и устойчивых к сбоям систем на кристалле и сопроцессоров искусственного интеллекта и обработки сигналов</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">93,326 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225020307597-8</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2024-01-01 — 2024-12-31</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№1</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">24</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">НИЦ &quot;Курчатовский институт&quot;</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>ФЕДЕРАЛЬНОЕ ГОСУДАРСТВЕННОЕ БЮДЖЕТНОЕ УЧРЕЖДЕНИЕ &quot;НАЦИОНАЛЬНЫЙ ИССЛЕДОВАТЕЛЬСКИЙ ЦЕНТР &quot;КУРЧАТОВСКИЙ ИНСТИТУТ&quot;</div>
+                </div><div class="metric-box" style="text-align:left">
+                  <div class="label">Исполнитель</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">НИЦ &quot;КУРЧАТОВСКИЙ ИНСТИТУТ&quot;-НИИСИ</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>Раздел 1 Разработка архитектуры, системных решений и методов для создания микропроцессорных ядер и коммуникационных средств семейства систем на кристалле двойного назначения
+Объектом исследования являются методы проектирования архитектуры и элементов микропроцессорных ядер и коммуникационных средств семейства систем на кристалле двойного назначения.
+Цель работы – развитие методов проектирования архитектуры и элементов высокопроизводительных микропроцессоров и микропроцессорных систем на их основе, аппаратно-программных платформ, сложных технических систем для создания безопасной информационной инфраструктуры. Для достижения этой цели выполнен ряд исследований:
+-	обоснована применимость методов машинного обучения для функциональной верификации микропроцессоров и СФ-блоков на модульном уровне, реализована модель сбора кодового покрытия для обучения нейронной сети с использованием UVM, предложена модель обучения, позволяющая быстрее достигать требуемого уровня кодового покрытия;
+-	проведен анализ популярных генераторов случайных чисел и предложен способ повышения равномерности распределения для генераторов случайных чисел, основанный на фильтрации выборки;
+-	представлен обзор способов синхронизации параллельных программ, исполняемых на разных вычислительных ядрах с доступом к общей памяти, описаны способы взаимодействия программ;
+-	рассмотрены варианты разработки эффективных параллельных программ в среде OpenCL, позволяющие ускорить операции быстрого преобразования Фурье для многомерных массивов комплексных векторов;
+-	разработана методика проектирования органического корпуса с двумя кристаллами, соединенных между собой высокоскоростными интерфейсами.
+Внедрение результатов проведенных исследований позволит уменьшить время проектирования СФ-блоков микропроцессора, в частности его вычислительных, расширить
+ функционал	и	область	применения	доверенных	высокопроизводительных	СБИС микропроцессоров для объектов критической информационной инфраструктуры.
+Раздел 2 Архитектурные	и	схемотехнические		методы	снижения энергопотребления	и	повышения	 сбоеустойчивости	микропроцессоров	и коммуникационных контроллеров высокопроизводительных 
+Объектом исследования являлись методы снижения энергопотребления, повышения
+энергоэффективности и повышения сбоеустойчивости цифровых суб-100нм СБИС и их элементов.
+Цель работы – развитие теории и методов проектирования сбоеустойчивых и энергоэффективных элементов СБИС микропроцессоров по суб-100нм проектным нормам. Для достижения этой цели выполнен ряд исследований:
+-	проведен сравнительный анализ времени, затрачиваемого на проектирование цифровых СФ-блоков с применением автоматизированного подбора входных параметров в САПР и без него;
+-	представлен модифицированный способ троирования с разнесением чувствительных областей цифровой синтезируемой логики, который позволяет добиться лучших показателей по занимаемой площади;
+-	проведен анализ алгоритмов быстродействующего умножения и деления для арифметики полей Галуа на примере вычислений эллиптических кривых с возможностью аппаратной интерпретации оптимизированного алгоритма с использованием ПЛИС.
+Результаты проведенных исследований применимы в маршрутах проектирования:
+-	энергоэффективных СБИС микропроцессоров для снижения времени проектирования;
+-	сбоеустойчивых систем на кристалле (в том числе апробированы для тестового кристалла по технологии с проектными нормами 28 нм) для повышения сбоеустойчивости;
+-	энергоэффективных узлов микропроцессоров, выполняющих вычисления в системе остаточных классов.
+Раздел 3 Математическое обеспечение и инструментальные средства для моделирования, проектирования и разработки элементов сложных технических систем, программных комплексов и телекоммуникационных сетей в различных проблемно-ориентированных областях
+Объектом исследования являлись моделирование, проектирование и разработка элементов сложных технических систем, программных комплексов и телекоммуникационных сетей в различных проблемно-ориентированных областях.
+Цель работы – разработка методов и технологий обработки графической информации в операционных системах, разработка математической модели тонких кремниевых полевых GAA нанотранзисторов. Для достижения этой цели выполнен ряд исследований:
+-	представлена архитектура эмулятора графического ускорителя, предназначенного для диагностики и последующего исправления сложно выявляемых ошибок в компонентах графической подсистемы, что позволило обнаружить ошибки, которые на реальной аппаратуре имели характер «плавающих» и были тяжело воспроизводимы;
+-	разработана оригинальная квазианалитическая ресурсосберегающая модель кремниевого полевого GAA нанотранзистора с переменной геометрией и со стековым SiO2/HfO2 подзатворным диэлектриком;
+-	создана математическая модель, позволяющая оценить вероятность обнаружения объектов за счет регистрации переотраженного от подстилающей поверхности сигнала, новизна которой работы заключается в возможности применения созданной модели при разработке космических радиолокационных систем.
+Результаты проведенных исследований позволят ускорить разработку ПО для графической подсистемы в операционных системах реального времени и общего назначения и повысить ее качество, а также повысить качество разрабатываемых космических радиолокационных систем.</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (70)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Новожилов Евгений Авенирович</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Генов Анатолий Анатольевич</strong> <span style="color:#71717a;font-size:0.8rem">Доктор технических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Баженов Павел Сергеевич</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Стамболян Рафаэль Рубенович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат технических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Серебряков Сергей Викторович</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Трубицын Дмитрий Александрович</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Чибисов Петр Александрович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат технических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Девликамов Ренат Рашитович</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Тарасов Игорь Владимирович</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Токарев Игорь Владимирович</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Зубковская Наталья Владимировна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат технических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Киселева Анна Александровна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Салахутдинов Виктор Камильевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат технических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Азаров Виталий Васильевич</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Антонов Андрей Александрович</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li></ul>
+              <p style='color:#52525b;font-size:0.8rem;margin-top:0.5rem'>...и ещё 55</p>
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

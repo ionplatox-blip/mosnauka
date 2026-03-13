@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | МГУ им. М.В. Ломоносова</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-mgu.html">МГУ им. М.В. Ломоносова</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">молекулярное моделирование</span> <span class="tag">белковая биоинженерия</span> <span class="tag">метаболическая биоинженерия</span> <span class="tag">молекулярная биология</span> <span class="tag">симбиология</span> <span class="tag">клеточная биоинженерия</span> <span class="tag">структурная биология</span> <span class="tag">микробиологическая биоинженерия</span> <span class="tag">тканевая биоинженерия</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Культивирование растительных клеток и тканей</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Материалы для биомедицинского применения</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Молекулярная биофизика</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Генетическая инженерия</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Макромолекулярные ассоциации и проблемы узнавания в молекулярной биологии</span></div>
+          <h1 style="font-size:1.5rem">Физико-химические основы молекулярной биоинженерии</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">60,682 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225012702774-9</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2024-01-01 — 2024-12-31</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№4</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">11</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">Правительство России</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>Правительство Российской Федерации</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>Объект исследования
+Объектами исследования являются микроорганизмы, микроводоросли, животные, ткани, клетки, биомолекулы, биополимеры, и нанобъекты – нуклеосомы, хроматосомы, элонгационные комплексы, жидкие белок-белковые фазы  и пр.
+Цель выполнения НИР
+Цель выполнения работы – заключается в разработке методов исследования и получении новых знаний в областях молекулярной, клеточной, тканевой, микробиологической, метаболической, митохондриальной и компьютерной  биоинженерии.
+Методы проведения работы 
+При реализации работ на кафедре биоинженерии был использован междисциплинарный подход, обширный арсенал молекулярно-биологических, биохимических, биофизических техник, потенциал центра превосходства в области геномных и постгеномных технологий МГУ и мощности суперкомпьютеров, также реализован нейросетевой алгоритм для анализа белок-белковых взаимодействий, выполнены многочисленные расчёты, демонстрирующие превосходство разрабатываемого подхода над существующими аналогами. 
+Результаты работы. Основные характеристики
+Группой биомедицинских полимеров (рук. – д.б.н., в.н.с. А.П. Бонарцев) было проведено исследование воздействия внешнего магнитного поля на регенерацию костной ткани с использованием магнитоактивных пьезоэлектрических скаффолдов 3-х основных типов, полученных методом электроспиннинга: на основе полученного нами методом контролируемого биосинтеза поли-3-оксибутирата (ПОБ), композита ПОБ с наночастицами магнетита (ПОБ/М) и композита ПОБ с комплексом оксида графена с наночастицами магнетита (ПОБ/М-ОГ). Полученные результаты могут указывать на магнитомеханическую и магнитоэлектрическую стимуляцию образования и восстановления костной ткани.  Разработаны композиции эндолизинов в гидрогелях на основе бактериальных альгинатов в дальнейшем для разработки противомикробных раневых покрытий для лечения ран инфицированных антибиотикорезистентными бактериями.  Группой микроскопии высокого разрешения (рук. – к.ф.м.н, в.н.с. Д.В. Багров) созданы оригинальные проточные системы, предназначенные для пропускания растворов через пористые полимерные мембраны. С помощью этих проточных систем экспериментально показана возможность усиления специфической и неспецифической адсорбции белков на мембраны.  Также разработана программа, создающая трехмерную модель волокон, которая будет использована для глубокого анализа структуры электроформованных мембран и влияния структуры на макроскопические характеристики, например пористость и смачиваемость.  Группой интегративной биологии (рук. - д.ф.м.н, доц. А.К. Шайтан) и группой молекулярного моделирования (рук. - д.ф.м.н, проф. К.В. Шайтан) проведено обновление и модернизация базы данных последовательностей гистонов HistoneDB (https://histdb.intbio.org) и база структур нуклеосом и их комплексов NucleosomeDB (https://nucldb.intbio.org).  Разработана классификация белков хроматина человека, проведен анализ физико-химических свойств белков хроматина человека, разработан ресурс с информацией о ядерной сублокализации и функциях белков хроматина человека SimChrom (https://simchrom.intbio.org/).  Выполнено построение моделей комплексов канала Kv1.2 с пептидами HgTx, Ce1, Ce4 и Ce5, расчёт молекулярно-динамический траекторий этих комплексов и оценка аффинности взаимодействия пептидов с каналом с помощью ряда веб-сервисов. Группой биофотоники (рук. - д.б.н. проф. А.В. Феофанов) и группой регуляции транскрипции и репликации (рук. - д.б.н. в.н.с. В.М. Студитский)  определено влияние ряда ДНК-тропных полифенолов (генистеина, ресвератрола, кверцетина, EGCG, кемпферола, апигенина, физетина) и кураксина CBL0137 на структуру нуклеосом и хроматосом; а также установлено действие полифенолов и кураксинов на функционирование хроматин-модулирующих белковых факторов PARP1 и FACT.  С целью изучения молекулярного механизма распознавания этой последовательности белком HMO1 были проведены исследования взаимодействия HMO1 с фрагментами ДНК длиной 24 п.н., содержащими либо рандомизированную, либо IFHL-нуклеотидную последовательность методами спектроскопии кругового дихроизма, флуоресцентной спектроскопии и молекулярного моделирования.  Группой белковой биоинженерии (рук. - д.б.н. проф. Д.А. Долгих) сконструирован и получен бифункциональный гибридный белок на основе противоопухолевого цитокина TRAIL-DR5-B, направленный на активацию рецептора DR5 и блокирование сигнальных путей FGFR1. Разработана система продукции изотопно-меченых вариантов гемсодержащих белков нейроглобина и цитохрома с для исследования структуры предполагаемого комплекса нейроглобин/цитохром с методом ЯМР. Получены два мутантных варианта пептидного блокатора MgTx, изучено их взаимодействие с каналом hKv1.2, определена роль функционально важных областей MgTx в высокоаффинном взаимодействии с hKv1.2. Группой симбиологии и клеточной инженерии (рук. – д.б.н., проф. Е.С. Лобакова) и группой фотофизиологии (рук. - д.б.н. проф. А.Е. Соловченко) проведен метагеномный анализ и показано изменение таксономического состава и функционального профиля альго-бактериального сообщества при моделировании попадания в стоки лекарств – антибиотиков широкого спектра действия (на примере цефтриаксона) и нестероидных противовоспалительных средств (на примере диклофенака). Продемонстрировано одновременное воздействие цефтриаксона и избытка биогенных элементов в сточных вводах приводит к максимальному обогащению антибиотикоустойчивых организмов, а также замене исходно присутствующих в сообществе цианобактерий на эукариотические микроводоросли. Были оценены перспективы применения ДНК-метабаркодинга для оценки влияния биопрепаратов на почвенный микробиом агроэкосистем. Группой структурной биотехнологии (рук. д.б.н., проф. О.С. Соколова) проведено исследование структурных особенностей организации внутриклеточных компартментов, образующихся в процессе инфекции гигантскими бактериофагами. Разработаны методики исследования внеклеточных везикул, прикрепленных к эукариотическим клеткам. Получена структура и инактивированных вирионов клещевого энцефалита и проведен анализ конформационной гетерогенности их оболочек. Были исследованы физиологические проявления миссенс-мутаций в ионных каналах у пациентов с удлинением интервала QT. Группой конфокальной микроскопии (и.о. рук. к.б.н, в.н.с. А.Ю. Архипова) полученные микрогелевые частицы на основе рекомбинантного спидроина rS1/9 использовали в качестве матрицы для нейрональной дифференцировки индуцированных плюрипотентных стволовых клеток человека. Нейроны, представляли собой гетерогенную популяцию, содержащую дофаминовых нейронов с развитыми синапсами. Клетки проявляли спонтанную активность и экспрессировали потенциал-чувствительные каналы, что подтверждило  функциональную зрелость полученных нейронов и успешность использования микрогелевые частицы на основе рекомбинантного спидроина rS1/9 для таких задач.
+Области применения 
+Областями применения полученных результатов или созданной на их основе инновационной продукции являются медицина, здравоохранение, профилактические программы. 
+Экономическая эффективность или значимость работы. Прогнозные предположения о развитии объекта исследования
+Выполнение НИР создает необходимую научную и  технологическую основу для получения биомолекул, полимеров, нанобъектов, тканей, представляющих интерес для медицины и биотехнологии</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (32)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Зайцева Анна Андреевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Шиловский Григорий Александрович</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Багров Дмитрий Владимирович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Селях Ирина Олеговна</strong> <span style="color:#71717a;font-size:0.8rem">Доктор биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Щербаков Павел Николаевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Армеев Григорий Алексеевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Студитский Василий Михайлович</strong> <span style="color:#71717a;font-size:0.8rem">Доктор биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Петушкова Юлия Алексеевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Васильева Светлана Геннадьевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Баулина Ольга Ивановна</strong> <span style="color:#71717a;font-size:0.8rem">Доктор биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Моисеенко Андрей Владимирович</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Коровина Анна Николаевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Архипова Анастасия Юрьевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Станишнева-Коновалова Татьяна Борисовна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Семенова Лариса Ратмировна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li></ul>
+              <p style='color:#52525b;font-size:0.8rem;margin-top:0.5rem'>...и ещё 17</p>
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

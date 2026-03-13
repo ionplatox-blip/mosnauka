@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | МГТУ им. Баумана</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-bauman.html">МГТУ им. Баумана</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">ПОЛИМЕРНЫЕ СЕГНЕТОЭЛЕКТРИКИ</span> <span class="tag">ПЬЕЗОЭЛЕКТРИКИ</span> <span class="tag">ПВДФ</span> <span class="tag">ТЕХНОЛОГИЯ ПОЛУЧЕНИЯ ПЬЕЗОЭЛЕКТРИЧЕСКИХ ПЛЕНОК</span> <span class="tag">ПОЛЯРИЗАЦИЯ</span> <span class="tag">МИКРОТЕКСТУРИРОВАНИЕ</span> <span class="tag">ЛАЗЕРНАЯ МИКРООБРАБОТКА</span> <span class="tag">КСЕРОГЕЛЬ</span> <span class="tag">НАНОЧАСТИЦА</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Акустоэлектроника и акустооптика</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Воздействие лазерного излучения на вещество</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Электроакустические приборы</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Сегнетоэлектрики и пьезоэлектрики</span></div>
+          <h1 style="font-size:1.5rem">Исследование структуры и процессов в электроактивных полимерных материалах с поверхностным и объемным микротекстурированием и проектирование устройств на их основе</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">25,148 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225013004765-9</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2024-01-01 — 2024-12-31</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№1</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">5</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">МИНОБРНАУКИ РОССИИ</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>МИНИСТЕРСТВО НАУКИ И ВЫСШЕГО ОБРАЗОВАНИЯ РОССИЙСКОЙ ФЕДЕРАЦИИ</div>
+                </div><div class="metric-box" style="text-align:left">
+                  <div class="label">Исполнитель</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">МГТУ ИМ. Н.Э. БАУМАНА</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>Проект является междисциплинарным научным исследованием в области лазерной физики, химии полимеров и материаловедения. Целью проекта является развитие взаимосвязанных направлений по разработке новых устройств на основе электроактивных полимерных материалов и проведение фундаментальных исследований структуры электро-активных материалов с использованием современных времяразрешенных методов диагностики состояния вещества. Объединяющим фактором направлений является использование возможностей фотоники и лазерной физики для формирования структурированных электроактивных материалов и получения новых данных о процессах, происходящих в них при воздействии механических и излучательных полей. 
+Первый этап проекта посвящен разработке технологии создания электроактивных полимерных материалов на основе ПВДФ и его сополимеров в виде пленок, высокопористых структур и композитов; методов контактной и плазменной поляризации сополимеров, лазерной микрообработки и разработки устройств на их основе, в частности создания многослойных сегнетоэлектрических преобразователей. 
+По результатам работ первого этапа проекта проведён аналитический обзор современной научно-технической, нормативной и методической литературы в области биомедицинских применений полимерных электроактивных материалов на основе ПВДФ и его сополимеров, показывающий актуальность настоящей работы.
+Разработаны методики лазерной микрообработки поверхности полимера импульсным лазерным излучением наносекундной длительности УФ диапазона и фемтосекундной длительности ИК диапазона. Сконструирован стенд для прецизионного микротекстурирования. Полученные в ходе работ микроструктуры в виде прорезей, сформированные лазерными импульсами наносекундной длительности УФ диапазона, могут использоваться при создании пьезо- и пиро-датчиков. За счет точности и локального воздействия лазерная резка полимеров может стать эффективным способом для создания сложных планарных структур.
+Разработана технология получения сегнетоэлектрических пленок на основе сополимера винилиденфторида с тетрафторэтиленом (ВДФ/ТФЭ), включающая в себя этапы одноосной вытяжки и последующей контактной поляризации пленочного материала. Исследовано влияния условий одноосной вытяжки на электрофизические свойства полимера. Определены режимы одноосной вытяжки (температура, кратность), позволяющие получать материалы с наибольшими значениями пьезокоэффициентов. Отработана технология контактной поляризации сополимера ВДФ/ТФЭ, при которой значения пьезокоэффициентов поляризованной пленки не уступают зарубежным аналогам (25 пКл/Н). Сополимер ВДФ/ТФЭ состава (94/6) является доступной альтернативой не выпускаемым в РФ гомополимеру ПВДФ и сополимеру ВДФ с трифторэтиленом. При этом изложенные на примере ВДФ/ТФЭ закономерности могут применены и к другим сополимерам ВДФ.
+Разработана технология получения высокопористых структур на основе ПВДФ и его сополимеров из ксерогеля. Проведены исследования влияния условий получения материала на его структурные и сегнетоэлектрические свойства. Высокопористые структуры, полученные из ксерогеля, благодаря развитой поверхности могут найти применения в биомедицине в качестве каркасов для тканевой инженерии. 
+Получены сегнетоактивные композиты на основе пленок гомополимера ПВДФ, допированных наночастицами дисульфида молибдена. Определена оптимальная концентрация наночастиц (1%), при которой улучшаются пьезоэлектрические свойства материала. Дальнейшие исследования позволят создавать композитные материалы с улучшенными характеристиками. 
+Отработана технология поляризации пленок ПВДФ в разрядах различного типа (тлеющем, барьерном, коронном) в неполимеризующихся газах. Выявлено, что плазменная обработка пленок приводит к модифицированию поверхностного слоя полимера и увеличению её поверхностной энергии, что положительно влияет на адгезию наносимых металлических пленок.
+Разработана лабораторная методика получения пленочных электродов на основе одностенных углеродных нанотрубок для изготовления многослойных пьезопреобразователей. Удельная проводимость электродов составляет 6,1*10-2 С/см при концентрации ОУНТ 2,5% по сухому остатку клеевой композиции. Изготовлены и исследованы образцы трехслойных преобразователей с параллельным и последовательным соединением пленочных элементов.</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (27)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Пасова Юлия Сергеевна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Коновалова Инна Борисовна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат химических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Кудрина Наталья Сергеевна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Башков Валерий Михайлович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат технических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Иванова Анастасия Александровна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Шомирзоев Амир Хоркашевич</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Сметанин Илья Алексеевич</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Киркин Владимир Сергеевич</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Бурьянская Евгения Львовна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Петрова Туяра Валерьевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат технических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Кошевая Екатерина Дмитриевна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Кондрашов Станислав Владимирович</strong> <span style="color:#71717a;font-size:0.8rem">Доктор технических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Деримедведь Дарья Константиновна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Кочервинский Валентин Валентинович</strong> <span style="color:#71717a;font-size:0.8rem">Доктор физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Макеев Мстислав Олегович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат технических наук</span></li></ul>
+              <p style='color:#52525b;font-size:0.8rem;margin-top:0.5rem'>...и ещё 12</p>
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

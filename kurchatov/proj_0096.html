@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | НИЦ "Курчатовский институт"</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-kurchatov.html">НИЦ &quot;Курчатовский институт&quot;</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">ДРОЗОФИЛА</span> <span class="tag">АКТИВАТОР ТРАНСКРИПЦИИ</span> <span class="tag">HP1</span> <span class="tag">ЯДЕРНАЯ ПОРА</span> <span class="tag">ЯДЕРНАЯ ЛАМИНА</span> <span class="tag">ЯДЕРНАЯ ОБОЛОЧКА</span> <span class="tag">ФАКУЛЬТАТИВНЫЙ ГЕТЕРОХРОМАТИН</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Молекулярная биология гена</span></div>
+          <h1 style="font-size:1.5rem">Выяснение механизмов, ответственных за формирование факультативного гетерохроматина (промежуточный, этап 2024 г.)</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">7,000 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225040914660-1</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2023-12-16 — 2024-12-15</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№2</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">1</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">РНФ</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>Российский научный фонд</div>
+                </div><div class="metric-box" style="text-align:left">
+                  <div class="label">Исполнитель</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">НИЦ &quot;Курчатовский институт&quot;</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>Объектом исследования была плодовая муха Drosophila melanogaster.
+Цель работы – выяснение механизмов, ответственных за формирование факультативного гетерохроматина.
+Методология работы – генетические скрещивания, DamID, биоинформатический анализ данных.
+Ранее мы показали, что в нейронах дрозофилы ламина-ассоциированные домены хромосом (ЛАДы) обогащены связыванием HP1a, а частота встречаемости мобильных элементов (МЭ) в ЛАДах выше, чем в меж-ЛАДах. Последнее наблюдение указывало на возможное участие МЭ в привлечении HP1a в нейрональные ЛАДы. Поэтому в первой части работы мы проверяли, нарушается ли привлечение гетерохроматинового белка HP1a в нейрональные ЛАДы при деплеции основного компонента ядерной ламины - ламина Dm0, а также при мутации по ключевому компоненту эндо-siРНК пути Ago2, приводящей к дерепрессии МЭ в мозге дрозофилы. С этой целью методом DamID мы построили профили HP1a в мозге личинок на фоне этих воздействий. Биоинформатический анализ полученных профилей показал, что деплеция ламина Dm0 в нейронах приводит не к ослаблению, как мы ожидали, а наоборот, к усилению связывания HP1a с МЭ. Кроме того выяснилось, что при деплеции ламина происходит усиление связывания HP1a не только с МЭ, но и с ЛАДами, и с перицентромерным гетерохроматином, насыщенным повторами и МЭ.
+Другое важное заключение, которое мы сделали в ходе выполнения этой части проекта, состоит в обнаружении резкого ослабления связывания белка-репрессора HP1a с МЭ на фоне мутации в гене, кодирующем Ago2. Отметим, что это заключение носит предварительный характер, поскольку резкое снижение HP1a на МЭ мы наблюдали только в одной повторности данного эксперимента. Наши результаты и результаты (Lee et al., 2018) указывают на участие Ago2 в подавлении МЭ в нейронах путем привлечения HP1a к хроматину МЭ. Следует подчеркнуть, что транскрипционный механизм репрессии МЭ в соматических клетках негонадной природы ранее был неизвестен у дрозофилы.
+Во второй части работы мы проверяли предположение, согласно которому связывание активатора транскрипции с районом факультативного гетерохроматина в нейронах дрозофилы приводит к ослаблению контактов этого участка хроматина с ядерной ламиной. С помощью количественного ПЦР-анализа геномной ДНК, выделенной из мозга личинок, в клетках которого проходило Dam- и Dam-Lamin-метилирование, мы получили предварительное указание на то, что при связывании активатора GAL4 с UAS-элементом, интегрированным в один из нейрональных ЛАДов, происходит локальная утрата связи этого сайта с ядерной ламиной. Таким образом, механизм, при котором активированные локусы открепляются от ядерной оболочки, вероятно действует и в неделящихся клетках дрозофилы, таких как нейроны.
+В третьей части работы мы проверяли предположение о сиквенс-специфичном распознавании участков факультативного гетерохроматина, прикрепленных к ядерным порам через нуклеопорин Elys. Одна из задач этой части проекта состояла в определении геномных сайтов связывания Elys в нейронах дрозофилы. Сопоставление этих сайтов с определенными нами сайтами Elys в поздних эмбрионах дрозофилы (Doronin et al., 2024) позволило бы оценить степень вариабельности сайтов Elys в разных типах клеток. При этом предполагалось, что низкий уровень вариабельности будет свидетельствовать о преимущественно сиквенс-специфичном распознавании Elys своих геномных мишеней. После перепробования нескольких разных конструкций для проведения DamID с Elys, в конце данного отчетного периода нам наконец удалось подобрать подход на основе TaDa-вектора (Southall et al., 2013), который, как мы надеемся, позволит получить адекватный профиль связывания Elys с геномом в нейронах дрозофилы.</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (4)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Иванникова Анна Ярославна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Шевелев Юрий Ясенович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Оленкина Оксана Михайловна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Симонов Руслан Александрович</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li></ul>
+              
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | ИБХ РАН</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-ibh.html">ИБХ РАН</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">ПОТЕНЦИАЛ-ЗАВИСИМЫЕ КАЛИЕВЫЕ КАНАЛЫ KV1;</span> <span class="tag">ПЕПТИДНЫЕ БЛОКАТОРЫ</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Молекулярная биофизика</span></div>
+          <h1 style="font-size:1.5rem">Гомо- и гетеро- тетрамерные потенциал-зависимые калиевые каналы Kv1 в клетках эукариот и их взаимодействия с поровыми блокаторами.</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">7,000 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225031113075-0</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2024-01-01 — 2024-12-31</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№3</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">5</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">РНФ</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>Российский научный фонд</div>
+                </div><div class="metric-box" style="text-align:left">
+                  <div class="label">Исполнитель</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">ИБХ РАН</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>В проекте предложена и успешно апробирована концепция создания аналитических клеточных систем (АКС) для изучения гомо- и гетеро- тетрамерных Kv1-каналов, их флуоресцентных лигандов и пептидных блокаторов природного и искусственного происхождения. Исследования с использованием этих АКС могут проводиться методом конфокальной флуоресцентной микроскопии или электрофизиологическими методами. Основа АКС - клетки, эффективно экспрессирующие флуоресцирующие функционально активные Kv1-каналы. Высокоаффинный флуоресцирующий лиганд является вторым компонентом, необходимым для использования АКС в комбинации с методом конфокальной микроскопии. Разработаны методики анализа связывания флуоресцентных лигандов с Kv1-каналами на мембране клеток и расчета констант диссоциации (Кd) комплексов. На основе анализа конкурентного связывания меченого и немеченого лигандов разработаны методики определения аффинности немеченых блокаторов к Kv1-каналам на мембране клеток. Обеспечены высокая чувствительность и специфичность анализа. АКС реализованы в формате «смешать-и-измерить», что упрощает их применение и повышает надежность. Среди созданных генетических конструкций, кодирующих α-субъединицу каналов Кv1.1, Kv1.2 и Kv1.3, меченных флуоресцентным белком mKate2, отобраны те, которые обеспечивают высокую экспрессию канала в мембране клеток. Показано сохранение этими каналами активности, ключевых характеристик и способности связывать блокаторы. По результатам исследований для использования в составе АКС отобраны: хонготоксин 1 (HgTx1) меченый по N-концу флуорофором Atto488 и HgTx1 слитый по С-концу с флуоресцирующим белком GFP (HgTx1-GFP). Эти лиганды связываются с каналами Kv1.1, Kv1.2 и Kv1.3 при субнаномолярных концентрациях, блокируя токи ионов калия. Для расширения возможностей функциональных исследований Kv1-каналов разработан лиганд на основе фотоконвертируемого флуоресцентного белка PS-CFP2 и пептидного блокатора агитоксина 2 (AgTx2), обладающий высокой аффинностью к сайтам связывания каналов Kv1.1, Kv1.3 и Kv1.6. Установлено, что HgTx1 слитый с белком RFP является высокоаффинным дальне-красным флуоресцирующим лигандом каналов Kv1.1 и Kv1.2 и может представлять большой интерес для in vivo и ex vivo исследований этих каналов. Созданы 3 АКС для изучения взаимодействия блокаторов с каналами Kv1.1, Kv1.2 и Kv1.3. Подтверждена их применимость для распознавания поровых блокаторов этих каналов среди пептидов, а также для измерения Kd комплексов. Установлено, что состояние канала (открытый/закрытый) не влияет на способность пептидных блокаторов связываться с каналами Kv1.1, Kv1.2 и Кv1.3. АКС были применены для определения аффинности пептидов Ce1, Ce4 и Ce5 из яда скорпиона C. elegans, полученных в рекомбинантной форме, к каналам Kv1.1, Kv1.2 и Kv1.3. Обнаружено, что пептиды Ce1 и Ce4 входят в группу самых селективных из известных блокаторов канала Kv1.2. Ce1 и Cе4 могут найти применение в исследованиях Kv1.2-опосредованных токов в нейронах, а также для конструирования селективных к Kv1.2 флуоресцентных лигандов. С учетом высокой гомологии и больших отличий в активности пептидов HgTx1 и Ce5 были сконструированы и изучены мутанты пептида Ce5, содержащие вставки участков или отдельных аминокислот из HgTx1. Полученные данные позволили определить молекулярные детерминанты высокоаффинного взаимодействия HgTx1 с каналами Kv1.1 и Kv1.3. Сконструирован пептид c высокой аффинностью и повышенной селективностью к каналу Kv1.1. Полученный пептид может найти применения в задачах, требующих использования селективных лигандов канала Kv1.1. Изучение методом конфокальной FRET-микроскопии особенностей образования гетеро-каналов Kv1.1/Kv1.2 при со-экспрессии в клетках α-субъединиц Kv1.1 и Kv1.2, слитых с белками TagBFP и TagYFP, выявило образование на плазматической мембране и в цитоплазме как гетеро-каналов Kv1.1/Kv1.2, так и гомотетрамерных каналов Kv1.1 и Kv1.2. Это делает крайне сложным изучение свойств гетеро-каналов и диктует необходимость применения конкатемеров, например, Kv1.1-Kv1.2, формирующих в клетках исключительно гетеро-каналы Kv1.1/Kv1.2 со стехиометрией 2:2. Оптимизирована конструкция гетеро-каналов на основе конкатемеров Kv1.1-Kv1.2, слитых с mKate2. Установлено, что полипептидный линкер, объединяющий субъединицы в конкатемер, не влияет на клеточную локализацию, структуру сайта связывания пептидных блокаторов и скорость активации гетеро-каналов Kv1.1/Kv1.2. Последовательность субъединиц в конкатемерах не влияет на эти свойства гетеро-каналов. Охарактеризованы электрофизиологические свойства гетероканалов Kv1.1/Kv1.2. Установлено, что HgTx1-GFP является высокоаффинными блокатором гетеро-каналов Kv1.1/Kv1.2. На основе клеток, экспрессирующих в мембране гетеро-каналы, образованные конкатемерами mKate2-Kv1.1-Kv1.2, и лиганда HgTx1-GFP сформирована АКС для изучения пептидных блокаторов гетеро-каналов Kv1.1/Kv1.2. Установлено, что состояние гетероканала Kv1.1/Kv1.2 (открытый/закрытый) не влияет на связывание лиганда HgTx1-GFP, указывая на отсутствие структурных изменений в сайте связывания при открывании/закрывании канала. Измерены Kd комплексов гетеро-каналов Kv1.1/Kv1.2 с пептидными блокаторами HgTx1, AgTx2 и харибдотоксином (ChTx). Обнаружено, что HgTx1 и ChTx взаимодействуют с гетеро-каналом Kv1.1/Kv1.2 так же, как с наиболее аффинным партнером из гомотетрамерных каналов. В тех же условиях AgTx2 взаимодействует с гетеро-каналом намного лучше, чем с каждым из гомотетрамерных каналов. Это обосновывает поиск уникальных по свойствам лигандов гетеро-канала среди известных пептидных блокаторов Kv1-каналов. Полученные при решении задач проекта результаты расширяют возможности изучения активности пептидных блокаторов, обеспечивают развитие флуоресцентных скрининговых технологий, методов имиджинга каналов в клетках, а также могут способствовать развитию методов терапии аутоиммунных, неврологических и онкологических заболеваний с применением пептидных блокаторов калиевых каналов.</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (3)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Феофанов Алексей Валерьевич</strong> <span style="color:#71717a;font-size:0.8rem">Доктор биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Игнатова Анастасия Александровна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Некрасова Оксана Васильевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li></ul>
+              
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

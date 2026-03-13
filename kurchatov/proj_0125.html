@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | НИЦ "Курчатовский институт"</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-kurchatov.html">НИЦ &quot;Курчатовский институт&quot;</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">микросхема</span> <span class="tag">аналого-цифровые схемы</span> <span class="tag">радиация</span> <span class="tag">температура</span> <span class="tag">BJT/HBT</span> <span class="tag">JFET</span> <span class="tag">MOSFET</span> <span class="tag">SOI MOSFET</span> <span class="tag">TCAD</span> <span class="tag">SPICE</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Проектирование и конструирование радиоэлектронной аппаратуры</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Условия эксплуатации радиоэлектронной аппаратуры и защита от внешних воздействий</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Проектирование и конструирование приборов молекулярной электроники</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Проектирование и конструирование полупроводниковых приборов и приборов микроэлектроники</span></div>
+          <h1 style="font-size:1.5rem">Экспериментальное исследование и моделирование физических эффектов в компонентах аналого-цифровых БиКМОП интегральных микросхем, работающих в экстремальных условиях широкого диапазона температур и воздействия радиации космоса (заключительный, этап 2024 г.)</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">3,000 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225061016531-6</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2023-01-18 — 2024-12-31</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№1</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">7</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">РНФ</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>Российский научный фонд</div>
+                </div><div class="metric-box" style="text-align:left">
+                  <div class="label">Исполнитель</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">НИЦ &quot;Курчатовский институт&quot;</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>Описание выполненных работ и полученных научных результатов:
+1.	Наборы измерений статистических ВАХ и ВФХ, переходных и частотных характеристик активных и пассивных изготовленных по различным технологиям для гражданских с специальных применений в условиях температуры и радиации. Перечень элементов включает: транзисторы БТ, SiGe ГБТ, полевые JFET и со структурами МОПТ, МОП КНИ, МОП КНС, диоды и стабилитроны, диффузионные резисторы.
+2.	TCAD-RAD-THERM модели, встроенные в коммерческий симулятор SENTAURUS TCAD SYNOPSYS и верифицированные по экспериментальным данным, представленным различными отечественными полупроводниковыми фабриками.
+3.	Библиотеки SPICE-RAD-THERM модели биполярных и МОП-транзисторов, изготовленных на различных отечественных и зарубежных фабриках, методики экстракции параметров SPICE-моделей для приборов, работающих как в нормальном режиме эксплуатации, так и в экстремальных режимах при воздействии факторов радиации и температуры.
+4.	Базы данных, содержащие нормативные параметры эксплуатации и SPICE параметры компактных моделей БТ, SiGe ГБТ, МОПТ на объемном кремнии, МОПТ КНИ, МОПТ КНС, JFET транзисторов с различной конструкцией и технологией, диодов и стабилитронов и др. пассивных элементов для применения в схемотехнических САПР без учета и с учетом влияния ВВФ. Базы данных по SPICE параметрам элементной базы и структурам созданы для отечественных предприятий, выпускающих эти типы микросхем.
+5.	Примеры использования SPICE-RAD-THERM на конкретных отечественных предприятиях микросхем и типовых фрагментов цифровых, аналоговых и аналого-цифровых ИС/БИС, работающих в условиях воздействия ВВФ (см. приложения п 1.6 настоящего отчёта).
+6.	Примеры анализа конструктивно-технологических и схемотехнических решений, повышающие радиационную и/или температурную стойкость существующих схем или их разновидностей, находящихся в стадии разработки и освоения (см. приложение п 1.6).
+7.	Оценки радиационной и температурной стойкости конкретных КМОП и БиКМОП микросхем или фрагментов БИС, выполненные с помощью TCAD-RAD-THERM и SPICE-RAD-THERM моделей, позволившие компаниям-производителям этих микросхем оценить реально достигнутый уровень их надежности в жестких условиях эксплуатации (см. приложение п 1.6).
+8.	Отечественная подсистема моделирования радиационно- и температурно-стойких аналоговых и аналого-цифровых ИС/БИС, включающая библиотеки TCAD-RAD-THERM и SPICE-RAD-THERM модели и базы данных по параметрам компонентов, изготовленных на отечественных фабриках
+9.	Новые TCAD- и SPICE-модели, разработанные в качестве научно-технического задела и необходимые для моделирования элементов сверх БИС нового поколения:
+	КМОП цифровых СБИС с проектными нормами 28 нм;
+	КМОП аналого-цифровых БИС, изготовленных по UTSi-технологии на ультро-тонком кремнии 0,1 мкм, для радиотехнических и телекоммуникационных систем;
+	КМОП FinFET с непланарной 3D структурой, для суб-100 нм цифровых СБИС высокопроизводительных процессоров ЭВМ.
+10.	По результатам выполненного проекта в 2023 и 2024 гг.:
+	опубликовано 8 статей в реферируемых изданиях;
+	сделано 11 научных докладов: на отечественных конференциях 6, международных 5;
+	в рамках выполнения проекта получены: медаль и диплом XXVII Международного Салона изобретений и инновационных технологий за экспонат “Конструкторско-технологические решения и их цифровых двойников” (март 2024, Москва).</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (4)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Петросянц Константин Орестович</strong> <span style="color:#71717a;font-size:0.8rem">Доктор технических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Попов Дмитрий Александрович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат технических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Кожухов Максим Владимирович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат технических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Дюканов Павел Алексеевич</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li></ul>
+              
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

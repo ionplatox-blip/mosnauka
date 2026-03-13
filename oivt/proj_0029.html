@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | ОИВТ РАН</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-oivt.html">ОИВТ РАН</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">МОНИТОРИНГ</span> <span class="tag">ЭКОЛОГИЯ</span> <span class="tag">ФТОРИД ЛИТИЯ</span> <span class="tag">ДИОКСИД УГЛЕРОДА</span> <span class="tag">ЭНЕРГОЭФФЕКТИВНОСТЬ</span> <span class="tag">РАСПРЕДЕЛЕННАЯ ЭНЕРГЕТИКА</span> <span class="tag">АВТОНОМНОЕ ЭЛЕКТРОСНАБЖЕНИЕ</span> <span class="tag">УЛАВЛИВАНИЕ УГЛЕКИСЛОГО ГАЗА</span> <span class="tag">ГАЗОТУРБИННЫЙ ДВИГАТЕЛЬ</span> <span class="tag">МИКРОТУРБИННЫЕ УСТАНОВКИ</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Электроснабжение отраслей народного хозяйства</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Тепловые электростанции</span></div>
+          <h1 style="font-size:1.5rem">Разработка научно-технических основ создания технологического оборудования для экологически чистых автономных систем энергоснабжения, работающего на органическом топливе</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">23,888 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225021209879-1</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2024-01-01 — 2024-12-31</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№3</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">4</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">МИНОБРНАУКИ РОССИИ</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>МИНИСТЕРСТВО НАУКИ И ВЫСШЕГО ОБРАЗОВАНИЯ РОССИЙСКОЙ ФЕДЕРАЦИИ</div>
+                </div><div class="metric-box" style="text-align:left">
+                  <div class="label">Исполнитель</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">ОИВТ РАН</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>Отчет 204 с., 1 кн., 99 рис., 30 табл., 78 источн., 1 прил.
+МИКРОТУРБИННЫЕ УСТАНОВКИ, ГАЗОТУРБИННЫЙ ДВИГАТЕЛЬ, УЛАВЛИВАНИЕ УГЛЕКИСЛОГО ГАЗА, АВТОНОМНОЕ ЭЛЕКТРОСНАБЖЕНИЕ, РАСПРЕДЕЛЕННАЯ ЭНЕРГЕТИКА, ЭНЕРГОЭФФЕКТИВНОСТЬ, ЭКОЛОГИЯ, ДИОКСИД УГЛЕРОДА, МОНИТОРИНГ, ДИАГНОСТИКА, ФТОРИД ЛИТИЯ.
+Объектами исследования являются:
+–	энергетические технологии эффективного производства электроэнергии и тепла из природного газа без выбросов диоксида углерода в атмосферу;
+–	оригинальные схемные решения энергетических установок для производства электроэнергии, тепла и холода из природного газа без выбросов диоксида углерода в атмосферу;
+–	автономные энергокомплексы на основе микротурбинных установок;
+–	методы проектирования микротурбинных установок и автономных энергокомплексов на их основе;
+–	прототип стационарной, либо мобильной системы мониторинга энергоустановок малой мощности;
+–	сподуменовая руда Кольского и Завитинского месторождений, являющаяся источником остро востребованных в современном мире соединений лития;
+–	технология эффективной переработки сподумена, позволяющая извлекать не менее 95% целевого металла, а также включающая в себя методы переработки алюмосиликатных отходов извлечения лития из сподумена. 
+Цели работы: 
+–	создание научно-технического задела для разработки и освоения опытно-промышленного производства новых импортозамещающих, конкурентоспособных ГТУ малой мощности для современных систем автономного энергообеспечения. Разработка методик проектирования высокоэффективных микротурбинных установок для автономного обеспечения электрической и тепловой энергией объектов различного назначения (малые населенные пункты, сельскохозяйственные предприятия, объекты военного назначения) доставка к которым энергии из централизованных сетей нецелесообразны. Поиск схемных решений и оптимизация параметров ГТУ с учетом новых технологических возможностей. Разработка и верификация методик расчета рабочих процессов, протекающих в микротурбинных установках;
+–	разработка схем и способов максимально полного улавливания углекислого газа и их интеграция в процесс разработки микротурбинных установок;
+–	создание научных основ комплексного подхода экономически оправданной, ресурсосберегающей технологии переработки сподумена, заключающегося в максимальном извлечении лития с одной стороны и в полной (безотходной) утилизации алюмосиликатной составляющей сподумена с получением высококачественных продуктов, востребованных в строительной, металлургической и др. отраслях промышленности и отвечающих предъявляемым к ним требованиям ГОСТ и ТУ;
+–	создание научно-технического задела для масштабирования процесса для реализации непрерывного процесса с сохранением однородности и качества продукта.
+Методами и методологиями проведения работы являются:
+–	экспериментальные исследования элементов и материалов микроГТУ;
+–	методы оптимизации элементов установок малой энергетики;
+–	методы системной интеграции при построении прототипов автоматизированных систем, отвечающих требованиям действующих мировых стандартов, масштабируемости, мобильности и возможностям цифровой интеграции в существующие системы;
+–	инновационные подходы для построения архитектуры прототипов автоматизированных систем и методик измерения и обработки сигналов;
+–	математическом моделировании для расчета и проектирование химических реакторов непрерывного действия 
+–	на стадии синтеза карбоната лития использованы методы твердофазного и гетерофазного спекания
+–	метод высокотемпературного спекания с карбонатом натрия был использован для деструкции кристаллической структуры сподумена;
+–	метод каталитической кристаллизации был использован в разработке технологии получения стеклокристаллических материалов из отходов переработки сподуменового сырья.
+Область применения: 
+–	электро- и теплоэнергетика Российской Федерации;
+–	накопители электроэнергии;
+–	жидкосолевые ядерные установки;
+–	производство алюминия;
+–	системы автономного энергетического снабжения.
+В данном отчете приведены результаты выполнения третьего этапа НИР согласно плану-графику.
+За отчетный период было выполнено и отражено в настоящем отчете:
+–	получены результаты исследований прочностных свойств материалов (с учетом аддитивных технологий);
+–	разработана методика проведения экспериментальных исследований, направленных на верификацию математической модели газовой турбины малой мощности;
+–	получены результаты экспериментальных исследований макетов теплообменных аппаратов для «экологически чистой» энергетической установки;
+–	разработан прототип тиражируемой стационарного и мобильного диагностического комплекса энергоустановки малой мощности;
+–	продолжены работы по исследованию закономерностей получения стеклокристаллических материалов из отходов производства фторида лития;
+–	установлены основные кристаллические фазы в синтезируемом ситалле;
+–	апробирован новый метод 100%-й переработки сподумена позволяющий извлекать из него индивидуальные компоненты. Определены оптимальные температурные режимы и состав шихты.
+Результаты данной работы будут использованы при выполнении работ по теме «Энергоэффективное и экологически безопасное использование традиционных и возобновляемых источников энергии, накопителей энергии и водородных технологий в перспективных энергокомплексах» при реализации следующих задач:
+–	анализ возможных путей увеличения КПД рекуперативного цикла микрогазотурбинных энергоустановках в результате повышения температуры рабочего тела путём внедрения современных термобарьерных покрытий и организации охлаждения турбинных лопаток с учётом возможностей аддитивного производства;
+–	обоснование перспективных сфер применения в энергетике и промышленности экологически чистых газотурбинных электростанций с кислородным сжиганием топлива и внутрицикловым выводом углекислого газа в жидкой фазе, включая энерготехнологические комплексы, ориентированные на совместное производство электроэнергии, тепловой энергии, конденсационной технической воды и промышленной продукции с утилизацией выводимого из цикла углекислого газа;
+–	анализ и обоснование схем эффективных энергокомплексов на базе тепловых машин с возможной интеграцией возобновляемых источников энергии, химических источников тока и водородных технологий.</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (14)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Свиридов Евгений Валентинович</strong> <span style="color:#71717a;font-size:0.8rem">Доктор технических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Косой Александр Семенович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат технических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Мелентьев Гелий Борисович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат геолого-минералогических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Борисов Юрий Александрович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат технических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Рамазанов Эльдар Рамазанович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат технических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Кулумбегов Руслан Владимирович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат химических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Калашников Дмитрий Алексеевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат технических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Косой Анатолий Александрович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат технических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Пугачук Александр Сергеевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат технических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Синкевич Михаил Всеволодович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат технических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Листратов Ярослав Игоревич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат технических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Делицын Леонид Михайлович</strong> <span style="color:#71717a;font-size:0.8rem">Доктор геолого-минералогических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Вендланд Леонид Евгеньевич</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Рябов Юрий Васильевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат технических наук</span></li></ul>
+              
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

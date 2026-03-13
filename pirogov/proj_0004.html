@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | РНИМУ им. Н. И. Пирогова</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-pirogov.html">РНИМУ им. Н. И. Пирогова</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">воспалительное старение;</span> <span class="tag">экспрессия генов;</span> <span class="tag">TLR;</span> <span class="tag">цитокины;</span> <span class="tag">успешное старение;</span> <span class="tag">патологическое старение</span> <span class="tag">долголетие</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Медицинская иммунология</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Геронтология и гериатрия</span></div>
+          <h1 style="font-size:1.5rem">Механизмы врожденного иммунитета в формировании физиологического и патологического старения</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">21,000 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225011701059-1</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2023-05-15 — 2025-05-15</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№1</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">7</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">РНФ</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>Российский научный фонд</div>
+                </div><div class="metric-box" style="text-align:left">
+                  <div class="label">Исполнитель</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">ФГАОУ ВО РНИМУ ИМ. Н.И. ПИРОГОВА МИНЗДРАВА РОССИИ</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>За отчетный период 2024 г. выполнены все запланированные этапы работы. Проведено комплексное исследование врожденного иммунитета (ВИ) на системном и локальном уровнях у людей старческого возраста (75-89 лет) с целью выявления маркеров, ассоциированных с фенотипами успешного или патологического старения. На основании индекса коморбидности Чарльсон, теста физиологического функционирования и анализа когнитивного статуса были сформированы две группы старческого возраста: с фенотипом успешного старения  (50 человек) и фенотипом патологическим старения (50 человек). В группу сравнения вошли 50 здоровых доноров в возрасте 20-25 лет. 
+Анализ возрастной динамики экспрессии паттерн-распознающих рецепторов TLR2 и TLR4 на транскрипционном и белковом уровне выявил увеличение экспрессии TLR2 и снижение экспрессии TLR4. При фенотипе успешного старения регистрировалось увеличение экспрессии TLR2 как у лиц старческого возраста так и у долгожителей. При фенотипе патологического старения наблюдалась гиперэкспрессия TLR2 и снижение экспрессии этого рецептора у долгожителей. Не выявлено достоверных отличий в экспрессии гена и белка TLR4 у лиц старших возрастных групп в зависимости от фенотипа старения.
+Важную роль в формировании воспалительного старения и в патогенезе возраст-ассоциированных заболеваний играет активация инфламмасомного комплекса. Показано увеличение экспрессии генов NLRP3 и CASP1 в лейкоцитах обследованных старческого возраста и долгожителей. Важно отметить, что в группе долгожителей с фенотипом патологического старения показатель экспрессии гена NLRP3 увеличен более, чем в 10 раз по сравнению с группой лиц старческого возраста с тем же фенотипом старения. Это свидетельствует о большей степени выраженности воспалительного старения у долгожителей по сравнению с лицами старческого возраста. Т.к. основным результатом активации инфламмасомы является процессинг IL-1β и IL18 до биологически активных форм, проведена оценка уровня этих цитокинов в сыворотке крови и культуре МНК. Показано увеличение концентрации IL-1β в культуре МНК, более выраженное при фенотипе патологического старения.
+Для оценки провоспалительной активности МНК в культуре in vitro проведено исследование спонтанной и индуцированной ЛПС выработки провоспалительных и противовоспалительных цитокинов. В подгруппе с патологическим старением выявлены десятикратные увеличения концентрации IL-1, IL-6, TNF и снижение IL-10 в культурах МНК, по сравнению с их содержанием в сыворотке ПК. Это послужило основанием разработки и регистрации патента на изобретение №2823182 “Способ прогнозирования воспалительного старения, связанного с возраст-ассоциированными заболеваниями” от 24 января 2024 года. 
+Сравнение показателей цитокинов лиц старческого возраста и долгожителей показало, что системный уровень провоспалительных цитокинов IL-6 и TNF растет с возрастом, а при патологическом фенотипе старения уровни этих цитокинов повышаются более интенсивно, что является значимым маркером данного фенотипа старения. Экспрессия гена IL-1RA и содержание антагониста IL-1 в сыворотке были увеличены в подгруппе патологического старения. IL-10 и TGFb у лиц старческого возраста достоверно снижен. В тоже время  повышенный уровень IL-10 может быть рассмотрен в качестве маркера долгожительства, а повышение TGFb - маркера патологического старения у долгожителей. 
+На уровне слизистой оболочки ВДП показано увеличение экспрессии генов TLR4, TLR9 и NLRP3 у лиц старческого возраста по сравнению с молодыми донорами. Следствием избыточной экспрессии TLRs в старческом возрасте является гиперэкспрессия генов IL1B, IL6, IL10 и IL4, наиболее выраженная при патологическом фенотипе старения , что  может свидетельствовать о формировании локального воспаления. Анализ микробиома слизистой оболочки ВДП выявил у лиц старческого возраста большее видовое разнообразие спектра микробиоты при фенотипе успешного старения. Наиболее примечательным результатом стало значительное увеличение числа бактерий Corynebacterium accolens в этой подгруппе. Известно, что C. accolens способен подавлять рост патогенных и условно-патогенных коагулазонегативных стафилококков. В частности, он подавляет рост S. aureus и может предотвратить повреждение барьера слизистой оболочки. 
+Также в результате работы все участники исследования прошли специальное иммунобиографическое анкетирование, касающееся различных аспектов жизни: антигенных факторов, вакцинации, особенностей питания, физической активности, а также социально-экономических и других факторов, влияющих на образ жизни. Была построена статистическая модель, которая выявила наиболее значимые факторы, определяющие фенотип старения. 
+Таким образом, у лиц старческого возраста выявлены следующие маркеры врожденного иммунитета, ассоциированные с фенотипом патологического старения: увеличение мембранной экспрессии рецептора TLR2 на моноцитах и гранулоцитах, увеличение концентрации в сыворотке крови IL-6, TNF, IL-18, IL-1RA, увеличение спонтанной и индуцированной продукции IL-6, IL-1b, TNF в культуре МНК. К экспрессионным маркерам, ассоциированным с патологическим фенотипом, относятся увеличение экспрессии генов NLRP3, CASP1, IL1B, IL1RA на системном уровне, а в клетках слизистой ВДП - TLR2, TLR4, TLR9, NLRP3, IL1B, IL10, IL4, DEFB4. Маркерами фенотипа успешного старения являются: увеличение в сыворотке крови концентрации IL-4; увеличение коэффициента стимуляции IL-10 и снижение коэффициента стимуляции IL-6 в культуре МНК. Определены экспрессионные маркеры успешного фенотипа старения: увеличение экспрессии генов TLR2, TLR9, IL10, TGFB в лейкоцитах периферической крови.
+На следующем этапе планируется продолжение исследования маркеров врожденного иммунитета у пациентов пожилого возраста и сравнительный анализ их изменения у лиц старческого возраста и долгожителей.  Для прогноза вероятности формирования фенотипа старения будет разработана модель, основанная на взаимосвязи показателей врожденного иммунитета и иммунобиографии.</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (3)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Греченко Вячеслав Владимирович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат медицинских наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Хасанова Елена Минсалимовна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат медицинских наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Ганковская Людмила Викторовна</strong> <span style="color:#71717a;font-size:0.8rem">Доктор медицинских наук</span></li></ul>
+              
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

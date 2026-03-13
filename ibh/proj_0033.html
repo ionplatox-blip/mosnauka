@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | ИБХ РАН</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-ibh.html">ИБХ РАН</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">адгезия.</span> <span class="tag">противогрибковая активность,</span> <span class="tag">факторы патогенности,</span> <span class="tag">резистентные штаммы,</span> <span class="tag">кандидоз,</span> <span class="tag">Candida albicans,</span> <span class="tag">антимикотики,</span> <span class="tag">растительные дефенсины,</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Регуляция иммунного ответа</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Биотехнологическое получение антибиотиков</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Биохимия ассимиляции азота</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Антимикробные агенты</span></div>
+          <h1 style="font-size:1.5rem">Растительные дефенсины как потенциально новые антимикотики, действующие против чувствительных и резистентных штаммов Сandida albicans</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">1,500 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225030312538-2</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2024-01-09 — 2025-02-01</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№1</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">2</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">РНФ</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>Российский научный фонд</div>
+                </div><div class="metric-box" style="text-align:left">
+                  <div class="label">Исполнитель</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">ИБХ РАН</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>Последнее время поверхностные и системные кандидозы стали серьезной проблемой. Причиной этого является ограниченность спектра используемых антимикотиков и распространение резистентных штаммов грибов рода Candida. Поэтому поиск новых противогрибковых средств является крайне актуальной задачей. Проект посвящен изучению растительных дефенсинов как потенциально новых антимикотиков, действующих против чувствительных и резистентных штаммов C. albicans. Основным объектом исследования является дефенсин NaD1 из цветков табака, обладающий выраженной противогрибковой активностью. В задачи данного этапа проекта входили разработка биотехнологических способов получения NaD1, его аналогов и антимикробных пептидов (АМП) человека, кателицидина LL-37 и дефенсина HBD2, оценка вирулентности выбранных для работы чувствительных и резистентных коллекционных штаммов, а также клинических изолятов C. albicans, исследование противогрибковой активности NaD1 и его аналогов, поиск эффективных комбинаций NaD1 с другими противогрибковыми агентами, а также изучение способности NaD1 ингибировать адгезию клеток гриба на эпителии человека.
+Созданы шесть генно-инженерных конструкций для проведения гетерологической экспрессии в клетках E. coli дефенсина табака NaD1, его четырех аналогов NaD1-1-4 и LL-37. Полученные конструкции pET-His8-TrxL-NaD1/NaD1-1-4 и pET-His8-TrxL-LL-37 позволяют экспрессировать пептиды под индуцибельным промотором бактериофага T7 в составе гибридных белков с тиоредоксином А и октагистидиновой последовательностью. Получены штаммы-продуценты NaD1, его аналогов, LL-37, а также человеческого HBD2 на основе E. сoli штамма BL21(DE3). Подобраны оптимальные условия экспрессии, выделения и очистки рекомбинантных пептидов. Гомогенность полученных препаратов рекомбинантных АМП и их идентичность природным пептидам подтверждены с помощью SDS-электрофореза в ПААГ, МАЛДИ-времяпролетной масс-спектрометрии и КД-спектроскопии. Разработанные биотехнологические способы получения дефенсина табака NaD1, его четырех аналогов, LL-37 и HBD2 позволяют получать препараты рекомбинантных АМП высокого качества в клетках E. coli с выходом 1-3 мг с литра культуры.
+Охарактеризованы некоторые аспекты вирулентности выбранных для исследования чувствительных и резистентных к азолам и эхинокандинам штаммов C. albicans. Показано, что они различаются по чувствительности к конвенциальным антимикотикам, способности к морфологическому переходу в гифовую форму в различных условиях, продукции секретируемых протеаз и адгезии на эпителиальном барьере. Такая разница в свойствах вероятна обусловлена различиями в генетике, морфологии и механизмах приобретенной устойчивости штаммов гриба.
+Исследована активность дефенсина табака NaD1 и его аналогов в отношении выбранных штаммов C. albicans. Показано, что NaD1 одинаково эффективен против всех семи чувствительных и резистентных штаммов гриба (MIC 6,25 мкМ) в среде Сабуро, включая клинический изолят 8.2, переходящий в этих условиях в гифовую форму. NaD1 действует фунгицидно против всех штаммов (MFC 12,5 мкМ) и вызывает лизис клеток C. albicans в высоких концентрациях. Противогрибковая активность NaD1 снижается в присутствии солей и сыворотки, а также в богатой среде RPMI-1640. Активность полученных аналогов сопоставима или ниже, чем у NaD1 в низкосолевой среде Сабуро. В тоже время, аналоги в меньшей степени, чем NaD1, реагируют на присутствие хлорида натрия, а аналог NaD1-3 в этих условиях обладает более выраженной противогрибковой активностью, чем дефенсин табака.
+Проведен поиск новых эффективных комбинаций NaD1 с противогрибковыми агентами, имеющими различные механизмы действия. Аддитивные эффекты обнаружены для комбинаций NaD1 с селенорганическим соединением эбселеном, эхинокандинами микафунгином и анидулафунгином, полиеновым антимикотиком амфотерицином В и производным азола вориконазолом. Впервые показано, что NaD1 действует в синергизме против чувствительных и резистентных штаммов C. albicans не только с каспофунгином, но и с АМП человека LL-37 и HBD2. Выдвинуто предположение, что синергическое действие NаD1 с LL-37 и HBD2, которые вырабатываются в высоких концентрациях во время инфекции, может увеличивать эффективность NaD1 in vivo. Только аддитивное действие NaD1 с каспофунгином, LL-37 и HBD2 показано в отношении некоторых резистентных штаммов C. albicans, что свидетельствует о значительном различии используемых штаммов гриба. 
+С использованием проточной цитофлуориметрии и пропидий иодида исследован возможный механизм синергического действия NaD1 с каспофунгином, LL-37 и HBD2. Показано, что NaD1 в комбинациях с АМП человека LL-37 и HBD2 взаимно усиливают действие друг друга на проницаемость мембраны гриба, что, вероятно, обуславливает их синергическое действие против штаммов C. albicans. Синергизм между NaD1 и LL-37 может также быть связан с облегчением проникновения дефенсина табака в клетку гриба за счет уменьшения толщины клеточной стенки под действием β-1,3-экзоглюканазы, которая активируется LL-37. Показано, что увеличения способности NaD1 нарушать проницаемость мембраны в присутствии каспофунгина, который ингибирует активность (1,3)-β-D-глюкансинтазы и снижает уровень 1,3-β-глюкана в клеточной стенке гриба, а также повышает уровень PI(4,5)P2 в мембране гриба, не происходит. Выдвинуто предположение, что синергические эффекты NaD1 и каспофунгина связаны скорее с их внутриклеточным действием, например способностью обоих веществ вызывать гиперпродукцию активных форм кислорода, чем с нарушением целостности клеточной мембраны гриба.
+Проведено исследование способности NaD1 и его комбинаций с каспофунгином снижать адгезию клеток резистентных штаммов C. albicans на монослой клеток Сасо-2, имитирующий кишечный эпителиальный барьер. NaD1 ингибирует адгезию всех четырех использованных штамма в концентрациях 12,5 и 25 мкМ и усиливал антиадгезивные свойства каспофунгина.</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (4)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Данилова Юлия Дмитриевна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Фатеева Серафима Игоревна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Шевченко Ольга Витальевна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Финкина Екатерина Ивановна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат химических наук</span></li></ul>
+              
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

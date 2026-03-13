@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | МГУ им. М.В. Ломоносова</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-mgu.html">МГУ им. М.В. Ломоносова</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">спрединговые хребты</span> <span class="tag">палеобиолгеография</span> <span class="tag">межплитные сдвиги</span> <span class="tag">физическое моделирование</span> <span class="tag">атомистическое моделирование</span> <span class="tag">моделирование бассейнов</span> <span class="tag">физика минералов</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Тектоника дна морей и океанов</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Стратиграфия палеозоя</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Кристаллография минералов</span></div>
+          <h1 style="font-size:1.5rem">Отчет за 2024 год по теме &quot;Эволюция геодинамических обстановок и глобальные природные процессы&quot;</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">22,916 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225020307667-8</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2024-01-01 — 2024-12-31</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№9</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">18</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">Правительство России</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>Правительство Российской Федерации</div>
+                </div><div class="metric-box" style="text-align:left">
+                  <div class="label">Исполнитель</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">МОСКОВСКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ ИМЕНИ М.В.ЛОМОНОСОВА, МГУ ИМЕНИ М.В.ЛОМОНОСОВА, МОСКОВСКИЙ УНИВЕРСИТЕТ ИЛИ МГУ</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>Раздел 1. Исследования посвящены анализу геодинамических обстановок,
+особенностям их изменений и влиянию на строение и эволюцию литосферы, а также на
+глобальные природные процессы. Для анализа использовался широкий спектр методов,
+включающий численное и физическое моделирование, расчет параметров растяжения
+элементов чехла и фундамента, морфологический и морфометрический анализ фрагментов
+костного скелета микрофоссилий, биофациальный и экостратиграфический анализ, методы
+локального (микрозондового) изотопного и химического датирования минеральных фаз,
+атомистическое моделирование.
+Американо-Антарктический хребет (ААХ), протягивающийся от тройного соединения
+Буве д о Ю жно-Сандвичевой зоны субдукции, нарушен хорошо выраженными
+трансформными разломами, чья суммарная длина превышает общую длину спрединговых
+сегментов. Такая структура сформировалась как результат изменения направления
+растяжения при перестройке зоны субдукции около 20 млн лет назад. На основании
+физического моделирования были воспроизведены условия формирования современного
+структурного плана ААХ и последовательность возможных структурных перестроек в ходе
+данных изменений. Моделирование показало, что в ходе преобразования структуры хребта
+параллельно могло происходить два процесса: переход косого растяжения в
+субортогональное при локальных перескоках оси спрединга и увеличение длины некоторых
+поперечных нарушений на границах косых и субортогональных сегментов за счёт слияния
+нескольких структур. Предполагается, что при объединении трёх поперечных нарушений
+возник трансформный разлом Буллард. В западной части хребта переход косых сегментов в
+субортогональные к настоящему моменту уже завершился, тогда как в восточной части в
+структуре сохраняются как косые, так и субортогональные сегменты, что связано с влиянием
+термических аномалий плюмов Шона и Буве, обеспечивающих большую стабильность косых
+сегментов. Построены морфоструктурная карта ААХ и кинематические схемы его эволюции.
+Для совершенствования возможностей визуализации результатов физического
+моделирования были использованы два метода. Первый подразумевает построение цифровой
+модели рельефа (ЦМР). Второй связан с использованием тепловизора с целью получения
+температурного поля модели. Совместное использование обеих методик позволяет более
+обоснованно проводить сопоставление полученных моделей с природными данными путём
+качественных и количественных сравнений с рельефом и геофизическими аномалиями.
+Описанные методики были успешно опробованы.
+Выявлены основные геодинамические типы разломных зон приантарктической части
+Южной Атлантики.
+Раздел 2. Рассмотрены условия формирования соленосных отложений Прикаспийской
+впадины, термический режим осадочной толщи и литосферы, история генерации УВ
+породами Северо-Каспийского бассейна.
+Сравнение результатов моделирования для осадочного разреза скв. CENTER-M,
+полученных с различными предполагаемыми вариантами изменения глубины палеоморя,
+отдаёт предпочтение варианту, в котором слой соленосных отложений мощностью до 2 км
+мог быть сформирован в морской котловине с начальной глубиной не более 1.0 км. В
+течении кунгура (275 – 270 млн лет назад) это море обмелело, постепенно заполняясь
+соленосными отложениями.
+Раздел 3.
+3.1-3.3. Изучение скелетных остатков плоурдостеидных панцирных рыб из
+позднедевонского местонахождения в Курской области позволило точнее реконструировать
+форму и пропорции тела этих позвоночных и, частности вида Plourdosteus livonicus Eastman.
+Проанализированы также реконструк-ции филогенеза ископаемых и современных
+бесчелюстных и рыб, выполненные российскими и зарубежными исследователями во второй
+половине XIX столетия, и более поздние аналогичные построения.
+Списочный состав ихтиофауны из стратотипа кубинской свиты (Средний Урал, силур,
+лудловский отдел) свидетельствует о наличии пробела в трансгрессивной
+последовательности шельфовых карбонатов. На основе анализа таксономических
+определений собранных ранее коллекций фауны и результатов собственных литологических
+исследований были видоизменены некоторые традиционные представления, касающиеся
+природы циклических единиц регионального разреза внешней складчатой зоны Урала.
+Описаны новые виды икриодонтидных конодонтов из стратотипа усть-ярегской свиты
+(верхний девон, Южный Тиман).
+В ходе изучения разрезов мел-палеогеновых отложений Нижнего и Среднего
+Поволжья получены новые данные о палеоценовых комплексах ихно-фоссилий, о столбчатых строматолитах на местонахождении «Камышинские Уши». Установлены
+морфология и определен вещественный состав построек.
+3.4. Выполненный анализ данных сейсмического профилирования в северной части
+Западной Сибири и на акватории шельфа Карского моря не согласуются с теоретической
+моделью пострифтового погружения. Анализ этих данных показывает, что растяжение коры
+на пострифтовом этапе не могло играть существенной роли в формировании осадочного
+чехла мощностью 6-7 км. Главная причина погружения связана с плотностными
+изменениями в нижней коре, возникающими в ходе проградного метаморфизма.
+Раздел 4. Исследования были посвящены изучению изоморфных систем на основе
+хризоберилла. С помощью компьютерной программы GULP (General Utility Lattice Program)
+выполнены дополнительные теоретические расчеты равновесной кристалломорфологии
+хризоберилла, а также других сложных оксидов и силикатов (циркон, корунд). Проведенный
+расчет величин поверхностной энергии граней как чистых кристаллов, так и
+кристаллических решеток, содержащих изоморфные примеси, показал, что их количество
+влияет на окончательный внешний вид кристаллов. Полученные результаты могут
+использоваться для расчета теоретических габитусов других природных соединений.
+Раздел 5. Организованы полевые экспедиции с целью исследования мест падения и
+поиска метеоритов для пополнения коллекции Музея землеведения МГУ и создания
+видеофонда метеоритных мест России. Были организованны экспедиции в Волгоградскую
+область (метеоритный дождь Царев) и Липецкую область (метеоритный дождь «Озерки»).
+Были обнаружены образцы метеоритов, которые в настоящее время изучаются.
+Исследования проводились в Музее землеведения МГУ, экспозиция которого
+охватывает широкий круг проблем наук о Земле. Этим обусловлено тематическое
+разнообразие научных разделов, отраженных в отчете. Результаты научных исследований
+реализуются в научно-учебной экспозиции Музея и в учебном процессе.</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (14)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Грохольский Андрей Львович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат географических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Дубинин Евгений Павлович</strong> <span style="color:#71717a;font-size:0.8rem">Доктор геолого-минералогических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Чехович Петр Андреевич</strong> <span style="color:#71717a;font-size:0.8rem">Доктор геолого-минералогических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Назарова Валентина Михайловна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат геолого-минералогических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Иванов Олег Петрович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат геолого-минералогических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Крупина Наталия Ильинична</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Громалова Наталья Александровна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат геолого-минералогических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Галушкин Юрий Иванович</strong> <span style="color:#71717a;font-size:0.8rem">Доктор технических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Винник Михаил Анатольевич</strong> <span style="color:#71717a;font-size:0.8rem">Доктор педагогических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Молошников Сергей Владимирович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат геолого-минералогических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Боголюбский Вячеслав Андреевич</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Маленкина Светлана Юрьевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат геолого-минералогических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Белая Надежда Ивановна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Коснырева Анастасия Александровна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li></ul>
+              
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

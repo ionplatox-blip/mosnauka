@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | ФИАН</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-fian.html">ФИАН</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">ВНЕГАЛАКТИЧЕСКИЕ ИСТОЧНИКИ РАДИОИЗЛУЧЕНИЯ</span> <span class="tag">КОСМИЧЕСКИЕ МАЗЕРЫ</span> <span class="tag">МЕЖПЛАНЕТНАЯ ПЛАЗМА</span> <span class="tag">ЧЕРНЫЕ ДЫРЫ</span> <span class="tag">ФИЗИКА СОЛНЦА</span> <span class="tag">РАДИОИНТЕРФЕРОМЕТРИЯ СО СВЕРХДЛИННЫМИ БАЗАМИ</span> <span class="tag">НАЗЕМНО-КОСМИЧЕСКАЯ РАДИОИНТЕРФЕРОМЕТРИЯ</span> <span class="tag">ОПТИЧЕСКАЯ АСТРОНОМИЯ</span> <span class="tag">РЕНТГЕНОВСКАЯ АСТРОНОМИЯ</span> <span class="tag">РАДИОАСТРОНОМИЯ</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Общие проблемы</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Обработка наблюдений. Применение вычислительной техники в астрономии</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Релятивистская астрофизика. Приложения общей теории относительности в астрономии</span></div>
+          <h1 style="font-size:1.5rem">Изучение компактных космических источников электромагнитного излучения методами астрофизики высокого разрешения</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">40,233 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225020608935-4</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2024-01-01 — 2024-12-31</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№1</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">8</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">МИНОБРНАУКИ РОССИИ</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>МИНИСТЕРСТВО НАУКИ И ВЫСШЕГО ОБРАЗОВАНИЯ РОССИЙСКОЙ ФЕДЕРАЦИИ</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>Цель проекта – проведение наблюдательных и теоретических исследований физики Солнца, Галактики и Метагалактики. 
+Методология проведения работы – в рамках выполнения данной тематики Государственного задания проводились как экспериментальные, так и теоретические исследования методами астрофизики высокого углового, спектрального и временного разрешения на ведущих отечественных и зарубежных, наземных и космических телескопах мирового уровня.
+	В лаборатории «Астрофизика высокого разрешения» в 2024 году были получены следующие основные результаты:
+– Получены оценки основных параметров и впервые проведено исследование спиральной структуры струи в квазаре NRAO 530, получено указание на прецессию струи, сделаны оценки магнитного поля.
+– Проведено исследование свойств линейной поляризации на частоте 15 ГГц деталей в струях активных ядер галактик на масштабах парсек. Было обнаружено, что в квазарах с тороидальным магнитным полем около оси выброса в основном наблюдаются детали с уменьшением однородности поля, с полоидальным полем – как с увеличением, так и с уменьшением однородности, а у лацертид – преимущественно с увеличением упорядоченности поля.
+– На основе анализа данных VLBI-наблюдений выдвинута гипотеза, что вспышка γ-излучения, зарегистрированная в феврале 2022 года, обусловлена ударным взаимодействием между струей TXS 1508+572 и вновь образующейся плазмой, проходящей через этот компонент. Подобные процессы ранее наблюдались, например, в CTA 102, где ударное взаимодействие происходило между стационарным компонентом и вновь возникающим потоком. Однако в данном случае вспышка также охватила область ядра, что подтверждается неизменным положением ядра на протяжении всего периода наблюдений.
+– По данным РСДБ наблюдений на частоте 22 ГГц  в полной интенсивности и в линейной поляризации была исследована центральная субпарсековая область 3C 84 как, чтобы определить свойства джета с линейным разрешением ∼0,1 парсека. Наши RMHD-симуляции показывают, что наблюдаемая геометрия согласуется с моделью “канал-оболочка”, связанной с умеренно релятивистским потоком и тороидальной конфигурацией магнитного поля.
+– Выполнены долговременные многочастотные исследования угловой структуры и мгновенных спектров квазара PKS 0858-279 c помощью VLBA и РАТАН-600.
+На масштабах более 10 лет обнаружено за период 2007–2018 гг., что, хотя структура на масштабах парсека оставалась почти постоянной, наблюдались заметные изменения потока радиоизлучения. Это указывает на повторяющиеся выбросы плазмы в релятивистскую струю
+ – Получены указания на возможную связь кандидатов в источники астрофизических нейтрино, обнаруженных телескопом ANTARES, с радиояркими блазарами
+– Представлены результаты обзора плоскости Галактики SARAO MeerKAT (SMGPS) на частоте 1,3 ГГц (251° ≤l ≤ 358° и 2° ≤l ≤ 61° при |b| ≤ 1.5. SMGPS — это крупнейший, наиболее чувствительный и имеющий самое высокое угловое разрешение обзор плоскости Галактики на частоте 1 ГГц который когда-либо проводился, с угловым разрешением 8 угловых секунд и широкополосной среднеквадратичной чувствительностью ∼10–20 мкЯн / диаграмму направленности.
+– Используя двухэпоховые VLBI наблюдения мазеров H2O на частоте 22 ГГц, а также мониторинг на однозеркальном телескопе в линии ОН получены оценки магнитного поля в трех источниках: W49N, Orion KL и W75N во время вспышек. В W49N обнаружено обращение направления магнитного поля на масштабе 60 а.е., что ранее не наблюдалось в этом объекте. Для источника Orion KL получена оценка поля в 140 мГс, как минимум в два раза превышающая предыдущие оценки, что говорит о более высокой плотности мазерного сгустка. Магнитное поле в мазерах OH W75N оставалось стабильным за все время наблюдений.
+– Новый метод автоматического поиска квазаров, проявляющих признаки анизотропного рассеяния в межзвездной среде, на основе наблюдений 7660 выбросов активных ядер галактик в диапазоне частот от 1.4 до 8.3 ГГц методом радиоинтерферометрии со сверхдлинными базами позволил обнаружить еще шесть источников, у которых наблюдается редкий эффект формирования вторичных изображений. 
+– Показано, что мазер H2O в W49N является первым, в котором наблюдаются эффекты рефракционной субструктуры рассеяния. При этом удалось разделить эффекты рассеяния и внутренних размеров источника. Вероятно, что в данном источнике также наблюдается «тонкая» структура рефракционного рассеяния (спеклы), которая может соответствовать очень мелким деталям собственной структуры мазера.  
+– Показано, что измерение эффекта гравитационного замедления времени с помощью наземно-космических интерферометров путем обработки данных радиоинтерферометрических наблюдений за компактными источниками ограничено точностью восстановления орбиты спутников и не превосходит 6x10-6 при точности радиальной скорости 1 мкм/с. Оснащение спутников двухпутевой линией связи позволяет компенсировать эффект Доплера и достичь точности измерения 3x10-9 в поле Земли, что на 4 порядка лучше результата эксперимента GREAT. Аппарат Спектр-М может улучшить точность эксперимента в поле Солнца на 4 порядка, до 2x10-6. Эта же схема измерения для спутников на гелиоцентрических орбитах позволяет на 2 порядка улучшить точность измерения постньютоновского параметра gamma.
+– Сделан вывод о том, что для получения точной модели эволюционирующего потенциала Галактики, необходимо учитывать окружающую среду на расстояниях не менее 1 Мпк от центра Млечного Пути, другими словами, для получения корректного результата нужно учитывать не только массивные спутники, но и галактики Местной группы. 
+–Разработан новый метод исследования влияния активных областей (АО) короны Солнца на скорость солнечного ветра (СВ), дополнительной особенностью проведённого исследования стал учёт корональных выбросов массы. Мы можем предварительно предположить, что в условиях минимума активности АО могут играть основную, доминирующую, роль в формировании медленного СВ, тогда как в условиях высокой активности их роль является второстепенной, а основной вклад дают иные структуры и процессы.
+–Рассмотрена связь интегрального магнитного потока из области диммингов с вероятностью того, что КВМ, ассоциированные с ними, вызовут геомагнитные бури. Показано, что наблюдается общая тенденция на увеличение геоэффективности МКВМ с повышением величины магнитного потока из области диммингов, а также показано, что частота наблюдения умеренных и сильных бурь повышается в случаях комплексных событий, связанных с взаимодействием КВМ с другими потоками солнечного ветра в гелиосфере.
+
+В течение 2024 года сотрудниками лаборатории было подготовлено 11 публикаций в высокорейтинговых рецензируемых журналах, входящих в Белый список и список ВАК и одна публикация в трудах конференций, индексируемых Scopus/РИНЦ.</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (13)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">КОРЮКОВА ТАТЬЯНА АНДРЕЕВНА</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">ЛИСАКОВ МИХАИЛ МИХАЙЛОВИЧ</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Литвинов Дмитрий Александрович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Михеева Екатерина Андреевна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">РОДЬКИН ДЕНИС ГЕННАДЬЕВИЧ</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">ЕРХОВА НАТАЛИЯ ФЕЛИКСОВНА</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">ЗОБНИНА ДАРЬЯ ИГОРЕВНА</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">КРАВЧЕНКО ЕВГЕНИЯ ВАСИЛЬЕВНА</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">АРАКЕЛЯН НАИРА РУБЕНОВНА</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">АЛАКОЗ АЛЕКСЕЙ ВАЛЕРЬЕВИЧ</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат физико-математических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Тодоров Роман Владимирович</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">КОСОГОРОВ НИКИТА АЛЕКСАНДРОВИЧ</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">ПЛАВИН АЛЕКСАНДР ВИКТОРОВИЧ</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат физико-математических наук</span></li></ul>
+              
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

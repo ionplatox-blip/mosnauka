@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | МГУ им. М.В. Ломоносова</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-mgu.html">МГУ им. М.В. Ломоносова</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">рецептор</span> <span class="tag">канал</span> <span class="tag">мозг</span> <span class="tag">атомно силовая микроскопия</span> <span class="tag">астроцит</span> <span class="tag">эритроцит</span> <span class="tag">кровь</span> <span class="tag">белок-липидные взаимоотношения</span> <span class="tag">гемосодержащий белок</span> <span class="tag">нейрон</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Биофизика клетки</span></div>
+          <h1 style="font-size:1.5rem">Изучение механизмов сигнализации в клетках</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">14,928 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225012402619-6</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2024-01-01 — 2024-12-31</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№4</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">20</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">Правительство России</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>Правительство Российской Федерации</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>В соответствии с «Техническим заданием» на 2024 год получены результаты, свидетельствующие о том, что взаимодействие восстановленного Ngb и окисленного Cyt c сопровождается переносом электронов между белками и восстановлением Cyt c. Разработанный дизайн эксперимента позволил одновременно исследовать молекулярную структуру этих белков с помощью комбинационного рассеяния (КР- спектроскопии) в условиях, когда можно регулировать ионный состав и рO2. Доказано, что замена заряженных аминокислотных замен в Ngb и Cyt c влияет на конформацию их гемов: мутанты Ngb E60K, K67E, K95E и E60K/E87K демонстрируют измененные конформации гема с меньшей вероятностью планарной конформации гема по сравнению с Ngb дикого типа; мутанты Cyt c K25E, K72E и K25E/K72E в окисленном состоянии демонстрируют увеличение жесткости микроокружения белка. С помощью наночастиц серебра установлено, что спектр гигантский КР (ГКР) от молекул плазматической мембраны нейронов, содержит набор пиков, связанных с колебаниями С-С связей в липидах (пик с положением 1450 см-1), С-N связей в белках (1660 см-1), Н-С-Н связей в липидах и белках (пики 2850 и 2880 см-1) и -СН3 связей в белках (2935 см-1). Отметим, что без применения серебряных наноструктур КР от молекул мембраны нейронов зарегистрировать невозможно. С помощью оптического лазерного томографа (ОЛТ) впервые исследованы изменения морфологии и перераспределения цитоплазматических структур при активации рецепторов нейрона. Впервые доказано, что пестицид влияет как на первичные процессы фотосинтеза, так и вязкость мембран, и структуру, взаимодействуя со специфическими участками хлоропласта. С помощью регистрации анизотропии флуоресценции белка фикоцианина (C-ФЦ) выявлено влияние pH на структуру микроокружения хромофора: при pH 5,0 хромофор эффективнее взаимодействует с молекулами среды, а при pH 9,0 вязкость микроокружения хромофора увеличивается. Исследовано влияние pH на эффективность темновой инактивации цепи переноса электронов (выделение O2 и восстановление 2,6-дихлорфенолиндофенола) фотосистемы (ФСII) в тилакоидных мембранах хлоропласта. С помощью ОЛТ и разработанного алгоритма обработки данных получены трехмерные изображения изменений показателя преломления при гемолизе эритроцита, включая морфологию и сухую массу белков клетки (гемоглобин). С помощью ИК- и КР-  спектроскопии выявили изменения конформации белков крови, а с помощью, сканирующей электронной микроскопии - распределение наноструктур на поверхности эритроцитов пациентов с диагнозом рака и в ходе лучевой терапии (ЛТ). Доказано, что у D.rerio снижение частоты сердечных сокращений в условиях гипоксии  митохондрии являются единственным источником H2O2 в клетках. При стрессе, действие 8oxoG и 8-oxodG повышает экспрессию мРНК генов, включая хинон 1 НАДФН-дегидрогеназы (NQO1) и белок, взаимодействующий с тиоредоксинами (TXNIP). Доказано, что количество митохондрий и содержание изоформ тропонина I, тропонина T, миоглобина и GAPDH значительно выше у взрослых кардиомиоцитах по сравнению с неонатальными. Полученные данные способствуют расшифровке механизмов устойчивости неонатальных кардиомиоцитов к гипоксии и способности поддерживать метаболический гомеостаз. Доказано, что флуоресценция каротиноидов B. aggregatus, как in situ, так и в ацетоновых экстрактах, характеризуется высокой величиной константы времени жизни – τ, что, вероятно, обусловлено их агрегацией с липидами и белками в ходе процесса вторичного каротиногенеза. Доказано, что комплексное применение микроспектроскопии комбинационного рассеяния позволяет определить положение отдельных клеточных структур (хлоропласты), состав и конформацию молекул пигментов (каротиноиды), атомно-силовой микроскопии - латеральные и вертикальные размеры клетки, лазерной интерференционной микроскопии - оценить морфологию и/или показатель преломления вещества и, как следствие, локальную концентрацию вещества в клетке, что позволяет получить комплексную информацию о составе и функционировании внутриклеточных структур клетки. С помощью абсорбционной оптической томографии получены трехмерные изображения полупрозрачных клеток микроводоросли Haemotococcus lacustris, имеющих сложную структуру и выявить субклеточные структуры водоросли несмотря на сильное поглощение света структурами цитоплазмы клетки. Доказано, что у клетки C. thermophila, содержащий большое количество кристаллов гуанина, существует повышенная устойчивость к кратковременному (10–15 мин) воздействию высокоинтенсивного света. Эти результаты свидетельствуют о многогранной роли кристаллов гуанина в устойчивости микроводорослей к стрессу. Установлено, что в присутствии протонофоров скорость темновой инактивации увеличивается, что, по-видимому, связано не с перераспределением протонов, а со структурными и/или функциональными изменениями мембран. В препаратах мембран ФСII эффективность ингибирования выделения кислорода при pH 5,7 ниже, чем при pH 6,5. Вероятно, прорастание пыльцы Lilium в значительной степени контролируется генерацией активных форм кислорода (АФК), хотя у Nicotiana H2O2 является основной формой АФК в рыльце тычинки цветка. Таким образом, для хвойных деревьев характерно наличие АФК в жидкости, предназначенной для прорастания пыльцы. Перекись водорода и супероксидный радикал, по-видимому, представляют собой различные источники АФК для регуляции прорастания пыльцы in vivo. Доказано, что добавление сапонина приводит к существеному изменению содержания белка и скорости выхода РНК из экзосом (БН). Различия в содержании протеолипидов в БН, выявлены с помощью Раман-  и поверхностно-усиленной Рамана-спектроскопии, коррелируют с их восприимчивостью к действию сапонина. Разработан протокол с использованием сапонина для эффективного выделения белков и РНК из БН, который можно предложить для нанобиологии, молекулярной диагностики и аналитической химии. В геме гемоглобина эритроцитов человека при онкологии обнаружено снижение соотношения интенсивностей полос I1375/I1127, I1580/I1550 и (I1355/I1550)/(I1375/I1580), которые коррелируют с изменением конформации гема Гб и вероятностью нахождения гема в Т форме и сродства к лигандам (в основном к кислороду). Полученные данные свидетельствует об уменьшении числа комплексов оксигемоглобина и уменьшении способности связывать кислород гемом гемоглобина эритроцитов крови при онкологии (РШМ). Проведение ЛТ приводит к уменьшению доли Гб находящегося в R форме. Установлено, что соотношения величин пиков I1580/I1550 у контрольной группы и пациентов с РШМ до ЛТ составляют 30% и не меняются после проведения ЛТ, а изменения в соотношении пиков (I1355/I1550)/(I1375/I1580), свидетельствуют об уменьшении сродства Гб к лигандам, в основном к кислороду до ЛТ. После проведения ЛТ соотношения пиков (I1355/I1550)/(I1375/I1580) возрастает, что, вероятно, свидетельствует об увеличении сродства к лигандам, хотя и не достигает контрольного уровня. Установлено, что доля комплексов Гб с NO в гемоглобине при онкологии увеличивается, а после ЛТ уменьшается незначительно. Соотношение I2850/I2880, коррелирующее со степенью текучести мембраны клеток, возрастает при РШМ на 14% по сравнению с контролем, а при ЛТ возрастает еще на 35%. Соотношение I2880/I2930, характеризующее упорядоченность и плотность упаковки аминокислотных остатков выше на 8% при РШМ до ЛТ в сравнении с контрольной группой.</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (8)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Трофимова Лидия Константиновна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Юсипович Александр Иванович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Браже Алексей Рудольфович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Браже Надежда Александровна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Платонов Александр Георгиевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Пирутин Сергей Константинович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Паршина Евгения Юрьевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Байжуманов Адиль Ануарович</strong> <span style="color:#71717a;font-size:0.8rem">Доктор биологических наук</span></li></ul>
+              
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

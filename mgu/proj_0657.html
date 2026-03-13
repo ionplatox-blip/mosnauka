@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Проект | МГУ им. М.В. Ломоносова</title>
+    <link rel="stylesheet" href="../mosnauka-style.css">
+    <style>
+      .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem }
+      .modal-overlay.active { display:flex }
+      .modal { background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;max-width:32rem;width:100%;padding:2.5rem;position:relative }
+      .modal h2 { font-size:1.25rem;font-weight:900;margin-bottom:0.25rem }
+      .modal .sub { color:#a1a1aa;font-size:0.8rem;margin-bottom:1.5rem }
+      .modal label { display:block;font-size:0.65rem;text-transform:uppercase;font-weight:800;color:#52525b;margin-bottom:0.35rem;margin-top:1rem;letter-spacing:0.1em }
+      .modal input,.modal select,.modal textarea { width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;color:white;font-size:0.85rem;font-family:inherit;outline:none;transition:border 0.2s }
+      .modal input:focus,.modal select:focus,.modal textarea:focus { border-color:#ff003c }
+      .modal textarea { min-height:5rem;resize:vertical }
+      .modal select { appearance:none }
+      .modal .close { position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:#52525b;font-size:1.5rem;cursor:pointer }
+      .modal .close:hover { color:white }
+      .modal .submit { width:100%;margin-top:1.5rem;padding:0.875rem;background:#ff003c;color:white;border:none;border-radius:1rem;font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s }
+      .modal .submit:hover { background:#cc0030 }
+      .modal .success { text-align:center;padding:2rem 0 }
+      .modal .success .icon { font-size:3rem;margin-bottom:1rem }
+      .modal .success h3 { font-size:1.1rem;font-weight:800;margin-bottom:0.5rem }
+      .modal .success p { color:#a1a1aa;font-size:0.85rem }
+    </style>
+</head>
+<body>
+<div class="mos-page">
+  <header class="mos-header">
+    <div class="mos-header-inner">
+      <a class="mos-logo" href="../index.html">МОС<span class="mos-red">НАУКА</span></a>
+      <span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:#52525b;font-weight:700">v2.0</span>
+    </div>
+  </header>
+  <nav class="breadcrumbs"><a href="../index.html">МОСНАУКА</a> <span style="color:#333">/</span> <a href="../passport-mgu.html">МГУ им. М.В. Ломоносова</a> <span style="color:#333">/</span> <span style="color:#a1a1aa">Проект НИОКТР</span></nav>
+  <main class="mos-main">
+    
+        <div class="detail-hero">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem"><span class="tag">биосистемы</span> <span class="tag">индукционная кривая флуоресценции</span> <span class="tag">идентификация параметров</span> <span class="tag">дифференциальные уравнения</span> <span class="tag">стрессовые воздействия</span> <span class="tag">математическое моделирование</span> <span class="tag">фотосинтез</span> <span class="tag">экологический мониторинг</span> <span class="tag">фотосинтетический электронный транспорт</span></div>
+          <div style='display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem'><span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Математические модели биологии</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Математическое моделирование</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Фотофизические и фотохимические процессы в биологии</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Фотосинтез</span> <span class="tag" style="border-color:rgba(59,130,246,0.3);color:#93c5fd">Организм и среда</span></div>
+          <h1 style="font-size:1.5rem">Разработка комплекса математических моделей и методов для анализа динамики функционального состояния фотосинтетического аппарата растений и водорослей по данным оптических измерений для экологического мониторинга</h1>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem">
+          <div class="metric-box"><div class="label">Бюджет</div><div class="value" style="font-size:1.25rem">7,000 тыс. ₽</div></div>
+<div class="metric-box"><div class="label">Рег. номер ЕГИСУ</div><div class="value" style="font-size:0.85rem;font-style:normal">225022612056-3</div></div>
+<div class="metric-box"><div class="label">Период</div><div class="value" style="font-size:0.9rem;font-style:normal">2023-01-01 — 2023-12-31</div></div>
+<div class="metric-box"><div class="label">Этап</div><div class="value">№2</div></div>
+<div class="metric-box"><div class="label">Публикации</div><div class="value">20</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-bottom:1.5rem"><div class="metric-box" style="text-align:left">
+                  <div class="label">Заказчик</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">РНФ</div>
+                  <div style='color:#71717a;font-size:0.75rem;margin-top:0.25rem'>Российский научный фонд</div>
+                </div><div class="metric-box" style="text-align:left">
+                  <div class="label">Исполнитель</div>
+                  <div style="color:#e4e4e7;font-size:0.9rem;font-weight:600">МОСКОВСКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ ИМЕНИ М.В.ЛОМОНОСОВА, МГУ ИМЕНИ М.В.ЛОМОНОСОВА, МОСКОВСКИЙ УНИВЕРСИТЕТ ИЛИ МГУ</div>
+                </div></div>
+
+        <div class='info-card'><h2>📋 Аннотация</h2><p>В работе поставлена цель создать детальную модель функционирования фотосинтетической электрон-транспортной цепи и исследовать возможность такой её редукции, при которой полностью сохраняются динамические характеристики детальной модели. Разработаны математические модели трансмембранных комплексов (фотосистем 1 и 2 и цитохромного b6f комплекса) и создана интегральная модель фотосинтетического электронного транспорта, объединяющая модели отдельных трансмембранных комплексов через их взаимодействие с пулами мобильных переносчиков электрона. Модель описывает процессы электронного транспорта в диапазоне времен от сотен миллисекунд до секунд.
+
+Предложен математический аппарат функций отклика, позволяющий исследовать зависимость скорости электронного транспорта через трансмембранных комплексы от степени восстановленности пулов мобильных переносчиков электрона (пластохинона, пластоцианина и ферредоксина). Показано, что зависимость скорости электронного транспорта через фотосистемы 1 и 2 как от интенсивности света, так и от степени восстановленности пулов переносчиков электрона является монотонной. В то же время для цитохромного комплекса зависимость скорости восстановления пластоцианина от степени восстановленности пула пластохинонов немонотонна. При низкой степени восстановленности пула пластохинонов скорость восстановления пластоцианина увеличивается с увеличением доли восстановленного пластогидрохинона, однако при дальнейшем увеличении этой доли, начиная с некоторого критического значения, увеличение доли восстановленного пластогидрохинона в пуле приводит к снижению скорости переноса электронов на пластоцианин. Из-за этого возникать петля положительной обратной связи: если максимальная скорость окисления пула платохинонов цитохромным комплексом меньше, чем скорость его восстановления фотосистемой 2, то после достижения пулом порогового уровня восстановленности скорость окисления пула пластохинонов начинает уменьшаться, что приводит к ещё большему замедлению его окисления.
+
+Показано, что, хотя характерные времена изменения степени восстановленности пулов мобильных переносчиков электрона значительно больше, чем характерные времена элементарных реакций переноса электрона в комплексах, квазиравновесное приближение не позволяет корректно воспроизвести динамику степени восстановленности пулов в течение переходного процесса, вызванного освещением адаптированных к темноте фотосинтетических организмов. Это связано с тем, что в равновесном режиме общая скорость электронного транспорта через цитохромный b6f комплекс обычно лимитируется скоростью работы Q-цикла. Однако скорость переноса первого электрона с восстановленного пластохинона на железосерный центр Риске в начале переходного процесса после включения освещения не лимитирована Q-циклом, и этот перенос происходит существенно быстрее, чем это предсказывает средняя скорость электронного транспорта в равновесных условиях.
+
+Анализ кривых, полученных при действии ингибитора DCMU, позволяет однозначно идентифицировать параметры редуцированной модели фотосистемы 2 и определить ключевые состояния, переходы между которыми определяют форму соответствующей кривой индукции флуоресценции. Анализ кривых, полученных при действии дибромтимохинона, обнаруживает принципиальную невозможность однозначно выделить ключевые состояния фотосистемы 2 из-за близости характерных времён процессов переноса электрона в кислородвыделяющем комплексе и QB сайте.</p></div>
+
+        <div class="info-card">
+              <h2>👥 Авторы (7)</h2>
+              <ul style="list-style:none;padding:0"><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Хрущев Сергей Сергеевич</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Тодоренко Дарья Алексеевна</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Конюхов Иван Владимирович</strong> <span style="color:#71717a;font-size:0.8rem">Кандидат биологических наук</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Киселева Диана Геннадьевна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Червицов Роман Николаевич</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Чистякова Юлия Алексеевна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li><li style="margin-bottom:0.25rem"><strong style="color:#e4e4e7">Слепнёва Валерия Олеговна</strong> <span style="color:#71717a;font-size:0.8rem">Отсутствует</span></li></ul>
+              
+            </div>
+        
+  </main>
+  <footer class="mos-footer">
+    <div class="logo">МОС<span class="mos-red">НАУКА</span></div>
+    <div class="copy">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ</div>
+  </footer>
+</div>
+
+<!-- Request Modal -->
+<div class="modal-overlay" id="requestModal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">&times;</button>
+    <div id="modalForm">
+      <h2>📨 Направить запрос</h2>
+      <div class="sub" id="modalContext">через платформу МОСНАУКА</div>
+      <label>Ваше ФИО *</label>
+      <input type="text" id="reqName" placeholder="Иванов Иван Иванович">
+      <label>Организация</label>
+      <input type="text" id="reqOrg" placeholder="ООО «Компания»">
+      <label>Email *</label>
+      <input type="email" id="reqEmail" placeholder="email@example.com">
+      <label>Тип запроса</label>
+      <select id="reqType">
+        <option>Запрос на НИОКР</option>
+        <option>Консультация</option>
+        <option>Сотрудничество / Партнёрство</option>
+        <option>Использование оборудования</option>
+        <option>Другое</option>
+      </select>
+      <label>Сообщение *</label>
+      <textarea id="reqMsg" placeholder="Опишите ваш запрос..."></textarea>
+      <button class="submit" onclick="submitRequest()">Отправить запрос</button>
+    </div>
+    <div id="modalSuccess" style="display:none">
+      <div class="success">
+        <div class="icon">✅</div>
+        <h3>Запрос отправлен!</h3>
+        <p>Ваш запрос направлен в личный кабинет организации через платформу МОСНАУКА. Ожидайте ответа в течение 3 рабочих дней.</p>
+        <button class="submit" onclick="closeModal()" style="margin-top:1.5rem;background:rgba(255,255,255,0.1)">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openRequestModal(context) {
+  document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('requestModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('requestModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitRequest() {
+  var n = document.getElementById('reqName').value.trim();
+  var e = document.getElementById('reqEmail').value.trim();
+  var m = document.getElementById('reqMsg').value.trim();
+  if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').style.display = '';
+}
+document.getElementById('requestModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>
