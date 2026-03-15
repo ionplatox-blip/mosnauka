@@ -160,28 +160,38 @@ def semantic_search(query: str) -> dict:
     scores = {}
     for i, sim in enumerate(sims):
         s = float((sim + 1) / 2)  # -1..1 → 0..1
-        if s > 0.52:  # отсекаем шум
+        if s > 0.55:  # отсекаем шум (было 0.52 — слишком мягко)
             scores[EMBED_IDS[i]] = s
     return scores
 
 
 def hybrid_search(query: str, top_n: int = 100) -> list[tuple]:
-    """Гибридный поиск: 65% семантика + 35% ключевые слова."""
+    """Гибридный поиск: 80% семантика + 20% ключевые слова.
+    
+    Семантика доминирует — ловит смысл ("роботы доставки" ≠ "доставка мРНК").
+    Keywords — только бустер для точных совпадений.
+    """
     kw_scores = keyword_search(query)
     sem_scores = semantic_search(query)
     has_semantic = bool(sem_scores)
 
-    all_ids = set(kw_scores.keys()) | set(sem_scores.keys())
+    # Если семантика работает — берём только записи с семантическим скором
+    # Keyword-only записи НЕ попадают в результат (они дают мусор типа "доставка мРНК")
+    if has_semantic:
+        all_ids = set(sem_scores.keys())
+    else:
+        all_ids = set(kw_scores.keys())
+    
     if not all_ids:
         return []
 
     max_kw = max(kw_scores.values()) if kw_scores else 1.0
     results = []
     for rid in all_ids:
-        kw = kw_scores.get(rid, 0.0) / max_kw
         sem = sem_scores.get(rid, 0.0)
+        kw = kw_scores.get(rid, 0.0) / max_kw
         if has_semantic:
-            score = 0.65 * sem + 0.35 * kw
+            score = 0.80 * sem + 0.20 * kw
         else:
             score = kw
         if rid in REC_BY_ID:
