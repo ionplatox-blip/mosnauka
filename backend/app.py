@@ -160,7 +160,7 @@ def semantic_search(query: str) -> dict:
     scores = {}
     for i, sim in enumerate(sims):
         s = float((sim + 1) / 2)  # -1..1 → 0..1
-        if s > 0.55:  # отсекаем шум (было 0.52 — слишком мягко)
+        if s > 0.60:  # жёсткий порог — отрезает "доставку мРНК" при запросе "роботы доставки"
             scores[EMBED_IDS[i]] = s
     return scores
 
