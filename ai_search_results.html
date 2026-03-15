@@ -221,8 +221,8 @@
               <h3 class="text-xl md:text-3xl font-black uppercase italic tracking-tight">Похожие реализованные проекты</h3>
               <span class="px-2 py-1 rounded bg-red-500/10 text-red-400 text-xs font-bold shrink-0">Из базы ЕГИСУ</span>
             </div>
-            <button class="px-5 py-2.5 bg-white/5 hover:bg-white/10 text-sm font-bold uppercase tracking-wider rounded-xl transition whitespace-nowrap border border-white/10 shrink-0">
-              Открыть топ-20 ↗
+            <button onclick="document.getElementById('projects-grid').scrollIntoView({behavior: 'smooth'})" class="px-5 py-2.5 bg-white/5 hover:bg-white/10 text-sm font-bold uppercase tracking-wider rounded-xl transition whitespace-nowrap border border-white/10 shrink-0">
+              Открыть топ-6 ↗
             </button>
           </div>
 
@@ -619,7 +619,7 @@
         const tags = (p.tags || []).slice(0,4).map(t =>
           `<span class="px-2 py-1 rounded-full bg-white/5 text-[10px] text-gray-400 border border-white/5">${t}</span>`
         ).join('');
-        const orgUrl = p.org_slug ? `org_passport.html?org=${p.org_slug}` : '#';
+        const orgUrl = p.org_slug ? `passport-${p.org_slug}.html` : '#';
 
         return `
           <div class="glass border border-white/5 rounded-3xl p-6 relative group hover:border-[#FF003C]/20 transition duration-500 flex flex-col h-full">
@@ -677,7 +677,7 @@
       }
 
       function orgCard(o) {
-        const orgUrl = o.slug ? `org_passport.html?org=${o.slug}` : '#';
+        const orgUrl = o.slug ? `passport-${o.slug}.html` : '#';
         const matchInfo = [];
         if (o.matched_projects) matchInfo.push(`${o.matched_projects} проектов`);
         if (o.matched_rids)     matchInfo.push(`${o.matched_rids} РИД`);

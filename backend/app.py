@@ -64,6 +64,31 @@ print(f"✅ Индекс готов: {len(RECORDS)} записей за {time.ti
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY", "")
 
 
+def get_query_embedding(query: str):
+    """Получаем вектор запроса через OpenRouter (512-dim)."""
+    if not OPENROUTER_API_KEY:
+        return None
+    try:
+        resp = requests.post(
+            "https://openrouter.ai/api/v1/embeddings",
+            headers={
+                "Authorization": f"Bearer {OPENROUTER_API_KEY}",
+                "Content-Type": "application/json",
+            },
+            json={
+                "model": "openai/text-embedding-3-small",
+                "input": query,
+                "dimensions": 512,
+            },
+            timeout=10,
+        )
+        if resp.status_code == 200:
+            return resp.json()["data"][0]["embedding"]
+    except Exception as e:
+        print(f"Embedding API error: {e}")
+    return None
+
+
 # ─────────────────────────────────────────────
 # Поиск: TF-IDF + Семантика (Hybrid Search)
 # ─────────────────────────────────────────────
@@ -103,20 +128,72 @@ def score_record(query_tokens: set[str], record: dict) -> float:
     return min(1.0, base_score + title_bonus + kw_bonus + t_bonus)
 
 
-def search(query: str, top_n: int = 30) -> list[tuple]:
-    """Возвращает топ-N релевантных записей (больше для хорошей выборки проектов)."""
+def keyword_search(query: str) -> dict:
+    """Keyword поиск — возвращает {record_id: score}."""
     query_tokens = set(tokenize(query))
     if not query_tokens:
-        return []
-
-    scored = []
+        return {}
+    scores = {}
     for rec in RECORDS:
         s = score_record(query_tokens, rec)
         if s > 0.0:
-            scored.append((s, rec))
+            scores[rec["id"]] = s
+    return scores
 
-    scored.sort(key=lambda x: x[0], reverse=True)
-    return scored[:top_n]
+
+def semantic_search(query: str) -> dict:
+    """Семантический поиск — cosine similarity с embeddings. Возвращает {record_id: score}."""
+    if EMBEDDINGS is None or not EMBED_IDS:
+        return {}
+    vec = get_query_embedding(query)
+    if not vec:
+        return {}
+    import numpy as np
+    q = np.array(vec, dtype=np.float32)
+    q_norm = np.linalg.norm(q)
+    if q_norm == 0:
+        return {}
+    q = q / q_norm
+    norms = np.linalg.norm(EMBEDDINGS, axis=1, keepdims=True)
+    norms[norms == 0] = 1e-10
+    sims = np.dot(EMBEDDINGS / norms, q)
+    scores = {}
+    for i, sim in enumerate(sims):
+        s = float((sim + 1) / 2)  # -1..1 → 0..1
+        if s > 0.52:  # отсекаем шум
+            scores[EMBED_IDS[i]] = s
+    return scores
+
+
+def hybrid_search(query: str, top_n: int = 100) -> list[tuple]:
+    """Гибридный поиск: 65% семантика + 35% ключевые слова."""
+    kw_scores = keyword_search(query)
+    sem_scores = semantic_search(query)
+    has_semantic = bool(sem_scores)
+
+    all_ids = set(kw_scores.keys()) | set(sem_scores.keys())
+    if not all_ids:
+        return []
+
+    max_kw = max(kw_scores.values()) if kw_scores else 1.0
+    results = []
+    for rid in all_ids:
+        kw = kw_scores.get(rid, 0.0) / max_kw
+        sem = sem_scores.get(rid, 0.0)
+        if has_semantic:
+            score = 0.65 * sem + 0.35 * kw
+        else:
+            score = kw
+        if rid in REC_BY_ID:
+            results.append((score, REC_BY_ID[rid]))
+
+    results.sort(key=lambda x: x[0], reverse=True)
+    return results[:top_n]
+
+
+def search(query: str, top_n: int = 100) -> list[tuple]:
+    """Обёртка — вызывает hybrid_search."""
+    return hybrid_search(query, top_n)
 
 
 # ─────────────────────────────────────────────
@@ -149,7 +226,7 @@ def build_stats(scored_records: list[tuple]) -> dict:
     }
 
 
-def format_projects(scored_records: list[tuple], top_n: int = 3) -> list[dict]:
+def format_projects(scored_records: list[tuple], top_n: int = 6) -> list[dict]:
     """Форматируем топ-N проектов для фронта."""
     proj_records = [(s, r) for s, r in scored_records if r["type"] == "project"][:top_n]
     result = []
@@ -329,7 +406,7 @@ def ai_search():
 
     # 3. Форматирование топ-результатов (топ-30 по score для карточек)
     top_scored = all_scored[:30]
-    projects = format_projects(top_scored, top_n=3)
+    projects = format_projects(top_scored, top_n=6)
     organizations = format_organizations(top_scored, top_n=3)
     experts = format_experts(top_scored, top_n=3)
 
