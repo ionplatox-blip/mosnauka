@@ -375,6 +375,76 @@ def call_claude(query: str, context_projects: list[dict], stats: dict) -> str:
 
 
 # ─────────────────────────────────────────────
+# AI Re-ranking — Claude фильтрует нерелевант
+# ─────────────────────────────────────────────
+def rerank_with_ai(query: str, scored_records: list[tuple]) -> list[tuple]:
+    """Claude Haiku отсеивает нерелевантные записи из топ-12.
+    
+    Пример: запрос 'роботы для доставки грузов'
+    → in: робототехника, роботизированная машина, доставка мРНК, доставка цитостатиков
+    → out: робототехника, роботизированная машина (только реально релевантные)
+    
+    Стоимость: ~$0.0003 за запрос (Haiku ~$0.25/1M tokens, ~1200 tokens тут)
+    """
+    if not OPENROUTER_API_KEY or len(scored_records) < 3:
+        return scored_records
+    
+    # Берём топ-12 проектов для ранжирования
+    top_to_rerank = [(s, r) for s, r in scored_records if r["type"] == "project"][:12]
+    if len(top_to_rerank) < 2:
+        return scored_records
+    
+    titles_list = "\n".join(
+        f"{i+1}. {r['title'][:120]}"
+        for i, (s, r) in enumerate(top_to_rerank)
+    )
+    
+    try:
+        resp = requests.post(
+            OPENROUTER_URL,
+            headers={
+                "Authorization": f"Bearer {OPENROUTER_API_KEY}",
+                "Content-Type": "application/json",
+            },
+            json={
+                "model": "anthropic/claude-3-haiku",
+                "messages": [
+                    {"role": "system", "content": "Ты фильтр релевантности. Из списка проектов выбери ТОЛЬКО те, которые ДЕЙСТВИТЕЛЬНО связаны с запросом пользователя по СМЫСЛУ. Не путай разные значения одного слова (пример: 'доставка грузов' ≠ 'доставка лекарств в клетку'). Ответь ТОЛЬКО номерами через запятую. Пример ответа: 1,3,5"},
+                    {"role": "user", "content": f"Запрос: «{query}»\n\nПроекты:\n{titles_list}\n\nКакие проекты ДЕЙСТВИТЕЛЬНО релевантны запросу? Только номера:"},
+                ],
+                "max_tokens": 50,
+                "temperature": 0.0,
+            },
+            timeout=8,
+        )
+        data = resp.json()
+        answer = data["choices"][0]["message"]["content"].strip()
+        
+        # Парсим номера: "1,3,5" → [0, 2, 4]
+        import re as _re
+        nums = [int(n.strip()) - 1 for n in _re.findall(r'\d+', answer)]
+        valid_indices = [n for n in nums if 0 <= n < len(top_to_rerank)]
+        
+        if not valid_indices:
+            return scored_records  # fallback
+        
+        # Собираем ID релевантных проектов
+        relevant_ids = {top_to_rerank[i][1]["id"] for i in valid_indices}
+        
+        # Оставляем только релевантные проекты + все не-проекты (РИД, лабы, учёные)
+        reranked = [
+            (s, r) for s, r in scored_records
+            if r["type"] != "project" or r["id"] in relevant_ids
+        ]
+        print(f"🔄 Rerank: {len(top_to_rerank)} → {len(valid_indices)} relevant projects (Claude: {answer})")
+        return reranked if reranked else scored_records
+        
+    except Exception as e:
+        print(f"Rerank error: {e}")
+        return scored_records
+
+
+# ─────────────────────────────────────────────
 # API Endpoints
 # ─────────────────────────────────────────────
 @app.route("/api/health", methods=["GET"])
@@ -414,8 +484,10 @@ def ai_search():
     # 2. Статистика — по всем найденным
     stats = build_stats(all_scored)
 
-    # 3. Форматирование топ-результатов (топ-30 по score для карточек)
+    # 3. AI Re-ranking: Claude отсеивает нерелевантные (дёшево и точно)
     top_scored = all_scored[:30]
+    top_scored = rerank_with_ai(query, top_scored)
+    
     projects = format_projects(top_scored, top_n=6)
     organizations = format_organizations(top_scored, top_n=3)
     experts = format_experts(top_scored, top_n=3)
