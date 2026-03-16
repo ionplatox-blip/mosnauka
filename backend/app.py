@@ -290,23 +290,27 @@ def build_stats(scored_records: list[tuple]) -> dict:
     }
 
 
-def format_projects(scored_records: list[tuple], top_n: int = 6) -> list[dict]:
-    """Форматируем топ-N проектов для фронта."""
+def format_projects(scored_records: list[tuple], top_n: int = 20) -> list[dict]:
+    """Форматируем топ-N проектов для фронта (по умолчанию 20)."""
     proj_records = [(s, r) for s, r in scored_records if r["type"] == "project"][:top_n]
     result = []
     for score, rec in proj_records:
         result.append({
             "title": rec["title"],
             "match_percentage": min(99, int(score * 100)),
-            "tags": rec.get("keywords", [])[:4],
+            "tags": rec.get("keywords", [])[:6],
             "abstract_short": (rec.get("abstract") or "")[:300],
+            "abstract_full": (rec.get("abstract") or "")[:2000],
             "reg_number": rec.get("reg_number", ""),
+            "nioktr": rec.get("nioktr", ""),
             "report_type": rec.get("report_type", ""),
             "budget_rub": rec.get("budget_rub", 0),
             "year": rec.get("year_start"),
             "org_name": rec.get("org_name", ""),
+            "org_name_full": rec.get("org_name_full", ""),
             "org_slug": rec.get("org_slug", ""),
             "org_logo": rec.get("org_logo", ""),
+            "org_website": rec.get("org_website", ""),
         })
     return result
 

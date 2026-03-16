@@ -221,8 +221,8 @@
               <h3 class="text-xl md:text-3xl font-black uppercase italic tracking-tight">Похожие реализованные проекты</h3>
               <span class="px-2 py-1 rounded bg-red-500/10 text-red-400 text-xs font-bold shrink-0">Из базы ЕГИСУ</span>
             </div>
-            <button onclick="document.getElementById('projects-grid').scrollIntoView({behavior: 'smooth'})" class="px-5 py-2.5 bg-white/5 hover:bg-white/10 text-sm font-bold uppercase tracking-wider rounded-xl transition whitespace-nowrap border border-white/10 shrink-0">
-              Открыть топ-6 ↗
+            <button id="toggle-projects-btn" data-expanded="false" onclick="toggleAllProjects()" class="hidden px-5 py-2.5 bg-white/5 hover:bg-white/10 text-sm font-bold uppercase tracking-wider rounded-xl transition whitespace-nowrap border border-white/10 shrink-0">
+              Показать ещё ↓
             </button>
           </div>
 
@@ -591,7 +591,16 @@
         // ── Projects ──
         const projectsGrid = document.getElementById('projects-grid');
         if (projectsGrid && data.projects && data.projects.length) {
-          projectsGrid.innerHTML = data.projects.map(p => projectCard(p)).join('');
+          _allProjects = data.projects;
+          projectsGrid.innerHTML = data.projects.map((p, i) => projectCard(p, i)).join('');
+          // Update toggle button text
+          const toggleBtn = document.getElementById('toggle-projects-btn');
+          if (toggleBtn && data.projects.length > 6) {
+            toggleBtn.innerHTML = `Показать ещё ${data.projects.length - 6} проектов ↓`;
+            toggleBtn.classList.remove('hidden');
+          } else if (toggleBtn) {
+            toggleBtn.classList.add('hidden');
+          }
         }
 
         // ── Organizations ──
@@ -612,7 +621,7 @@
       }
 
       // ── 5. Шаблоны карточек ──────────────────────────────────────────────────
-      function projectCard(p) {
+      function projectCard(p, index) {
         const budgetFmt = p.budget_rub >= 1e6
           ? `₽${(p.budget_rub/1e6).toFixed(1)} млн`
           : p.budget_rub > 0 ? `₽${(p.budget_rub/1e3).toFixed(0)} тыс.` : '–';
@@ -620,9 +629,11 @@
           `<span class="px-2 py-1 rounded-full bg-white/5 text-[10px] text-gray-400 border border-white/5">${t}</span>`
         ).join('');
         const orgUrl = p.org_slug ? `passport-${p.org_slug}.html` : '#';
+        const hiddenClass = index >= 6 ? 'hidden' : '';
 
         return `
-          <div class="glass border border-white/5 rounded-3xl p-6 relative group hover:border-[#FF003C]/20 transition duration-500 flex flex-col h-full">
+          <div class="project-card-item ${hiddenClass}">
+          <div class="glass border border-white/5 rounded-3xl p-6 relative group hover:border-[#FF003C]/20 transition duration-500 flex flex-col h-full cursor-pointer" onclick="openProjectModal(${index})">
             <!-- Match Badge -->
             <div class="absolute top-4 right-4 flex items-center gap-1.5 bg-[#FF003C]/10 px-2.5 py-1 rounded-full border border-[#FF003C]/20">
               <div class="w-1.5 h-1.5 rounded-full bg-[#FF003C] animate-pulse"></div>
@@ -659,7 +670,7 @@
             </div>
 
             <!-- Org link -->
-            <a href="${orgUrl}" class="flex items-center gap-2 mb-4 group/org">
+            <a href="${orgUrl}" onclick="event.stopPropagation()" class="flex items-center gap-2 mb-4 group/org">
               ${p.org_logo ? `<div class="w-6 h-6 rounded bg-white/10 flex items-center justify-center p-0.5 shrink-0"><img src="${p.org_logo}" class="w-full h-full object-contain" alt=""></div>` : ''}
               <div>
                 <div class="text-xs font-semibold text-gray-200 group-hover/org:text-white transition">${p.org_name}</div>
@@ -667,12 +678,16 @@
               </div>
             </a>
 
-            <!-- CTA -->
-            <div class="mt-auto shrink-0">
-              <button class="w-full py-2.5 bg-[#FF003C]/10 text-[#FF003C] hover:bg-[#FF003C] hover:text-white text-xs font-bold uppercase tracking-widest rounded-xl transition duration-300 border border-[#FF003C]/20 hover:border-[#FF003C]">
-                Связаться с Исполнителем
-              </button>
+            <!-- CTA buttons -->
+            <div class="mt-auto shrink-0 flex gap-2">
+              <a href="${orgUrl}" onclick="event.stopPropagation()" class="flex-1 py-2.5 bg-white/5 hover:bg-white/10 text-xs font-bold uppercase tracking-wider rounded-xl transition border border-white/10 text-center block text-gray-200">
+                Профиль ↗
+              </a>
+              ${p.org_website ? `<a href="${p.org_website}" target="_blank" onclick="event.stopPropagation()" class="flex-1 py-2.5 bg-[#FF003C]/10 text-[#FF003C] hover:bg-[#FF003C] hover:text-white text-xs font-bold uppercase tracking-wider rounded-xl transition border border-[#FF003C]/20 hover:border-[#FF003C] text-center block">
+                Связаться ↗
+              </a>` : ''}
             </div>
+          </div>
           </div>`;
       }
 
@@ -740,6 +755,152 @@
           <p class="text-gray-400 text-sm">${msg}</p>
           <button onclick="location.reload()" class="mt-4 px-4 py-2 bg-white/5 hover:bg-white/10 rounded-xl text-xs font-bold transition">Повторить</button>`;
         resultsPhase.prepend(errEl);
+      }
+    </script>
+
+    <!-- ── Project Detail Modal ── -->
+    <div id="project-modal" class="fixed inset-0 z-[999] hidden">
+      <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeModal()"></div>
+      <div class="absolute inset-4 md:inset-[10%] lg:inset-[15%] overflow-y-auto">
+        <div class="glass border border-white/10 rounded-3xl p-6 md:p-10 relative max-w-4xl mx-auto" style="background: rgba(10,10,15,0.97);">
+          <button onclick="closeModal()" class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center transition text-gray-400 hover:text-white text-lg">✕</button>
+
+          <!-- Match badge -->
+          <div class="flex items-center gap-2 mb-4">
+            <div class="flex items-center gap-1.5 bg-[#FF003C]/10 px-3 py-1.5 rounded-full border border-[#FF003C]/20">
+              <div class="w-1.5 h-1.5 rounded-full bg-[#FF003C] animate-pulse"></div>
+              <span class="text-[#FF003C] text-sm font-bold" id="modal-match"></span>
+            </div>
+            <span class="text-[10px] uppercase font-bold tracking-widest text-zinc-500" id="modal-type"></span>
+          </div>
+
+          <!-- Title -->
+          <h2 class="text-xl md:text-2xl font-black text-white mb-4 leading-tight" id="modal-title"></h2>
+
+          <!-- Tags -->
+          <div class="flex flex-wrap gap-1.5 mb-6" id="modal-tags"></div>
+
+          <!-- Abstract -->
+          <div class="mb-6">
+            <h4 class="text-xs uppercase font-bold tracking-widest text-gray-500 mb-2">Описание проекта</h4>
+            <p class="text-sm text-gray-300 leading-relaxed" id="modal-abstract"></p>
+          </div>
+
+          <!-- Metadata grid -->
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
+            <div class="bg-white/3 rounded-xl p-3 border border-white/5">
+              <div class="text-[9px] text-gray-500 uppercase tracking-widest mb-1">Рег. номер</div>
+              <div class="text-xs text-gray-200 font-mono" id="modal-regnumber"></div>
+            </div>
+            <div class="bg-white/3 rounded-xl p-3 border border-white/5">
+              <div class="text-[9px] text-gray-500 uppercase tracking-widest mb-1">НИОКТР</div>
+              <div class="text-xs text-gray-200 font-mono" id="modal-nioktr"></div>
+            </div>
+            <div class="bg-white/3 rounded-xl p-3 border border-white/5">
+              <div class="text-[9px] text-gray-500 uppercase tracking-widest mb-1">Финансирование</div>
+              <div class="text-xs text-white font-bold" id="modal-budget"></div>
+            </div>
+            <div class="bg-white/3 rounded-xl p-3 border border-white/5">
+              <div class="text-[9px] text-gray-500 uppercase tracking-widest mb-1">Год / Тип</div>
+              <div class="text-xs text-gray-200" id="modal-year"></div>
+            </div>
+          </div>
+
+          <!-- Organization -->
+          <div class="glass border border-white/5 rounded-2xl p-4 mb-6 flex flex-col md:flex-row md:items-center gap-4">
+            <div class="flex items-center gap-3 flex-1 min-w-0">
+              <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center p-1 shrink-0" id="modal-org-logo-wrap"></div>
+              <div class="min-w-0">
+                <div class="text-sm font-bold text-white truncate" id="modal-org-name"></div>
+                <div class="text-[10px] text-gray-500" id="modal-org-full"></div>
+              </div>
+            </div>
+            <div class="flex gap-2 shrink-0">
+              <a id="modal-org-passport" href="#" class="px-4 py-2.5 bg-white/5 hover:bg-white/10 text-xs font-bold uppercase tracking-wider rounded-xl transition border border-white/10 inline-block text-center">
+                Профиль ↗
+              </a>
+              <a id="modal-org-website" href="#" target="_blank" class="px-4 py-2.5 bg-[#FF003C]/10 text-[#FF003C] hover:bg-[#FF003C] hover:text-white text-xs font-bold uppercase tracking-wider rounded-xl transition border border-[#FF003C]/20 hover:border-[#FF003C] inline-block text-center">
+                Сайт организации ↗
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // ── Modal logic ──
+      let _allProjects = [];
+
+      function openProjectModal(index) {
+        const p = _allProjects[index];
+        if (!p) return;
+        const modal = document.getElementById('project-modal');
+        const budgetFmt = p.budget_rub >= 1e6 ? `₽${(p.budget_rub/1e6).toFixed(1)} млн` : p.budget_rub > 0 ? `₽${(p.budget_rub/1e3).toFixed(0)} тыс.` : '–';
+
+        document.getElementById('modal-match').textContent = `${p.match_percentage}% совпадение`;
+        document.getElementById('modal-type').textContent = 'Проект НИОКР';
+        document.getElementById('modal-title').textContent = p.title;
+        document.getElementById('modal-abstract').textContent = p.abstract_full || p.abstract_short || 'Описание отсутствует';
+        document.getElementById('modal-regnumber').textContent = p.reg_number || '–';
+        document.getElementById('modal-nioktr').textContent = p.nioktr || '–';
+        document.getElementById('modal-budget').textContent = budgetFmt;
+        document.getElementById('modal-year').textContent = `${p.year || '–'} / ${p.report_type || '–'}`;
+
+        // Tags
+        const tagsEl = document.getElementById('modal-tags');
+        tagsEl.innerHTML = (p.tags || []).map(t => `<span class="px-2 py-1 rounded-full bg-white/5 text-[11px] text-gray-300 border border-white/5">${t}</span>`).join('');
+
+        // Org
+        document.getElementById('modal-org-name').textContent = p.org_name;
+        document.getElementById('modal-org-full').textContent = p.org_name_full || '';
+        const logoWrap = document.getElementById('modal-org-logo-wrap');
+        logoWrap.innerHTML = p.org_logo ? `<img src="${p.org_logo}" class="w-full h-full object-contain" alt="">` : '<i class="ph ph-building text-xl text-gray-500"></i>';
+
+        const passportUrl = p.org_slug ? `passport-${p.org_slug}.html` : '#';
+        document.getElementById('modal-org-passport').href = passportUrl;
+
+        const websiteBtn = document.getElementById('modal-org-website');
+        if (p.org_website) {
+          websiteBtn.href = p.org_website;
+          websiteBtn.style.display = 'inline-block';
+        } else {
+          websiteBtn.style.display = 'none';
+        }
+
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeModal() {
+        document.getElementById('project-modal').classList.add('hidden');
+        document.body.style.overflow = '';
+      }
+
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+      // ── Top-20 toggle ──
+      function toggleAllProjects() {
+        const grid = document.getElementById('projects-grid');
+        const btn = document.getElementById('toggle-projects-btn');
+        const cards = grid.querySelectorAll('.project-card-item');
+        const isExpanded = btn.dataset.expanded === 'true';
+
+        cards.forEach((card, i) => {
+          if (i >= 6) {
+            card.classList.toggle('hidden', isExpanded);
+          }
+        });
+
+        if (isExpanded) {
+          btn.innerHTML = `Показать ещё ${Math.max(0, cards.length - 6)} проектов ↓`;
+          btn.dataset.expanded = 'false';
+          document.getElementById('projects-container').scrollIntoView({behavior: 'smooth'});
+        } else {
+          btn.innerHTML = 'Скрыть ↑';
+          btn.dataset.expanded = 'true';
+        }
       }
     </script>
   </body>

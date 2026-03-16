@@ -426,64 +426,67 @@
           </ul>
         </div>
 
-        <!-- Что есть в Москве -->
+        <!-- Что есть в Москве — Premium Infographic -->
         <div
-          class="p-10 rounded-[3rem] mos-bg-red relative overflow-hidden text-white shadow-[0_0_50px_rgba(255,0,60,0.3)]"
+          class="p-10 rounded-[3rem] relative overflow-hidden text-white shadow-[0_0_50px_rgba(255,0,60,0.3)]"
+          style="background: linear-gradient(135deg, #1a0a0f 0%, #0d0d0d 40%, #0a0d14 100%); border: 1px solid rgba(255,0,60,0.15);"
         >
-          <div
-            class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10 mix-blend-overlay"
-          ></div>
-          <h3 class="text-3xl font-black uppercase italic mb-8 relative z-10">
-            Что уже есть в Москве
+          <div class="absolute top-0 right-0 w-80 h-80 bg-red-600/8 rounded-full blur-[100px]"></div>
+          <div class="absolute bottom-0 left-0 w-60 h-60 bg-blue-600/5 rounded-full blur-[80px]"></div>
+
+          <h3 class="text-2xl font-black uppercase italic mb-10 relative z-10 flex items-center gap-3">
+            <span class="w-2 h-8 bg-red-600 rounded-full"></span>
+            Научный контур Москвы
           </h3>
-          <div class="space-y-8 relative z-10">
-            <div>
-              <div class="text-4xl font-black tracking-tighter mb-1">1 342</div>
-              <p class="text-sm font-bold uppercase tracking-wide opacity-80">
-                организации выполняли исследования и разработки в Москве в 2024
-                году
-              </p>
-            </div>
-            <div>
-              <div class="text-4xl font-black tracking-tighter mb-1">
-                706,3 млрд ₽
+
+          <div class="relative z-10 grid grid-cols-2 gap-6 mb-8">
+            <!-- Metric 1 -->
+            <div class="p-5 rounded-2xl bg-white/[0.03] border border-white/[0.06]">
+              <div class="text-[10px] uppercase font-bold tracking-widest text-zinc-500 mb-3">Организации</div>
+              <div class="text-4xl font-black tracking-tighter text-white mb-2" data-count="1342">1 342</div>
+              <div class="w-full h-1 rounded-full bg-white/10 overflow-hidden">
+                <div class="h-full rounded-full bg-gradient-to-r from-red-600 to-red-400" style="width: 82%"></div>
               </div>
-              <p class="text-sm font-bold uppercase tracking-wide opacity-80">
-                внутренние затраты на исследования и разработки в Москве
-              </p>
+              <p class="text-[9px] text-zinc-500 mt-2">выполняли R&D в 2024 году</p>
             </div>
-            <div>
-              <div class="text-4xl font-black tracking-tighter mb-1">
-                227 770
+
+            <!-- Metric 2 -->
+            <div class="p-5 rounded-2xl bg-white/[0.03] border border-white/[0.06]">
+              <div class="text-[10px] uppercase font-bold tracking-widest text-zinc-500 mb-3">Затраты на R&D</div>
+              <div class="text-4xl font-black tracking-tighter text-white mb-2">706,3<span class="text-lg text-zinc-400 ml-1">млрд ₽</span></div>
+              <div class="w-full h-1 rounded-full bg-white/10 overflow-hidden">
+                <div class="h-full rounded-full bg-gradient-to-r from-blue-500 to-cyan-400" style="width: 70%"></div>
               </div>
-              <p class="text-sm font-bold uppercase tracking-wide opacity-80">
-                человек заняты исследованиями и разработками в крупных, средних
-                и малых организациях Москвы
-              </p>
+              <p class="text-[9px] text-zinc-500 mt-2">внутренние затраты Москвы</p>
             </div>
-            <div class="grid grid-cols-2 gap-4 pt-4 border-t border-white/20">
-              <div>
-                <div class="text-2xl font-black tracking-tighter mb-1">
-                  41,1%
-                </div>
-                <p
-                  class="text-[10px] font-bold uppercase tracking-wide opacity-80"
-                >
-                  доля Москвы в числе организаций предпринимательского сектора
-                  науки России
-                </p>
+
+            <!-- Metric 3 -->
+            <div class="p-5 rounded-2xl bg-white/[0.03] border border-white/[0.06]">
+              <div class="text-[10px] uppercase font-bold tracking-widest text-zinc-500 mb-3">Исследователи</div>
+              <div class="text-4xl font-black tracking-tighter text-white mb-2">227<span class="text-lg text-zinc-400 ml-1">тыс.</span></div>
+              <div class="w-full h-1 rounded-full bg-white/10 overflow-hidden">
+                <div class="h-full rounded-full bg-gradient-to-r from-emerald-500 to-green-400" style="width: 60%"></div>
               </div>
-              <div>
-                <div class="text-2xl font-black tracking-tighter mb-1">
-                  47 747
-                </div>
-                <p
-                  class="text-[10px] font-bold uppercase tracking-wide opacity-80"
-                >
-                  публикаций Москвы в Scopus в 2024 году
-                </p>
-              </div>
+              <p class="text-[9px] text-zinc-500 mt-2">человек в R&D Москвы</p>
             </div>
+
+            <!-- Metric 4 -->
+            <div class="p-5 rounded-2xl bg-white/[0.03] border border-white/[0.06]">
+              <div class="text-[10px] uppercase font-bold tracking-widest text-zinc-500 mb-3">Публикации Scopus</div>
+              <div class="text-4xl font-black tracking-tighter text-white mb-2">47 747</div>
+              <div class="w-full h-1 rounded-full bg-white/10 overflow-hidden">
+                <div class="h-full rounded-full bg-gradient-to-r from-amber-500 to-yellow-400" style="width: 55%"></div>
+              </div>
+              <p class="text-[9px] text-zinc-500 mt-2">в 2024 году</p>
+            </div>
+          </div>
+
+          <!-- Bottom highlight -->
+          <div class="relative z-10 flex items-center gap-4 p-4 rounded-xl bg-red-600/10 border border-red-600/20">
+            <div class="text-3xl font-black text-red-500">41,1%</div>
+            <p class="text-[10px] text-zinc-400 uppercase font-bold tracking-wide leading-relaxed">
+              доля Москвы в числе организаций предпринимательского сектора науки России
+            </p>
           </div>
         </div>
       </div>
@@ -1049,10 +1052,22 @@
           >
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <!-- Topic Filters -->
+        <div class="flex flex-wrap gap-3 mb-12" id="topicFilters">
+          <button class="topic-btn px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest border border-white/20 text-white bg-white/10 transition hover:border-red-500/50" data-topic="all" onclick="filterByTopic('all')">Все</button>
+          <button class="topic-btn px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest border border-white/10 text-gray-400 transition hover:border-red-500/50 hover:text-white" data-topic="геология" onclick="filterByTopic('геология')">Геология</button>
+          <button class="topic-btn px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest border border-white/10 text-gray-400 transition hover:border-red-500/50 hover:text-white" data-topic="фотоника" onclick="filterByTopic('фотоника')">Фотоника</button>
+          <button class="topic-btn px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest border border-white/10 text-gray-400 transition hover:border-red-500/50 hover:text-white" data-topic="ядерные" onclick="filterByTopic('ядерные')">Ядерные</button>
+          <button class="topic-btn px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest border border-white/10 text-gray-400 transition hover:border-red-500/50 hover:text-white" data-topic="энергетика" onclick="filterByTopic('энергетика')">Энергетика</button>
+          <button class="topic-btn px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest border border-white/10 text-gray-400 transition hover:border-red-500/50 hover:text-white" data-topic="ai" onclick="filterByTopic('ai')">AI</button>
+          <button class="topic-btn px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest border border-white/10 text-gray-400 transition hover:border-red-500/50 hover:text-white" data-topic="биология" onclick="filterByTopic('биология')">Биология</button>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8" id="rdCardsGrid">
           <div
             class="card-item group relative p-8 border border-white/10 rounded-[2.5rem] bg-white/5 hover:border-red-500/50 hover:bg-white/[0.08] transition duration-500 flex flex-col justify-between cursor-pointer"
             onclick="window.location.href = 'passport-mgu.html'"
+            data-topics="геология биология фундаментальные"
           >
             <div>
               <!-- Competencies Tags -->
@@ -1062,10 +1077,15 @@
                 <span class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors">Фундаментальные</span>
               </div>
 
-              <!-- Header -->
-              <h3 class="text-2xl font-bold tracking-tight mb-6 leading-tight group-hover:text-red-500 transition-colors">
-                МГУ им. М.В. Ломоносова
-              </h3>
+              <!-- Logo + Header -->
+              <div class="flex items-center gap-4 mb-6">
+                <div class="w-12 h-12 rounded-xl bg-white/10 p-1.5 flex items-center justify-center shrink-0 border border-white/10">
+                  <img src="https://colab.ws/storage/images/5i4jfz1ZRKSKbVsRyLakCM5odPoTNafBGh8Cwxzf.png" class="max-w-full max-h-full object-contain" alt="МГУ logo">
+                </div>
+                <h3 class="text-2xl font-bold tracking-tight leading-tight group-hover:text-red-500 transition-colors">
+                  МГУ им. М.В. Ломоносова
+                </h3>
+              </div>
 
               <!-- Experience / Projects -->
               <div class="space-y-4 mb-8">
@@ -1106,6 +1126,7 @@
           <div
             class="card-item group relative p-8 border border-white/10 rounded-[2.5rem] bg-white/5 hover:border-red-500/50 hover:bg-white/[0.08] transition duration-500 flex flex-col justify-between cursor-pointer"
             onclick="window.location.href = 'passport-mfti.html'"
+            data-topics="фотоника спектроскопия ai"
           >
             <div>
               <!-- Competencies Tags -->
@@ -1115,10 +1136,15 @@
                 <span class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors">AI</span>
               </div>
 
-              <!-- Header -->
-              <h3 class="text-2xl font-bold tracking-tight mb-6 leading-tight group-hover:text-red-500 transition-colors">
-                МФТИ (Физтех)
-              </h3>
+              <!-- Logo + Header -->
+              <div class="flex items-center gap-4 mb-6">
+                <div class="w-12 h-12 rounded-xl bg-white/10 p-1.5 flex items-center justify-center shrink-0 border border-white/10">
+                  <img src="https://colab.ws/storage/images/3EK9xVAuufiiSo3DJo3Ts3t1uhLnt9ZqPWb6nN4m.png" class="max-w-full max-h-full object-contain" alt="МФТИ logo">
+                </div>
+                <h3 class="text-2xl font-bold tracking-tight leading-tight group-hover:text-red-500 transition-colors">
+                  МФТИ (Физтех)
+                </h3>
+              </div>
 
               <!-- Experience / Projects -->
               <div class="space-y-4 mb-8">
@@ -1159,6 +1185,7 @@
           <div
             class="card-item group relative p-8 border border-white/10 rounded-[2.5rem] bg-white/5 hover:border-red-500/50 hover:bg-white/[0.08] transition duration-500 flex flex-col justify-between cursor-pointer"
             onclick="window.location.href = 'passport-kurchatov.html'"
+            data-topics="ядерные мемристоры энергетика"
           >
             <div>
               <!-- Competencies Tags -->
@@ -1168,10 +1195,15 @@
                 <span class="px-2 py-1 border border-white/20 rounded text-[9px] font-black uppercase text-gray-300 group-hover:text-white transition-colors">Энергетика</span>
               </div>
 
-              <!-- Header -->
-              <h3 class="text-2xl font-bold tracking-tight mb-6 leading-tight group-hover:text-red-500 transition-colors">
-                НИЦ "Курчатовский институт"
-              </h3>
+              <!-- Logo + Header -->
+              <div class="flex items-center gap-4 mb-6">
+                <div class="w-12 h-12 rounded-xl bg-white/10 p-1.5 flex items-center justify-center shrink-0 border border-white/10">
+                  <img src="https://colab.ws/storage/images/uxOJr5Cx6jqv7CDFHoUWfPZc1BaVYHiQvnKhsK6S.png" class="max-w-full max-h-full object-contain" alt="Курчатовский logo">
+                </div>
+                <h3 class="text-2xl font-bold tracking-tight leading-tight group-hover:text-red-500 transition-colors">
+                  НИЦ "Курчатовский институт"
+                </h3>
+              </div>
 
               <!-- Experience / Projects -->
               <div class="space-y-4 mb-8">
@@ -1212,7 +1244,163 @@
       </div>
     </section>
 
-    <!-- Секция: Дополнительные модули -->
+    <!-- Секция: Топ-лаборатории -->
+    <section class="px-6 md:px-12 py-20 border-t border-white/10 bg-black">
+      <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+          <div>
+            <h2 class="text-4xl md:text-5xl font-black uppercase italic tracking-tighter mb-3">
+              Топ-лаборатории
+            </h2>
+            <p class="text-gray-400 text-lg font-light max-w-xl">
+              Лучшие лаборатории экосистемы МОСНАУКА: проверенные компетенции, оборудование и команды.
+            </p>
+          </div>
+          <a href="catalog.html" class="px-8 py-3 border border-white/20 text-xs font-black uppercase tracking-widest rounded-full hover:bg-white/5 transition shrink-0">Все лаборатории</a>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <!-- Lab 1: МГУ -->
+          <div class="group p-6 rounded-3xl border border-white/10 bg-white/[0.03] hover:border-red-500/30 hover:bg-white/[0.06] transition-all duration-500 cursor-pointer" onclick="window.location.href='passport-mgu.html'">
+            <div class="flex items-center gap-3 mb-5">
+              <div class="w-10 h-10 rounded-lg bg-white/10 p-1.5 flex items-center justify-center border border-white/10">
+                <img src="https://colab.ws/storage/images/5i4jfz1ZRKSKbVsRyLakCM5odPoTNafBGh8Cwxzf.png" class="max-w-full max-h-full object-contain" alt="">
+              </div>
+              <span class="text-[9px] uppercase font-bold tracking-widest text-zinc-500">МГУ</span>
+            </div>
+            <h3 class="text-lg font-bold mb-3 group-hover:text-red-400 transition-colors leading-snug">Лаборатория концентрирования</h3>
+            <p class="text-xs text-zinc-500 mb-4 line-clamp-2">Гидротермальный синтез, неорганическая химия, низкотемпературная адсорбция азота</p>
+            <div class="flex items-center gap-3">
+              <span class="px-3 py-1 rounded-full bg-red-500/10 text-red-400 text-[10px] font-bold">302 публ.</span>
+              <span class="px-3 py-1 rounded-full bg-white/5 text-zinc-400 text-[10px] font-bold">Химия</span>
+            </div>
+          </div>
+
+          <!-- Lab 2: Курчатовский -->
+          <div class="group p-6 rounded-3xl border border-white/10 bg-white/[0.03] hover:border-red-500/30 hover:bg-white/[0.06] transition-all duration-500 cursor-pointer" onclick="window.location.href='passport-kurchatov.html'">
+            <div class="flex items-center gap-3 mb-5">
+              <div class="w-10 h-10 rounded-lg bg-white/10 p-1.5 flex items-center justify-center border border-white/10">
+                <img src="https://colab.ws/storage/images/uxOJr5Cx6jqv7CDFHoUWfPZc1BaVYHiQvnKhsK6S.png" class="max-w-full max-h-full object-contain" alt="">
+              </div>
+              <span class="text-[9px] uppercase font-bold tracking-widest text-zinc-500">Курчатовский институт</span>
+            </div>
+            <h3 class="text-lg font-bold mb-3 group-hover:text-red-400 transition-colors leading-snug">Лаборатория люминесцентных и детекторных материалов</h3>
+            <p class="text-xs text-zinc-500 mb-4 line-clamp-2">3D-печать, SEM, аддитивные технологии, керамика, сцинтилляторы</p>
+            <div class="flex items-center gap-3">
+              <span class="px-3 py-1 rounded-full bg-red-500/10 text-red-400 text-[10px] font-bold">121 публ.</span>
+              <span class="px-3 py-1 rounded-full bg-white/5 text-zinc-400 text-[10px] font-bold">Материалы</span>
+            </div>
+          </div>
+
+          <!-- Lab 3: МИСиС -->
+          <div class="group p-6 rounded-3xl border border-white/10 bg-white/[0.03] hover:border-red-500/30 hover:bg-white/[0.06] transition-all duration-500 cursor-pointer" onclick="window.location.href='passport-misis.html'">
+            <div class="flex items-center gap-3 mb-5">
+              <div class="w-10 h-10 rounded-lg bg-white/10 p-1.5 flex items-center justify-center border border-white/10">
+                <img src="https://colab.ws/storage/images/dRvP3lMJcjXP3GTJzfOCMGs4rAy4Aq1F3yWpmEzN.png" class="max-w-full max-h-full object-contain" alt="">
+              </div>
+              <span class="text-[9px] uppercase font-bold tracking-widest text-zinc-500">МИСиС</span>
+            </div>
+            <h3 class="text-lg font-bold mb-3 group-hover:text-red-400 transition-colors leading-snug">Лаборатория Ультраширокозонных Полупроводников</h3>
+            <p class="text-xs text-zinc-500 mb-4 line-clamp-2">Силовая электроника, физика полупроводников, широкозонные полупроводники, светодиоды</p>
+            <div class="flex items-center gap-3">
+              <span class="px-3 py-1 rounded-full bg-red-500/10 text-red-400 text-[10px] font-bold">143 публ.</span>
+              <span class="px-3 py-1 rounded-full bg-white/5 text-zinc-400 text-[10px] font-bold">Электроника</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Секция: Ведущие учёные -->
+    <section class="px-6 md:px-12 py-20 border-t border-white/10" style="background: linear-gradient(180deg, #050505 0%, #0a0a0a 100%);">
+      <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+          <div>
+            <h2 class="text-4xl md:text-5xl font-black uppercase italic tracking-tighter mb-3">
+              Ведущие учёные
+            </h2>
+            <p class="text-gray-400 text-lg font-light max-w-xl">
+              Топ-исследователи по числу публикаций из разных организаций экосистемы.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Scientist 1: МГУ — Золотов -->
+          <div class="group rounded-3xl border border-white/10 bg-white/[0.03] hover:border-red-500/30 transition-all duration-500 overflow-hidden">
+            <div class="h-56 overflow-hidden relative">
+              <img src="https://colab.ws/storage/images/eD8XYVZi07HwQ6E3UyaPebG0Wa2PizjhMGkuQKct.png" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Золотов Юрий Александрович" loading="lazy">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+              <div class="absolute bottom-3 left-4">
+                <span class="px-3 py-1 rounded-full bg-red-600/90 text-white text-[10px] font-bold shadow-lg">📚 302 публикации</span>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-1 group-hover:text-red-400 transition-colors">Золотов Юрий Александрович</h3>
+              <p class="text-xs text-zinc-500 mb-3">Лаборатория концентрирования</p>
+              <p class="text-[11px] text-zinc-400 mb-5 line-clamp-2 leading-relaxed">Гидротермальный синтез, Неорганическая химия, Низкотемпературная адсорбция азота, Растровая электронная микроскопия</p>
+              <div class="flex gap-2">
+                <a href="passport-mgu.html" class="flex-1 text-center py-3 rounded-xl bg-white/5 border border-white/10 text-xs font-bold uppercase tracking-wider text-zinc-300 hover:bg-white/10 hover:text-white transition">
+                  <i class="ph ph-flask mr-1"></i> Лаборатория
+                </a>
+                <a href="passport-mgu.html" class="flex-1 text-center py-3 rounded-xl bg-red-600/10 border border-red-600/20 text-xs font-bold uppercase tracking-wider text-red-400 hover:bg-red-600/20 transition">
+                  <i class="ph ph-buildings mr-1"></i> Центр
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Scientist 2: МИСиС — Поляков -->
+          <div class="group rounded-3xl border border-white/10 bg-white/[0.03] hover:border-red-500/30 transition-all duration-500 overflow-hidden">
+            <div class="h-56 overflow-hidden relative">
+              <img src="https://colab.ws/storage/images/MmwH0GbhAibS61mxB6GhLeUFiP8pB7IzDQOvATj3.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Поляков Александр Яковлевич" loading="lazy">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+              <div class="absolute bottom-3 left-4">
+                <span class="px-3 py-1 rounded-full bg-red-600/90 text-white text-[10px] font-bold shadow-lg">📚 143 публикации</span>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-1 group-hover:text-red-400 transition-colors">Поляков Александр Яковлевич</h3>
+              <p class="text-xs text-zinc-500 mb-3">Лаборатория Ультраширокозонных Полупроводников</p>
+              <p class="text-[11px] text-zinc-400 mb-5 line-clamp-2 leading-relaxed">Силовая электроника, Физика полупроводников, Широкозонные полупроводники, Светодиоды</p>
+              <div class="flex gap-2">
+                <a href="passport-misis.html" class="flex-1 text-center py-3 rounded-xl bg-white/5 border border-white/10 text-xs font-bold uppercase tracking-wider text-zinc-300 hover:bg-white/10 hover:text-white transition">
+                  <i class="ph ph-flask mr-1"></i> Лаборатория
+                </a>
+                <a href="passport-misis.html" class="flex-1 text-center py-3 rounded-xl bg-red-600/10 border border-red-600/20 text-xs font-bold uppercase tracking-wider text-red-400 hover:bg-red-600/20 transition">
+                  <i class="ph ph-buildings mr-1"></i> Центр
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Scientist 3: Курчатовский — Дороватовский -->
+          <div class="group rounded-3xl border border-white/10 bg-white/[0.03] hover:border-red-500/30 transition-all duration-500 overflow-hidden">
+            <div class="h-56 overflow-hidden relative">
+              <img src="https://colab.ws/storage/images/mQLDwZBfioXbjy0ki9N0JAu85vBCstFUfwojy7qG.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Павел Дороватовский" loading="lazy">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+              <div class="absolute bottom-3 left-4">
+                <span class="px-3 py-1 rounded-full bg-red-600/90 text-white text-[10px] font-bold shadow-lg">📚 124 публикации</span>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-1 group-hover:text-red-400 transition-colors">Павел Дороватовский</h3>
+              <p class="text-xs text-zinc-500 mb-3">Отдел синхротронных экспериментальных станций</p>
+              <p class="text-[11px] text-zinc-400 mb-5 line-clamp-2 leading-relaxed">Синхротронное излучение, Структурная биология, Структурная химия, Молекулярная спектроскопия</p>
+              <div class="flex gap-2">
+                <a href="passport-kurchatov.html" class="flex-1 text-center py-3 rounded-xl bg-white/5 border border-white/10 text-xs font-bold uppercase tracking-wider text-zinc-300 hover:bg-white/10 hover:text-white transition">
+                  <i class="ph ph-flask mr-1"></i> Лаборатория
+                </a>
+                <a href="passport-kurchatov.html" class="flex-1 text-center py-3 rounded-xl bg-red-600/10 border border-red-600/20 text-xs font-bold uppercase tracking-wider text-red-400 hover:bg-red-600/20 transition">
+                  <i class="ph ph-buildings mr-1"></i> Центр
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section-padding bg-black border-t border-white/10">
       <div class="max-w-7xl mx-auto">
         <h2
@@ -1640,6 +1828,35 @@
         );
         observer.observe(s);
       });
+
+      // Topic Filtering for R&D Centers
+      function filterByTopic(topic) {
+        const cards = document.querySelectorAll('#rdCardsGrid > div');
+        const btns = document.querySelectorAll('.topic-btn');
+        
+        btns.forEach(btn => {
+          if (btn.dataset.topic === topic) {
+            btn.classList.add('bg-white/10', 'text-white', 'border-white/20');
+            btn.classList.remove('text-gray-400', 'border-white/10');
+          } else {
+            btn.classList.remove('bg-white/10', 'text-white', 'border-white/20');
+            btn.classList.add('text-gray-400', 'border-white/10');
+          }
+        });
+        
+        cards.forEach(card => {
+          const topics = (card.dataset.topics || '').toLowerCase();
+          if (topic === 'all' || topics.includes(topic.toLowerCase())) {
+            card.style.display = '';
+            card.style.opacity = '1';
+            card.style.transform = 'scale(1)';
+          } else {
+            card.style.opacity = '0';
+            card.style.transform = 'scale(0.95)';
+            setTimeout(() => { card.style.display = 'none'; }, 300);
+          }
+        });
+      }
     </script>
 
     <!-- Модалка внутри index.html сразу же (универсальный попап) -->
