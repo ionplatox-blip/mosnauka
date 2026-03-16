@@ -62,6 +62,59 @@ print(f"✅ Индекс готов: {len(RECORDS)} записей за {time.ti
 
 
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY", "")
+OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
+
+
+def expand_query(query: str) -> str:
+    """Claude Haiku расширяет запрос перед embedding поиском.
+    
+    'роботы для доставки грузов' →
+    'роботы для доставки грузов, робототехника, автоматизация логистики,
+     автономные транспортные средства, мобильные роботы, навигация.
+     НЕ: биология, фармакология, внутриклеточная доставка'
+    
+    Стоимость: ~$0.0002/запрос (~80 токенов Haiku)
+    """
+    if not OPENROUTER_API_KEY:
+        return query
+    
+    try:
+        resp = requests.post(
+            OPENROUTER_URL,
+            headers={
+                "Authorization": f"Bearer {OPENROUTER_API_KEY}",
+                "Content-Type": "application/json",
+            },
+            json={
+                "model": "anthropic/claude-3-haiku",
+                "messages": [
+                    {"role": "system", "content": """Ты расширяешь поисковый запрос для семантического поиска по базе НИОКР.
+
+Задача: переформулируй запрос, добавив:
+1. 3-5 синонимов/связанных терминов из ТОЙ ЖЕ научно-технической области
+2. 1-2 прилагательных, уточняющих область
+3. Строку "НЕ:" с 2-3 областями, которые могут ложно совпасть
+
+Формат ответа — ТОЛЬКО расширенный текст, без пояснений.
+
+Пример:
+Запрос: роботы для доставки грузов
+Ответ: роботы для доставки грузов, робототехника, автономные транспортные платформы, автоматизация логистики, мобильные роботы, беспилотные системы, складская робототехника. НЕ: молекулярная биология, фармакология, внутриклеточная доставка"""},
+                    {"role": "user", "content": query},
+                ],
+                "max_tokens": 120,
+                "temperature": 0.0,
+            },
+            timeout=5,
+        )
+        if resp.status_code == 200:
+            expanded = resp.json()["choices"][0]["message"]["content"].strip()
+            print(f"🔍 Query expansion: '{query}' → '{expanded[:100]}...'")
+            return expanded
+    except Exception as e:
+        print(f"Query expansion error: {e}")
+    
+    return query
 
 
 def get_query_embedding(query: str):
@@ -142,10 +195,11 @@ def keyword_search(query: str) -> dict:
 
 
 def semantic_search(query: str) -> dict:
-    """Семантический поиск — cosine similarity с embeddings. Возвращает {record_id: score}."""
+    """Семантический поиск — query expansion + cosine similarity. Возвращает {record_id: score}."""
     if EMBEDDINGS is None or not EMBED_IDS:
         return {}
-    vec = get_query_embedding(query)
+    expanded = expand_query(query)
+    vec = get_query_embedding(expanded)
     if not vec:
         return {}
     import numpy as np
@@ -315,8 +369,7 @@ def format_experts(scored_records: list[tuple], top_n: int = 3) -> list[dict]:
 # ─────────────────────────────────────────────
 # OpenRouter — Claude Haiku
 # ─────────────────────────────────────────────
-OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY", "")
-OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
+# (OPENROUTER_API_KEY и OPENROUTER_URL определены выше)
 
 
 def call_claude(query: str, context_projects: list[dict], stats: dict) -> str:
