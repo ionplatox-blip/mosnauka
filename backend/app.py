@@ -443,8 +443,8 @@ def rerank_with_ai(query: str, scored_records: list[tuple]) -> list[tuple]:
     if not OPENROUTER_API_KEY or len(scored_records) < 3:
         return scored_records
     
-    # Берём топ-15 проектов для ранжирования
-    top_to_rerank = [(s, r) for s, r in scored_records if r["type"] == "project"][:15]
+    # Берём топ-25 проектов для ранжирования
+    top_to_rerank = [(s, r) for s, r in scored_records if r["type"] == "project"][:25]
     if len(top_to_rerank) < 2:
         return scored_records
     
@@ -560,10 +560,10 @@ def ai_search():
     stats = build_stats(all_scored)
 
     # 3. AI Re-ranking: Claude отсеивает нерелевантные (дёшево и точно)
-    top_scored = all_scored[:30]
+    top_scored = all_scored[:50]
     top_scored = rerank_with_ai(query, top_scored)
     
-    projects = format_projects(top_scored, top_n=6)
+    projects = format_projects(top_scored)  # top_n=20 по умолчанию
     organizations = format_organizations(top_scored, top_n=3)
     experts = format_experts(top_scored, top_n=3)
 
