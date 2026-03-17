@@ -1302,6 +1302,142 @@
       </div>
     </section>
 
+    <!-- ═══════ SECTION 8.5: КАЛЬКУЛЯТОР ВЫГОДЫ НИОКР ═══════ -->
+    <section id="calculator" class="px-6 md:px-12 py-24 border-t border-white/5">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-12 items-start">
+          <!-- Left: Text -->
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-emerald-500/20 bg-emerald-500/5 mb-6">
+              <i class="ph ph-calculator text-emerald-400 text-sm"></i>
+              <span class="text-[10px] font-bold uppercase tracking-widest text-emerald-400">Экономика</span>
+            </div>
+            <h2 class="text-3xl md:text-4xl font-black uppercase italic tracking-tighter mb-4">
+              Калькулятор<br>выгоды НИОКР
+            </h2>
+            <p class="text-gray-400 text-base leading-relaxed mb-6">
+              Расходы на НИОКР можно учесть с <span class="text-emerald-400 font-bold">повышающим коэффициентом 1.5</span> при расчёте налога на прибыль (ст. 262 НК РФ).
+            </p>
+            <div class="p-4 rounded-xl bg-emerald-500/5 border border-emerald-500/10 mb-6">
+              <div class="text-[10px] uppercase tracking-wider font-bold text-emerald-400 mb-2">Что это значит</div>
+              <p class="text-xs text-gray-400 leading-relaxed">
+                На каждые <span class="text-white font-semibold">10 млн ₽</span> затрат на НИОКР вы можете уменьшить налогооблагаемую базу на <span class="text-emerald-400 font-semibold">15 млн ₽</span>, экономия до <span class="text-emerald-400 font-semibold">1 млн ₽</span> налога на прибыль.
+              </p>
+            </div>
+          </div>
+
+          <!-- Right: Calculator Widget -->
+          <div class="glass-strong rounded-3xl p-8 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-40 h-40 bg-emerald-500/5 rounded-full blur-[60px] -mr-10 -mt-10"></div>
+            <div class="relative z-10">
+              <div class="text-[10px] uppercase tracking-widest font-bold text-gray-500 mb-8">Симуляция выгоды</div>
+
+              <!-- Slider -->
+              <div class="mb-8">
+                <div class="flex justify-between items-end mb-4">
+                  <span class="text-xs font-bold uppercase text-gray-400">Бюджет НИОКР</span>
+                  <span class="text-2xl font-black italic text-white" id="calcDisplay">10 000 000 ₽</span>
+                </div>
+                <input type="range" id="calcRange" min="1000000" max="50000000" step="1000000" value="10000000"
+                  class="w-full h-1 bg-white/10 rounded-full appearance-none cursor-pointer
+                  [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-5 [&::-webkit-slider-thumb]:h-5
+                  [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-[#ff003c]
+                  [&::-webkit-slider-thumb]:shadow-[0_0_15px_rgba(255,0,60,0.5)] [&::-webkit-slider-thumb]:cursor-pointer" />
+              </div>
+
+              <!-- Results -->
+              <div class="space-y-3">
+                <div class="flex justify-between items-center p-4 rounded-xl bg-white/[0.03] border border-white/[0.06]">
+                  <span class="text-xs text-gray-400 font-bold uppercase">Эффект коэфф. 1.5</span>
+                  <span class="text-lg font-black italic text-emerald-400" id="calcTax">1 000 000 ₽</span>
+                </div>
+                <div class="flex justify-between items-center p-4 rounded-xl bg-white/[0.03] border border-white/[0.06]">
+                  <span class="text-xs text-gray-400 font-bold uppercase">Оценочный грант МИК</span>
+                  <span class="text-lg font-black italic text-blue-400" id="calcGrant">до 5 000 000 ₽</span>
+                </div>
+                <div class="flex justify-between items-center p-5 rounded-xl mos-bg-red shadow-[0_0_30px_rgba(255,0,60,0.2)] mt-4">
+                  <span class="text-xs font-bold uppercase tracking-wider text-white/90">Потенциальный<br>эффект</span>
+                  <span class="text-2xl font-black italic text-white" id="calcTotal">~ 60%</span>
+                </div>
+              </div>
+              <p class="text-center text-[9px] text-white/30 uppercase tracking-widest mt-4">
+                Не является публичной офертой. Требуется консультация.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      (function() {
+        const range = document.getElementById('calcRange');
+        const display = document.getElementById('calcDisplay');
+        const tax = document.getElementById('calcTax');
+        const grant = document.getElementById('calcGrant');
+        const total = document.getElementById('calcTotal');
+
+        function fmt(n) { return n.toLocaleString('ru-RU') + ' ₽'; }
+
+        function update() {
+          const val = parseInt(range.value);
+          display.textContent = fmt(val);
+          // Coefficient 1.5 → extra 0.5 * val * 20% tax rate = 10% savings
+          const taxSave = Math.round(val * 0.1);
+          tax.textContent = fmt(taxSave);
+          // Grant estimate: up to 50% but max 50M
+          const grantVal = Math.min(Math.round(val * 0.5), 50000000);
+          grant.textContent = 'до ' + fmt(grantVal);
+          // Total potential benefit %
+          const pct = Math.round(((taxSave + grantVal) / val) * 100);
+          total.textContent = '~ ' + pct + '%';
+        }
+
+        range.addEventListener('input', update);
+        update();
+      })();
+    </script>
+
+    <!-- ═══════ SECTION 8.7: ГОРОДСКОЙ ЭФФЕКТ ═══════ -->
+    <section class="px-6 md:px-12 py-24 relative overflow-hidden border-t border-white/5">
+      <div class="absolute inset-0 mos-bg-red"></div>
+      <div class="absolute inset-0 bg-gradient-to-br from-red-800/80 to-black/80"></div>
+      <div class="absolute inset-0 opacity-5" style="background-image: url('https://www.transparenttextures.com/patterns/carbon-fibre.png');"></div>
+
+      <div class="max-w-6xl mx-auto relative z-10 flex flex-col md:flex-row gap-12 md:gap-20 items-center">
+        <div class="md:w-1/3">
+          <h2 class="text-3xl md:text-5xl font-black uppercase italic tracking-tighter leading-none mb-6 drop-shadow-md">
+            Системный<br>эффект для<br>города
+          </h2>
+          <p class="text-white/80 font-medium leading-relaxed text-sm">
+            МОСНАУКА превращает научный потенциал столицы в реальный экономический рост: новые рабочие места, импортозамещение критических технологий и рост технологического суверенитета.
+          </p>
+        </div>
+        <div class="md:w-2/3 grid grid-cols-2 gap-6 md:gap-10">
+          <div class="p-6 md:p-8 border-l-2 border-white/20">
+            <span class="block text-[10px] font-black uppercase tracking-widest text-white/50 mb-4">Прозрачность</span>
+            <span class="block text-5xl md:text-6xl font-black italic mb-3 drop-shadow-lg">100%</span>
+            <p class="text-[10px] text-white/70 uppercase font-bold tracking-wider">Научного контура города оцифровано</p>
+          </div>
+          <div class="p-6 md:p-8 border-l-2 border-white/20">
+            <span class="block text-[10px] font-black uppercase tracking-widest text-white/50 mb-4">Рост НИОКР</span>
+            <span class="block text-5xl md:text-6xl font-black italic mb-3 drop-shadow-lg">+45%</span>
+            <p class="text-[10px] text-white/70 uppercase font-bold tracking-wider">Объем частных инвестиций</p>
+          </div>
+          <div class="p-6 md:p-8 border-l-2 border-white/20">
+            <span class="block text-[10px] font-black uppercase tracking-widest text-white/50 mb-4">Эффективность</span>
+            <span class="block text-5xl md:text-6xl font-black italic mb-3 drop-shadow-lg">×1.8</span>
+            <p class="text-[10px] text-white/70 uppercase font-bold tracking-wider">Скорость запуска продуктов</p>
+          </div>
+          <div class="p-6 md:p-8 border-l-2 border-white/20">
+            <span class="block text-[10px] font-black uppercase tracking-widest text-white/50 mb-4">Кадры</span>
+            <span class="block text-5xl md:text-6xl font-black italic mb-3 drop-shadow-lg">12К+</span>
+            <p class="text-[10px] text-white/70 uppercase font-bold tracking-wider">Верифицированных научных команд</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ═══════ SECTION 9: CTA ДЛЯ R&D ЦЕНТРОВ ═══════ -->
     <section class="px-6 md:px-12 py-24 border-t border-white/5">
       <div class="max-w-4xl mx-auto">
