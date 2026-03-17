@@ -326,14 +326,20 @@
               </button>
             </div>
 
-            <!-- Quick tags -->
-            <div class="flex flex-wrap gap-1.5 mt-5">
-              <a href="catalog.html" class="quick-tag px-2.5 py-1 rounded-full text-[10px] font-semibold text-gray-500">материаловедение</a>
-              <a href="catalog.html" class="quick-tag px-2.5 py-1 rounded-full text-[10px] font-semibold text-gray-500">катализ</a>
-              <a href="catalog.html" class="quick-tag px-2.5 py-1 rounded-full text-[10px] font-semibold text-gray-500">нанотех</a>
-              <a href="catalog.html" class="quick-tag px-2.5 py-1 rounded-full text-[10px] font-semibold text-gray-500">электрохимия</a>
-              <a href="catalog.html" class="quick-tag px-2.5 py-1 rounded-full text-[10px] font-semibold text-gray-500">биотех</a>
-              <a href="catalog.html" class="quick-tag px-2.5 py-1 rounded-full text-[10px] font-semibold text-gray-500">ИИ и ML</a>
+            <!-- Popular queries -->
+            <div class="mt-5">
+              <div class="flex items-center gap-2 mb-2">
+                <div class="w-1.5 h-1.5 rounded-full bg-[#FF003C] animate-pulse"></div>
+                <span class="text-[9px] uppercase font-bold tracking-widest text-gray-600">Популярные запросы</span>
+              </div>
+              <div class="flex flex-wrap gap-1.5">
+                <button onclick="fillAndSearch('Роботы для складской логистики')" class="quick-tag px-2.5 py-1 rounded-full text-[10px] font-semibold text-gray-500 hover:text-white hover:bg-white/10 transition cursor-pointer">🤖 роботы для складов</button>
+                <button onclick="fillAndSearch('Оптическое покрытие для линз')" class="quick-tag px-2.5 py-1 rounded-full text-[10px] font-semibold text-gray-500 hover:text-white hover:bg-white/10 transition cursor-pointer">🔬 оптическое покрытие</button>
+                <button onclick="fillAndSearch('Литий-ионные аккумуляторы')" class="quick-tag px-2.5 py-1 rounded-full text-[10px] font-semibold text-gray-500 hover:text-white hover:bg-white/10 transition cursor-pointer">🔋 литий-ионные батареи</button>
+                <button onclick="fillAndSearch('Импортозамещение полимерных материалов')" class="quick-tag px-2.5 py-1 rounded-full text-[10px] font-semibold text-gray-500 hover:text-white hover:bg-white/10 transition cursor-pointer">🧪 импортозамещение полимеров</button>
+                <button onclick="fillAndSearch('Машинное обучение для предсказания свойств материалов')" class="quick-tag px-2.5 py-1 rounded-full text-[10px] font-semibold text-gray-500 hover:text-white hover:bg-white/10 transition cursor-pointer">🧠 ML для материалов</button>
+                <button onclick="fillAndSearch('Нанопокрытия для защиты от коррозии')" class="quick-tag px-2.5 py-1 rounded-full text-[10px] font-semibold text-gray-500 hover:text-white hover:bg-white/10 transition cursor-pointer">🛡️ антикоррозия</button>
+              </div>
             </div>
 
           </div>
@@ -386,6 +392,16 @@
             doSearch();
           }
         });
+
+        // Popular query chips → fill textarea & search
+        function fillAndSearch(query) {
+          const textarea = document.querySelector('#panel-describe .task-textarea');
+          if (textarea) {
+            textarea.value = query;
+            switchTab('describe');
+          }
+          window.location.href = 'ai_search_results.html?q=' + encodeURIComponent(query);
+        }
       </script>
 
     </header>
@@ -394,30 +410,30 @@
     <section class="px-6 md:px-12 py-16 border-t border-white/5">
       <div class="max-w-6xl mx-auto">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-          <div class="p-5 rounded-2xl bg-white/[0.03] border border-white/[0.06] relative overflow-hidden">
+          <a href="catalog.html" class="p-5 rounded-2xl bg-white/[0.03] border border-white/[0.06] hover:border-white/20 hover:bg-white/[0.06] relative overflow-hidden transition cursor-pointer group">
             <div class="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-red-600 to-red-400"></div>
             <div class="text-[10px] uppercase font-bold tracking-widest text-zinc-500 mb-2">R&D центры</div>
-            <div class="stat-number text-3xl md:text-4xl font-black italic tracking-tighter mb-1">22</div>
+            <div class="stat-number text-3xl md:text-4xl font-black italic tracking-tighter mb-1 group-hover:text-red-400 transition">22</div>
             <p class="text-[9px] text-zinc-600">верифицированных организации</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-white/[0.03] border border-white/[0.06] relative overflow-hidden">
+          </a>
+          <a href="catalog.html" class="p-5 rounded-2xl bg-white/[0.03] border border-white/[0.06] hover:border-white/20 hover:bg-white/[0.06] relative overflow-hidden transition cursor-pointer group">
             <div class="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-500 to-cyan-400"></div>
             <div class="text-[10px] uppercase font-bold tracking-widest text-zinc-500 mb-2">Лаборатории</div>
-            <div class="stat-number text-3xl md:text-4xl font-black italic tracking-tighter mb-1">170</div>
+            <div class="stat-number text-3xl md:text-4xl font-black italic tracking-tighter mb-1 group-hover:text-blue-400 transition">170</div>
             <p class="text-[9px] text-zinc-600">с оборудованием и командой</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-white/[0.03] border border-white/[0.06] relative overflow-hidden">
+          </a>
+          <a href="ai_search_results.html?q=все+проекты+НИОКР" class="p-5 rounded-2xl bg-white/[0.03] border border-white/[0.06] hover:border-white/20 hover:bg-white/[0.06] relative overflow-hidden transition cursor-pointer group">
             <div class="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-emerald-500 to-green-400"></div>
             <div class="text-[10px] uppercase font-bold tracking-widest text-zinc-500 mb-2">Проекты НИОКР</div>
-            <div class="stat-number text-3xl md:text-4xl font-black italic tracking-tighter text-blue-400 mb-1">2 210</div>
+            <div class="stat-number text-3xl md:text-4xl font-black italic tracking-tighter text-blue-400 mb-1 group-hover:text-emerald-400 transition">2 210</div>
             <p class="text-[9px] text-zinc-600">завершённых из ЕГИСУ</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-white/[0.03] border border-white/[0.06] relative overflow-hidden">
+          </a>
+          <a href="ai_search_results.html?q=патенты+и+РИД" class="p-5 rounded-2xl bg-white/[0.03] border border-white/[0.06] hover:border-white/20 hover:bg-white/[0.06] relative overflow-hidden transition cursor-pointer group">
             <div class="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-purple-500 to-violet-400"></div>
             <div class="text-[10px] uppercase font-bold tracking-widest text-zinc-500 mb-2">Патенты и РИД</div>
-            <div class="stat-number text-3xl md:text-4xl font-black italic tracking-tighter text-purple-400 mb-1">1 388</div>
+            <div class="stat-number text-3xl md:text-4xl font-black italic tracking-tighter text-purple-400 mb-1 group-hover:text-violet-400 transition">1 388</div>
             <p class="text-[9px] text-zinc-600">зарегистрированных результатов</p>
-          </div>
+          </a>
         </div>
         <div class="flex items-center justify-center gap-2 mt-6">
           <span class="w-1.5 h-1.5 rounded-full bg-green-500 live-dot"></span>
@@ -716,7 +732,7 @@
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
             <!-- 1. Лаборатория МГУ -->
-            <a href="passport-mgu.html#sci_018" class="glass rounded-3xl p-6 card-hover group flex flex-col relative overflow-hidden">
+            <a href="mgu/sci_018.html" class="glass rounded-3xl p-6 card-hover group flex flex-col relative overflow-hidden">
               <div class="absolute inset-0 bg-gradient-to-br from-red-500/5 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
               
               <div class="flex items-center justify-between mb-4 relative z-10">
@@ -749,7 +765,7 @@
             </a>
 
             <!-- 2. Лаборатория МИСиС -->
-            <a href="passport-misis.html#sci_000" class="glass rounded-3xl p-6 card-hover group flex flex-col relative overflow-hidden">
+            <a href="misis/sci_000.html" class="glass rounded-3xl p-6 card-hover group flex flex-col relative overflow-hidden">
               <div class="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
               
               <div class="flex items-center justify-between mb-4 relative z-10">
@@ -782,7 +798,7 @@
             </a>
 
             <!-- 3. Отдел Курчатов -->
-            <a href="passport-kurchatov.html#sci_011" class="glass rounded-3xl p-6 card-hover group flex flex-col relative overflow-hidden">
+            <a href="kurchatov/sci_011.html" class="glass rounded-3xl p-6 card-hover group flex flex-col relative overflow-hidden">
               <div class="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
               
               <div class="flex items-center justify-between mb-4 relative z-10">
@@ -815,6 +831,11 @@
             </a>
 
           </div>
+          <div class="mt-8 text-center">
+            <a href="catalog.html" class="inline-flex items-center gap-2 text-sm font-bold text-blue-400 hover:text-blue-300 transition uppercase tracking-wider">
+              Все лаборатории <i class="ph ph-arrow-right"></i>
+            </a>
+          </div>
         </div>
 
         <!-- Ведущие учёные -->
@@ -828,7 +849,7 @@
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
             <!-- 1. Антипов Е.В. — МГУ -->
-            <div class="glass rounded-3xl p-6 card-hover group flex flex-col relative overflow-hidden">
+            <div onclick="window.location.href='mgu/sci_018.html'" class="glass rounded-3xl p-6 card-hover group flex flex-col relative overflow-hidden cursor-pointer">
               <div class="absolute top-0 right-0 w-32 h-32 bg-red-500/10 rounded-full blur-[50px] -mr-10 -mt-10"></div>
               
               <!-- Фото и статус -->
@@ -866,8 +887,8 @@
 
               <!-- Кнопки -->
               <div class="flex gap-2 relative z-10 mt-auto">
-                <a href="passport-mgu.html" class="flex-1 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-center text-xs font-bold transition">Центр</a>
-                <a href="passport-mgu.html#sci_018" class="flex-1 py-2.5 rounded-xl bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-400 text-center text-xs font-bold shadow-lg shadow-red-500/20 transition">Лаборатория</a>
+                <a href="passport-mgu.html" onclick="event.stopPropagation()" class="flex-1 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-center text-xs font-bold transition">Центр</a>
+                <a href="mgu/sci_018.html" onclick="event.stopPropagation()" class="flex-1 py-2.5 rounded-xl bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-400 text-center text-xs font-bold shadow-lg shadow-red-500/20 transition">Лаборатория</a>
               </div>
             </div>
 
@@ -907,13 +928,13 @@
               </div>
 
               <div class="flex gap-2 relative z-10 mt-auto">
-                <a href="passport-misis.html" class="flex-1 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-center text-xs font-bold transition">Центр</a>
-                <a href="passport-misis.html#sci_000" class="flex-1 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-center text-xs font-bold shadow-lg shadow-blue-500/20 transition">Лаборатория</a>
+                <a href="passport-misis.html" onclick="event.stopPropagation()" class="flex-1 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-center text-xs font-bold transition">Центр</a>
+                <a href="misis/sci_000.html" onclick="event.stopPropagation()" class="flex-1 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-center text-xs font-bold shadow-lg shadow-blue-500/20 transition">Лаборатория</a>
               </div>
             </div>
 
             <!-- 3. Дороватовский П. — Курчатов -->
-            <div class="glass rounded-3xl p-6 card-hover group flex flex-col relative overflow-hidden">
+            <div onclick="window.location.href='kurchatov/sci_011.html'" class="glass rounded-3xl p-6 card-hover group flex flex-col relative overflow-hidden cursor-pointer">
               <div class="absolute top-0 right-0 w-32 h-32 bg-purple-500/10 rounded-full blur-[50px] -mr-10 -mt-10"></div>
               
               <div class="flex items-start justify-between mb-5 relative z-10">
@@ -948,8 +969,8 @@
               </div>
 
               <div class="flex gap-2 relative z-10 mt-auto">
-                <a href="passport-kurchatov.html" class="flex-1 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-center text-xs font-bold transition">Центр</a>
-                <a href="passport-kurchatov.html#sci_011" class="flex-1 py-2.5 rounded-xl bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-500 hover:to-purple-400 text-center text-xs font-bold shadow-lg shadow-purple-500/20 transition">Лаборатория</a>
+                <a href="passport-kurchatov.html" onclick="event.stopPropagation()" class="flex-1 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-center text-xs font-bold transition">Центр</a>
+                <a href="kurchatov/sci_011.html" onclick="event.stopPropagation()" class="flex-1 py-2.5 rounded-xl bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-500 hover:to-purple-400 text-center text-xs font-bold shadow-lg shadow-purple-500/20 transition">Лаборатория</a>
               </div>
             </div>
 
