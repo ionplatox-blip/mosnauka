@@ -101,10 +101,10 @@
         <a href="dashboard.html" class="px-5 py-2 text-[10px] font-black uppercase tracking-widest border border-white/20 rounded-full hover:bg-white/5 transition">Личный кабинет</a>
         <a href="index_v2.html" class="px-5 py-2 bg-[#FF003C] text-[10px] font-black uppercase tracking-widest rounded-full hover:opacity-90 shadow-[0_0_20px_rgba(255,0,60,0.4)] transition">Новый поиск</a>
       </div>
-      <!-- Mobile Menu Button -->
-      <button class="md:hidden text-white flex items-center justify-center p-2 rounded-full hover:bg-white/10 transition">
-        <i class="ph ph-list text-2xl"></i>
-      </button>
+      <!-- Mobile: New Search icon -->
+      <a href="index_v2.html" class="md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-[#FF003C] shadow-[0_0_15px_rgba(255,0,60,0.4)] transition hover:opacity-90">
+        <i class="ph ph-magnifying-glass text-white text-lg"></i>
+      </a>
     </nav>
 
     <!-- ═══════ MAIN CONTENT AREA ═══════ -->
@@ -161,8 +161,13 @@
                   <h2 class="text-sm font-black uppercase italic tracking-widest">ИИ-анализ темы</h2>
                   <span class="px-2 py-0.5 rounded text-[9px] font-bold bg-white/10 text-gray-400">Claude 3.5 Haiku</span>
                 </div>
-                <div class="text-base md:text-lg text-gray-200 leading-relaxed" id="ai-response-text" data-ai-summary>
-                  <span class="text-gray-500 italic">Загрузка анализа...</span>
+                <div class="relative">
+                  <div class="text-base md:text-lg text-gray-200 leading-relaxed md:max-h-none max-h-32 overflow-hidden transition-all duration-300" id="ai-response-text" data-ai-summary>
+                    <span class="text-gray-500 italic">Загрузка анализа...</span>
+                  </div>
+                  <button id="ai-summary-toggle" onclick="toggleAISummary()" class="hidden mt-2 text-xs font-bold text-[#FF003C] uppercase tracking-wider hover:underline">
+                    Показать полностью ↓
+                  </button>
                 </div>
               </div>
             </div>
@@ -170,19 +175,19 @@
             <!-- KPI Row -->
             <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
               <div class="glass border border-white/5 rounded-2xl p-4">
-                <div class="text-2xl font-black text-white mb-1" id="stat-projects">43</div>
+                <div class="text-lg md:text-2xl font-black text-white mb-1" id="stat-projects">43</div>
                 <div class="text-[10px] text-gray-400 uppercase tracking-wider">Проектов по теме</div>
               </div>
               <div class="glass border border-white/5 rounded-2xl p-4">
-                <div class="text-2xl font-black text-white mb-1" id="stat-orgs">11</div>
+                <div class="text-lg md:text-2xl font-black text-white mb-1" id="stat-orgs">11</div>
                 <div class="text-[10px] text-gray-400 uppercase tracking-wider">Организаций</div>
               </div>
               <div class="glass border border-white/5 rounded-2xl p-4">
-                <div class="text-2xl font-black text-[#00E5FF] mb-1" id="stat-funding">₽ 2.1 млрд</div>
+                <div class="text-lg md:text-2xl font-black text-[#00E5FF] mb-1 truncate" id="stat-funding">₽ 2.1 млрд</div>
                 <div class="text-[10px] text-gray-400 uppercase tracking-wider">Суммарное финансирование</div>
               </div>
               <div class="glass border border-white/5 rounded-2xl p-4">
-                <div class="text-2xl font-black text-green-400 mb-1" id="stat-match">95%</div>
+                <div class="text-lg md:text-2xl font-black text-green-400 mb-1" id="stat-match">95%</div>
                 <div class="text-[10px] text-gray-400 uppercase tracking-wider">Макс. совпадение</div>
               </div>
             </div>
@@ -578,6 +583,14 @@
         if (data.ai_summary) {
           const summaryEls = document.querySelectorAll('[data-ai-summary]');
           summaryEls.forEach(el => el.textContent = data.ai_summary);
+          // Show expand button on mobile if text overflows
+          setTimeout(() => {
+            const aiText = document.getElementById('ai-response-text');
+            const toggleBtn = document.getElementById('ai-summary-toggle');
+            if (aiText && toggleBtn && aiText.scrollHeight > aiText.clientHeight) {
+              toggleBtn.classList.remove('hidden');
+            }
+          }, 100);
         }
 
         // ── Обновляем терминальные логи финально ──
@@ -641,7 +654,7 @@
             </div>
 
             <!-- Tags -->
-            <div class="flex flex-wrap gap-1.5 mb-4 pr-28">${tags}</div>
+            <div class="flex flex-wrap gap-1.5 mb-4 pr-16 md:pr-28">${tags}</div>
 
             <!-- Title -->
             <h4 class="text-base font-bold text-white mb-3 leading-snug">${p.title}</h4>
@@ -761,7 +774,7 @@
     <!-- ── Project Detail Modal ── -->
     <div id="project-modal" class="fixed inset-0 z-[999] hidden">
       <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeModal()"></div>
-      <div class="absolute inset-4 md:inset-[10%] lg:inset-[15%] overflow-y-auto">
+      <div class="absolute inset-2 md:inset-[10%] lg:inset-[15%] overflow-y-auto">
         <div class="glass border border-white/10 rounded-3xl p-6 md:p-10 relative max-w-4xl mx-auto" style="background: rgba(10,10,15,0.97);">
           <button onclick="closeModal()" class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center transition text-gray-400 hover:text-white text-lg">✕</button>
 
@@ -787,7 +800,7 @@
           </div>
 
           <!-- Metadata grid -->
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 mb-6">
             <div class="bg-white/3 rounded-xl p-3 border border-white/5">
               <div class="text-[9px] text-gray-500 uppercase tracking-widest mb-1">Рег. номер</div>
               <div class="text-xs text-gray-200 font-mono" id="modal-regnumber"></div>
@@ -832,6 +845,21 @@
     <script>
       // ── Modal logic ──
       let _allProjects = [];
+
+      // ── AI Summary toggle (mobile) ──
+      function toggleAISummary() {
+        const el = document.getElementById('ai-response-text');
+        const btn = document.getElementById('ai-summary-toggle');
+        if (el.classList.contains('max-h-32')) {
+          el.classList.remove('max-h-32');
+          el.classList.add('max-h-[2000px]');
+          btn.textContent = 'Скрыть ↑';
+        } else {
+          el.classList.add('max-h-32');
+          el.classList.remove('max-h-[2000px]');
+          btn.textContent = 'Показать полностью ↓';
+        }
+      }
 
       function openProjectModal(index) {
         const p = _allProjects[index];
