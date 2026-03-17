@@ -1316,14 +1316,17 @@
               Калькулятор<br>выгоды НИОКР
             </h2>
             <p class="text-gray-400 text-base leading-relaxed mb-6">
-              Расходы на НИОКР можно учесть с <span class="text-emerald-400 font-bold">повышающим коэффициентом 1.5</span> при расчёте налога на прибыль (ст. 262 НК РФ).
+              Расходы на НИОКР можно учесть с <span class="text-emerald-400 font-bold">повышающим коэффициентом ×2</span> при расчёте налога на прибыль (ст. 262 НК РФ).
             </p>
             <div class="p-4 rounded-xl bg-emerald-500/5 border border-emerald-500/10 mb-6">
               <div class="text-[10px] uppercase tracking-wider font-bold text-emerald-400 mb-2">Что это значит</div>
               <p class="text-xs text-gray-400 leading-relaxed">
-                На каждые <span class="text-white font-semibold">10 млн ₽</span> затрат на НИОКР вы можете уменьшить налогооблагаемую базу на <span class="text-emerald-400 font-semibold">15 млн ₽</span>, экономия до <span class="text-emerald-400 font-semibold">1 млн ₽</span> налога на прибыль.
+                На каждые <span class="text-white font-semibold">10 млн ₽</span> затрат на НИОКР вы можете уменьшить налогооблагаемую базу на <span class="text-emerald-400 font-semibold">20 млн ₽</span>, экономия до <span class="text-emerald-400 font-semibold">2 млн ₽</span> налога на прибыль.
               </p>
             </div>
+            <a href="tax-support.html" class="inline-flex items-center gap-2 text-sm text-emerald-400 hover:text-emerald-300 transition font-bold">
+              <i class="ph ph-arrow-right"></i> Подробнее о подтверждении расходов
+            </a>
           </div>
 
           <!-- Right: Calculator Widget -->
@@ -1348,7 +1351,7 @@
               <!-- Results -->
               <div class="space-y-3">
                 <div class="flex justify-between items-center p-4 rounded-xl bg-white/[0.03] border border-white/[0.06]">
-                  <span class="text-xs text-gray-400 font-bold uppercase">Эффект коэфф. 1.5</span>
+                  <span class="text-xs text-gray-400 font-bold uppercase">Эффект коэфф. ×2</span>
                   <span class="text-lg font-black italic text-emerald-400" id="calcTax">1 000 000 ₽</span>
                 </div>
                 <div class="flex justify-between items-center p-4 rounded-xl bg-white/[0.03] border border-white/[0.06]">
@@ -1382,8 +1385,8 @@
         function update() {
           const val = parseInt(range.value);
           display.textContent = fmt(val);
-          // Coefficient 1.5 → extra 0.5 * val * 20% tax rate = 10% savings
-          const taxSave = Math.round(val * 0.1);
+          // Coefficient ×2 → extra 1.0 * val * 20% tax rate = 20% savings
+          const taxSave = Math.round(val * 0.2);
           tax.textContent = fmt(taxSave);
           // Grant estimate: up to 50% but max 50M
           const grantVal = Math.min(Math.round(val * 0.5), 50000000);
