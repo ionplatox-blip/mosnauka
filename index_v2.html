@@ -1441,6 +1441,66 @@
       </div>
     </section>
 
+    <!-- ═══════ SECTION 8.9: НАЙТИ ЭКСПЕРТА ═══════ -->
+    <section class="px-6 md:px-12 py-24 border-t border-white/5">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <!-- Left -->
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-purple-500/20 bg-purple-500/5 mb-6">
+              <i class="ph ph-user-circle-gear text-purple-400 text-sm"></i>
+              <span class="text-[10px] font-bold uppercase tracking-widest text-purple-400">Поиск по компетенциям</span>
+            </div>
+            <h2 class="text-3xl md:text-4xl font-black uppercase italic tracking-tighter mb-4">
+              Найти <span class="mos-red">эксперта</span>
+            </h2>
+            <p class="text-gray-400 text-base leading-relaxed mb-6">
+              958 учёных из 15+ организаций Москвы. Поиск по компетенциям, консультации и сотрудничество в НИОКР.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-[10px] font-bold text-amber-400">
+                <i class="ph ph-clock mr-1"></i> Эксперты РНФ — скоро
+              </span>
+              <span class="px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-[10px] font-bold text-blue-400">
+                <i class="ph ph-clock mr-1"></i> Эксперты РАН — скоро
+              </span>
+            </div>
+          </div>
+          <!-- Right: mini search -->
+          <div class="glass rounded-3xl p-8 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-40 h-40 bg-purple-500/5 rounded-full blur-[60px] -mr-10 -mt-10"></div>
+            <div class="relative z-10">
+              <div class="text-[10px] uppercase tracking-widest font-bold text-gray-500 mb-4">Быстрый поиск</div>
+              <form action="experts.html" method="get" class="mb-6" onsubmit="this.action='experts.html#q=' + encodeURIComponent(this.q.value); return true;">
+                <div class="relative">
+                  <i class="ph ph-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gray-500"></i>
+                  <input type="text" name="q" placeholder="Катализ, керамика, нейросети..."
+                    class="w-full pl-11 pr-4 py-3.5 rounded-xl bg-white/5 border border-white/10 text-sm text-white placeholder-gray-600 outline-none focus:border-purple-500/50 transition" />
+                </div>
+              </form>
+              <div class="grid grid-cols-3 gap-2 mb-6">
+                <a href="experts.html" class="p-3 rounded-xl bg-white/[0.03] border border-white/[0.06] text-center hover:bg-white/[0.06] transition">
+                  <div class="text-lg font-black text-white">958</div>
+                  <div class="text-[10px] text-gray-500">экспертов</div>
+                </a>
+                <a href="experts.html" class="p-3 rounded-xl bg-white/[0.03] border border-white/[0.06] text-center hover:bg-white/[0.06] transition">
+                  <div class="text-lg font-black text-white">15+</div>
+                  <div class="text-[10px] text-gray-500">организаций</div>
+                </a>
+                <a href="experts.html" class="p-3 rounded-xl bg-white/[0.03] border border-white/[0.06] text-center hover:bg-white/[0.06] transition">
+                  <div class="text-lg font-black text-white">50K+</div>
+                  <div class="text-[10px] text-gray-500">публикаций</div>
+                </a>
+              </div>
+              <a href="experts.html" class="block text-center py-3.5 rounded-xl bg-purple-600 text-sm font-black uppercase tracking-wider hover:bg-purple-500 transition shadow-[0_0_30px_rgba(147,51,234,0.3)]">
+                <i class="ph ph-users mr-1"></i> Открыть базу экспертов
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ═══════ SECTION 9: CTA ДЛЯ R&D ЦЕНТРОВ ═══════ -->
     <section class="px-6 md:px-12 py-24 border-t border-white/5">
       <div class="max-w-4xl mx-auto">
