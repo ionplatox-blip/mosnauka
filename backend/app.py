@@ -680,6 +680,79 @@ def api_logout():
     return resp
 
 
+# ─────────────────────────────────────────────
+# Поиск экспертов
+# ─────────────────────────────────────────────
+EXPERTS_PATH = Path(__file__).parent / "data" / "experts_index.json"
+_experts_cache = None
+
+def _load_experts():
+    global _experts_cache
+    if _experts_cache is None:
+        if EXPERTS_PATH.exists():
+            with open(EXPERTS_PATH, encoding="utf-8") as f:
+                _experts_cache = json.load(f)
+        else:
+            _experts_cache = []
+    return _experts_cache
+
+
+@app.route("/api/search-experts")
+def api_search_experts():
+    """Search experts by query and optional org filter."""
+    q = request.args.get("q", "").strip().lower()
+    org_filter = request.args.get("org", "").strip().lower()
+    limit = min(int(request.args.get("limit", 20)), 50)
+
+    experts = _load_experts()
+    if not q and not org_filter:
+        # Return top experts by publications
+        return jsonify({"ok": True, "results": experts[:limit], "total": len(experts)})
+
+    scored = []
+    q_words = q.split() if q else []
+
+    for e in experts:
+        score = 0
+        text_fields = f"{e['name']} {e['lab']} {' '.join(e['tags'])}".lower()
+        org_text = e.get('org', '').lower()
+
+        # Org filter
+        if org_filter and org_filter not in org_text:
+            continue
+
+        if q:
+            # Name match (high weight)
+            if q in e['name'].lower():
+                score += 100
+            # Tag matches
+            for tag in e.get('tags', []):
+                tl = tag.lower()
+                if q in tl:
+                    score += 50
+                for w in q_words:
+                    if w in tl:
+                        score += 20
+            # Lab match
+            if q in e.get('lab', '').lower():
+                score += 30
+            # General text match
+            for w in q_words:
+                if w in text_fields:
+                    score += 10
+        else:
+            score = 1  # org-only filter
+
+        if score > 0:
+            # Boost by publications
+            score += min(e.get('publications', 0), 300) * 0.1
+            scored.append((score, e))
+
+    scored.sort(key=lambda x: x[0], reverse=True)
+    results = [s[1] for s in scored[:limit]]
+    return jsonify({"ok": True, "results": results, "total": len(scored)})
+
+
 if __name__ == "__main__":
     port = int(os.getenv("PORT", 5001))
     app.run(host="0.0.0.0", port=port, debug=False)

@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>МОСНАУКА — Найти эксперта</title>
+    <meta name="description" content="Поиск экспертов по компетенциям среди 958 учёных из 15+ организаций Москвы. Будущая интеграция с РНФ и РАН." />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+      :root { --mos-red: #ff003c; }
+      body {
+        font-family: "Inter", sans-serif;
+        background: linear-gradient(160deg, #07070e 0%, #0c0a18 25%, #0a0f1e 50%, #0d0b1a 75%, #06080f 100%);
+        background-attachment: fixed;
+        color: #fff;
+        min-height: 100vh;
+        overflow-x: hidden;
+      }
+      body::before {
+        content: '';
+        position: fixed; inset: 0;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+        pointer-events: none; z-index: 0;
+      }
+      .glass { background: rgba(255,255,255,0.03); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.08); }
+      .mos-red { color: var(--mos-red); }
+      .mos-bg-red { background-color: var(--mos-red); }
+    </style>
+  </head>
+  <body>
+
+    <!-- ═══ NAV ═══ -->
+    <nav class="fixed top-0 w-full z-50 glass border-b border-white/5 px-6 md:px-12 py-4 flex justify-between items-center">
+      <a href="index_v2.html" class="text-xl font-black tracking-tighter uppercase italic">МОС<span class="mos-red">НАУКА</span></a>
+      <div class="hidden md:flex items-center gap-6 text-[10px] font-bold uppercase tracking-[0.15em] text-gray-400">
+        <a href="catalog.html" class="hover:text-white transition">Каталог</a>
+        <a href="index_v2.html#map" class="hover:text-white transition">Карта</a>
+        <a href="experts.html" class="text-white">Эксперты</a>
+        <a href="login.html" class="px-4 py-2 border border-white/20 rounded-full hover:bg-white/5 transition">Личный кабинет</a>
+      </div>
+    </nav>
+
+    <!-- ═══ HERO ═══ -->
+    <header class="pt-28 pb-10 px-6 md:px-12 relative z-10">
+      <div class="max-w-6xl mx-auto">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="h-[1px] w-10 bg-red-600"></span>
+          <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-red-500">База экспертов</span>
+        </div>
+        <h1 class="text-4xl md:text-6xl font-black uppercase italic tracking-tighter mb-4">
+          Найти <span class="mos-red">эксперта</span>
+        </h1>
+        <p class="text-gray-400 text-lg max-w-2xl mb-6">Поиск по компетенциям среди учёных R&D центров Москвы для консультаций и сотрудничества в НИОКР.</p>
+        <div class="flex flex-wrap gap-3">
+          <span class="px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-bold text-gray-300">
+            <i class="ph ph-users text-red-500 mr-1"></i> 958 экспертов
+          </span>
+          <span class="px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-bold text-gray-300">
+            <i class="ph ph-buildings text-red-500 mr-1"></i> 15+ организаций
+          </span>
+          <span class="px-3 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-xs font-bold text-amber-400">
+            <i class="ph ph-clock mr-1"></i> РНФ — скоро
+          </span>
+          <span class="px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-xs font-bold text-blue-400">
+            <i class="ph ph-clock mr-1"></i> РАН — скоро
+          </span>
+        </div>
+      </div>
+    </header>
+
+    <!-- ═══ MAIN ═══ -->
+    <main class="px-6 md:px-12 pb-20 relative z-10">
+      <div class="max-w-6xl mx-auto">
+
+        <!-- Search bar -->
+        <div class="mb-6">
+          <div class="relative">
+            <i class="ph ph-magnifying-glass absolute left-5 top-1/2 -translate-y-1/2 text-gray-500 text-lg"></i>
+            <input type="text" id="expertSearch" placeholder="Введите компетенцию, имя учёного или область..."
+              class="w-full pl-14 pr-5 py-4 rounded-2xl glass text-white text-sm placeholder-gray-600 outline-none focus:border-red-500/50 transition" />
+            <span id="searchHint" class="absolute right-5 top-1/2 -translate-y-1/2 text-[10px] text-gray-600 font-bold uppercase tracking-wider hidden md:block">Enter ↵</span>
+          </div>
+        </div>
+
+        <!-- Org filters -->
+        <div class="flex flex-wrap gap-2 mb-8" id="orgFilters">
+          <button data-org="" class="org-btn active px-3 py-1.5 rounded-full text-xs font-bold transition border border-red-500/50 bg-red-500/10 text-white">Все</button>
+          <button data-org="МГУ" class="org-btn px-3 py-1.5 rounded-full text-xs font-bold transition border border-white/10 bg-white/5 text-gray-400 hover:text-white hover:border-white/20">МГУ</button>
+          <button data-org="МФТИ" class="org-btn px-3 py-1.5 rounded-full text-xs font-bold transition border border-white/10 bg-white/5 text-gray-400 hover:text-white hover:border-white/20">МФТИ</button>
+          <button data-org="Баумана" class="org-btn px-3 py-1.5 rounded-full text-xs font-bold transition border border-white/10 bg-white/5 text-gray-400 hover:text-white hover:border-white/20">Бауманка</button>
+          <button data-org="МИСиС" class="org-btn px-3 py-1.5 rounded-full text-xs font-bold transition border border-white/10 bg-white/5 text-gray-400 hover:text-white hover:border-white/20">МИСиС</button>
+          <button data-org="МИРЭА" class="org-btn px-3 py-1.5 rounded-full text-xs font-bold transition border border-white/10 bg-white/5 text-gray-400 hover:text-white hover:border-white/20">МИРЭА</button>
+          <button data-org="Курчатов" class="org-btn px-3 py-1.5 rounded-full text-xs font-bold transition border border-white/10 bg-white/5 text-gray-400 hover:text-white hover:border-white/20">Курчатов</button>
+          <button data-org="ФИАН" class="org-btn px-3 py-1.5 rounded-full text-xs font-bold transition border border-white/10 bg-white/5 text-gray-400 hover:text-white hover:border-white/20">ФИАН</button>
+          <button data-org="Сеченов" class="org-btn px-3 py-1.5 rounded-full text-xs font-bold transition border border-white/10 bg-white/5 text-gray-400 hover:text-white hover:border-white/20">Сеченов</button>
+          <button data-org="ИОНХ" class="org-btn px-3 py-1.5 rounded-full text-xs font-bold transition border border-white/10 bg-white/5 text-gray-400 hover:text-white hover:border-white/20">ИОНХ</button>
+          <button data-org="ИНЭОС" class="org-btn px-3 py-1.5 rounded-full text-xs font-bold transition border border-white/10 bg-white/5 text-gray-400 hover:text-white hover:border-white/20">ИНЭОС</button>
+          <button data-org="Биотех" class="org-btn px-3 py-1.5 rounded-full text-xs font-bold transition border border-white/10 bg-white/5 text-gray-400 hover:text-white hover:border-white/20">ФИЦ Биотех</button>
+        </div>
+
+        <!-- Results counter -->
+        <div id="results-counter" class="mb-6"></div>
+
+        <!-- Results grid -->
+        <div id="results-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+
+        <!-- Loading -->
+        <div id="loading" class="hidden text-center py-20">
+          <div class="inline-block w-8 h-8 border-2 border-red-500 border-t-transparent rounded-full animate-spin"></div>
+          <p class="text-gray-500 text-sm mt-4">Ищем экспертов...</p>
+        </div>
+
+        <!-- Empty state -->
+        <div id="empty-state" class="hidden text-center py-20">
+          <i class="ph ph-magnifying-glass text-4xl text-gray-700 mb-4"></i>
+          <p class="text-gray-500">По вашему запросу экспертов не найдено</p>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- ═══ FOOTER ═══ -->
+    <footer class="px-6 md:px-12 py-10 border-t border-white/5 bg-black/50 relative z-10">
+      <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="text-sm font-black tracking-tighter uppercase italic">МОС<span class="mos-red">НАУКА</span></div>
+        <p class="text-[10px] text-gray-700">© 2026 МОСНАУКА. Платформа Правительства Москвы.</p>
+      </div>
+    <!-- ═══ REQUEST MODAL ═══ -->
+    <div class="fixed inset-0 bg-black/70 backdrop-blur-sm z-[100] hidden items-center justify-center p-4" id="requestModal">
+      <div class="bg-[#111] border border-white/10 rounded-3xl max-w-md w-full p-8 relative">
+        <button onclick="closeModal()" class="absolute top-5 right-5 text-gray-600 hover:text-white text-xl">×</button>
+        <div id="modalForm">
+          <h2 class="text-xl font-black mb-1">📨 Направить запрос</h2>
+          <p class="text-sm text-gray-500 mb-6" id="modalContext">через платформу МОСНАУКА</p>
+          <label class="block text-[10px] uppercase font-bold text-gray-600 tracking-widest mb-1 mt-4">Ваше ФИО *</label>
+          <input type="text" id="reqName" placeholder="Иванов Иван Иванович" class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-sm text-white outline-none focus:border-red-500 transition" />
+          <label class="block text-[10px] uppercase font-bold text-gray-600 tracking-widest mb-1 mt-4">Организация</label>
+          <input type="text" id="reqOrg" placeholder="ООО «Компания»" class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-sm text-white outline-none focus:border-red-500 transition" />
+          <label class="block text-[10px] uppercase font-bold text-gray-600 tracking-widest mb-1 mt-4">Email *</label>
+          <input type="email" id="reqEmail" placeholder="email@example.com" class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-sm text-white outline-none focus:border-red-500 transition" />
+          <label class="block text-[10px] uppercase font-bold text-gray-600 tracking-widest mb-1 mt-4">Тип запроса</label>
+          <select id="reqType" class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-sm text-white outline-none appearance-none">
+            <option>Консультация</option>
+            <option>Запрос на НИОКР</option>
+            <option>Сотрудничество / Партнёрство</option>
+            <option>Использование оборудования</option>
+            <option>Другое</option>
+          </select>
+          <label class="block text-[10px] uppercase font-bold text-gray-600 tracking-widest mb-1 mt-4">Сообщение *</label>
+          <textarea id="reqMsg" rows="3" placeholder="Опишите ваш запрос..." class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-sm text-white outline-none focus:border-red-500 transition resize-y"></textarea>
+          <button onclick="submitRequest()" class="w-full mt-5 py-3.5 mos-bg-red rounded-xl text-sm font-black uppercase tracking-wider hover:brightness-110 transition">Отправить запрос</button>
+        </div>
+        <div id="modalSuccess" class="hidden text-center py-8">
+          <div class="text-5xl mb-4">✅</div>
+          <h3 class="text-lg font-black mb-2">Запрос отправлен!</h3>
+          <p class="text-sm text-gray-400">Ваш запрос направлен. Ожидайте ответа в течение 3 рабочих дней.</p>
+          <button onclick="closeModal()" class="mt-5 py-3 px-8 rounded-xl bg-white/10 text-sm font-bold hover:bg-white/15 transition">Закрыть</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+    // ─── Config ───
+    const API_BASE = window.location.hostname === 'localhost'
+      ? 'http://localhost:5001'
+      : 'https://mosnauka-backend.onrender.com';
+
+    let currentOrg = '';
+    let debounceTimer = null;
+
+    // ─── Elements ───
+    const searchInput = document.getElementById('expertSearch');
+    const grid = document.getElementById('results-grid');
+    const counter = document.getElementById('results-counter');
+    const loading = document.getElementById('loading');
+    const emptyState = document.getElementById('empty-state');
+
+    // ─── Card Template ───
+    function expertCard(e) {
+      const tagsHtml = (e.tags || []).slice(0, 4).map(t =>
+        `<span class="px-2 py-0.5 rounded-md bg-white/5 text-[10px] text-gray-500 font-medium">${t}</span>`
+      ).join('');
+
+      const avatar = e.photo
+        ? `<img src="${e.photo}" class="w-12 h-12 rounded-xl object-cover" alt="${e.name}" />`
+        : `<div class="w-12 h-12 rounded-xl bg-gradient-to-br from-red-600 to-red-900 flex items-center justify-center text-sm font-black">${e.initials}</div>`;
+
+      return `
+        <div class="glass rounded-2xl p-5 hover:bg-white/[0.06] transition group relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-24 h-24 bg-red-500/3 rounded-full blur-[40px] -mr-8 -mt-8"></div>
+          <div class="relative z-10">
+            <div class="flex items-start gap-3 mb-3">
+              ${avatar}
+              <div class="min-w-0">
+                <a href="${e.page}" class="text-sm font-black hover:text-red-400 transition block truncate">${e.name}</a>
+                <div class="text-[10px] text-gray-500 truncate">${e.position || 'Научный сотрудник'}</div>
+              </div>
+            </div>
+            ${e.lab ? `<div class="text-[10px] text-gray-600 mb-2 truncate"><i class="ph ph-flask-fill mr-1"></i>${e.lab}</div>` : ''}
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-[10px] font-bold text-gray-400"><i class="ph ph-buildings mr-1"></i>${e.org}</span>
+              ${e.publications ? `<span class="text-[10px] text-gray-600">• ${e.publications} публ.</span>` : ''}
+            </div>
+            <div class="flex flex-wrap gap-1 mb-4">${tagsHtml}</div>
+            <div class="flex gap-2">
+              <button onclick="openModal('Запрос эксперту — ${e.name}')" class="flex-1 py-2 rounded-lg mos-bg-red text-[10px] font-bold uppercase tracking-wider hover:brightness-110 transition text-center">
+                <i class="ph ph-envelope-simple mr-1"></i> Связаться
+              </button>
+              ${e.colab ? `<a href="${e.colab}" target="_blank" class="py-2 px-3 rounded-lg bg-white/5 border border-white/10 text-[10px] font-bold text-gray-400 hover:text-white transition"><i class="ph ph-arrow-square-out"></i></a>` : ''}
+            </div>
+          </div>
+        </div>`;
+    }
+
+    // ─── Fetch & Render ───
+    async function searchExperts() {
+      const q = searchInput.value.trim();
+
+      grid.innerHTML = '';
+      emptyState.classList.add('hidden');
+      loading.classList.remove('hidden');
+      counter.innerHTML = '';
+
+      try {
+        const params = new URLSearchParams({ q, org: currentOrg, limit: 21 });
+        const res = await fetch(`${API_BASE}/api/search-experts?${params}`);
+        const data = await res.json();
+
+        loading.classList.add('hidden');
+
+        if (!data.ok || !data.results.length) {
+          emptyState.classList.remove('hidden');
+          counter.innerHTML = `<span class="text-xs text-gray-600">Найдено: 0 экспертов</span>`;
+          return;
+        }
+
+        counter.innerHTML = `<span class="text-xs text-gray-600">Найдено: <span class="text-white font-bold">${data.total}</span> экспертов${data.total > 21 ? ' (показаны первые 21)' : ''}</span>`;
+        grid.innerHTML = data.results.map(expertCard).join('');
+      } catch (err) {
+        loading.classList.add('hidden');
+        grid.innerHTML = `<div class="col-span-full text-center py-10 text-gray-600 text-sm">Ошибка загрузки. Проверьте подключение.</div>`;
+      }
+    }
+
+    // ─── Debounce ───
+    searchInput.addEventListener('input', () => {
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(searchExperts, 400);
+    });
+
+    // ─── Org Filters ───
+    document.querySelectorAll('.org-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.org-btn').forEach(b => {
+          b.classList.remove('active', 'border-red-500/50', 'bg-red-500/10', 'text-white');
+          b.classList.add('border-white/10', 'bg-white/5', 'text-gray-400');
+        });
+        btn.classList.add('active', 'border-red-500/50', 'bg-red-500/10', 'text-white');
+        btn.classList.remove('border-white/10', 'bg-white/5', 'text-gray-400');
+        currentOrg = btn.dataset.org;
+        searchExperts();
+      });
+    });
+
+    // ─── Modal ───
+    function openModal(ctx) {
+      document.getElementById('modalContext').textContent = ctx || 'через платформу МОСНАУКА';
+      document.getElementById('modalForm').classList.remove('hidden');
+      document.getElementById('modalSuccess').classList.add('hidden');
+      const overlay = document.getElementById('requestModal');
+      overlay.classList.remove('hidden');
+      overlay.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal() {
+      const overlay = document.getElementById('requestModal');
+      overlay.classList.add('hidden');
+      overlay.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+    function submitRequest() {
+      const n = document.getElementById('reqName').value.trim();
+      const e = document.getElementById('reqEmail').value.trim();
+      const m = document.getElementById('reqMsg').value.trim();
+      if (!n || !e || !m) { alert('Пожалуйста, заполните обязательные поля'); return; }
+      document.getElementById('modalForm').classList.add('hidden');
+      document.getElementById('modalSuccess').classList.remove('hidden');
+    }
+    document.getElementById('requestModal').addEventListener('click', function(ev) {
+      if (ev.target === this) closeModal();
+    });
+
+    // ─── Initial Load ───
+    searchExperts();
+    </script>
+
+  </body>
+</html>
