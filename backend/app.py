@@ -570,6 +570,18 @@ def ai_search():
     # 4. AI-анализ
     ai_summary = call_claude(query, projects, stats)
 
+    # ── Save search to user history ──
+    session_email = request.cookies.get("mosnauka_session")
+    if session_email and session_email in USERS_DB:
+        USERS_DB[session_email].setdefault("searches", []).insert(0, {
+            "query": query,
+            "date": time.strftime("%Y-%m-%d"),
+            "results": len(projects)
+        })
+        # Keep last 20 searches
+        USERS_DB[session_email]["searches"] = USERS_DB[session_email]["searches"][:20]
+        _save_users()
+
     return jsonify({
         "ai_summary": ai_summary,
         "stats": stats,
@@ -580,6 +592,95 @@ def ai_search():
     })
 
 
+# ─────────────────────────────────────────────
+#  AUTH & USER ENDPOINTS
+# ─────────────────────────────────────────────
+USERS_PATH = Path(__file__).parent / "data" / "users.json"
+USERS_DB = {}
+
+def _load_users():
+    global USERS_DB
+    if USERS_PATH.exists():
+        with open(USERS_PATH, "r", encoding="utf-8") as f:
+            USERS_DB = json.load(f)
+
+def _save_users():
+    USERS_PATH.parent.mkdir(parents=True, exist_ok=True)
+    with open(USERS_PATH, "w", encoding="utf-8") as f:
+        json.dump(USERS_DB, f, ensure_ascii=False, indent=2)
+
+_load_users()
+app.secret_key = os.getenv("FLASK_SECRET", "mosnauka-demo-secret-2024")
+
+
+@app.route("/api/login", methods=["POST"])
+def api_login():
+    data = request.json or {}
+    email = data.get("email", "").strip().lower()
+    password = data.get("password", "")
+
+    user = USERS_DB.get(email)
+    if not user or user.get("password") != password:
+        return jsonify({"ok": False, "error": "Invalid credentials"}), 401
+
+    resp = jsonify({
+        "ok": True,
+        "user": {
+            "email": email,
+            "role": user.get("role"),
+            "company": user.get("company"),
+            "industry": user.get("industry"),
+            "contact": user.get("contact"),
+        }
+    })
+    resp.set_cookie("mosnauka_session", email, max_age=86400*30, httponly=True, samesite="Lax")
+    return resp
+
+
+@app.route("/api/me")
+def api_me():
+    email = request.cookies.get("mosnauka_session")
+    if not email or email not in USERS_DB:
+        return jsonify({"ok": False}), 401
+    user = USERS_DB[email]
+    return jsonify({
+        "ok": True,
+        "user": {
+            "email": email,
+            "role": user.get("role"),
+            "company": user.get("company"),
+            "industry": user.get("industry"),
+            "contact": user.get("contact"),
+            "inn": user.get("inn"),
+            "phone": user.get("phone"),
+        }
+    })
+
+
+@app.route("/api/user-data")
+def api_user_data():
+    """Full user data: searches, projects, messages, favorites"""
+    email = request.cookies.get("mosnauka_session")
+    if not email or email not in USERS_DB:
+        return jsonify({"ok": False}), 401
+    user = USERS_DB[email]
+    return jsonify({
+        "ok": True,
+        "searches": user.get("searches", []),
+        "favorites": user.get("favorites", []),
+        "projects": user.get("projects", []),
+        "messages": user.get("messages", []),
+    })
+
+
+@app.route("/api/logout", methods=["POST"])
+def api_logout():
+    resp = jsonify({"ok": True})
+    resp.delete_cookie("mosnauka_session")
+    return resp
+
+
 if __name__ == "__main__":
     port = int(os.getenv("PORT", 5001))
     app.run(host="0.0.0.0", port=port, debug=False)
+

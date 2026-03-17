@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>МОСНАУКА — Вход в систему</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.0.3/src/regular/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+    <style>
+        body { font-family: Inter, system-ui, sans-serif; background: #050505; }
+        .glass { background: rgba(255,255,255,0.03); backdrop-filter: blur(20px); }
+        .mos-red { color: #FF003C; }
+        .mos-bg-red { background: #FF003C; }
+        .login-glow { box-shadow: 0 0 80px rgba(255,0,60,0.15), 0 0 30px rgba(255,0,60,0.1); }
+        .input-field {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s;
+        }
+        .input-field:focus {
+            border-color: rgba(255,0,60,0.5);
+            box-shadow: 0 0 20px rgba(255,0,60,0.15);
+            outline: none;
+        }
+        @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+        .float-anim { animation: float 6s ease-in-out infinite; }
+    </style>
+</head>
+<body class="min-h-screen text-white flex items-center justify-center relative overflow-hidden">
+    <!-- Background -->
+    <div class="fixed inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,0,60,0.12),transparent_50%),radial-gradient(circle_at_70%_80%,rgba(59,130,246,0.08),transparent_50%)]"></div>
+    <div class="fixed inset-0 opacity-[0.03]" style="background-image: radial-gradient(circle, rgba(255,255,255,0.3) 1px, transparent 1px); background-size: 30px 30px;"></div>
+
+    <!-- Floating orbs -->
+    <div class="fixed top-20 left-20 w-64 h-64 bg-red-500/10 rounded-full blur-[100px] float-anim"></div>
+    <div class="fixed bottom-20 right-20 w-48 h-48 bg-blue-500/10 rounded-full blur-[80px] float-anim" style="animation-delay:-3s"></div>
+
+    <div class="relative z-10 w-full max-w-md px-6">
+        <!-- Logo -->
+        <div class="text-center mb-10">
+            <a href="index_v2.html" class="inline-block text-3xl font-black tracking-tighter uppercase italic drop-shadow-[0_0_15px_rgba(255,0,60,0.5)]">
+                МОС<span class="mos-red">НАУКА</span>
+            </a>
+            <p class="text-gray-500 text-xs uppercase tracking-[0.2em] font-bold mt-2">Платформа Правительства Москвы</p>
+        </div>
+
+        <!-- Login card -->
+        <div class="glass rounded-3xl border border-white/10 p-8 login-glow">
+            <!-- Header -->
+            <div class="mb-8">
+                <h1 class="text-2xl font-black uppercase italic tracking-tight mb-2">Вход в систему</h1>
+                <p class="text-sm text-gray-400">Личный кабинет заказчика НИОКР</p>
+            </div>
+
+            <!-- Error message -->
+            <div id="login-error" class="hidden mb-4 p-3 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-xs font-bold">
+                Неверный email или пароль
+            </div>
+
+            <!-- Form -->
+            <form id="login-form" onsubmit="handleLogin(event)">
+                <div class="space-y-4">
+                    <!-- Email -->
+                    <div>
+                        <label class="block text-[10px] uppercase tracking-widest font-bold text-gray-500 mb-2">Email</label>
+                        <div class="relative">
+                            <i class="ph ph-envelope absolute left-4 top-1/2 -translate-y-1/2 text-gray-500"></i>
+                            <input type="email" id="login-email" value="demo@company.ru"
+                                class="input-field w-full pl-11 pr-4 py-3.5 rounded-xl text-sm text-white placeholder-gray-600"
+                                placeholder="your@email.ru" required />
+                        </div>
+                    </div>
+
+                    <!-- Password -->
+                    <div>
+                        <label class="block text-[10px] uppercase tracking-widest font-bold text-gray-500 mb-2">Пароль</label>
+                        <div class="relative">
+                            <i class="ph ph-lock absolute left-4 top-1/2 -translate-y-1/2 text-gray-500"></i>
+                            <input type="password" id="login-password" value="demo2024"
+                                class="input-field w-full pl-11 pr-4 py-3.5 rounded-xl text-sm text-white placeholder-gray-600"
+                                placeholder="••••••••" required />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Submit -->
+                <button type="submit" id="login-btn"
+                    class="w-full mt-6 py-4 mos-bg-red rounded-xl text-sm font-black uppercase tracking-widest hover:opacity-90 transition shadow-[0_0_25px_rgba(255,0,60,0.3)] flex items-center justify-center gap-2">
+                    <span>Войти</span>
+                    <i class="ph ph-arrow-right"></i>
+                </button>
+            </form>
+
+            <!-- Divider -->
+            <div class="flex items-center gap-4 my-6">
+                <div class="flex-1 h-px bg-white/10"></div>
+                <span class="text-[9px] uppercase tracking-widest font-bold text-gray-600">или</span>
+                <div class="flex-1 h-px bg-white/10"></div>
+            </div>
+
+            <!-- Mos.ru button -->
+            <button disabled
+                class="w-full py-4 rounded-xl border border-white/10 bg-white/5 text-sm font-bold flex items-center justify-center gap-3 opacity-50 cursor-not-allowed relative">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 2L2 7v10l10 5 10-5V7L12 2z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                    <path d="M12 22V12M2 7l10 5 10-5" stroke="currentColor" stroke-width="1.5"/>
+                </svg>
+                <span>Войти через Мос.ру</span>
+                <span class="absolute top-2 right-3 px-2 py-0.5 rounded text-[8px] font-black uppercase tracking-wider bg-blue-500/20 text-blue-400 border border-blue-500/20">скоро</span>
+            </button>
+        </div>
+
+        <!-- Demo hint -->
+        <div class="mt-6 text-center">
+            <div class="glass rounded-2xl border border-white/5 p-4 inline-block">
+                <div class="flex items-center gap-2 text-[10px] uppercase tracking-widest font-bold text-gray-600 mb-2">
+                    <i class="ph ph-info text-sm"></i>
+                    Демо-доступ
+                </div>
+                <div class="text-xs text-gray-400">
+                    <span class="text-gray-300 font-mono">demo@company.ru</span> / <span class="text-gray-300 font-mono">demo2024</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Back -->
+        <div class="mt-6 text-center">
+            <a href="index_v2.html" class="text-xs text-gray-500 hover:text-white transition uppercase tracking-wider font-bold">
+                ← На главную
+            </a>
+        </div>
+    </div>
+
+    <script>
+        function handleLogin(e) {
+            e.preventDefault();
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+            const errorEl = document.getElementById('login-error');
+            const btn = document.getElementById('login-btn');
+
+            errorEl.classList.add('hidden');
+            btn.innerHTML = '<span class="animate-pulse">Проверка...</span>';
+
+            // Call backend
+            fetch('/api/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, password })
+            })
+            .then(r => r.json())
+            .then(data => {
+                if (data.ok) {
+                    localStorage.setItem('mosnauka_user', JSON.stringify(data.user));
+                    window.location.href = 'dashboard.html';
+                } else {
+                    errorEl.classList.remove('hidden');
+                    btn.innerHTML = '<span>Войти</span><i class="ph ph-arrow-right"></i>';
+                }
+            })
+            .catch(() => {
+                // Fallback: demo mode without backend
+                if (email === 'demo@company.ru' && password === 'demo2024') {
+                    localStorage.setItem('mosnauka_user', JSON.stringify({
+                        email: 'demo@company.ru',
+                        role: 'business',
+                        company: 'ООО «ТехноГрупп»',
+                        industry: 'Машиностроение'
+                    }));
+                    window.location.href = 'dashboard.html';
+                } else {
+                    errorEl.classList.remove('hidden');
+                    btn.innerHTML = '<span>Войти</span><i class="ph ph-arrow-right"></i>';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
