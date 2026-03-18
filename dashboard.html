@@ -76,23 +76,78 @@
                     { query: 'Компьютерное зрение для промышленности', date: '7 мар 2026', results: 11 },
                   ],
                   projects: [
+                    // Подбор — разные темы
                     { title: 'Катализаторы нового поколения для нефтепереработки', stage: 'search', executor: '', budget: '8 млн ₽', deadline: 'Q3 2026' },
+                    { title: 'Биосенсоры для мониторинга среды', stage: 'search', executor: '', budget: '4 млн ₽', deadline: 'Q4 2026' },
+                    // Переговоры — одна тема (машинное зрение) с РАЗНЫМИ центрами
                     { title: 'Система машинного зрения для контроля качества', stage: 'negotiation', executor: 'МФТИ', budget: '12 млн ₽', deadline: 'Q4 2026' },
+                    { title: 'Система машинного зрения для контроля качества', stage: 'negotiation', executor: 'МИРЭА', budget: '9,5 млн ₽', deadline: 'Q4 2026' },
+                    { title: 'Система машинного зрения для контроля качества', stage: 'negotiation', executor: 'МГТУ Баумана', budget: '14 млн ₽', deadline: 'Q1 2027' },
+                    // Договор
                     { title: 'Анализ прочности композитных материалов', stage: 'contract', executor: 'МГТУ Баумана', budget: '5,5 млн ₽', deadline: 'Q2 2026' },
+                    { title: 'Разработка ИИ-модели предсказания свойств сплавов', stage: 'contract', executor: 'Сколтех', budget: '7 млн ₽', deadline: 'Q3 2026' },
+                    // Выполнение
                     { title: 'Разработка покрытий с антикоррозионными свойствами', stage: 'execution', executor: 'МИСиС', budget: '9 млн ₽', deadline: 'Q1 2026' },
+                    { title: 'Синтез наноструктурированных мембран', stage: 'execution', executor: 'РХТУ', budget: '6,8 млн ₽', deadline: 'Q2 2026' },
+                    // Закрыто
                     { title: 'Оптимизация сплавов для 3D-печати', stage: 'closed', executor: 'Курчатов', budget: '6 млн ₽', deadline: 'Q4 2025' },
                   ],
-                  messages: [
-                    { from: 'business', text: 'Здравствуйте! Нас интересует разработка системы машинного зрения для контроля качества на производственной линии. Можете ли вы обсудить ТЗ?', date: '2026-03-10T10:30:00' },
-                    { from: 'center', text: 'Добрый день! Да, наша лаборатория автономных систем занимается подобными задачами. Давайте назначим звонок для обсуждения деталей ТЗ.', date: '2026-03-10T14:15:00' },
-                    { from: 'business', text: 'Отлично! Удобно ли вам в четверг в 14:00? Мы подготовим предварительное описание задачи и требования к точности.', date: '2026-03-11T09:00:00' },
-                    { from: 'center', text: 'Четверг в 14:00 подходит. Пришлите, пожалуйста, примеры изображений дефектов и описание текущего процесса контроля.', date: '2026-03-11T11:45:00' },
-                    { from: 'business', text: 'Отправил на почту примеры и спецификацию. Также прикрепил текущий регламент QC.', date: '2026-03-12T16:20:00' },
-                    { from: 'center', text: 'Готов назначить встречу для обсуждения ТЗ. Предварительно: задача решаема, ориентировочный срок 6-8 месяцев. Бюджет обсудим после детализации.', date: '2026-03-14T09:30:00' },
+                  // conversations: массив чатов — с центрами И учёными
+                  conversations: [
+                    {
+                      id: 'mfti-center',
+                      type: 'center',
+                      name: 'МФТИ',
+                      subtitle: 'Лаб. автономных систем',
+                      icon: 'ph-buildings',
+                      color: 'blue',
+                      unread: 1,
+                      messages: [
+                        { from: 'business', text: 'Здравствуйте! Нас интересует разработка системы машинного зрения для контроля качества на производственной линии.', date: '2026-03-10T10:30:00' },
+                        { from: 'center', text: 'Добрый день! Наша лаборатория автономных систем занимается подобными задачами. Назначим звонок?', date: '2026-03-10T14:15:00' },
+                        { from: 'business', text: 'Удобно в четверг в 14:00? Подготовим описание и требования к точности.', date: '2026-03-11T09:00:00' },
+                        { from: 'center', text: 'Подходит. Пришлите примеры изображений дефектов и описание текущего процесса контроля.', date: '2026-03-11T11:45:00' },
+                        { from: 'business', text: 'Отправил на почту примеры, спецификацию и регламент QC.', date: '2026-03-12T16:20:00' },
+                        { from: 'center', text: 'Задача решаема, ориентировочный срок 6-8 мес. Бюджет обсудим после детализации. Готов назначить встречу.', date: '2026-03-14T09:30:00' },
+                      ]
+                    },
+                    {
+                      id: 'antipov',
+                      type: 'scientist',
+                      name: 'Антипов Е.В.',
+                      subtitle: 'МГУ · Электрохимия',
+                      icon: 'ph-user-circle',
+                      color: 'purple',
+                      unread: 2,
+                      messages: [
+                        { from: 'business', text: 'Евгений Викторович, добрый день! Мы ищем эксперта по литий-ионным аккумуляторам. Видели ваши работы по катодным материалам — это очень близко к нашей задаче.', date: '2026-03-13T11:00:00' },
+                        { from: 'center', text: 'Здравствуйте! Да, мы сейчас работаем над новыми катодными составами на основе LiFePO4 с улучшенной проводимостью. Какая у вас задача?', date: '2026-03-13T15:20:00' },
+                        { from: 'business', text: 'Нам нужно повысить ёмкость батарей для наших промышленных устройств на 20-30%. Текущие поставщики катодов не дают нужную плотность энергии.', date: '2026-03-14T09:00:00' },
+                        { from: 'center', text: 'Интересная задача. У нас есть наработки по допированию катодных материалов, которые дают прирост ёмкости ~25%. Могу подготовить предварительное КП на 2-3 месяца исследований.', date: '2026-03-14T14:30:00' },
+                        { from: 'center', text: 'Коллеги, отправил вам предварительное КП на почту. Бюджет 3,2 млн ₽ за 3 месяца, включая синтез и тестирование 5 составов. Готов обсудить.', date: '2026-03-16T10:00:00' },
+                      ]
+                    },
+                    {
+                      id: 'sorokin',
+                      type: 'scientist',
+                      name: 'Сорокин П.Б.',
+                      subtitle: 'МФТИ · Наноматериалы',
+                      icon: 'ph-user-circle',
+                      color: 'amber',
+                      unread: 0,
+                      messages: [
+                        { from: 'business', text: 'Павел Борисович, здравствуйте! Интересуют защитные покрытия на основе 2D-материалов. Возможно ли обсудить потенциальный проект?', date: '2026-03-09T13:00:00' },
+                        { from: 'center', text: 'Добрый день! Да, мы работаем с графеновыми и MXene-покрытиями. Для промышленного применения? Какая среда эксплуатации?', date: '2026-03-09T16:40:00' },
+                        { from: 'business', text: 'Агрессивная химическая среда, температуры до 300°С. Нужна антикоррозионная защита стальных деталей.', date: '2026-03-10T10:15:00' },
+                        { from: 'center', text: 'Понял. MXene-покрытия именно для такого диапазона. Мы уже делали прототип для нефтехимии. Давайте созвонимся на следующей неделе, покажу результаты испытаний.', date: '2026-03-10T17:00:00' },
+                      ]
+                    }
                   ],
                   favorites: [
                     { type: 'center', name: 'МФТИ', page: 'passport-mfti.html' },
+                    { type: 'center', name: 'МГУ', page: 'passport-mgu.html' },
                     { type: 'scientist', name: 'Антипов Е.В.', page: 'mgu/sci_018.html' },
+                    { type: 'scientist', name: 'Сорокин П.Б.', page: 'mfti/sci_005.html' },
                   ]
                 };
             }
@@ -101,6 +156,11 @@
             if (typeof renderHeader === 'function') renderHeader();
             if (typeof renderSidebar === 'function') renderSidebar();
             if (typeof renderOverview === 'function') renderOverview();
+
+            // Backward compat: flatten conversations into messages for old code
+            if (_userData.conversations && !_userData.messages) {
+                _userData.messages = _userData.conversations[0]?.messages || [];
+            }
         }
 
         // ── Render Header ──
@@ -115,7 +175,14 @@
                             <div class="hidden md:block h-5 w-px bg-white/10"></div>
                             <span class="hidden md:block text-[10px] uppercase tracking-[0.2em] text-zinc-500 font-bold">Личный кабинет</span>
                         </div>
-                        <div class="flex items-center gap-4">
+                        <div class="flex items-center gap-3">
+                            <a href="index_v2.html" class="hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[10px] font-bold uppercase tracking-wider text-gray-400 hover:text-white hover:bg-white/5 transition">
+                                <i class="ph ph-house text-sm"></i> Главная
+                            </a>
+                            <a href="catalog.html" class="hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[10px] font-bold uppercase tracking-wider text-gray-400 hover:text-white hover:bg-white/5 transition">
+                                <i class="ph ph-buildings text-sm"></i> Центры
+                            </a>
+                            <div class="hidden md:block h-5 w-px bg-white/10"></div>
                             <div class="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/5 border border-white/10">
                                 <i class="ph ph-buildings text-red-400 text-sm"></i>
                                 <span class="text-xs font-bold text-gray-300">${_user?.company || 'Компания'}</span>
@@ -162,31 +229,22 @@
                 </div>
                 <div class="grid grid-cols-2 md:grid-cols-5 gap-3 mb-8">${cards}</div>
 
-                <!-- Quick Actions: Expert Search + Upload TZ -->
-                <div class="grid md:grid-cols-2 gap-4 mb-8">
-                    <div class="rounded-2xl border border-purple-500/20 bg-purple-500/5 p-5">
-                        <div class="flex items-center gap-2 mb-3">
-                            <i class="ph ph-user-circle-gear text-purple-400 text-lg"></i>
-                            <span class="text-sm font-black">Найти эксперта</span>
-                        </div>
-                        <form onsubmit="window.location.href='experts.html#q='+encodeURIComponent(this.q.value);return false;" class="flex gap-2">
-                            <input type="text" name="q" placeholder="Компетенция, имя, область..."
-                                class="flex-1 px-3 py-2.5 rounded-xl bg-white/5 border border-white/10 text-sm text-white placeholder-gray-600 outline-none focus:border-purple-500/50 transition" />
-                            <button type="submit" class="px-4 py-2.5 rounded-xl bg-purple-600 text-xs font-bold uppercase tracking-wider hover:bg-purple-500 transition">
-                                <i class="ph ph-magnifying-glass"></i>
-                            </button>
-                        </form>
-                        <a href="experts.html" class="block text-center text-[10px] text-purple-400 font-bold mt-2 hover:text-purple-300 transition">958 экспертов из 15+ организаций →</a>
+                <!-- Quick Actions: Search First, TZ Second -->
+                <div class="rounded-2xl border border-red-500/20 bg-red-500/5 p-5 mb-4">
+                    <div class="flex items-center gap-2 mb-3">
+                        <i class="ph ph-magnifying-glass text-red-400 text-lg"></i>
+                        <span class="text-sm font-black">Новый запрос на НИОКР</span>
                     </div>
-                    <div class="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-5 flex flex-col justify-between">
-                        <div class="flex items-center gap-2 mb-3">
-                            <i class="ph ph-upload-simple text-red-400 text-lg"></i>
-                            <span class="text-sm font-black">Новый запрос на НИОКР</span>
-                        </div>
-                        <p class="text-xs text-gray-500 mb-3">Загрузите ТЗ или опишите задачу — подберём подходящий R&D центр и эксперта</p>
-                        <button onclick="switchSection('searches')" class="w-full py-2.5 rounded-xl mos-bg-red text-xs font-bold uppercase tracking-wider hover:brightness-110 transition">
-                            <i class="ph ph-file-arrow-up mr-1"></i> Загрузить ТЗ
+                    <form onsubmit="window.location.href='ai_search_results.html?q='+encodeURIComponent(this.q.value);return false;" class="flex gap-2 mb-2">
+                        <input type="text" name="q" placeholder="Опишите задачу: что нужно разработать, исследовать, проверить..."
+                            class="flex-1 px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-sm text-white placeholder-gray-600 outline-none focus:border-red-500/50 transition" />
+                        <button type="submit" class="px-5 py-3 rounded-xl mos-bg-red text-xs font-bold uppercase tracking-wider hover:brightness-110 transition">
+                            <i class="ph ph-magnifying-glass mr-1"></i> Найти
                         </button>
+                    </form>
+                    <div class="flex items-center justify-between">
+                        <a href="experts.html" class="text-[10px] text-red-400 font-bold hover:text-red-300 transition"><i class="ph ph-user-circle-gear mr-0.5"></i> Найти эксперта →</a>
+                        <span class="text-[10px] text-gray-600">или <a href="#" onclick="alert('Функция загрузки ТЗ в разработке'); return false;" class="text-gray-400 hover:text-white underline transition">загрузить ТЗ файлом</a></span>
                     </div>
                 </div>
 
@@ -356,17 +414,38 @@
             `;
         }
 
-        // ── Render Messages ──
+        // ── Render Messages (multi-chat) ──
+        let _activeChat = 0;
         function renderMessages() {
-            const messages = _userData?.messages || [];
-            const bubbles = messages.map(m => {
+            const convos = _userData?.conversations || [];
+            if (!convos.length) {
+                document.getElementById('section-messages').innerHTML = '<p class="text-gray-500 text-sm py-8 text-center">Нет сообщений</p>';
+                return;
+            }
+
+            const contactList = convos.map((c, i) => `
+                <button onclick="_activeChat=${i}; renderMessages();" class="w-full flex items-center gap-3 p-3 rounded-xl text-left transition
+                    ${i === _activeChat ? 'bg-white/[0.06] border border-white/10' : 'hover:bg-white/[0.03] border border-transparent'}">
+                    <div class="w-8 h-8 rounded-lg bg-${c.color}-500/15 flex items-center justify-center shrink-0">
+                        <i class="ph ${c.icon} text-${c.color}-400"></i>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <div class="text-xs font-bold truncate">${c.name}</div>
+                        <div class="text-[10px] text-gray-500 truncate">${c.subtitle}</div>
+                    </div>
+                    ${c.unread ? `<span class="w-5 h-5 rounded-full mos-bg-red flex items-center justify-center text-[9px] font-black">${c.unread}</span>` : ''}
+                </button>
+            `).join('');
+
+            const active = convos[_activeChat];
+            const bubbles = (active?.messages || []).map(m => {
                 const isMine = m.from === 'business';
                 return `
                     <div class="flex ${isMine ? 'justify-end' : 'justify-start'}">
                         <div class="max-w-[75%] p-3 rounded-2xl ${isMine
                             ? 'bg-red-600/20 border border-red-500/20 rounded-br-md'
                             : 'bg-white/[0.05] border border-white/[0.08] rounded-bl-md'}">
-                            <div class="text-[10px] font-bold mb-1 ${isMine ? 'text-red-400' : 'text-blue-400'}">${isMine ? _user?.company || 'Вы' : 'МФТИ'}</div>
+                            <div class="text-[10px] font-bold mb-1 ${isMine ? 'text-red-400' : `text-${active.color}-400`}">${isMine ? _user?.company || 'Вы' : active.name}</div>
                             <p class="text-sm text-gray-200">${m.text}</p>
                             <div class="text-[9px] text-gray-600 mt-1 text-right">${new Date(m.date).toLocaleString('ru')}</div>
                         </div>
@@ -374,23 +453,33 @@
                 `;
             }).join('');
 
+            const typeLabel = active.type === 'scientist' ? 'Учёный' : 'R&D центр';
+
             document.getElementById('section-messages').innerHTML = `
                 <div class="mb-6">
                     <div class="text-[10px] uppercase tracking-[0.2em] text-red-400 font-bold mb-2">Коммуникация</div>
                     <h2 class="text-2xl font-black italic tracking-tight">Сообщения</h2>
                 </div>
-                <div class="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-4">
-                    <div class="flex items-center gap-3 pb-4 border-b border-white/5 mb-4">
-                        <div class="w-8 h-8 rounded-lg bg-blue-500/15 flex items-center justify-center"><i class="ph ph-buildings text-blue-400"></i></div>
-                        <div>
-                            <div class="text-sm font-bold">МФТИ</div>
-                            <div class="text-[10px] text-gray-500">Лаб. автономных систем</div>
-                        </div>
+                <div class="grid md:grid-cols-[240px_1fr] gap-4">
+                    <!-- Contact list -->
+                    <div class="space-y-1">
+                        <div class="text-[9px] uppercase tracking-[0.2em] text-zinc-600 font-black mb-2 px-1">Контакты</div>
+                        ${contactList}
                     </div>
-                    <div class="space-y-3 max-h-[400px] overflow-y-auto mb-4">${bubbles}</div>
-                    <div class="flex gap-2">
-                        <input type="text" placeholder="Написать сообщение..." class="flex-1 px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-sm text-white placeholder-gray-600 focus:border-red-500/50 focus:outline-none transition" />
-                        <button class="px-4 py-3 rounded-xl mos-bg-red text-xs font-bold uppercase tracking-wider hover:opacity-90 transition"><i class="ph ph-paper-plane-tilt"></i></button>
+                    <!-- Chat -->
+                    <div class="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-4">
+                        <div class="flex items-center gap-3 pb-4 border-b border-white/5 mb-4">
+                            <div class="w-8 h-8 rounded-lg bg-${active.color}-500/15 flex items-center justify-center"><i class="ph ${active.icon} text-${active.color}-400"></i></div>
+                            <div>
+                                <div class="text-sm font-bold">${active.name}</div>
+                                <div class="text-[10px] text-gray-500">${active.subtitle} · ${typeLabel}</div>
+                            </div>
+                        </div>
+                        <div class="space-y-3 max-h-[400px] overflow-y-auto mb-4">${bubbles}</div>
+                        <div class="flex gap-2">
+                            <input type="text" placeholder="Написать сообщение..." class="flex-1 px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-sm text-white placeholder-gray-600 focus:border-red-500/50 focus:outline-none transition" />
+                            <button class="px-4 py-3 rounded-xl mos-bg-red text-xs font-bold uppercase tracking-wider hover:opacity-90 transition"><i class="ph ph-paper-plane-tilt"></i></button>
+                        </div>
                     </div>
                 </div>
             `;
