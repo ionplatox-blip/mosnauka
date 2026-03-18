@@ -316,7 +316,7 @@
     (async function() {
       loading.classList.remove('hidden');
       try {
-        const res = await fetch('backend/data/experts_index.json');
+        const res = await fetch('data/experts.json');
         allExperts = await res.json();
         loading.classList.add('hidden');
 
