@@ -163,10 +163,7 @@
 
     <script>
     // ─── Config ───
-    const API_BASE = window.location.hostname === 'localhost'
-      ? 'http://localhost:5001'
-      : 'https://mosnauka-backend.onrender.com';
-
+    let allExperts = [];
     let currentOrg = '';
     let debounceTimer = null;
 
@@ -214,40 +211,63 @@
         </div>`;
     }
 
-    // ─── Fetch & Render ───
-    async function searchExperts() {
-      const q = searchInput.value.trim();
+    // ─── Client-Side Search ───
+    function searchExperts() {
+      const q = searchInput.value.trim().toLowerCase();
 
       grid.innerHTML = '';
       emptyState.classList.add('hidden');
-      loading.classList.remove('hidden');
       counter.innerHTML = '';
 
-      try {
-        const params = new URLSearchParams({ q, org: currentOrg, limit: 21 });
-        const res = await fetch(`${API_BASE}/api/search-experts?${params}`);
-        const data = await res.json();
+      let results = allExperts;
 
-        loading.classList.add('hidden');
-
-        if (!data.ok || !data.results.length) {
-          emptyState.classList.remove('hidden');
-          counter.innerHTML = `<span class="text-xs text-gray-600">Найдено: 0 экспертов</span>`;
-          return;
-        }
-
-        counter.innerHTML = `<span class="text-xs text-gray-600">Найдено: <span class="text-white font-bold">${data.total}</span> экспертов${data.total > 21 ? ' (показаны первые 21)' : ''}</span>`;
-        grid.innerHTML = data.results.map(expertCard).join('');
-      } catch (err) {
-        loading.classList.add('hidden');
-        grid.innerHTML = `<div class="col-span-full text-center py-10 text-gray-600 text-sm">Ошибка загрузки. Проверьте подключение.</div>`;
+      // Filter by org
+      if (currentOrg) {
+        results = results.filter(e => (e.org || '').includes(currentOrg));
       }
+
+      // Score & filter by query
+      if (q) {
+        results = results.map(e => {
+          let score = 0;
+          const name = (e.name || '').toLowerCase();
+          const tags = (e.tags || []).map(t => t.toLowerCase());
+          const lab = (e.lab || '').toLowerCase();
+          const org = (e.org || '').toLowerCase();
+          const pos = (e.position || '').toLowerCase();
+
+          if (name.includes(q)) score += 100;
+          tags.forEach(t => { if (t.includes(q)) score += 50; });
+          if (lab.includes(q)) score += 30;
+          if (org.includes(q)) score += 20;
+          if (pos.includes(q)) score += 15;
+          // Boost by publications
+          score += Math.min((e.publications || 0) * 0.1, 10);
+
+          return { ...e, _score: score };
+        }).filter(e => e._score > 0).sort((a, b) => b._score - a._score);
+      } else {
+        // No query: sort by publications
+        results = [...results].sort((a, b) => (b.publications || 0) - (a.publications || 0));
+      }
+
+      const shown = results.slice(0, 21);
+      const total = results.length;
+
+      if (!shown.length) {
+        emptyState.classList.remove('hidden');
+        counter.innerHTML = `<span class="text-xs text-gray-600">Найдено: 0 экспертов</span>`;
+        return;
+      }
+
+      counter.innerHTML = `<span class="text-xs text-gray-600">Найдено: <span class="text-white font-bold">${total}</span> экспертов${total > 21 ? ' (показаны первые 21)' : ''}</span>`;
+      grid.innerHTML = shown.map(expertCard).join('');
     }
 
     // ─── Debounce ───
     searchInput.addEventListener('input', () => {
       clearTimeout(debounceTimer);
-      debounceTimer = setTimeout(searchExperts, 400);
+      debounceTimer = setTimeout(searchExperts, 300);
     });
 
     // ─── Org Filters ───
@@ -292,8 +312,25 @@
       if (ev.target === this) closeModal();
     });
 
-    // ─── Initial Load ───
-    searchExperts();
+    // ─── Load Data ───
+    (async function() {
+      loading.classList.remove('hidden');
+      try {
+        const res = await fetch('backend/data/experts_index.json');
+        allExperts = await res.json();
+        loading.classList.add('hidden');
+
+        // Check URL hash for pre-filled search
+        const hash = window.location.hash;
+        if (hash && hash.startsWith('#q=')) {
+          searchInput.value = decodeURIComponent(hash.slice(3));
+        }
+        searchExperts();
+      } catch (err) {
+        loading.classList.add('hidden');
+        grid.innerHTML = `<div class="col-span-full text-center py-10 text-gray-600 text-sm">Ошибка загрузки данных.</div>`;
+      }
+    })();
     </script>
 
   </body>
