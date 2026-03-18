@@ -522,6 +522,13 @@ def rerank_with_ai(query: str, scored_records: list[tuple]) -> list[tuple]:
 # ─────────────────────────────────────────────
 # API Endpoints
 # ─────────────────────────────────────────────
+@app.route("/data/experts.json")
+def serve_experts_json():
+    """Serve experts index as static JSON for client-side search."""
+    return app.send_static_file("experts_index.json") if False else \
+        (open(EXPERTS_PATH, encoding="utf-8").read(), 200, {"Content-Type": "application/json; charset=utf-8", "Cache-Control": "public, max-age=3600"})
+
+
 @app.route("/api/health", methods=["GET"])
 def health():
     return jsonify({

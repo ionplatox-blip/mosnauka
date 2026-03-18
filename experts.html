@@ -313,23 +313,37 @@
     });
 
     // ─── Load Data ───
+    const DATA_SOURCES = [
+      'https://mosnauka.onrender.com/data/experts.json',
+      'data/experts.json',
+      'backend/data/experts_index.json',
+    ];
+
     (async function() {
       loading.classList.remove('hidden');
-      try {
-        const res = await fetch('data/experts.json');
-        allExperts = await res.json();
-        loading.classList.add('hidden');
-
-        // Check URL hash for pre-filled search
-        const hash = window.location.hash;
-        if (hash && hash.startsWith('#q=')) {
-          searchInput.value = decodeURIComponent(hash.slice(3));
-        }
-        searchExperts();
-      } catch (err) {
-        loading.classList.add('hidden');
-        grid.innerHTML = `<div class="col-span-full text-center py-10 text-gray-600 text-sm">Ошибка загрузки данных.</div>`;
+      let loaded = false;
+      for (const url of DATA_SOURCES) {
+        try {
+          const res = await fetch(url);
+          if (!res.ok) continue;
+          allExperts = await res.json();
+          loaded = true;
+          console.log(`✅ Loaded ${allExperts.length} experts from ${url}`);
+          break;
+        } catch { continue; }
       }
+      loading.classList.add('hidden');
+      if (!loaded) {
+        grid.innerHTML = `<div class="col-span-full text-center py-10 text-gray-600 text-sm">Ошибка загрузки данных экспертов.</div>`;
+        return;
+      }
+
+      // Check URL hash for pre-filled search
+      const hash = window.location.hash;
+      if (hash && hash.startsWith('#q=')) {
+        searchInput.value = decodeURIComponent(hash.slice(3));
+      }
+      searchExperts();
     })();
     </script>
 
