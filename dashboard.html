@@ -69,7 +69,32 @@
                 if (d2.ok) _userData = d2;
             } catch {
                 // Fallback demo data
-                _userData = { searches: [], projects: [], messages: [], favorites: [] };
+                _userData = {
+                  searches: [
+                    { query: 'Литий-ионные аккумуляторы', date: '12 мар 2026', results: 18 },
+                    { query: 'Наноматериалы для катализа', date: '10 мар 2026', results: 24 },
+                    { query: 'Компьютерное зрение для промышленности', date: '7 мар 2026', results: 11 },
+                  ],
+                  projects: [
+                    { title: 'Катализаторы нового поколения для нефтепереработки', stage: 'search', executor: '', budget: '8 млн ₽', deadline: 'Q3 2026' },
+                    { title: 'Система машинного зрения для контроля качества', stage: 'negotiation', executor: 'МФТИ', budget: '12 млн ₽', deadline: 'Q4 2026' },
+                    { title: 'Анализ прочности композитных материалов', stage: 'contract', executor: 'МГТУ Баумана', budget: '5,5 млн ₽', deadline: 'Q2 2026' },
+                    { title: 'Разработка покрытий с антикоррозионными свойствами', stage: 'execution', executor: 'МИСиС', budget: '9 млн ₽', deadline: 'Q1 2026' },
+                    { title: 'Оптимизация сплавов для 3D-печати', stage: 'closed', executor: 'Курчатов', budget: '6 млн ₽', deadline: 'Q4 2025' },
+                  ],
+                  messages: [
+                    { from: 'business', text: 'Здравствуйте! Нас интересует разработка системы машинного зрения для контроля качества на производственной линии. Можете ли вы обсудить ТЗ?', date: '2026-03-10T10:30:00' },
+                    { from: 'center', text: 'Добрый день! Да, наша лаборатория автономных систем занимается подобными задачами. Давайте назначим звонок для обсуждения деталей ТЗ.', date: '2026-03-10T14:15:00' },
+                    { from: 'business', text: 'Отлично! Удобно ли вам в четверг в 14:00? Мы подготовим предварительное описание задачи и требования к точности.', date: '2026-03-11T09:00:00' },
+                    { from: 'center', text: 'Четверг в 14:00 подходит. Пришлите, пожалуйста, примеры изображений дефектов и описание текущего процесса контроля.', date: '2026-03-11T11:45:00' },
+                    { from: 'business', text: 'Отправил на почту примеры и спецификацию. Также прикрепил текущий регламент QC.', date: '2026-03-12T16:20:00' },
+                    { from: 'center', text: 'Готов назначить встречу для обсуждения ТЗ. Предварительно: задача решаема, ориентировочный срок 6-8 месяцев. Бюджет обсудим после детализации.', date: '2026-03-14T09:30:00' },
+                  ],
+                  favorites: [
+                    { type: 'center', name: 'МФТИ', page: 'passport-mfti.html' },
+                    { type: 'scientist', name: 'Антипов Е.В.', page: 'mgu/sci_018.html' },
+                  ]
+                };
             }
 
             // Render components (filled in by next chunks)
@@ -136,6 +161,86 @@
                     <p class="text-gray-500 mt-1">${_user?.company || ''} · ${_user?.industry || ''}</p>
                 </div>
                 <div class="grid grid-cols-2 md:grid-cols-5 gap-3 mb-8">${cards}</div>
+
+                <!-- Quick Actions: Expert Search + Upload TZ -->
+                <div class="grid md:grid-cols-2 gap-4 mb-8">
+                    <div class="rounded-2xl border border-purple-500/20 bg-purple-500/5 p-5">
+                        <div class="flex items-center gap-2 mb-3">
+                            <i class="ph ph-user-circle-gear text-purple-400 text-lg"></i>
+                            <span class="text-sm font-black">Найти эксперта</span>
+                        </div>
+                        <form onsubmit="window.location.href='experts.html#q='+encodeURIComponent(this.q.value);return false;" class="flex gap-2">
+                            <input type="text" name="q" placeholder="Компетенция, имя, область..."
+                                class="flex-1 px-3 py-2.5 rounded-xl bg-white/5 border border-white/10 text-sm text-white placeholder-gray-600 outline-none focus:border-purple-500/50 transition" />
+                            <button type="submit" class="px-4 py-2.5 rounded-xl bg-purple-600 text-xs font-bold uppercase tracking-wider hover:bg-purple-500 transition">
+                                <i class="ph ph-magnifying-glass"></i>
+                            </button>
+                        </form>
+                        <a href="experts.html" class="block text-center text-[10px] text-purple-400 font-bold mt-2 hover:text-purple-300 transition">958 экспертов из 15+ организаций →</a>
+                    </div>
+                    <div class="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-5 flex flex-col justify-between">
+                        <div class="flex items-center gap-2 mb-3">
+                            <i class="ph ph-upload-simple text-red-400 text-lg"></i>
+                            <span class="text-sm font-black">Новый запрос на НИОКР</span>
+                        </div>
+                        <p class="text-xs text-gray-500 mb-3">Загрузите ТЗ или опишите задачу — подберём подходящий R&D центр и эксперта</p>
+                        <button onclick="switchSection('searches')" class="w-full py-2.5 rounded-xl mos-bg-red text-xs font-bold uppercase tracking-wider hover:brightness-110 transition">
+                            <i class="ph ph-file-arrow-up mr-1"></i> Загрузить ТЗ
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tax Benefit Status -->
+                <div class="rounded-2xl border border-emerald-500/20 bg-emerald-500/5 p-5 mb-8">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-2">
+                            <i class="ph ph-calculator text-emerald-400 text-lg"></i>
+                            <span class="text-sm font-black">Налоговая льгота ×2</span>
+                        </div>
+                        <span class="px-2.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-[10px] font-bold text-amber-400">В процессе</span>
+                    </div>
+                    <div class="grid grid-cols-3 gap-3 mb-4">
+                        <div class="p-3 rounded-xl bg-white/[0.03] border border-white/[0.06] text-center">
+                            <div class="text-lg font-black text-emerald-400">9 млн ₽</div>
+                            <div class="text-[10px] text-gray-500">Расходы НИОКР</div>
+                        </div>
+                        <div class="p-3 rounded-xl bg-white/[0.03] border border-white/[0.06] text-center">
+                            <div class="text-lg font-black text-emerald-400">×2</div>
+                            <div class="text-[10px] text-gray-500">Коэффициент</div>
+                        </div>
+                        <div class="p-3 rounded-xl bg-white/[0.03] border border-white/[0.06] text-center">
+                            <div class="text-lg font-black text-white">2,25 млн ₽</div>
+                            <div class="text-[10px] text-gray-500">Экономия (25%)</div>
+                        </div>
+                    </div>
+                    <div class="text-[10px] text-gray-500 mb-3">
+                        <span class="text-emerald-400 font-bold">Заказчик НИОКР по договору</span> может применить коэфф. ×2 к расходам на оплату работ, если подрядчик в Перечне №988 Правительства РФ
+                    </div>
+                    <div class="flex gap-2">
+                        <div class="flex-1 flex items-center gap-1.5">
+                            <div class="w-5 h-5 rounded-full bg-emerald-500/30 flex items-center justify-center"><i class="ph ph-check text-emerald-400 text-[10px]"></i></div>
+                            <span class="text-[10px] text-gray-400">Договор</span>
+                        </div>
+                        <div class="flex-1 flex items-center gap-1.5">
+                            <div class="w-5 h-5 rounded-full bg-emerald-500/30 flex items-center justify-center"><i class="ph ph-check text-emerald-400 text-[10px]"></i></div>
+                            <span class="text-[10px] text-gray-400">Перечень 988</span>
+                        </div>
+                        <div class="flex-1 flex items-center gap-1.5">
+                            <div class="w-5 h-5 rounded-full bg-amber-500/30 flex items-center justify-center"><i class="ph ph-dots-three text-amber-400 text-[10px]"></i></div>
+                            <span class="text-[10px] text-gray-400">Акт работ</span>
+                        </div>
+                        <div class="flex-1 flex items-center gap-1.5">
+                            <div class="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center"><i class="ph ph-circle text-gray-600 text-[10px]"></i></div>
+                            <span class="text-[10px] text-gray-400">ЕГИСУ</span>
+                        </div>
+                        <div class="flex-1 flex items-center gap-1.5">
+                            <div class="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center"><i class="ph ph-circle text-gray-600 text-[10px]"></i></div>
+                            <span class="text-[10px] text-gray-400">Декларация</span>
+                        </div>
+                    </div>
+                    <a href="#" onclick="switchSection('guide'); return false;" class="block text-center text-[10px] text-emerald-400 font-bold mt-3 hover:text-emerald-300 transition">Подробнее об оформлении →</a>
+                </div>
+
                 <div>
                     <div class="text-[10px] uppercase tracking-[0.2em] text-zinc-600 font-black mb-4">Последние события</div>
                     <div class="space-y-2">
@@ -310,15 +415,31 @@
                         </div>
                         <div class="space-y-2 text-sm text-gray-300">
                             <p>Расходы на НИОКР можно учесть с <span class="text-emerald-400 font-bold">повышающим коэффициентом ×2</span> при расчёте налога на прибыль (ст. 262 НК РФ). Ставка для Москвы — <span class="text-emerald-400 font-bold">25%</span> (8% фед. + 17% рег.), экономия до <span class="text-emerald-400 font-bold">5 млн ₽ на 10 млн ₽</span> затрат.</p>
+
+                            <!-- Contract-based flow -->
+                            <div class="mt-3 p-4 rounded-xl bg-red-500/5 border border-red-500/10">
+                                <div class="text-[10px] uppercase tracking-wider font-bold text-red-400 mb-2">⚡ Заказчик НИОКР по договору</div>
+                                <p class="text-xs text-gray-400 mb-2">Если ваша компания заказывает НИОКР у подрядчика (по договору), то вы как <span class="text-white font-bold">заказчик</span> можете применить коэффициент ×2 к своим расходам на оплату этих работ.</p>
+                                <div class="p-3 rounded-lg bg-white/[0.03] border border-white/5">
+                                    <div class="text-[10px] font-bold text-white mb-1">Условия:</div>
+                                    <ul class="text-[11px] text-gray-400 space-y-1">
+                                        <li>✅ НИОКР входят в <span class="text-emerald-400 font-bold">Перечень №988</span> Правительства РФ</li>
+                                        <li>✅ Подрядчик — аккредитованная научная организация</li>
+                                        <li>✅ Оформлены: договор, ТЗ, акт, отчёт о НИОКР</li>
+                                        <li>✅ Результаты зарегистрированы в ЕГИСУ НИОКР</li>
+                                    </ul>
+                                </div>
+                            </div>
+
                             <div class="mt-3 p-3 rounded-xl bg-emerald-500/5 border border-emerald-500/10">
-                                <div class="text-[10px] uppercase tracking-wider font-bold text-emerald-400 mb-2">Пошагово:</div>
-                                <ol class="list-decimal list-inside space-y-1 text-xs text-gray-400">
-                                    <li>Заключите договор на НИОКР с аккредитованной организацией</li>
-                                    <li>Убедитесь, что тематика входит в перечень Правительства РФ</li>
-                                    <li>Оформите акт выполненных работ + отчёт о НИОКР</li>
-                                    <li>Зарегистрируйте результаты в ЕГИСУ НИОКР</li>
-                                    <li>Примените коэффициент ×2 к расходам в декларации</li>
-                                </ol>
+                                <div class="text-[10px] uppercase tracking-wider font-bold text-emerald-400 mb-2">5 шагов к экономии:</div>
+                                <div class="space-y-2">
+                                    <div class="flex items-start gap-2"><div class="w-5 h-5 rounded-full bg-emerald-500/20 flex items-center justify-center shrink-0 mt-0.5"><span class="text-[10px] font-black text-emerald-400">1</span></div><div class="text-xs text-gray-400"><span class="text-white font-semibold">Заключите договор</span> на НИОКР с аккредитованной организацией через МОСНАУКА</div></div>
+                                    <div class="flex items-start gap-2"><div class="w-5 h-5 rounded-full bg-emerald-500/20 flex items-center justify-center shrink-0 mt-0.5"><span class="text-[10px] font-black text-emerald-400">2</span></div><div class="text-xs text-gray-400"><span class="text-white font-semibold">Проверьте Перечень №988</span> — тематика НИОКР должна входить в перечень</div></div>
+                                    <div class="flex items-start gap-2"><div class="w-5 h-5 rounded-full bg-emerald-500/20 flex items-center justify-center shrink-0 mt-0.5"><span class="text-[10px] font-black text-emerald-400">3</span></div><div class="text-xs text-gray-400"><span class="text-white font-semibold">Оформите документы:</span> акт выполненных работ + отчёт о НИОКР</div></div>
+                                    <div class="flex items-start gap-2"><div class="w-5 h-5 rounded-full bg-emerald-500/20 flex items-center justify-center shrink-0 mt-0.5"><span class="text-[10px] font-black text-emerald-400">4</span></div><div class="text-xs text-gray-400"><span class="text-white font-semibold">Зарегистрируйте</span> результаты в ЕГИСУ НИОКР</div></div>
+                                    <div class="flex items-start gap-2"><div class="w-5 h-5 rounded-full bg-emerald-500/20 flex items-center justify-center shrink-0 mt-0.5"><span class="text-[10px] font-black text-emerald-400">5</span></div><div class="text-xs text-gray-400"><span class="text-white font-semibold">Примените ×2</span> к расходам в декларации по налогу на прибыль</div></div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -367,6 +488,18 @@
                             </div>
                             <div class="p-3 rounded-xl bg-white/5 border border-white/10 flex items-center justify-between hover:bg-white/10 transition cursor-pointer">
                                 <div class="flex items-center gap-2"><i class="ph ph-file-doc text-purple-400"></i><span class="text-sm">Акт выполненных работ</span></div>
+                                <span class="text-[10px] text-gray-500">DOCX</span>
+                            </div>
+                            <div class="p-3 rounded-xl bg-emerald-500/5 border border-emerald-500/10 flex items-center justify-between hover:bg-emerald-500/10 transition cursor-pointer">
+                                <div class="flex items-center gap-2"><i class="ph ph-file-doc text-emerald-400"></i><span class="text-sm">Заявление на применение коэфф. ×2</span></div>
+                                <span class="text-[10px] text-emerald-400 font-bold">DOCX</span>
+                            </div>
+                            <div class="p-3 rounded-xl bg-emerald-500/5 border border-emerald-500/10 flex items-center justify-between hover:bg-emerald-500/10 transition cursor-pointer">
+                                <div class="flex items-center gap-2"><i class="ph ph-file-doc text-emerald-400"></i><span class="text-sm">Уведомление в ФНС о применении ×2</span></div>
+                                <span class="text-[10px] text-emerald-400 font-bold">DOCX</span>
+                            </div>
+                            <div class="p-3 rounded-xl bg-white/5 border border-white/10 flex items-center justify-between hover:bg-white/10 transition cursor-pointer">
+                                <div class="flex items-center gap-2"><i class="ph ph-file-doc text-purple-400"></i><span class="text-sm">Отчёт о НИОКР (для ЕГИСУ)</span></div>
                                 <span class="text-[10px] text-gray-500">DOCX</span>
                             </div>
                         </div>
