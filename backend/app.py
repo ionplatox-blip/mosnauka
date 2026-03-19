@@ -324,7 +324,7 @@ def format_projects(scored_records: list[tuple], top_n: int = 20) -> list[dict]:
             "match_percentage": min(99, int(score * 100)),
             "tags": rec.get("keywords", [])[:6],
             "abstract_short": (rec.get("abstract") or "")[:300],
-            "abstract_full": (rec.get("abstract") or "")[:2000],
+            "abstract_full": (rec.get("abstract") or ""),
             "reg_number": rec.get("reg_number", ""),
             "nioktr": rec.get("nioktr", ""),
             "report_type": rec.get("report_type", ""),
@@ -604,10 +604,10 @@ def generate_org_reasoning(query: str, organizations: list[dict]) -> list[dict]:
                     {"role": "system", "content": system_prompt},
                     {"role": "user", "content": user_prompt},
                 ],
-                "max_tokens": 600,
+                "max_tokens": 800,
                 "temperature": 0.4,
             },
-            timeout=20,
+            timeout=30,
         )
         raw = resp.json()["choices"][0]["message"]["content"].strip()
 
@@ -636,7 +636,9 @@ def generate_org_reasoning(query: str, organizations: list[dict]) -> list[dict]:
                 org["ai_reasoning"] = _fallback_reasoning(org)
 
     except Exception as e:
+        import traceback
         print(f"Org reasoning error: {e}")
+        traceback.print_exc()
         for org in organizations:
             org["ai_reasoning"] = _fallback_reasoning(org)
 
@@ -644,16 +646,28 @@ def generate_org_reasoning(query: str, organizations: list[dict]) -> list[dict]:
 
 
 def _fallback_reasoning(org: dict) -> str:
-    """Simple fallback when Claude is unavailable."""
+    """Rich fallback when Claude is unavailable — includes top project titles."""
     budget_fmt = f"₽{org['total_matched_budget']/1e6:.1f} млн" if org.get("total_matched_budget", 0) >= 1e6 else ""
-    parts = []
-    if org.get("matched_projects"):
-        parts.append(f"{org['matched_projects']} проектов по теме")
-    if org.get("matched_rids"):
-        parts.append(f"{org['matched_rids']} РИД")
-    if budget_fmt:
-        parts.append(f"общий бюджет {budget_fmt}")
-    return f"У организации {', '.join(parts)}." if parts else ""
+    top = org.get("top_projects", [])
+    if top:
+        # Build narrative from top project titles
+        titles = [p["title"] for p in top[:3] if p.get("title")]
+        titles_text = "; ".join(f"«{t[:80]}»" for t in titles)
+        parts = []
+        parts.append(f"{org['org_name']} выполняла {org.get('matched_projects', len(top))} релевантных проектов")
+        if budget_fmt:
+            parts.append(f"с общим бюджетом {budget_fmt}")
+        parts.append(f"Ключевые работы: {titles_text}.")
+        return " ".join(parts)
+    else:
+        parts = []
+        if org.get("matched_projects"):
+            parts.append(f"{org['matched_projects']} проектов по теме")
+        if org.get("matched_rids"):
+            parts.append(f"{org['matched_rids']} РИД")
+        if budget_fmt:
+            parts.append(f"общий бюджет {budget_fmt}")
+        return f"У организации {', '.join(parts)}." if parts else ""
 
 
 # ─────────────────────────────────────────────
