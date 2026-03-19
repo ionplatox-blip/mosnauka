@@ -635,19 +635,63 @@
 
       // Open project modal from org card (using _allProjects data)
       function openProjectModalFromOrg(orgIndex, projIndex) {
-        // Find matching project in _allProjects by title
         const orgData = window._orgCardsData && window._orgCardsData[orgIndex];
         if (!orgData || !orgData.top_projects) return;
         const proj = orgData.top_projects[projIndex];
         if (!proj) return;
-        // Find in _allProjects by reg_number or title match
+
+        // Try to find in _allProjects first (has full data)
         const matchIdx = _allProjects.findIndex(p =>
           (proj.reg_number && p.reg_number === proj.reg_number) ||
           p.title === proj.title
         );
         if (matchIdx >= 0) {
           openProjectModal(matchIdx);
+          return;
         }
+
+        // Fallback: open modal directly from org's project data
+        const modal = document.getElementById('project-modal');
+        const budgetFmt = proj.budget_rub >= 1e6 ? `₽${(proj.budget_rub/1e6).toFixed(1)} млн` : proj.budget_rub > 0 ? `₽${(proj.budget_rub/1e3).toFixed(0)} тыс.` : '–';
+
+        document.getElementById('modal-match').textContent = `${proj.match_percentage}% совпадение`;
+        document.getElementById('modal-type').textContent = 'Проект НИОКР';
+        document.getElementById('modal-title').textContent = proj.title;
+        document.getElementById('modal-abstract').textContent = proj.abstract_full || proj.abstract_short || 'Описание отсутствует';
+        document.getElementById('modal-regnumber').textContent = proj.reg_number || '–';
+        document.getElementById('modal-nioktr').textContent = proj.nioktr || '–';
+        document.getElementById('modal-budget').textContent = budgetFmt;
+        document.getElementById('modal-year').textContent = `${proj.year || '–'} / ${proj.report_type || '–'}`;
+
+        // Tags
+        const tagsEl = document.getElementById('modal-tags');
+        tagsEl.innerHTML = (proj.keywords || []).map(t => `<span class="px-2 py-1 rounded-full bg-white/5 text-[11px] text-gray-300 border border-white/5">${t}</span>`).join('');
+
+        // Org info from org card or project data
+        const orgName = proj.org_name || orgData.org_name || '';
+        const orgNameFull = proj.org_name_full || orgData.org_name_full || '';
+        const orgLogo = proj.org_logo || orgData.logo || '';
+        const orgSlug = proj.org_slug || orgData.slug || '';
+        const orgWebsite = proj.org_website || orgData.website || '';
+
+        document.getElementById('modal-org-name').textContent = orgName;
+        document.getElementById('modal-org-full').textContent = orgNameFull;
+        const logoWrap = document.getElementById('modal-org-logo-wrap');
+        logoWrap.innerHTML = orgLogo ? `<img src="${orgLogo}" class="w-full h-full object-contain" alt="">` : '<i class="ph ph-building text-xl text-gray-500"></i>';
+
+        const passportUrl = orgSlug ? `passport-${orgSlug}.html` : '#';
+        document.getElementById('modal-org-passport').href = passportUrl;
+
+        const websiteBtn = document.getElementById('modal-org-website');
+        if (orgWebsite) {
+          websiteBtn.href = orgWebsite;
+          websiteBtn.style.display = 'inline-block';
+        } else {
+          websiteBtn.style.display = 'none';
+        }
+
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
       }
 
       function expertCard(e) {
