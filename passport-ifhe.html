@@ -79,7 +79,7 @@
           МОС<span class="mos-red">НАУКА</span>
         </a>
         <div class="flex items-center gap-4">
-          <span class="text-[10px] uppercase tracking-widest text-zinc-500 font-bold">Паспорт организации v2.0</span>
+          <span class="text-[10px] uppercase tracking-widest text-zinc-500 font-bold">Паспорт организации</span>
           <a href="catalog.html" class="text-xs font-bold uppercase hover:text-red-500 transition">Реестр</a>
         </div>
       </div>
@@ -261,7 +261,7 @@
       <div class="glass rounded-2xl p-4 mb-4" style="border:1px solid rgba(56,189,248,0.15);background:rgba(56,189,248,0.03)">
         <div class="flex items-center gap-2 text-[10px] text-sky-400/70 font-bold uppercase">
           <i class="ph ph-info"></i>
-          Показаны лаборатории и учёные, зарегистрированные на платформе CoLab. Фактическое число сотрудников может быть больше.
+          Показаны лаборатории и учёные, зарегистрированные в реестре МОСНАУКА. Фактическое число сотрудников может быть больше.
         </div>
       </div>
       <div class="section-header" id="section-labs">
@@ -269,7 +269,7 @@
           <button id="tab-labs" onclick="switchTab('labs')" class="section-title" style="background:none;border:none;color:white;cursor:pointer;padding:0">🔬 Лаборатории (11)</button>
           <button id="tab-sci" onclick="switchTab('sci')" class="text-lg font-black uppercase italic tracking-tight opacity-30 hover:opacity-60 transition" style="background:none;border:none;color:white;cursor:pointer;padding:0" id="section-scientists">🎓 Учёные (61)</button>
         </div>
-        <span class="provenance-tag tag-colab">CoLab Data</span>
+        <span class="provenance-tag tag-colab">Реестр МОСНАУКА</span>
       </div>
 
       <!-- Labs panel -->
@@ -2278,7 +2278,7 @@
         <div class="text-3xl font-black italic uppercase mb-8">МОС<span class="mos-red">НАУКА</span></div>
         <p class="text-zinc-500 text-sm max-w-2xl mx-auto italic mb-8">Единая экосистема технологического развития площадок и заказчиков в Москве.</p>
         <div class="flex justify-center gap-8 mb-8">
-          <div class="text-[10px] text-zinc-600 uppercase font-bold">Источник: <span class="text-emerald-500">CoLab</span> — лаборатории, учёные</div>
+          <div class="text-[10px] text-zinc-600 uppercase font-bold">Источник: <span class="text-emerald-500">МОСНАУКА</span> — лаборатории, учёные</div>
           <div class="text-[10px] text-zinc-600 uppercase font-bold">Источник: <span class="text-sky-500">ЕГИСУ</span> — проекты, РИД</div>
         </div>
         <div class="text-white/20 text-[10px] uppercase font-bold tracking-[0.5em]">&copy; 2026 ЦИФРОВОЙ ПАСПОРТ ОБЪЕКТА</div>
@@ -2303,14 +2303,14 @@
           <input type="text" id="reqOrg" placeholder="ООО «Компания»" class="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-sm mb-3" style="color:white">
           <label class="block text-[10px] uppercase font-black text-zinc-500 mb-1 tracking-widest">Email *</label>
           <input type="email" id="reqEmail" placeholder="email@example.com" class="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-sm mb-3" style="color:white">
-          <label class="block text-[10px] uppercase font-black text-zinc-500 mb-1 tracking-widest">Тип запроса</label>
-          <select id="reqType" class="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-sm mb-3" style="color:white;appearance:none">
-            <option>Запрос на НИОКР</option>
-            <option>Консультация</option>
-            <option>Сотрудничество / Партнёрство</option>
-            <option>Использование оборудования</option>
-            <option>Другое</option>
-          </select>
+          <label class="block text-[10px] uppercase font-black text-zinc-500 mb-2 tracking-widest">Тип запроса <span class="normal-case tracking-normal text-zinc-600">(можно выбрать несколько)</span></label>
+          <div class="grid grid-cols-1 gap-2 mb-3" id="reqType">
+            <label class="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10 cursor-pointer hover:bg-white/[0.08] transition"><input type="checkbox" value="Запрос на НИОКР" checked class="w-4 h-4 rounded accent-red-500"><span class="text-sm text-zinc-300">Запрос на НИОКР</span></label>
+            <label class="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10 cursor-pointer hover:bg-white/[0.08] transition"><input type="checkbox" value="Консультация" class="w-4 h-4 rounded accent-red-500"><span class="text-sm text-zinc-300">Консультация</span></label>
+            <label class="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10 cursor-pointer hover:bg-white/[0.08] transition"><input type="checkbox" value="Сотрудничество / Партнёрство" class="w-4 h-4 rounded accent-red-500"><span class="text-sm text-zinc-300">Сотрудничество / Партнёрство</span></label>
+            <label class="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10 cursor-pointer hover:bg-white/[0.08] transition"><input type="checkbox" value="Использование оборудования" class="w-4 h-4 rounded accent-red-500"><span class="text-sm text-zinc-300">Использование оборудования</span></label>
+            <label class="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10 cursor-pointer hover:bg-white/[0.08] transition"><input type="checkbox" value="Другое" class="w-4 h-4 rounded accent-red-500"><span class="text-sm text-zinc-300">Другое</span></label>
+          </div>
           <label class="block text-[10px] uppercase font-black text-zinc-500 mb-1 tracking-widest">Сообщение *</label>
           <textarea id="reqMsg" placeholder="Опишите ваш запрос..." class="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-sm mb-4" style="color:white;min-height:5rem;resize:vertical"></textarea>
           <button onclick="submitRequest()" class="w-full py-3 rounded-xl bg-red-500 text-white text-[11px] font-black uppercase tracking-widest hover:bg-red-600 transition">Отправить запрос</button>

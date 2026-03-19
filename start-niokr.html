@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>МОСНАУКА — Запустить НИОКР</title>
+    <meta name="description" content="Запустите проект НИОКР за 4 шага: опишите задачу, получите AI-подбор, выберите исполнителя, оставьте заявку." />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        :root { --mos-red: #ff003c; }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: linear-gradient(160deg, #07070e 0%, #0c0a18 25%, #0a0f1e 50%, #0d0b1a 75%, #06080f 100%);
+            background-attachment: fixed;
+            color: #ffffff;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Noise texture */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .mos-red { color: var(--mos-red); }
+        .mos-bg-red { background-color: var(--mos-red); }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        /* ═══ PROGRESS BAR ═══ */
+        .step-dot {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 800;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.03);
+            color: rgba(255, 255, 255, 0.3);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            z-index: 2;
+        }
+        .step-dot.active {
+            border-color: var(--mos-red);
+            background: var(--mos-red);
+            color: white;
+            box-shadow: 0 0 20px rgba(255, 0, 60, 0.4);
+        }
+        .step-dot.completed {
+            border-color: #22c55e;
+            background: #22c55e;
+            color: white;
+        }
+
+        .step-connector {
+            flex: 1;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.08);
+            position: relative;
+            z-index: 1;
+        }
+        .step-connector .fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #22c55e, var(--mos-red));
+            transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .step-connector.filled .fill {
+            width: 100%;
+        }
+
+        .step-label {
+            font-size: 9px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: rgba(255, 255, 255, 0.25);
+            transition: color 0.3s;
+            text-align: center;
+            margin-top: 6px;
+        }
+        .step-label.active { color: var(--mos-red); }
+        .step-label.completed { color: #22c55e; }
+
+        /* ═══ STEP PANELS ═══ */
+        .step-panel {
+            display: none;
+            opacity: 0;
+            transform: translateY(12px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+        .step-panel.visible {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ═══ TEXTAREA ═══ */
+        .wizard-textarea {
+            width: 100%;
+            min-height: 140px;
+            padding: 16px 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            color: #ffffff;
+            font-size: 14px;
+            line-height: 1.7;
+            font-family: 'Inter', sans-serif;
+            resize: vertical;
+            transition: border-color 0.3s, box-shadow 0.3s;
+            outline: none;
+        }
+        .wizard-textarea::placeholder {
+            color: rgba(255, 255, 255, 0.2);
+        }
+        .wizard-textarea:focus {
+            border-color: rgba(255, 0, 60, 0.4);
+            box-shadow: 0 0 20px rgba(255, 0, 60, 0.08);
+        }
+        .wizard-textarea.error {
+            border-color: rgba(255, 0, 60, 0.6);
+            box-shadow: 0 0 16px rgba(255, 0, 60, 0.15);
+            animation: shake 0.4s ease;
+        }
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-6px); }
+            75% { transform: translateX(6px); }
+        }
+        .char-counter {
+            font-size: 11px;
+            color: rgba(255,255,255,0.2);
+            text-align: right;
+            margin-top: 6px;
+            transition: color 0.3s;
+        }
+        .char-counter.active { color: rgba(255,255,255,0.4); }
+        .error-hint {
+            font-size: 12px;
+            color: var(--mos-red);
+            margin-top: 8px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .error-hint.show { opacity: 1; }
+
+        /* ═══ TABS ═══ */
+        .input-tab {
+            color: rgba(255, 255, 255, 0.3);
+            background: transparent;
+            cursor: pointer;
+        }
+        .input-tab:hover {
+            color: rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.03);
+        }
+        .input-tab.active {
+            color: white;
+            background: rgba(255, 255, 255, 0.07);
+            box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+        }
+
+        /* ═══ QUERY CHIPS ═══ */
+        .query-chip {
+            padding: 6px 14px;
+            border-radius: 9999px;
+            font-size: 11px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.35);
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+        .query-chip:hover {
+            color: rgba(255, 255, 255, 0.7);
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(255, 255, 255, 0.12);
+        }
+        .query-chip.selected {
+            color: var(--mos-red);
+            border-color: rgba(255, 0, 60, 0.3);
+            background: rgba(255, 0, 60, 0.06);
+        }
+
+        /* ═══ DROP ZONE ═══ */
+        .drop-zone {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            border: 2px dashed rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        .drop-zone:hover, .drop-zone.drag-over {
+            border-color: rgba(255, 0, 60, 0.3);
+            background: rgba(255, 0, 60, 0.02);
+        }
+
+        /* ═══ TERMINAL ═══ */
+        .terminal {
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 16px 20px;
+            font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+            font-size: 12px;
+            line-height: 1.8;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        .terminal-line {
+            opacity: 0;
+            transform: translateY(4px);
+            transition: opacity 0.3s, transform 0.3s;
+        }
+        .terminal-line.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .terminal-prefix { color: #22c55e; }
+        .terminal-text { color: rgba(255,255,255,0.5); }
+        .terminal-highlight { color: #60a5fa; }
+        .terminal-num { color: #f59e0b; }
+
+        /* ═══ KPI CARDS ═══ */
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+        .kpi-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 16px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(10px) scale(0.95);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+        .kpi-card.show {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+        .kpi-value {
+            font-size: 28px;
+            font-weight: 900;
+            letter-spacing: -0.03em;
+            background: linear-gradient(135deg, #ffffff, rgba(255,255,255,0.7));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .kpi-label {
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: rgba(255,255,255,0.3);
+            margin-top: 4px;
+        }
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+        .pulse-dot {
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #22c55e;
+            animation: pulse-dot 1s ease-in-out infinite;
+        }
+
+        /* ═══ PROJECT CARDS ═══ */
+        .project-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 14px;
+            padding: 16px 18px;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        .project-card.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .project-card:hover {
+            border-color: rgba(255, 255, 255, 0.12);
+            background: rgba(255, 255, 255, 0.04);
+        }
+        .project-cipher {
+            font-size: 10px;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.25);
+            font-family: 'JetBrains Mono', 'Courier New', monospace;
+            letter-spacing: 0.05em;
+        }
+        .project-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.4;
+        }
+        .project-org {
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.35);
+        }
+        .project-budget {
+            font-size: 13px;
+            font-weight: 800;
+            color: #22c55e;
+        }
+        .project-tag {
+            padding: 3px 10px;
+            border-radius: 9999px;
+            font-size: 10px;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.08);
+            color: rgba(99, 102, 241, 0.7);
+            border: 1px solid rgba(99, 102, 241, 0.12);
+        }
+        .match-badge {
+            font-size: 11px;
+            font-weight: 800;
+            color: var(--mos-red);
+            background: rgba(255, 0, 60, 0.08);
+            border: 1px solid rgba(255, 0, 60, 0.15);
+            padding: 2px 10px;
+            border-radius: 9999px;
+        }
+
+        /* ═══ EXECUTOR CARDS ═══ */
+        .exec-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 20px;
+            transition: all 0.35s ease;
+            cursor: pointer;
+            position: relative;
+        }
+        .exec-card:hover {
+            border-color: rgba(255, 255, 255, 0.12);
+            background: rgba(255, 255, 255, 0.04);
+        }
+        .exec-card.selected {
+            border-color: var(--mos-red);
+            background: rgba(255, 0, 60, 0.04);
+            box-shadow: 0 0 24px rgba(255, 0, 60, 0.08), inset 0 0 0 1px rgba(255, 0, 60, 0.1);
+        }
+        .exec-card.selected .exec-select-btn {
+            background: var(--mos-red);
+            border-color: var(--mos-red);
+            color: #fff;
+        }
+        .exec-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: 900;
+            color: #fff;
+        }
+        .exec-name {
+            font-size: 15px;
+            font-weight: 800;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        .exec-type {
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.3);
+        }
+        .exec-metric {
+            text-align: center;
+        }
+        .exec-metric-val {
+            font-size: 18px;
+            font-weight: 800;
+            color: rgba(255, 255, 255, 0.85);
+        }
+        .exec-metric-label {
+            font-size: 9px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: rgba(255, 255, 255, 0.3);
+            font-weight: 600;
+        }
+        .exec-select-btn {
+            padding: 6px 16px;
+            border-radius: 10px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: transparent;
+            color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+        .exec-select-btn:hover {
+            border-color: var(--mos-red);
+            color: var(--mos-red);
+        }
+        .exec-link {
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.3);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .exec-link:hover {
+            color: var(--mos-red);
+        }
+        .exec-check {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: var(--mos-red);
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+        .exec-card.selected .exec-check {
+            display: flex;
+        }
+        #executor-error {
+            font-size: 11px;
+            color: #ef4444;
+            opacity: 0;
+            transition: opacity 0.3s;
+            margin-top: 8px;
+        }
+        #executor-error.show {
+            opacity: 1;
+        }
+
+        /* ═══ FORM INPUTS ═══ */
+        .form-input {
+            width: 100%;
+            padding: 12px 14px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: #fff;
+            font-size: 13px;
+            outline: none;
+            transition: all 0.25s ease;
+        }
+        .form-input:focus {
+            border-color: var(--mos-red);
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 0 0 3px rgba(255, 0, 60, 0.08);
+        }
+        .form-input::placeholder {
+            color: rgba(255, 255, 255, 0.2);
+        }
+        .form-input.error {
+            border-color: #ef4444;
+            animation: shake 0.3s ease;
+        }
+        .form-label {
+            font-size: 11px;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 6px;
+            display: block;
+        }
+        .form-summary-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 14px;
+            padding: 14px 16px;
+        }
+
+        /* ═══ SUCCESS SCREEN ═══ */
+        .success-screen {
+            text-align: center;
+            padding: 40px 20px;
+        }
+        .success-icon {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            animation: success-pop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+        }
+        @keyframes success-pop {
+            0% { transform: scale(0); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .success-title {
+            font-size: 24px;
+            font-weight: 900;
+            font-style: italic;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+        .success-subtitle {
+            font-size: 13px;
+            color: rgba(255,255,255,0.4);
+            margin-bottom: 28px;
+        }
+        .success-btn {
+            padding: 10px 24px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .success-btn-primary {
+            background: var(--mos-red);
+            color: #fff;
+            border: none;
+        }
+        .success-btn-secondary {
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.5);
+        }
+        .success-btn:hover {
+            opacity: 0.85;
+        }
+
+        /* ═══ ANIMATED ORB ═══ */
+        @keyframes float-wizard {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(30px, -20px) scale(1.05); }
+        }
+        .wizard-orb {
+            position: fixed;
+            border-radius: 9999px;
+            pointer-events: none;
+            filter: blur(100px);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ═══ AMBIENT ORBS ═══ -->
+    <div class="wizard-orb" style="width:500px;height:500px;background:radial-gradient(circle,rgba(255,0,60,0.08) 0%,transparent 70%);top:-10%;right:-10%;animation:float-wizard 20s ease-in-out infinite"></div>
+    <div class="wizard-orb" style="width:400px;height:400px;background:radial-gradient(circle,rgba(99,102,241,0.06) 0%,transparent 70%);bottom:10%;left:-5%;animation:float-wizard 25s ease-in-out infinite reverse"></div>
+
+    <!-- ═══ HEADER ═══ -->
+    <nav class="fixed top-0 w-full z-50 glass border-b border-white/5 py-4 px-6 md:px-12 flex justify-between items-center">
+        <div class="flex items-center gap-4">
+            <a href="index_v2.html" class="text-xl font-black tracking-tighter uppercase italic">
+                МОС<span class="mos-red">НАУКА</span>
+            </a>
+            <div class="hidden md:block h-5 w-px bg-white/10"></div>
+            <span class="hidden md:block text-[10px] uppercase tracking-[0.2em] text-zinc-500 font-bold">Запуск НИОКР</span>
+        </div>
+        <div class="flex items-center gap-3">
+            <a href="index_v2.html" class="px-4 py-2 text-[10px] font-bold uppercase tracking-widest text-gray-400 hover:text-white border border-white/10 rounded-full hover:bg-white/5 transition">
+                <i class="ph ph-house mr-1"></i> Главная
+            </a>
+            <a href="dashboard.html" class="px-4 py-2 text-[10px] font-bold uppercase tracking-widest text-gray-400 hover:text-white border border-white/10 rounded-full hover:bg-white/5 transition">
+                <i class="ph ph-user-circle mr-1"></i> Кабинет
+            </a>
+        </div>
+    </nav>
+
+    <!-- ═══ MAIN CONTENT ═══ -->
+    <main class="relative z-10 pt-24 pb-16 px-4 md:px-8 min-h-screen flex flex-col items-center">
+
+        <!-- Progress Bar -->
+        <div class="w-full max-w-xl mx-auto mb-10">
+            <div class="flex items-center justify-between">
+                <div class="flex flex-col items-center">
+                    <div class="step-dot active" data-step="0">1</div>
+                    <div class="step-label active">Задача</div>
+                </div>
+                <div class="step-connector" data-connector="0"><div class="fill"></div></div>
+                <div class="flex flex-col items-center">
+                    <div class="step-dot" data-step="1">2</div>
+                    <div class="step-label">Подбор</div>
+                </div>
+                <div class="step-connector" data-connector="1"><div class="fill"></div></div>
+                <div class="flex flex-col items-center">
+                    <div class="step-dot" data-step="2">3</div>
+                    <div class="step-label">Исполнитель</div>
+                </div>
+                <div class="step-connector" data-connector="2"><div class="fill"></div></div>
+                <div class="flex flex-col items-center">
+                    <div class="step-dot" data-step="3">4</div>
+                    <div class="step-label">Заявка</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Wizard Card -->
+        <div class="w-full max-w-2xl mx-auto">
+            <div class="rounded-3xl glass p-6 md:p-10 relative overflow-hidden">
+                <!-- Subtle top gradient -->
+                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-600 via-red-500 to-pink-500"></div>
+
+                <!-- Step Panels -->
+                <div id="step-0" class="step-panel visible">
+                    <!-- Step 1 Header -->
+                    <div class="mb-5">
+                        <div class="flex items-center gap-3 mb-2">
+                            <div class="w-9 h-9 rounded-xl bg-red-500/10 flex items-center justify-center">
+                                <i class="ph ph-chat-circle-text text-lg text-red-400"></i>
+                            </div>
+                            <h2 class="text-xl md:text-2xl font-black italic uppercase tracking-tight">Опишите задачу</h2>
+                        </div>
+                        <p class="text-sm text-gray-500 ml-12">Расскажите, какую инженерную или научную задачу нужно решить</p>
+                    </div>
+
+                    <!-- Tabs -->
+                    <div class="flex gap-1 mb-4 p-1 rounded-xl bg-white/[0.02] border border-white/5 w-fit">
+                        <button onclick="switchInputTab('describe')" id="tab-describe"
+                            class="input-tab active px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition">
+                            <i class="ph ph-pencil-simple mr-1.5"></i> Описать
+                        </button>
+                        <button onclick="switchInputTab('upload')" id="tab-upload"
+                            class="input-tab px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition">
+                            <i class="ph ph-upload-simple mr-1.5"></i> Загрузить ТЗ
+                        </button>
+                    </div>
+
+                    <!-- Tab: Describe -->
+                    <div id="panel-describe">
+                        <textarea id="task-description" class="wizard-textarea" 
+                            placeholder="Например: Нужно разработать нанопокрытие для защиты металлических конструкций от коррозии в условиях морского климата. Требуется провести исследование, подобрать состав и провести испытания..." 
+                            maxlength="2000"
+                            oninput="updateCharCounter()"
+                            onfocus="clearTaskError()"></textarea>
+                        <div class="flex items-center justify-between">
+                            <div id="task-error" class="error-hint"><i class="ph ph-warning mr-1"></i> Опишите задачу, чтобы продолжить</div>
+                            <div id="char-counter" class="char-counter">0 / 2000</div>
+                        </div>
+
+                        <!-- Popular queries -->
+                        <div class="mt-4">
+                            <div class="text-[10px] uppercase tracking-[0.15em] text-gray-600 font-bold mb-2">Популярные запросы</div>
+                            <div class="flex flex-wrap gap-2">
+                                <button onclick="fillQuery(this)" class="query-chip">Нанопокрытия для защиты от коррозии</button>
+                                <button onclick="fillQuery(this)" class="query-chip">Разработка катализаторов для нефтехимии</button>
+                                <button onclick="fillQuery(this)" class="query-chip">ИИ в медицинской диагностике</button>
+                                <button onclick="fillQuery(this)" class="query-chip">Композитные материалы для авиации</button>
+                                <button onclick="fillQuery(this)" class="query-chip">Биоразлагаемая упаковка</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab: Upload -->
+                    <div id="panel-upload" class="hidden">
+                        <div id="drop-zone" class="drop-zone" onclick="document.getElementById('file-input').click()"
+                            ondragover="event.preventDefault(); this.classList.add('drag-over')"
+                            ondragleave="this.classList.remove('drag-over')"
+                            ondrop="event.preventDefault(); this.classList.remove('drag-over'); handleFileDrop(event)">
+                            <i class="ph ph-cloud-arrow-up text-3xl text-gray-500 mb-3"></i>
+                            <p class="text-sm font-semibold text-gray-400 mb-1">Перетащите файл ТЗ сюда</p>
+                            <p class="text-xs text-gray-600">или нажмите для выбора · PDF, DOCX, TXT до 10 МБ</p>
+                            <input type="file" id="file-input" class="hidden" accept=".pdf,.docx,.doc,.txt" onchange="handleFileSelect(event)" />
+                        </div>
+                        <div id="file-info" class="hidden mt-3 flex items-center gap-3 p-3 rounded-xl bg-emerald-500/5 border border-emerald-500/20">
+                            <i class="ph ph-file-text text-lg text-emerald-400"></i>
+                            <div class="flex-1">
+                                <div id="file-name" class="text-sm font-semibold text-emerald-300"></div>
+                                <div id="file-size" class="text-xs text-gray-500"></div>
+                            </div>
+                            <button onclick="removeFile()" class="text-gray-500 hover:text-red-400 transition">
+                                <i class="ph ph-x text-lg"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div id="step-1" class="step-panel">
+                    <!-- Header -->
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="w-9 h-9 rounded-xl bg-blue-500/10 flex items-center justify-center">
+                            <i class="ph ph-cpu text-lg text-blue-400"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-xl md:text-2xl font-black italic uppercase tracking-tight">AI анализирует</h2>
+                            <p class="text-xs text-gray-500">Поиск среди 1 200+ проектов и 85 организаций</p>
+                        </div>
+                    </div>
+
+                    <!-- Terminal -->
+                    <div class="terminal" id="ai-terminal">
+                        <div class="terminal-line" data-delay="0"><span class="terminal-prefix">▸</span> <span class="terminal-text">Инициализация поиска...</span></div>
+                        <div class="terminal-line" data-delay="400"><span class="terminal-prefix">▸</span> <span class="terminal-text">Анализ ключевых слов: </span><span class="terminal-highlight">нанопокрытие, коррозия, защита</span></div>
+                        <div class="terminal-line" data-delay="900"><span class="terminal-prefix">▸</span> <span class="terminal-text">Сканирование базы НИОКР...</span> <span class="terminal-num">1 247 проектов</span></div>
+                        <div class="terminal-line" data-delay="1400"><span class="terminal-prefix">▸</span> <span class="terminal-text">Семантическое сопоставление...</span></div>
+                        <div class="terminal-line" data-delay="1900"><span class="terminal-prefix">▸</span> <span class="terminal-text">Найдено релевантных: </span><span class="terminal-num">24 проекта</span></div>
+                        <div class="terminal-line" data-delay="2400"><span class="terminal-prefix">▸</span> <span class="terminal-text">Ранжирование по совпадению...</span></div>
+                        <div class="terminal-line" data-delay="2800"><span class="terminal-prefix">✓</span> <span class="terminal-highlight">Готово</span> <span class="pulse-dot"></span></div>
+                    </div>
+
+                    <!-- KPI Cards -->
+                    <div class="kpi-grid mt-5" id="kpi-grid">
+                        <div class="kpi-card" data-delay="3200">
+                            <div class="kpi-value" id="kpi-projects">0</div>
+                            <div class="kpi-label">Проектов</div>
+                        </div>
+                        <div class="kpi-card" data-delay="3400">
+                            <div class="kpi-value" id="kpi-orgs">0</div>
+                            <div class="kpi-label">Организаций</div>
+                        </div>
+                        <div class="kpi-card" data-delay="3600">
+                            <div class="kpi-value" id="kpi-match">0%</div>
+                            <div class="kpi-label">Совпадение</div>
+                        </div>
+                    </div>
+
+                    <!-- Skip button -->
+                    <div class="text-center mt-4">
+                        <button id="btn-skip" onclick="goToStep(2)" class="text-xs text-gray-600 hover:text-gray-400 transition opacity-0" style="transition: opacity 0.3s">
+                            Пропустить <i class="ph ph-arrow-right ml-0.5"></i>
+                        </button>
+                    </div>
+
+                    <!-- Project Cards (revealed after animation) -->
+                    <div id="projects-section" class="hidden mt-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="text-[10px] uppercase tracking-[0.15em] text-gray-600 font-bold">Наиболее релевантные проекты</div>
+                            <div class="text-[10px] text-gray-600">3 из 24</div>
+                        </div>
+                        <div class="space-y-3">
+                            <!-- Project 1 -->
+                            <div class="project-card" data-delay="0">
+                                <div class="flex items-start justify-between gap-3">
+                                    <div class="flex-1">
+                                        <div class="project-cipher mb-1">RFMEFI60719X0315</div>
+                                        <div class="project-title mb-1">Разработка нанокомпозитных покрытий для защиты от коррозии в агрессивных средах</div>
+                                        <div class="project-org"><i class="ph ph-buildings mr-1"></i>МИСиС · Лаб. наноматериалов</div>
+                                    </div>
+                                    <div class="text-right shrink-0">
+                                        <div class="match-badge mb-1.5">94%</div>
+                                        <div class="project-budget">12.4 млн ₽</div>
+                                    </div>
+                                </div>
+                                <div class="flex flex-wrap gap-1.5 mt-2.5">
+                                    <span class="project-tag">нанопокрытие</span>
+                                    <span class="project-tag">коррозия</span>
+                                    <span class="project-tag">композиты</span>
+                                </div>
+                            </div>
+
+                            <!-- Project 2 -->
+                            <div class="project-card" data-delay="150">
+                                <div class="flex items-start justify-between gap-3">
+                                    <div class="flex-1">
+                                        <div class="project-cipher mb-1">075-15-2021-1350</div>
+                                        <div class="project-title mb-1">Исследование механизмов деградации металлов в морской среде и создание защитных систем</div>
+                                        <div class="project-org"><i class="ph ph-buildings mr-1"></i>МФТИ · Научно-исслед. институт</div>
+                                    </div>
+                                    <div class="text-right shrink-0">
+                                        <div class="match-badge mb-1.5">87%</div>
+                                        <div class="project-budget">8.7 млн ₽</div>
+                                    </div>
+                                </div>
+                                <div class="flex flex-wrap gap-1.5 mt-2.5">
+                                    <span class="project-tag">металлы</span>
+                                    <span class="project-tag">морская среда</span>
+                                    <span class="project-tag">деградация</span>
+                                </div>
+                            </div>
+
+                            <!-- Project 3 -->
+                            <div class="project-card" data-delay="300">
+                                <div class="flex items-start justify-between gap-3">
+                                    <div class="flex-1">
+                                        <div class="project-cipher mb-1">FZNS-2023-0041</div>
+                                        <div class="project-title mb-1">Создание гибридных покрытий на основе оксидных наночастиц для антикоррозионной защиты</div>
+                                        <div class="project-org"><i class="ph ph-buildings mr-1"></i>РХТУ им. Менделеева · Каф. химии</div>
+                                    </div>
+                                    <div class="text-right shrink-0">
+                                        <div class="match-badge mb-1.5">82%</div>
+                                        <div class="project-budget">5.2 млн ₽</div>
+                                    </div>
+                                </div>
+                                <div class="flex flex-wrap gap-1.5 mt-2.5">
+                                    <span class="project-tag">оксиды</span>
+                                    <span class="project-tag">наночастицы</span>
+                                    <span class="project-tag">антикоррозия</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="step-2" class="step-panel">
+                    <!-- Header -->
+                    <div class="flex items-center gap-3 mb-2">
+                        <div class="w-9 h-9 rounded-xl bg-emerald-500/10 flex items-center justify-center">
+                            <i class="ph ph-buildings text-lg text-emerald-400"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-xl md:text-2xl font-black italic uppercase tracking-tight">Выберите исполнителя</h2>
+                            <p class="text-xs text-gray-500">Рекомендованные организации по вашему запросу</p>
+                        </div>
+                    </div>
+                    <div id="executor-error" class="text-center"><i class="ph ph-warning mr-1"></i>Выберите исполнителя, чтобы продолжить</div>
+
+                    <div class="space-y-3 mt-4">
+                        <!-- Org 1: МИСиС -->
+                        <div class="exec-card" onclick="selectExecutor(this, 'МИСиС')" data-org="misis">
+                            <div class="exec-check"><i class="ph-bold ph-check text-xs text-white"></i></div>
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="exec-avatar" style="background: linear-gradient(135deg, #6366f1, #8b5cf6)">M</div>
+                                <div class="flex-1">
+                                    <div class="exec-name">НИТУ МИСиС</div>
+                                    <div class="exec-type">Национальный исследовательский университет</div>
+                                </div>
+                                <div class="match-badge">94%</div>
+                            </div>
+                            <div class="flex items-center justify-around mb-4 py-3 rounded-xl" style="background: rgba(255,255,255,0.02)">
+                                <div class="exec-metric">
+                                    <div class="exec-metric-val">47</div>
+                                    <div class="exec-metric-label">Проектов</div>
+                                </div>
+                                <div style="width:1px; height:28px; background:rgba(255,255,255,0.06)"></div>
+                                <div class="exec-metric">
+                                    <div class="exec-metric-val">12</div>
+                                    <div class="exec-metric-label">Патентов</div>
+                                </div>
+                                <div style="width:1px; height:28px; background:rgba(255,255,255,0.06)"></div>
+                                <div class="exec-metric">
+                                    <div class="exec-metric-val">94%</div>
+                                    <div class="exec-metric-label">Совпадение</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <a href="passport.html?org=misis" target="_blank" class="exec-link" onclick="event.stopPropagation()">Подробнее <i class="ph ph-arrow-right ml-0.5"></i></a>
+                                <button class="exec-select-btn" onclick="event.stopPropagation(); selectExecutor(this.closest('.exec-card'), 'МИСиС')">Выбрать</button>
+                            </div>
+                        </div>
+
+                        <!-- Org 2: МФТИ -->
+                        <div class="exec-card" onclick="selectExecutor(this, 'МФТИ')" data-org="mfti">
+                            <div class="exec-check"><i class="ph-bold ph-check text-xs text-white"></i></div>
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="exec-avatar" style="background: linear-gradient(135deg, #3b82f6, #06b6d4)">Ф</div>
+                                <div class="flex-1">
+                                    <div class="exec-name">МФТИ</div>
+                                    <div class="exec-type">Московский физико-технический институт</div>
+                                </div>
+                                <div class="match-badge">87%</div>
+                            </div>
+                            <div class="flex items-center justify-around mb-4 py-3 rounded-xl" style="background: rgba(255,255,255,0.02)">
+                                <div class="exec-metric">
+                                    <div class="exec-metric-val">63</div>
+                                    <div class="exec-metric-label">Проектов</div>
+                                </div>
+                                <div style="width:1px; height:28px; background:rgba(255,255,255,0.06)"></div>
+                                <div class="exec-metric">
+                                    <div class="exec-metric-val">28</div>
+                                    <div class="exec-metric-label">Патентов</div>
+                                </div>
+                                <div style="width:1px; height:28px; background:rgba(255,255,255,0.06)"></div>
+                                <div class="exec-metric">
+                                    <div class="exec-metric-val">87%</div>
+                                    <div class="exec-metric-label">Совпадение</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <a href="passport.html?org=mfti" target="_blank" class="exec-link" onclick="event.stopPropagation()">Подробнее <i class="ph ph-arrow-right ml-0.5"></i></a>
+                                <button class="exec-select-btn" onclick="event.stopPropagation(); selectExecutor(this.closest('.exec-card'), 'МФТИ')">Выбрать</button>
+                            </div>
+                        </div>
+
+                        <!-- Org 3: РХТУ -->
+                        <div class="exec-card" onclick="selectExecutor(this, 'РХТУ')" data-org="rhtu">
+                            <div class="exec-check"><i class="ph-bold ph-check text-xs text-white"></i></div>
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="exec-avatar" style="background: linear-gradient(135deg, #22c55e, #14b8a6)">Р</div>
+                                <div class="flex-1">
+                                    <div class="exec-name">РХТУ им. Менделеева</div>
+                                    <div class="exec-type">Российский химико-технологический университет</div>
+                                </div>
+                                <div class="match-badge">82%</div>
+                            </div>
+                            <div class="flex items-center justify-around mb-4 py-3 rounded-xl" style="background: rgba(255,255,255,0.02)">
+                                <div class="exec-metric">
+                                    <div class="exec-metric-val">31</div>
+                                    <div class="exec-metric-label">Проектов</div>
+                                </div>
+                                <div style="width:1px; height:28px; background:rgba(255,255,255,0.06)"></div>
+                                <div class="exec-metric">
+                                    <div class="exec-metric-val">9</div>
+                                    <div class="exec-metric-label">Патентов</div>
+                                </div>
+                                <div style="width:1px; height:28px; background:rgba(255,255,255,0.06)"></div>
+                                <div class="exec-metric">
+                                    <div class="exec-metric-val">82%</div>
+                                    <div class="exec-metric-label">Совпадение</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <a href="passport.html?org=rhtu" target="_blank" class="exec-link" onclick="event.stopPropagation()">Подробнее <i class="ph ph-arrow-right ml-0.5"></i></a>
+                                <button class="exec-select-btn" onclick="event.stopPropagation(); selectExecutor(this.closest('.exec-card'), 'РХТУ')">Выбрать</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="step-3" class="step-panel">
+                    <!-- Form View -->
+                    <div id="form-view">
+                        <div class="flex items-center gap-3 mb-5">
+                            <div class="w-9 h-9 rounded-xl bg-amber-500/10 flex items-center justify-center">
+                                <i class="ph ph-paper-plane-tilt text-lg text-amber-400"></i>
+                            </div>
+                            <div>
+                                <h2 class="text-xl md:text-2xl font-black italic uppercase tracking-tight">Оставьте заявку</h2>
+                                <p class="text-xs text-gray-500">Мы свяжемся с вами в течение 24 часов</p>
+                            </div>
+                        </div>
+
+                        <!-- Summary -->
+                        <div class="form-summary-card mb-4">
+                            <div class="text-[10px] uppercase tracking-[0.15em] text-gray-600 font-bold mb-2">Сводка</div>
+                            <div class="flex items-center justify-between text-sm">
+                                <div>
+                                    <div class="text-xs text-gray-500 mb-0.5">Задача</div>
+                                    <div id="summary-task" class="text-xs font-semibold text-gray-300" style="max-width:300px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap">—</div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-xs text-gray-500 mb-0.5">Исполнитель</div>
+                                    <div id="summary-executor" class="text-xs font-bold text-emerald-400">—</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Form Fields -->
+                        <div class="space-y-4">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="form-label">ФИО</label>
+                                    <input id="form-name" type="text" class="form-input" placeholder="Иванов Иван Иванович" onfocus="this.classList.remove('error')">
+                                </div>
+                                <div>
+                                    <label class="form-label">Компания</label>
+                                    <input id="form-company" type="text" class="form-input" placeholder="ООО «Технологии будущего»" onfocus="this.classList.remove('error')">
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="form-label">Телефон</label>
+                                    <input id="form-phone" type="tel" class="form-input" placeholder="+7 (999) 123-45-67" onfocus="this.classList.remove('error')">
+                                </div>
+                                <div>
+                                    <label class="form-label">Email</label>
+                                    <input id="form-email" type="email" class="form-input" placeholder="email@company.ru" onfocus="this.classList.remove('error')">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Success View (hidden initially) -->
+                    <div id="success-view" class="hidden">
+                        <div class="success-screen">
+                            <div class="success-icon">
+                                <i class="ph-bold ph-check text-3xl text-white"></i>
+                            </div>
+                            <div class="success-title">Заявка принята!</div>
+                            <div class="success-subtitle">Мы свяжемся с вами в течение 24 часов для обсуждения деталей</div>
+                            <div class="flex items-center justify-center gap-3">
+                                <a href="index.html" class="success-btn success-btn-secondary"><i class="ph ph-house"></i> На главную</a>
+                                <a href="cabinet.html" class="success-btn success-btn-primary"><i class="ph ph-user-circle"></i> В личный кабинет</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Buttons -->
+                <div class="flex items-center justify-between mt-8 pt-6 border-t border-white/5">
+                    <button id="btn-back" onclick="goToStep(currentStep - 1)"
+                        class="px-5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider border border-white/10 text-gray-400 hover:text-white hover:bg-white/5 transition opacity-0 pointer-events-none">
+                        <i class="ph ph-arrow-left mr-1"></i> Назад
+                    </button>
+                    <button id="btn-next" onclick="handleNext()"
+                        class="px-6 py-2.5 rounded-xl mos-bg-red text-xs font-black uppercase tracking-wider hover:opacity-90 transition shadow-[0_0_20px_rgba(255,0,60,0.3)]">
+                        Далее <i class="ph ph-arrow-right ml-1"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ═══ STEP LOGIC ═══ -->
+    <script>
+        let currentStep = 0;
+        const totalSteps = 4;
+
+        function goToStep(n) {
+            if (n < 0 || n >= totalSteps) return;
+
+            // Validate step 0 before proceeding
+            if (currentStep === 0 && n > 0) {
+                const desc = document.getElementById('task-description');
+                const hasFile = uploadedFile !== null;
+                const hasText = desc.value.trim().length > 0;
+                if (!hasText && !hasFile) {
+                    switchInputTab('describe');
+                    desc.classList.add('error');
+                    document.getElementById('task-error').classList.add('show');
+                    desc.focus();
+                    setTimeout(() => desc.classList.remove('error'), 500);
+                    return;
+                }
+            }
+
+            // Validate step 2: executor must be selected
+            if (currentStep === 2 && n > 2) {
+                if (!selectedExecutor) {
+                    document.getElementById('executor-error').classList.add('show');
+                    return;
+                }
+            }
+
+            // Hide current panel
+            const currentPanel = document.getElementById('step-' + currentStep);
+            if (currentPanel) {
+                currentPanel.style.opacity = '0';
+                currentPanel.style.transform = 'translateY(12px)';
+                setTimeout(() => {
+                    currentPanel.classList.remove('visible');
+
+                    // Show new panel
+                    currentStep = n;
+                    updateProgressBar();
+                    updateButtons();
+
+                    const newPanel = document.getElementById('step-' + currentStep);
+                    if (newPanel) {
+                        newPanel.classList.add('visible');
+                        // Trigger animation
+                        requestAnimationFrame(() => {
+                            newPanel.style.opacity = '1';
+                            newPanel.style.transform = 'translateY(0)';
+                        });
+                    }
+
+                    // Start AI analysis animation when entering step 1
+                    if (currentStep === 1) {
+                        setTimeout(() => runAIAnalysis(), 300);
+                    }
+
+                    // Populate summary when entering step 3
+                    if (currentStep === 3) {
+                        const taskDesc = document.getElementById('task-description');
+                        const summaryTask = document.getElementById('summary-task');
+                        if (taskDesc && summaryTask) {
+                            summaryTask.textContent = taskDesc.value.trim().substring(0, 80) + (taskDesc.value.length > 80 ? '...' : '');
+                        }
+                        const summaryExec = document.getElementById('summary-executor');
+                        if (summaryExec && selectedExecutor) {
+                            summaryExec.textContent = selectedExecutor;
+                        }
+                    }
+                }, 250);
+            }
+        }
+
+        function updateProgressBar() {
+            // Update dots
+            document.querySelectorAll('.step-dot').forEach((dot, i) => {
+                dot.classList.remove('active', 'completed');
+                if (i === currentStep) {
+                    dot.classList.add('active');
+                } else if (i < currentStep) {
+                    dot.classList.add('completed');
+                    dot.innerHTML = '<i class="ph ph-check text-sm"></i>';
+                } else {
+                    dot.textContent = i + 1;
+                }
+            });
+
+            // Update labels
+            document.querySelectorAll('.step-label').forEach((label, i) => {
+                label.classList.remove('active', 'completed');
+                if (i === currentStep) label.classList.add('active');
+                else if (i < currentStep) label.classList.add('completed');
+            });
+
+            // Update connectors
+            document.querySelectorAll('.step-connector').forEach((conn, i) => {
+                if (i < currentStep) {
+                    conn.classList.add('filled');
+                } else {
+                    conn.classList.remove('filled');
+                }
+            });
+        }
+
+        function updateButtons() {
+            const btnBack = document.getElementById('btn-back');
+            const btnNext = document.getElementById('btn-next');
+
+            // Back button
+            if (currentStep === 0) {
+                btnBack.style.opacity = '0';
+                btnBack.style.pointerEvents = 'none';
+            } else {
+                btnBack.style.opacity = '1';
+                btnBack.style.pointerEvents = 'auto';
+            }
+
+            // Next button
+            if (currentStep === totalSteps - 1) {
+                btnNext.innerHTML = 'Отправить <i class="ph ph-paper-plane-tilt ml-1"></i>';
+            } else {
+                btnNext.innerHTML = 'Далее <i class="ph ph-arrow-right ml-1"></i>';
+            }
+        }
+
+        function handleNext() {
+            if (currentStep === totalSteps - 1) {
+                submitApplication();
+            } else {
+                goToStep(currentStep + 1);
+            }
+        }
+
+        function submitApplication() {
+            const name = document.getElementById('form-name');
+            const company = document.getElementById('form-company');
+            const phone = document.getElementById('form-phone');
+            const email = document.getElementById('form-email');
+
+            let valid = true;
+            [name, company, phone, email].forEach(input => {
+                if (!input.value.trim()) {
+                    input.classList.add('error');
+                    valid = false;
+                }
+            });
+
+            if (!valid) return;
+
+            // Hide form, nav buttons; show success
+            document.getElementById('form-view').classList.add('hidden');
+            document.getElementById('success-view').classList.remove('hidden');
+            document.querySelector('.flex.items-center.justify-between.mt-8').classList.add('hidden');
+
+            // Mark step 4 as completed in stepper
+            document.querySelectorAll('.step-dot').forEach((dot, i) => {
+                dot.classList.remove('active');
+                dot.classList.add('completed');
+                dot.innerHTML = '<i class="ph ph-check text-sm"></i>';
+            });
+            document.querySelectorAll('.step-connector').forEach(c => c.classList.add('filled'));
+            document.querySelectorAll('.step-label').forEach(l => {
+                l.classList.remove('active');
+                l.classList.add('completed');
+            });
+        }
+
+        // ═══ STEP 1: Textarea helpers ═══
+        function updateCharCounter() {
+            const desc = document.getElementById('task-description');
+            const counter = document.getElementById('char-counter');
+            const len = desc.value.length;
+            counter.textContent = len + ' / 2000';
+            counter.classList.toggle('active', len > 0);
+        }
+
+        function clearTaskError() {
+            document.getElementById('task-error').classList.remove('show');
+            document.getElementById('task-description').classList.remove('error');
+        }
+
+        // ═══ STEP 1: Tab switching ═══
+        function switchInputTab(tab) {
+            document.querySelectorAll('.input-tab').forEach(t => t.classList.remove('active'));
+            document.getElementById('tab-' + tab).classList.add('active');
+            document.getElementById('panel-describe').classList.toggle('hidden', tab !== 'describe');
+            document.getElementById('panel-upload').classList.toggle('hidden', tab !== 'upload');
+        }
+
+        // ═══ STEP 1: Popular query chips ═══
+        function fillQuery(btn) {
+            document.querySelectorAll('.query-chip').forEach(c => c.classList.remove('selected'));
+            btn.classList.add('selected');
+            const desc = document.getElementById('task-description');
+            desc.value = btn.textContent;
+            updateCharCounter();
+            clearTaskError();
+            desc.focus();
+        }
+
+        // ═══ STEP 1: File upload ═══
+        let uploadedFile = null;
+
+        function handleFileDrop(e) {
+            const file = e.dataTransfer.files[0];
+            if (file) processFile(file);
+        }
+
+        function handleFileSelect(e) {
+            const file = e.target.files[0];
+            if (file) processFile(file);
+        }
+
+        function processFile(file) {
+            const maxSize = 10 * 1024 * 1024; // 10 MB
+            if (file.size > maxSize) {
+                alert('Файл слишком большой. Максимум 10 МБ.');
+                return;
+            }
+            uploadedFile = file;
+            document.getElementById('file-name').textContent = file.name;
+            document.getElementById('file-size').textContent = (file.size / 1024).toFixed(0) + ' КБ';
+            document.getElementById('drop-zone').classList.add('hidden');
+            document.getElementById('file-info').classList.remove('hidden');
+        }
+
+        function removeFile() {
+            uploadedFile = null;
+            document.getElementById('file-input').value = '';
+            document.getElementById('drop-zone').classList.remove('hidden');
+            document.getElementById('file-info').classList.add('hidden');
+        }
+
+        // ═══ STEP 3: Executor Selection ═══
+        let selectedExecutor = null;
+
+        function selectExecutor(cardEl, orgName) {
+            // Deselect all
+            document.querySelectorAll('.exec-card').forEach(c => c.classList.remove('selected'));
+            // Select this one
+            cardEl.classList.add('selected');
+            selectedExecutor = orgName;
+            // Hide error
+            document.getElementById('executor-error').classList.remove('show');
+            // Update button text in selected card
+            document.querySelectorAll('.exec-select-btn').forEach(btn => btn.textContent = 'Выбрать');
+            cardEl.querySelector('.exec-select-btn').textContent = 'Выбрано ✓';
+        }
+
+        // ═══ STEP 2: AI Analysis Animation ═══
+        let aiAnimationRun = false;
+
+        function runAIAnalysis() {
+            if (aiAnimationRun) return;
+            aiAnimationRun = true;
+
+            // Show terminal lines sequentially
+            const lines = document.querySelectorAll('#ai-terminal .terminal-line');
+            lines.forEach(line => {
+                const delay = parseInt(line.dataset.delay) || 0;
+                setTimeout(() => line.classList.add('show'), delay);
+            });
+
+            // Show KPI cards
+            const kpiCards = document.querySelectorAll('.kpi-card');
+            kpiCards.forEach(card => {
+                const delay = parseInt(card.dataset.delay) || 0;
+                setTimeout(() => {
+                    card.classList.add('show');
+                }, delay);
+            });
+
+            // Animate KPI numbers
+            setTimeout(() => animateCounter('kpi-projects', 24, 800), 3200);
+            setTimeout(() => animateCounter('kpi-orgs', 7, 600), 3400);
+            setTimeout(() => animateCounter('kpi-match', 94, 700, '%'), 3600);
+
+            // Show skip button
+            setTimeout(() => {
+                const skip = document.getElementById('btn-skip');
+                if (skip) skip.style.opacity = '1';
+            }, 1500);
+
+            // Show project cards after KPI animation
+            setTimeout(() => {
+                const section = document.getElementById('projects-section');
+                if (section) {
+                    section.classList.remove('hidden');
+                    const cards = section.querySelectorAll('.project-card');
+                    cards.forEach(card => {
+                        const d = parseInt(card.dataset.delay) || 0;
+                        setTimeout(() => card.classList.add('show'), d);
+                    });
+                }
+                // Hide skip button once cards are shown
+                const skip = document.getElementById('btn-skip');
+                if (skip) skip.style.opacity = '0';
+            }, 4200);
+        }
+
+        function animateCounter(id, target, duration, suffix = '') {
+            const el = document.getElementById(id);
+            if (!el) return;
+            const start = 0;
+            const startTime = performance.now();
+
+            function update(now) {
+                const elapsed = now - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                // Ease out cubic
+                const eased = 1 - Math.pow(1 - progress, 3);
+                const current = Math.round(start + (target - start) * eased);
+                el.textContent = current + suffix;
+                if (progress < 1) requestAnimationFrame(update);
+            }
+            requestAnimationFrame(update);
+        }
+
+        // Init
+        updateProgressBar();
+        updateButtons();
+    </script>
+</body>
+</html>

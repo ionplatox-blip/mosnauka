@@ -902,14 +902,29 @@ def generate_passport(org_file):
           <input type="text" id="reqOrg" placeholder="ООО «Компания»" class="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-sm mb-3" style="color:white">
           <label class="block text-[10px] uppercase font-black text-zinc-500 mb-1 tracking-widest">Email *</label>
           <input type="email" id="reqEmail" placeholder="email@example.com" class="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-sm mb-3" style="color:white">
-          <label class="block text-[10px] uppercase font-black text-zinc-500 mb-1 tracking-widest">Тип запроса</label>
-          <select id="reqType" class="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-sm mb-3" style="color:white;appearance:none">
-            <option>Запрос на НИОКР</option>
-            <option>Консультация</option>
-            <option>Сотрудничество / Партнёрство</option>
-            <option>Использование оборудования</option>
-            <option>Другое</option>
-          </select>
+          <label class="block text-[10px] uppercase font-black text-zinc-500 mb-2 tracking-widest">Тип запроса <span class="normal-case tracking-normal text-zinc-600">(можно выбрать несколько)</span></label>
+          <div class="grid grid-cols-1 gap-2 mb-3" id="reqType">
+            <label class="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10 cursor-pointer hover:bg-white/[0.08] transition">
+              <input type="checkbox" value="Запрос на НИОКР" checked class="w-4 h-4 rounded accent-red-500">
+              <span class="text-sm text-zinc-300">Запрос на НИОКР</span>
+            </label>
+            <label class="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10 cursor-pointer hover:bg-white/[0.08] transition">
+              <input type="checkbox" value="Консультация" class="w-4 h-4 rounded accent-red-500">
+              <span class="text-sm text-zinc-300">Консультация</span>
+            </label>
+            <label class="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10 cursor-pointer hover:bg-white/[0.08] transition">
+              <input type="checkbox" value="Сотрудничество / Партнёрство" class="w-4 h-4 rounded accent-red-500">
+              <span class="text-sm text-zinc-300">Сотрудничество / Партнёрство</span>
+            </label>
+            <label class="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10 cursor-pointer hover:bg-white/[0.08] transition">
+              <input type="checkbox" value="Использование оборудования" class="w-4 h-4 rounded accent-red-500">
+              <span class="text-sm text-zinc-300">Использование оборудования</span>
+            </label>
+            <label class="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10 cursor-pointer hover:bg-white/[0.08] transition">
+              <input type="checkbox" value="Другое" class="w-4 h-4 rounded accent-red-500">
+              <span class="text-sm text-zinc-300">Другое</span>
+            </label>
+          </div>
           <label class="block text-[10px] uppercase font-black text-zinc-500 mb-1 tracking-widest">Сообщение *</label>
           <textarea id="reqMsg" placeholder="Опишите ваш запрос..." class="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-sm mb-4" style="color:white;min-height:5rem;resize:vertical"></textarea>
           <button onclick="submitRequest()" class="w-full py-3 rounded-xl bg-red-500 text-white text-[11px] font-black uppercase tracking-widest hover:bg-red-600 transition">Отправить запрос</button>
