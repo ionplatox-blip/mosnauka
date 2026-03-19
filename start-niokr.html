@@ -1178,6 +1178,27 @@
 
             if (!valid) return;
 
+            // ═══ Save to localStorage ═══
+            const taskDesc = document.getElementById('task-description');
+            const request = {
+                id: 'REQ-' + Date.now().toString(36).toUpperCase(),
+                date: new Date().toISOString(),
+                task: taskDesc ? taskDesc.value.trim() : '',
+                executor: selectedExecutor || 'Не выбран',
+                contact: {
+                    name: name.value.trim(),
+                    company: company.value.trim(),
+                    phone: phone.value.trim(),
+                    email: email.value.trim()
+                },
+                status: 'sent'
+            };
+            const existing = JSON.parse(localStorage.getItem('mosnauka_requests') || '[]');
+            existing.push(request);
+            localStorage.setItem('mosnauka_requests', JSON.stringify(existing));
+            // Store the latest for letter preview
+            localStorage.setItem('mosnauka_last_request', JSON.stringify(request));
+
             // Hide form, nav buttons; show success
             document.getElementById('form-view').classList.add('hidden');
             document.getElementById('success-view').classList.remove('hidden');
