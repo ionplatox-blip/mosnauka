@@ -724,13 +724,14 @@
 
                     <!-- Terminal -->
                     <div class="terminal" id="ai-terminal">
-                        <div class="terminal-line" data-delay="0"><span class="terminal-prefix">▸</span> <span class="terminal-text">Инициализация поиска...</span></div>
-                        <div class="terminal-line" data-delay="400"><span class="terminal-prefix">▸</span> <span class="terminal-text">Анализ ключевых слов: </span><span class="terminal-highlight">нанопокрытие, коррозия, защита</span></div>
-                        <div class="terminal-line" data-delay="900"><span class="terminal-prefix">▸</span> <span class="terminal-text">Сканирование базы НИОКР...</span> <span class="terminal-num">1 247 проектов</span></div>
-                        <div class="terminal-line" data-delay="1400"><span class="terminal-prefix">▸</span> <span class="terminal-text">Семантическое сопоставление...</span></div>
-                        <div class="terminal-line" data-delay="1900"><span class="terminal-prefix">▸</span> <span class="terminal-text">Найдено релевантных: </span><span class="terminal-num">24 проекта</span></div>
-                        <div class="terminal-line" data-delay="2400"><span class="terminal-prefix">▸</span> <span class="terminal-text">Ранжирование по совпадению...</span></div>
-                        <div class="terminal-line" data-delay="2800"><span class="terminal-prefix">✓</span> <span class="terminal-highlight">Готово</span> <span class="pulse-dot"></span></div>
+                        <div class="terminal-line show"><span class="terminal-prefix">▸</span> <span class="terminal-text">Инициализация поиска...</span></div>
+                        <div class="terminal-line" id="term-query"><span class="terminal-prefix">▸</span> <span class="terminal-text">Анализ запроса: </span><span class="terminal-highlight" id="term-query-text"></span></div>
+                        <div class="terminal-line" id="term-scan"><span class="terminal-prefix">▸</span> <span class="terminal-text">Сканирование базы НИОКР...</span></div>
+                        <div class="terminal-line" id="term-match"><span class="terminal-prefix">▸</span> <span class="terminal-text">Семантическое сопоставление + AI-реранкинг...</span></div>
+                        <div class="terminal-line" id="term-found"><span class="terminal-prefix">▸</span> <span class="terminal-text">Найдено релевантных: </span><span class="terminal-num" id="term-found-count"></span></div>
+                        <div class="terminal-line" id="term-orgs"><span class="terminal-prefix">▸</span> <span class="terminal-text">Организации с опытом: </span><span class="terminal-num" id="term-orgs-count"></span></div>
+                        <div class="terminal-line" id="term-done"><span class="terminal-prefix">✓</span> <span class="terminal-highlight">Готово</span> <span class="pulse-dot"></span></div>
+                        <div class="terminal-line hidden" id="term-error"><span class="terminal-prefix" style="color:#ef4444">✗</span> <span style="color:#ef4444" id="term-error-text">Ошибка загрузки</span></div>
                     </div>
 
                     <!-- KPI Cards -->
@@ -756,72 +757,14 @@
                         </button>
                     </div>
 
-                    <!-- Project Cards (revealed after animation) -->
+                    <!-- Project Cards (dynamically populated) -->
                     <div id="projects-section" class="hidden mt-6">
                         <div class="flex items-center justify-between mb-3">
                             <div class="text-[10px] uppercase tracking-[0.15em] text-gray-600 font-bold">Наиболее релевантные проекты</div>
-                            <a href="ai_search_results.html" class="text-[10px] text-red-400 hover:text-red-300 transition font-bold">Все 24 проекта →</a>
+                            <a id="projects-all-link" href="ai_search_results.html" class="text-[10px] text-red-400 hover:text-red-300 transition font-bold">Все проекты →</a>
                         </div>
-                        <div class="space-y-3">
-                            <!-- Project 1 -->
-                            <a href="ai_search_results.html" class="project-card block no-underline" data-delay="0" style="text-decoration:none;color:inherit">
-                                <div class="flex items-start justify-between gap-3">
-                                    <div class="flex-1">
-                                        <div class="project-cipher mb-1">RFMEFI60719X0315</div>
-                                        <div class="project-title mb-1">Разработка нанокомпозитных покрытий для защиты от коррозии в агрессивных средах</div>
-                                        <div class="project-org"><i class="ph ph-buildings mr-1"></i>МИСиС · Лаб. наноматериалов</div>
-                                    </div>
-                                    <div class="text-right shrink-0">
-                                        <div class="match-badge mb-1.5">94%</div>
-                                        <div class="project-budget">12.4 млн ₽</div>
-                                    </div>
-                                </div>
-                                <div class="flex flex-wrap gap-1.5 mt-2.5">
-                                    <span class="project-tag">нанопокрытие</span>
-                                    <span class="project-tag">коррозия</span>
-                                    <span class="project-tag">композиты</span>
-                                </div>
-                            </a>
-
-                            <!-- Project 2 -->
-                            <a href="ai_search_results.html" class="project-card block no-underline" data-delay="150" style="text-decoration:none;color:inherit">
-                                <div class="flex items-start justify-between gap-3">
-                                    <div class="flex-1">
-                                        <div class="project-cipher mb-1">075-15-2021-1350</div>
-                                        <div class="project-title mb-1">Исследование механизмов деградации металлов в морской среде и создание защитных систем</div>
-                                        <div class="project-org"><i class="ph ph-buildings mr-1"></i>МФТИ · Научно-исслед. институт</div>
-                                    </div>
-                                    <div class="text-right shrink-0">
-                                        <div class="match-badge mb-1.5">87%</div>
-                                        <div class="project-budget">8.7 млн ₽</div>
-                                    </div>
-                                </div>
-                                <div class="flex flex-wrap gap-1.5 mt-2.5">
-                                    <span class="project-tag">металлы</span>
-                                    <span class="project-tag">морская среда</span>
-                                    <span class="project-tag">деградация</span>
-                                </div>
-                            </a>
-
-                            <!-- Project 3 -->
-                            <a href="ai_search_results.html" class="project-card block no-underline" data-delay="300" style="text-decoration:none;color:inherit">
-                                <div class="flex items-start justify-between gap-3">
-                                    <div class="flex-1">
-                                        <div class="project-cipher mb-1">FZNS-2023-0041</div>
-                                        <div class="project-title mb-1">Создание гибридных покрытий на основе оксидных наночастиц для антикоррозионной защиты</div>
-                                        <div class="project-org"><i class="ph ph-buildings mr-1"></i>РХТУ им. Менделеева · Каф. химии</div>
-                                    </div>
-                                    <div class="text-right shrink-0">
-                                        <div class="match-badge mb-1.5">82%</div>
-                                        <div class="project-budget">5.2 млн ₽</div>
-                                    </div>
-                                </div>
-                                <div class="flex flex-wrap gap-1.5 mt-2.5">
-                                    <span class="project-tag">оксиды</span>
-                                    <span class="project-tag">наночастицы</span>
-                                    <span class="project-tag">антикоррозия</span>
-                                </div>
-                            </a>
+                        <div id="projects-container" class="space-y-3">
+                            <!-- Filled dynamically by renderProjectCards() -->
                         </div>
                     </div>
 
@@ -860,111 +803,18 @@
                     </div>
                     <div id="executor-error" class="text-center"><i class="ph ph-warning mr-1"></i>Выберите исполнителя, чтобы продолжить</div>
 
-                    <div class="space-y-3 mt-4">
-                        <!-- Org 1: МИСиС -->
-                        <div class="exec-card" onclick="selectExecutor(this, 'МИСиС')" data-org="misis">
-                            <div class="exec-check"><i class="ph-bold ph-check text-xs text-white"></i></div>
-                            <div class="flex items-center gap-3 mb-4">
-                                <div class="exec-avatar" style="background: linear-gradient(135deg, #6366f1, #8b5cf6)">M</div>
-                                <div class="flex-1">
-                                    <div class="exec-name">НИТУ МИСиС</div>
-                                    <div class="exec-type">Национальный исследовательский университет</div>
-                                </div>
-                                <div class="match-badge">94%</div>
-                            </div>
-                            <div class="flex items-center justify-around mb-4 py-3 rounded-xl" style="background: rgba(255,255,255,0.02)">
-                                <div class="exec-metric">
-                                    <div class="exec-metric-val">47</div>
-                                    <div class="exec-metric-label">Проектов</div>
-                                </div>
-                                <div style="width:1px; height:28px; background:rgba(255,255,255,0.06)"></div>
-                                <div class="exec-metric">
-                                    <div class="exec-metric-val">12</div>
-                                    <div class="exec-metric-label">Патентов</div>
-                                </div>
-                                <div style="width:1px; height:28px; background:rgba(255,255,255,0.06)"></div>
-                                <div class="exec-metric">
-                                    <div class="exec-metric-val">94%</div>
-                                    <div class="exec-metric-label">Совпадение</div>
-                                </div>
-                            </div>
-                            <div class="flex items-center justify-between">
-                                <a href="passport-misis.html" target="_blank" class="exec-link" onclick="event.stopPropagation()">Подробнее <i class="ph ph-arrow-right ml-0.5"></i></a>
-                                <button class="exec-select-btn" onclick="event.stopPropagation(); selectExecutor(this.closest('.exec-card'), 'МИСиС')">Выбрать</button>
-                            </div>
-                        </div>
-
-                        <!-- Org 2: МФТИ -->
-                        <div class="exec-card" onclick="selectExecutor(this, 'МФТИ')" data-org="mfti">
-                            <div class="exec-check"><i class="ph-bold ph-check text-xs text-white"></i></div>
-                            <div class="flex items-center gap-3 mb-4">
-                                <div class="exec-avatar" style="background: linear-gradient(135deg, #3b82f6, #06b6d4)">Ф</div>
-                                <div class="flex-1">
-                                    <div class="exec-name">МФТИ</div>
-                                    <div class="exec-type">Московский физико-технический институт</div>
-                                </div>
-                                <div class="match-badge">87%</div>
-                            </div>
-                            <div class="flex items-center justify-around mb-4 py-3 rounded-xl" style="background: rgba(255,255,255,0.02)">
-                                <div class="exec-metric">
-                                    <div class="exec-metric-val">63</div>
-                                    <div class="exec-metric-label">Проектов</div>
-                                </div>
-                                <div style="width:1px; height:28px; background:rgba(255,255,255,0.06)"></div>
-                                <div class="exec-metric">
-                                    <div class="exec-metric-val">28</div>
-                                    <div class="exec-metric-label">Патентов</div>
-                                </div>
-                                <div style="width:1px; height:28px; background:rgba(255,255,255,0.06)"></div>
-                                <div class="exec-metric">
-                                    <div class="exec-metric-val">87%</div>
-                                    <div class="exec-metric-label">Совпадение</div>
-                                </div>
-                            </div>
-                            <div class="flex items-center justify-between">
-                                <a href="passport-mfti.html" target="_blank" class="exec-link" onclick="event.stopPropagation()">Подробнее <i class="ph ph-arrow-right ml-0.5"></i></a>
-                                <button class="exec-select-btn" onclick="event.stopPropagation(); selectExecutor(this.closest('.exec-card'), 'МФТИ')">Выбрать</button>
-                            </div>
-                        </div>
-
-                        <!-- Org 3: РХТУ -->
-                        <div class="exec-card" onclick="selectExecutor(this, 'РХТУ')" data-org="rhtu">
-                            <div class="exec-check"><i class="ph-bold ph-check text-xs text-white"></i></div>
-                            <div class="flex items-center gap-3 mb-4">
-                                <div class="exec-avatar" style="background: linear-gradient(135deg, #22c55e, #14b8a6)">Р</div>
-                                <div class="flex-1">
-                                    <div class="exec-name">РХТУ им. Менделеева</div>
-                                    <div class="exec-type">Российский химико-технологический университет</div>
-                                </div>
-                                <div class="match-badge">82%</div>
-                            </div>
-                            <div class="flex items-center justify-around mb-4 py-3 rounded-xl" style="background: rgba(255,255,255,0.02)">
-                                <div class="exec-metric">
-                                    <div class="exec-metric-val">31</div>
-                                    <div class="exec-metric-label">Проектов</div>
-                                </div>
-                                <div style="width:1px; height:28px; background:rgba(255,255,255,0.06)"></div>
-                                <div class="exec-metric">
-                                    <div class="exec-metric-val">9</div>
-                                    <div class="exec-metric-label">Патентов</div>
-                                </div>
-                                <div style="width:1px; height:28px; background:rgba(255,255,255,0.06)"></div>
-                                <div class="exec-metric">
-                                    <div class="exec-metric-val">82%</div>
-                                    <div class="exec-metric-label">Совпадение</div>
-                                </div>
-                            </div>
-                            <div class="flex items-center justify-between">
-                                <a href="passport-rhtu.html" target="_blank" class="exec-link" onclick="event.stopPropagation()">Подробнее <i class="ph ph-arrow-right ml-0.5"></i></a>
-                                <button class="exec-select-btn" onclick="event.stopPropagation(); selectExecutor(this.closest('.exec-card'), 'РХТУ')">Выбрать</button>
-                            </div>
+                    <div id="executor-cards" class="space-y-3 mt-4">
+                        <!-- Dynamically populated by renderExecutorCards() -->
+                        <div id="exec-loading" class="text-center py-8 text-gray-600 text-sm hidden">
+                            <i class="ph ph-spinner text-xl animate-spin inline-block mb-2"></i><br>
+                            Загрузка рекомендаций...
                         </div>
                     </div>
 
-                    <!-- Link to full catalog -->
+                    <!-- Link to full results -->
                     <div class="mt-4 text-center">
-                        <a href="catalog.html" class="inline-flex items-center gap-2 text-xs font-bold text-gray-500 hover:text-red-400 transition uppercase tracking-wider">
-                            <i class="ph ph-buildings"></i> Все 22 организации в каталоге <i class="ph ph-arrow-right"></i>
+                        <a id="exec-all-link" href="ai_search_results.html" class="inline-flex items-center gap-2 text-xs font-bold text-gray-500 hover:text-red-400 transition uppercase tracking-wider">
+                            <i class="ph ph-buildings"></i> Все организации <i class="ph ph-arrow-right"></i>
                         </a>
                     </div>
                 </div>
@@ -1433,55 +1283,237 @@
             cardEl.querySelector('.exec-select-btn').textContent = 'Выбрано ✓';
         }
 
-        // ═══ STEP 2: AI Analysis Animation ═══
+        // ═══ STEP 2: AI Analysis — calls /api/ai-search ═══
         let aiAnimationRun = false;
+        let _wizardSearchData = null; // Store API response
 
-        function runAIAnalysis() {
+        const API_BASE = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+            ? 'http://127.0.0.1:5000' : 'https://mosnauka-backendmosnauka.onrender.com';
+
+        function showTermLine(id, delay) {
+            setTimeout(() => {
+                const el = document.getElementById(id);
+                if (el) el.classList.add('show');
+            }, delay);
+        }
+
+        async function runAIAnalysis() {
             if (aiAnimationRun) return;
             aiAnimationRun = true;
 
-            // Show terminal lines sequentially
-            const lines = document.querySelectorAll('#ai-terminal .terminal-line');
-            lines.forEach(line => {
-                const delay = parseInt(line.dataset.delay) || 0;
-                setTimeout(() => line.classList.add('show'), delay);
-            });
+            const desc = document.getElementById('task-description');
+            const query = desc ? desc.value.trim() : '';
+            const queryExcerpt = query.length > 60 ? query.substring(0, 57) + '...' : query;
 
-            // Show KPI cards
-            const kpiCards = document.querySelectorAll('.kpi-card');
-            kpiCards.forEach(card => {
-                const delay = parseInt(card.dataset.delay) || 0;
-                setTimeout(() => {
-                    card.classList.add('show');
-                }, delay);
-            });
+            // ── Terminal animation: progressive lines ──
+            const termQueryText = document.getElementById('term-query-text');
+            if (termQueryText) termQueryText.textContent = '«' + queryExcerpt + '»';
 
-            // Animate KPI numbers
-            setTimeout(() => animateCounter('kpi-projects', 24, 800), 3200);
-            setTimeout(() => animateCounter('kpi-orgs', 7, 600), 3400);
-            setTimeout(() => animateCounter('kpi-match', 94, 700, '%'), 3600);
+            showTermLine('term-query', 400);
+            showTermLine('term-scan', 900);
+            showTermLine('term-match', 1400);
 
-            // Show skip button
+            // Show skip button early
             setTimeout(() => {
                 const skip = document.getElementById('btn-skip');
                 if (skip) skip.style.opacity = '1';
             }, 1500);
 
-            // Show project cards after KPI animation
-            setTimeout(() => {
-                const section = document.getElementById('projects-section');
-                if (section) {
-                    section.classList.remove('hidden');
-                    const cards = section.querySelectorAll('.project-card');
-                    cards.forEach(card => {
-                        const d = parseInt(card.dataset.delay) || 0;
-                        setTimeout(() => card.classList.add('show'), d);
-                    });
+            // ── API call ──
+            try {
+                const resp = await fetch(`${API_BASE}/api/ai-search`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ query })
+                });
+
+                if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+                const data = await resp.json();
+                _wizardSearchData = data;
+
+                // ── Update terminal with real counts ──
+                const foundCount = document.getElementById('term-found-count');
+                const orgsCount = document.getElementById('term-orgs-count');
+                if (foundCount) foundCount.textContent = `${data.stats?.projects_count || 0} проектов`;
+                if (orgsCount) orgsCount.textContent = `${data.organizations?.length || 0} организаций`;
+
+                showTermLine('term-found', 0);
+                showTermLine('term-orgs', 300);
+                showTermLine('term-done', 600);
+
+                // ── Animate KPIs with real data ──
+                const stats = data.stats || {};
+                setTimeout(() => {
+                    document.querySelectorAll('.kpi-card').forEach(c => c.classList.add('show'));
+                    animateCounter('kpi-projects', stats.projects_count || 0, 800);
+                    animateCounter('kpi-orgs', stats.orgs_count || 0, 600);
+                    animateCounter('kpi-match', stats.max_match_pct || 0, 700, '%');
+                }, 800);
+
+                // ── Render project cards ──
+                setTimeout(() => {
+                    renderProjectCards(data.projects || [], query);
+                    // Hide skip button
+                    const skip = document.getElementById('btn-skip');
+                    if (skip) skip.style.opacity = '0';
+                }, 1600);
+
+                // ── Pre-render executor cards for Step 2 ──
+                renderExecutorCards(data.organizations || [], query);
+
+            } catch (e) {
+                console.error('AI search failed:', e);
+                // Show error in terminal
+                const errLine = document.getElementById('term-error');
+                const errText = document.getElementById('term-error-text');
+                if (errLine) {
+                    errLine.classList.remove('hidden');
+                    errLine.classList.add('show');
                 }
-                // Hide skip button once cards are shown
-                const skip = document.getElementById('btn-skip');
-                if (skip) skip.style.opacity = '0';
-            }, 4200);
+                if (errText) errText.textContent = 'Ошибка загрузки: ' + e.message;
+                // Show KPIs as zeros
+                document.querySelectorAll('.kpi-card').forEach(c => c.classList.add('show'));
+            }
+        }
+
+        function renderProjectCards(projects, query) {
+            const container = document.getElementById('projects-container');
+            const section = document.getElementById('projects-section');
+            const allLink = document.getElementById('projects-all-link');
+            if (!container || !section) return;
+
+            const top3 = projects.slice(0, 3);
+            if (top3.length === 0) {
+                container.innerHTML = '<div class="text-center py-4 text-sm text-gray-600">Проектов не найдено</div>';
+                section.classList.remove('hidden');
+                return;
+            }
+
+            // Update "all projects" link with count and query
+            const searchUrl = `ai_search_results.html?q=${encodeURIComponent(query)}`;
+            if (allLink) {
+                allLink.href = searchUrl;
+                allLink.textContent = `Все ${projects.length} проектов →`;
+            }
+
+            container.innerHTML = top3.map((p, i) => {
+                const budgetFmt = p.budget_rub >= 1e6
+                    ? `${(p.budget_rub / 1e6).toFixed(1)} млн ₽`
+                    : p.budget_rub > 0 ? `${(p.budget_rub / 1e3).toFixed(0)} тыс ₽` : '';
+                const tags = (p.keywords || []).slice(0, 3).map(t =>
+                    `<span class="project-tag">${t}</span>`
+                ).join('');
+
+                return `
+                    <a href="${searchUrl}" class="project-card block no-underline" style="text-decoration:none;color:inherit;animation-delay:${i * 150}ms">
+                        <div class="flex items-start justify-between gap-3">
+                            <div class="flex-1">
+                                ${p.reg_number ? `<div class="project-cipher mb-1">${p.reg_number}</div>` : ''}
+                                <div class="project-title mb-1">${p.title}</div>
+                                <div class="project-org"><i class="ph ph-buildings mr-1"></i>${p.org_name || ''}</div>
+                            </div>
+                            <div class="text-right shrink-0">
+                                <div class="match-badge mb-1.5">${p.match_percentage || 0}%</div>
+                                ${budgetFmt ? `<div class="project-budget">${budgetFmt}</div>` : ''}
+                            </div>
+                        </div>
+                        ${tags ? `<div class="flex flex-wrap gap-1.5 mt-2.5">${tags}</div>` : ''}
+                    </a>
+                `;
+            }).join('');
+
+            // Reveal with animation
+            section.classList.remove('hidden');
+            requestAnimationFrame(() => {
+                container.querySelectorAll('.project-card').forEach((card, i) => {
+                    setTimeout(() => card.classList.add('show'), i * 150);
+                });
+            });
+        }
+
+        const AVATAR_COLORS = [
+            'linear-gradient(135deg, #6366f1, #8b5cf6)',
+            'linear-gradient(135deg, #3b82f6, #06b6d4)',
+            'linear-gradient(135deg, #22c55e, #14b8a6)',
+            'linear-gradient(135deg, #f59e0b, #ef4444)',
+            'linear-gradient(135deg, #ec4899, #8b5cf6)',
+        ];
+
+        function renderExecutorCards(organizations, query) {
+            const container = document.getElementById('executor-cards');
+            const allLink = document.getElementById('exec-all-link');
+            if (!container) return;
+
+            // Remove loading state
+            const loadingEl = document.getElementById('exec-loading');
+            if (loadingEl) loadingEl.classList.add('hidden');
+
+            if (organizations.length === 0) {
+                container.innerHTML = '<div class="text-center py-6 text-sm text-gray-600">Организаций не найдено</div>';
+                return;
+            }
+
+            // Update "all orgs" link
+            const searchUrl = `ai_search_results.html?q=${encodeURIComponent(query)}`;
+            if (allLink) {
+                allLink.href = searchUrl;
+                allLink.innerHTML = `<i class="ph ph-buildings"></i> Все ${organizations.length} организаций <i class="ph ph-arrow-right"></i>`;
+            }
+
+            container.innerHTML = organizations.map((org, i) => {
+                const avgMatch = org.top_projects && org.top_projects.length > 0
+                    ? Math.round(org.top_projects.reduce((s, p) => s + (p.match_percentage || 0), 0) / org.top_projects.length)
+                    : 0;
+                const budgetFmt = org.total_matched_budget >= 1e6
+                    ? `₽${(org.total_matched_budget / 1e6).toFixed(1)} млн` : '';
+                const letter = (org.org_name || '?')[0].toUpperCase();
+                const avatarBg = AVATAR_COLORS[i % AVATAR_COLORS.length];
+                const passportLink = org.slug ? `passport-${org.slug}.html` : '#';
+                const orgNameSafe = (org.org_name || '').replace(/'/g, "\\'");
+                const reasoning = org.ai_reasoning || '';
+
+                return `
+                    <div class="exec-card" onclick="selectExecutor(this, '${orgNameSafe}')" data-org="${org.slug || i}">
+                        <div class="exec-check"><i class="ph-bold ph-check text-xs text-white"></i></div>
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="exec-avatar shrink-0" style="background: ${avatarBg}">
+                                ${org.logo ? `<img src="${org.logo}" class="w-full h-full object-contain rounded-xl" alt="">` : letter}
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <div class="exec-name truncate">${org.org_name || ''}</div>
+                                <div class="exec-type truncate">${org.org_name_full || ''}</div>
+                            </div>
+                            <div class="match-badge shrink-0">${avgMatch}%</div>
+                        </div>
+                        ${reasoning ? `
+                        <div class="mb-3 p-3 rounded-xl" style="background:rgba(255,0,60,0.03); border:1px solid rgba(255,0,60,0.08)">
+                            <div class="text-[9px] uppercase tracking-[0.12em] text-red-400/60 font-bold mb-1"><i class="ph ph-sparkle mr-0.5"></i>ИИ-анализ компетенций</div>
+                            <div class="text-[12px] text-gray-300 leading-relaxed">${reasoning}</div>
+                        </div>
+                        ` : ''}
+                        <div class="flex items-center justify-around mb-3 py-2.5 rounded-xl" style="background: rgba(255,255,255,0.02)">
+                            <div class="exec-metric">
+                                <div class="exec-metric-val">${org.matched_projects || 0}</div>
+                                <div class="exec-metric-label">Проектов</div>
+                            </div>
+                            <div style="width:1px; height:28px; background:rgba(255,255,255,0.06)"></div>
+                            <div class="exec-metric">
+                                <div class="exec-metric-val">${org.matched_rids || 0}</div>
+                                <div class="exec-metric-label">РИД</div>
+                            </div>
+                            <div style="width:1px; height:28px; background:rgba(255,255,255,0.06)"></div>
+                            <div class="exec-metric">
+                                <div class="exec-metric-val">${budgetFmt || '–'}</div>
+                                <div class="exec-metric-label">Бюджет</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <a href="${passportLink}" target="_blank" class="exec-link" onclick="event.stopPropagation()">Карточка организации <i class="ph ph-arrow-right ml-0.5"></i></a>
+                            <button class="exec-select-btn" onclick="event.stopPropagation(); selectExecutor(this.closest('.exec-card'), '${orgNameSafe}')">Выбрать</button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
         }
 
         function animateCounter(id, target, duration, suffix = '') {
@@ -1509,8 +1541,6 @@
             if (!query) return;
 
             try {
-                const API_BASE = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
-                    ? 'http://127.0.0.1:5000' : 'https://mosnauka-backendmosnauka.onrender.com';
                 const resp = await fetch(`${API_BASE}/api/qualify-988`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
