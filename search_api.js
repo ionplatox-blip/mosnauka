@@ -14,7 +14,7 @@ const IS_LOCAL = window.location.hostname === 'localhost' ||
 
 const BACKEND_URL = IS_LOCAL
   ? 'http://localhost:5001'
-  : 'https://mosnauka-backendmosnauka.onrender.com';
+  : 'https://mosnauka-backend.onrender.com';
 
 const API_ENDPOINT = `${BACKEND_URL}/api/ai-search`;
 const REQUEST_TIMEOUT_MS = 60000; // 60 сек (Render Free: cold start + загрузка embeddings)
@@ -124,6 +124,23 @@ function _normalize(data) {
         year:             p.year             || '',
         reg_number:       p.reg_number       || '',
         report_type:      p.report_type      || '',
+      })),
+    })),
+
+    // ── РИД (по организациям, для accordion) ──
+    rids: (data.rids || []).map(g => ({
+      org_name:  g.org_name  || '',
+      org_slug:  g.org_slug  || '',
+      org_logo:  g.org_logo  || '',
+      rids: (g.rids || []).map(r => ({
+        title:            r.title            || '',
+        rid_type:         r.rid_type         || '',
+        using_ways:       r.using_ways       || '',
+        abstract_short:   r.abstract_short   || '',
+        keywords:         r.keywords         || [],
+        reg_number:       r.reg_number       || '',
+        year:             r.year             || null,
+        match_percentage: r.match_percentage || 0,
       })),
     })),
 
