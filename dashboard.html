@@ -32,6 +32,7 @@
                 <div id="section-projects" class="dash-section hidden"></div>
                 <div id="section-messages" class="dash-section hidden"></div>
                 <div id="section-guide" class="dash-section hidden"></div>
+                <div id="section-requests" class="dash-section hidden"></div>
                 <div id="section-profile" class="dash-section hidden"></div>
             </div>
         </main>
@@ -649,6 +650,96 @@
             `;
         }
 
+        // ── Render Requests ──
+        function renderRequests() {
+            // Stock demo requests
+            const stockRequests = [
+                {
+                    id: 'REQ-DEMO-001',
+                    date: '2026-03-05T14:30:00.000Z',
+                    task: 'Разработка нанокомпозитных покрытий для защиты от коррозии в морской среде',
+                    executor: 'НИТУ МИСиС',
+                    contact: { name: 'Петров А.С.', company: 'ООО НПО «Технокор»', phone: '+7 (495) 111-22-33', email: 'petrov@technocor.ru' },
+                    status: 'completed'
+                },
+                {
+                    id: 'REQ-DEMO-002',
+                    date: '2026-03-12T09:15:00.000Z',
+                    task: 'Исследование катодных материалов для литий-ионных аккумуляторов повышенной ёмкости',
+                    executor: 'МГУ · Антипов Е.В.',
+                    contact: { name: 'Сидоров И.П.', company: 'АО «ЭнергоБат»', phone: '+7 (495) 444-55-66', email: 'sidorov@energobat.ru' },
+                    status: 'in_progress'
+                },
+                {
+                    id: 'REQ-DEMO-003',
+                    date: '2026-03-18T16:45:00.000Z',
+                    task: 'Компьютерное зрение для автоматизации контроля качества на производственной линии',
+                    executor: 'МФТИ',
+                    contact: { name: 'Козлова М.В.', company: 'ООО «Оптик Системс»', phone: '+7 (495) 777-88-99', email: 'kozlova@opticsys.ru' },
+                    status: 'sent'
+                }
+            ];
+
+            // Read from localStorage
+            const lsRequests = JSON.parse(localStorage.getItem('mosnauka_requests') || '[]');
+
+            // Merge stock + localStorage (newest first)
+            const allRequests = [...stockRequests, ...lsRequests].sort((a, b) => new Date(b.date) - new Date(a.date));
+
+            const statusMap = {
+                'sent':        { label: 'Отправлена',  color: 'amber',   icon: 'ph-paper-plane-tilt' },
+                'in_progress': { label: 'В работе',    color: 'blue',    icon: 'ph-gear' },
+                'completed':   { label: 'Завершена',   color: 'emerald', icon: 'ph-check-circle' },
+                'rejected':    { label: 'Отклонена',   color: 'red',     icon: 'ph-x-circle' },
+            };
+
+            const formatDate = (iso) => {
+                const d = new Date(iso);
+                return d.toLocaleDateString('ru-RU', { day: 'numeric', month: 'short', year: 'numeric' });
+            };
+
+            const cards = allRequests.map(r => {
+                const st = statusMap[r.status] || statusMap['sent'];
+                const taskShort = r.task.length > 100 ? r.task.substring(0, 100) + '...' : r.task;
+                return `
+                    <div class="p-5 rounded-2xl bg-white/[0.03] border border-white/[0.06] hover:border-${st.color}-500/20 transition">
+                        <div class="flex items-start justify-between gap-3 mb-3">
+                            <div class="flex items-center gap-2">
+                                <div class="w-8 h-8 rounded-lg bg-${st.color}-500/15 flex items-center justify-center">
+                                    <i class="ph ${st.icon} text-${st.color}-400"></i>
+                                </div>
+                                <div>
+                                    <div class="text-[10px] text-gray-600 font-mono">${r.id}</div>
+                                    <div class="text-[10px] text-gray-500">${formatDate(r.date)}</div>
+                                </div>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-full bg-${st.color}-500/10 border border-${st.color}-500/20 text-[10px] font-bold text-${st.color}-400">${st.label}</span>
+                        </div>
+                        <div class="text-sm font-semibold mb-2 text-gray-200">${taskShort}</div>
+                        <div class="flex items-center gap-4 text-[11px] text-gray-500">
+                            <span><i class="ph ph-buildings mr-1"></i>${r.executor}</span>
+                            <span><i class="ph ph-user mr-1"></i>${r.contact.name}</span>
+                            <span><i class="ph ph-envelope mr-1"></i>${r.contact.email}</span>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            document.getElementById('section-requests').innerHTML = `
+                <div class="mb-6">
+                    <div class="text-[10px] uppercase tracking-[0.2em] text-red-400 font-bold mb-2">Заявки</div>
+                    <h2 class="text-2xl font-black italic tracking-tight">Отправленные заявки</h2>
+                    <p class="text-sm text-gray-500 mt-1">Заявки на НИОКР, отправленные через визард</p>
+                </div>
+                <div class="space-y-3">${cards || '<p class="text-gray-500 text-sm py-8 text-center">Нет отправленных заявок</p>'}</div>
+                <div class="mt-6 text-center">
+                    <a href="start-niokr.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl mos-bg-red text-xs font-bold uppercase tracking-wider hover:brightness-110 transition">
+                        <i class="ph ph-plus"></i> Новая заявка
+                    </a>
+                </div>
+            `;
+        }
+
         // ── Render Sidebar ──
         let _activeSection = 'overview';
         const _navItems = [
@@ -657,6 +748,7 @@
             { id: 'projects',  icon: 'ph-kanban',         label: 'Проекты' },
             { id: 'messages',  icon: 'ph-chat-circle',    label: 'Сообщения' },
             { id: 'guide',     icon: 'ph-book-open',      label: 'НИОКР-гид' },
+            { id: 'requests',  icon: 'ph-paper-plane-tilt', label: 'Заявки' },
             { id: 'profile',   icon: 'ph-user-circle',    label: 'Профиль' },
         ];
 
