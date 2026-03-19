@@ -105,6 +105,23 @@
       alert('Пожалуйста, заполните обязательные поля (ФИО, Email, Сообщение)');
       return;
     }
+    // ── Save request to localStorage (universal) ──
+    var o = document.getElementById('reqOrg').value.trim();
+    var ctx = document.getElementById('modalContext').textContent || 'Не указан';
+    var rid = 'REQ-' + Math.random().toString(36).substr(2, 8).toUpperCase();
+    var req = {
+      id: rid,
+      date: new Date().toISOString(),
+      task: m,
+      executor: ctx,
+      contact: { name: n, company: o, phone: '', email: e },
+      status: 'processing'
+    };
+    try {
+      var reqs = JSON.parse(localStorage.getItem('mosnauka_requests') || '[]');
+      reqs.push(req);
+      localStorage.setItem('mosnauka_requests', JSON.stringify(reqs));
+    } catch (_) {}
     document.getElementById('modalForm').style.display = 'none';
     document.getElementById('modalSuccess').style.display = '';
   };
