@@ -68,7 +68,7 @@
 
   // ── Public API ──
 
-  window.openRequestModal = function (context) {
+  window.openRequestModal = function (context, prefillMessage) {
     injectModal();
     document.getElementById('modalContext').textContent = context || 'через платформу МОСНАУКА';
     document.getElementById('modalForm').style.display = '';
@@ -77,7 +77,7 @@
     document.getElementById('reqName').value = '';
     document.getElementById('reqOrg').value = '';
     document.getElementById('reqEmail').value = '';
-    document.getElementById('reqMsg').value = '';
+    document.getElementById('reqMsg').value = prefillMessage || '';
     // Reset checkboxes — only first checked
     document.querySelectorAll('#reqType input[type=checkbox]').forEach(function (cb, i) {
       cb.checked = (i === 0);

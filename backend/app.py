@@ -378,6 +378,80 @@ def format_organizations(scored_records: list[tuple], top_n: int = 3) -> list[di
     return result
 
 
+def format_organizations_v2(scored_records: list[tuple], top_n: int = 5) -> list[dict]:
+    """Org-centric: top-N organizations with metrics, top projects, and slot for AI reasoning.
+
+    Steps:
+      1a — Group records by org, accumulate weighted score + budget
+      1b — Extract top-5 projects per org (with full metadata for frontend + Claude)
+      1c — Rank, apply dynamic threshold (≥15% of leader), cap at top_n
+      1d — Assemble output dicts
+    """
+    # ── 1a: Group by org ────────────────────────────────────────────────
+    TYPE_WEIGHT = {"project": 1.0, "rid": 0.6, "lab": 0.3, "scientist": 0.2}
+    org_data = defaultdict(lambda: {
+        "weighted_score": 0.0,
+        "counts": {"project": 0, "rid": 0},
+        "total_budget": 0,
+        "records": [],
+    })
+
+    for score, rec in scored_records:
+        oid = rec["org_id"]
+        rtype = rec["type"]
+        org_data[oid]["weighted_score"] += score * TYPE_WEIGHT.get(rtype, 0.2)
+        if rtype in ("project", "rid"):
+            org_data[oid]["counts"][rtype] += 1
+        if rtype == "project":
+            org_data[oid]["total_budget"] += rec.get("budget_rub", 0)
+        org_data[oid]["records"].append((score, rec))
+
+    # ── 1b: Top-5 projects per org ──────────────────────────────────────
+    for oid, d in org_data.items():
+        proj_recs = sorted(
+            [(s, r) for s, r in d["records"] if r["type"] == "project"],
+            key=lambda x: x[0], reverse=True,
+        )[:5]
+        d["top_projects"] = [{
+            "title":            r["title"],
+            "match_percentage": min(99, int(s * 100)),
+            "abstract_short":   (r.get("abstract") or "")[:300],
+            "keywords":         r.get("keywords", [])[:6],
+            "budget_rub":       r.get("budget_rub", 0),
+            "year":             r.get("year_start"),
+            "reg_number":       r.get("reg_number", ""),
+            "report_type":      r.get("report_type", ""),
+        } for s, r in proj_recs]
+
+    # ── 1c: Rank + dynamic threshold + limit ────────────────────────────
+    ranked = sorted(org_data.items(), key=lambda x: x[1]["weighted_score"], reverse=True)
+    if ranked:
+        threshold = ranked[0][1]["weighted_score"] * 0.15
+        ranked = [(oid, d) for oid, d in ranked if d["weighted_score"] >= threshold]
+    ranked = ranked[:top_n]
+
+    # ── 1d: Assemble output ─────────────────────────────────────────────
+    result = []
+    for oid, d in ranked:
+        org = ORGS.get(oid, {})
+        result.append({
+            "org_name":             org.get("name", ""),
+            "org_name_full":        org.get("name_full", ""),
+            "logo":                 org.get("logo", ""),
+            "website":              org.get("website", ""),
+            "slug":                 org.get("slug", ""),
+            "passport_url":         f"passport-{org.get('slug', '')}.html" if org.get("slug") else "",
+            "projects_count":       org.get("projects_count", 0),
+            "matched_projects":     d["counts"]["project"],
+            "matched_rids":         d["counts"]["rid"],
+            "total_matched_budget": d["total_budget"],
+            "relevance_score":      round(d["weighted_score"], 2),
+            "top_projects":         d["top_projects"],
+            "ai_reasoning":         "",  # filled by generate_org_reasoning() in Chunk 2
+        })
+    return result
+
+
 def format_experts(scored_records: list[tuple], top_n: int = 3) -> list[dict]:
     """Топ учёных из наиболее релевантных организаций."""
     sci_records = [(s, r) for s, r in scored_records if r["type"] == "scientist"][:top_n]
@@ -453,6 +527,133 @@ def call_claude(query: str, context_projects: list[dict], stats: dict) -> str:
     except Exception as e:
         print(f"OpenRouter error: {e}")
         return f"По теме «{query}» найдено {stats['projects_count']} проектов в {stats['orgs_count']} организациях с суммарным финансированием {funding_fmt}."
+
+
+def generate_org_reasoning(query: str, organizations: list[dict]) -> list[dict]:
+    """Generate narrative AI reasoning for each org (single Claude call).
+
+    Steps:
+      2a — Build rich context per org from top-3 projects
+      2b — Design system + user prompt for narrative output
+      2c — Call OpenRouter, parse JSON, merge into org dicts
+    """
+    if not organizations:
+        return organizations
+    if not OPENROUTER_API_KEY:
+        # Fallback: simple metric text
+        for org in organizations:
+            org["ai_reasoning"] = _fallback_reasoning(org)
+        return organizations
+
+    # ── 2a: Build rich context per org ──────────────────────────────────
+    org_blocks = []
+    for i, org in enumerate(organizations, 1):
+        budget_fmt = f"₽{org['total_matched_budget']/1e6:.1f} млн" if org["total_matched_budget"] else "н/д"
+        header = f"{i}. {org['org_name']} ({org['matched_projects']} проектов, {org['matched_rids']} РИД, бюджет {budget_fmt}):"
+
+        project_lines = []
+        for p in org.get("top_projects", [])[:3]:
+            p_budget = f"₽{p['budget_rub']/1e6:.1f} млн" if p.get("budget_rub", 0) >= 1e6 else ""
+            kw = ", ".join(p.get("keywords", [])[:4])
+            line = f"   - «{p['title']}»"
+            if p_budget or p.get("year"):
+                line += f" ({p_budget}, {p.get('year', '')})"
+            if kw:
+                line += f"\n     Ключевые слова: {kw}"
+            abstract = p.get("abstract_short", "")
+            if abstract and len(abstract) > 30:
+                line += f"\n     Аннотация: {abstract[:200]}"
+            project_lines.append(line)
+
+        org_blocks.append(header + "\n" + "\n".join(project_lines) if project_lines else header)
+
+    org_contexts = "\n\n".join(org_blocks)
+
+    # ── 2b: System + user prompt ────────────────────────────────────────
+    system_prompt = """Ты — деловой аналитик платформы МОСНАУКА.
+Для каждой организации напиши 2-3 предложения — почему она подходит под запрос заказчика.
+
+Правила:
+- Пиши КОНКРЕТНО: что именно делали, какие результаты получены, что есть готового
+- НЕ пиши общих фраз типа "является ведущим центром" — только факты из проектов
+- Связывай опыт организации с запросом заказчика
+- Пиши деловым языком, понятным директору компании
+
+Верни JSON-массив: [{"org": "Название", "reasoning": "Текст 2-3 предложения"}]
+Только JSON, без markdown-обёрток."""
+
+    user_prompt = f"""Запрос заказчика: «{query}»
+
+Организации и их проекты:
+{org_contexts}
+
+Для каждой организации напиши, почему она подходит под запрос."""
+
+    # ── 2c: OpenRouter call + parse + merge ─────────────────────────────
+    try:
+        resp = requests.post(
+            OPENROUTER_URL,
+            headers={
+                "Authorization": f"Bearer {OPENROUTER_API_KEY}",
+                "Content-Type": "application/json",
+                "HTTP-Referer": "https://mosnauka.onrender.com",
+            },
+            json={
+                "model": "anthropic/claude-3-haiku",
+                "messages": [
+                    {"role": "system", "content": system_prompt},
+                    {"role": "user", "content": user_prompt},
+                ],
+                "max_tokens": 600,
+                "temperature": 0.4,
+            },
+            timeout=20,
+        )
+        raw = resp.json()["choices"][0]["message"]["content"].strip()
+
+        # Strip markdown fences if present
+        if raw.startswith("```"):
+            raw = re.sub(r"^```(?:json)?\s*", "", raw)
+            raw = re.sub(r"\s*```$", "", raw)
+
+        reasoning_list = json.loads(raw)
+
+        # Build lookup by org name
+        reasoning_map = {}
+        for item in reasoning_list:
+            name = item.get("org", "")
+            reasoning_map[name] = item.get("reasoning", "")
+
+        # Merge into org dicts (fuzzy match by substring)
+        for org in organizations:
+            matched = False
+            for name, reasoning in reasoning_map.items():
+                if name in org["org_name"] or org["org_name"] in name:
+                    org["ai_reasoning"] = reasoning
+                    matched = True
+                    break
+            if not matched:
+                org["ai_reasoning"] = _fallback_reasoning(org)
+
+    except Exception as e:
+        print(f"Org reasoning error: {e}")
+        for org in organizations:
+            org["ai_reasoning"] = _fallback_reasoning(org)
+
+    return organizations
+
+
+def _fallback_reasoning(org: dict) -> str:
+    """Simple fallback when Claude is unavailable."""
+    budget_fmt = f"₽{org['total_matched_budget']/1e6:.1f} млн" if org.get("total_matched_budget", 0) >= 1e6 else ""
+    parts = []
+    if org.get("matched_projects"):
+        parts.append(f"{org['matched_projects']} проектов по теме")
+    if org.get("matched_rids"):
+        parts.append(f"{org['matched_rids']} РИД")
+    if budget_fmt:
+        parts.append(f"общий бюджет {budget_fmt}")
+    return f"У организации {', '.join(parts)}." if parts else ""
 
 
 # ─────────────────────────────────────────────
@@ -667,10 +868,13 @@ def ai_search():
     top_scored = rerank_with_ai(query, top_scored)
     
     projects = format_projects(top_scored)  # top_n=20 по умолчанию
-    organizations = format_organizations(top_scored, top_n=3)
+    organizations = format_organizations_v2(top_scored, top_n=5)
     experts = format_experts(top_scored, top_n=3)
 
-    # 4. AI-анализ
+    # 4. AI reasoning per org (single Claude call)
+    organizations = generate_org_reasoning(query, organizations)
+
+    # 5. AI-анализ (общий summary)
     ai_summary = call_claude(query, projects, stats)
 
     # ── Save search to user history ──

@@ -101,17 +101,30 @@ function _normalize(data) {
       org_logo:        p.org_logo     || '',
     })),
 
-    // ── Организации (топ-3) ──
+    // ── Организации (топ-5, org-centric) ──
     organizations: (data.organizations || []).map(o => ({
-      org_name:         o.org_name      || '',
-      org_name_full:    o.org_name_full || '',
-      logo:             o.logo          || '',
-      website:          o.website       || '',
-      slug:             o.slug          || '',
-      projects_count:   o.projects_count   || 0,
-      matched_projects: o.matched_projects || 0,
-      matched_rids:     o.matched_rids     || 0,
-      relevance_score:  o.relevance_score  || 0,
+      org_name:             o.org_name         || '',
+      org_name_full:        o.org_name_full    || '',
+      logo:                 o.logo             || '',
+      website:              o.website          || '',
+      slug:                 o.slug             || '',
+      passport_url:         o.passport_url     || '',
+      projects_count:       o.projects_count   || 0,
+      matched_projects:     o.matched_projects || 0,
+      matched_rids:         o.matched_rids     || 0,
+      total_matched_budget: o.total_matched_budget || 0,
+      relevance_score:      o.relevance_score  || 0,
+      ai_reasoning:         o.ai_reasoning     || '',
+      top_projects:         (o.top_projects    || []).map(p => ({
+        title:            p.title            || '',
+        match_percentage: p.match_percentage || 0,
+        abstract_short:   p.abstract_short   || '',
+        keywords:         p.keywords         || [],
+        budget_rub:       p.budget_rub       || 0,
+        year:             p.year             || '',
+        reg_number:       p.reg_number       || '',
+        report_type:      p.report_type      || '',
+      })),
     })),
 
     // ── Эксперты (топ-3) ──

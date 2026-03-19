@@ -278,248 +278,13 @@
           </div>
         </section>
 
-        <!-- Matched Projects Block -->
-        <section id="projects-container">
-          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
-            <div class="flex flex-col md:flex-row md:items-center items-start gap-2 md:gap-3">
-              <h3 class="text-xl md:text-3xl font-black uppercase italic tracking-tight">Похожие реализованные проекты</h3>
-              <span class="px-2 py-1 rounded bg-red-500/10 text-red-400 text-xs font-bold shrink-0">Из базы ЕГИСУ</span>
-            </div>
-            <button id="toggle-projects-btn" data-expanded="false" onclick="toggleAllProjects()" class="hidden px-5 py-2.5 bg-white/5 hover:bg-white/10 text-sm font-bold uppercase tracking-wider rounded-xl transition whitespace-nowrap border border-white/10 shrink-0">
-              Показать ещё ↓
-            </button>
-          </div>
-
-          <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 items-start">
-
-            <!-- Card 1 -->
-            <div class="glass border border-white/5 rounded-3xl p-6 relative overflow-hidden group hover:border-red-500/30 transition duration-500 flex flex-col h-full">
-              <!-- Radial Gradient Glow -->
-              <div class="absolute inset-0 bg-gradient-to-br from-red-500/0 via-red-500/0 to-red-500/10 opacity-0 group-hover:opacity-100 transition duration-700 pointer-events-none"></div>
-              
-              <div class="flex justify-between items-start mb-4">
-                <div class="text-[10px] uppercase font-bold tracking-widest text-zinc-500">Проект НИОКР</div>
-                <!-- Match Badge -->
-                <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-green-500/10 border border-green-500/20">
-                  <div class="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></div>
-                  <span class="text-[10px] font-bold text-green-400">Match 95%</span>
-                </div>
-              </div>
-
-              <div class="text-[10px] uppercase font-bold tracking-widest text-[#FF003C] mb-2">Шифр: 121041500039-8</div>
-              <h4 class="text-lg font-bold text-white mb-3 shrink-0">Разработка технологии плазменно-электролитического оксидирования для создания функциональных износостойких покрытий на деталях авиационной техники</h4>
-              
-              <div class="flex flex-wrap gap-2 mb-4 shrink-0">
-                <span class="px-2 py-1 rounded bg-white/5 text-[10px] text-gray-400">ПЭО</span>
-                <span class="px-2 py-1 rounded bg-white/5 text-[10px] text-gray-400">износостойкость</span>
-                <span class="px-2 py-1 rounded bg-white/5 text-[10px] text-gray-400">титан</span>
-              </div>
-
-              <div class="text-sm text-gray-300 mb-6 flex-grow leading-relaxed">
-                Получены многофункциональные защитные покрытия на сплаве ВТ6... (текст из аннотации РИД).
-              </div>
-
-              <div class="grid grid-cols-2 gap-4 mb-6 pt-4 border-t border-white/5 shrink-0">
-                <div>
-                  <div class="text-[9px] text-gray-500 uppercase tracking-wider mb-1">Основание</div>
-                  <div class="text-xs font-bold text-white leading-tight">Государственное задание</div>
-                </div>
-                <div>
-                  <div class="text-[9px] text-gray-500 uppercase tracking-wider mb-1">Тип документа</div>
-                  <div class="text-xs font-bold text-white leading-tight">Отчёт (заключительный)</div>
-                </div>
-              </div>
-
-              <!-- Org Link -->
-              <a href="passport-mgu.html" class="group/org flex items-center gap-3 mb-6 p-3 rounded-2xl bg-white/5 hover:bg-white/10 transition border border-white/5 hover:border-white/20 shrink-0">
-                <div class="w-10 h-10 rounded-lg bg-white/10 p-1 flex items-center justify-center shrink-0">
-                  <img src="https://colab.ws/storage/images/5i4jfz1ZRKSKbVsRyLakCM5odPoTNafBGh8Cwxzf.png" alt="МГУ" class="w-full h-full object-contain">
-                </div>
-                <div class="flex-grow">
-                  <div class="text-[10px] text-gray-400 mb-0.5">Исполнитель НИОКР</div>
-                  <div class="text-xs font-bold text-white group-hover/org:text-[#FF003C] transition">МГУ им. М.В. Ломоносова</div>
-                </div>
-                <i class="ph ph-caret-right text-gray-500 group-hover/org:text-[#FF003C] transition"></i>
-              </a>
-
-              <!-- CTA -->
-              <div class="mt-auto shrink-0">
-                <button onclick="openRequestModal('Связаться с МГУ — Плазменно-электролитическое оксидирование')" class="w-full py-2.5 bg-[#FF003C]/10 text-[#FF003C] hover:bg-[#FF003C] hover:text-white text-xs font-bold uppercase tracking-widest rounded-xl transition duration-300 border border-[#FF003C]/20 hover:border-[#FF003C]">
-                  Связаться с Исполнителем
-                </button>
-              </div>
-            </div>
-
-            <!-- Card 2 -->
-            <div class="glass border border-white/5 rounded-3xl p-6 relative overflow-hidden group hover:border-red-500/30 transition duration-500 flex flex-col h-full">
-              <div class="absolute inset-0 bg-gradient-to-br from-red-500/0 via-red-500/0 to-red-500/10 opacity-0 group-hover:opacity-100 transition duration-700 pointer-events-none"></div>
-              
-              <div class="flex justify-between items-start mb-4">
-                <div class="text-[10px] uppercase font-bold tracking-widest text-zinc-500">Проект НИОКР</div>
-                <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20">
-                  <div class="w-1.5 h-1.5 rounded-full bg-emerald-400"></div>
-                  <span class="text-[10px] font-bold text-emerald-400">Match 88%</span>
-                </div>
-              </div>
-
-              <div class="text-[10px] uppercase font-bold tracking-widest text-[#FF003C] mb-2">Шифр: 122041200057-0</div>
-              <h4 class="text-lg font-bold text-white mb-3 shrink-0">Получение и комплексное исследование высокопрочных функциональных 2D наноматериалов для формирования перспективных защитных слоев</h4>
-              
-              <div class="flex flex-wrap gap-2 mb-4 shrink-0">
-                <span class="px-2 py-1 rounded bg-white/5 text-[10px] text-gray-400">наноматериалы</span>
-                <span class="px-2 py-1 rounded bg-white/5 text-[10px] text-gray-400">защитные слои</span>
-                <span class="px-2 py-1 rounded bg-white/5 text-[10px] text-gray-400">МХЕНы</span>
-              </div>
-
-              <div class="text-sm text-gray-300 mb-6 flex-grow leading-relaxed">
-                В ходе ПНИЭР проведен синтез карбидов переходных металлов и разработаны лабораторные регламенты получения защитных покрытий...
-              </div>
-
-              <div class="grid grid-cols-2 gap-4 mb-6 pt-4 border-t border-white/5 shrink-0">
-                <div>
-                  <div class="text-[9px] text-gray-500 uppercase tracking-wider mb-1">Основание</div>
-                  <div class="text-xs font-bold text-white leading-tight">Грант РНФ</div>
-                </div>
-                <div>
-                  <div class="text-[9px] text-gray-500 uppercase tracking-wider mb-1">Тип документа</div>
-                  <div class="text-xs font-bold text-white leading-tight">Отчёт (промежуточный)</div>
-                </div>
-              </div>
-
-              <!-- Org Link -->
-              <a href="passport-misis.html" class="group/org flex items-center gap-3 mb-6 p-3 rounded-2xl bg-white/5 hover:bg-white/10 transition border border-white/5 hover:border-white/20 shrink-0">
-                <div class="w-10 h-10 rounded-lg bg-white/10 p-1 flex items-center justify-center shrink-0">
-                  <img src="https://colab.ws/storage/images/dRvP3lMJcjXP3GTJzfOCMGs4rAy4Aq1F3yWpmEzN.png" alt="МИСиС" class="w-full h-full object-contain">
-                </div>
-                <div class="flex-grow">
-                  <div class="text-[10px] text-gray-400 mb-0.5">Исполнитель НИОКР</div>
-                  <div class="text-xs font-bold text-white group-hover/org:text-[#FF003C] transition">НИТУ МИСиС</div>
-                </div>
-                <i class="ph ph-caret-right text-gray-500 group-hover/org:text-[#FF003C] transition"></i>
-              </a>
-
-              <!-- CTA -->
-              <div class="mt-auto shrink-0">
-                <button onclick="openRequestModal('Связаться с НИТУ МИСиС — Наноматериалы для защитных слоёв')" class="w-full py-2.5 bg-[#FF003C]/10 text-[#FF003C] hover:bg-[#FF003C] hover:text-white text-xs font-bold uppercase tracking-widest rounded-xl transition duration-300 border border-[#FF003C]/20 hover:border-[#FF003C]">
-                  Связаться с Исполнителем
-                </button>
-              </div>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="glass border border-white/5 rounded-3xl p-6 relative overflow-hidden group hover:border-red-500/30 transition duration-500 flex flex-col h-full">
-              <div class="absolute inset-0 bg-gradient-to-br from-red-500/0 via-red-500/0 to-red-500/10 opacity-0 group-hover:opacity-100 transition duration-700 pointer-events-none"></div>
-              
-              <div class="flex justify-between items-start mb-4">
-                <div class="text-[10px] uppercase font-bold tracking-widest text-zinc-500">Проект НИОКР</div>
-                <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-yellow-500/10 border border-yellow-500/20">
-                  <div class="w-1.5 h-1.5 rounded-full bg-yellow-400"></div>
-                  <span class="text-[10px] font-bold text-yellow-400">Match 72%</span>
-                </div>
-              </div>
-
-              <div class="text-[10px] uppercase font-bold tracking-widest text-[#FF003C] mb-2">Шифр: 121021400030-8</div>
-              <h4 class="text-lg font-bold text-white mb-3 shrink-0">Модификация поверхности жаропрочных титановых сплавов локальной электронно-лучевой обработкой для нужд тяжелой промышленности</h4>
-              
-              <div class="flex flex-wrap gap-2 mb-4 shrink-0">
-                <span class="px-2 py-1 rounded bg-white/5 text-[10px] text-gray-400">металлургия</span>
-                <span class="px-2 py-1 rounded bg-white/5 text-[10px] text-gray-400">титан</span>
-              </div>
-
-              <div class="text-sm text-gray-300 mb-6 flex-grow leading-relaxed">
-                Показано принципиальное формирование микрокристаллической структуры в поверхностном слое сплава, повышающей усталостную прочность узлов на 40% (данные отчета РИД).
-              </div>
-
-              <div class="grid grid-cols-2 gap-4 mb-6 pt-4 border-t border-white/5 shrink-0">
-                <div>
-                  <div class="text-[9px] text-gray-500 uppercase tracking-wider mb-1">Основание</div>
-                  <div class="text-xs font-bold text-white leading-tight">Государственное задание</div>
-                </div>
-                <div>
-                  <div class="text-[9px] text-gray-500 uppercase tracking-wider mb-1">Тип документа</div>
-                  <div class="text-xs font-bold text-white leading-tight">РК (Рег. карта)</div>
-                </div>
-              </div>
-
-              <!-- Org Link -->
-              <a href="passport-bauman.html" class="group/org flex items-center gap-3 mb-6 p-3 rounded-2xl bg-white/5 hover:bg-white/10 transition border border-white/5 hover:border-white/20 shrink-0">
-                <div class="w-10 h-10 rounded-lg bg-white/10 p-1 flex items-center justify-center shrink-0">
-                  <img src="https://colab.ws/storage/images/fejPliZaU4fSt6bWTThCdvdqR7g5VxSC5XWwHoaq.png" alt="Бауманка" class="w-full h-full object-contain">
-                </div>
-                <div class="flex-grow">
-                  <div class="text-[10px] text-gray-400 mb-0.5">Исполнитель НИОКР</div>
-                  <div class="text-xs font-bold text-white group-hover/org:text-[#FF003C] transition">МГТУ им. Н.Э. Баумана</div>
-                </div>
-                <i class="ph ph-caret-right text-gray-500 group-hover/org:text-[#FF003C] transition"></i>
-              </a>
-
-              <!-- CTA -->
-              <div class="mt-auto shrink-0">
-                <button onclick="openRequestModal('Связаться с МГТУ Баумана — Модификация поверхности титановых сплавов')" class="w-full py-2.5 bg-[#FF003C]/10 text-[#FF003C] hover:bg-[#FF003C] hover:text-white text-xs font-bold uppercase tracking-widest rounded-xl transition duration-300 border border-[#FF003C]/20 hover:border-[#FF003C]">
-                  Связаться с Исполнителем
-                </button>
-              </div>
-            </div>
-
-          </div>
-        </section>
-
-        <!-- Spacer for extra breathing room specifically between Projects and Organizations -->
-        <div class="h-16 md:h-24 w-full"></div>
-
         <!-- Recommended Organizations Block -->
         <section id="organizations-container">
           <div class="flex flex-col md:flex-row md:items-center items-start gap-2 md:gap-3 mb-8">
-            <h3 class="text-xl md:text-3xl font-black uppercase italic tracking-tight">Рекомендуемые центры и лаборатории</h3>
-            <span class="px-2 py-1 rounded bg-purple-500/10 text-purple-400 text-xs font-bold shrink-0">Готовы к НИОКР</span>
+            <h3 class="text-xl md:text-3xl font-black uppercase italic tracking-tight">Рекомендуемые организации</h3>
+            <span class="px-2 py-1 rounded bg-purple-500/10 text-purple-400 text-xs font-bold shrink-0">По результатам ИИ-анализа</span>
           </div>
-
-          <div id="organizations-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            <!-- Org 1 -->
-            <div class="glass border border-white/5 rounded-3xl p-6 relative group hover:border-purple-500/30 transition duration-500 flex items-start gap-4">
-              <div class="w-16 h-16 bg-white/10 rounded-xl p-2 shrink-0 flex items-center justify-center">
-                <img src="https://colab.ws/storage/images/5i4jfz1ZRKSKbVsRyLakCM5odPoTNafBGh8Cwxzf.png" alt="МГУ" class="w-full h-full object-contain">
-              </div>
-              <div>
-                <h4 class="text-lg font-bold text-white mb-1">МГУ им. Ломоносова</h4>
-                <div class="text-[10px] text-gray-400 mb-3">Лаборатория электрохимических процессов</div>
-                <div class="flex items-center gap-2">
-                  <span class="px-2 py-1 rounded bg-white/5 text-[10px] font-bold text-gray-300">12 проектов</span>
-                  <span class="px-2 py-1 rounded bg-white/5 text-[10px] font-bold text-gray-300">Оборудование <i class="ph-fill ph-check-circle text-green-500 ml-1"></i></span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Org 2 -->
-            <div class="glass border border-white/5 rounded-3xl p-6 relative group hover:border-purple-500/30 transition duration-500 flex items-start gap-4">
-              <div class="w-16 h-16 bg-white/10 rounded-xl p-2 shrink-0 flex items-center justify-center">
-                <img src="https://colab.ws/storage/images/dRvP3lMJcjXP3GTJzfOCMGs4rAy4Aq1F3yWpmEzN.png" alt="МИСиС" class="w-full h-full object-contain">
-              </div>
-              <div>
-                <h4 class="text-lg font-bold text-white mb-1">НИТУ МИСиС</h4>
-                <div class="text-[10px] text-gray-400 mb-3">Лаборатория наноматериалов</div>
-                <div class="flex items-center gap-2">
-                  <span class="px-2 py-1 rounded bg-white/5 text-[10px] font-bold text-gray-300">8 проектов</span>
-                  <span class="px-2 py-1 rounded bg-white/5 text-[10px] font-bold text-gray-300">Оборудование <i class="ph-fill ph-check-circle text-green-500 ml-1"></i></span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Org 3 -->
-            <div class="glass border border-white/5 rounded-3xl p-6 relative group hover:border-purple-500/30 transition duration-500 flex items-start gap-4">
-              <div class="w-16 h-16 bg-white/10 rounded-xl p-2 shrink-0 flex items-center justify-center">
-                <img src="https://colab.ws/storage/images/fejPliZaU4fSt6bWTThCdvdqR7g5VxSC5XWwHoaq.png" alt="Бауманка" class="w-full h-full object-contain">
-              </div>
-              <div>
-                <h4 class="text-lg font-bold text-white mb-1">МГТУ им. Баумана</h4>
-                <div class="text-[10px] text-gray-400 mb-3">НИИ Специальных материалов</div>
-                <div class="flex items-center gap-2">
-                  <span class="px-2 py-1 rounded bg-white/5 text-[10px] font-bold text-gray-300">4 проекта</span>
-                  <span class="px-2 py-1 rounded bg-white/5 text-[10px] font-bold text-gray-300">Оборудование <i class="ph-fill ph-check-circle text-green-500 ml-1"></i></span>
-                </div>
-              </div>
-            </div>
-          </div>
+          <div id="organizations-grid" class="flex flex-col gap-6"></div>
         </section>
 
         <!-- Recommended Experts Block -->
@@ -663,25 +428,16 @@
           terminalContainer.appendChild(p);
         }
 
-        // ── Projects ──
-        const projectsGrid = document.getElementById('projects-grid');
-        if (projectsGrid && data.projects && data.projects.length) {
+        // ── Projects (store for modals only — no grid render) ──
+        if (data.projects && data.projects.length) {
           _allProjects = data.projects;
-          projectsGrid.innerHTML = data.projects.map((p, i) => projectCard(p, i)).join('');
-          // Update toggle button text
-          const toggleBtn = document.getElementById('toggle-projects-btn');
-          if (toggleBtn && data.projects.length > 6) {
-            toggleBtn.innerHTML = `Показать ещё ${data.projects.length - 6} проектов ↓`;
-            toggleBtn.classList.remove('hidden');
-          } else if (toggleBtn) {
-            toggleBtn.classList.add('hidden');
-          }
         }
 
-        // ── Organizations ──
+        // ── Organizations (org-centric cards) ──
         const orgsGrid = document.getElementById('organizations-grid');
         if (orgsGrid && data.organizations && data.organizations.length) {
-          orgsGrid.innerHTML = data.organizations.map(o => orgCard(o)).join('');
+          window._orgCardsData = data.organizations;
+          orgsGrid.innerHTML = data.organizations.map((o, i) => orgCardV2(o, i)).join('');
         }
 
         // ── Experts ──
@@ -766,31 +522,132 @@
           </div>`;
       }
 
-      function orgCard(o) {
-        const orgUrl = o.slug ? `passport-${o.slug}.html` : '#';
-        const matchInfo = [];
-        if (o.matched_projects) matchInfo.push(`${o.matched_projects} проектов`);
-        if (o.matched_rids)     matchInfo.push(`${o.matched_rids} РИД`);
-        const matchBadge = matchInfo.length
-          ? `<span class="px-2 py-1 rounded bg-purple-500/10 text-[10px] font-bold text-purple-300">${matchInfo.join(' + ')}</span>`
-          : '';
+      function orgCardV2(o, index) {
+        const orgUrl = o.passport_url || (o.slug ? `passport-${o.slug}.html` : '#');
+        const budgetFmt = o.total_matched_budget >= 1e6
+          ? `₽${(o.total_matched_budget/1e6).toFixed(1)} млн`
+          : o.total_matched_budget > 0 ? `₽${(o.total_matched_budget/1e3).toFixed(0)} тыс.` : '';
+        const relevancePct = Math.min(99, Math.round(o.relevance_score * 100 / (o.relevance_score + 1) + 50));
+
+        // Metrics chips
+        const metrics = [];
+        if (o.matched_projects) metrics.push(`${o.matched_projects} проектов`);
+        if (o.matched_rids)     metrics.push(`${o.matched_rids} РИД`);
+        if (budgetFmt)          metrics.push(`бюджет ${budgetFmt}`);
+
+        // Projects accordion content
+        const projectItems = (o.top_projects || []).map((p, pi) => {
+          const pBudget = p.budget_rub >= 1e6 ? `₽${(p.budget_rub/1e6).toFixed(1)} млн` : '';
+          return `
+            <div class="flex items-start gap-3 p-3 rounded-xl bg-white/3 border border-white/5 hover:bg-white/5 transition cursor-pointer" onclick="openProjectModalFromOrg(${index}, ${pi})">
+              <div class="shrink-0 w-8 h-8 rounded-lg bg-[#FF003C]/10 flex items-center justify-center">
+                <span class="text-[10px] font-bold text-[#FF003C]">${p.match_percentage}%</span>
+              </div>
+              <div class="min-w-0 flex-1">
+                <div class="text-xs font-bold text-white mb-0.5 leading-snug">${p.title}</div>
+                <div class="flex items-center gap-2 text-[10px] text-gray-500">
+                  ${p.year ? `<span>${p.year}</span>` : ''}
+                  ${pBudget ? `<span>· ${pBudget}</span>` : ''}
+                  ${p.report_type ? `<span>· ${p.report_type}</span>` : ''}
+                </div>
+              </div>
+              <i class="ph ph-caret-right text-gray-600 shrink-0 mt-1"></i>
+            </div>`;
+        }).join('');
+
+        const hasProjects = (o.top_projects || []).length > 0;
+        const escapedOrgName = (o.org_name || '').replace(/'/g, '');
+        const escapedQuery = (query || '').replace(/'/g, '');
+        const prefillMsg = `Здравствуйте! Интересует сотрудничество по теме «${escapedQuery}». Нашёл вашу организацию через платформу МОСНАУКА.`;
 
         return `
-          <div class="glass border border-white/5 rounded-3xl p-6 relative group hover:border-purple-500/30 transition duration-500 flex items-start gap-4">
-            <div class="w-16 h-16 bg-white/10 rounded-xl p-2 shrink-0 flex items-center justify-center">
-              ${o.logo ? `<img src="${o.logo}" alt="${o.org_name}" class="w-full h-full object-contain">` : `<i class="ph ph-buildings text-2xl text-gray-500"></i>`}
-            </div>
-            <div class="min-w-0">
-              <a href="${orgUrl}" class="hover:text-purple-300 transition">
-                <h4 class="text-base font-bold text-white mb-1 leading-tight">${o.org_name}</h4>
-              </a>
-              <div class="text-[10px] text-gray-400 mb-3 line-clamp-1">${o.org_name_full || ''}</div>
-              <div class="flex items-center flex-wrap gap-2">
-                <span class="px-2 py-1 rounded bg-white/5 text-[10px] font-bold text-gray-300">${o.projects_count} проектов в базе</span>
-                ${matchBadge}
+          <div class="glass border border-white/5 rounded-3xl p-6 md:p-8 relative group hover:border-purple-500/20 transition duration-500">
+            <!-- Gradient accent -->
+            <div class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-purple-600 via-pink-500 to-red-500 rounded-t-3xl opacity-60"></div>
+
+            <!-- Header: logo + name + badge -->
+            <div class="flex items-start gap-4 mb-5">
+              <div class="w-14 h-14 md:w-16 md:h-16 bg-white/10 rounded-xl p-2 shrink-0 flex items-center justify-center">
+                ${o.logo ? `<img src="${o.logo}" alt="${o.org_name}" class="w-full h-full object-contain">` : `<i class="ph ph-buildings text-2xl text-gray-500"></i>`}
+              </div>
+              <div class="flex-1 min-w-0">
+                <a href="${orgUrl}" class="hover:text-purple-300 transition">
+                  <h4 class="text-lg md:text-xl font-bold text-white mb-0.5 leading-tight">${o.org_name}</h4>
+                </a>
+                <div class="text-[10px] text-gray-500 mb-2 line-clamp-1">${o.org_name_full || ''}</div>
+                <!-- Metrics -->
+                <div class="flex items-center flex-wrap gap-1.5">
+                  ${metrics.map(m => `<span class="px-2 py-0.5 rounded-full bg-white/5 text-[10px] font-bold text-gray-300 border border-white/5">${m}</span>`).join('')}
+                </div>
               </div>
             </div>
+
+            <!-- AI Reasoning -->
+            ${o.ai_reasoning ? `
+            <div class="mb-5 p-4 rounded-2xl bg-gradient-to-br from-purple-500/5 to-pink-500/5 border border-purple-500/10">
+              <div class="flex items-center gap-2 mb-2">
+                <i class="ph ph-sparkle text-purple-400 text-sm"></i>
+                <span class="text-[9px] uppercase font-bold tracking-widest text-purple-400">ИИ-анализ компетенций</span>
+              </div>
+              <p class="text-sm text-gray-200 leading-relaxed">${o.ai_reasoning}</p>
+            </div>` : ''}
+
+            <!-- Projects Accordion -->
+            ${hasProjects ? `
+            <div class="mb-5">
+              <button onclick="toggleOrgProjects(${index})" class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-gray-400 hover:text-white transition mb-3" id="org-projects-toggle-${index}">
+                <i class="ph ph-caret-down text-sm transition-transform" id="org-projects-icon-${index}"></i>
+                Показать ${o.top_projects.length} проектов
+              </button>
+              <div id="org-projects-list-${index}" class="hidden space-y-2">
+                ${projectItems}
+              </div>
+            </div>` : ''}
+
+            <!-- CTA Row -->
+            <div class="flex gap-3 pt-4 border-t border-white/5">
+              <a href="${orgUrl}" class="flex-1 py-2.5 bg-white/5 hover:bg-white/10 text-xs font-bold uppercase tracking-wider rounded-xl transition border border-white/10 text-center block text-gray-200">
+                Паспорт ↗
+              </a>
+              <button onclick="openRequestModal('Запрос в ${escapedOrgName} по теме: ${escapedQuery}', '${prefillMsg.replace(/'/g, "\\'")}')" class="flex-1 py-2.5 bg-[#FF003C]/10 text-[#FF003C] hover:bg-[#FF003C] hover:text-white text-xs font-bold uppercase tracking-wider rounded-xl transition border border-[#FF003C]/20 hover:border-[#FF003C] text-center">
+                Направить запрос
+              </button>
+            </div>
           </div>`;
+      }
+
+      // Toggle projects inside org card
+      function toggleOrgProjects(index) {
+        const list = document.getElementById('org-projects-list-' + index);
+        const icon = document.getElementById('org-projects-icon-' + index);
+        const btn = document.getElementById('org-projects-toggle-' + index);
+        if (!list) return;
+        const isHidden = list.classList.contains('hidden');
+        list.classList.toggle('hidden');
+        if (icon) icon.style.transform = isHidden ? 'rotate(180deg)' : '';
+        if (btn) {
+          const count = list.children.length;
+          btn.innerHTML = isHidden
+            ? `<i class="ph ph-caret-down text-sm" style="transform:rotate(180deg)"></i> Скрыть проекты`
+            : `<i class="ph ph-caret-down text-sm"></i> Показать ${count} проектов`;
+        }
+      }
+
+      // Open project modal from org card (using _allProjects data)
+      function openProjectModalFromOrg(orgIndex, projIndex) {
+        // Find matching project in _allProjects by title
+        const orgData = window._orgCardsData && window._orgCardsData[orgIndex];
+        if (!orgData || !orgData.top_projects) return;
+        const proj = orgData.top_projects[projIndex];
+        if (!proj) return;
+        // Find in _allProjects by reg_number or title match
+        const matchIdx = _allProjects.findIndex(p =>
+          (proj.reg_number && p.reg_number === proj.reg_number) ||
+          p.title === proj.title
+        );
+        if (matchIdx >= 0) {
+          openProjectModal(matchIdx);
+        }
       }
 
       function expertCard(e) {
@@ -1038,28 +895,7 @@
 
       document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
-      // ── Top-20 toggle ──
-      function toggleAllProjects() {
-        const grid = document.getElementById('projects-grid');
-        const btn = document.getElementById('toggle-projects-btn');
-        const cards = grid.querySelectorAll('.project-card-item');
-        const isExpanded = btn.dataset.expanded === 'true';
 
-        cards.forEach((card, i) => {
-          if (i >= 6) {
-            card.classList.toggle('hidden', isExpanded);
-          }
-        });
-
-        if (isExpanded) {
-          btn.innerHTML = `Показать ещё ${Math.max(0, cards.length - 6)} проектов ↓`;
-          btn.dataset.expanded = 'false';
-          document.getElementById('projects-container').scrollIntoView({behavior: 'smooth'});
-        } else {
-          btn.innerHTML = 'Скрыть ↑';
-          btn.dataset.expanded = 'true';
-        }
-      }
     </script>
     <!-- Shared contact modal -->
     <script src="contact-modal.js"></script>
