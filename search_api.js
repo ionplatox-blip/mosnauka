@@ -124,6 +124,9 @@ function _normalize(data) {
       colab_url: e.colab_url || '',
     })),
 
+    // ── Квалификация льготы ×2 (Перечень №988) ──
+    tax_qualification: data.tax_qualification || null,
+
     // Отладка (для dev tools)
     _debug: data._debug || {},
   };

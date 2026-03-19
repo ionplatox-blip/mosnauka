@@ -1509,7 +1509,7 @@
 
             try {
                 const API_BASE = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
-                    ? 'http://127.0.0.1:5000' : '';
+                    ? 'http://127.0.0.1:5000' : 'https://mosnauka-backendmosnauka.onrender.com';
                 const resp = await fetch(`${API_BASE}/api/qualify-988`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
