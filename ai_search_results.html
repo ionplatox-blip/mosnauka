@@ -79,6 +79,41 @@
       }
 
       /* Grid BG from homepage */
+      /* Tab chips */
+      .tab-chip {
+        padding: 8px 18px;
+        border-radius: 9999px;
+        font-size: 12px;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        border: 1px solid rgba(255,255,255,0.08);
+        background: rgba(255,255,255,0.03);
+        color: #888;
+        cursor: pointer;
+        transition: all 0.25s;
+        white-space: nowrap;
+      }
+      .tab-chip:hover { background: rgba(255,255,255,0.06); color: #ccc; }
+      .tab-chip.active {
+        background: rgba(147, 51, 234, 0.15);
+        border-color: rgba(147, 51, 234, 0.4);
+        color: #c084fc;
+        box-shadow: 0 0 20px rgba(147, 51, 234, 0.1);
+      }
+      .tab-chip .chip-count {
+        display: inline-block;
+        margin-left: 5px;
+        padding: 1px 6px;
+        border-radius: 6px;
+        background: rgba(255,255,255,0.06);
+        font-size: 10px;
+        font-weight: 700;
+      }
+      .tab-chip.active .chip-count {
+        background: rgba(147, 51, 234, 0.25);
+      }
+
       .grid-pattern {
         background-size: 50px 50px;
         background-image: linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
@@ -278,13 +313,48 @@
           </div>
         </section>
 
-        <!-- Recommended Organizations Block -->
-        <section id="organizations-container">
+        <!-- ═══════ RESULTS TAB CHIPS ═══════ -->
+        <div class="flex items-center gap-2 flex-wrap mb-10">
+          <button class="tab-chip active" onclick="switchResultsTab('orgs')" id="tab-btn-orgs">
+            🏛️ Организации <span class="chip-count" id="tab-count-orgs"></span>
+          </button>
+          <button class="tab-chip" onclick="switchResultsTab('projects')" id="tab-btn-projects">
+            📋 Проекты <span class="chip-count" id="tab-count-projects"></span>
+          </button>
+          <button class="tab-chip" onclick="switchResultsTab('rids')" id="tab-btn-rids">
+            🧬 РИД <span class="chip-count" id="tab-count-rids"></span>
+          </button>
+        </div>
+
+        <!-- ── TAB: Organizations (default) ── -->
+        <section id="tab-orgs">
           <div class="flex flex-col md:flex-row md:items-center items-start gap-2 md:gap-3 mb-8">
             <h3 class="text-xl md:text-3xl font-black uppercase italic tracking-tight">Рекомендуемые организации</h3>
             <span class="px-2 py-1 rounded bg-purple-500/10 text-purple-400 text-xs font-bold shrink-0">По результатам ИИ-анализа</span>
           </div>
           <div id="organizations-grid" class="flex flex-col gap-6"></div>
+        </section>
+
+        <!-- ── TAB: Projects ── -->
+        <section id="tab-projects" class="hidden">
+          <div class="flex flex-col md:flex-row md:items-center items-start gap-2 md:gap-3 mb-8">
+            <h3 class="text-xl md:text-3xl font-black uppercase italic tracking-tight">Релевантные проекты НИОКР</h3>
+            <span class="px-2 py-1 rounded bg-[#FF003C]/10 text-[#FF003C] text-xs font-bold shrink-0">По результатам поиска</span>
+          </div>
+          <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
+          <button id="projects-show-more" class="hidden mt-6 w-full py-3 rounded-xl bg-white/5 hover:bg-white/10 text-xs font-bold uppercase tracking-wider transition border border-white/10 text-gray-400"
+                  onclick="showMoreProjects()">
+            Показать ещё
+          </button>
+        </section>
+
+        <!-- ── TAB: RID ── -->
+        <section id="tab-rids" class="hidden">
+          <div class="flex flex-col md:flex-row md:items-center items-start gap-2 md:gap-3 mb-8">
+            <h3 class="text-xl md:text-3xl font-black uppercase italic tracking-tight">Результаты интеллектуальной деятельности</h3>
+            <span class="px-2 py-1 rounded bg-teal-500/10 text-teal-400 text-xs font-bold shrink-0">РИД по организациям</span>
+          </div>
+          <div id="rids-grid" class="flex flex-col gap-4"></div>
         </section>
 
         <!-- Recommended Experts Block -->
@@ -428,9 +498,10 @@
           terminalContainer.appendChild(p);
         }
 
-        // ── Projects (store for modals only — no grid render) ──
+        // ── Projects (store + render grid) ──
         if (data.projects && data.projects.length) {
           _allProjects = data.projects;
+          renderProjectsGrid();
         }
 
         // ── Organizations (org-centric cards) ──
@@ -438,14 +509,23 @@
         if (orgsGrid && data.organizations && data.organizations.length) {
           window._orgCardsData = data.organizations;
           orgsGrid.innerHTML = data.organizations.map((o, i) => orgCardV2(o, i)).join('');
+          renderRidsTab(data.organizations);
         }
+
+        // ── Tab counts ──
+        const cOrgs = document.getElementById('tab-count-orgs');
+        const cProj = document.getElementById('tab-count-projects');
+        const cRids = document.getElementById('tab-count-rids');
+        if (cOrgs) cOrgs.textContent = (data.organizations || []).length || '';
+        if (cProj) cProj.textContent = (data.projects || []).length || '';
+        const totalRids = (data.organizations || []).reduce((s, o) => s + (o.matched_rids || 0), 0);
+        if (cRids) cRids.textContent = totalRids || '';
 
         // ── Experts ──
         const expertsGrid = document.getElementById('experts-grid');
         if (expertsGrid && data.experts && data.experts.length) {
           expertsGrid.innerHTML = data.experts.map(e => expertCard(e)).join('');
         } else if (expertsGrid && (!data.experts || !data.experts.length)) {
-          // Скрываем секцию экспертов если нет данных
           const section = expertsGrid.closest('section');
           if (section) section.style.display = 'none';
         }
@@ -938,6 +1018,75 @@
       }
 
       document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+      // ── Tab switching ──
+      function switchResultsTab(tabId) {
+        ['orgs', 'projects', 'rids'].forEach(id => {
+          const section = document.getElementById('tab-' + id);
+          const btn = document.getElementById('tab-btn-' + id);
+          if (section) section.classList.toggle('hidden', id !== tabId);
+          if (btn) btn.classList.toggle('active', id === tabId);
+        });
+      }
+
+      // ── Projects grid ──
+      let _projectsShown = 6;
+      function renderProjectsGrid() {
+        const grid = document.getElementById('projects-grid');
+        const btn = document.getElementById('projects-show-more');
+        if (!grid) return;
+        grid.innerHTML = _allProjects.slice(0, _projectsShown).map((p, i) => projectCard(p, i)).join('');
+        if (btn) {
+          if (_allProjects.length > _projectsShown) {
+            btn.classList.remove('hidden');
+            btn.textContent = `Показать ещё (${_allProjects.length - _projectsShown})`;
+          } else {
+            btn.classList.add('hidden');
+          }
+        }
+      }
+      function showMoreProjects() {
+        _projectsShown += 6;
+        renderProjectsGrid();
+      }
+
+      // ── RID tab ──
+      function renderRidsTab(organizations) {
+        const grid = document.getElementById('rids-grid');
+        if (!grid) return;
+        const orgsWithRids = organizations.filter(o => o.matched_rids > 0);
+        if (!orgsWithRids.length) {
+          grid.innerHTML = `
+            <div class="glass border border-white/5 rounded-2xl p-6 text-center">
+              <i class="ph ph-flask text-3xl text-gray-600 mb-3 block"></i>
+              <p class="text-sm text-gray-500">По данному запросу РИД не найдены</p>
+            </div>`;
+          return;
+        }
+        grid.innerHTML = orgsWithRids.map(o => {
+          const orgUrl = o.passport_url || (o.slug ? `passport-${o.slug}.html` : '#');
+          const escapedOrgName = (o.org_name || '').replace(/'/g, '');
+          const escapedQuery = (query || '').replace(/'/g, '');
+          return `
+            <div class="glass border border-white/5 rounded-2xl p-5 flex items-center gap-4 hover:border-teal-500/20 transition">
+              <div class="w-12 h-12 bg-white/10 rounded-xl p-2 shrink-0 flex items-center justify-center">
+                ${o.logo ? `<img src="${o.logo}" alt="" class="w-full h-full object-contain">` : '<i class="ph ph-buildings text-xl text-gray-500"></i>'}
+              </div>
+              <div class="flex-1 min-w-0">
+                <a href="${orgUrl}" class="text-sm font-bold text-white hover:text-teal-300 transition">${o.org_name}</a>
+                <div class="flex items-center gap-3 mt-1">
+                  <span class="flex items-center gap-1 text-xs text-teal-400 font-bold">
+                    <i class="ph ph-atom text-sm"></i> ${o.matched_rids} РИД
+                  </span>
+                  ${o.matched_projects ? `<span class="text-xs text-gray-500">${o.matched_projects} проектов</span>` : ''}
+                </div>
+              </div>
+              <a href="${orgUrl}" class="shrink-0 px-4 py-2 bg-white/5 hover:bg-white/10 text-[10px] font-bold uppercase tracking-wider rounded-xl transition border border-white/10 text-gray-300">
+                Смотреть ↗
+              </a>
+            </div>`;
+        }).join('');
+      }
 
 
     </script>
