@@ -14,7 +14,7 @@ const IS_LOCAL = window.location.hostname === 'localhost' ||
 
 const BACKEND_URL = IS_LOCAL
   ? 'http://localhost:5001'
-  : 'https://mosnauka-backend.onrender.com';
+  : 'https://mosnauka-backendmosnauka.onrender.com';
 
 const API_ENDPOINT = `${BACKEND_URL}/api/ai-search`;
 const REQUEST_TIMEOUT_MS = 60000; // 60 сек (Render Free: cold start + загрузка embeddings)
