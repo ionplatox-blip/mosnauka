@@ -333,13 +333,16 @@
                 <span class="text-[9px] uppercase font-bold tracking-widest text-gray-600">Популярные запросы</span>
               </div>
               <div class="flex flex-wrap gap-1.5">
-                <button onclick="fillAndSearch('Приводные модули для беспилотных систем')" class="quick-tag px-2.5 py-1 rounded-full text-[10px] font-semibold text-gray-500 hover:text-white hover:bg-white/10 transition cursor-pointer">🚁 приводные модули для БПЛА</button>
-                <button onclick="fillAndSearch('Роботы для складской логистики')" class="quick-tag px-2.5 py-1 rounded-full text-[10px] font-semibold text-gray-500 hover:text-white hover:bg-white/10 transition cursor-pointer">🤖 роботы для складов</button>
-                <button onclick="fillAndSearch('Оптическое покрытие для линз')" class="quick-tag px-2.5 py-1 rounded-full text-[10px] font-semibold text-gray-500 hover:text-white hover:bg-white/10 transition cursor-pointer">🔬 оптическое покрытие</button>
-                <button onclick="fillAndSearch('Литий-ионные аккумуляторы')" class="quick-tag px-2.5 py-1 rounded-full text-[10px] font-semibold text-gray-500 hover:text-white hover:bg-white/10 transition cursor-pointer">🔋 литий-ионные батареи</button>
-                <button onclick="fillAndSearch('Импортозамещение полимерных материалов')" class="quick-tag px-2.5 py-1 rounded-full text-[10px] font-semibold text-gray-500 hover:text-white hover:bg-white/10 transition cursor-pointer">🧪 импортозамещение полимеров</button>
-                <button onclick="fillAndSearch('Машинное обучение для предсказания свойств материалов')" class="quick-tag px-2.5 py-1 rounded-full text-[10px] font-semibold text-gray-500 hover:text-white hover:bg-white/10 transition cursor-pointer">🧠 ML для материалов</button>
-                <button onclick="fillAndSearch('Нанопокрытия для защиты от коррозии')" class="quick-tag px-2.5 py-1 rounded-full text-[10px] font-semibold text-gray-500 hover:text-white hover:bg-white/10 transition cursor-pointer">🛡️ антикоррозия</button>
+                <button onclick="fillAndSearch('разработка нанокомпозитных защитных покрытий для металлических конструкций')" class="quick-tag px-2.5 py-1 rounded-full text-[10px] font-semibold text-gray-500 hover:text-white hover:bg-white/10 transition cursor-pointer">🛡️ нанопокрытия от коррозии</button>
+                <button onclick="fillAndSearch('биосовместимые керамические импланты для регенеративной медицины')" class="quick-tag px-2.5 py-1 rounded-full text-[10px] font-semibold text-gray-500 hover:text-white hover:bg-white/10 transition cursor-pointer">🏥 биоимпланты из керамики</button>
+                <button onclick="fillAndSearch('разработка катализаторов для водородных топливных элементов')" class="quick-tag px-2.5 py-1 rounded-full text-[10px] font-semibold text-gray-500 hover:text-white hover:bg-white/10 transition cursor-pointer">🔋 водородные топливные элементы</button>
+                <button onclick="fillAndSearch('полимерные композиционные материалы для строительства и инфраструктуры')" class="quick-tag px-2.5 py-1 rounded-full text-[10px] font-semibold text-gray-500 hover:text-white hover:bg-white/10 transition cursor-pointer">🏗️ полимерные композиты</button>
+                <button onclick="fillAndSearch('разработка сорбционных материалов для очистки воды от тяжёлых металлов')" class="quick-tag px-2.5 py-1 rounded-full text-[10px] font-semibold text-gray-500 hover:text-white hover:bg-white/10 transition cursor-pointer">🌿 очистка воды сорбентами</button>
+                <button onclick="fillAndSearch('нейросетевые алгоритмы для диагностики заболеваний по медицинским снимкам')" class="quick-tag px-2.5 py-1 rounded-full text-[10px] font-semibold text-gray-500 hover:text-white hover:bg-white/10 transition cursor-pointer">🤖 ИИ-диагностика</button>
+                <button onclick="fillAndSearch('фотонные сенсоры для обнаружения газов и экологического мониторинга')" class="quick-tag px-2.5 py-1 rounded-full text-[10px] font-semibold text-gray-500 hover:text-white hover:bg-white/10 transition cursor-pointer">🔬 фотонные сенсоры</button>
+                <button onclick="fillAndSearch('применение аддитивных технологий для производства деталей из металлических сплавов')" class="quick-tag px-2.5 py-1 rounded-full text-[10px] font-semibold text-gray-500 hover:text-white hover:bg-white/10 transition cursor-pointer">⚙️ 3D-печать металлов</button>
+                <button onclick="fillAndSearch('наночастицы для таргетной доставки лекарственных препаратов')" class="quick-tag px-2.5 py-1 rounded-full text-[10px] font-semibold text-gray-500 hover:text-white hover:bg-white/10 transition cursor-pointer">💊 доставка лекарств</button>
+                <button onclick="fillAndSearch('машинное обучение для предсказания свойств и дизайна новых материалов')" class="quick-tag px-2.5 py-1 rounded-full text-[10px] font-semibold text-gray-500 hover:text-white hover:bg-white/10 transition cursor-pointer">🧠 ML для материалов</button>
               </div>
             </div>
 
@@ -871,13 +874,13 @@
             <div class="absolute top-0 right-0 w-40 h-40 bg-purple-500/5 rounded-full blur-[60px] -mr-10 -mt-10"></div>
             <div class="relative z-10">
               <div class="text-[10px] uppercase tracking-widest font-bold text-gray-500 mb-4">Быстрый поиск</div>
-              <form action="experts.html" method="get" class="mb-6" onsubmit="this.action='experts.html#q=' + encodeURIComponent(this.q.value); return true;">
+              <div class="mb-6">
                 <div class="relative">
                   <i class="ph ph-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gray-500"></i>
-                  <input type="text" name="q" placeholder="Катализ, керамика, нейросети..."
+                  <input type="text" id="expertQuickSearch" placeholder="Катализ, керамика, нейросети..."
                     class="w-full pl-11 pr-4 py-3.5 rounded-xl bg-white/5 border border-white/10 text-sm text-white placeholder-gray-600 outline-none focus:border-purple-500/50 transition" />
                 </div>
-              </form>
+              </div>
               <div class="grid grid-cols-3 gap-2 mb-6">
                 <a href="experts.html" class="p-3 rounded-xl bg-white/[0.03] border border-white/[0.06] text-center hover:bg-white/[0.06] transition">
                   <div class="text-lg font-black text-white">958</div>
@@ -892,9 +895,34 @@
                   <div class="text-[10px] text-gray-500">публикаций</div>
                 </a>
               </div>
-              <a href="experts.html" class="block text-center py-3.5 rounded-xl bg-purple-600 text-sm font-black uppercase tracking-wider hover:bg-purple-500 transition shadow-[0_0_30px_rgba(147,51,234,0.3)]">
+              <button id="expertSearchBtn" onclick="goExpertSearch()" class="w-full block text-center py-3.5 rounded-xl bg-purple-600 text-sm font-black uppercase tracking-wider hover:bg-purple-500 transition shadow-[0_0_30px_rgba(147,51,234,0.3)] cursor-pointer border-0">
                 <i class="ph ph-users mr-1"></i> Открыть базу экспертов
-              </a>
+              </button>
+              <script>
+                (function(){
+                  const inp = document.getElementById('expertQuickSearch');
+                  const btn = document.getElementById('expertSearchBtn');
+                  inp.addEventListener('input', function(){
+                    const q = inp.value.trim();
+                    if (q) {
+                      btn.innerHTML = '<i class="ph ph-magnifying-glass mr-1"></i> Найти эксперта';
+                    } else {
+                      btn.innerHTML = '<i class="ph ph-users mr-1"></i> Открыть базу экспертов';
+                    }
+                  });
+                  inp.addEventListener('keydown', function(e){
+                    if (e.key === 'Enter') { e.preventDefault(); goExpertSearch(); }
+                  });
+                })();
+                function goExpertSearch(){
+                  const q = document.getElementById('expertQuickSearch').value.trim();
+                  if (q) {
+                    window.location.href = 'experts.html?q=' + encodeURIComponent(q);
+                  } else {
+                    window.location.href = 'experts.html';
+                  }
+                }
+              </script>
             </div>
           </div>
         </div>

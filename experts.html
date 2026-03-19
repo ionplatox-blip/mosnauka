@@ -338,10 +338,14 @@
         return;
       }
 
-      // Check URL hash for pre-filled search
+      // Check URL for pre-filled search (?q= param or #q= hash)
+      const urlParams = new URLSearchParams(window.location.search);
+      const paramQ = urlParams.get('q') || '';
       const hash = window.location.hash;
-      if (hash && hash.startsWith('#q=')) {
-        searchInput.value = decodeURIComponent(hash.slice(3));
+      const hashQ = (hash && hash.startsWith('#q=')) ? decodeURIComponent(hash.slice(3)) : '';
+      const preQ = paramQ || hashQ;
+      if (preQ) {
+        searchInput.value = preQ;
       }
       searchExperts();
     })();

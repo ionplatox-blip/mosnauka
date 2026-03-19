@@ -677,12 +677,16 @@
                         <div class="mt-4">
                             <div class="text-[10px] uppercase tracking-[0.15em] text-gray-600 font-bold mb-2">Популярные запросы</div>
                             <div class="flex flex-wrap gap-2">
-                                <button onclick="fillQuery(this)" class="query-chip">Приводные модули для беспилотных систем</button>
-                                <button onclick="fillQuery(this)" class="query-chip">Нанопокрытия для защиты от коррозии</button>
-                                <button onclick="fillQuery(this)" class="query-chip">Разработка катализаторов для нефтехимии</button>
-                                <button onclick="fillQuery(this)" class="query-chip">ИИ в медицинской диагностике</button>
-                                <button onclick="fillQuery(this)" class="query-chip">Композитные материалы для авиации</button>
-                                <button onclick="fillQuery(this)" class="query-chip">Биоразлагаемая упаковка</button>
+                                <button onclick="fillQuery(this)" class="query-chip">Разработка нанокомпозитных защитных покрытий для металлических конструкций</button>
+                                <button onclick="fillQuery(this)" class="query-chip">Биосовместимые керамические импланты для регенеративной медицины</button>
+                                <button onclick="fillQuery(this)" class="query-chip">Разработка катализаторов для водородных топливных элементов</button>
+                                <button onclick="fillQuery(this)" class="query-chip">Полимерные композиционные материалы для строительства и инфраструктуры</button>
+                                <button onclick="fillQuery(this)" class="query-chip">Разработка сорбционных материалов для очистки воды от тяжёлых металлов</button>
+                                <button onclick="fillQuery(this)" class="query-chip">Нейросетевые алгоритмы для диагностики заболеваний по медицинским снимкам</button>
+                                <button onclick="fillQuery(this)" class="query-chip">Фотонные сенсоры для обнаружения газов и экологического мониторинга</button>
+                                <button onclick="fillQuery(this)" class="query-chip">Применение аддитивных технологий для производства деталей из металлических сплавов</button>
+                                <button onclick="fillQuery(this)" class="query-chip">Наночастицы для таргетной доставки лекарственных препаратов</button>
+                                <button onclick="fillQuery(this)" class="query-chip">Машинное обучение для предсказания свойств и дизайна новых материалов</button>
                             </div>
                         </div>
                     </div>
@@ -1465,49 +1469,46 @@
                     ? Math.round(org.top_projects.reduce((s, p) => s + (p.match_percentage || 0), 0) / org.top_projects.length)
                     : 0;
                 const budgetFmt = org.total_matched_budget >= 1e6
-                    ? `₽${(org.total_matched_budget / 1e6).toFixed(1)} млн` : '';
+                    ? `₽${(org.total_matched_budget / 1e6).toFixed(1)} млн`
+                    : org.total_matched_budget > 0 ? `₽${(org.total_matched_budget / 1e3).toFixed(0)} тыс.` : '';
                 const letter = (org.org_name || '?')[0].toUpperCase();
                 const avatarBg = AVATAR_COLORS[i % AVATAR_COLORS.length];
                 const passportLink = org.slug ? `passport-${org.slug}.html` : '#';
                 const orgNameSafe = (org.org_name || '').replace(/'/g, "\\'");
                 const reasoning = org.ai_reasoning || '';
 
+                // Metrics chips (same as search results)
+                const metrics = [];
+                if (org.matched_projects) metrics.push(`${org.matched_projects} проектов`);
+                if (org.matched_rids) metrics.push(`${org.matched_rids} РИД`);
+                if (budgetFmt) metrics.push(`бюджет ${budgetFmt}`);
+
                 return `
                     <div class="exec-card" onclick="selectExecutor(this, '${orgNameSafe}')" data-org="${org.slug || i}">
                         <div class="exec-check"><i class="ph-bold ph-check text-xs text-white"></i></div>
-                        <div class="flex items-center gap-3 mb-3">
+                        <div class="flex items-start gap-3 mb-3">
                             <div class="exec-avatar shrink-0" style="background: ${avatarBg}">
                                 ${org.logo ? `<img src="${org.logo}" class="w-full h-full object-contain rounded-xl" alt="">` : letter}
                             </div>
                             <div class="flex-1 min-w-0">
                                 <div class="exec-name truncate">${org.org_name || ''}</div>
-                                <div class="exec-type truncate">${org.org_name_full || ''}</div>
+                                <div class="exec-type truncate mb-1.5">${org.org_name_full || ''}</div>
+                                <div class="flex items-center flex-wrap gap-1.5">
+                                    ${metrics.map(m => `<span class="px-2 py-0.5 rounded-full bg-white/5 text-[10px] font-bold text-gray-300 border border-white/5">${m}</span>`).join('')}
+                                </div>
                             </div>
                             <div class="match-badge shrink-0">${avgMatch}%</div>
                         </div>
                         ${reasoning ? `
-                        <div class="mb-3 p-3 rounded-xl" style="background:rgba(255,0,60,0.03); border:1px solid rgba(255,0,60,0.08)">
-                            <div class="text-[9px] uppercase tracking-[0.12em] text-red-400/60 font-bold mb-1"><i class="ph ph-sparkle mr-0.5"></i>ИИ-анализ компетенций</div>
-                            <div class="text-[12px] text-gray-300 leading-relaxed">${reasoning}</div>
+                        <div class="mb-3 p-3.5 rounded-2xl" style="background:linear-gradient(135deg, rgba(168,85,247,0.05), rgba(236,72,153,0.05)); border:1px solid rgba(168,85,247,0.1)">
+                            <div class="flex items-center gap-2 mb-1.5">
+                                <i class="ph ph-sparkle text-purple-400 text-sm"></i>
+                                <span class="text-[9px] uppercase font-bold tracking-widest text-purple-400">ИИ-анализ компетенций</span>
+                            </div>
+                            <p class="text-sm text-gray-200 leading-relaxed">${reasoning}</p>
                         </div>
                         ` : ''}
-                        <div class="flex items-center justify-around mb-3 py-2.5 rounded-xl" style="background: rgba(255,255,255,0.02)">
-                            <div class="exec-metric">
-                                <div class="exec-metric-val">${org.matched_projects || 0}</div>
-                                <div class="exec-metric-label">Проектов</div>
-                            </div>
-                            <div style="width:1px; height:28px; background:rgba(255,255,255,0.06)"></div>
-                            <div class="exec-metric">
-                                <div class="exec-metric-val">${org.matched_rids || 0}</div>
-                                <div class="exec-metric-label">РИД</div>
-                            </div>
-                            <div style="width:1px; height:28px; background:rgba(255,255,255,0.06)"></div>
-                            <div class="exec-metric">
-                                <div class="exec-metric-val">${budgetFmt || '–'}</div>
-                                <div class="exec-metric-label">Бюджет</div>
-                            </div>
-                        </div>
-                        <div class="flex items-center justify-between">
+                        <div class="flex items-center justify-between pt-2 border-t border-white/5">
                             <a href="${passportLink}" target="_blank" class="exec-link" onclick="event.stopPropagation()">Карточка организации <i class="ph ph-arrow-right ml-0.5"></i></a>
                             <button class="exec-select-btn" onclick="event.stopPropagation(); selectExecutor(this.closest('.exec-card'), '${orgNameSafe}')">Выбрать</button>
                         </div>
