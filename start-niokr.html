@@ -1005,11 +1005,82 @@
                                 <i class="ph-bold ph-check text-3xl text-white"></i>
                             </div>
                             <div class="success-title">Заявка принята!</div>
-                            <div class="success-subtitle">Мы свяжемся с вами в течение 24 часов для обсуждения деталей</div>
-                            <div class="flex items-center justify-center gap-3">
-                                <a href="index_v2.html" class="success-btn success-btn-secondary"><i class="ph ph-house"></i> На главную</a>
-                                <a href="dashboard.html" class="success-btn success-btn-primary"><i class="ph ph-user-circle"></i> В личный кабинет</a>
+                            <div class="success-subtitle">Письмо-обращение сформировано и направлено исполнителю</div>
+                        </div>
+
+                        <!-- Letter Preview -->
+                        <div id="letter-preview" class="mt-4 rounded-2xl overflow-hidden" style="border:1px solid rgba(255,255,255,0.08)">
+                            <!-- Letter header bar -->
+                            <div class="flex items-center justify-between px-4 py-2" style="background:rgba(255,255,255,0.04); border-bottom: 1px solid rgba(255,255,255,0.06)">
+                                <div class="flex items-center gap-2">
+                                    <i class="ph ph-envelope text-red-400 text-sm"></i>
+                                    <span class="text-[10px] uppercase tracking-[0.15em] text-gray-500 font-bold">Письмо-обращение</span>
+                                </div>
+                                <div class="flex items-center gap-1.5">
+                                    <button onclick="printLetter()" class="px-3 py-1.5 rounded-lg text-[10px] font-bold text-gray-400 hover:text-white hover:bg-white/10 transition flex items-center gap-1">
+                                        <i class="ph ph-file-pdf"></i> PDF
+                                    </button>
+                                </div>
                             </div>
+
+                            <!-- The letter itself (white background for "paper" effect) -->
+                            <div id="letter-body" style="background: #ffffff; color: #1a1a1a; padding: 32px 28px; font-family: 'Inter', sans-serif; font-size: 13px; line-height: 1.7;">
+
+                                <!-- Letterhead -->
+                                <div style="display:flex; align-items:center; justify-content:space-between; border-bottom: 2px solid #FF003C; padding-bottom: 14px; margin-bottom: 20px;">
+                                    <div>
+                                        <div style="font-size:20px; font-weight:900; font-style:italic; letter-spacing:-0.03em; text-transform:uppercase;">МОС<span style="color:#FF003C">НАУКА</span></div>
+                                        <div style="font-size:9px; color:#999; text-transform:uppercase; letter-spacing:0.15em; margin-top:2px;">Платформа научно-промышленной кооперации</div>
+                                    </div>
+                                    <div style="text-align:right; font-size:10px; color:#888;">
+                                        <div id="letter-date"></div>
+                                        <div id="letter-ref" style="font-family:monospace; color:#bbb;"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Recipient -->
+                                <div style="margin-bottom:16px;">
+                                    <div style="font-size:10px; color:#999; text-transform:uppercase; letter-spacing:0.12em; margin-bottom:4px;">Кому</div>
+                                    <div id="letter-to" style="font-weight:700; font-size:14px;"></div>
+                                </div>
+
+                                <!-- Subject -->
+                                <div style="margin-bottom: 16px; padding: 10px 14px; background: #f8f8f8; border-left: 3px solid #FF003C; border-radius: 0 8px 8px 0;">
+                                    <div style="font-size:10px; color:#999; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:4px;">Тема обращения</div>
+                                    <div id="letter-subject" style="font-weight:600; color:#333;"></div>
+                                </div>
+
+                                <!-- Body text -->
+                                <div style="margin-bottom:20px; color:#444;">
+                                    <p>Уважаемые коллеги,</p>
+                                    <p style="margin-top:10px;">Платформа <b>МОСНАУКА</b> направляет вам запрос на научно-исследовательское сотрудничество от представителя бизнес-сообщества. Просим рассмотреть возможность выполнения НИОКР по указанной тематике.</p>
+                                    <p style="margin-top:10px;" id="letter-task-detail"></p>
+                                </div>
+
+                                <!-- Sender info -->
+                                <div style="padding: 12px 14px; background: #f2f2f2; border-radius: 8px; margin-bottom:20px;">
+                                    <div style="font-size:10px; color:#999; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:6px;">Контактные данные заказчика</div>
+                                    <div id="letter-sender" style="font-size:12px; color:#555;"></div>
+                                </div>
+
+                                <!-- Footer with seal -->
+                                <div style="display:flex; align-items:flex-end; justify-content:space-between; padding-top:12px; border-top: 1px solid #eee;">
+                                    <div style="font-size:10px; color:#bbb;">
+                                        <div>АНО «МОСНАУКА» · Москва</div>
+                                        <div>info@mosnauka.ru · mosnauka.ru</div>
+                                    </div>
+                                    <div style="width:56px; height:56px; border-radius:50%; border: 2px solid #FF003C; display:flex; align-items:center; justify-content:center; opacity:0.6;">
+                                        <div style="font-size:7px; font-weight:900; text-transform:uppercase; color:#FF003C; text-align:center; line-height:1.2;">МОС<br>НАУКА<br><span style="font-size:5px; color:#999;">2026</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Action buttons -->
+                        <div class="flex items-center justify-center gap-3 mt-5">
+                            <a href="index_v2.html" class="success-btn success-btn-secondary"><i class="ph ph-house"></i> На главную</a>
+                            <button onclick="printLetter()" class="success-btn success-btn-secondary"><i class="ph ph-file-pdf"></i> Скачать PDF</button>
+                            <a href="dashboard.html" class="success-btn success-btn-primary"><i class="ph ph-user-circle"></i> В кабинет</a>
                         </div>
                     </div>
                 </div>
@@ -1215,6 +1286,44 @@
                 l.classList.remove('active');
                 l.classList.add('completed');
             });
+
+            // ═══ Populate letter preview ═══
+            populateLetter(request);
+        }
+
+        function populateLetter(req) {
+            const d = new Date(req.date);
+            const months = ['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'];
+            const dateStr = d.getDate() + ' ' + months[d.getMonth()] + ' ' + d.getFullYear() + ' г.';
+
+            document.getElementById('letter-date').textContent = dateStr;
+            document.getElementById('letter-ref').textContent = '№ ' + req.id;
+            document.getElementById('letter-to').textContent = req.executor;
+            document.getElementById('letter-subject').textContent = 'Запрос на выполнение НИОКР';
+            document.getElementById('letter-task-detail').innerHTML =
+                '<b>Описание задачи:</b> ' + req.task;
+            document.getElementById('letter-sender').innerHTML = [
+                '<b>' + req.contact.name + '</b>',
+                req.contact.company,
+                '☎ ' + req.contact.phone,
+                '✉ ' + req.contact.email
+            ].join('<br>');
+        }
+
+        function printLetter() {
+            const letterHtml = document.getElementById('letter-body').innerHTML;
+            const w = window.open('', '_blank', 'width=800,height=1000');
+            w.document.write(`<!DOCTYPE html><html><head>
+                <meta charset="UTF-8">
+                <title>Письмо МОСНАУКА</title>
+                <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+                <style>
+                    body { font-family: 'Inter', sans-serif; padding: 40px; background: white; color: #1a1a1a; }
+                    @media print { body { padding: 20px; } }
+                </style>
+            </head><body>${letterHtml}</body></html>`);
+            w.document.close();
+            setTimeout(() => { w.print(); }, 500);
         }
 
         // ═══ STEP 1: Textarea helpers ═══
