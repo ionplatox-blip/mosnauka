@@ -823,6 +823,28 @@
                             </a>
                         </div>
                     </div>
+
+                    <!-- Tax Benefit ×2 Badge -->
+                    <div id="wizard-tax-badge" class="hidden mt-5">
+                      <div class="rounded-2xl overflow-hidden" id="wizard-tax-container" style="border: 1px solid rgba(34,197,94,0.2)">
+                        <div class="p-4 md:p-5" style="background: linear-gradient(135deg, rgba(16,185,129,0.05) 0%, rgba(6,78,59,0.08) 100%)">
+                          <div class="flex items-center gap-3 mb-3">
+                            <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center shrink-0 shadow-lg shadow-green-500/20">
+                              <span class="text-white text-sm font-black">×2</span>
+                            </div>
+                            <div class="flex-grow">
+                              <div class="flex items-center gap-2 flex-wrap">
+                                <span class="text-xs font-black uppercase tracking-wider text-white">Налоговый вычет</span>
+                                <span class="px-2 py-0.5 rounded-full text-[9px] font-bold" id="wizard-tax-status"
+                                      style="background:rgba(34,197,94,0.15);color:#4ade80;border:1px solid rgba(34,197,94,0.3)">Проверяем...</span>
+                              </div>
+                              <p class="text-[11px] text-gray-400 mt-1" id="wizard-tax-note"></p>
+                            </div>
+                          </div>
+                          <div id="wizard-tax-matches" class="hidden space-y-1.5"></div>
+                        </div>
+                      </div>
+                    </div>
                 </div>
                 <div id="step-2" class="step-panel">
                     <!-- Header -->
@@ -1155,6 +1177,8 @@
                     // Start AI analysis animation when entering step 1
                     if (currentStep === 1) {
                         setTimeout(() => runAIAnalysis(), 300);
+                        // Fetch tax qualification in parallel
+                        fetchTaxQualification();
                     }
 
                     // Populate summary when entering step 3
@@ -1475,6 +1499,73 @@
                 if (progress < 1) requestAnimationFrame(update);
             }
             requestAnimationFrame(update);
+        }
+
+        // ═══ TAX QUALIFICATION ×2 ═══
+        async function fetchTaxQualification() {
+            const desc = document.getElementById('task-description');
+            const query = desc ? desc.value.trim() : '';
+            if (!query) return;
+
+            try {
+                const API_BASE = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+                    ? 'http://127.0.0.1:5000' : '';
+                const resp = await fetch(`${API_BASE}/api/qualify-988`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ query, top_k: 3 })
+                });
+                if (!resp.ok) return;
+                const tq = await resp.json();
+
+                const badge = document.getElementById('wizard-tax-badge');
+                const status = document.getElementById('wizard-tax-status');
+                const note = document.getElementById('wizard-tax-note');
+                const matchesEl = document.getElementById('wizard-tax-matches');
+                const container = document.getElementById('wizard-tax-container');
+                if (!badge || !tq) return;
+
+                if (tq.qualifies) {
+                    status.textContent = `Подходит · ${Math.round(tq.confidence * 100)}%`;
+                    status.style.background = 'rgba(34,197,94,0.15)';
+                    status.style.color = '#4ade80';
+                    status.style.borderColor = 'rgba(34,197,94,0.3)';
+                    note.textContent = tq.tax_note || '';
+                    container.style.borderColor = 'rgba(34,197,94,0.2)';
+
+                    if (tq.matches && tq.matches.length && matchesEl) {
+                        matchesEl.classList.remove('hidden');
+                        matchesEl.innerHTML = tq.matches.slice(0, 2).map(m => {
+                            const pct = Math.round(m.score * 100);
+                            return `<div class="flex items-center gap-2 p-2 rounded-lg" style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05)">
+                                <span class="text-[10px] font-bold text-green-400">${pct}%</span>
+                                <span class="text-[11px] text-gray-400 line-clamp-1">п. ${m.id} — ${m.item}</span>
+                            </div>`;
+                        }).join('');
+                    }
+                } else {
+                    status.textContent = 'Не определено';
+                    status.style.background = 'rgba(255,255,255,0.05)';
+                    status.style.color = 'rgba(255,255,255,0.4)';
+                    status.style.borderColor = 'rgba(255,255,255,0.1)';
+                    note.textContent = tq.tax_note || 'Прямого соответствия не выявлено.';
+                    container.style.borderColor = 'rgba(255,255,255,0.1)';
+                }
+
+                // Show with animation after projects load
+                setTimeout(() => {
+                    badge.classList.remove('hidden');
+                    badge.style.opacity = '0';
+                    badge.style.transform = 'translateY(8px)';
+                    badge.style.transition = 'all 0.4s ease';
+                    requestAnimationFrame(() => {
+                        badge.style.opacity = '1';
+                        badge.style.transform = 'translateY(0)';
+                    });
+                }, 4600);
+            } catch(e) {
+                console.warn('Tax qualification check failed:', e);
+            }
         }
 
         // Init

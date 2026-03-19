@@ -58,6 +58,30 @@ try:
 except Exception as e:
     print(f"⚠️ Ошибка загрузки векторов: {e}")
 
+# Загрузка Перечня №988 для квалификации льготы ×2
+PERECHEN_988 = []
+PERECHEN_EMBEDDINGS = None
+PERECHEN_IDS = []
+try:
+    p988_json = Path(__file__).parent / "data" / "perechen_988.json"
+    p988_npy = Path(__file__).parent / "perechen_988_embeddings.npy"
+    p988_ids = Path(__file__).parent / "perechen_988_ids.json"
+    if p988_json.exists():
+        with open(p988_json, encoding="utf-8") as f:
+            PERECHEN_988 = json.load(f)
+        if p988_npy.exists() and p988_ids.exists():
+            import numpy as np
+            PERECHEN_EMBEDDINGS = np.load(p988_npy)
+            with open(p988_ids, encoding="utf-8") as f:
+                PERECHEN_IDS = json.load(f)
+            print(f"✅ Перечень №988: {len(PERECHEN_988)} пунктов, embeddings {PERECHEN_EMBEDDINGS.shape}")
+        else:
+            print(f"✅ Перечень №988: {len(PERECHEN_988)} пунктов (без эмбеддингов)")
+except Exception as e:
+    print(f"⚠️ Ошибка загрузки Перечня №988: {e}")
+
+P988_BY_ID = {it["id"]: it for it in PERECHEN_988}
+
 print(f"✅ Индекс готов: {len(RECORDS)} записей за {time.time()-t0:.2f}с")
 
 
@@ -520,6 +544,75 @@ def rerank_with_ai(query: str, scored_records: list[tuple]) -> list[tuple]:
 
 
 # ─────────────────────────────────────────────
+# Квалификатор льготы ×2 (Перечень №988)
+# ─────────────────────────────────────────────
+def qualify_988(query: str, top_n: int = 3) -> dict:
+    """Сопоставляем НИОКР-запрос с Перечнем №988.
+    
+    Возвращает:
+      qualifies (bool) — есть ли совпадение > порога
+      confidence (float) — макс. скор (0..1)
+      matches (list) — top-N пунктов с score
+      tax_note (str) — человекочитаемый вердикт
+    """
+    THRESHOLD = 0.55  # порог для "подходит"
+    
+    if PERECHEN_EMBEDDINGS is None or not PERECHEN_IDS:
+        return {"qualifies": False, "confidence": 0, "matches": [], "tax_note": ""}
+    
+    # Получаем embedding запроса
+    vec = get_query_embedding(query)
+    if not vec:
+        return {"qualifies": False, "confidence": 0, "matches": [], "tax_note": ""}
+    
+    import numpy as np
+    q = np.array(vec, dtype=np.float32)
+    q_norm = np.linalg.norm(q)
+    if q_norm == 0:
+        return {"qualifies": False, "confidence": 0, "matches": [], "tax_note": ""}
+    q = q / q_norm
+    
+    # Cosine similarity vs 685 пунктов
+    norms = np.linalg.norm(PERECHEN_EMBEDDINGS, axis=1, keepdims=True)
+    norms[norms == 0] = 1e-10
+    sims = np.dot(PERECHEN_EMBEDDINGS / norms, q)
+    
+    # Top-N
+    top_indices = np.argsort(sims)[::-1][:top_n]
+    matches = []
+    for idx in top_indices:
+        item_id = PERECHEN_IDS[idx]
+        item = P988_BY_ID.get(item_id, {})
+        score = float((sims[idx] + 1) / 2)  # -1..1 → 0..1
+        if score < 0.5:
+            continue
+        matches.append({
+            "id": item_id,
+            "direction": item.get("direction", ""),
+            "section": item.get("section", ""),
+            "item": item.get("item", ""),
+            "score": round(score, 2),
+        })
+    
+    best_score = matches[0]["score"] if matches else 0
+    qualifies = best_score >= THRESHOLD
+    
+    # Человекочитаемая нота
+    if qualifies and matches:
+        best = matches[0]
+        tax_note = f"Тематика соответствует п. {best['id']} Перечня №988 ({best['section']}). Расходы можно учесть с коэфф. ×2 (ст. 262 НК РФ)."
+    else:
+        tax_note = "Прямого соответствия Перечню №988 не выявлено. Рекомендуем консультацию для уточнения."
+    
+    return {
+        "qualifies": qualifies,
+        "confidence": best_score,
+        "matches": matches,
+        "tax_note": tax_note,
+    }
+
+
+# ─────────────────────────────────────────────
 # API Endpoints
 # ─────────────────────────────────────────────
 @app.route("/data/experts.json")
@@ -555,12 +648,15 @@ def ai_search():
     search_ms = int((time.time() - t0) * 1000)
 
     if not all_scored:
+        # Даже без результатов поиска — проверяем льготу
+        tax_q = qualify_988(query)
         return jsonify({
             "ai_summary": f"По запросу «{query}» подходящих проектов в базе не найдено. Попробуйте перефразировать или уточнить тему.",
             "stats": {"projects_count": 0, "orgs_count": 0, "total_funding_rub": 0, "max_match_pct": 0},
             "projects": [],
             "organizations": [],
             "experts": [],
+            "tax_qualification": tax_q,
         })
 
     # 2. Статистика — по всем найденным
@@ -589,14 +685,29 @@ def ai_search():
         USERS_DB[session_email]["searches"] = USERS_DB[session_email]["searches"][:20]
         _save_users()
 
+    # 5. Квалификация льготы ×2
+    tax_q = qualify_988(query)
+
     return jsonify({
         "ai_summary": ai_summary,
         "stats": stats,
         "projects": projects,
         "organizations": organizations,
         "experts": experts,
+        "tax_qualification": tax_q,
         "_debug": {"search_ms": search_ms, "total_found": len(all_scored)},
     })
+
+
+@app.route("/api/qualify-988", methods=["POST"])
+def api_qualify_988():
+    """Standalone: проверяет НИОКР-запрос на соответствие Перечню №988."""
+    body = request.get_json(force=True, silent=True) or {}
+    query = str(body.get("query", "")).strip()
+    if not query:
+        return jsonify({"error": "query is required"}), 400
+    result = qualify_988(query)
+    return jsonify(result)
 
 
 # ─────────────────────────────────────────────
