@@ -475,6 +475,38 @@ def format_experts(scored_records: list[tuple], top_n: int = 3) -> list[dict]:
     return result
 
 
+def format_rids(scored_records: list[tuple]) -> list[dict]:
+    """Format matched RID records grouped by organization."""
+    rid_by_org = defaultdict(list)
+    for score, rec in scored_records:
+        if rec["type"] != "rid":
+            continue
+        oid = rec["org_id"]
+        rid_by_org[oid].append({
+            "title": rec.get("title", ""),
+            "rid_type": rec.get("rid_type", ""),
+            "using_ways": rec.get("using_ways", ""),
+            "abstract_short": (rec.get("abstract") or "")[:200],
+            "keywords": rec.get("keywords", [])[:6],
+            "reg_number": rec.get("reg_number", ""),
+            "year": rec.get("year_start"),
+            "match_percentage": min(99, int(score * 100)),
+        })
+
+    result = []
+    for oid, rids in rid_by_org.items():
+        org = ORGS.get(oid, {})
+        result.append({
+            "org_name": org.get("name", ""),
+            "org_slug": org.get("slug", ""),
+            "org_logo": org.get("logo", ""),
+            "rids": rids,
+        })
+    # Sort by number of RIDs descending
+    result.sort(key=lambda x: len(x["rids"]), reverse=True)
+    return result
+
+
 # ─────────────────────────────────────────────
 # OpenRouter — Claude Haiku
 # ─────────────────────────────────────────────
@@ -920,12 +952,15 @@ def ai_search():
     # 5. Квалификация льготы ×2
     tax_q = qualify_988(query)
 
+    rids = format_rids(top_scored)
+
     return jsonify({
         "ai_summary": ai_summary,
         "stats": stats,
         "projects": projects,
         "organizations": organizations,
         "experts": experts,
+        "rids": rids,
         "tax_qualification": tax_q,
         "_debug": {"search_ms": search_ms, "total_found": len(all_scored)},
     })
