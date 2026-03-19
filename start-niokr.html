@@ -759,11 +759,11 @@
                     <div id="projects-section" class="hidden mt-6">
                         <div class="flex items-center justify-between mb-3">
                             <div class="text-[10px] uppercase tracking-[0.15em] text-gray-600 font-bold">Наиболее релевантные проекты</div>
-                            <div class="text-[10px] text-gray-600">3 из 24</div>
+                            <a href="ai_search_results.html" class="text-[10px] text-red-400 hover:text-red-300 transition font-bold">Все 24 проекта →</a>
                         </div>
                         <div class="space-y-3">
                             <!-- Project 1 -->
-                            <div class="project-card" data-delay="0">
+                            <a href="ai_search_results.html" class="project-card block no-underline" data-delay="0" style="text-decoration:none;color:inherit">
                                 <div class="flex items-start justify-between gap-3">
                                     <div class="flex-1">
                                         <div class="project-cipher mb-1">RFMEFI60719X0315</div>
@@ -780,10 +780,10 @@
                                     <span class="project-tag">коррозия</span>
                                     <span class="project-tag">композиты</span>
                                 </div>
-                            </div>
+                            </a>
 
                             <!-- Project 2 -->
-                            <div class="project-card" data-delay="150">
+                            <a href="ai_search_results.html" class="project-card block no-underline" data-delay="150" style="text-decoration:none;color:inherit">
                                 <div class="flex items-start justify-between gap-3">
                                     <div class="flex-1">
                                         <div class="project-cipher mb-1">075-15-2021-1350</div>
@@ -800,10 +800,10 @@
                                     <span class="project-tag">морская среда</span>
                                     <span class="project-tag">деградация</span>
                                 </div>
-                            </div>
+                            </a>
 
                             <!-- Project 3 -->
-                            <div class="project-card" data-delay="300">
+                            <a href="ai_search_results.html" class="project-card block no-underline" data-delay="300" style="text-decoration:none;color:inherit">
                                 <div class="flex items-start justify-between gap-3">
                                     <div class="flex-1">
                                         <div class="project-cipher mb-1">FZNS-2023-0041</div>
@@ -820,7 +820,7 @@
                                     <span class="project-tag">наночастицы</span>
                                     <span class="project-tag">антикоррозия</span>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -831,8 +831,8 @@
                             <i class="ph ph-buildings text-lg text-emerald-400"></i>
                         </div>
                         <div>
-                            <h2 class="text-xl md:text-2xl font-black italic uppercase tracking-tight">Выберите исполнителя</h2>
-                            <p class="text-xs text-gray-500">Рекомендованные организации по вашему запросу</p>
+                            <h2 class="text-xl md:text-2xl font-black italic uppercase tracking-tight">Рекомендованные исполнители</h2>
+                            <p class="text-xs text-gray-500">Можно выбрать или перейти к каталогу всех организаций</p>
                         </div>
                     </div>
                     <div id="executor-error" class="text-center"><i class="ph ph-warning mr-1"></i>Выберите исполнителя, чтобы продолжить</div>
@@ -866,7 +866,7 @@
                                 </div>
                             </div>
                             <div class="flex items-center justify-between">
-                                <a href="passport.html?org=misis" target="_blank" class="exec-link" onclick="event.stopPropagation()">Подробнее <i class="ph ph-arrow-right ml-0.5"></i></a>
+                                <a href="passport-misis.html" target="_blank" class="exec-link" onclick="event.stopPropagation()">Подробнее <i class="ph ph-arrow-right ml-0.5"></i></a>
                                 <button class="exec-select-btn" onclick="event.stopPropagation(); selectExecutor(this.closest('.exec-card'), 'МИСиС')">Выбрать</button>
                             </div>
                         </div>
@@ -899,7 +899,7 @@
                                 </div>
                             </div>
                             <div class="flex items-center justify-between">
-                                <a href="passport.html?org=mfti" target="_blank" class="exec-link" onclick="event.stopPropagation()">Подробнее <i class="ph ph-arrow-right ml-0.5"></i></a>
+                                <a href="passport-mfti.html" target="_blank" class="exec-link" onclick="event.stopPropagation()">Подробнее <i class="ph ph-arrow-right ml-0.5"></i></a>
                                 <button class="exec-select-btn" onclick="event.stopPropagation(); selectExecutor(this.closest('.exec-card'), 'МФТИ')">Выбрать</button>
                             </div>
                         </div>
@@ -932,10 +932,17 @@
                                 </div>
                             </div>
                             <div class="flex items-center justify-between">
-                                <a href="passport.html?org=rhtu" target="_blank" class="exec-link" onclick="event.stopPropagation()">Подробнее <i class="ph ph-arrow-right ml-0.5"></i></a>
+                                <a href="passport-rhtu.html" target="_blank" class="exec-link" onclick="event.stopPropagation()">Подробнее <i class="ph ph-arrow-right ml-0.5"></i></a>
                                 <button class="exec-select-btn" onclick="event.stopPropagation(); selectExecutor(this.closest('.exec-card'), 'РХТУ')">Выбрать</button>
                             </div>
                         </div>
+                    </div>
+
+                    <!-- Link to full catalog -->
+                    <div class="mt-4 text-center">
+                        <a href="catalog.html" class="inline-flex items-center gap-2 text-xs font-bold text-gray-500 hover:text-red-400 transition uppercase tracking-wider">
+                            <i class="ph ph-buildings"></i> Все 22 организации в каталоге <i class="ph ph-arrow-right"></i>
+                        </a>
                     </div>
                 </div>
                 <div id="step-3" class="step-panel">
@@ -1000,8 +1007,8 @@
                             <div class="success-title">Заявка принята!</div>
                             <div class="success-subtitle">Мы свяжемся с вами в течение 24 часов для обсуждения деталей</div>
                             <div class="flex items-center justify-center gap-3">
-                                <a href="index.html" class="success-btn success-btn-secondary"><i class="ph ph-house"></i> На главную</a>
-                                <a href="cabinet.html" class="success-btn success-btn-primary"><i class="ph ph-user-circle"></i> В личный кабинет</a>
+                                <a href="index_v2.html" class="success-btn success-btn-secondary"><i class="ph ph-house"></i> На главную</a>
+                                <a href="dashboard.html" class="success-btn success-btn-primary"><i class="ph ph-user-circle"></i> В личный кабинет</a>
                             </div>
                         </div>
                     </div>
@@ -1045,12 +1052,10 @@
                 }
             }
 
-            // Validate step 2: executor must be selected
-            if (currentStep === 2 && n > 2) {
-                if (!selectedExecutor) {
-                    document.getElementById('executor-error').classList.add('show');
-                    return;
-                }
+            // Validate step 2: executor selection is optional now
+            // If no executor selected, set a default note
+            if (currentStep === 2 && n > 2 && !selectedExecutor) {
+                selectedExecutor = 'Не выбран (на усмотрение МОСНАУКА)';
             }
 
             // Hide current panel
