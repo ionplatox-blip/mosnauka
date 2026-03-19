@@ -64,6 +64,25 @@
         </div>
     </div>
 
+    <!-- Project Detail Modal -->
+    <div id="project-modal" class="fixed inset-0 z-50 hidden" onclick="if(event.target===this)closeProjectModal()">
+        <div class="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
+        <div class="relative h-full overflow-y-auto flex items-start justify-center py-10 px-4">
+            <div class="w-full max-w-lg">
+                <div class="flex items-center justify-between mb-3">
+                    <div class="flex items-center gap-2">
+                        <i class="ph ph-kanban text-red-400"></i>
+                        <span class="text-[10px] uppercase tracking-[0.15em] text-gray-400 font-bold">Проект НИОКР</span>
+                    </div>
+                    <button onclick="closeProjectModal()" class="w-8 h-8 rounded-lg flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition border border-white/10">
+                        <i class="ph ph-x text-lg"></i>
+                    </button>
+                </div>
+                <div id="project-modal-body" class="rounded-2xl overflow-hidden"></div>
+            </div>
+        </div>
+    </div>
+
     <script>
         // ── Auth check ──
         let _user = null;
@@ -409,16 +428,18 @@
 
             const columns = stages.map(s => {
                 const stageProjects = projects.filter(p => p.stage === s.id);
-                const cards = stageProjects.map(p => `
-                    <div class="p-3 rounded-xl bg-white/[0.03] border border-white/[0.06] hover:border-${s.color}-500/20 transition">
-                        <div class="text-xs font-bold mb-2 line-clamp-2">${p.title}</div>
+                const cards = stageProjects.map((p, pi) => {
+                    const globalIdx = projects.indexOf(p);
+                    return `
+                    <div class="p-3 rounded-xl bg-white/[0.03] border border-white/[0.06] hover:border-${s.color}-500/30 hover:bg-white/[0.05] transition cursor-pointer group" onclick="openProjectModal(${globalIdx})">
+                        <div class="text-xs font-bold mb-2 line-clamp-2 group-hover:text-white transition">${p.title}</div>
                         ${p.executor ? `<div class="flex items-center gap-1.5 mb-2"><i class="ph ph-buildings text-${s.color}-400 text-xs"></i><span class="text-[10px] text-gray-400">${p.executor}</span></div>` : '<div class="text-[10px] text-gray-600 mb-2 italic">Исполнитель не выбран</div>'}
                         <div class="flex items-center justify-between">
                             <span class="text-[9px] text-gray-600">${p.budget || ''}</span>
                             <span class="text-[9px] text-gray-600">${p.deadline || ''}</span>
                         </div>
                     </div>
-                `).join('');
+                `}).join('');
 
                 return `
                     <div class="min-w-[200px]">
@@ -844,7 +865,121 @@
             setTimeout(() => { w.print(); }, 500);
         }
 
-        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeRequestModal(); });
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeRequestModal(); closeProjectModal(); } });
+
+        // ── Project Modal ──
+        function openProjectModal(idx) {
+            const projects = _userData?.projects || [];
+            const p = projects[idx];
+            if (!p) return;
+
+            const stageMap = {
+                'search':      { label: 'Подбор исполнителя', color: 'red',     icon: 'ph-magnifying-glass' },
+                'negotiation': { label: 'Переговоры',         color: 'amber',   icon: 'ph-handshake' },
+                'contract':    { label: 'Заключение договора', color: 'blue',    icon: 'ph-file-text' },
+                'execution':   { label: 'Выполнение',         color: 'emerald', icon: 'ph-gear' },
+                'closed':      { label: 'Закрыт',             color: 'gray',    icon: 'ph-check-circle' },
+            };
+            const st = stageMap[p.stage] || stageMap['search'];
+
+            // Stage-specific CTA
+            let ctaHtml = '';
+            switch (p.stage) {
+                case 'search':
+                    ctaHtml = `
+                        <a href="ai_search_results.html?q=${encodeURIComponent(p.title)}" class="flex-1 py-3 rounded-xl mos-bg-red text-center text-xs font-bold uppercase tracking-wider hover:brightness-110 transition">
+                            <i class="ph ph-magnifying-glass mr-1"></i> Найти исполнителя
+                        </a>
+                        <a href="start-niokr.html" class="flex-1 py-3 rounded-xl border border-white/10 text-center text-xs font-bold uppercase tracking-wider text-gray-400 hover:text-white hover:bg-white/5 transition">
+                            <i class="ph ph-note-pencil mr-1"></i> Запустить НИОКР
+                        </a>`;
+                    break;
+                case 'negotiation':
+                    ctaHtml = `
+                        <button onclick="closeProjectModal(); switchSection('messages');" class="flex-1 py-3 rounded-xl mos-bg-red text-center text-xs font-bold uppercase tracking-wider hover:brightness-110 transition">
+                            <i class="ph ph-chat-circle mr-1"></i> Открыть переписку
+                        </button>
+                        <button onclick="closeProjectModal(); switchSection('requests');" class="flex-1 py-3 rounded-xl border border-white/10 text-center text-xs font-bold uppercase tracking-wider text-gray-400 hover:text-white hover:bg-white/5 transition">
+                            <i class="ph ph-paper-plane-tilt mr-1"></i> Заявки
+                        </button>`;
+                    break;
+                case 'contract':
+                    ctaHtml = `
+                        <button onclick="closeProjectModal(); switchSection('guide');" class="flex-1 py-3 rounded-xl bg-blue-600/20 border border-blue-500/20 text-center text-xs font-bold uppercase tracking-wider text-blue-400 hover:bg-blue-600/30 transition">
+                            <i class="ph ph-file-text mr-1"></i> Шаблоны документов
+                        </button>
+                        <button onclick="closeProjectModal(); switchSection('messages');" class="flex-1 py-3 rounded-xl border border-white/10 text-center text-xs font-bold uppercase tracking-wider text-gray-400 hover:text-white hover:bg-white/5 transition">
+                            <i class="ph ph-chat-circle mr-1"></i> Сообщения
+                        </button>`;
+                    break;
+                case 'execution':
+                    ctaHtml = `
+                        <button onclick="closeProjectModal(); switchSection('messages');" class="flex-1 py-3 rounded-xl bg-emerald-600/20 border border-emerald-500/20 text-center text-xs font-bold uppercase tracking-wider text-emerald-400 hover:bg-emerald-600/30 transition">
+                            <i class="ph ph-chat-circle mr-1"></i> Связаться с исполнителем
+                        </button>
+                        <button onclick="closeProjectModal(); switchSection('guide');" class="flex-1 py-3 rounded-xl border border-white/10 text-center text-xs font-bold uppercase tracking-wider text-gray-400 hover:text-white hover:bg-white/5 transition">
+                            <i class="ph ph-calculator mr-1"></i> Льгота ×2
+                        </button>`;
+                    break;
+                case 'closed':
+                    ctaHtml = `
+                        <button onclick="closeProjectModal(); switchSection('guide');" class="flex-1 py-3 rounded-xl border border-white/10 text-center text-xs font-bold uppercase tracking-wider text-gray-400 hover:text-white hover:bg-white/5 transition">
+                            <i class="ph ph-calculator mr-1"></i> Оформить льготу ×2
+                        </button>`;
+                    break;
+            }
+
+            document.getElementById('project-modal-body').innerHTML = `
+                <div class="rounded-2xl bg-white/[0.03] border border-white/[0.06] p-6">
+                    <!-- Stage badge -->
+                    <div class="flex items-center justify-between mb-5">
+                        <div class="flex items-center gap-2">
+                            <div class="w-9 h-9 rounded-xl bg-${st.color}-500/15 flex items-center justify-center">
+                                <i class="ph ${st.icon} text-${st.color}-400 text-lg"></i>
+                            </div>
+                            <span class="px-3 py-1 rounded-full bg-${st.color}-500/10 border border-${st.color}-500/20 text-[10px] font-bold text-${st.color}-400 uppercase tracking-wider">${st.label}</span>
+                        </div>
+                    </div>
+
+                    <!-- Title -->
+                    <h3 class="text-lg font-black italic tracking-tight mb-5">${p.title}</h3>
+
+                    <!-- Details grid -->
+                    <div class="grid grid-cols-2 gap-3 mb-5">
+                        <div class="p-3 rounded-xl bg-white/[0.03] border border-white/[0.06]">
+                            <div class="text-[9px] uppercase tracking-wider text-gray-600 font-bold mb-1">Исполнитель</div>
+                            <div class="text-sm font-bold ${p.executor ? 'text-white' : 'text-gray-600 italic'}">
+                                ${p.executor ? '<i class="ph ph-buildings text-' + st.color + '-400 mr-1"></i>' + p.executor : 'Не выбран'}
+                            </div>
+                        </div>
+                        <div class="p-3 rounded-xl bg-white/[0.03] border border-white/[0.06]">
+                            <div class="text-[9px] uppercase tracking-wider text-gray-600 font-bold mb-1">Бюджет</div>
+                            <div class="text-sm font-bold text-white">${p.budget || '—'}</div>
+                        </div>
+                        <div class="p-3 rounded-xl bg-white/[0.03] border border-white/[0.06]">
+                            <div class="text-[9px] uppercase tracking-wider text-gray-600 font-bold mb-1">Срок</div>
+                            <div class="text-sm font-bold text-white">${p.deadline || '—'}</div>
+                        </div>
+                        <div class="p-3 rounded-xl bg-white/[0.03] border border-white/[0.06]">
+                            <div class="text-[9px] uppercase tracking-wider text-gray-600 font-bold mb-1">Этап</div>
+                            <div class="text-sm font-bold text-${st.color}-400">${st.label}</div>
+                        </div>
+                    </div>
+
+                    <!-- Actions -->
+                    <div class="flex gap-2">
+                        ${ctaHtml}
+                    </div>
+                </div>
+            `;
+            document.getElementById('project-modal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeProjectModal() {
+            document.getElementById('project-modal').classList.add('hidden');
+            document.body.style.overflow = '';
+        }
 
         // ── Render Sidebar ──
         let _activeSection = 'overview';
