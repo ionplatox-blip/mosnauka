@@ -110,7 +110,7 @@ def expand_query(query: str) -> str:
                 "Content-Type": "application/json",
             },
             json={
-                "model": "anthropic/claude-3-haiku",
+                "model": "anthropic/claude-3.5-haiku",
                 "messages": [
                     {"role": "system", "content": """Ты расширяешь поисковый запрос для семантического поиска по базе НИОКР.
 
@@ -551,7 +551,7 @@ def call_claude(query: str, context_projects: list[dict], stats: dict) -> str:
                 "HTTP-Referer": "https://mosnauka.onrender.com",
             },
             json={
-                "model": "anthropic/claude-3-haiku",
+                "model": "anthropic/claude-3.5-haiku",
                 "messages": [
                     {"role": "system", "content": system_prompt},
                     {"role": "user", "content": user_prompt},
@@ -645,7 +645,7 @@ def generate_org_reasoning(query: str, organizations: list[dict]) -> list[dict]:
                 "HTTP-Referer": "https://mosnauka.onrender.com",
             },
             json={
-                "model": "anthropic/claude-3-haiku",
+                "model": "anthropic/claude-3.5-haiku",
                 "messages": [
                     {"role": "system", "content": system_prompt},
                     {"role": "user", "content": user_prompt},
@@ -655,7 +655,16 @@ def generate_org_reasoning(query: str, organizations: list[dict]) -> list[dict]:
             },
             timeout=30,
         )
+
+        # Check HTTP status
+        if resp.status_code != 200:
+            print(f"⚠️ Org reasoning: OpenRouter returned HTTP {resp.status_code}: {resp.text[:300]}")
+            for org in organizations:
+                org["ai_reasoning"] = _fallback_reasoning(org)
+            return organizations
+
         raw = resp.json()["choices"][0]["message"]["content"].strip()
+        print(f"✅ Org reasoning raw ({len(raw)} chars): {raw[:200]}")
 
         # Strip markdown fences if present
         if raw.startswith("```"):
@@ -746,7 +755,7 @@ def rerank_with_ai(query: str, scored_records: list[tuple]) -> list[tuple]:
                 "Content-Type": "application/json",
             },
             json={
-                "model": "anthropic/claude-3-haiku",
+                "model": "anthropic/claude-3.5-haiku",
                 "messages": [
                     {"role": "system", "content": """Ты ранжируешь научные проекты по релевантности запросу.
 
