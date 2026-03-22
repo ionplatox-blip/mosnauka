@@ -575,6 +575,14 @@
             pointer-events: none;
             filter: blur(100px);
         }
+        @media (max-width: 768px) {
+            .step-panel { padding: 20px 16px; margin: 0 10px; width: calc(100% - 20px); }
+            .kpi-grid { grid-template-columns: 1fr; gap: 8px; }
+            .terminal { font-size: 11px; padding: 12px; }
+            .terminal-line { word-break: break-word; white-space: normal; }
+            .exec-grid { grid-template-columns: 1fr; }
+            .wizard-textarea { min-height: 120px; }
+        }
     </style>
 </head>
 <body>
