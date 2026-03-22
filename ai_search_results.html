@@ -446,7 +446,7 @@
         if (currentLog < logs.length) {
           const p = document.createElement('p');
           p.className = 'terminal-line';
-          p.innerHTML = `<span class="opacity-50 text-gray-500 mr-2">${new Date().toISOString().split('T')[1].substring(0,8)}</span> ${logs[currentLog]}`;
+          p.innerHTML = `<span class="opacity-50 text-gray-500 mr-2">${new Date().toLocaleTimeString('ru-RU', {hour:'2-digit',minute:'2-digit',second:'2-digit'})}</span> ${logs[currentLog]}`;
           terminalContainer.appendChild(p);
           terminalContainer.scrollTop = terminalContainer.scrollHeight;
           currentLog++;
@@ -525,7 +525,7 @@
         if (stats.projects_count || stats.rids_count) {
           const p = document.createElement('p');
           p.className = 'terminal-line text-green-400';
-          p.innerHTML = `<span class="opacity-50 text-gray-500 mr-2">${new Date().toISOString().split('T')[1].substring(0,8)}</span> ✓ Найдено: ${stats.projects_count} проектов, ${stats.rids_count || 0} РИД, ${stats.orgs_count} организаций`;
+          p.innerHTML = `<span class="opacity-50 text-gray-500 mr-2">${new Date().toLocaleTimeString('ru-RU', {hour:'2-digit',minute:'2-digit',second:'2-digit'})}</span> ✓ Найдено: ${stats.projects_count} проектов, ${stats.rids_count || 0} РИД, ${stats.orgs_count} организаций`;
           terminalContainer.appendChild(p);
         }
 
