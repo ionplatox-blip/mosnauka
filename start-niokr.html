@@ -578,6 +578,67 @@
     </style>
 </head>
 <body>
+    <!-- ═══════ GLOBAL PRELOADER ═══════ -->
+    <div id="global-preloader" class="fixed inset-0 z-[99999] bg-[#0a0a0f] flex flex-col items-center justify-center transition-opacity duration-700">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,0,60,0.15)_0,transparent_50%)] pointer-events-none"></div>
+      <div class="relative z-10 flex flex-col items-center">
+        <div class="text-3xl md:text-5xl font-black tracking-tighter uppercase italic drop-shadow-[0_0_15px_rgba(255,0,60,0.6)] mb-8 text-white">
+          МОС<span class="text-[#FF003C]">НАУКА</span>
+        </div>
+        <div class="flex flex-col items-center gap-4">
+          <div class="w-12 h-12 rounded-full border-4 border-white/10 border-t-[#FF003C] animate-spin shadow-[0_0_20px_rgba(255,0,60,0.4)]"></div>
+          <div class="text-sm md:text-base font-bold text-gray-400 uppercase tracking-widest animate-pulse mt-2" id="preloader-text">
+            Связь с сервером...
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+      (function() {
+        const BACKEND_URL = window.location.hostname === 'localhost' || window.location.protocol === 'file:'
+          ? 'http://localhost:5001'
+          : 'https://mosnauka-backendmosnauka.onrender.com';
+          
+        let texts = ["Связь с сервером...", "Пробуждение ядра...", "Загрузка алгоритмов...", "Почти готово...", "Ожидание ответа..."];
+        let txtIdx = 0;
+        let isDone = false;
+        
+        const txtInterval = setInterval(() => {
+          if (isDone) return;
+          txtIdx = (txtIdx + 1) % texts.length;
+          const el = document.getElementById('preloader-text');
+          if (el) el.textContent = texts[txtIdx];
+        }, 4000);
+
+        function finishLoading() {
+          if (isDone) return;
+          isDone = true;
+          clearInterval(txtInterval);
+          const el = document.getElementById('preloader-text');
+          if (el) el.textContent = "Облако готово";
+          
+          setTimeout(() => {
+            const preloader = document.getElementById('global-preloader');
+            if (preloader) {
+              preloader.style.opacity = '0';
+              setTimeout(() => preloader.remove(), 700);
+            }
+            document.body.style.overflow = '';
+          }, 500);
+        }
+        
+        // Prevent scrolling while preloader is active
+        document.body.style.overflow = 'hidden';
+        
+        // Wake up backend
+        fetch(BACKEND_URL + '/', { mode: 'no-cors', cache: 'no-store' })
+          .then(finishLoading)
+          .catch(finishLoading);
+          
+        setTimeout(finishLoading, 30000); // 30s safety timeout
+      })();
+    </script>
 
     <!-- ═══ AMBIENT ORBS ═══ -->
     <div class="wizard-orb" style="width:500px;height:500px;background:radial-gradient(circle,rgba(255,0,60,0.08) 0%,transparent 70%);top:-10%;right:-10%;animation:float-wizard 20s ease-in-out infinite"></div>
@@ -727,7 +788,7 @@
                     </div>
 
                     <!-- Terminal -->
-                    <div class="terminal" id="ai-terminal">
+                    <div class="terminal relative overflow-hidden pb-8" id="ai-terminal">
                         <div class="terminal-line show"><span class="terminal-prefix">▸</span> <span class="terminal-text">Инициализация поиска...</span></div>
                         <div class="terminal-line" id="term-query"><span class="terminal-prefix">▸</span> <span class="terminal-text">Анализ запроса: </span><span class="terminal-highlight" id="term-query-text"></span></div>
                         <div class="terminal-line" id="term-scan"><span class="terminal-prefix">▸</span> <span class="terminal-text">Сканирование базы НИОКР...</span></div>
@@ -736,6 +797,14 @@
                         <div class="terminal-line" id="term-orgs"><span class="terminal-prefix">▸</span> <span class="terminal-text">Организации с опытом: </span><span class="terminal-num" id="term-orgs-count"></span></div>
                         <div class="terminal-line" id="term-done"><span class="terminal-prefix">✓</span> <span class="terminal-highlight">Готово</span> <span class="pulse-dot"></span></div>
                         <div class="terminal-line hidden" id="term-error"><span class="terminal-prefix" style="color:#ef4444">✗</span> <span style="color:#ef4444" id="term-error-text">Ошибка загрузки</span></div>
+                        
+                        <!-- Progress Bar Component -->
+                        <div class="absolute bottom-0 left-0 w-full bg-white/5 border-t border-white/10 flex items-center h-5">
+                            <div class="flex-1 h-full bg-transparent">
+                                <div id="wizard-progress-bar" class="h-full bg-gradient-to-r from-[#FF003C] to-purple-500 w-0 transition-all duration-300 shadow-[0_0_10px_rgba(255,0,60,0.5)]"></div>
+                            </div>
+                            <div class="absolute right-3 text-[10px] font-bold text-white drop-shadow-md z-10" id="wizard-progress-text">0%</div>
+                        </div>
                     </div>
 
                     <!-- KPI Cards -->
@@ -1309,6 +1378,19 @@
             const query = desc ? desc.value.trim() : '';
             const queryExcerpt = query.length > 60 ? query.substring(0, 57) + '...' : query;
 
+            // ── Progress Bar Animation ──
+            let progress = 0;
+            const pBar = document.getElementById('wizard-progress-bar');
+            const pText = document.getElementById('wizard-progress-text');
+            const pInterval = setInterval(() => {
+                if (progress < 90) {
+                    progress += Math.floor(Math.random() * 5) + 1;
+                    if (progress > 90) progress = 90;
+                    if (pBar) pBar.style.width = progress + '%';
+                    if (pText) pText.textContent = progress + '%';
+                }
+            }, 500);
+
             // ── Terminal animation: progressive lines ──
             const termQueryText = document.getElementById('term-query-text');
             if (termQueryText) termQueryText.textContent = '«' + queryExcerpt + '»';
@@ -1334,6 +1416,11 @@
                 if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
                 const data = await resp.json();
                 _wizardSearchData = data;
+                
+                // Finish progress bar
+                clearInterval(pInterval);
+                if (pBar) pBar.style.width = '100%';
+                if (pText) pText.textContent = '100%';
 
                 // ── Update terminal with real counts ──
                 const foundCount = document.getElementById('term-found-count');
