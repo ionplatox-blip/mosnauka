@@ -227,7 +227,7 @@
             font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
             font-size: 12px;
             line-height: 1.8;
-            max-height: 200px;
+            max-height: 380px;
             overflow-y: auto;
         }
         .terminal-line {
@@ -700,8 +700,8 @@
         </div>
 
         <!-- Wizard Card -->
-        <div class="w-full max-w-2xl mx-auto">
-            <div class="rounded-3xl glass p-6 md:p-10 relative overflow-hidden">
+        <div class="w-full max-w-4xl mx-auto flex flex-col items-center">
+            <div class="rounded-3xl glass p-6 md:p-10 relative overflow-hidden w-full">
                 <!-- Subtle top gradient -->
                 <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-600 via-red-500 to-pink-500"></div>
 
@@ -884,9 +884,9 @@
                     </div>
                     <div id="executor-error" class="text-center"><i class="ph ph-warning mr-1"></i>Выберите исполнителя, чтобы продолжить</div>
 
-                    <div id="executor-cards" class="space-y-3 mt-4">
+                    <div id="executor-cards" class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
                         <!-- Dynamically populated by renderExecutorCards() -->
-                        <div id="exec-loading" class="text-center py-8 text-gray-600 text-sm hidden">
+                        <div id="exec-loading" class="text-center py-8 text-gray-600 text-sm hidden md:col-span-2">
                             <i class="ph ph-spinner text-xl animate-spin inline-block mb-2"></i><br>
                             Загрузка рекомендаций...
                         </div>
@@ -1559,10 +1559,19 @@
                 allLink.innerHTML = `<i class="ph ph-buildings"></i> Все ${organizations.length} организаций <i class="ph ph-arrow-right"></i>`;
             }
 
-            container.innerHTML = organizations.map((org, i) => {
+            // Map, calculate avgMatch, and sort by it descending
+            const orgsToRender = organizations.map(org => {
                 const avgMatch = org.top_projects && org.top_projects.length > 0
                     ? Math.round(org.top_projects.reduce((s, p) => s + (p.match_percentage || 0), 0) / org.top_projects.length)
-                    : 0;
+                    : (org.relevance_score || 0); // fallback to relevance score if exist
+                return { ...org, avgMatch };
+            });
+
+            // Sort highest matches first
+            orgsToRender.sort((a, b) => b.avgMatch - a.avgMatch);
+
+            container.innerHTML = orgsToRender.map((org, i) => {
+                const avgMatch = org.avgMatch;
                 const budgetFmt = org.total_matched_budget >= 1e6
                     ? `₽${(org.total_matched_budget / 1e6).toFixed(1)} млн`
                     : org.total_matched_budget > 0 ? `₽${(org.total_matched_budget / 1e3).toFixed(0)} тыс.` : '';
