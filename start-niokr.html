@@ -842,7 +842,7 @@
                     <div id="projects-section" class="hidden mt-6">
                         <div class="flex items-center justify-between mb-3">
                             <div class="text-[10px] uppercase tracking-[0.15em] text-gray-600 font-bold">Наиболее релевантные проекты</div>
-                            <a id="projects-all-link" href="ai_search_results.html" class="text-[10px] text-red-400 hover:text-red-300 transition font-bold">Все проекты →</a>
+                            <a id="projects-all-link" href="ai_search_results.html" target="_blank" rel="noopener" class="text-[10px] text-red-400 hover:text-red-300 transition font-bold">Все проекты →</a>
                         </div>
                         <div id="projects-container" class="space-y-3">
                             <!-- Filled dynamically by renderProjectCards() -->
@@ -879,10 +879,18 @@
                         </div>
                         <div>
                             <h2 class="text-xl md:text-2xl font-black italic uppercase tracking-tight">Рекомендованные исполнители</h2>
-                            <p class="text-xs text-gray-500">Можно выбрать или перейти к каталогу всех организаций</p>
+                            <p class="text-xs text-gray-500">Можно выбрать несколько организаций для направления запроса</p>
                         </div>
                     </div>
-                    <div id="executor-error" class="text-center"><i class="ph ph-warning mr-1"></i>Выберите исполнителя, чтобы продолжить</div>
+                    <div id="executor-error" class="text-center"><i class="ph ph-warning mr-1"></i>Выберите хотя бы одну организацию, чтобы продолжить</div>
+
+                    <!-- Selected counter badge -->
+                    <div id="exec-selected-counter" class="hidden mt-4 text-center">
+                        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-500/10 border border-emerald-500/20">
+                            <i class="ph ph-check-circle text-emerald-400"></i>
+                            <span class="text-xs font-bold text-emerald-300" id="exec-counter-text">Выбрано: 0</span>
+                        </div>
+                    </div>
 
                     <div id="executor-cards" class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
                         <!-- Dynamically populated by renderExecutorCards() -->
@@ -894,7 +902,7 @@
 
                     <!-- Link to full results -->
                     <div class="mt-4 text-center">
-                        <a id="exec-all-link" href="ai_search_results.html" class="inline-flex items-center gap-2 text-xs font-bold text-gray-500 hover:text-red-400 transition uppercase tracking-wider">
+                        <a id="exec-all-link" href="ai_search_results.html" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-xs font-bold text-gray-500 hover:text-red-400 transition uppercase tracking-wider">
                             <i class="ph ph-buildings"></i> Все организации <i class="ph ph-arrow-right"></i>
                         </a>
                     </div>
@@ -921,8 +929,8 @@
                                     <div id="summary-task" class="text-xs font-semibold text-gray-300" style="max-width:300px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap">—</div>
                                 </div>
                                 <div class="text-right">
-                                    <div class="text-xs text-gray-500 mb-0.5">Исполнитель</div>
-                                    <div id="summary-executor" class="text-xs font-bold text-emerald-400">—</div>
+                                    <div class="text-xs text-gray-500 mb-0.5">Исполнители</div>
+                                    <div id="summary-executor" class="text-xs font-bold text-emerald-400" style="max-width:300px; word-wrap:break-word; white-space:normal">—</div>
                                 </div>
                             </div>
                         </div>
@@ -1079,8 +1087,8 @@
 
             // Validate step 2: executor selection is optional now
             // If no executor selected, set a default note
-            if (currentStep === 2 && n > 2 && !selectedExecutor) {
-                selectedExecutor = 'Не выбран (на усмотрение МОСНАУКА)';
+            if (currentStep === 2 && n > 2 && selectedExecutors.length === 0) {
+                selectedExecutors = ['Не выбран (на усмотрение МОСНАУКА)'];
             }
 
             // Hide current panel
@@ -1121,8 +1129,8 @@
                             summaryTask.textContent = taskDesc.value.trim().substring(0, 80) + (taskDesc.value.length > 80 ? '...' : '');
                         }
                         const summaryExec = document.getElementById('summary-executor');
-                        if (summaryExec && selectedExecutor) {
-                            summaryExec.textContent = selectedExecutor;
+                        if (summaryExec && selectedExecutors.length > 0) {
+                            summaryExec.textContent = selectedExecutors.join(', ');
                         }
                     }
                 }, 250);
@@ -1211,7 +1219,8 @@
                 id: 'REQ-' + Date.now().toString(36).toUpperCase(),
                 date: new Date().toISOString(),
                 task: taskDesc ? taskDesc.value.trim() : '',
-                executor: selectedExecutor || 'Не выбран',
+                executor: selectedExecutors.length > 0 ? selectedExecutors.join(', ') : 'Не выбран',
+                executors: selectedExecutors.length > 0 ? [...selectedExecutors] : ['Не выбран'],
                 contact: {
                     name: name.value.trim(),
                     company: company.value.trim(),
@@ -1348,20 +1357,39 @@
             document.getElementById('file-info').classList.add('hidden');
         }
 
-        // ═══ STEP 3: Executor Selection ═══
-        let selectedExecutor = null;
+        // ═══ STEP 3: Executor Selection (multi-select) ═══
+        let selectedExecutors = [];
 
         function selectExecutor(cardEl, orgName) {
-            // Deselect all
-            document.querySelectorAll('.exec-card').forEach(c => c.classList.remove('selected'));
-            // Select this one
-            cardEl.classList.add('selected');
-            selectedExecutor = orgName;
+            const idx = selectedExecutors.indexOf(orgName);
+            const btn = cardEl.querySelector('.exec-select-btn');
+            if (idx >= 0) {
+                // Deselect
+                selectedExecutors.splice(idx, 1);
+                cardEl.classList.remove('selected');
+                if (btn) btn.textContent = 'Выбрать';
+            } else {
+                // Select
+                selectedExecutors.push(orgName);
+                cardEl.classList.add('selected');
+                if (btn) btn.textContent = 'Выбрано ✓';
+            }
             // Hide error
             document.getElementById('executor-error').classList.remove('show');
-            // Update button text in selected card
-            document.querySelectorAll('.exec-select-btn').forEach(btn => btn.textContent = 'Выбрать');
-            cardEl.querySelector('.exec-select-btn').textContent = 'Выбрано ✓';
+            // Update counter badge
+            updateExecCounter();
+        }
+
+        function updateExecCounter() {
+            const counter = document.getElementById('exec-selected-counter');
+            const text = document.getElementById('exec-counter-text');
+            if (!counter || !text) return;
+            if (selectedExecutors.length > 0) {
+                counter.classList.remove('hidden');
+                text.textContent = `Выбрано: ${selectedExecutors.length}`;
+            } else {
+                counter.classList.add('hidden');
+            }
         }
 
         // ═══ STEP 2: AI Analysis — calls /api/ai-search ═══
@@ -1504,7 +1532,7 @@
                 ).join('');
 
                 return `
-                    <a href="${searchUrl}" class="project-card block no-underline" style="text-decoration:none;color:inherit;animation-delay:${i * 150}ms">
+                    <a href="${searchUrl}" target="_blank" rel="noopener" class="project-card block no-underline" style="text-decoration:none;color:inherit;animation-delay:${i * 150}ms">
                         <div class="flex items-start justify-between gap-3">
                             <div class="flex-1">
                                 ${p.reg_number ? `<div class="project-cipher mb-1">${p.reg_number}</div>` : ''}
